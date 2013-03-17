@@ -106,19 +106,22 @@ $config['menus'] = array(
     array(
         "index" => "list",
         "titlle" => "重温经典",
-        "link" => get_url("/movielist"),
+        "link" => get_url("/classicmovie/"),
         "class" => "dy_sort",
         "type_info" => array(
             array(
                 "type" => "类型",
+                "base_url" => get_url("/classicmovie/type/"),
                 "info" => $config['movieType'],
             ),
             array(
                 "type" => "年份",
-                "info" => array(2008,2009,2010,2011,2012,2013),
+                "base_url" => get_url("/classicmovie/year/"),
+                "info" => array(2008 => 2008,2009 => 2009,2010 => 2010,2011 => 2011,2012 => 2012,2013 => 2013),
             ),
             array(
-                "type" => "年份",
+                "type" => "地区",
+                "base_url" => get_url("/classicmovie/place/"),
                 "info" => $config['moviePlace'],
             ),
         ),

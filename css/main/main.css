@@ -49,7 +49,8 @@ div.head_top_menus ul.nav li.show_sort {
     background-color: #FFF;
     border-color: #eee;
 }
-div.head_top_menus ul.nav  li.show_sort a {
+div.head_top_menus ul.nav  li.show_sort a,div.head_top_menus ul.nav  li.show_sort a:hover{
+    background-color: #FFF;
     color: #000;
 }
 div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
@@ -73,4 +74,5 @@ div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_m
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a:hover {
     color:#0088CC ;
+    font-size:13px ;
 }

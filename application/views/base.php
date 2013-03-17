@@ -61,8 +61,8 @@
                                         <?php foreach($menuVal['type_info'] as $infoVal):?>
                                         <tr>
                                             <th><?php echo $infoVal['type'];?></th>
-                                            <?php foreach ($infoVal['info'] as $infoDetail): ?>
-                                                <td><a href=""><?php echo $infoDetail;?></a></td>
+                                            <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
+                                                <td><a href="<?php echo $infoVal['base_url'] . $key;?>"><?php echo $infoDetail;?></a></td>
                                             <?php endforeach;?>
                                         </tr>
                                         <?php endforeach;?>

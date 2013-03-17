@@ -29,6 +29,10 @@ class Backgroundadmin extends CI_Model {
     private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei");
     private $_downLinkFild = array("id","infoId","link","size","type");
 
+    private function _getFiledStr()
+    {
+        return implode(",",$this->_detailfInfoFild);
+    }
     public function checkDetail($info = array())
     {
         $result = array(
@@ -253,5 +257,31 @@ class Backgroundadmin extends CI_Model {
         $str = implode(",",$id);
         $sql = "delete from tbl_detailInfo where id in ({$str}) and del = {$del};";
         return $this->db->query($sql);
+    }
+
+    public function getDetailInfoByType($type,$offset,$limit,$del = 0)
+    {
+        $type = intval($type);
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($type) || !isset($offset) || !isset($limit)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where type = 1 and del = {$del} limit {$offset},$limit";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function getDetailInfoCountByType($type,$offset,$limit,$del = 0)
+    {
+        $type = intval($type);
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($type) || !isset($offset) || !isset($limit)) {
+            return false;
+        }
+        $sql = "select count(1) as cn from tbl_detailInfo where type = 1 and del = {$del} limit {$offset},$limit";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
     }
 }
