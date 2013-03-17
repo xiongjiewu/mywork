@@ -7,6 +7,9 @@ class Register extends CI_Controller {
 
     public function index()
     {
+        if (!empty($this->userId)) {//已登录，跳转至首页
+            $this->jump_to("/");
+        }
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("css/user/register.css"));

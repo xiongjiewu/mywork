@@ -347,4 +347,8 @@ class CI_Controller
     {
         return $this->userName;
     }
+
+    public function remove_cookie($name, $path=NULL, $domain=NULL, $secure=FALSE, $httponly=FALSE) {
+        return $this->set_cookie($name, NULL, -3600, $path, $domain, $secure, $httponly);
+    }
 }

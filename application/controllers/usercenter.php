@@ -7,8 +7,14 @@ class Usercenter extends CI_Controller {
 
     public function index()
     {
-//        $this->load->set_css(array("css/user/login.css"));
-//        $this->load->set_js(array("js/user/login.js"));
-//        $this->set_view("user/login","common");
+        if (empty($this->userId)) {//已登录，跳转至首页
+            $this->jump_to("/login/");
+        }
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("css/user/usercenter.css"));
+        $this->load->set_js(array("js/user/usercenter.js"));
+        $this->set_view("user/usercenter");
     }
 }

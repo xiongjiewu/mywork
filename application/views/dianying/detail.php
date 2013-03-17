@@ -152,6 +152,7 @@
     </div>
 </div>
 <input type="hidden" id="ding_url" name="ding_url" value="<?php echo get_url("/useraction/ding/");?>">
+<input type="hidden" id="user_id" name="user_id" value="<?php echo $userId;?>">
 <script type="text/javascript">
     var editor = $('.xheditor').xheditor(
             {
@@ -167,7 +168,11 @@
                 forcePtag:true,
                 emotMark:false,
                 shortcuts:{'ctrl+enter':function () {
-                    return $("#create_post_button").trigger("click");
+                    <?php if (!empty($userId)):?>
+                        return $("#create_post_button").trigger("click");
+                    <?php else:?>
+                        alert("请先登录！");
+                    <?php endif;?>
                 }}
             }
     );
@@ -186,7 +191,11 @@
                 event = event || window.event;
                 var e = event.keyCode || event.which;
                 if (e == 13 && event.ctrlKey == true) {
+                    <?php if (!empty($userId)):?>
                     return $("div.create_post_button input").trigger("click");
+                    <?php else:?>
+                    alert("请先登录！");
+                    <?php endif;?>
                 }
             });
             $(".pllist table .info span").each(function () {

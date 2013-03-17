@@ -1,0 +1,17 @@
+.navbar {
+    margin-bottom: 0;
+}
+.navbar .show_s_count a {
+    cursor: default;
+    font-size: 17px;
+}
+.navbar .show_s_count a span.count {
+    color: #ff0000;
+    padding: 0 5px;
+    font-size: 20px;
+}
+
+.navbar .show_s_count a span.sugg {
+    color: #999;
+    font-size: 14px;
+}

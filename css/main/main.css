@@ -75,6 +75,9 @@ div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_m
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a.active {
     color: #0088CC;
 }
+div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a{
+    font-size: 13px;
+}
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a:hover {
     color:#0088CC ;
     font-size:13px ;
@@ -85,4 +88,37 @@ a.enable,a.enable:hover {
 }
 .bs-docs-sidenav.affix-bottom {
     position: relative;
+}
+.navbar .navbar-inner a {
+    font-size: 17px;
+}
+div.head_top_menus ul.nav li.username {
+    margin-left: 180px;
+    position: relative;
+    padding-right: 20px;
+}
+div.head_top_menus ul.nav li.username a {
+    font-size: 13px;
+}
+ul li.username a i {
+    margin-top: 2px;
+    margin-right: 5px;
+}
+div.head_top_menus ul.nav li.username div.user_in{
+    display: none;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    background-color: #fff;
+    height: 168px;
+    min-width: 115px;
+    border: 1px solid #eee;
+    border-top: none;
+}
+div.head_top_menus ul.nav li.username div.user_in table.table tr td {
+    line-height: 5px;
+    padding-left: 10px;
+}
+div.head_top_menus ul.nav li.username div.user_in table.table tr td a {
+    color: #333;
 }

@@ -78,18 +78,16 @@
                         </form>
                     </li>
                     <?php if (!empty($userName)): ?>
-                        <li style="margin-left: 500px">
-                            <div class="btn-group">
-                                <a class="btn btn-primary" href="<?php echo get_url("/usercenter/"); ?>"><i
-                                        class="icon-user icon-white"></i> <?php echo $userName;?></a>
-                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="<?php echo get_url("/usercenter/"); ?>"><i class=" icon-edit"></i>
-                                            我想看但没有</a></li>
-                                    <li><a href="#"><i class="icon-pencil"></i> 投诉与建议</a></li>
-                                    <li><a href="#"><i class="icon-ban-circle"></i> 退出</a></li>
-                                </ul>
+                        <li class="username">
+                            <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?></a>
+                            <div class="user_in">
+                                <table class="table">
+                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-film"></i>我的电影吧</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-envelope"></i>投诉与建议</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/logout/");?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a></td></tr>
+                                </table>
                             </div>
                         </li>
                     <?php else: ?>
@@ -204,6 +202,12 @@
             $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").mouseleave(function () {
                 $(this).hide();
                 initOjb.removeClass($("div.head_top_menus ul.nav li.dy_sort"), "show_sort");
+            });
+            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseover(function(){
+                $("div.head_top_menus ul.nav li.username div.user_in").show();
+            });
+            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseleave(function(){
+                $("div.head_top_menus ul.nav li.username div.user_in").hide();
             });
         });
     })(jQuery);

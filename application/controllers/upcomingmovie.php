@@ -22,6 +22,7 @@ class Upcomingmovie extends CI_Controller {
             $movieList[$movieListKey]['jieshao'] = $this->splitStr($movieListVal['jieshao'],60);//介绍截取50个字符
         }
         $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("电影吧，国内最强阵容");
         $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/upcomingmovie.css"));

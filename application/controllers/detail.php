@@ -17,6 +17,7 @@ class Detail extends CI_Controller {
         if (empty($dyInfo)) {
             redirect("/" );
         }
+        $this->set_attr("userId",$this->userId);
         $dyInfo['jieshao'] = $this->splitStr($dyInfo['jieshao'],200);
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
