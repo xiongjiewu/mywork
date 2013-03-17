@@ -1,0 +1,33 @@
+.bs-docs-example {
+    width: 1130px;
+    float: left;
+}
+table {
+    width: 100%;
+    margin-left: 10px;
+}
+table.table tr td {
+    border-top: none;
+    color: #999;
+}
+table.firstOneT{
+    margin-top: 40px;
+}
+table.table tr.lastOne td {
+    border-bottom: none;
+}
+table.table tr td.dy_name {
+    width: 150px;
+    text-align: center;
+    line-height:90px
+}
+table.table tr td.dy_name a {
+    font-weight: bold;
+    font-size: 15px;
+}
+table.table tr td span {
+    color: #aaa;
+}
+table.table tr td strong {
+    color: #888;
+}

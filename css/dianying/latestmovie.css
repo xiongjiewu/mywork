@@ -1,0 +1,27 @@
+.bs-docs-example {
+    width: 1130px;
+    float: left;
+}
+div.bs-docs-example table {
+    width: 100%;
+    margin-left: 10px;
+}
+div.bs-docs-example table.table tr td {
+    border-top: none;
+    border-bottom: 1px solid #DDDDDD;
+}
+div.bs-docs-example table.table tr.lastOne td {
+    border-bottom: none;
+}
+div.bs-docs-example table.table tr td.dy_name a {
+    font-weight: bold;
+    font-size: 15px;
+    color: #666;
+}
+div.bs-docs-example table.table tr td.dy_watch a {
+    font-size: 14px;
+}
+div.bs-docs-example table.table tr td.dy_down a {
+    font-size: 13px;
+    color: #5391CD;
+}

@@ -1,0 +1,60 @@
+div.movieList {
+    width: 100%;
+}
+div.movieList div.actionList {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+div.movieList div.actionList ul li {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px dashed #666;
+    margin-left: 20px;
+    background-color: #F7F7F7;
+}
+
+div.movieList div.listTable table {
+    float: left;
+    width: 100%;
+}
+
+div.movieList div.listTable table tr span {
+    cursor: pointer;
+    color: #0054AF;
+}
+
+div.movieList div.listTable table tr th {
+    padding-bottom: 10px;
+}
+
+div.movieList div.listTable table tr td {
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+    border-bottom: 1px dashed #aaa;
+
+}
+
+div.movieList div.listTable table tr.lastOne td {
+    border-bottom: 1px solid #aaa;
+}
+
+div.movieList div.listTable table tr.firstOne td {
+    margin-top:20px;
+    border-top: 1px solid #aaa;
+}
+
+div.movieList div.listTable table tr.last td {
+    margin-top:20px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+div.movieList div.listTable table tr .chose {
+    width: 40px;
+}
+
+div.movieList div.listTable table input {
+    width: 30px;
+}

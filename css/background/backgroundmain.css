@@ -1,0 +1,107 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-image: url("/images/sybg.png");
+}
+div.main{
+    width: 1000px;
+    margin: 0 auto;
+}
+div.main div.top {
+    height: 100px;
+    width: 100%;
+    float: left;
+}
+
+div.main div.top div.logo {
+    height: 100%;
+    width: 280px;
+    float: left;
+}
+
+div.main div.menus {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #CAD9EA;
+    float: left;
+    background-image: url("/images/menu_bg.gif");
+}
+div.main div.menus ul {
+    float: left;
+    padding: 0;
+    margin: 8px 0 0 30px;
+    font-size: 14px;
+}
+div.main div.menus ul li {
+    float: left;
+    list-style: none;
+    margin-left: 30px;
+}
+a {
+    text-decoration: none;
+    color: #0054AF;
+}
+a:hover {
+    color: red;
+}
+ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    list-style: none;
+    float: left;
+}
+div.main div.menus ul li.current a{
+    color: red;
+}
+div.main div.menus ul li a:hover {
+    color: red;
+}
+div.main div.container {
+    width: 96%;
+    float: left;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #aaa;
+}
+
+div.dy_detail_head {
+    width: 100%;
+    float: left;
+    height: 30px;
+    font-size: 13px;
+}
+div.dy_detail_head ul {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+div.dy_detail_head ul li.head_currert a {
+    color: red;
+}
+
+div.main div.menus ul li.welcome {
+    margin-right: 50px;
+    float: right;
+}
+code {
+    color: red;
+}
+div.fenye {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+div.fenye ul li a {
+    float: left;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    margin-left: 5px;
+}
+div.fenye ul li a.current,div.fenye ul li a:hover {
+    background-color: #0054AF;
+    color: white;
+}

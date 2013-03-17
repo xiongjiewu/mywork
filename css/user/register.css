@@ -1,0 +1,316 @@
+.register_main {
+    top: 20px;
+    width: 970px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.register_main .register_top_top{
+    float: left;
+    width: 100%;
+    height: 12px;
+    background: url("/images/icon/shang.gif") no-repeat scroll 0 0 transparent;
+}
+.register_main .register_top_middel{
+    position: relative;
+    float: left;
+    width: 968px;
+    height: 600px;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    background-color: #fff;
+}
+.register_main .register_top_bottom{
+    float: left;
+    width: 100%;
+    height: 17px;
+    background: url("/images/icon/xia3.png") no-repeat scroll 0 0 transparent;
+}
+
+.register_main .register_main_table{
+    position: absolute;
+    width: 300px;
+    margin: 30px 100px;
+}
+.register_main .register_main_table tr td.ui_error{
+    text-align: center;
+    font-size: 13px;
+    color: red;
+    width: 260px;
+}
+.register_main .register_main_table tr td{
+    position: relative;
+    float: left;
+}
+.register_main .register_main_table tr td label{
+    color: #8F8F8F;
+    font-size: 16px;
+    left: 40px;
+    position: absolute;
+    top: 20px;
+}
+.register_main .register_main_table tr td span{
+    position: absolute;
+    left: 12px;
+    top:20px;
+    width: 20px;
+}
+.register_main .register_main_table tr td span.username_icon{
+    position: absolute;
+    background: url("/images/Register/register2.png") no-repeat scroll 0 -107px transparent;
+    width: 30px;
+    height: 25px;
+    z-index: 10;
+}
+.register_main .register_main_table tr td span.username_icon_over{
+    background: url("/images/Register/register2.png") no-repeat scroll 0 -132px transparent;
+}
+.register_main .register_main_table tr td span.email_icon{
+    position: absolute;
+    z-index: 10;
+    background: url("/images/Register/register2.png") no-repeat scroll -2px -202px transparent;
+    width: 30px;
+    height: 25px;
+}
+.register_main .register_main_table tr td span.email_icon_over{
+    background: url("/images/Register/register2.png") no-repeat scroll -2px -225px transparent;
+}
+.register_main .register_main_table tr td span.password_icon{
+    position: absolute;
+    background: url("/images/Register/register2.png") no-repeat scroll 0 -155px transparent;
+    width: 30px;
+    height: 25px;
+    z-index: 10;
+}
+.register_main .register_main_table tr td span.password_icon_over{
+    background: url("/images/Register/register2.png") no-repeat scroll -1px -177px transparent;
+}
+.register_main .register_main_table tr td.user_input{
+    width: 260px;
+    height: 51px;
+}
+.register_main .register_main_table tr td.ui_u{
+    width: 50px;
+    text-align: right;
+}
+.register_main .register_main_table tr td.ui_p{
+    width: 50px;
+    text-align: right;
+}
+.register_main .register_main_table tr td input.username,.register_main .register_main_table tr td input.password{
+    position: absolute;
+    border: medium none;
+    font-size: 22px;
+    height: 47px;
+    line-height: 50px;
+    margin: 5px;
+    padding: 2px 5px 2px 32px;
+    text-align: left;
+    width: 213px;
+    background: url("/images/Register/register2.png") no-repeat scroll 0 -52px transparent;
+}
+.register_main .register_main_table tr td input.input_over{
+    background: url("/images/Register/register2.png") no-repeat scroll 0 0 transparent;
+}
+.register_main .register_main_table tr td.ui_login{
+    text-align: center;
+    font-size: 13px;
+    width: 260px;
+}
+.register_main .register_main_table tr td {
+    position: relative;
+    margin-top: 5px;
+}
+.register_main .register_main_table tr td input.submit{
+    cursor: pointer;
+    color: #fff;
+    width: 250px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background: url("/images/Register/register.png") no-repeat scroll 0 0 transparent;
+}
+.register_main .register_main_table tr td input.submit_over{
+    background: url("/images/Register/register.png") no-repeat scroll 0 -50px transparent;
+}
+.register_main .register_main_table tr td.ui_remember input{
+    padding: 0;
+    margin:1px 2px 0 5px;
+}
+.register_main .register_main_table tr td.ui_remember{
+    color: #999;
+    font-size: 13px;
+    margin: 10px 0;
+}
+.register_main .register_main_table tr td.ui_remember a{
+    color: #377CA2;
+}
+
+.register_main .register_main_table tr td .username_ts .username_ts_top{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 18px;
+    position: absolute;
+    z-index: 11;
+}
+.register_main .register_main_table tr td .username_ts .username_ts_main{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -47px transparent;
+    font-size: 13px;
+    height: 36px;
+    padding: 18px 40px 18px 31px;
+    position: absolute;
+    top: 20px;
+    width: 258px;
+    z-index: 10;
+}
+
+.register_main .register_main_table tr td .email_ts .email_ts_top{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 18px;
+    position: absolute;
+    z-index: 11;
+}
+.register_main .register_main_table tr td .email_ts .email_ts_main{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -47px transparent;
+    font-size: 13px;
+    height: 36px;
+    padding: 18px 40px 18px 31px;
+    position: absolute;
+    top: 20px;
+    width: 258px;
+    z-index: 10;
+}
+
+.register_main .register_main_table tr td .password_ts .password_ts_top{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 18px;
+    position: absolute;
+    z-index: 11;
+}
+.register_main .register_main_table tr td .password_ts .password_ts_main{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -64px transparent;
+    font-size: 13px;
+    height: 33px;
+    padding: 18px 40px 0 31px;
+    position: absolute;
+    top: 20px;
+    width: 258px;
+    z-index: 10;
+}
+
+.register_main .register_main_table tr td .pass2_ts .pass2_ts_top{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 18px;
+    position: absolute;
+    z-index: 11;
+}
+.register_main .register_main_table tr td .pass2_ts .pass2_ts_main{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -64px transparent;
+    font-size: 13px;
+    height: 33px;
+    padding: 18px 40px 0 31px;
+    position: absolute;
+    top: 20px;
+    width: 258px;
+    z-index: 10;
+}
+.register_main .register_main_table tr td .register_error{
+    display: none;
+}
+.register_main .register_main_table tr td .register_error1{
+    font-size: 12px;
+}
+.register_main .register_main_table tr td .code_ts .code_ts_top{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 18px;
+    position: absolute;
+    z-index: 11;
+}
+.register_main .register_main_table tr td .code_ts .code_ts_main{
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -64px transparent;
+    font-size: 13px;
+    height: 33px;
+    padding: 18px 40px 0 31px;
+    position: absolute;
+    top: 20px;
+    width: 258px;
+    z-index: 10;
+}
+.register_main .register_main_table tr td .error1{
+    background: url("/images/Register/register3.png")no-repeat scroll 0 -115px transparent;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    padding-left: 35px;
+}
+.register_main .register_main_table tr td .error2{
+    background: url("/images/Register/register3.png")no-repeat scroll 0 -133px transparent;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    padding-left: 35px;
+    color: red;
+    z-index: 0;
+}
+.register_main .register_main_table tr td .error3{
+    background: none;
+    color: #666;
+}
+
+.register_main .register_main_table tr td span.code_icon {
+    background: url("/images/Register/register2.png") no-repeat scroll -24px -109px transparent;
+    height: 25px;
+    position: absolute;
+    width: 30px;
+    z-index: 10;
+}
+.register_main .register_main_table tr td input.re_code {
+    background: url("/images/Register/register2.png") no-repeat scroll -66px -161px transparent;
+    width: 78px;
+}
+.register_main .register_main_table tr td.ui_register {
+    margin-top: 20px;
+}
+.register_main .register_main_table tr td.user_input span img {
+    cursor: pointer;
+    left: 113px;
+    position: absolute;
+    top: -14px;
+}
+.register_main .register_main_table tr td.user_input em {
+    font-size: 13px;
+    left: 227px;
+    position: absolute;
+    top: 22px;
+}
+
+.register_main .register_main_table tr td.user_input {
+    height: 51px;
+    width: 280px;
+}
+.register_main .register_main_right {
+    border-left: 2px solid #EEEEEE;
+    height: 400px;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    width: 245px;
+    z-index: 1;
+}
+.register_main .register_main_right table {
+    margin: auto;
+    padding: 0 20px 20px;
+}
+.register_main .register_main_table tr td span img.code_img {
+    position:relative;
+    width: 100px;
+    min-width: 100px;
+    height: 50px;
+    float: left;
+}
