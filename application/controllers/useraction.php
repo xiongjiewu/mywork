@@ -34,8 +34,8 @@ class Useraction extends CI_Controller
             exit;
         }
         $info['infoId'] = $data['dyId'];
-        $info['userName'] = "xiongjiewu";
-        $info['userId'] = 1;
+        $info['userName'] = $this->userName;
+        $info['userId'] = $this->userId;
         $info['content'] = trim($data['content']);
         $info['time'] = time();
         $this->load->model('Yingping');

@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f75c339-6a28-458f-aaa2-2d91454dc7b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536595799" ignored="false" />
-    <file path="/useraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536143382" ignored="false" />
+    <file path="/useraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536823107" ignored="false" />
     <file path="/common.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536199233" ignored="false" />
     <file path="/detail.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536469810" ignored="false" />
     <file path="/detail.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536508146" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536824763" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,17 @@
     <favorites_list name="dianying8" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="useraction.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="43" selection-start="822" selection-end="822" vertical-scroll-proportion="-0.09090909">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -48,11 +59,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
         <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/controllers/detail.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
         <option value="$PROJECT_DIR$/js/dianying/detail.js" />
+        <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
       </list>
     </option>
   </component>
@@ -218,7 +229,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="27" width="1275" height="746" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -230,7 +241,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -330,13 +341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="63" selection-start="1631" selection-end="1631" vertical-scroll-proportion="-16.538462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/common.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="62" selection-start="1630" selection-end="1633" vertical-scroll-proportion="0.21818182">
@@ -366,6 +370,13 @@
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="43" selection-start="822" selection-end="822" vertical-scroll-proportion="-0.09090909">
+          <folding />
         </state>
       </provider>
     </entry>
