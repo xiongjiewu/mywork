@@ -13,7 +13,7 @@ class Useraction extends CI_Controller
 
     private function _checkLogin()
     {
-        if (empty($this->userId)) {//已登录，跳转至首页
+        if (empty($this->userId)) {
             return false;
         }
         return true;
@@ -21,11 +21,11 @@ class Useraction extends CI_Controller
 
     public function post()
     {
-        if (!$this->_checkLogin()) {
-            $this->jump_to("/error/index/2");
+        $data = $this->input->post();
+        if (!$this->_checkLogin()) {//未登录
+            $this->jump_to("/error/index/2?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}")));
             exit;
         }
-        $data = $this->input->post();
         if (empty($data['dyId'])) {
             echo "参数错误";
             exit;
@@ -41,7 +41,8 @@ class Useraction extends CI_Controller
         $this->load->model('Yingping');
         $res = $this->Yingping->insertYingpingInfo($info);
         if (empty($res)) {
-
+            $this->jump_to("/error/index/3?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}")));
+            exit;
         } else {
             $this->jump_to("/detail/index/{$data['dyId']}#createpost");
         }
@@ -54,11 +55,15 @@ class Useraction extends CI_Controller
         }
         $data = $this->input->post();
         if (empty($data['pid'])) {
-            return false;
+            return array("code" => "error","info" => "非法操作");
         }
         $this->load->model('Yingping');
         $res = $this->Yingping->updateYingpingInfoById($data['pid'],array("ding" => "ding + 1"));
-        return json_encode(array("code" => "ok","info" => "操作成功"));
+        if (empty($res)) {
+            return json_encode(array("code" => "error","info" => "网络连接失败，清重新操作！"));
+        } else {
+            return json_encode(array("code" => "ok","info" => "操作成功"));
+        }
     }
 
 }

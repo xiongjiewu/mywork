@@ -83,6 +83,7 @@ $config['base_uri'] = "";
 $config['error_code'] = array(
     1 => array("content" => "您访问的内容或者网页不存在","return_url" => "/"),
     2 => array("content" => "您需要登录才可以发表评论","return_url" => "/"),
+    3 => array("content" => "网络连接失败，请重新操作！","return_url" => "/"),
 );
 
 $config['movie_type'] = array(

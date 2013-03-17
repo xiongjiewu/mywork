@@ -10,6 +10,10 @@ class Error extends CI_Controller {
             $index = empty($index) ? 1 : $index;
             $errorCode = get_config_value("error_code");
             $pageCode = $errorCode[$index];
+            $bgurl = base64_decode($this->input->get("bgurl"));
+            if (!empty($bgurl)) {
+                $pageCode['return_url'] = $bgurl;
+            }
             $this->set_attr("pageCode",$pageCode);
             $this->load->set_css(array("css/error/error.css"));
             $this->load->set_top_index(-1);

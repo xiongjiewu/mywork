@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f75c339-6a28-458f-aaa2-2d91454dc7b1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/error.php" afterPath="$PROJECT_DIR$/application/controllers/error.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536595799" ignored="false" />
-    <file path="/useraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536823107" ignored="false" />
+    <file path="/useraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363537348420" ignored="false" />
     <file path="/common.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536199233" ignored="false" />
     <file path="/detail.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536469810" ignored="false" />
     <file path="/detail.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536508146" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363536824763" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363537439412" ignored="false" />
+    <file path="/error.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363537106933" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +37,34 @@
       <file leaf-file-name="useraction.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="43" selection-start="822" selection-end="822" vertical-scroll-proportion="-0.09090909">
+            <state line="41" column="58" selection-start="1105" selection-end="1105" vertical-scroll-proportion="1.1090909">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/error.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="48" selection-start="286" selection-end="286" vertical-scroll-proportion="-6.923077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="5" selection-start="197" selection-end="197" vertical-scroll-proportion="-6.1538463">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/config/common.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="41" selection-start="1677" selection-end="1677" vertical-scroll-proportion="-5.6153846">
               <folding />
             </state>
           </provider>
@@ -59,14 +89,16 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/controllers/detail.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
         <option value="$PROJECT_DIR$/js/dianying/detail.js" />
+        <option value="$PROJECT_DIR$/application/controllers/error.php" />
+        <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="5" />
     <option name="y" value="27" />
@@ -146,24 +178,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dianying" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,13 +327,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -337,13 +344,6 @@
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="9" selection-start="223" selection-end="305" vertical-scroll-proportion="0.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="62" selection-start="1630" selection-end="1633" vertical-scroll-proportion="0.21818182">
           <folding />
         </state>
       </provider>
@@ -373,9 +373,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="41" selection-start="1677" selection-end="1677" vertical-scroll-proportion="-5.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="48" selection-start="286" selection-end="286" vertical-scroll-proportion="-6.923077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="197" selection-end="197" vertical-scroll-proportion="-6.1538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="43" selection-start="822" selection-end="822" vertical-scroll-proportion="-0.09090909">
+        <state line="41" column="58" selection-start="1105" selection-end="1105" vertical-scroll-proportion="1.1090909">
           <folding />
         </state>
       </provider>
