@@ -820,14 +820,6 @@ form.bs-docs-example {
     bottom: 270px;
 }
 
-
-
-
-/* Responsive
--------------------------------------------------- */
-
-/* Desktop large
-------------------------- */
 @media (min-width: 1200px) {
     .bs-docs-container {
         max-width: 970px;
@@ -850,8 +842,7 @@ form.bs-docs-example {
         padding-left: 10px;
         padding-right: 10px;
     }
-
-    /* Inline-block quick links for more spacing */
+/* Inline-block quick links for more spacing */
     .quick-links li {
         display: inline-block;
         margin: 5px;

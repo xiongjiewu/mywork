@@ -1153,6 +1153,17 @@ class CI_Loader {
     {
         return $this->show_head_img;
     }
+
+    public $move_js = true;
+
+    public function set_move_js($show = true)
+    {
+        $this->move_js = $show;
+    }
+    public function get_move_js()
+    {
+        return $this->move_js;
+    }
 }
 
 /* End of file Loader.php */

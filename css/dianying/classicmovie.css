@@ -1,0 +1,41 @@
+div.bs-docs-sidebar,ul.bs-docs-sidenav {
+    width: 180px;
+}
+ul.bs-docs-sidenav li {
+    width: 100%;
+    float: left;
+}
+ul.bs-docs-sidenav li a {
+    float: left;
+    width: 160px;
+}
+ul li.dy_title_text a,ul li.dy_title_text a:hover {
+    cursor: default;
+    background-color: #fff;
+    color: #0088CC;
+}
+.span9 {
+    width: 900px;
+}
+div.span9 table.table {
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+    width: 200px;
+}
+div.span9 table.firstRow {
+    margin-top: 45px;
+}
+div.span9 table.table tr td.info_image img{
+    width: 180px;
+    height: 150px;
+}
+div.span9 table.page {
+    float: left;
+    width: 100%;
+}
+div.span9 table.page tr td {
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 20px;
+}

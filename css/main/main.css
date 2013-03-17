@@ -72,7 +72,17 @@ div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_m
     border: none;
     line-height: 10px;
 }
+div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a.active {
+    color: #0088CC;
+}
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a:hover {
     color:#0088CC ;
     font-size:13px ;
+}
+a.enable,a.enable:hover {
+    color: #999;
+    cursor: default;
+}
+.bs-docs-sidenav.affix-bottom {
+    position: relative;
 }

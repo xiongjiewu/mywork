@@ -58,11 +58,11 @@
                             <?php if (!empty($menuVal['index']) && ($menuVal['index'] == "list")): ?>
                                 <div class="dy_type_list">
                                     <table class="table">
-                                        <?php foreach($menuVal['type_info'] as $infoVal):?>
+                                        <?php foreach($menuVal['type_info'] as $infokey => $infoVal):?>
                                         <tr>
                                             <th><?php echo $infoVal['type'];?></th>
                                             <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
-                                                <td><a href="<?php echo $infoVal['base_url'] . $key;?>"><?php echo $infoDetail;?></a></td>
+                                                <td><a <?php if ($index == $menuKey && $infokey == $data['bigtype'] && $key == $data['type']):?>class="active" <?php endif;?> href="<?php echo $infoVal['base_url'] . $key;?>"><?php echo $infoDetail;?></a></td>
                                             <?php endforeach;?>
                                         </tr>
                                         <?php endforeach;?>
@@ -188,6 +188,7 @@
         });
     })(jQuery);
 </script>
+<?php if($this->load->get_move_js()):?>
 <script src="/js/base/bootstrap-transition.js"></script>
 <script src="/js/base/bootstrap-alert.js"></script>
 <script src="/js/base/bootstrap-modal.js"></script>
@@ -204,5 +205,6 @@
 <script src="/js/base/holder/holder.js"></script>
 <script src="/js/base/google-code-prettify/prettify.js"></script>
 <script src="/js/base/application.js"></script>
+<?php endif;?>
 </body>
 </html>

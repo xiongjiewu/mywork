@@ -91,14 +91,51 @@ class CI_Controller
         $result = array();
         $totalPage = ceil($totalCount / $size);
         $min = $page - $bNum;
+        if ($bNum >= ($totalPage - $page)) {
+            $min -= ($bNum -$totalPage + $page);
+        }
         $min = ($min <= 0) ? 1 : $min;
         $max = $page + $bNum;
+        if ($page <=  $bNum) {
+            $max +=  ($bNum + 1 - $page);
+        }
         $max = ($max > $totalPage) ? $totalPage : $max;
+        if ($page == 1) {
+            $result[] = array(
+                "link" => "javascript:void(0)",
+                "page" => "<<",
+                "able" => false,
+                "current" => false,
+            );
+        } else {
+            $result[] = array(
+                "link" => $base_url . ($page - 1),
+                "page" => "<<",
+                "able" => true,
+                "current" => false,
+            );
+        }
         for ($i = $min; $i <= $max; $i++) {
             $result[] = array(
                 "link" => $base_url . $i,
                 "page" => $i,
+                "able" => true,
                 "current" => ($i == $page) ? true : false,
+            );
+        }
+        if ($page == $totalPage) {
+            $result[] = array(
+                "link" => "javascript:void(0)",
+                "page" => ">>",
+                "able" => false,
+                "current" => false,
+            );
+        } else {
+            $result[] = array(
+                "link" => $base_url . ($page + 1),
+                "page" => ">>",
+                "able" => true,
+                "current" => false,
             );
         }
         return $result;

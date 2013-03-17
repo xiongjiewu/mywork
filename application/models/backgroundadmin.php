@@ -267,19 +267,17 @@ class Backgroundadmin extends CI_Model {
         if (!isset($type) || !isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where type = 1 and del = {$del} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where type = {$type} and del = {$del} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
-    public function getDetailInfoCountByType($type,$offset,$limit,$del = 0)
+    public function getDetailInfoCountByType($type,$del = 0)
     {
         $type = intval($type);
-        $offset = intval($offset);
-        $limit = intval($limit);
-        if (!isset($type) || !isset($offset) || !isset($limit)) {
+        if (!isset($type)) {
             return false;
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where type = 1 and del = {$del} limit {$offset},$limit";
+        $sql = "select count(1) as cn from tbl_detailInfo where type = 1 and del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];

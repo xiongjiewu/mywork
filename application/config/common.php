@@ -84,6 +84,24 @@ $config['error_code'] = array(
     1 => array("content" => "您访问的内容或者网页不存在","return_url" => "/"),
 );
 
+$config['movie_type'] = array(
+    array(
+        "type" => "类型",
+        "base_url" => get_url("/classicmovie/type/"),
+        "info" => $config['movieType'],
+    ),
+    array(
+        "type" => "年份",
+        "base_url" => get_url("/classicmovie/year/"),
+        "info" => array(2008 => 2008,2009 => 2009,2010 => 2010,2011 => 2011,2012 => 2012,2013 => 2013),
+    ),
+    array(
+        "type" => "地区",
+        "base_url" => get_url("/classicmovie/place/"),
+        "info" => $config['moviePlace'],
+    ),
+);
+
 $config['menus'] = array(
     array(
         "index" => "",
@@ -108,23 +126,7 @@ $config['menus'] = array(
         "titlle" => "重温经典",
         "link" => get_url("/classicmovie/"),
         "class" => "dy_sort",
-        "type_info" => array(
-            array(
-                "type" => "类型",
-                "base_url" => get_url("/classicmovie/type/"),
-                "info" => $config['movieType'],
-            ),
-            array(
-                "type" => "年份",
-                "base_url" => get_url("/classicmovie/year/"),
-                "info" => array(2008 => 2008,2009 => 2009,2010 => 2010,2011 => 2011,2012 => 2012,2013 => 2013),
-            ),
-            array(
-                "type" => "地区",
-                "base_url" => get_url("/classicmovie/place/"),
-                "info" => $config['moviePlace'],
-            ),
-        ),
+        "type_info" => $config['movie_type'],
     ),
 );
 $config['background_menus'] = array(
