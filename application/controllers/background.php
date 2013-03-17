@@ -128,7 +128,7 @@ class Background extends CI_Controller {
             $downloadType = $dataData['downloadType'];
         }
         unset($dataData['downloadType']);
-
+        $dataData['nianfen'] = date("Y",strtotime($dataData['nianfen']));
         $dataData['image'] = $dataData['image_url'];
         unset($dataData['image_url']);
         unset($dataData['submit']);
@@ -405,6 +405,7 @@ class Background extends CI_Controller {
         }
         unset($dataData['downloadType']);
 
+        $dataData['nianfen'] = date("Y",strtotime($dataData['nianfen']));
         $dataData['image'] = $dataData['image_url'];
         unset($dataData['image_url']);
         unset($dataData['submit']);

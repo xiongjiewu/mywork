@@ -39,3 +39,19 @@ div.span9 table.page tr td {
     text-align: center;
     padding: 20px;
 }
+div.span9 table.error_table {
+    width: 100%;
+    float: left;
+    margin-top: 45px;
+}
+div.span9 table.error_table tr td {
+    padding: 50px 0;
+}
+div.span9 table.error_table tr td.image {
+    width: 180px;
+    height: 150px;
+}
+div.span9 table.error_table tr td.text {
+    border-left:none ;
+    padding-top: 120px;
+}

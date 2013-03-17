@@ -72,7 +72,7 @@
                         </li>
                     <?php endforeach;?>
                     <li class="search" style="margin-left: 150px">
-                        <form name="search_dy" id="search_dy" action="">
+                        <form name="search_dy" id="search_dy" action="<?php echo get_url("/search/");?>">
                             <input type="text" class="search_value" name="search" id="search" value="搜索您喜欢的影片...">
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
@@ -158,15 +158,24 @@
         };
         $(document).ready(function () {
             $("#search").bind("focus", function () {
-                var search_val = $.trim($("#search").val());
+                var search_val = $.trim($(this).val());
                 if (search_val == "搜索您喜欢的影片...") {
                     $("#search").val("");
                 }
             });
             $("#search").bind("blur", function () {
-                var search_val = $.trim($("#search").val());
+                var search_val = $.trim($(this).val());
                 if (!search_val || search_val == undefined) {
                     $("#search").val("搜索您喜欢的影片...");
+                }
+            });
+            $("#search_dy").submit(function(){
+                var search_val = $.trim($("#search").val());
+                if (!search_val || (search_val == "搜索您喜欢的影片...")) {
+                    window.location.href = "<?php echo get_url("/classicmovie/");?>";
+                    return false;
+                } else {
+                    return true;
                 }
             });
             $("div.head_top_menus ul.nav li.dy_sort").mouseover(function () {

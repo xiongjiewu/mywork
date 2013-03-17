@@ -277,7 +277,55 @@ class Backgroundadmin extends CI_Model {
         if (!isset($type)) {
             return false;
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where type = 1 and del = {$del}";
+        $sql = "select count(1) as cn from tbl_detailInfo where type = {$type} and del = {$del}";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
+
+    public function getDetailInfoByNianFen($nianfen,$offset,$limit,$del = 0)
+    {
+        $nianfen = intval($nianfen);
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($nianfen) || !isset($offset) || !isset($limit)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where nianfen = {$nianfen} and del = {$del} limit {$offset},$limit";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function getDetailInfoCountByNianFen($nianfen,$del = 0)
+    {
+        $nianfen = intval($nianfen);
+        if (!isset($nianfen)) {
+            return false;
+        }
+        $sql = "select count(1) as cn from tbl_detailInfo where nianfen = {$nianfen} and del = {$del}";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
+
+    public function getDetailInfoByDiQ($diqu,$offset,$limit,$del = 0)
+    {
+        $diqu = intval($diqu);
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($diqu) || !isset($offset) || !isset($limit)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where diqu = {$diqu} and del = {$del} limit {$offset},$limit";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function getDetailInfoCountByDiQu($diqu,$del = 0)
+    {
+        $diqu = intval($diqu);
+        if (!isset($diqu)) {
+            return false;
+        }
+        $sql = "select count(1) as cn from tbl_detailInfo where diqu = {$diqu} and del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
