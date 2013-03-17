@@ -330,4 +330,14 @@ class Backgroundadmin extends CI_Model {
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
+
+    public function getDetailInfoBySearchW($searchW,$limit=10)
+    {
+        if (!isset($searchW)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where name like '{$searchW}%' and del = 0 limit {$limit};";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }

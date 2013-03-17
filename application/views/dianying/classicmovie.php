@@ -31,6 +31,9 @@
                 <tr>
                     <td>导演：<?php echo $movieVal['daoyan'];?></td>
                 </tr>
+                <tr>
+                    <td>地区：<?php echo $moviePlace[$movieVal['diqu']];?></td>
+                </tr>
             </table>
         <?php endforeach;?>
         <?php if ($mouvieCount > $limit):?>
