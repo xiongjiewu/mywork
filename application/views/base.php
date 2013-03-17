@@ -72,7 +72,7 @@
                         </li>
                     <?php endforeach;?>
                     <li class="search" style="margin-left: 150px">
-                        <form name="search_dy" id="search_dy" action="<?php echo get_url("/search/");?>">
+                        <form name="search_dy" id="search_dy" onsubmit="return false;" action="<?php echo get_url("/search/");?>">
                             <input type="text" class="search_value" name="search" id="search" value="搜索您喜欢的影片...">
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
@@ -154,6 +154,14 @@
             },
             removeClass: function (obj, c) {
                 obj.removeClass(c);
+            },
+            removeSpecailStr:function (s) {
+                var pattern = new RegExp("[`~!@#$^&*()=|{}':;'%+《》『』,\\[\\].<>/?~！@#￥……&*（）&mdash;—|{}【】‘；：”“'。，、？]");
+                var rs = "";
+                for (var i = 0; i < s.length; i++) {
+                    rs = rs + s.substr(i, 1).replace(pattern, '');
+                }
+                return rs;
             }
         };
         $(document).ready(function () {
@@ -171,11 +179,14 @@
             });
             $("#search_dy").submit(function(){
                 var search_val = $.trim($("#search").val());
+                    search_val = initOjb.removeSpecailStr(search_val);
                 if (!search_val || (search_val == "搜索您喜欢的影片...")) {
                     window.location.href = "<?php echo get_url("/classicmovie/");?>";
                     return false;
                 } else {
-                    return true;
+
+                    window.location.href = "<?php echo get_url("/search/index/");?>" + search_val;
+                    return false;
                 }
             });
             $("div.head_top_menus ul.nav li.dy_sort").mouseover(function () {
