@@ -77,7 +77,9 @@
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
                     </li>
+                    </ul>
                     <?php if (!empty($userName)): ?>
+                    <ul class="nav" style="float: right">
                         <li class="username">
                             <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?></a>
                             <div class="user_in">
@@ -90,8 +92,10 @@
                                 </table>
                             </div>
                         </li>
+                    </ul>
                     <?php else: ?>
-                        <li class="loginr" style="margin-left: 100px;">
+                    <ul class="nav" style="float: right">
+                        <li class="loginr">
                             <a href="<?php echo get_url("/login/"); ?>" title="登录" style="padding-left: 5px;padding-right: 5px">
                                 <i class="icon-user icon-user"></i>
                             </a>
@@ -101,8 +105,8 @@
                                 <i class="icon-edit icon-user"></i>
                             </a>
                         </li>
+                    </ul>
                     <?php endif;?>
-                </ul>
             </div>
         </div>
     </div>

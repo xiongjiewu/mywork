@@ -103,14 +103,14 @@ class CI_Controller
         if ($page == 1) {
             $result[] = array(
                 "link" => "javascript:void(0)",
-                "page" => "<<",
+                "page" => "«",
                 "able" => false,
                 "current" => false,
             );
         } else {
             $result[] = array(
                 "link" => $base_url . ($page - 1),
-                "page" => "<<",
+                "page" => "«",
                 "able" => true,
                 "current" => false,
             );
@@ -126,14 +126,14 @@ class CI_Controller
         if ($page == $totalPage) {
             $result[] = array(
                 "link" => "javascript:void(0)",
-                "page" => ">>",
+                "page" => "»",
                 "able" => false,
                 "current" => false,
             );
         } else {
             $result[] = array(
                 "link" => $base_url . ($page + 1),
-                "page" => ">>",
+                "page" => "»",
                 "able" => true,
                 "current" => false,
             );
