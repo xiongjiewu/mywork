@@ -65,5 +65,25 @@ class Useraction extends CI_Controller
             return json_encode(array("code" => "ok","info" => "操作成功"));
         }
     }
-
+    public function uploadpho()
+    {
+        $img = $this->input->post("userpho");
+        if (empty($img)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+        if (!$this->_checkLogin()) {
+            echo json_encode(array("code" => "error","info" => "请先登录"));
+            exit;
+        }
+        $this->load->model('User');
+        $result = $this->User->updateUserInfo(array("photo" => $img),array("id" => $this->userId));
+        if (empty($result)) {
+            echo json_encode(array("code" => "success","info" => "网络连接失败，请重新尝试！"));
+            exit;
+        } else {
+            echo json_encode(array("code" => "success","info" => "上传成功"));
+            exit;
+        }
+    }
 }

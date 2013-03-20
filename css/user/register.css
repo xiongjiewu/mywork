@@ -314,3 +314,13 @@
     height: 50px;
     float: left;
 }
+div.doing {
+    display: none;
+    top: 45px;
+    position: absolute;
+    width: 96%;
+    height: 98%;
+    z-index: 9999;
+    background: url("/images/icon/move.gif") no-repeat scroll 50% 30% #FFFFFF;
+    opacity: 0.6;
+}

@@ -24,9 +24,15 @@ class Detail extends CI_Controller {
         $this->load->model('Yingping');
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,10);
         if (!empty($YingpingInfo)) {
+            $userIds = array();
             foreach($YingpingInfo as $InfoKey => $infoVal) {
                 $YingpingInfo[$InfoKey]['content'] = $this->ubb2Html($infoVal['content']);
+                $userIds[] = $infoVal['userId'];
             }
+            $this->load->model('User');
+            $userInfos = $this->User->getUserInfosByIds($userIds);
+            $userInfos = $this->initArrById($userInfos,"id");
+            $this->set_attr("userInfos",$userInfos);
         }
         $this->set_attr("YingpingInfo",$YingpingInfo);
 
@@ -36,6 +42,7 @@ class Detail extends CI_Controller {
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
         $this->set_attr("dyInfo",$dyInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);

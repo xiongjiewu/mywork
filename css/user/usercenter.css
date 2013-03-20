@@ -1,0 +1,321 @@
+div.row {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+div.left_container {
+    float: left;
+    width: 190px;
+    margin-top: 6px;
+}
+
+.side-boxer {
+    position: relative;
+}
+
+.side-boxer * {
+    overflow: visible;
+}
+
+.user-info {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    height: 83px;
+    padding: 18px 0 0 22px;
+    position: relative;
+    width: 166px;
+    z-index: 1;
+}
+
+.user-info img {
+    border: 1px solid #B2B2B2;
+    display: block;
+    float: left;
+    height: 56px;
+    margin-top: 2px;
+    width: 56px;
+}
+
+.user-info dl {
+    float: left;
+    line-height: 20px;
+    padding-left: 12px;
+    width: 85px;
+}
+
+dl, dt, dd {
+    list-style: none outside none;
+    overflow: hidden;
+}
+
+.side-menu {
+    position: relative;
+    z-index: 1;
+}
+
+.side-menu a.menu-item {
+    background: url("/images/common/user_c.png") repeat-x scroll 0 -241px transparent;
+    border: 1px solid #CCCCCC;
+    color: #333333;
+    display: block;
+    font-size: 14px;
+    height: 33px;
+    margin-top: -1px;
+    padding: 13px 0 0 22px;
+    width: 166px;
+}
+
+
+.side-menu a.menu-item:hover {
+    background: url("/images/common/user_c.png") repeat-x 0 -290px;
+    color: #333;
+    text-decoration: none;
+}
+
+.side-menu a.menu-focus, .side-menu a.menu-focus:hover {
+    background: url("/images/common/user_c.png") repeat-x scroll 0 -339px transparent;
+    border: 1px solid #59A20F;
+    color: #FFFFFF;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+a:link, a:visited, a:active {
+    color: #0041D9;
+    outline: medium none;
+}
+
+.side-menu a.menu-focus .collection {
+    background-position: 0 -120px;
+}
+
+.side-menu .collection {
+    background-position: 0 -20px;
+}
+
+.side-menu i {
+    background: url("/images/common/user_c.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 14px;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    width: 14px;
+}
+.side-menu .recommend {
+    background-position: 0 -40px;
+}
+
+.side-menu .manpropcond {
+    background-position: 0 -80px;
+}
+.side-menu i.icon-edit {
+    background-image: url("/images/icon/glyphicons-halflings.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    background-position: -96px -72px;
+    margin-right: 5px;
+    margin-top: 2px;
+    vertical-align: text-top;
+    width: 14px;
+}
+
+.side-menu .ask {
+    background-position: 0 -100px;
+}
+
+.side-menu a.menu-focus .arrow-icon {
+    display: block;
+}
+
+.side-menu .arrow-icon {
+    background: url("/images/common/user_c.png") no-repeat scroll -1px -220px transparent;
+    display: none;
+    font-size: 0;
+    height: 11px;
+    line-height: 0;
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    width: 6px;
+}
+
+.side-boxer .shadow-boxer {
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 2px #DDDDDC;
+    height: 336px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 188px;
+    z-index: 0;
+}
+
+.responsive-utilities-test li + li {
+    margin-left: 0;
+}
+
+div.bs-docs-example {
+    float: left;
+    margin-top: 6px;
+    width: 850px;
+}
+
+div.bs-docs-example div.user_image {
+    float: left;
+    width: 120px;
+    height: 150px;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+div.bs-docs-example div.user_image img {
+    width: 100%;
+    height: 120px;
+}
+
+div.user_image span {;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 79%;
+    height: 20px;
+    text-align: center;
+    z-index: 99;
+}
+
+div.user_image input {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    z-index: 101;
+    opacity: 0;
+    cursor: pointer;
+}
+
+div.user_image  span.upload, div.user_image  span.cancel {
+    width: 35px;
+    display: none;
+}
+
+div.user_image  span.cancel {
+    left: 60px;
+}
+
+div.doing {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 120px;
+    z-index: 9999;
+    background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
+    opacity: 0.6;
+}
+
+.right_container {
+    float: left;
+    margin-top: 6px;
+    overflow: visible;
+    text-align: left;
+    width: 900px;
+    margin-left: 20px;
+}
+.main-tab {
+    border-left: 1px solid #CCCCCC;
+    height: 39px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    margin: 0 auto;
+}
+#usermain {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin-top: -1px;
+    float: left;
+    padding-bottom: 20px;
+    width: 100%;
+}
+#usermain .show {
+    margin: 0;
+    padding: 25px 0 30px 24px;
+    width: 95%;
+    float: left;
+}
+.modbox2 {
+    margin: 0 0 0 3px;
+    overflow: visible;
+    float: left;
+    width: 100%;
+}
+
+.main-tab a:link, .main-tab a:visited, .main-tab a:active {
+    color: #333333;
+}
+.main-tab .tab-focus, .main-tab .tab-focus:hover {
+    background: url("/images/common/user_c.png") repeat-x scroll 0 -390px transparent;
+    font-weight: bold;
+}
+.main-tab a {
+    background: url("/images/common/user_c.png") repeat-x scroll 0 -474px transparent;
+    border-right: 1px solid #CCCCCC;
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 24px 0 25px;
+}
+.main-tab a:hover {
+    background: url("/images/common/user_c.png") repeat-x scroll 0 -432px transparent;
+    color: #333333;
+    text-decoration: none;
+}
+.modbox2 table.table {
+    width: 100%;
+    float: left;
+}
+.modbox2 table.table tr th {
+    height: 20px;
+    text-align: center;
+}
+.modbox2 table.table tr td {
+    text-align: center;
+}
+.modbox2 table.table tr td.name {
+    width: 120px;
+}
+
+.modbox2 table.table tr td.daoyan {
+    width: 80px;
+}
+
+.modbox2 table.table tr td.nianfen {
+    width: 50px;
+}
+.modbox2 table.table tr td.type {
+    width: 50px;
+}
+.modbox2 table.table tr td.shichang,.modbox2 table.table tr td.diqu {
+    width: 50px;
+}
+.modbox2 table.table tr td.chose {
+    width: 30px;
+}
+.modbox2 table.table tr td.action {
+    width: 50px;
+}
+.modbox2 table.table tr th span.chose_all,.modbox2 table.table tr td.action span {
+    color: #0088CC;
+    cursor: pointer;
+}

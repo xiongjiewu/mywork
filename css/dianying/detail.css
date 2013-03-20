@@ -1,3 +1,6 @@
+ul.dy_bs-docs-sidenav {
+    position: fixed;
+}
 .dy_detail {
     padding-top: 35px;
 }
@@ -162,4 +165,11 @@ div.create_post_button span {
 }
 .pllist .notFirst {
    margin-top: 10px;
+}
+.left a,.left a:hover {
+    text-decoration: none;
+    color: #0088CC;
+}
+table.dy_detail_table tr td table.dy_info_table tr td {
+    border: none;
 }

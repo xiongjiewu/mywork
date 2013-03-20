@@ -139,11 +139,12 @@ class Resgiteraction extends CI_Controller {
         $info['password'] = base64_encode(md5($data['password2']));
         $info['ip'] = ip2long($this->getUserIP());
         $info['time'] = time();
+        $info['photo'] = get_config_value("user_photo");
         $this->load->model('User');
         $id = $this->User->insertUserInfo($info);
         if (!empty($id)) {
             $this->setLoginCookie($info['userName'],$id);
-            echo json_encode(array("code" => "success","info" => "success"));
+            echo json_encode(array("code" => "success","info" => base64_encode($id)));
             exit;
         } else {
             echo json_encode(array("code" => "sorry","info" => "网络链接失败，请重新尝试！"));

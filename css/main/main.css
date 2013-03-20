@@ -1,3 +1,9 @@
+body{
+    background: url("/images/common/pattern.png") repeat 0 0 transparent;
+}
+table,div.bs-docs-sidebar ul li a{
+    background-color: #fff;
+}
 /*搜索框*/
 ul li.search {
     width: 190px;

@@ -340,4 +340,15 @@ class Backgroundadmin extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function getHotYingDyInfos($limit)
+    {
+        $limit = intval($limit);
+        if (empty($limit)) {
+            return array();
+        }
+        $sql = "SELECT COUNT(infoId) AS cn,infoId FROM `tbl_yingping` GROUP BY infoId ORDER BY cn DESC limit {$limit};";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }

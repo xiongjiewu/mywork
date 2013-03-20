@@ -1,16 +1,16 @@
 (function ($) {
     var init = {
-        check_mouseover:function (t) {
+        check_mouseover: function (t) {
             var p = t.parent();
             var e = p.next();
             e.find("div.register_error").show();
         },
-        check_mouseleave:function (t) {
+        check_mouseleave: function (t) {
             var p = t.parent();
             var e = p.next();
             e.find("div.register_error").hide();
         },
-        check_focus:function (t) {
+        check_focus: function (t) {
             var p = t.parent();
             var e = p.next();
             e.find("div.register_error1").removeClass("error1");
@@ -18,12 +18,12 @@
             e.find("div.register_error1").addClass("error3");
             e.find("div.register_error1").html("");
         },
-        error_common:function(e,title) {
+        error_common: function (e, title) {
             e.find("div.register_error1").addClass("error2");
             e.find("div.register_error1").html(title);
             return false;
         },
-        check_blur:function (t) {
+        check_blur: function (t) {
             var p = t.parent();
             var e = p.next();
             var title = t.prev().html();
@@ -31,18 +31,18 @@
             var value = $.trim(t.val());
             e.find("div.register_error1").removeClass("error3");
             if (!value) {
-                return this.error_common(e,title + "不能为空");
+                return this.error_common(e, title + "不能为空");
             } else {
                 var name = t.attr("name");
                 if (name == "user") {
                     if (value.length < 2) {
-                        return this.error_common(e,title + "不能少于2个字符");
+                        return this.error_common(e, title + "不能少于2个字符");
                     } else if (value.length > 20) {
-                        return this.error_common(e,title + "不能超过20个字符");
+                        return this.error_common(e, title + "不能超过20个字符");
                     } else {
                         var reg = /[^\u0391-\uFFE5\w_]/;
                         if (reg.test(value)) {
-                            return this.error_common(e,title + "只能由中英文、数字和下划线组成");
+                            return this.error_common(e, title + "只能由中英文、数字和下划线组成");
                         } else {
                             return true;
                         }
@@ -50,35 +50,36 @@
                 } else if (name == "email") {
                     var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
                     if (!reg.test(value)) {
-                        return this.error_common(e,title + "格式不正确");
+                        return this.error_common(e, title + "格式不正确");
                     } else {
                         return true;
                     }
                 } else if (name == "pass1") {
                     if (value.length < 6) {
-                        return this.error_common(e,title + "不能少于6个字符");
+                        return this.error_common(e, title + "不能少于6个字符");
                     } else {
                         e.find("div.register_error1").addClass("error1");
                         return true;
                     }
                 } else if (name == "pass2") {
                     var v = $.trim($("input[name='pass1']").val());
-                    if (v != value) {;
-                        return this.error_common(e,title + "和登录密码不一致");
+                    if (v != value) {
+                        ;
+                        return this.error_common(e, title + "和登录密码不一致");
                     } else {
                         e.find("div.register_error1").addClass("error1");
                         return true;
                     }
                 } else if (name == "code") {
                     if (!value) {
-                        return this.error_common(e,title + "不能为空");
+                        return this.error_common(e, title + "不能为空");
                     } else {
                         return true;
                     }
                 }
             }
         },
-        checkUsername:function (obj, callback) {//登录帐号检查
+        checkUsername: function (obj, callback) {//登录帐号检查
             if (!this.check_blur(obj)) {
                 if (callback) {
                     callback(false);
@@ -86,11 +87,11 @@
             } else {
                 var username = obj.val();
                 $.ajax({
-                    type:"post",
-                    data:{username:username},
-                    url:"/resgiteraction/checkusername/",
-                    dataType:"json",
-                    success:function (result) {
+                    type: "post",
+                    data: {username: username},
+                    url: "/resgiteraction/checkusername/",
+                    dataType: "json",
+                    success: function (result) {
                         var c;
                         var p = obj.parent();
                         var e = p.next();
@@ -109,7 +110,7 @@
                 });
             }
         },
-        checkEmail:function(obj, callback) {
+        checkEmail: function (obj, callback) {
             if (!this.check_blur(obj)) {
                 if (callback) {
                     callback(false);
@@ -117,11 +118,11 @@
             } else {
                 var email = obj.val();
                 $.ajax({
-                    type:"post",
-                    data:{email:email},
-                    url:"/resgiteraction/checkemail/",
-                    dataType:"json",
-                    success:function (result) {
+                    type: "post",
+                    data: {email: email},
+                    url: "/resgiteraction/checkemail/",
+                    dataType: "json",
+                    success: function (result) {
                         var c;
                         var p = obj.parent();
                         var e = p.next();
@@ -140,7 +141,7 @@
                 });
             }
         },
-        checkCode:function(obj, callback) {
+        checkCode: function (obj, callback) {
             if (!this.check_blur(obj)) {
                 if (callback) {
                     callback(false);
@@ -148,11 +149,11 @@
             } else {
                 var code = obj.val();
                 $.ajax({
-                    type:"post",
-                    data:{code:code},
-                    url:"/resgiteraction/checkcode/",
-                    dataType:"json",
-                    success:function (result) {
+                    type: "post",
+                    data: {code: code},
+                    url: "/resgiteraction/checkcode/",
+                    dataType: "json",
+                    success: function (result) {
                         var c;
                         var p = obj.parent();
                         var e = p.next();
@@ -171,17 +172,17 @@
                 });
             }
         },
-        resgiterAction:function(username,email,password1,password2,code) {
+        resgiterAction: function (username, email, password1, password2, code) {
             $.ajax({
-                type:"post",
-                url:"/resgiteraction/resgiter/",
-                data:{username:username,email:email,password1:password1,password2:password2,code:code},
-                dataType:"json",
-                success:function (result) {
+                type: "post",
+                url: "/resgiteraction/resgiter/",
+                data: {username: username, email: email, password1: password1, password2: password2, code: code},
+                dataType: "json",
+                success: function (result) {
                     if (result.code == "sorry") {
                         alert(result.info);
                     } else {
-                        var obj = $("input[name='"+result.type+"']");
+                        var obj = $("input[name='" + result.type + "']");
                         var c;
                         var p = obj.parent();
                         var e = p.next();
@@ -189,8 +190,9 @@
                             e.find("div.register_error1").addClass("error2");
                             e.find("div.register_error1").html(result.info);
                             c = false;
+                            $("div.doing").hide();
                         } else {
-                            alert("成功注册！");
+                            window.location.href='/registersuccess?code=' + result.info;//成功注册
                         }
                     }
                 }
@@ -198,6 +200,16 @@
         }
     };
     $(document).ready(function () {
+        $("input[name='register_check']").attr("checked","checked");
+        $("input[name='register_check']").bind("click",function(){
+            if ($(this).attr("checked")) {
+                $("input[name='register_submit']").attr("disabled",false);
+                $("input[name='register_submit']").css("cursor","pointer");
+            } else {
+                $("input[name='register_submit']").attr("disabled",true);
+                $("input[name='register_submit']").css("cursor","default");
+            }
+        });
         $("input[name='user'],input[name='email'],input[name='pass1'],input[name='pass2'],input[name='code']").val("");
         $("input[name='user'],input[name='email'],input[name='pass1'],input[name='pass2'],input[name='code']").focus(function () {
             $(this).addClass("input_over");
@@ -244,22 +256,23 @@
         });
         $("#register_form").submit(function () {
             var check = 0;
-            init.checkUsername($("input[name='user']"),function(result){
+            init.checkUsername($("input[name='user']"), function (result) {
                 check += result;
-                init.checkEmail($("input[name='email']"),function(result){
+                init.checkEmail($("input[name='email']"), function (result) {
                     check += result;
                     $("input[name='pass1'],input[name='pass2']").each(function () {
-                        check  += init.check_blur($(this));
+                        check += init.check_blur($(this));
                     });
-                    init.checkCode($("input[name='code']"),function(result){
+                    init.checkCode($("input[name='code']"), function (result) {
                         check += result;
                         if (check == 5) {
+                            $("div.doing").show();
                             var username = $.trim($("input[name='user']").val());
                             var email = $.trim($("input[name='email']").val());
                             var password1 = $.trim($("input[name='pass1']").val());
                             var password2 = $.trim($("input[name='pass2']").val());
                             var code = $.trim($("input[name='code']").val());
-                            return init.resgiterAction(username,email,password1,password2,code);
+                            return init.resgiterAction(username, email, password1, password2, code);
                         } else {
                             return false;
                         }

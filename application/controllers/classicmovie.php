@@ -24,6 +24,11 @@ class Classicmovie extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByType($type);
+        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
+        if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
+            $page = ceil($mouvieCount / $limit);
+        }
         $movieList = $this->Backgroundadmin->getDetailInfoByType($type,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
@@ -34,8 +39,6 @@ class Classicmovie extends CI_Controller {
             $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
         }
         $this->set_attr("movieList",$movieList);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByType($type);
-        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         $this->set_attr("mouvieCount",$mouvieCount);
         $base_url = get_url("/classicmovie/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
@@ -61,6 +64,11 @@ class Classicmovie extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByNianFen($type);
+        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
+        if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
+            $page = ceil($mouvieCount / $limit);
+        }
         $movieList = $this->Backgroundadmin->getDetailInfoByNianFen($type,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
@@ -71,8 +79,6 @@ class Classicmovie extends CI_Controller {
             $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
         }
         $this->set_attr("movieList",$movieList);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByNianFen($type);
-        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         $this->set_attr("mouvieCount",$mouvieCount);
         $base_url = get_url("/classicmovie/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
@@ -98,6 +104,11 @@ class Classicmovie extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByDiQu($type);
+        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
+        if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
+            $page = ceil($mouvieCount / $limit);
+        }
         $movieList = $this->Backgroundadmin->getDetailInfoByDiQ($type,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
@@ -108,8 +119,6 @@ class Classicmovie extends CI_Controller {
             $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
         }
         $this->set_attr("movieList",$movieList);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByDiQu($type);
-        $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         $this->set_attr("mouvieCount",$mouvieCount);
         $base_url = get_url("/classicmovie/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);

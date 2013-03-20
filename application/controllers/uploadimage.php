@@ -33,6 +33,7 @@ class Uploadimage extends CI_Controller {
             $imageFullPathArr = explode("images",$imageFullPath);
             $imageFullPath = "/images" . $imageFullPathArr[1];
             $result["path"] = $imageFullPath;
+            unset($result["error"]);
         }
         $this->load->view('uploadfile/uploadfilereturn',array("data"=>$result));
     }

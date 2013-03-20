@@ -1,3 +1,4 @@
+<div class="doing"></div>
 <div class="register_main">
     <div class="register_top_top"></div>
     <form action="" id="register_form">

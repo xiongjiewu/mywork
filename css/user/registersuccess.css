@@ -1,0 +1,21 @@
+.register_main .register_top_middel {
+    height: 350px;
+}
+.register_main table.error_table {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.register_main table.error_table tr td {
+    padding: 50px 0;
+    border: none;
+}
+.register_main table.error_table tr td.image {
+    width: 180px;
+    height: 150px;
+}
+.register_main table.error_table tr td.text {
+    border-left:none ;
+    padding-top: 120px;
+}
