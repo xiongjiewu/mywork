@@ -24,4 +24,17 @@ class Shoucang extends CI_Model {
         $result = $query->result_array();
         return empty($result) ? array() : $result;
     }
+
+    public function updateUserShouCangInfoById($uId,$idArr = array())
+    {
+        $uId = intval($uId);
+        if (empty($uId) || empty($idArr)) {
+            return false;
+        }
+        $idArr = array_unique($idArr);
+        $idStr = implode(",",$idArr);
+        $where = "id in ({$idStr}) and userId = {$uId}";
+        $sql = $this->db->update_string('tbl_shoucang', array("del" =>0), $where);
+        return $this->db->query($sql);
+    }
 }

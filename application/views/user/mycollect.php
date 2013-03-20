@@ -9,7 +9,7 @@
                 <div class="modbox2">
                     <table class="table table-bordered">
                         <tr>
-                            <th><span class="chose_all">全选</span></th>
+                            <th><?php if (!empty($movieList)):?><span class="chose_all">全选</span><?php else:?>全选<?php endif;?></th>
                             <th>电影名</th>
                             <th>主演</th>
                             <th>导演</th>
@@ -22,7 +22,7 @@
                         <?php if (!empty($movieList)):?>
                         <?php foreach($movieList as $movieVal):?>
                             <tr>
-                                <td class="chose"><input type="checkbox" name="ids[]" value="<?php echo $movieVal['id'];?>"></td>
+                                <td class="chose"><input type="checkbox" name="ids[]" value="<?php echo $shouCangInfo[$movieVal['id']]['id'];?>"></td>
                                 <td class="name"><a href="<?php echo get_url("/detail/index/{$movieVal['id']}/")?>"><?php echo $movieVal['name'];?></a></td>
                                 <td><?php echo $movieVal['zhuyan'];?></td>
                                 <td class="daoyan"><?php echo $movieVal['daoyan'];?></td>
@@ -30,13 +30,13 @@
                                 <td class="diqu"><?php echo $moviePlace[$movieVal['diqu']];?></td>
                                 <td class="type"><?php echo $movieType[$movieVal['type']];?>片</td>
                                 <td class="shichang"><?php echo $movieVal['shichang'];?>分</td>
-                                <td class="action"><span v="<?php echo $movieVal['id'];?>">删除</span></td>
+                                <td class="action"><span v="<?php echo $shouCangInfo[$movieVal['id']]['id'];?>">删除</span></td>
                             </tr>
                         <?php endforeach;?>
                         <?php endif;?>
                     </table>
-                    <?php if (!empty($more_url)):?>
-                        <a href="<?php echo $more_url;?>" class="more">更多>></a>
+                    <?php if (!empty($movieList)):?>
+                    <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
                     <?php endif;?>
                 </div>
             </div>

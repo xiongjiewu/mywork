@@ -319,3 +319,6 @@ div.doing {
     color: #0088CC;
     cursor: pointer;
 }
+a.btn-info,a.btn-info:hover,a.btn-info:active,a.btn-info:visited {
+    color: #fff;
+}
