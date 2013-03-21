@@ -351,4 +351,13 @@ class CI_Controller
     public function remove_cookie($name, $path=NULL, $domain=NULL, $secure=FALSE, $httponly=FALSE) {
         return $this->set_cookie($name, NULL, -3600, $path, $domain, $secure, $httponly);
     }
+
+    protected function remove_login_cookie()
+    {
+        $cookie_name = get_config_value('AuthCookieName');
+        $cookie_path = get_config_value('cookie_path');
+        $cookie_domain = get_config_value('cookie_domain');
+        $this->remove_cookie($cookie_name,$cookie_path,$cookie_domain);
+        return true;
+    }
 }

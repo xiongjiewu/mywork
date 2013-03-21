@@ -84,7 +84,7 @@
                             <div class="user_in">
                                 <table class="table">
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-film"></i>我的电影吧</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/mycollect/");?>"><i class="icon-film"></i>我&nbsp;的&nbsp;收&nbsp;藏</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-envelope"></i>投诉与建议</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/logout/");?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a></td></tr>

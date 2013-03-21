@@ -33,31 +33,14 @@
                                 <td class="action"><span v="<?php echo $shouCangInfo[$movieVal['id']]['id'];?>">删除</span></td>
                             </tr>
                         <?php endforeach;?>
+                        <?php else:?>
+                            <tr><td colspan="9">目前，您还没有收藏任何影片，您可以去<a href="<?php echo get_url("/latestmovie/");?>">最新上映</a>列表看看</td></tr>
                         <?php endif;?>
                     </table>
                     <?php if (!empty($movieList)):?>
                     <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
                     <?php endif;?>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="span9">
-        <div class="bs-docs-example">
-            <div class="user_image">
-                <img src="<?php echo $userInfo['photo'];?>">
-                <div class="doing"></div>
-                <span class="btn shangchuan">上传头像</span>
-                <span class="btn upload">上传</span>
-                <span class="btn cancel">取消</span>
-                <form name="userphone" id="userphone" method="post" action="<?php echo rtrim(get_url(get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
-                    <input type="file" name="image" id="image">
-                    <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'];?>">
-                    <input type="hidden" name="userphoto" id="userphoto" value="">
-                    <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
-                    <input type="submit" name="submit" id="submit" style="display: none;">
-                </form>
             </div>
         </div>
     </div>

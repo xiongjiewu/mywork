@@ -8,10 +8,7 @@ class Logout extends CI_Controller {
     public function index()
     {
         //退出操作
-        $cookie_name = get_config_value('AuthCookieName');
-        $cookie_path = get_config_value('cookie_path');
-        $cookie_domain = get_config_value('cookie_domain');
-        $this->remove_cookie($cookie_name,$cookie_path,$cookie_domain);
+        $this->remove_login_cookie();
         $re_url = $_SERVER['HTTP_REFERER'];
         $re_url = isset($re_url)?$re_url:"/";
         $this->load->helper('url');
