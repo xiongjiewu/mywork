@@ -1,6 +1,7 @@
 .bs-docs-example {
     width: 1130px;
     float: left;
+    margin-top: 40px;
 }
 div.bs-docs-example table {
     width: 100%;

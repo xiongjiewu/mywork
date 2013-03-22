@@ -2,13 +2,32 @@
     <?php $this->load->view("component/usercenterleft",array("userInfo" =>$userInfo,"index"=>0));?>
     <div class="right_container">
         <div class="main-tab">
+            <a <?php if ($type =="data"):?>class="tab-focus"<?php endif;?> href="<?php echo get_url("/usercenter/revised/data/")?>">基本资料</a>
             <a <?php if ($type =="picture"):?>class="tab-focus"<?php endif;?> href="<?php echo get_url("/usercenter/revised/picture/")?>">更换头像</a>
             <a <?php if ($type =="password"):?>class="tab-focus"<?php endif;?> href="<?php echo get_url("/usercenter/revised/password/")?>">修改密码</a>
         </div>
         <div id="usermain">
             <div class="show mod-dist-r">
                 <div class="modbox2">
-                    <?php if ($type =="picture"):?>
+                    <?php if ($type == "data"):?>
+                        <table class="change_pass_table">
+                            <tr>
+                                <td>
+                                    <code>*</code>安全邮箱：
+                                </td>
+                                <td>
+                                    <input type="text" name="email" id="email" value="<?php echo $userInfo['email'];?>">
+                                </td>
+                                <td class="error_text">
+                                </td>
+                            </tr>
+                            <tr class="submit">
+                                <td colspan="2">
+                                    <input style="margin-left: 86px;" type="button" name="change_email" id="change_email" value="确认更改" class="btn btn-primary">
+                                </td>
+                            </tr>
+                        </table>
+                    <?php elseif ($type =="picture"):?>
                     <div class="span9">
                         <div class="bs-docs-example">
                             <div class="user_image">

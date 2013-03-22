@@ -149,7 +149,7 @@ class Usercenter extends CI_Controller
     /**
      * 更改资料页面
      */
-    public function revised($type = "picture")
+    public function revised($type = "data")
     {
         $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
@@ -157,7 +157,7 @@ class Usercenter extends CI_Controller
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
 
-        $type = in_array($type,array("picture","password")) ? $type : "picture";
+        $type = in_array($type,array("data","picture","password")) ? $type : "data";
         $this->set_attr("type",$type);
 
         $this->load->set_head_img(false);
@@ -225,5 +225,212 @@ class Usercenter extends CI_Controller
             echo json_encode($result);
             exit;
         }
+    }
+    public function resetemail()
+    {
+        $email = trim($this->input->post("email"));
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录",
+        );
+        if (empty($this->userId)) {
+            echo json_encode($result);
+            exit;
+        }
+        if (!isset($email)) {
+            $result['info'] = "请输入邮箱";
+            echo json_encode($result);
+            exit;
+        } elseif(!preg_match("/^[0-9a-zA-Z]+(?:[\_\-][a-z0-9\-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]+$/i", $email)) {
+            $result['info'] = '安全邮箱格式不正确';
+            echo json_encode($result);
+            exit;
+        }
+        $this->load->model('User');
+        $info = $this->User->getUserInfoByFiled(array("email" => $email));
+        if (!empty($info) && ($info['id'] != $this->userId)) {
+            $result['info'] = "此邮箱已存在";
+            echo json_encode($result);
+            exit;
+        } else {
+            $this->User->updateUserInfo(array("email" => $email),array("id" => $this->userId));
+            $result['code'] = "success";
+            $result['info'] = "更改成功！";
+            echo json_encode($result);
+            exit;
+        }
+    }
+
+    public function feedback($type = "want",$reply = null)
+    {
+        $this->_checkLogin();
+        $this->set_attr("userId", $this->userId);
+
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+
+        $type = in_array($type,array("want","suggest")) ? $type : "want";
+        $this->set_attr("type",$type);
+        $selectData = array(
+            "all" => "显示全部",
+            "0" => "系统没回复的",
+            "1" => "系统有回复的",
+        );
+        if (isset($reply) && ($reply != 0) && ($reply != 1 ) ) {
+            $selectData = array(
+                "all" => "显示全部",
+                 "0" => "系统没回复的",
+                "1" => "系统有回复的",
+                );
+            $reply = null;
+        } elseif (isset($reply) && ($reply == "0")) {
+            $selectData = array(
+                "0" => "系统没回复的",
+                "all" => "显示全部",
+                "1" => "系统有回复的",
+            );
+        } elseif (isset($reply) && ($reply == "1")) {
+            $selectData = array(
+                "1" => "系统有回复的",
+                "all" => "显示全部",
+                "0" => "系统没回复的",
+            );
+        }
+        $this->set_attr("selectData",$selectData);
+        $this->load->model('Feedback');
+        $feedbackInfos = $this->Feedback->getFeedbackInfoListByUserId($this->userId,$reply);
+        $this->set_attr("feedbackInfos",$feedbackInfos);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_js(array("/js/user/feedback.js"));
+        $this->set_attr("moviePlace", $this->_moviePlace);
+        $this->set_attr("movieType", $this->_movieType);
+        $this->set_view("user/feedback");
+    }
+
+    public function editfeedback($type = "want",$id = null)
+    {
+        $this->_checkLogin();
+        $type = in_array($type,array("want","suggest")) ? $type : "want";
+        if (empty($id)) {
+            $this->jump_to("/usercenter/feedback/{$type}/");
+            exit;
+        }
+        $this->load->model('Feedback');
+        $feedbackInfo = $this->Feedback->getFeedBackInfosByIds($id);
+        if (empty($feedbackInfo[0]) || ($feedbackInfo[0]['userId'] != $this->userId)) {
+            $this->jump_to("/usercenter/feedback/{$type}/");
+            exit;
+        }
+        $this->set_attr("feedbackInfo",$feedbackInfo[0]);
+        $this->set_attr("type",$type);
+        $this->set_attr("userId", $this->userId);
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/editfeedback.js"));
+        $this->set_view("user/editfeedback");
+    }
+    public function delfeedback()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录！",
+        );
+        if (empty($this->userId)) {
+            echo json_encode($result);
+            exit;
+        }
+        $id = trim($this->input->post("id"), ";");
+        $idArr = explode(";", $id);
+        if (empty($idArr)) {
+            $result['info'] = "参数错误！";
+            echo json_encode($result);
+            exit;
+        }
+
+        $resIdArr = array();
+        foreach ($idArr as $idV) {
+            $idV = intval($idV);
+            if (!empty($idV)) {
+                $resIdArr[] = $idV;
+            }
+        }
+        $this->load->model("Feedback");
+        $res = $this->Feedback->updateUserFeedBackInfoById($this->userId, $resIdArr);
+        if (empty($res)) {
+            $result['info'] = "网络连接失败，请重新尝试！";
+            echo json_encode($result);
+            exit;
+        } else {
+            $result['code'] = "success";
+            $result['info'] = "操作成功！";
+            echo json_encode($result);
+            exit;
+        }
+    }
+
+    public function editfeedbacksubmit()
+    {
+        $this->_checkLogin();
+        $id = trim($this->input->post("id"));
+        if (empty($id)) {
+            $this->jump_to("/usercenter/feedback/");
+            exit;
+        }
+        $this->load->model('Feedback');
+        $feedbackInfo = $this->Feedback->getFeedBackInfosByIds($id);
+        if (empty($feedbackInfo[0]) || ($feedbackInfo[0]['userId'] != $this->userId)) {
+            $this->jump_to("/usercenter/feedback/");
+            exit;
+        }
+        $title = trim($this->input->post("title"));
+        $content = trim($this->input->post("content"));
+        if (!isset($title) || !isset($content)) {
+            $this->jump_to("/usercenter/feedback/");
+            exit;
+        }
+        $type = trim($this->input->post("type"));
+        $this->Feedback->updateFeedbackInfo(array("title" => $title,"content" => $content),array("id"=>$id));
+        $this->jump_to("/usercenter/editsuccess/{$type}/");
+    }
+    public function editsuccess($type = "want")
+    {
+        $this->_checkLogin();
+
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+
+        $type = in_array($type,array("want","suggest")) ? $type : "want";
+        $this->set_attr("type",$type);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->set_view("user/editsuccess");
+    }
+
+    public function createfeedback($type = "want")
+    {
+        $this->_checkLogin();
+        $type = in_array($type,array("want","suggest")) ? $type : "want";
+
+        $this->set_attr("type",$type);
+        $this->set_attr("userId", $this->userId);
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/editfeedback.js"));
+        $this->set_view("user/createfeedback");
+    }
+
+    public function message()
+    {
+
     }
 }

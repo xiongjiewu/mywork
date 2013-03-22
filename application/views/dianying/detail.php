@@ -199,7 +199,7 @@
                 var e = event.keyCode || event.which;
                 if (e == 13 && event.ctrlKey == true) {
                     <?php if (!empty($userId)):?>
-                    return $("div.create_post_button input").trigger("click");
+                    return $("#create_post_button").trigger("click");
                     <?php else:?>
                     alert("请先登录！");
                     <?php endif;?>

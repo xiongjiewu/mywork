@@ -85,10 +85,6 @@ a:link, a:visited, a:active {
     outline: medium none;
 }
 
-.side-menu a.menu-focus .collection {
-    background-position: 0 -120px;
-}
-
 .side-menu .collection {
     background-position: 0 -20px;
 }
@@ -332,7 +328,7 @@ table.change_pass_table {
     float: left;
     margin: 50px;
 }
-table.change_pass_table tr td code {
+table.change_pass_table tr td code,table.edit_xheditor_table tr td code{
     background-color: #fff;
     border: none;
 }
@@ -356,4 +352,37 @@ table.change_pass_table tr.submit td input {
     height: 40px;
     width: 220px;
     margin-left: 72px;
+}
+.modbox2 table.table tr th.chose_all {
+    width: 50px;
+}
+.modbox2 table.table tr th.action_do {
+    width: 80px;
+}
+.modbox2 table.table tr th.system_reply {
+    width: 80px;
+}
+div.select_create {
+    float: left;
+    width: 100%;
+}
+div.select_create select {
+    width: 130px;
+}
+div.select_create div.iWant {
+    width: 100px;
+    float: right;
+}
+table.edit_success {
+    float: left;
+}
+table.edit_success tr td {
+    border: none;
+}
+table.edit_success tr td.text {
+    text-align: left;
+   padding-top: 50px;
+}
+table.edit_success tr td.image {
+    width: 150px;
 }

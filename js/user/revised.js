@@ -65,6 +65,38 @@ var init = {
     setInputNpHtml:function(obj,text){
         obj.parent().next().html(text);
     },
+    checkEmail:function(){
+        var obj = $("#email");
+        var val = $.trim(obj.val());
+        var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        if (!val || (val == undefined)) {
+            this.setInputNpHtml(obj,"请输入邮箱");
+            return false;
+        } else if (!reg.test(val)) {
+            this.setInputNpHtml(obj,"邮箱格式不正确");
+            return false;
+        } else {
+            return val;
+        }
+    },
+    emailBtnCheck:function() {
+        var email = this.checkEmail();
+        if (email && (email != undefined)) {
+            $.ajax({
+                url:"/usercenter/resetemail/",
+                type:"post",
+                data:{email:email},
+                dataType:"json",
+                success:function(result){
+                    if (result.code == "error") {
+                        init.setInputNpHtml($("#email"),result.info);
+                    } else {
+                        alert(result.info);
+                    }
+                }
+            });
+        }
+    },
     checkOldPass:function()
     {
         var obj = $("#oldpass");
@@ -151,6 +183,9 @@ var init = {
             $(this).focus(function(){
                 init.setInputNpHtml($(this),"");
             });
+        });
+        $("#change_email").bind("click",function(){
+            init.emailBtnCheck();
         });
     });
 })(jQuery);

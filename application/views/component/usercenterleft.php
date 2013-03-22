@@ -20,7 +20,7 @@
                 我的收藏
                 <span class="arrow-icon"></span>
             </a>
-            <a class="menu-item <?php if ($index == 3):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/mycollect/");?>">
+            <a class="menu-item <?php if ($index == 3):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/feedback/");?>">
                 <i class="icon-edit"></i>
                 反馈我想看
                 <span class="arrow-icon"></span>
@@ -30,7 +30,7 @@
                 订阅电影通知
                 <span class="arrow-icon"></span>
             </a>
-            <a class="menu-item <?php if ($index == 5):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/mycollect/");?>">
+            <a class="menu-item <?php if ($index == 5):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/feedback/suggest/");?>">
                 <i class="ask"></i>
                 投诉与建议
                 <span class="arrow-icon"></span>
