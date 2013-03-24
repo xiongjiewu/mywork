@@ -6,6 +6,9 @@
 class Usercenter extends CI_Controller
 {
 
+    private $_feedBackLimit = 10;
+    private $_feedBackMaxCount = 200;
+
     private function _checkLogin()
     {
         if (empty($this->userId)) { //未登录，跳转登录页
@@ -261,7 +264,7 @@ class Usercenter extends CI_Controller
         }
     }
 
-    public function feedback($type = "want",$reply = null)
+    public function feedback($type = "want",$reply = null,$page = 1)
     {
         $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
@@ -270,6 +273,7 @@ class Usercenter extends CI_Controller
         $this->set_attr("userInfo", $userInfo);
 
         $type = in_array($type,array("want","suggest")) ? $type : "want";
+        $fY = ($type == "want") ? 1 : 2;
         $this->set_attr("type",$type);
         $selectData = array(
             "all" => "显示全部",
@@ -298,8 +302,22 @@ class Usercenter extends CI_Controller
         }
         $this->set_attr("selectData",$selectData);
         $this->load->model('Feedback');
-        $feedbackInfos = $this->Feedback->getFeedbackInfoListByUserId($this->userId,$reply);
+        $page = empty($page) ? 1 : $page;
+        $feedBackCount = $this->Feedback->getFeedbackInfoCountByUserId($this->userId,$reply,0,$fY);
+        $feedBackCount = ($feedBackCount > $this->_feedBackMaxCount) ? $this->_feedBackMaxCount : $feedBackCount;
+
+        if (($feedBackCount > 0) && ($page > ceil($feedBackCount / $this->_feedBackLimit))) {
+            $page = ceil($feedBackCount / $this->_feedBackLimit);
+        }
+        $feedbackInfos = $this->Feedback->getFeedbackInfoListByUserId($this->userId,$reply,0,$fY,($page - 1) * $this->_feedBackLimit,$this->_feedBackLimit);
         $this->set_attr("feedbackInfos",$feedbackInfos);
+        $this->set_attr("feedBackCount",$feedBackCount);
+        $this->set_attr("limit",$this->_feedBackLimit);
+
+        $base_url = get_url("/usercenter/feedback/{$type}/{$reply}/");
+        $fenye = $this->set_page_info($page,$this->_feedBackLimit,$feedBackCount,$base_url);
+        $this->set_attr("fenye",$fenye);
+
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
@@ -399,17 +417,25 @@ class Usercenter extends CI_Controller
         $this->Feedback->updateFeedbackInfo(array("title" => $title,"content" => $content),array("id"=>$id));
         $this->jump_to("/usercenter/editsuccess/{$type}/");
     }
-    public function editsuccess($type = "want")
+
+    private function _showSuccess($type = "want",$index = null)
     {
         $this->_checkLogin();
-
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
-
+        $text = $index ? "反馈提交成功" : "编辑成功";
+        $this->set_attr("text",$text);
         $type = in_array($type,array("want","suggest")) ? $type : "want";
         $this->set_attr("type",$type);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->set_view("user/editsuccess");
+    }
+    public function editsuccess($type = "want")
+    {
+        $this->_showSuccess($type);
     }
 
     public function createfeedback($type = "want")
@@ -425,8 +451,29 @@ class Usercenter extends CI_Controller
         $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
-        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/editfeedback.js"));
+        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/createfeedback.js"));
         $this->set_view("user/createfeedback");
+    }
+
+    public function createfeedbacksubmit()
+    {
+        $this->_checkLogin();
+        $title = trim($this->input->post("title"));
+        $content = trim($this->input->post("content"));
+        if (!isset($title) || !isset($content)) {
+            $this->jump_to("/usercenter/feedback/");
+            exit;
+        }
+        $this->load->model('Feedback');
+        $type = trim($this->input->post("type"));
+        $fY = ($type == "want") ? 1 : 2;
+        $this->Feedback->insertFeedbackInfo(array("userId"=>$this->userId,"userName" => $this->userName,"time" => time(),"title" => $title,"content" => $content,"type" =>$fY));
+        $this->jump_to("/usercenter/createsuccess/{$type}/");
+    }
+
+    public function createsuccess($type = "want")
+    {
+        $this->_showSuccess($type,true);
     }
 
     public function message()

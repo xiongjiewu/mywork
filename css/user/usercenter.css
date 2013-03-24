@@ -373,6 +373,13 @@ div.select_create div.iWant {
     width: 100px;
     float: right;
 }
+div.select_create div.iWant_su {
+    width: 150px;
+    float: right;
+}
+div.select_create div.iWant a,div.select_create div.iWant a:hover {
+    color: #fff;
+}
 table.edit_success {
     float: left;
 }
@@ -385,4 +392,16 @@ table.edit_success tr td.text {
 }
 table.edit_success tr td.image {
     width: 150px;
+}
+a.btn-info {
+    float: left;
+}
+table.page {
+    float: right;
+}
+table.page tr td {
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding:0 20px;
+    border: none;
 }

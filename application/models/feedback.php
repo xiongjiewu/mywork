@@ -13,7 +13,7 @@ class Feedback extends CI_Model {
         return implode(",",$this->_filedArr);
     }
 
-    public function getFeedbackInfoListByUserId($userId,$reply = null,$del = 0)
+    public function getFeedbackInfoListByUserId($userId,$reply = null,$del = 0,$type = 1,$offset = 0,$limit = 10)
     {
         $userId = intval($userId);
         if (empty($userId)) {
@@ -27,9 +27,30 @@ class Feedback extends CI_Model {
         } elseif (isset($reply) && ($reply == "1")) {
             $where .= " and reply > 0";
         }
-        $sql = "select {$fildStr} from `tbl_userFeedback` where {$where};";
+        $where .= " and type = {$type}";
+        $sql = "select {$fildStr} from `tbl_userFeedback` where {$where} order by time desc limit {$offset},{$limit};";
         $query = $this->db->query($sql,$data);
         return $query->result_array();
+    }
+
+    public function getFeedbackInfoCountByUserId($userId,$reply = null,$del = 0,$type = 1)
+    {
+        $userId = intval($userId);
+        if (empty($userId)) {
+            return false;
+        }
+        $where = "userId = ? and del = ?";
+        $data = array($userId,$del);
+        if (isset($reply) && ($reply == "0")) {
+            $where .= " and reply = 0";
+        } elseif (isset($reply) && ($reply == "1")) {
+            $where .= " and reply > 0";
+        }
+        $where .= " and type = {$type}";
+        $sql = "select count(1) as cn from `tbl_userFeedback` where {$where};";
+        $query = $this->db->query($sql,$data);
+        $result = $query->result_array();
+        return empty($result[0]['cn']) ? 0 : $result[0]['cn'];
     }
 
     public function updateUserFeedBackInfoById($uId,$idArr = array())
@@ -77,6 +98,15 @@ class Feedback extends CI_Model {
         $whereStr = implode(" and ",$whereArr);
         $sql = $this->db->update_string('tbl_userFeedback', $data, $whereStr);
         return $this->db->query($sql);
+    }
+
+    public function insertFeedbackInfo($info = array())
+    {
+        if (empty($info)) {
+            return false;
+        }
+        $this->db->insert('tbl_userFeedback',$info);
+        return $this->db->insert_id();
     }
 
 }

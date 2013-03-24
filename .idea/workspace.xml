@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f75c339-6a28-458f-aaa2-2d91454dc7b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/createfeedback.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/user/editfeedback.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/editfeedback.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/editsuccess.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/user/feedback.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/feedback.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/feedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/latestmovie.css" afterPath="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/user/revised.js" afterPath="$PROJECT_DIR$/js/user/revised.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/revised.php" afterPath="$PROJECT_DIR$/application/views/user/revised.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/user/createfeedback.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system/core/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/backgroundadmin.php" afterPath="$PROJECT_DIR$/application/models/backgroundadmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/createfeedback.php" afterPath="$PROJECT_DIR$/application/views/user/createfeedback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/editsuccess.php" afterPath="$PROJECT_DIR$/application/views/user/editsuccess.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/user/feedback.js" afterPath="$PROJECT_DIR$/js/user/feedback.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/feedback.php" afterPath="$PROJECT_DIR$/application/models/feedback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/feedback.php" afterPath="$PROJECT_DIR$/application/views/user/feedback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main/main.css" afterPath="$PROJECT_DIR$/css/main/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/user/usercenter.css" afterPath="$PROJECT_DIR$/css/user/usercenter.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/usercenter.php" afterPath="$PROJECT_DIR$/application/controllers/usercenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/component/usercenterleft.php" afterPath="$PROJECT_DIR$/application/views/component/usercenterleft.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363952013264" ignored="false" />
+    <file path="/Dummy.txt" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364126330038" ignored="false" />
     <file path="/useraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363622190894" ignored="false" />
     <file path="/common.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363624410264" ignored="false" />
     <file path="/detail.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363790222926" ignored="false" />
@@ -32,17 +29,17 @@
     <file path="/resgiteraction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363624492481" ignored="false" />
     <file path="/register.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363617072927" ignored="false" />
     <file path="/registersuccess.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363611746152" ignored="false" />
-    <file path="/usercenter.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363965838086" ignored="false" />
-    <file path="/usercenter.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363964457991" ignored="false" />
+    <file path="/usercenter.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364127801085" ignored="false" />
+    <file path="/usercenter.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364127649188" ignored="false" />
     <file path="/register.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363614689077" ignored="false" />
     <file path="/register.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363615068576" ignored="false" />
     <file path="/detail.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363790242391" ignored="false" />
     <file path="/usercenter.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363622455719" ignored="false" />
     <file path="/uploadimage.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363619757524" ignored="false" />
     <file path="/user.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363871918714" ignored="false" />
-    <file path="/main.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363700693289" ignored="false" />
+    <file path="/main.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364128772073" ignored="false" />
     <file path="/classicmovie.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363700359570" ignored="false" />
-    <file path="/backgroundadmin.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363710425746" ignored="false" />
+    <file path="/backgroundadmin.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364126693912" ignored="false" />
     <file path="/mycollect.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363865061479" ignored="false" />
     <file path="/usercenterleft.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363872681039" ignored="false" />
     <file path="/shoucang.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363794823748" ignored="false" />
@@ -52,11 +49,12 @@
     <file path="/Controller.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363871096298" ignored="false" />
     <file path="/logout.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363871082948" ignored="false" />
     <file path="/latestmovie.css" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363873109912" ignored="false" />
-    <file path="/feedback.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363965800247" ignored="false" />
-    <file path="/feedback.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363958892754" ignored="false" />
+    <file path="/feedback.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364126888417" ignored="false" />
+    <file path="/feedback.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363967379652" ignored="false" />
     <file path="/editfeedback.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363964118379" ignored="false" />
     <file path="/editfeedback.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363962522577" ignored="false" />
-    <file path="/editsuccess.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363964278787" ignored="false" />
+    <file path="/editsuccess.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363966670197" ignored="false" />
+    <file path="/createfeedback.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1363966359683" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,49 +79,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="feedback.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/feedback.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="83" selection-start="1229" selection-end="1243" vertical-scroll-proportion="9.16129">
-              <folding>
-                <marker date="1363965818408" expanded="true" signature="1432:1461" placeholder="..." />
-                <marker date="1363965818408" expanded="true" signature="1959:2012" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="usercenter.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="428" column="44" selection-start="15110" selection-end="15124" vertical-scroll-proportion="-11.806452">
+            <state line="316" column="70" selection-start="11080" selection-end="11080" vertical-scroll-proportion="-10.290322">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editfeedback.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/editfeedback.php">
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/main/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="9" selection-start="0" selection-end="3653" vertical-scroll-proportion="-11.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createfeedback.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/user/createfeedback.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="14" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feedback.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/feedback.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="75" selection-start="920" selection-end="920" vertical-scroll-proportion="1.451613">
+            <state line="75" column="13" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.59045726">
               <folding />
             </state>
           </provider>
@@ -132,7 +100,16 @@
       <file leaf-file-name="usercenter.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/user/usercenter.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="312" column="80" selection-start="6040" selection-end="6040" vertical-scroll-proportion="-2.913793">
+            <state line="399" column="17" selection-start="7768" selection-end="7768" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feedback.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/feedback.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="25" selection-start="632" selection-end="640" vertical-scroll-proportion="-5.387097">
               <folding />
             </state>
           </provider>
@@ -156,22 +133,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/system/core/Controller.php" />
-        <option value="$PROJECT_DIR$/application/models/user.php" />
-        <option value="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-        <option value="$PROJECT_DIR$/application/views/user/revised.php" />
         <option value="$PROJECT_DIR$/js/user/revised.js" />
         <option value="$PROJECT_DIR$/application/views/component/usercenterleft.php" />
-        <option value="$PROJECT_DIR$/js/user/feedback.js" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
         <option value="$PROJECT_DIR$/js/user/editfeedback.js" />
-        <option value="$PROJECT_DIR$/application/views/user/editsuccess.php" />
         <option value="$PROJECT_DIR$/application/views/user/editfeedback.php" />
-        <option value="$PROJECT_DIR$/css/user/usercenter.css" />
+        <option value="$PROJECT_DIR$/js/user/createfeedback.js" />
+        <option value="$PROJECT_DIR$/application/views/user/editsuccess.php" />
+        <option value="$PROJECT_DIR$/application/views/user/createfeedback.php" />
+        <option value="$PROJECT_DIR$/js/user/feedback.js" />
+        <option value="$PROJECT_DIR$/application/models/backgroundadmin.php" />
         <option value="$PROJECT_DIR$/application/models/feedback.php" />
         <option value="$PROJECT_DIR$/application/views/user/feedback.php" />
+        <option value="$PROJECT_DIR$/css/user/usercenter.css" />
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/views/user/createfeedback.php" />
+        <option value="$PROJECT_DIR$/system/core/Controller.php" />
+        <option value="$PROJECT_DIR$/css/main/main.css" />
       </list>
     </option>
   </component>
@@ -237,11 +214,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,15 +228,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,8 +276,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="http.proxy" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -321,14 +308,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="25" width="1292" height="754" extended-state="6" />
-    <editor active="false" />
+    <frame x="-6" y="25" width="1292" height="754" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497939" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21382114" sideWeight="0.6710963" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21788618" sideWeight="0.6710963" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -408,119 +395,106 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/user.php">
+    <entry file="file://$PROJECT_DIR$/js/user/editfeedback.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="5" selection-start="1169" selection-end="1651" vertical-scroll-proportion="0.6277666">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="391" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
+    <entry file="file://$PROJECT_DIR$/js/user/createfeedback.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="49" selection-start="10765" selection-end="10765" vertical-scroll-proportion="5.3822937">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="62" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.6800805">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="25" selection-start="4174" selection-end="4175" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/globalfunction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="196" selection-end="197" vertical-scroll-proportion="0.31545064">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="50" selection-start="1079" selection-end="1097" vertical-scroll-proportion="0.41851106">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/yingping.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="261" selection-end="261" vertical-scroll-proportion="0.052313883">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/registersuccess.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="115" selection-end="386" vertical-scroll-proportion="-6.709677">
-          <folding />
-        </state>
+        <state line="14" column="2" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/editsuccess.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="896" selection-end="900" vertical-scroll-proportion="0.697318">
-          <folding>
-            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="17" column="66" selection-start="923" selection-end="923" vertical-scroll-proportion="0.44528303" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/createfeedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="126" selection-start="855" selection-end="875" vertical-scroll-proportion="0.39245284" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/user/feedback.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.720848">
+        <state line="79" column="63" selection-start="2540" selection-end="2540" vertical-scroll-proportion="0.045296166">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/user/usercenter.css">
+    <entry file="file://$PROJECT_DIR$/application/models/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="80" selection-start="6040" selection-end="6040" vertical-scroll-proportion="-2.913793">
+        <state line="40" column="5" selection-start="956" selection-end="1163" vertical-scroll-proportion="1.9622642">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="22" selection-start="1845" selection-end="2121" vertical-scroll-proportion="-9.580646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/feedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="91" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.5346535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/backgroundadmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="41" selection-start="5565" selection-end="5598" vertical-scroll-proportion="0.82376236">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="75" selection-start="1571" selection-end="1698" vertical-scroll-proportion="-5.870968">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="0.12891985">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/feedback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="83" selection-start="1229" selection-end="1243" vertical-scroll-proportion="9.16129">
-          <folding>
-            <marker date="1363965818408" expanded="true" signature="1432:1461" placeholder="..." />
-            <marker date="1363965818408" expanded="true" signature="1959:2012" placeholder="..." />
-          </folding>
+        <state line="10" column="25" selection-start="632" selection-end="640" vertical-scroll-proportion="-5.387097">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/feedback.php">
+    <entry file="file://$PROJECT_DIR$/css/user/usercenter.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="75" selection-start="920" selection-end="920" vertical-scroll-proportion="1.451613">
+        <state line="399" column="17" selection-start="7768" selection-end="7768" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="55" selection-start="3819" selection-end="3819" vertical-scroll-proportion="2.3150942">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="428" column="44" selection-start="15110" selection-end="15124" vertical-scroll-proportion="-11.806452">
+        <state line="316" column="70" selection-start="11080" selection-end="11080" vertical-scroll-proportion="-10.290322">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/editfeedback.php">
+    <entry file="file://$PROJECT_DIR$/css/main/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="9" selection-start="0" selection-end="3653" vertical-scroll-proportion="-11.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/createfeedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="14" vertical-scroll-proportion="0.0">
+        <state line="75" column="13" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.59045726">
           <folding />
         </state>
       </provider>

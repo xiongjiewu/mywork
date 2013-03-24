@@ -15,7 +15,7 @@
                     <table class="table edit_success">
                         <tr>
                             <td class="image"><img src="/images/re_su.png"></td>
-                            <td class="text">恭喜您，编辑成功!</td>
+                            <td class="text">恭喜您，<?php echo $text;?>!</td>
                         </tr>
                     </table>
                 </div>

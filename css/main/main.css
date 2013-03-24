@@ -73,6 +73,7 @@ div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table {
     margin: 10px;
+    width: 97%;
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_menus ul.nav  li.dy_sort div.dy_type_list table tr td {
     border: none;

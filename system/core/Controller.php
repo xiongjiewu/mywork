@@ -109,7 +109,7 @@ class CI_Controller
             );
         } else {
             $result[] = array(
-                "link" => $base_url . ($page - 1),
+                "link" => $base_url . ($page - 1) . "/",
                 "page" => "«",
                 "able" => true,
                 "current" => false,
@@ -117,7 +117,7 @@ class CI_Controller
         }
         for ($i = $min; $i <= $max; $i++) {
             $result[] = array(
-                "link" => $base_url . $i,
+                "link" => $base_url . $i . "/",
                 "page" => $i,
                 "able" => true,
                 "current" => ($i == $page) ? true : false,
@@ -132,7 +132,7 @@ class CI_Controller
             );
         } else {
             $result[] = array(
-                "link" => $base_url . ($page + 1),
+                "link" => $base_url . ($page + 1) . "/",
                 "page" => "»",
                 "able" => true,
                 "current" => false,

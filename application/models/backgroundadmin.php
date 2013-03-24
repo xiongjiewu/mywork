@@ -174,13 +174,13 @@ class Backgroundadmin extends CI_Model {
 
     public function getDetailInfoCount($del = 0,$other = null)
     {
-        $sql = "select count(1) as c from `tbl_detailInfo` where del = ?";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where del = ?";
         if ($other) {
             $sql .= " {$other}";
         }
         $query = $this->db->query($sql,array($del));
         $result = $query->result_array();
-        return $result[0]['c'];
+        return $result[0]['cn'];
     }
 
     public function insertNewestInfo($info)

@@ -76,7 +76,8 @@
             }
         },
         jumpSelect:function(val) {
-            window.location.href = "/usercenter/feedback/want/" + val;
+            var type = $("#type").val();
+            window.location.href = "/usercenter/feedback/"+type+"/" + val;
         }
     };
     $(document).ready(function () {
