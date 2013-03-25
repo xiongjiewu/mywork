@@ -81,10 +81,12 @@
             var t = obj.attr("is_read");
             if (t == 0) {
                 obj.html("标未读");
+                obj.parent().parent().removeClass("no_read");
                 obj.attr("is_read",1);
                 this.ajaxRead(id,1);
             } else {
                 obj.html("标已读");
+                obj.parent().parent().addClass("no_read");
                 obj.attr("is_read",0);
                 this.ajaxRead(id,0);
             }

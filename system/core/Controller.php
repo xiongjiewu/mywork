@@ -42,17 +42,19 @@ class CI_Controller
         }
         $this->decryptCookie();
 
-        if (!empty($this->userId)) {
-            $this->_attr['userId'] = $this->userId;
-        }
-        if (!empty($this->userName)) {
-            $this->_attr['userName'] = $this->userName;
-        }
-
         $this->load =& load_class('Loader', 'core');
 
         $this->load->initialize();
 
+        if (!empty($this->userId)) {
+            $this->_attr['userId'] = $this->userId;
+            $this->load->model("Message");
+            $userNoReadMessageCount = $this->Message->getMessageCountByFiled(array("userId"=>$this->userId,"del"=>0,"is_read" =>0));
+            $this->_attr['userNoReadMessageCount'] = $userNoReadMessageCount;
+        }
+        if (!empty($this->userName)) {
+            $this->_attr['userName'] = $this->userName;
+        }
         log_message('debug', "Controller Class Initialized");
     }
 

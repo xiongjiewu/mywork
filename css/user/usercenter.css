@@ -408,3 +408,6 @@ table.page tr td {
 .modbox2 table.table tr td.message_time,.modbox2 table.table tr td.message_action {
     width: 150px;
 }
+.modbox2 table.table tr.no_read {
+    background-color: #eee;
+}

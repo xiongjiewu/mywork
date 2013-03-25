@@ -2,7 +2,7 @@
     <?php $this->load->view("component/usercenterleft",array("userInfo" =>$userInfo,"index"=>0));?>
     <div class="right_container">
         <div class="main-tab">
-            <a class="tab-focus" href="<?php echo get_url("/usercenter/notice/")?>">我的消息</a>
+            <a class="tab-focus" href="<?php echo get_url("/usercenter/message/")?>">我的消息</a>
         </div>
         <div id="usermain">
             <div class="show mod-dist-r">
@@ -24,7 +24,7 @@
                         </tr>
                         <?php if (!empty($userMessageList)):?>
                             <?php foreach($userMessageList as $messageVal):?>
-                                <tr>
+                                <tr <?php if ($messageVal['is_read'] == 0):?>class="no_read"<?php endif;?>>
                                     <td><input type="checkbox" name="ids[]" value="<?php echo $messageVal['id'];?>"></td>
                                     <td>
                                         <?php echo $messageVal['content'];?>

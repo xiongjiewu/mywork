@@ -745,4 +745,34 @@ class Usercenter extends CI_Controller
             exit;
         }
     }
+
+    public function messageinfo($id = null)
+    {
+        $this->_checkLogin();
+        $this->set_attr("userId", $this->userId);
+
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+
+        $id = intval($id);
+        if (empty($id)) {
+            $this->jump_to("/usercenter/message/");
+            exit;
+        }
+        $this->load->model("Message");
+        $messageInfo = $this->Message->getMessageInfoByIds($this->userId,array($id));
+        if (empty($messageInfo[0])) {
+            $this->jump_to("/usercenter/message/");
+            exit;
+        }
+        if ($messageInfo[0]['is_read'] == 0) {//未读
+            $this->Message->updateUserMessageInfoById($this->userId, array($id),array("is_read" =>1));
+        }
+        $this->set_attr("messageInfo",$messageInfo[0]);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->set_view("user/messageinfo");
+    }
 }

@@ -80,10 +80,10 @@
                     <?php if (!empty($userName)): ?>
                     <ul class="nav" style="float: right">
                         <li class="username">
-                            <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?></a>
+                            <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?>(<?php echo $userNoReadMessageCount;?>)</a>
                             <div class="user_in">
                                 <table class="table">
-                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a><a <?php if ($userNoReadMessageCount > 0):?>class="message" href="<?php echo get_url("/usercenter/message/0/")?>" title="有新消息" <?php else:?>href="<?php echo get_url("/usercenter/message/")?>" class="icon-envelope"<?php endif;?>></a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/mycollect/");?>"><i class="icon-film"></i>我&nbsp;的&nbsp;收&nbsp;藏</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-envelope"></i>投诉与建议</a></td></tr>
