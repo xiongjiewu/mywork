@@ -405,3 +405,6 @@ table.page tr td {
     padding:0 20px;
     border: none;
 }
+.modbox2 table.table tr td.message_time,.modbox2 table.table tr td.message_action {
+    width: 150px;
+}

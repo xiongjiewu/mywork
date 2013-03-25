@@ -10,6 +10,8 @@ class Usercenter extends CI_Controller
     private $_feedBackMaxCount = 200;
     private $_noticeLimit = 10;
     private $_noticeMaxCount = 200;
+    private $_messageLimit = 10;
+    private $_messageMaxCount = 200;
 
     private function _checkLogin()
     {
@@ -594,8 +596,153 @@ class Usercenter extends CI_Controller
         }
     }
 
-    public function message()
+    public function message($read = null,$page = 1)
     {
+        $this->_checkLogin();
+        $this->set_attr("userId", $this->userId);
 
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+
+        $selectData = array(
+            "all" => "显示全部",
+            "0" => "未读消息",
+            "1" => "已读消息",
+        );
+        $queryArr = array(
+            "userId" => $this->userId,
+            "del" => 0,
+        );
+        if (isset($read) && ($read != 0) && ($read != 1 ) ) {
+            $selectData = array(
+                "all" => "显示全部",
+                "0" => "未读消息",
+                "1" => "已读消息",
+            );
+            $read = "all";
+        } elseif (isset($read) && ($read == "0")) {
+            $selectData = array(
+                "0" => "未读消息",
+                "all" => "显示全部",
+                "1" => "已读消息",
+            );
+            $queryArr['is_read'] = 0;
+        } elseif (isset($read) && ($read == "1")) {
+            $selectData = array(
+                "1" => "已读消息",
+                "all" => "显示全部",
+                "0" => "未读消息",
+            );
+            $queryArr['is_read'] = 1;
+        }
+        $this->set_attr("selectData",$selectData);
+
+        $page = intval($page);
+        $page = empty($page) || ($page <=0) ? 1 : $page;
+        $this->load->model("Message");
+        $userMessageCount = $this->Message->getMessageCountByFiled($queryArr);
+        $userMessageCount = ($userMessageCount > $this->_messageMaxCount) ? $this->_messageMaxCount : $userMessageCount;
+        if (($userMessageCount > 0) && ($page > ceil($userMessageCount/$this->_noticeLimit))) {
+            $page = ceil($userMessageCount/$this->_noticeLimit);
+        }
+        $userMessageList = $this->Message->getMessageListByFiled($queryArr,($page-1) * $this->_messageLimit,$this->_messageLimit);
+        if (!empty($userMessageList)) {
+            foreach($userMessageList as $messageKey => $messageVal) {
+                $userMessageList[$messageKey]['content'] = $this->splitStr($messageVal['content'],15);
+            }
+        }
+        $this->set_attr("userMessageList",$userMessageList);
+        $this->set_attr("userMessageCount",$userMessageCount);
+        $this->set_attr("limit",$this->_noticeLimit);
+
+        $base_url = get_url("/usercenter/message/") . $read . "/";
+        $fenye = $this->set_page_info($page,$this->_messageLimit,$userMessageCount,$base_url);
+        $this->set_attr("fenye",$fenye);
+
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_js(array("/js/user/message.js"));
+        $this->set_view("user/message");
+    }
+
+    public function delmessage()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录！",
+        );
+        if (empty($this->userId)) {
+            echo json_encode($result);
+            exit;
+        }
+        $id = trim($this->input->post("id"), ";");
+        $idArr = explode(";", $id);
+        if (empty($idArr)) {
+            $result['info'] = "参数错误！";
+            echo json_encode($result);
+            exit;
+        }
+
+        $resIdArr = array();
+        foreach ($idArr as $idV) {
+            $idV = intval($idV);
+            if (!empty($idV)) {
+                $resIdArr[] = $idV;
+            }
+        }
+        $this->load->model("Message");
+        $res = $this->Message->updateUserMessageInfoById($this->userId, $resIdArr,array("del" =>1));
+        if (empty($res)) {
+            $result['info'] = "网络连接失败，请重新尝试！";
+            echo json_encode($result);
+            exit;
+        } else {
+            $result['code'] = "success";
+            $result['info'] = "操作成功！";
+            echo json_encode($result);
+            exit;
+        }
+    }
+
+    public function readmessage()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录！",
+        );
+        if (empty($this->userId)) {
+            echo json_encode($result);
+            exit;
+        }
+        $id = trim($this->input->post("id"), ";");
+        $is_read = $this->input->post("is_read");
+        $idArr = explode(";", $id);
+        if (empty($idArr)) {
+            $result['info'] = "参数错误！";
+            echo json_encode($result);
+            exit;
+        }
+
+        $resIdArr = array();
+        foreach ($idArr as $idV) {
+            $idV = intval($idV);
+            if (!empty($idV)) {
+                $resIdArr[] = $idV;
+            }
+        }
+        $this->load->model("Message");
+        $res = $this->Message->updateUserMessageInfoById($this->userId, $resIdArr,array("is_read" =>$is_read));
+        if (empty($res)) {
+            $result['info'] = "网络连接失败，请重新尝试！";
+            echo json_encode($result);
+            exit;
+        } else {
+            $result['code'] = "success";
+            $result['info'] = "操作成功！";
+            echo json_encode($result);
+            exit;
+        }
     }
 }

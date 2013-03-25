@@ -1,7 +1,7 @@
 <?php
-class Notice extends CI_Model {
+class Message extends CI_Model {
 
-    private $_filedArr = array("id","userId","infoId","time","type","reply","del");
+    private $_filedArr = array("id","userId","time","content","del","is_read");
 
     function __construct()
     {
@@ -13,16 +13,16 @@ class Notice extends CI_Model {
         return implode(",",$this->_filedArr);
     }
 
-    public function insertNoticeInfo($info = array())
+    public function insertMessageInfo($info = array())
     {
         if (empty($info)) {
             return false;
         }
-        $this->db->insert('tbl_notice',$info);
+        $this->db->insert('tbl_message',$info);
         return $this->db->insert_id();
     }
 
-    public function getNoticeInfoByFiled($queryInfo = array())
+    public function getMessageInfoByFiled($queryInfo = array())
     {
         if (empty($queryInfo) || !is_array($queryInfo)) {
             return false;
@@ -33,13 +33,13 @@ class Notice extends CI_Model {
             $valArr[] = $infoVal;
         }
         $keyStr = implode(" and ",$keyArr);
-        $sql = "select {$this->_getFiledStr()} from `tbl_notice` where {$keyStr} limit 1;";
+        $sql = "select {$this->_getFiledStr()} from `tbl_message` where {$keyStr} limit 1;";
         $query = $this->db->query($sql,$valArr);
         $result = $query->result_array();
         return empty($result[0]) ? array() : $result[0];
     }
 
-    public function getNoticeListByFiled($queryInfo = array(),$offset = 0,$limit = 10)
+    public function getMessageListByFiled($queryInfo = array(),$offset = 0,$limit = 10)
     {
         if (empty($queryInfo) || !is_array($queryInfo)) {
             return false;
@@ -50,13 +50,13 @@ class Notice extends CI_Model {
             $valArr[] = $infoVal;
         }
         $keyStr = implode(" and ",$keyArr);
-        $sql = "select {$this->_getFiledStr()} from `tbl_notice` where {$keyStr} limit {$offset},{$limit};";
+        $sql = "select {$this->_getFiledStr()} from `tbl_message` where {$keyStr} limit {$offset},{$limit};";
         $query = $this->db->query($sql,$valArr);
         $result = $query->result_array();
         return empty($result) ? array() : $result;
     }
 
-    public function getNoticeCountByFiled($queryInfo = array())
+    public function getMessageCountByFiled($queryInfo = array())
     {
         if (empty($queryInfo) || !is_array($queryInfo)) {
             return false;
@@ -67,13 +67,13 @@ class Notice extends CI_Model {
             $valArr[] = $infoVal;
         }
         $keyStr = implode(" and ",$keyArr);
-        $sql = "select count(1) as cn from `tbl_notice` where {$keyStr};";
+        $sql = "select count(1) as cn from `tbl_message` where {$keyStr};";
         $query = $this->db->query($sql,$valArr);
         $result = $query->result_array();
         return empty($result[0]['cn']) ? 0 : $result[0]['cn'];
     }
 
-    public function getNoticeInfoByInfoIds($uid,$ids = array(),$reply = 0,$del = 0)
+    public function getMessageInfoByInfoIds($uid,$ids = array(),$reply = 0,$del = 0)
     {
         $uid = intval($uid);
         if (empty($uid) || empty($ids) || !is_array($ids)) {
@@ -81,22 +81,22 @@ class Notice extends CI_Model {
         }
         $ids = array_unique($ids);
         $idStr = implode(",",$ids);
-        $sql = "select {$this->_getFiledStr()} from `tbl_notice` where userId = ? and infoId in ({$idStr}) and reply = ? and del = ?;";
+        $sql = "select {$this->_getFiledStr()} from `tbl_message` where userId = ? and infoId in ({$idStr}) and reply = ? and del = ?;";
         $query = $this->db->query($sql,array($uid,$reply,$del));
         $result = $query->result_array();
         return empty($result) ? array() : $result;
     }
 
-    public function updateUserNptiInfoById($uId,$idArr = array())
+    public function updateUserMessageInfoById($uId,$idArr = array(),$data = array())
     {
         $uId = intval($uId);
-        if (empty($uId) || empty($idArr)) {
+        if (empty($uId) || empty($idArr) || empty($data) || !is_array($data)) {
             return false;
         }
         $idArr = array_unique($idArr);
         $idStr = implode(",",$idArr);
         $where = "id in ({$idStr}) and userId = {$uId}";
-        $sql = $this->db->update_string('tbl_userFeedback', array("del" =>1), $where);
+        $sql = $this->db->update_string('tbl_message', $data, $where);
         return $this->db->query($sql);
     }
 }

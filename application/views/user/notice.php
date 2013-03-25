@@ -33,7 +33,7 @@
                                 </tr>
                             <?php endforeach;?>
                         <?php else:?>
-                            <tr><td colspan="9">目前，您还查看的信息暂无！</td></tr>
+                            <tr><td colspan="4">目前，您查看的信息暂无！</td></tr>
                         <?php endif;?>
                     </table>
                     <?php if (!empty($userNoticeList)):?>

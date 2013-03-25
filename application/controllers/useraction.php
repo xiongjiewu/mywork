@@ -100,7 +100,7 @@ class Useraction extends CI_Controller
         $this->load->model('Notice');
         $userNoticeCount = $this->Notice->getNoticeCountByFiled(array("userId" => $this->userId,"reply"=>0,"del"=>0));
         if ($userNoticeCount >= get_config_value("notice_max_count")) {
-            $result['info'] = "最多可预订" . get_config_value("notice_max_count") . "通知";
+            $result['info'] = "最多可预订" . get_config_value("notice_max_count") . "个通知";
             echo json_encode($result);
             exit;
         }
