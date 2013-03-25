@@ -92,7 +92,7 @@
                     <?php foreach ($downLoadLinkInfo as $downLoadLinkInfoKey => $downLoadLinkInfoVal): ?>
                         <a href="<?php echo $downLoadLinkInfoVal['link']; ?>"
                            class="btn btn-small <?php if (($downLoadLinkInfoI % 4) == 0): ?>btn-primary<?php elseif (($downLoadLinkInfoI % 4) == 1): ?>btn-warning<?php elseif (($downLoadLinkInfoI % 4) == 2): ?>btn-success<?php elseif (($downLoadLinkInfoI % 4) == 3): ?>btn-danger<?php endif; ?>"><?php echo $downLoadType[$downLoadLinkInfoVal['type']];?>
-                            下载</a>
+                            下载(<?php echo $downLoadLinkInfoVal['size']?>M)</a>
                         <?php $downLoadLinkInfoI++; ?>
                     <?php endforeach;?>
                 </p>

@@ -16,7 +16,7 @@
                     <tr>
                         <td class="user_input">
                             <span class="username_icon" c="username_icon_over"></span>
-                            <label>账号或邮箱</label>
+                            <label>登录账号</label>
                             <input type="text" class="username" name="username">
                         </td>
                     </tr>

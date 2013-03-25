@@ -85,8 +85,8 @@
                                 <table class="table">
                                     <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a><a <?php if ($userNoReadMessageCount > 0):?>class="message" href="<?php echo get_url("/usercenter/message/0/")?>" title="有新消息" <?php else:?>href="<?php echo get_url("/usercenter/message/")?>" class="icon-envelope"<?php endif;?>></a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/usercenter/mycollect/");?>"><i class="icon-film"></i>我&nbsp;的&nbsp;收&nbsp;藏</a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-envelope"></i>投诉与建议</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/feedback/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
+                                    <tr><td><a href="<?php echo get_url("/usercenter/notice/");?>"><i class="icon-volume-up"></i>我的电影通知</a></td></tr>
                                     <tr><td><a href="<?php echo get_url("/logout/");?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a></td></tr>
                                 </table>
                             </div>
@@ -101,7 +101,7 @@
                         </li>
                         <li class="loginr" style="margin-left: 0;">
                             <a href="<?php echo get_url("/register/"); ?>" title="注册" style="padding-left: 5px;padding-right: 5px">
-                                <i class="icon-edit icon-user"></i>
+                                <i class="icon-pencil icon-user"></i>
                             </a>
                         </li>
                     </ul>
@@ -127,26 +127,7 @@
         <?php $this->load->view($view); ?>
     <?php endif;?>
 </div>
-<footer class="footer">
-    <div class="container">
-        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo"
-                                                                   target="_blank">@mdo</a> and <a
-                href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-
-        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License
-                v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-
-        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a
-                href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <ul class="footer-links">
-            <li><a href="http://blog.getbootstrap.com">Blog</a></li>
-            <li class="muted">&middot;</li>
-            <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
-            <li class="muted">&middot;</li>
-            <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
-        </ul>
-    </div>
-</footer>
+<?php $this->load->view("component/footer");?>
 <script type="text/javascript">
     (function ($) {
         var initOjb = {
