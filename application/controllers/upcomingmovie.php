@@ -21,12 +21,19 @@ class Upcomingmovie extends CI_Controller {
             $ids[] = $movieListVal['id'];
             $movieList[$movieListKey]['jieshao'] = $this->splitStr($movieListVal['jieshao'],60);//介绍截取50个字符
         }
+        if (!empty($this->userId)) {
+            $this->set_attr("userId",$this->userId);
+            $this->load->model('Notice');
+            $userNoticeInfos = $this->Notice->getNoticeInfoByInfoIds($this->userId,$ids);
+            $userNoticeInfos = $this->initArrById($userNoticeInfos);
+            $this->set_attr("userNoticeInfos",$userNoticeInfos);
+        }
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("电影吧，国内最强阵容");
         $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/upcomingmovie.css"));
-        $this->load->set_js(array("/js/dianying/latestmovie.js"));
+        $this->load->set_js(array("/js/dianying/upcomingmovie.js"));
         $this->load->set_top_index(2);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);

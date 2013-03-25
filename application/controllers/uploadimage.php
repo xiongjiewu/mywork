@@ -11,7 +11,7 @@ class Uploadimage extends CI_Controller {
             "status" => "no",
             "error" => "服务连接失败，请重新尝试!",
         );
-        $config['upload_path']         = "./images/{$path}/";
+        $config['upload_path']         = "./.././img/images/{$path}/";
         $config['allowed_types']     = 'png|gif|jpg';
         $config['max_size']          = '2048';
         $config['max_width']          = '1024';
@@ -33,6 +33,7 @@ class Uploadimage extends CI_Controller {
             $imageFullPathArr = explode("images",$imageFullPath);
             $imageFullPath = "/images" . $imageFullPathArr[1];
             $result["path"] = $imageFullPath;
+            $result["fullPath"] = trim(get_config_value("img_base_url"),"/") . $imageFullPath;
             unset($result["error"]);
         }
         $this->load->view('uploadfile/uploadfilereturn',array("data"=>$result));

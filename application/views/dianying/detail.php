@@ -18,7 +18,7 @@
             <div class="bs-docs-example">
                 <table class="dy_detail_table">
                     <tr>
-                        <td class="dy_info_img"><img src="<?php echo $dyInfo['image']; ?>">
+                        <td class="dy_info_img"><img src="<?php echo trim(get_config_value("img_base_url"),"/") . $dyInfo['image']; ?>">
                         </td>
                         <td>
                             <table class="table dy_info_table">
@@ -122,7 +122,7 @@
                                     <td class="userPro" valign="top">
                                         <div class="left">
                                             <img class="lazy" style="display: inline;"
-                                                 src="<?php echo $userInfos[$infoVal['userId']]['photo'] ? $userInfos[$infoVal['userId']]['photo'] : get_config_value("user_photo"); ?>"
+                                                 src="<?php echo $userInfos[$infoVal['userId']]['photo'] ? trim(get_config_value("img_base_url"),"/") . $userInfos[$infoVal['userId']]['photo'] : trim(get_config_value("img_base_url"),"/") . get_config_value("user_photo"); ?>"
                                                  width="50" height="50">
                                         </div>
                                     </td>

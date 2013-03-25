@@ -27,7 +27,7 @@ var init = {
             $("#image").val("");
             $("#image").hide();
             $("#userphoto").val(reault.path);
-            $("div.user_image").find("img").attr("src", reault.path);
+            $("div.user_image").find("img").attr("src", reault.fullPath);
             $("div.user_image").find("span.shangchuan").hide();
             $("div.user_image").find("span.upload").show();
             $("div.user_image").find("span.cancel").show();
@@ -56,8 +56,9 @@ var init = {
                 success:function(result){
                     alert(result.info);
                     obj.hide();
-                    obj.prev().hide();
-                    obj.prev().prev().show();
+                    obj.next().hide();
+                    obj.prev().show();
+                    $("#moren_img").val($("div.user_image").find("img").attr("src"));
                 }
             });
         }

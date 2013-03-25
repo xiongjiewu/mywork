@@ -1,7 +1,7 @@
 <div class="left_container">
     <div class="side-boxer">
         <div class="user-info">
-            <img src="<?php echo $userInfo['photo'];?>">
+            <img src="<?php echo trim(get_config_value("img_base_url"),"/") . $userInfo['photo'];?>">
             <dl>
                 <dt><?php echo $userInfo['userName'];?></dt>
                 <dd style="margin-left: 0">
@@ -25,7 +25,7 @@
                 反馈我想看
                 <span class="arrow-icon"></span>
             </a>
-            <a class="menu-item <?php if ($index == 4):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/mycollect/");?>">
+            <a class="menu-item <?php if ($index == 4):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/notice/");?>">
                 <i class="manpropcond"></i>
                 订阅电影通知
                 <span class="arrow-icon"></span>

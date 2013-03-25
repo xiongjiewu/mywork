@@ -360,4 +360,18 @@ class CI_Controller
         $this->remove_cookie($cookie_name,$cookie_path,$cookie_domain);
         return true;
     }
+
+    public function set_content_type($content_type, $charset=NULL) {
+        if (!$charset && preg_match('/^text/i', $content_type)) {
+            $charset = get_config_value('charset');
+            if (!$charset) {
+                $charset = 'utf-8';
+            }
+        }
+        if ($charset) {
+            $this->set_header("content-type", "$content_type; charset=$charset");
+        } else {
+            $this->set_header("content-type", $content_type);
+        }
+    }
 }

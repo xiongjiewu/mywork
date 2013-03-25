@@ -31,3 +31,11 @@ table.table tr td span {
 table.table tr td strong {
     color: #888;
 }
+table.table tr td span.btn {
+    padding: 1px 12px;
+    color: #333;
+}
+table.table tr td span.dy_notic_btn {
+    color: #aaa;
+    cursor: default;
+}

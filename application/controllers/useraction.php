@@ -86,4 +86,43 @@ class Useraction extends CI_Controller
             exit;
         }
     }
+
+    public function insertnotice()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录",
+        );
+        if (!$this->_checkLogin()) {
+            echo json_encode($result);
+            exit;
+        }
+        $this->load->model('Notice');
+        $userNoticeCount = $this->Notice->getNoticeCountByFiled(array("userId" => $this->userId,"reply"=>0,"del"=>0));
+        if ($userNoticeCount >= get_config_value("notice_max_count")) {
+            $result['info'] = "最多可预订" . get_config_value("notice_max_count") . "通知";
+            echo json_encode($result);
+            exit;
+        }
+        $id = trim($this->input->post("id"));
+        $idArr = explode(";",$id);
+        foreach($idArr as $idVal) {
+            if (empty($idVal)) {
+                continue;
+            }
+            $info = $this->Notice->getNoticeInfoByFiled(array("userId" => $this->userId,"infoId" => $idVal,"reply"=>0,"del"=>0));
+            if (empty($info)) {
+                $dataArr = array(
+                    "userId" => $this->userId,
+                    "infoId"=>$idVal,
+                    "time" => time(),
+                );
+                $this->Notice->insertNoticeInfo($dataArr);
+            }
+        }
+        $result['code'] = "success";
+        $result['info'] = "success";
+        echo json_encode($result);
+        exit;
+    }
 }

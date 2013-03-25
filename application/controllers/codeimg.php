@@ -135,20 +135,6 @@ class Codeimg extends CI_Controller {
         $this->set_content_type("image/PNG");
     }
 
-    public function set_content_type($content_type, $charset=NULL) {
-        if (!$charset && preg_match('/^text/i', $content_type)) {
-            $charset = get_config_value('charset');
-            if (!$charset) {
-                $charset = 'utf-8';
-            }
-        }
-        if ($charset) {
-            $this->set_header("content-type", "$content_type; charset=$charset");
-        } else {
-            $this->set_header("content-type", $content_type);
-        }
-    }
-
     public function set_header($name, $value, $http_reponse_code=NULL) {
         header("$name: $value", TRUE, $http_reponse_code);
     }

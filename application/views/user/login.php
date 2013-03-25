@@ -9,6 +9,7 @@
             </table>
         </div>
         <form name="login_form" id="login_form" method="post">
+            <input type="hidden" name="bgurl" id="bgurl" value="<?php echo empty($bgurl) ? "":$bgurl;?>">
             <div class="login_ui_table">
                 <table>
                     <tr><td class="ui_error loginpan_error"></td></tr>

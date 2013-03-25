@@ -121,7 +121,7 @@ class Backgroundadmin extends CI_Model {
         $id = array_unique($id);
         $idStr = implode(",",$id);
         $where = "where id in ({$idStr})";
-        if ($del) {
+        if (isset($del)) {
             $where .= " and del = {$del}";
         }
         $fildStr = implode(",",$this->_detailfInfoFild);

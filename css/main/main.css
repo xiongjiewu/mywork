@@ -128,3 +128,9 @@ div.head_top_menus ul.nav li.username div.user_in table.table tr td {
 div.head_top_menus ul.nav li.username div.user_in table.table tr td a {
     color: #333;
 }
+div.user_in table.table {
+    margin-left: 0;
+}
+div.user_in table.table tr td {
+    border-top: 1px solid #ddd;
+}

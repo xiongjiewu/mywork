@@ -8,6 +8,8 @@ class Usercenter extends CI_Controller
 
     private $_feedBackLimit = 10;
     private $_feedBackMaxCount = 200;
+    private $_noticeLimit = 10;
+    private $_noticeMaxCount = 200;
 
     private function _checkLogin()
     {
@@ -469,11 +471,127 @@ class Usercenter extends CI_Controller
         $fY = ($type == "want") ? 1 : 2;
         $this->Feedback->insertFeedbackInfo(array("userId"=>$this->userId,"userName" => $this->userName,"time" => time(),"title" => $title,"content" => $content,"type" =>$fY));
         $this->jump_to("/usercenter/createsuccess/{$type}/");
+        exit;
     }
 
     public function createsuccess($type = "want")
     {
         $this->_showSuccess($type,true);
+    }
+
+    public function notice($reply=null,$page = 1)
+    {
+        $this->_checkLogin();
+        $this->set_attr("userId", $this->userId);
+
+        $userInfo = $this->_getUserInfo();
+        $this->set_attr("userInfo", $userInfo);
+
+        $selectData = array(
+            "all" => "显示全部",
+            "0" => "系统没回复的",
+            "1" => "系统有回复的",
+        );
+        $queryArr = array(
+            "userId" => $this->userId,
+            "del" => 0,
+        );
+        if (isset($reply) && ($reply != 0) && ($reply != 1 ) ) {
+            $selectData = array(
+                "all" => "显示全部",
+                "0" => "系统没回复的",
+                "1" => "系统有回复的",
+            );
+            $reply = "all";
+        } elseif (isset($reply) && ($reply == "0")) {
+            $selectData = array(
+                "0" => "系统没回复的",
+                "all" => "显示全部",
+                "1" => "系统有回复的",
+            );
+            $queryArr['reply'] = 0;
+        } elseif (isset($reply) && ($reply == "1")) {
+            $selectData = array(
+                "1" => "系统有回复的",
+                "all" => "显示全部",
+                "0" => "系统没回复的",
+            );
+            $queryArr['reply'] = 1;
+        }
+        $this->set_attr("selectData",$selectData);
+
+        $page = intval($page);
+        $page = empty($page) || ($page <=0) ? 1 : $page;
+        $this->load->model("Notice");
+        $userNoticeCount = $this->Notice->getNoticeCountByFiled($queryArr);
+        $userNoticeCount = ($userNoticeCount > $this->_noticeMaxCount) ? $this->_noticeMaxCount : $userNoticeCount;
+        if (($userNoticeCount > 0) && ($page > ceil($userNoticeCount/$this->_noticeLimit))) {
+            $page = ceil($userNoticeCount/$this->_noticeLimit);
+        }
+        $userNoticeList = $this->Notice->getNoticeListByFiled($queryArr,($page-1) * $this->_noticeLimit,$this->_noticeLimit);
+        if (!empty($userNoticeList)) {
+            $infoIds = array();
+            foreach($userNoticeList as $noticeVal) {
+                $infoIds[] = $noticeVal['infoId'];
+            }
+            $this->load->model("Backgroundadmin");
+            $infoList = $this->Backgroundadmin->getDetailInfo($infoIds,0,true);
+            $infoList = $this->initArrById($infoList,"id");
+            $this->set_attr("infoList",$infoList);
+        }
+        $this->set_attr("userNoticeList",$userNoticeList);
+        $this->set_attr("userNoticeCount",$userNoticeCount);
+        $this->set_attr("limit",$this->_noticeLimit);
+
+        $base_url = get_url("/usercenter/notice/") . $reply . "/";
+        $fenye = $this->set_page_info($page,$this->_noticeLimit,$userNoticeCount,$base_url);
+        $this->set_attr("fenye",$fenye);
+
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_js(array("/js/user/notice.js"));
+        $this->set_view("user/notice");
+    }
+
+    public function delnotice()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "请先登录！",
+        );
+        if (empty($this->userId)) {
+            echo json_encode($result);
+            exit;
+        }
+        $id = trim($this->input->post("id"), ";");
+        $idArr = explode(";", $id);
+        if (empty($idArr)) {
+            $result['info'] = "参数错误！";
+            echo json_encode($result);
+            exit;
+        }
+
+        $resIdArr = array();
+        foreach ($idArr as $idV) {
+            $idV = intval($idV);
+            if (!empty($idV)) {
+                $resIdArr[] = $idV;
+            }
+        }
+        $this->load->model("Notice");
+        $res = $this->Notice->updateUserNoticeInfoById($this->userId, $resIdArr);
+        if (empty($res)) {
+            $result['info'] = "网络连接失败，请重新尝试！";
+            echo json_encode($result);
+            exit;
+        } else {
+            $result['code'] = "success";
+            $result['info'] = "操作成功！";
+            echo json_encode($result);
+            exit;
+        }
     }
 
     public function message()

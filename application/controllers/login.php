@@ -10,6 +10,10 @@ class Login extends CI_Controller {
         if (!empty($this->userId)) {//已登录，跳转至首页
             $this->jump_to("/");
         }
+        $bgUrl = $this->input->get("bgurl");
+        if (isset($bgUrl)) {
+            $this->set_attr("bgurl",base64_decode($bgUrl));
+        }
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/login.css"));

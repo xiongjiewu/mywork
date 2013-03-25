@@ -41,7 +41,12 @@
                         if((result.code == "error")){
                             $("td.loginpan_error").html(result.info);
                         }else{
-                            window.location.href = "/usercenter/";;
+                            var bgurl = $("#bgurl").val();
+                            if (bgurl && (bgurl != undefined)) {
+                                window.location.href = bgurl;
+                            } else {
+                                window.location.href = "/usercenter/";
+                            }
                         }
                     }
                 });
