@@ -27,7 +27,7 @@
                             <input type="password" class="password" name="password">
                         </td>
                     </tr>
-                    <tr><td class="ui_remember"><input type="checkbox" name="checkbox" class="remember">记住登录状态&nbsp;&nbsp;<a href="/">忘记密码？</a></td></tr>
+                    <tr><td class="ui_remember"><input type="checkbox" name="checkbox" class="remember">记住登录状态&nbsp;&nbsp;<a href="<?php echo get_url("/password?r=" . time())?>">忘记密码？</a></td></tr>
                     <tr><td class="ui_login"><input type="submit" class="submit" name="login_submit" value="登&nbsp;录"></td></tr>
                 </table>
             </div>

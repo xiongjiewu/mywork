@@ -13,7 +13,7 @@ class Registersuccess extends CI_Controller {
         }
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("css/user/register.css","css/user/registersuccess.css"));
-        $this->set_view("user/registersuccess");
+        $this->load->set_css(array("css/member/register.css","css/member/registersuccess.css"));
+        $this->set_view("member/registersuccess");
     }
 }

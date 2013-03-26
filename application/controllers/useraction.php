@@ -106,6 +106,8 @@ class Useraction extends CI_Controller
         }
         $id = trim($this->input->post("id"));
         $idArr = explode(";",$id);
+        $this->load->model('User');
+        $userInfo = $this->User->getUserInfoByFiled(array("id"=>$this->userId));
         foreach($idArr as $idVal) {
             if (empty($idVal)) {
                 continue;
@@ -116,6 +118,7 @@ class Useraction extends CI_Controller
                     "userId" => $this->userId,
                     "infoId"=>$idVal,
                     "time" => time(),
+                    "email" => $userInfo['email'],
                 );
                 $this->Notice->insertNoticeInfo($dataArr);
             }
@@ -124,5 +127,104 @@ class Useraction extends CI_Controller
         $result['info'] = "success";
         echo json_encode($result);
         exit;
+    }
+
+    public function changepassword() {
+        $result = array(
+            "code" => "error",
+            "info" => "请先退出登录",
+        );
+        if ($this->_checkLogin()) {
+            echo json_encode($result);
+            exit;
+        }
+        $username = $this->input->post("username");
+        $email = $this->input->post("email");
+        if (empty($username) || empty($email)) {
+            $result['info'] = "参数错误";
+            echo json_encode($result);
+            exit;
+        } elseif(!preg_match("/^[0-9a-zA-Z]+(?:[\_\-][a-z0-9\-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]+$/i", $email)) {
+            $result['info'] = '安全邮箱格式不正确';
+            echo json_encode($result);
+            exit;
+        } else {
+            $this->load->model('User');
+            $userInfo = $this->User->getUserInfoByFiled(array("userName"=>$username,"email"=>$email));
+            if (empty($userInfo)) {
+                $result['info'] = '登录帐号或安全邮箱不正确';
+                echo json_encode($result);
+                exit;
+            } else {
+                $time = time();
+                $key = md5($username . $email . $time);
+                $data = array(
+                    "userId" => $userInfo['id'],
+                    "hash_key" => $key,
+                    "time" => $time,
+                    "del" => 1,
+                );
+                $this->load->model('Changepassword');
+                $this->Changepassword->insertInfo($data);
+                $result['code'] = 'success';
+                $result['info'] = $key;
+                echo json_encode($result);
+                exit;
+            }
+        }
+
+    }
+
+    public function changepassworddo() {
+        $result = array(
+            "code" => "请先退出登录",
+            "info" => get_url("/"),
+        );
+        if ($this->_checkLogin()) {
+            echo json_encode($result);
+            exit;
+        }
+        $password1 = $this->input->post("password1");
+        $password2 = $this->input->post("password2");
+        $key = $this->input->post("key");
+        if (empty($password1) || empty($password2) || empty($key)) {
+            $result['code'] = "参数错误";
+            echo json_encode($result);
+            exit;
+        } elseif (strlen($password1) < 6 || strlen($password1) > 20) {
+            $result['code'] = '登录密码长度必须为6-20个字符！';
+            echo json_encode($result);
+            exit;
+        } elseif ($password1 != $password2) {
+            $result['code'] = '两次输入的密码不一致';
+            echo json_encode($result);
+            exit;
+        } else {
+            $this->load->model('Changepassword');
+            $info = $this->Changepassword->getInfoByFiled(array("hash_key" => $key,"del" => 1));
+            if (empty($info)) {
+                $result['code'] = '页面已过期';
+                $result['info'] = get_url("/password?r=" . time());
+                echo json_encode($result);
+                exit;
+            } else {
+                $maxTime = get_config_value("changepassword_max_time");
+                if (time() > ($info['time'] + $maxTime)) {//页面已过期
+                    $result['code'] = '页面已过期';
+                    $result['info'] = get_url("/password?r=" . time());
+                    echo json_encode($result);
+                    exit;
+                } else {
+                    $this->load->model('User');
+                    $this->User->updateUserInfo(array("password"=>base64_encode(md5($password1))),array("id"=>$info['userId']));
+                    $this->Changepassword->updateInfoByFiled(array("del" => 0),array("hash_key" => "'{$key}'"));
+                    $result['code'] = "更改成功！";
+                    $result['info'] = get_url("/login?r=" . time());
+                    echo json_encode($result);
+                    exit;
+                }
+            }
+        }
+
     }
 }

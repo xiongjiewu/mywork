@@ -12,8 +12,8 @@ class Register extends CI_Controller {
         }
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("css/user/register.css"));
-        $this->load->set_js(array("js/user/register.js"));
-        $this->set_view("user/register");
+        $this->load->set_css(array("css/member/register.css"));
+        $this->load->set_js(array("js/member/register.js"));
+        $this->set_view("member/register");
     }
 }

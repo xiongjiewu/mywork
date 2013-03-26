@@ -16,8 +16,8 @@ class Login extends CI_Controller {
         }
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("/css/user/login.css"));
-        $this->load->set_js(array("/js/user/login.js"));
-        $this->set_view("user/login");
+        $this->load->set_css(array("/css/member/login.css"));
+        $this->load->set_js(array("/js/member/login.js"));
+        $this->set_view("member/login");
     }
 }
