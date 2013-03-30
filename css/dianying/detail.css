@@ -22,7 +22,7 @@ table tr td.dy_info_img img {
     height: 250px;
 }
 div.bs-docs-sidebar {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .pllist {
     height: auto;
@@ -236,4 +236,8 @@ ul.bs-docs-sidenav li a.click {
 }
 ul.bs-docs-sidenav-over {
     opacity: 1;
+}
+ul.bs-docs-sidenav li a:hover {
+    background-color: #0088CC;
+    color: #fff;
 }
