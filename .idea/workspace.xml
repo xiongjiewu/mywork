@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/latestmovie.css" afterPath="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/latestmovie.js" afterPath="$PROJECT_DIR$/js/dianying/latestmovie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364664964114" ignored="false" />
-    <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364665249925" ignored="false" />
+    <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364665583729" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +30,16 @@
       <file leaf-file-name="latestmovie.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="29" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.81881535">
+            <state line="52" column="21" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.9047619">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="73" selection-start="10" selection-end="79" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -42,7 +48,7 @@
       <file leaf-file-name="latestmovie.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="30" selection-start="679" selection-end="679" vertical-scroll-proportion="5.870968">
+            <state line="16" column="41" selection-start="975" selection-end="980" vertical-scroll-proportion="-0.83870965">
               <folding />
             </state>
           </provider>
@@ -126,6 +132,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,13 +284,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="679" selection-end="679" vertical-scroll-proportion="5.870968">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="60" selection-start="789" selection-end="794" vertical-scroll-proportion="0.0">
@@ -260,9 +291,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="41" selection-start="975" selection-end="980" vertical-scroll-proportion="-0.83870965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="73" selection-start="10" selection-end="79" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="29" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.81881535">
+        <state line="52" column="21" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.9047619">
           <folding />
         </state>
       </provider>
