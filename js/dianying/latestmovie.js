@@ -38,6 +38,15 @@
             $(this).bind("mouseover",function(){
                 $(this).addClass("li_over");
             });
+            $(this).bind("click",function(){
+                var url = $($(this).find("a").get(0)).attr("href");
+                window.location.href = url;
+            });
+            $(this).find("a").each(function(){
+                $(this).bind("click",function(event){
+                    event.stopPropagation();
+                });
+            });
         });
         dyInfoLiObj.each(function(){
             $(this).bind("mouseleave",function(){
