@@ -80,3 +80,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li a.dy_name {
     color: #999;
     width: 200px;
 }
+div.bs-docs-sidebar ul li a.click {
+    color: #fff;
+    background-color: #0088CC;
+}
