@@ -22,7 +22,7 @@ table tr td.dy_info_img img {
     height: 250px;
 }
 div.bs-docs-sidebar {
-    margin-top: 15px;
+    margin-top: 50px;
 }
 .pllist {
     height: auto;
@@ -216,15 +216,21 @@ table.table-bordered {
     *width: 960px;
 }
 ul.bs-docs-sidenav {
-    width: 200px;
+    width: 120px;
     text-align: center;
     font-weight: bold;
+    margin-top: 0;
+    position: fixed;
+    opacity: 0.6;
 }
 ul.bs-docs-sidenav li a {
     color: #999;
-    padding: 20px;
 }
 div.span9 {
     margin-left: -40px;
     width: 920px;
+}
+ul.bs-docs-sidenav li a.click {
+    color: #fff;
+    background-color: #0088CC;
 }

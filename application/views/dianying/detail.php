@@ -1,14 +1,14 @@
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
-            <li><a href="#info" title="点击查看影片详情"><i class="icon-chevron-right"></i> 影&nbsp;片&nbsp;详&nbsp;情</a></li>
+            <li><a href="#info" class="click" title="点击查看影片详情"><i class="icon-chevron-right"></i> 影片详情</a></li>
             <?php if (!empty($watchLinkInfo)): ?>
-                <li><a href="#watchlink" title="点击查看观看链接"><i class="icon-chevron-right"></i> 观&nbsp;看&nbsp;链&nbsp;接</a></li>
+                <li><a href="#watchlink" title="点击查看观看链接"><i class="icon-chevron-right"></i> 观看链接</a></li>
             <?php endif;?>
             <?php if (!empty($downLoadLinkInfo)): ?>
-                <li><a href="#downlink" title="点击查看下载链接"><i class="icon-chevron-right"></i> 下&nbsp;载&nbsp;链&nbsp;接</a></li>
+                <li><a href="#downlink" title="点击查看下载链接"><i class="icon-chevron-right"></i> 下载链接</a></li>
             <?php endif;?>
-            <li><a href="#createpost" title="点击发表评论"><i class="icon-chevron-right"></i> 发&nbsp;表&nbsp;评&nbsp;论</a></li>
+            <li><a href="#createpost" title="点击发表评论"><i class="icon-chevron-right"></i> 发表评论</a></li>
         </ul>
     </div>
     <div class="span9">
@@ -22,11 +22,11 @@
                     <tr>
                         <td class="dy_info_img">
                             <img src="<?php echo trim(get_config_value("img_base_url"), "/") . $dyInfo['image']; ?>">
-                            <?php if (empty($shoucangInfo) && ($dyInfo['time1'] <= time())): ?>
+                            <?php if (empty($shoucangInfo)): ?>
                                 <span class="btn shoucang" val="<?php echo $dyInfo['id']; ?>">
                                     <i class="icon-star"></i>收藏
                                 </span>
-                            <?php elseif ($dyInfo['time1'] <= time()): ?>
+                            <?php else: ?>
                                 <span class="btn shoucang_do" val="<?php echo $dyInfo['id']; ?>">
                                     <i class="icon-star icon-white"></i>已收藏
                                 </span>

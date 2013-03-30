@@ -1,5 +1,5 @@
 .bs-docs-example {
-    width: 980px;
+    width: 1010px;
     float: left;
     margin-top: 0;
     padding: 0;
@@ -64,7 +64,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li {
     padding: 10px 0 10px 5px;
     overflow: hidden;
     list-style: none;
-    margin-right: 15px;
+    margin-right: 25px;
     margin-top: 10px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li.li_over {
@@ -119,6 +119,9 @@ div.bs-docs-example div.dy_info_list ul.info_list li a.dy_name {
     float: left;
     text-align: center;
     margin-top: 2px;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li a.dy_name:hover {
+    text-decoration: underline;
 }
 div.bs-docs-sidebar ul li a.click {
     color: #fff;
