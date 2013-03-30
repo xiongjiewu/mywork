@@ -17,8 +17,11 @@ class Latestmovie extends CI_Controller {
             $nMonth = strtotime("+1 month",$time);//下个月
             $nMonthFirstDayTime = strtotime(date("Y-m-01",$nMonth));//下个月第一天
             $eTime = strtotime(date("Y-m-d 23:59:59",$nMonthFirstDayTime - 86400));//当前月最后时间
-            $movieList[date("y年m月",$time)]  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
-            $monthArr[] = date("Ym",$time);
+            $infoList  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
+            if (!empty($infoList)) {
+                $movieList[date("y年m月",$time)] = $infoList;
+                $monthArr[date("y年m月",$time)] = date("Ym",$time);
+            }
             $time = strtotime("-1 month",$time);
         }
         if (empty($movieList)) {//当查询电影信息不存在
@@ -28,12 +31,14 @@ class Latestmovie extends CI_Controller {
         foreach($movieList as $movieListKey => $movieListVal) {
             if (!empty($movieListVal)) {
                 foreach($movieListVal as $mKey => $mVal) {
-                    $ids[] = $mKey['id'];
+                    $ids[] = $mVal['id'];
                     $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
                 }
                 $movieList[$movieListKey] = $movieListVal;
             }
         }
+        $this->set_attr("movieList",$movieList);
+        $this->set_attr("monthArr",$monthArr);
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
         $watchLinkInfo = $this->_initArr($watchLinkInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
@@ -42,13 +47,10 @@ class Latestmovie extends CI_Controller {
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
-        $this->set_attr("movieList",$movieList);
         $this->load->set_title("电影吧，国内最强阵容");
         $this->load->set_css(array("css/dianying/latestmovie.css"));
         $this->load->set_js(array("js/dianying/latestmovie.js"));
         $this->load->set_top_index(1);
-        $this->set_attr("moviePlace",$this->_moviePlace);
-        $this->set_attr("movieType",$this->_movieType);
         $this->set_view('dianying/latestmovie');
     }
 

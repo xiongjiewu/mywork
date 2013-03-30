@@ -2,49 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f75c339-6a28-458f-aaa2-2d91454dc7b1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/background.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/backgroundmain.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/editmovie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/movielist.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/recycle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/background/upmovie.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/backgroundadmin.php" afterPath="$PROJECT_DIR$/application/models/backgroundadmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/base.php" afterPath="$PROJECT_DIR$/application/views/base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/classicmovie.css" afterPath="$PROJECT_DIR$/css/dianying/classicmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/classicmovie.php" afterPath="$PROJECT_DIR$/application/controllers/classicmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/classicmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/classicmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/detail.css" afterPath="$PROJECT_DIR$/css/dianying/detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/detail.js" afterPath="$PROJECT_DIR$/js/dianying/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/detail.php" afterPath="$PROJECT_DIR$/application/controllers/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/error/error.css" afterPath="$PROJECT_DIR$/css/error/error.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/error.php" afterPath="$PROJECT_DIR$/application/controllers/error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/feedback.php" afterPath="$PROJECT_DIR$/application/views/user/feedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/latestmovie.css" afterPath="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/latestmovie.js" afterPath="$PROJECT_DIR$/js/dianying/latestmovie.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/latestmovie.php" afterPath="$PROJECT_DIR$/application/controllers/latestmovie.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/login.css" afterPath="$PROJECT_DIR$/css/member/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/loginaction.php" afterPath="$PROJECT_DIR$/application/controllers/loginaction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main/main.css" afterPath="$PROJECT_DIR$/css/main/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/notice.php" afterPath="$PROJECT_DIR$/application/views/user/notice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/password.php" afterPath="$PROJECT_DIR$/application/controllers/password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/register.css" afterPath="$PROJECT_DIR$/css/member/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/revised.php" afterPath="$PROJECT_DIR$/application/views/user/revised.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/shoucang.php" afterPath="$PROJECT_DIR$/application/models/shoucang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/upcomingmovie.css" afterPath="$PROJECT_DIR$/css/dianying/upcomingmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/upcomingmovie.js" afterPath="$PROJECT_DIR$/js/dianying/upcomingmovie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" afterPath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user.php" afterPath="$PROJECT_DIR$/application/models/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/user/usercenter.css" afterPath="$PROJECT_DIR$/css/user/usercenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/usercenter.php" afterPath="$PROJECT_DIR$/application/controllers/usercenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/usercenter.php" afterPath="$PROJECT_DIR$/application/views/user/usercenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/component/usercenterleft.php" afterPath="$PROJECT_DIR$/application/views/component/usercenterleft.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/yingping.php" afterPath="$PROJECT_DIR$/application/models/yingping.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,7 +75,7 @@
     <file path="$PROJECT_DIR$/../admin/application/models/message.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364482043683" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/models/feedback.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364483415767" ignored="false" />
     <file path="/loginaction.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364565271368" ignored="false" />
-    <file path="/latestmovie.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364628729047" ignored="false" />
+    <file path="/latestmovie.php" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364629167822" ignored="false" />
     <file path="/latestmovie.js" changelist="8f75c339-6a28-458f-aaa2-2d91454dc7b1" time="1364623111705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +104,7 @@
       <file leaf-file-name="latestmovie.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="26" selection-start="1141" selection-end="1151" vertical-scroll-proportion="-8.774194">
+            <state line="40" column="44" selection-start="1720" selection-end="1729" vertical-scroll-proportion="-12.580646">
               <folding />
             </state>
           </provider>
@@ -172,7 +131,7 @@
       <file leaf-file-name="latestmovie.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="49" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.33267328">
+            <state line="7" column="12" selection-start="458" selection-end="458" vertical-scroll-proportion="0.36039603">
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -551,30 +510,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="66" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="25" selection-start="3947" selection-end="3963" vertical-scroll-proportion="-12.935484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/backgroundadmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="120" selection-start="3788" selection-end="3788" vertical-scroll-proportion="-3.2372882">
           <folding />
         </state>
       </provider>
@@ -586,16 +524,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="18" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/backgroundadmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="120" selection-start="3788" selection-end="3788" vertical-scroll-proportion="-3.2372882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="25" selection-start="3947" selection-end="3963" vertical-scroll-proportion="-12.935484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="26" selection-start="1141" selection-end="1151" vertical-scroll-proportion="-8.774194">
+        <state line="40" column="44" selection-start="1720" selection-end="1729" vertical-scroll-proportion="-12.580646">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.33267328">
+        <state line="7" column="12" selection-start="458" selection-end="458" vertical-scroll-proportion="0.36039603">
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
