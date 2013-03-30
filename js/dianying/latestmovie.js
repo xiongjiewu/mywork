@@ -53,6 +53,13 @@
                 $(this).removeClass("li_over");
             });
         });
+        daohangObj.find("a").each(function(){
+            $(this).bind("click",function(){
+                var name = $(this).attr("name");
+                var sH = $("#"+name+"").offset().top;
+                $(window).scrollTop(sH - 50);
+            });
+        });
         $(window).bind("scroll", function() {//当滚动条滚动时
             init.daoHangDingWei();
         });

@@ -1,14 +1,14 @@
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
-            <li><a href="#info" class="click" title="点击查看影片详情"><i class="icon-chevron-right"></i> 影片详情</a></li>
+            <li><a href="javascript:void(0);" name="info" class="click" title="点击查看影片详情"><i class="icon-chevron-right"></i> 影片详情</a></li>
             <?php if (!empty($watchLinkInfo)): ?>
-                <li><a href="#watchlink" title="点击查看观看链接"><i class="icon-chevron-right"></i> 观看链接</a></li>
+                <li><a href="javascript:void(0);" name="watchlink" title="点击查看观看链接"><i class="icon-chevron-right"></i> 观看链接</a></li>
             <?php endif;?>
             <?php if (!empty($downLoadLinkInfo)): ?>
-                <li><a href="#downlink" title="点击查看下载链接"><i class="icon-chevron-right"></i> 下载链接</a></li>
+                <li><a href="javascript:void(0);" name="downlink" title="点击查看下载链接"><i class="icon-chevron-right"></i> 下载链接</a></li>
             <?php endif;?>
-            <li><a href="#createpost" title="点击发表评论"><i class="icon-chevron-right"></i> 发表评论</a></li>
+            <li><a href="javascript:void(0);" name="createpost" title="点击发表评论"><i class="icon-chevron-right"></i> 发表评论</a></li>
         </ul>
     </div>
     <div class="span9">
@@ -274,6 +274,24 @@
                     $(this).addClass("read_more_load");
                     init.ajaxGetYingPingInfo(id,count,$(this));
                 }
+            });
+            init.daoHangDingWei();
+            var daohangObj = $("ul.dy_bs-docs-sidenav");
+            daohangObj.bind("mouseover",function(){
+                $(this).addClass("bs-docs-sidenav-over");
+            });
+            daohangObj.bind("mouseleave",function(){
+                $(this).removeClass("bs-docs-sidenav-over");
+            });
+            daohangObj.find("a").each(function(){
+                $(this).bind("click",function(){
+                    var name = $(this).attr("name");
+                    var sH = $("#"+name+"").offset().top;
+                    $(window).scrollTop(sH - 50);
+                });
+            });
+            $(window).bind("scroll", function() {//当滚动条滚动时
+                init.daoHangDingWei();
             });
         })
     })(jQuery);

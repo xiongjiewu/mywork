@@ -234,3 +234,6 @@ ul.bs-docs-sidenav li a.click {
     color: #fff;
     background-color: #0088CC;
 }
+ul.bs-docs-sidenav-over {
+    opacity: 1;
+}

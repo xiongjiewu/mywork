@@ -4,7 +4,7 @@
             <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
                 <?php $dI = 1;?>
                 <?php foreach($monthArr as $monthKey => $monthVal):?>
-                    <li><a <?php if ($dI == 1):?>class="click"<?php endif;?> name="<?php echo $monthVal;?>" href="#<?php echo $monthVal;?>" title="点击查看<?php echo $monthKey;?>影片"><i class="icon-chevron-right"></i> <?php echo $monthKey;?></a></li>
+                    <li><a <?php if ($dI == 1):?>class="click"<?php endif;?> name="<?php echo $monthVal;?>" href="javascript:void(0);" title="点击查看<?php echo $monthKey;?>影片"><i class="icon-chevron-right"></i> <?php echo $monthKey;?></a></li>
                     <?php $dI++;?>
                 <?php endforeach;?>
             </ul>
