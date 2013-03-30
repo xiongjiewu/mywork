@@ -13,8 +13,8 @@ class Usercenter extends CI_Controller
     private $_messageLimit = 10;
     private $_messageMaxCount = 200;
 
-    private function _checkLogin()
-    {
+    public function __construct() {
+        parent::__construct();
         if (empty($this->userId)) { //未登录，跳转登录页
             $this->jump_to("/login/");
             exit;
@@ -32,7 +32,6 @@ class Usercenter extends CI_Controller
      */
     public function index($type = "new")
     {
-        $this->_checkLogin();
         $limit = 20;
         $this->load->model('Backgroundadmin');
         $type = (empty($type) || !in_array($type, array("new", "up", "hot"))) ? "new" : $type;
@@ -82,7 +81,6 @@ class Usercenter extends CI_Controller
      */
     public function mycollect()
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -158,7 +156,6 @@ class Usercenter extends CI_Controller
      */
     public function revised($type = "data")
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -270,7 +267,6 @@ class Usercenter extends CI_Controller
 
     public function feedback($type = "want",$reply = null,$page = 1)
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -334,7 +330,6 @@ class Usercenter extends CI_Controller
 
     public function editfeedback($type = "want",$id = null)
     {
-        $this->_checkLogin();
         $type = in_array($type,array("want","suggest")) ? $type : "want";
         if (empty($id)) {
             $this->jump_to("/usercenter/feedback/{$type}/");
@@ -399,7 +394,6 @@ class Usercenter extends CI_Controller
 
     public function editfeedbacksubmit()
     {
-        $this->_checkLogin();
         $id = trim($this->input->post("id"));
         if (empty($id)) {
             $this->jump_to("/usercenter/feedback/");
@@ -424,7 +418,6 @@ class Usercenter extends CI_Controller
 
     private function _showSuccess($type = "want",$index = null)
     {
-        $this->_checkLogin();
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $text = $index ? "反馈提交成功" : "编辑成功";
@@ -444,7 +437,6 @@ class Usercenter extends CI_Controller
 
     public function createfeedback($type = "want")
     {
-        $this->_checkLogin();
         $type = in_array($type,array("want","suggest")) ? $type : "want";
 
         $this->set_attr("type",$type);
@@ -461,7 +453,6 @@ class Usercenter extends CI_Controller
 
     public function createfeedbacksubmit()
     {
-        $this->_checkLogin();
         $title = trim($this->input->post("title"));
         $content = trim($this->input->post("content"));
         if (!isset($title) || !isset($content)) {
@@ -483,7 +474,6 @@ class Usercenter extends CI_Controller
 
     public function notice($reply=null,$page = 1)
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -598,7 +588,6 @@ class Usercenter extends CI_Controller
 
     public function message($read = null,$page = 1)
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -748,7 +737,6 @@ class Usercenter extends CI_Controller
 
     public function messageinfo($id = null)
     {
-        $this->_checkLogin();
         $this->set_attr("userId", $this->userId);
 
         $userInfo = $this->_getUserInfo();
@@ -768,6 +756,7 @@ class Usercenter extends CI_Controller
         if ($messageInfo[0]['is_read'] == 0) {//未读
             $this->Message->updateUserMessageInfoById($this->userId, array($id),array("is_read" =>1));
         }
+        $messageInfo[0]['content'] = $this->ubb2Html($messageInfo[0]['content']);
         $this->set_attr("messageInfo",$messageInfo[0]);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);

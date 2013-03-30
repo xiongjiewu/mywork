@@ -46,7 +46,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="/">电影吧</a>
+            <a class="brand" style="float: left;" href="/">电影吧</a>
             <div class="nav-collapse collapse head_top_menus">
                 <ul class="nav">
                     <?php $menus = get_config_value("menus")?>
@@ -78,7 +78,7 @@
                     </li>
                     </ul>
                     <?php if (!empty($userName)): ?>
-                    <ul class="nav" style="float: right">
+                    <ul class="nav" style=" float: right;*margin-right: -150px;">
                         <li class="username">
                             <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?>(<?php echo $userNoReadMessageCount;?>)</a>
                             <div class="user_in">
@@ -93,7 +93,7 @@
                         </li>
                     </ul>
                     <?php else: ?>
-                    <ul class="nav" style="float: right">
+                    <ul class="nav" style="float: right;*margin-right: -150px;">
                         <li class="loginr">
                             <a href="<?php echo get_url("/login/"); ?>" title="登录" style="padding-left: 5px;padding-right: 5px">
                                 <i class="icon-user icon-user"></i>

@@ -1,6 +1,11 @@
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
+            <li <?php if ($type == "all"):?>class="active" <?php endif;?>>
+                <a href="<?php echo get_url("/classicmovie/");?>">
+                    <i class="icon-chevron-right"></i> 全部
+                </a>
+            </li>
             <?php foreach ($movieSortType as $typeKey => $typeVal):?>
                 <li class="dy_title_text">
                     <a href="javascript:void(0);">

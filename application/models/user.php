@@ -1,7 +1,7 @@
 <?php
 class User extends CI_Model {
 
-    private $_filedArr = array("id","userName","password","time","ip","photo","email");
+    private $_filedArr = array("id","userName","password","time","ip","photo","email","status");
 
     function __construct()
     {
@@ -49,6 +49,7 @@ class User extends CI_Model {
         foreach($where as $key => $val) {
             $whereArr[] = "{$key} = {$val}";
         }
+        $whereArr[] = "status = 0";
         $whereStr = implode(" and ",$whereArr);
         $sql = $this->db->update_string('tbl_user', $data, $whereStr);
         return $this->db->query($sql);
@@ -61,7 +62,7 @@ class User extends CI_Model {
         }
         $userIds = array_unique($userIds);
         $userIdStr = implode(",",$userIds);
-        $sql = "select {$this->_getFiledStr()} from `tbl_user` where id in ({$userIdStr});";
+        $sql = "select {$this->_getFiledStr()} from `tbl_user` where id in ({$userIdStr}) and status = 0;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result) ? array() : $result;

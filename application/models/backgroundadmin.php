@@ -110,6 +110,17 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
+    public function getDetailInfoListByTime($sTime,$eTime,$del = 0,$desc = false)
+    {
+        if (!$desc) {
+            $desc = "order by id asc";
+        }
+        $fildStr = implode(",",$this->_detailfInfoFild);
+        $sql = "select {$fildStr} from `tbl_detailInfo` where time1>={$sTime} and time1<={$eTime} and del = ? {$desc};";
+        $query = $this->db->query($sql,array($del));
+        return $query->result_array();
+    }
+
     public function getDetailInfo($id = array(),$del = null,$all = false)
     {
         if (empty($id)) {
@@ -121,7 +132,7 @@ class Backgroundadmin extends CI_Model {
         $id = array_unique($id);
         $idStr = implode(",",$id);
         $where = "where id in ({$idStr})";
-        if (isset($del)) {
+        if (isset($del) && ($del != null)) {
             $where .= " and del = {$del}";
         }
         $fildStr = implode(",",$this->_detailfInfoFild);
@@ -264,20 +275,25 @@ class Backgroundadmin extends CI_Model {
         $type = intval($type);
         $offset = intval($offset);
         $limit = intval($limit);
-        if (!isset($type) || !isset($offset) || !isset($limit)) {
+        if (!isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where type = {$type} and del = {$del} limit {$offset},$limit";
+        $typeStr = "";
+        if ($type != null) {
+            $typeStr = "type = {$type} and ";
+        }
+        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where {$typeStr} del = {$del} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
-    public function getDetailInfoCountByType($type,$del = 0)
+    public function getDetailInfoCountByType($type = null,$del = 0)
     {
         $type = intval($type);
-        if (!isset($type)) {
-            return false;
+        $typeStr = "";
+        if ($type != null) {
+            $typeStr = "type = {$type} and ";
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where type = {$type} and del = {$del}";
+        $sql = "select count(1) as cn from tbl_detailInfo where {$typeStr} del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];

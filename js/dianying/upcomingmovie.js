@@ -6,7 +6,7 @@ var init = {
         return true;
 
     },
-    ajaxInertNotic:function(obj)
+    ajaxInertNotice:function(obj)
     {
         var id = obj.attr("val");
         if (id) {

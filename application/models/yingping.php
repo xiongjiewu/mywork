@@ -29,16 +29,16 @@ class Yingping extends CI_Model {
         return empty($result[0]['cn']) ? 0 : $result[0]['cn'];
     }
 
-    public function getYingPingInfoByDyId($dyId,$limit = 0,$desc = "order by time desc")
+    public function getYingPingInfoByDyId($dyId,$offset = 0,$limit = 10,$desc = "order by time desc")
     {
         $dyId = intval($dyId);
         if (empty($dyId)) {
             return false;
         }
         $fildStr = implode(",",$this->_fileArr);
-        $sql = "select {$fildStr} from `tbl_yingping` where infoId = ? {$desc}";
+        $sql = "select {$fildStr} from `tbl_yingping` where infoId = ? and del = 0 {$desc}";
         if (isset($limit) && ($limit > 0)) {
-            $sql .= " limit {$limit};";
+            $sql .= " limit {$offset},{$limit};";
         }
         $query = $this->db->query($sql,array($dyId));
         $result = $query->result_array();

@@ -1,7 +1,7 @@
 <div class="left_container">
     <div class="side-boxer">
         <div class="user-info">
-            <img src="<?php echo trim(get_config_value("img_base_url"),"/") . $userInfo['photo'];?>">
+            <img src="<?php echo $userInfo['photo'] ? trim(get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(get_config_value("img_base_url"),"/") . get_config_value("user_photo");?>">
             <dl>
                 <dt><?php echo $userInfo['userName'];?></dt>
                 <dd style="margin-left: 0">

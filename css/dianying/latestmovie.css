@@ -1,28 +1,82 @@
 .bs-docs-example {
-    width: 1130px;
+    width: 980px;
     float: left;
+    margin-top: 0;
+}
+div.span3 {
+    width: 140px;
     margin-top: 40px;
 }
-div.bs-docs-example table {
-    width: 100%;
-    margin-left: 10px;
-}
-div.bs-docs-example table.table tr td {
-    border-top: none;
-    border-bottom: 1px solid #DDDDDD;
-}
-div.bs-docs-example table.table tr.lastOne td {
-    border-bottom: none;
-}
-div.bs-docs-example table.table tr td.dy_name a {
+ul.bs-docs-sidenav {
+    width: 120px;
+    text-align: center;
     font-weight: bold;
-    font-size: 15px;
-    color: #666;
+    margin-top: 0;
+    position: fixed;
+    opacity: 0.6;
 }
-div.bs-docs-example table.table tr td.dy_watch a {
-    font-size: 14px;
+ul.bs-docs-sidenav-over {
+    opacity: 1;
 }
-div.bs-docs-example table.table tr td.dy_down a {
-    font-size: 13px;
-    color: #5391CD;
+ul.bs-docs-sidenav li a {
+    color: #999;
+}
+ul.bs-docs-sidenav li a:hover {
+    background-color: #0088CC;
+    color: #fff;
+}
+div.dy_total {
+    margin-top: 40px;
+    float: left;
+    width: 1020px;
+}
+div.bs-docs-example div.dy_info_list {
+    float: left;
+    width: 100%;
+}
+div.bs-docs-example div.title {
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #777;
+}
+div.bs-docs-example div.dy_info_list ul.info_list {
+    float: left;
+    width: 96%;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li {
+    float: left;
+    width: 96%;
+    /*border-bottom: 1px solid #DDDDDD;*/
+    padding: 10px 10px 10px 20px;
+    overflow: hidden;
+    list-style: none;
+    background: url("/images/common/laet_m.png") no-repeat -7px 12px transparent;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li a {
+    margin-right: 10px;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l {
+    float: left;
+    width: 200px;
+    overflow: hidden;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_watch_l {
+    float: left;
+    width: 120px;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_down_l {
+    float: left;
+    width: 120px;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li a.dy_watch {
+    font-size: 16px;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li a.dy_name {
+    font-size: 17px;
+    font-weight: bold;
+    color: #999;
+    width: 200px;
 }

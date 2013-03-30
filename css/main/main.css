@@ -23,7 +23,6 @@ ul li.search input.search_value {
     width: 146px;
     font-size: 13px;
     color: #aaa;
-    border: none;
 }
 ul li.search input.submit {
     border: none;
@@ -66,14 +65,16 @@ div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
     top: 35px;
     height: 100px;
     width: 400px;
-    background-color: #FFF;
-    z-index: 100;
+    background:none repeat scroll 0 0 #FFFFFF;
+    z-index: 1000;
     border: 1px solid #eee;
     border-top: none;
+    opacity:1;
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table {
     margin: 10px;
     width: 97%;
+    opacity:1;
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_menus ul.nav  li.dy_sort div.dy_type_list table tr td {
     border: none;
@@ -140,4 +141,7 @@ div.head_top_menus ul.nav li.username a.message {
 }
 div.head_top_menus ul.nav li.username a.icon-envelope {
     margin-left: 7px;
+}
+.navbar-inverse .navbar-inner {
+    border-bottom: 2px solid #FF6600;
 }

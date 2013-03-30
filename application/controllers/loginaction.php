@@ -26,6 +26,9 @@ class Loginaction extends CI_Controller {
         } elseif ($info['password'] != base64_encode(md5($password))) {
             $result['info'] = "输入的密码不正确";
             return $result;
+        } elseif ($info['status'] == 1) {
+            $result['info'] = "此帐号已被管理员封禁";
+            return $result;
         } else {
             $this->setLoginCookie($username,$info['id'],86400,$remember);
             $result['code'] = "success";

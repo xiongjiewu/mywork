@@ -50,19 +50,19 @@ class Useraction extends CI_Controller
 
     public function ding()
     {
-        if (!$this->_checkLogin()) {
-            return json_encode(array("code" => "error","info" => "请先登录"));
-        }
         $data = $this->input->post();
         if (empty($data['pid'])) {
-            return array("code" => "error","info" => "非法操作");
+            echo json_encode(array("code" => "error","info" => "非法操作"));
+            exit;
         }
         $this->load->model('Yingping');
         $res = $this->Yingping->updateYingpingInfoById($data['pid'],array("ding" => "ding + 1"));
         if (empty($res)) {
-            return json_encode(array("code" => "error","info" => "网络连接失败，清重新操作！"));
+            echo json_encode(array("code" => "error","info" => "网络连接失败，清重新操作！"));
+            exit;
         } else {
-            return json_encode(array("code" => "ok","info" => "操作成功"));
+            echo json_encode(array("code" => "ok","info" => "操作成功"));
+            exit;
         }
     }
     public function uploadpho()
@@ -225,6 +225,61 @@ class Useraction extends CI_Controller
                 }
             }
         }
+    }
 
+    public function shoucang()
+    {
+        if (!$this->_checkLogin()) {
+            echo json_encode(array("code" => "error","info" => "请先登录"));
+            exit;
+        }
+        $id = $this->input->post("id");
+        if (empty($id)) {
+            echo json_encode(array("code" => "error","info" => "非法操作"));
+            exit;
+        }
+        $this->load->model('Shoucang');
+        $info = $this->Shoucang->getInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
+        if (empty($info)) {
+            $this->Shoucang->insertShouCangInfo(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0,"time"=>time()));
+        }
+        echo json_encode(array("code" => "success","info" => "success"));
+        exit;
+    }
+
+    public function getyingping()
+    {
+        $result = array(
+            "code" => "error",
+            "info" => "",
+        );
+        $id = $this->input->post("id");
+        $count = $this->input->post("count");
+        if (empty($id) || !isset($count)) {
+            echo json_encode($result);
+            exit;
+        }
+        $this->load->model('Yingping');
+        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,10);
+        if (!empty($YingpingInfo)) {
+            $userIds = array();
+            foreach($YingpingInfo as $InfoKey => $infoVal) {
+                $YingpingInfo[$InfoKey]['content'] = $this->ubb2Html($infoVal['content']);
+                $YingpingInfo[$InfoKey]['date'] = date("Y-m-d H:i:s",$infoVal['time']);
+                $userIds[] = $infoVal['userId'];
+            }
+            $this->load->model('User');
+            $userInfos = $this->User->getUserInfosByIds($userIds);
+            foreach($userInfos as $userKey => $userVal) {
+                $userInfos[$userKey]['photo'] = empty($userVal['photo']) ? trim(get_config_value("img_base_url"), "/") . get_config_value("user_photo") : trim(get_config_value("img_base_url"), "/") . $userVal['photo'];
+            }
+            $userInfos = $this->initArrById($userInfos,"id");
+            $result['info']['yingping'] = $YingpingInfo;
+            $result['info']['userinfo'] = $userInfos;
+        }
+        $result['code']  = 'success';
+        $result['info']['count']  = $count + count($YingpingInfo);
+        echo json_encode($result);
+        exit;
     }
 }

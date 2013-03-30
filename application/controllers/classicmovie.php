@@ -14,9 +14,14 @@ class Classicmovie extends CI_Controller {
         return $this->type();
     }
 
-    public function type($type = 1,$page = 1)
+    public function type($type = null,$page = 1)
     {
-        $type = intval($type);
+        if (empty($type) || $type == "all") {
+            $type = "all";
+            $typeS = null;
+        } else {
+            $typeS = intval($type);
+        }
         $page = intval($page);
         $page = ($page > $this->_maxPage) ? $this->_maxPage : $page;
         $this->set_attr("bigtype",0);
@@ -24,12 +29,12 @@ class Classicmovie extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByType($type);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByType($typeS);
         $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
             $page = ceil($mouvieCount / $limit);
         }
-        $movieList = $this->Backgroundadmin->getDetailInfoByType($type,($page - 1) * $limit,$limit);
+        $movieList = $this->Backgroundadmin->getDetailInfoByType($typeS,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
                 $movieList[$infoKey]['class'] = "firstRow";
@@ -46,7 +51,7 @@ class Classicmovie extends CI_Controller {
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/classicmovie.css"));
+        $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);

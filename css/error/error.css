@@ -9,6 +9,7 @@ div.content {
     width: 600px;
     padding: 150px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 div.error_img {
     width: 500px;

@@ -172,3 +172,5 @@ $config['dianying8Secques']  = "dianying8@cookie.com";
 $config['notice_max_count'] = 20;
 
 $config['changepassword_max_time'] = 600;
+
+$config['last_movie_month'] = 6;

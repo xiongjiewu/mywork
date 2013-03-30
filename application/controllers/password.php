@@ -37,9 +37,9 @@ class Password extends CI_Controller {
         }
         $maxTime = get_config_value("changepassword_max_time");
         if (time() > ($info['time'] + $maxTime)) {//页面已过期
-            //$this->Changepassword->updateInfoByFiled(array("del" => 0),array("hash_key" => "'{$key}'"));
-            //$this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));
-            //exit;
+            $this->Changepassword->updateInfoByFiled(array("del" => 0),array("hash_key" => "'{$key}'"));
+            $this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));
+            exit;
         }
         $this->set_attr("key",$key);
         $this->load->set_head_img(false);

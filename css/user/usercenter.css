@@ -368,6 +368,7 @@ div.select_create {
 }
 div.select_create select {
     width: 130px;
+    float: left;
 }
 div.select_create div.iWant {
     width: 100px;
@@ -410,4 +411,9 @@ table.page tr td {
 }
 .modbox2 table.table tr.no_read {
     background-color: #eee;
+}
+div.changeEmail {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
 }

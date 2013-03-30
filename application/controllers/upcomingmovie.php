@@ -32,7 +32,7 @@ class Upcomingmovie extends CI_Controller {
         $this->load->set_move_js(false);
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/upcomingmovie.css"));
+        $this->load->set_css(array("/css/dianying/upcomingmovie.css"));
         $this->load->set_js(array("/js/dianying/upcomingmovie.js"));
         $this->load->set_top_index(2);
         $this->set_attr("moviePlace",$this->_moviePlace);

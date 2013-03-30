@@ -7,35 +7,60 @@ class Latestmovie extends CI_Controller {
 
     public function index()
     {
-        $sortStr = $this->_movieSortType[5]['sort'];
-        $sortS = "and time1 <=" . time();
-        $sortStr = $sortS . "  " . $sortStr;
         $this->load->model('Backgroundadmin');
-        $limit = 50;
-        $movieList = $this->Backgroundadmin->getDetailInfoList(0,$limit,0,$sortStr) ;
+        $sortStr = $this->_movieSortType[5]['sort'];
+        $time = strtotime(date("Y-m-01",time()));
+        $movieList = array();
+        $monthArr = array();
+        for($i = 1;$i <= get_config_value("last_movie_month");$i++) {
+            $sTime = strtotime(date("Y-m-01 00:00:00",$time));//当前月开始时间
+            $nMonth = strtotime("+1 month",$time);//下个月
+            $nMonthFirstDayTime = strtotime(date("Y-m-01",$nMonth));//下个月第一天
+            $eTime = strtotime(date("Y-m-d 23:59:59",$nMonthFirstDayTime - 86400));//当前月最后时间
+            $movieList[date("y年m月",$time)]  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
+            $monthArr[] = date("Ym",$time);
+            $time = strtotime("-1 month",$time);
+        }
         if (empty($movieList)) {//当查询电影信息不存在
             $this->jump_to("/error/");
         }
         $ids = array();
         foreach($movieList as $movieListKey => $movieListVal) {
-            $ids[] = $movieListVal['id'];
-            $movieList[$movieListKey]['jieshao'] = $this->splitStr($movieListVal['jieshao'],50);
+            if (!empty($movieListVal)) {
+                foreach($movieListVal as $mKey => $mVal) {
+                    $ids[] = $mKey['id'];
+                    $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
+                }
+                $movieList[$movieListKey] = $movieListVal;
+            }
         }
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
-        $watchLinkInfo = $this->initArrById($watchLinkInfo);
+        $watchLinkInfo = $this->_initArr($watchLinkInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($ids);
-        $downLoadLinkInfo = $this->initArrById($downLoadLinkInfo);
+        $downLoadLinkInfo = $this->_initArr($downLoadLinkInfo);
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("css/dianying/detail.css","css/dianying/latestmovie.css"));
+        $this->load->set_css(array("css/dianying/latestmovie.css"));
         $this->load->set_js(array("js/dianying/latestmovie.js"));
         $this->load->set_top_index(1);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_view('dianying/latestmovie');
+    }
+
+    private function _initArr($nfo)
+    {
+        if (empty($nfo)) {
+            return $nfo;
+        }
+        $result = array();
+        foreach($nfo as $infoKey => $infoVal) {
+            $result[$infoVal['infoId']][] = $infoVal;
+        }
+        return $result;
     }
 }

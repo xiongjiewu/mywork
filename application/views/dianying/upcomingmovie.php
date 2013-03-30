@@ -62,7 +62,7 @@
                         var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?>";
                         window.location.href = url;
                     <?php else:?>
-                        init.ajaxInertNotic($(this));
+                        init.ajaxInertNotice($(this));
                     <?php endif;?>
                 });
             });

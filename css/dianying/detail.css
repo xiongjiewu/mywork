@@ -173,3 +173,58 @@ div.create_post_button span {
 table.dy_detail_table tr td table.dy_info_table tr td {
     border: none;
 }
+span.shoucang {
+    margin-top: 20px;
+    padding: 2px 5px;
+}
+span.shoucang_do {
+    color: #aaa;
+    margin-top: 20px;
+    padding: 2px 5px;
+    cursor: default;
+}
+span.dy_notic {
+    margin-top: 20px;
+    padding: 2px 10px;
+    color: #333;
+}
+span.dy_notic_btn {
+    margin-top: 20px;
+    color: #aaa;
+    padding: 2px 5px;
+    cursor: default;
+}
+div.read_more {
+    margin: 5px;
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #CEE1EE;
+    text-align: center;
+    cursor: pointer;
+    color: #336699;
+    font-weight: bold;
+    background-color: #F0F5F8;
+}
+div.read_more_load {
+    color: #fff;
+    background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
+}
+div.bs-docs-example{
+    *width: 920px;
+}
+table.table-bordered {
+    *width: 960px;
+}
+ul.bs-docs-sidenav {
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+ul.bs-docs-sidenav li a {
+    color: #999;
+    padding: 20px;
+}
+div.span9 {
+    margin-left: -40px;
+    width: 920px;
+}

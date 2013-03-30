@@ -142,6 +142,7 @@
     color: #999;
     font-size: 13px;
     margin: 10px 0;
+    *padding: 10px 0;
 }
 .register_main .register_main_table tr td.ui_remember a{
     color: #377CA2;
@@ -276,6 +277,7 @@
 }
 .register_main .register_main_table tr td.ui_register {
     margin-top: 20px;
+    *padding-top: 20px;
 }
 .register_main .register_main_table tr td.user_input span img {
     cursor: pointer;

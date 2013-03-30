@@ -22,7 +22,7 @@ class Detail extends CI_Controller {
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
         $this->load->model('Yingping');
-        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,10);
+        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,10);
         if (!empty($YingpingInfo)) {
             $userIds = array();
             foreach($YingpingInfo as $InfoKey => $infoVal) {
@@ -36,6 +36,16 @@ class Detail extends CI_Controller {
         }
         $this->set_attr("YingpingInfo",$YingpingInfo);
 
+        if (!empty($this->userId)) {
+            $this->load->model('Shoucang');
+            $shoucangInfo = $this->Shoucang->getInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
+            $this->set_attr("shoucangInfo",$shoucangInfo);
+            $this->set_attr("userId",$this->userId);
+
+            $this->load->model('Notice');
+            $moticeInfo = $this->Notice->getNoticeInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
+            $this->set_attr("moticeInfo",$moticeInfo);
+        }
         $this->load->helper('url');
         $this->load->set_title("电影吧，国内最强阵容");
         $this->load->set_css(array("css/dianying/detail.css"));

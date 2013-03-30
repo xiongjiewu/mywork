@@ -23,6 +23,7 @@
                             <th>时长</th>
                             <?php endif;?>
                         </tr>
+                        <?php if (!empty($movieList)):?>
                         <?php foreach($movieList as $movieVal):?>
                             <tr>
                                 <td class="name"><a href="<?php echo get_url("/detail/index/{$movieVal['id']}/")?>"><?php echo $movieVal['name'];?></a></td>
@@ -38,6 +39,7 @@
                                 <?php endif;?>
                             </tr>
                         <?php endforeach;?>
+                        <?php endif;?>
                     </table>
                     <?php if (!empty($more_url)):?>
                     <a href="<?php echo $more_url;?>" class="btn btn-info">更多>></a>

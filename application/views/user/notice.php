@@ -13,6 +13,9 @@
                                 <option value="<?php echo $selectKey;?>"><?php echo $selectVal;?></option>
                             <?php endforeach;?>
                         </select>
+                        <div class="changeEmail">
+                            <a href="<?php echo get_url("/usercenter/revised/");?>">更换接收通知邮箱</a>
+                        </div>
                     </div>
                     <table class="table table-bordered">
                         <tr>

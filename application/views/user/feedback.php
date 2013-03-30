@@ -47,7 +47,7 @@
                                         </span>
                                         <?php endif;?>
                                     </td>
-                                    <td class="show_eply"><?php if ($fVal['reply'] == 0):?>未回复<?php else:?><a href="<?php echo get_url("/usercenter/message/{$fVal['reply']}/");?>" title="点击查看回复">有回复</a><?php endif;?></td>
+                                    <td class="show_eply"><?php if ($fVal['reply'] == 0):?>未回复<?php else:?><a href="<?php echo get_url("/usercenter/messageinfo/{$fVal['reply']}/");?>" title="点击查看回复">有回复</a><?php endif;?></td>
                                 </tr>
                             <?php endforeach;?>
                         <?php else:?>

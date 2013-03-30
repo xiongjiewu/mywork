@@ -17,6 +17,8 @@ class Error extends CI_Controller {
             $this->set_attr("pageCode",$pageCode);
             $this->load->set_css(array("css/error/error.css"));
             $this->load->set_top_index(-1);
+            $this->load->set_head_img(false);
+            $this->load->set_move_js(false);
             $this->set_view("error/error");
         }
 }
