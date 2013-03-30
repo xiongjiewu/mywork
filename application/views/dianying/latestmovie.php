@@ -33,37 +33,25 @@
                                         </a>
                                     </div>
                                     <div class="dy_link_down">
+                                        <?php if (!empty($watchLinkInfo[$mVal['id']])): ?>
                                         <div class="dy_watch_down">
                                             <div class="watch_down">观看：</div>
-                                            <div class="watch_down_link">
-                                                <a href="">链接1</a>
-                                                <a href="">链接2</a>
-                                                <a href="">链接3</a>
-                                                <a href="">链接4</a>
-                                            </div>
+                                            <?php $watchLinkI = 1; ?>
+                                            <?php foreach ($watchLinkInfo[$mVal['id']] as $watchKey => $watchVal): ?>
+                                                <a class="" href="<?php echo $watchVal['link']; ?>" target="_blank">链接<?php echo $watchLinkI++;?></a>
+                                            <?php endforeach; ?>
                                         </div>
+                                        <?php endif;?>
+                                        <?php if (!empty($downLoadLinkInfo[$mVal['id']])): ?>
                                         <div class="dy_watch_down">
                                             <div class="watch_down">下载：</div>
-                                            <div class="watch_down_link">
-                                                <a href="">链接1</a>
-                                                <a href="">链接2</a>
-                                                <a href="">链接3</a>
-                                                <a href="">链接4</a>
-                                            </div>
+                                            <?php $downLinkI = 1; ?>
+                                            <?php foreach ($downLoadLinkInfo[$mVal['id']] as $downKey => $downVal): ?>
+                                                <a class="" href="<?php echo $downVal['link']; ?>" target="_blank">链接<?php echo $downLinkI++;?></a>
+                                            <?php endforeach; ?>
                                         </div>
+                                        <?php endif;?>
                                     </div>
-<!--                                    --><?php //if (!empty($watchLinkInfo[$mVal['id']])): ?>
-<!--                                        --><?php //$watchLinkI = 1; ?>
-<!--                                        --><?php //foreach ($watchLinkInfo[$mVal['id']] as $watchKey => $watchVal): ?>
-<!--                                            <a class="dy_watch" href="--><?php //echo $watchVal['link']; ?><!--" target="_blank">观看链接--><?php //echo $watchLinkI++;?><!--</a>-->
-<!--                                        --><?php //endforeach; ?>
-<!--                                    --><?php //endif;?>
-<!--                                    --><?php //if (!empty($downLoadLinkInfo[$mVal['id']])): ?>
-<!--                                        --><?php //$downLinkI = 1; ?>
-<!--                                        --><?php //foreach ($downLoadLinkInfo[$mVal['id']] as $downKey => $downVal): ?>
-<!--                                            <a class="dy_down" href="--><?php //echo $downVal['link']; ?><!--" target="_blank">下载链接--><?php //echo $downLinkI++;?><!--</a>-->
-<!--                                        --><?php //endforeach; ?>
-<!--                                    --><?php //endif;?>
                                 </li>
                             <?php endforeach;?>
                         </ul>
