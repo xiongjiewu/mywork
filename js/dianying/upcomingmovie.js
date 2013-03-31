@@ -6,7 +6,7 @@ var init = {
         return true;
 
     },
-    ajaxInertNotice:function(obj)
+    ajaxInertNotice:function(obj,event)
     {
         var id = obj.attr("val");
         if (id) {
@@ -24,5 +24,6 @@ var init = {
                 }
             });
         }
+        event.stopPropagation();
     }
 };

@@ -21,7 +21,7 @@
                         </div>
                         <ul class="info_list">
                             <?php foreach ($movieVal as $mKey => $mVal): ?>
-                                <li>
+                                <li title="点击查看详情">
                                     <div class="dy_name_l">
                                         <a class="dy_name"
                                            href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">
@@ -38,7 +38,7 @@
                                             <div class="watch_down">观看：</div>
                                             <?php $watchLinkI = 1; ?>
                                             <?php foreach ($watchLinkInfo[$mVal['id']] as $watchKey => $watchVal): ?>
-                                                <a class="" href="<?php echo $watchVal['link']; ?>" target="_blank">链接<?php echo $watchLinkI++;?></a>
+                                                <a title="点击观看" class="" href="<?php echo $watchVal['link']; ?>" target="_blank">链接<?php echo $watchLinkI++;?></a>
                                             <?php endforeach; ?>
                                         </div>
                                         <?php endif;?>
@@ -47,7 +47,7 @@
                                             <div class="watch_down">下载：</div>
                                             <?php $downLinkI = 1; ?>
                                             <?php foreach ($downLoadLinkInfo[$mVal['id']] as $downKey => $downVal): ?>
-                                                <a class="" href="<?php echo $downVal['link']; ?>" target="_blank">链接<?php echo $downLinkI++;?></a>
+                                                <a title="点击下载" class="" href="<?php echo $downVal['link']; ?>" target="_blank">链接<?php echo $downLinkI++;?></a>
                                             <?php endforeach; ?>
                                         </div>
                                         <?php endif;?>

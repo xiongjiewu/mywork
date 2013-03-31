@@ -216,6 +216,7 @@ div.read_more_load {
 table {
     width: 100%;
     margin-left: 10px;
+    cursor: pointer;
 }
 table.table tr td {
     border-top: none;
@@ -224,13 +225,43 @@ table.table tr td {
 table.firstOneT{
     margin-top: 40px;
 }
+table.table_over {
+    background-color: #E0EEEE;
+}
 table.table tr.lastOne td {
     border-bottom: none;
 }
 table.table tr td.dy_name {
-    width: 150px;
+    width: 145px;
     text-align: center;
-    line-height:90px
+    line-height:90px;
+}
+table.table tr td.dy_name img{
+    width: 140px;
+    height: 90px;
+    float: left;
+    margin-left: 2px;
+    margin-top: 3px;
+    border: 1px solid #eee;
+}
+table.table tr td.dy_name div.dy_name_detail {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+table.table tr td.dy_name span {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    line-height: 18px;
+    width: 140px;
+    height: 20px;
+    font-size: 13px;
+    color: #fff;
+    background: none repeat scroll 0 0 #000000;
+    opacity: 0.5;
+    overflow: hidden;
 }
 table.table tr td.dy_name a {
     font-weight: bold;
@@ -249,6 +280,7 @@ table.table tr td span.btn {
 table.table tr td span.dy_notic_btn {
     color: #aaa;
     cursor: default;
+    margin: 0;
 }
 span.dy_notic {
     margin-top: 0;

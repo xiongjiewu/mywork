@@ -15,7 +15,7 @@ class Usercenter extends CI_Controller
 
     public function __construct() {
         parent::__construct();
-        if (empty($this->userId)) { //未登录，跳转登录页
+        if (empty($this->userId) || !isset($this->userName)) { //未登录，跳转登录页
             $this->jump_to("/login/");
             exit;
         }

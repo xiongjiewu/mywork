@@ -4,7 +4,14 @@
         <table class="table table-bordered <?php if ($movieListI == 1): ?>firstOneT<?php endif; ?>">
             <tr>
                 <td class="dy_name" rowspan="3" valign="middle">
-                    <a href="<?php echo get_url("/detail/index/{$movieVal['id']}"); ?>"><?php echo $movieVal['name'];?></a>
+                    <div class="dy_name_detail">
+                        <a href="<?php echo get_url("/detail/index/{$movieVal['id']}"); ?>">
+                            <img src="<?php echo trim(get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                        </a>
+                        <span class="">
+                            <?php echo $movieVal['name'];?>
+                        </span>
+                    </div>
                 </td>
                 <td>
                     <strong>导演：</strong><?php echo $movieVal['daoyan'];?>
@@ -57,14 +64,26 @@
     (function($){
         $(document).ready(function(){
             $("table.table tr td span.btn").each(function(){
-                $(this).bind("click",function(){
+                $(this).bind("click",function(event){
                     <?php if (empty($userId)):?>
                         var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?>";
                         window.location.href = url;
                     <?php else:?>
-                        init.ajaxInertNotice($(this));
+                        init.ajaxInertNotice($(this),event);
                     <?php endif;?>
                 });
+            });
+            $("table.table").each(function(){
+               $(this).bind("mouseover",function(){
+                   $(this).addClass("table_over");
+               });
+               $(this).bind("mouseleave",function(){
+                    $(this).removeClass("table_over");
+               });
+               $(this).bind("click",function(){
+                    var url = $($(this).find("a").get(0)).attr("href");
+                   window.location.href = url;
+               });
             });
         });
     })(jQuery);
