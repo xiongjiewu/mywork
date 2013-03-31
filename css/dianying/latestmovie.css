@@ -65,6 +65,7 @@ div.bs-docs-example div.title h3 {
 div.bs-docs-example div.dy_info_list ul.info_list {
     float: left;
     width: 96%;
+    padding-bottom: 20px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li {
     float: left;
