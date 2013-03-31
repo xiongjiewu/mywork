@@ -3,6 +3,8 @@ $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
 $config['user_photo'] = "/images/re_su.png";
 $config['img_base_url'] = "http://www.img.dianying8.tv";
+$config['base_url'] = "http://www.dianying8.tv";
+$config['base_name'] = "电影吧";
 
 
 $config['movieType'] = array(

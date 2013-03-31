@@ -5,10 +5,18 @@
  */
 class Password extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        if (!empty($this->userId)) {//已登录，跳转至首页
+            $this->jump_to("/");
+            exit;
+        }
+    }
+
     public function index()
     {
         $r = $this->input->get("r");
-        if (!empty($this->userId) || empty($r)) {//已登录，跳转至首页
+        if (empty($r)) {
             $this->jump_to("/");
         }
         $this->load->set_head_img(false);
@@ -18,13 +26,28 @@ class Password extends CI_Controller {
         $this->set_view("member/password");
     }
 
-    public function change()
-    {
-        $key = $this->input->get("key");
-        if (!empty($this->userId)) {//已登录，跳转至首页
+    public function sendsuccess($id = null) {
+        $id = intval($id);
+        $r = $this->input->get("r");
+        if (empty($id) || empty($r)) {
             $this->jump_to("/");
             exit;
         }
+        $this->load->model('User');
+        $userInfo = $this->User->getUserInfoByFiled(array("id"=>$id));
+        if (empty($userInfo)) {
+            $this->jump_to("/");
+            exit;
+        }
+        $this->set_attr("email",$userInfo['email']);
+        $this->load->set_head_img(false);
+        $this->load->set_top_index(-1);
+        $this->load->set_css(array("/css/member/sendsuccess.css"));
+        $this->set_view("member/sendsuccess");
+    }
+
+    public function change() {
+        $key = $this->input->get("key");
         if (empty($key)) {
             $this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));
             exit;

@@ -1,0 +1,35 @@
+div.main{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+div.content {
+    background-color: #fff;
+    width: 800px;
+    padding: 150px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+div.error_img {
+    width: 770px;
+    float: left;
+}
+img {
+    float: left;
+    border: none;
+    margin-top: -85px;
+}
+
+div.error_mes {
+    float: left;
+    margin-top: 10px;
+}
+div.error_mes span {
+    font-size: 17px;
+    color: #0088cc;
+}
+a {
+    color: #0054AF;
+    text-decoration: none;
+}

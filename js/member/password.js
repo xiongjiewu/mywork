@@ -11,7 +11,7 @@
                         if (result.code == "error") {
                             alert(result.info);
                         } else {
-                            window.location.href = "/password/change?key=" + result.info;
+                            window.location.href = "/password/sendsuccess/" + result.code + "?r=" + result.info;
                         }
                     }
                 });
