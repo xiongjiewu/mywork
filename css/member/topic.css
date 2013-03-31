@@ -1,0 +1,38 @@
+div.help_daohang {
+    float: left;
+    margin-top: 40px;
+}
+div.help_daohang ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+div.help_daohang ul li {
+    list-style: none;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    border-top: 1px solid #C2E4FF;
+    background: none repeat scroll 0 0 #E9F6FF;
+}
+div.help_daohang ul li a {
+    text-decoration: underline;
+}
+div.help_daohang ul li.current {
+    background: url("/images/common/li_left.gif") no-repeat scroll 25px 14px #FFFFFF;
+}
+div.help_daohang ul li.current a {
+    text-decoration: none;
+    font: 15px;
+    font-weight: bold;
+    color: #000;
+}
+div.help_content {
+    margin-top: 40px;
+    float: left;
+    width: 700px;
+    border: 1px solid #C2E4FF;
+    padding: 20px 50px;
+    margin-left: 20px;
+    background: none repeat scroll 0 0 #fff;
+}
