@@ -25,6 +25,7 @@ class Uploadimage extends CI_Controller {
         } else {
             $data = array('upload_data' => $this->upload->data());
         }
+
         if (!empty($data['error'])) {
             $result["error"] = $data['error'];
         } else {
