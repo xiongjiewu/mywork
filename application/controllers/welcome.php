@@ -38,6 +38,21 @@ class Welcome extends CI_Controller {
                 $this->set_attr("willDyInfo",$willDyInfo);
             }
         }
+        $classInfo = $this->Backgroundadmin->getNewestInfo(3);
+        if (!empty($classInfo[0])) {
+            $idStr = explode(";",$classInfo[0]['infoIdStr']);
+            $ids = array();
+            foreach($idStr as $idVal) {
+                if (empty($idVal)) {
+                    continue;
+                }
+                $ids[] = $idVal;
+            }
+            if (!empty($ids)) {
+                $classDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
+                $this->set_attr("classDyInfo",$classDyInfo);
+            }
+        }
         $this->set_attr("baseNum",6);
         $this->load->set_css(array("/css/index/index.css"));
         $this->load->set_title("电影吧，！");
