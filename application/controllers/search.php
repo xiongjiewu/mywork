@@ -5,8 +5,9 @@
  */
 class Search extends CI_Controller {
 
-    public function index($searchW = null)
+    public function index()
     {
+        $searchW = $this->input->get("key");
         $searchW = preg_replace('/[^\w\d\x80-\xff]+/','',rawurldecode($searchW));//过滤特殊字符
         if (empty($searchW)) {
             $this->jump_to("/classicmovie/");
@@ -27,7 +28,7 @@ class Search extends CI_Controller {
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/classicmovie.css","/css/dianying/search.css"));
+        $this->load->set_css(array("/css/dianying/search.css"));
         $this->load->set_js(array("/js/dianying/search.js"));
         $this->load->set_top_index(-1);
         $this->set_attr("moviePlace",$this->_moviePlace);

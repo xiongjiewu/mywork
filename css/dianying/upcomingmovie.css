@@ -260,6 +260,8 @@ table.table tr td.dy_name span {
     font-size: 13px;
     color: #fff;
     background: none repeat scroll 0 0 #000000;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
     opacity: 0.5;
     overflow: hidden;
 }

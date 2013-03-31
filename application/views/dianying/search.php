@@ -28,7 +28,11 @@
             <?php foreach($searchMovieInfo as $movieVal):?>
                 <table class="table table-bordered <?php echo $movieVal['class'];?>">
                     <tr>
-                        <td class="info_image"><a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>"><img src="<?php echo $movieVal['image'];?>"></a></td>
+                        <td class="info_image">
+                            <a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>">
+                                <img src="<?php echo trim(get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>片名：<a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>"><?php echo $movieVal['name'];?></a></td>

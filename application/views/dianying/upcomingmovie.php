@@ -68,6 +68,7 @@
                     <?php if (empty($userId)):?>
                         var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?>";
                         window.location.href = url;
+                        event.stopPropagation();
                     <?php else:?>
                         init.ajaxInertNotice($(this),event);
                     <?php endif;?>

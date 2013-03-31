@@ -166,8 +166,7 @@
                     window.location.href = "<?php echo get_url("/classicmovie/");?>";
                     return false;
                 } else {
-
-                    window.location.href = "<?php echo get_url("/search/index/");?>" + search_val;
+                    window.location.href = "<?php echo get_url("/search?key=");?>" + search_val;
                     return false;
                 }
             });

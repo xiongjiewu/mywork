@@ -91,7 +91,7 @@ class Classicmovie extends CI_Controller {
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/classicmovie.css"));
+        $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
@@ -131,7 +131,7 @@ class Classicmovie extends CI_Controller {
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_title("电影吧，国内最强阵容");
-        $this->load->set_css(array("/css/dianying/detail.css","/css/dianying/classicmovie.css"));
+        $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
