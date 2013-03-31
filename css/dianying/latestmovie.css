@@ -5,8 +5,9 @@
     padding: 0;
 }
 div.span3 {
-    width: 140px;
+    width: 120px;
     margin-top: 40px;
+    margin-right: 20px;
 }
 ul.bs-docs-sidenav {
     width: 120px;
@@ -14,14 +15,20 @@ ul.bs-docs-sidenav {
     font-weight: bold;
     margin-top: 0;
     position: fixed;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
     opacity: 0.6;
+    background: none;
 }
 ul.bs-docs-sidenav-over {
     opacity: 1;
+    filter:alpha(Opacity=100);
+    -moz-opacity:1;
 }
 ul.bs-docs-sidenav li a {
     color: #999;
     width: 90px;
+    float: left;
 }
 ul.bs-docs-sidenav li a:hover {
     background-color: #0088CC;

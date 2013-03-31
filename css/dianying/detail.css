@@ -221,11 +221,15 @@ ul.bs-docs-sidenav {
     font-weight: bold;
     margin-top: 0;
     position: fixed;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.5;
     opacity: 0.6;
+    background: none;
 }
 ul.bs-docs-sidenav li a {
     color: #999;
     width: 90px;
+    float: left;
 }
 div.span9 {
     margin-left: -40px;
@@ -237,6 +241,8 @@ ul.bs-docs-sidenav li a.click {
 }
 ul.bs-docs-sidenav-over {
     opacity: 1;
+    filter:alpha(Opacity=100);
+    -moz-opacity:1;
 }
 ul.bs-docs-sidenav li a:hover {
     background-color: #0088CC;
