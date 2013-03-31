@@ -21,6 +21,7 @@ ul.bs-docs-sidenav-over {
 }
 ul.bs-docs-sidenav li a {
     color: #999;
+    width: 90px;
 }
 ul.bs-docs-sidenav li a:hover {
     background-color: #0088CC;

@@ -225,6 +225,7 @@ ul.bs-docs-sidenav {
 }
 ul.bs-docs-sidenav li a {
     color: #999;
+    width: 90px;
 }
 div.span9 {
     margin-left: -40px;

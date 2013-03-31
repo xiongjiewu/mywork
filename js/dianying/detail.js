@@ -142,12 +142,9 @@ var init = {
         var dyInfoObj = $("div.span9");
         var daohangObj = $("ul.dy_bs-docs-sidenav");
         var daohangTop = daohangObj.offset().top,id;
-        console.log(daohangTop);
         dyInfoObj.find("section").each(function(){
             var dyInfoTop = $(this).offset().top;
-            console.log(dyInfoTop);
             var dyInfoH = $(this).height();
-            console.log(dyInfoH);
             if (parseInt(daohangTop) >= parseInt(dyInfoTop) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
                 id = $(this).attr("id");
             }

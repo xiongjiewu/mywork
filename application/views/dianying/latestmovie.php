@@ -21,7 +21,7 @@
                         </div>
                         <ul class="info_list">
                             <?php foreach ($movieVal as $mKey => $mVal): ?>
-                                <li title="点击查看详情">
+                                <li title="点击查看详情" class="dy_info_li">
                                     <div class="dy_name_l">
                                         <a class="dy_name"
                                            href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">

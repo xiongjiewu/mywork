@@ -4,12 +4,9 @@
             var dyInfoObj = $("div.dy_total");
             var daohangObj = $("ul.dy_bs-docs-sidenav");
             var daohangTop = daohangObj.offset().top,id;
-            console.log(daohangTop);
             dyInfoObj.find("div.bs-docs-example").each(function(){
                 var dyInfoTop = $(this).offset().top;
-                console.log(dyInfoTop);
                 var dyInfoH = $(this).height();
-                console.log(dyInfoH);
                 if (parseInt(daohangTop) >= (parseInt(dyInfoTop) - 50) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
                     id = $(this).attr("id");
                 }
@@ -33,7 +30,7 @@
                 $(this).addClass("click");
             });
         });
-        var dyInfoLiObj = $("div.dy_total ul li");
+        var dyInfoLiObj = $("li.dy_info_li");
         dyInfoLiObj.each(function(){
             $(this).bind("mouseover",function(){
                 $(this).addClass("li_over");
