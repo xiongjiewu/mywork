@@ -20,19 +20,19 @@ class Uploadimage extends CI_Controller {
 
         $this->load->library('upload', $config);
 
+        $data = array();
         if(!$this->upload->do_upload($fileName)) {
             $data['error'] =  $this->upload->display_errors();
         } else {
             $data = array('upload_data' => $this->upload->data());
         }
-
         if (!empty($data['error'])) {
             $result["error"] = $data['error'];
         } else {
-            $result["status"] = "ok";
             $imageFullPath = $data['upload_data']['full_path'];
             $imageFullPathArr = explode("images",$imageFullPath);
             $imageFullPath = "/images" . $imageFullPathArr[1];
+            $result["status"] = "ok";
             $result["path"] = $imageFullPath;
             $result["fullPath"] = trim(get_config_value("img_base_url"),"/") . $imageFullPath;
             unset($result["error"]);

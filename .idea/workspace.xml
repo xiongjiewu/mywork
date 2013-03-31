@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Upload.php" afterPath="$PROJECT_DIR$/system/libraries/Upload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadimage.php" afterPath="$PROJECT_DIR$/application/controllers/uploadimage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/user/usercenter.css" afterPath="$PROJECT_DIR$/css/user/usercenter.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
@@ -24,8 +24,10 @@
     <file path="/password.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364719422993" ignored="false" />
     <file path="/sendsuccess.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364720090524" ignored="false" />
     <file path="/search.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364722520166" ignored="false" />
-    <file path="/uploadimage.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364725776368" ignored="false" />
+    <file path="/uploadimage.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732082520" ignored="false" />
     <file path="/revised.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364730175251" ignored="false" />
+    <file path="/a.dummy" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364730504934" ignored="false" />
+    <file path="/Upload.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364731853840" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,26 @@
     <favorites_list name="dianying8" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="uploadimage.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="9" selection-start="973" selection-end="973" vertical-scroll-proportion="0.44150943">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Upload.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/libraries/Upload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="911" column="38" selection-start="21297" selection-end="21297" vertical-scroll-proportion="-5.0338984">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -62,7 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
         <option value="$PROJECT_DIR$/js/dianying/latestmovie.js" />
         <option value="$PROJECT_DIR$/js/dianying/detail.js" />
         <option value="$PROJECT_DIR$/css/dianying/detail.css" />
@@ -75,9 +95,10 @@
         <option value="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/upcomingmovie.css" />
         <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
-        <option value="$PROJECT_DIR$/application/controllers/uploadimage.php" />
         <option value="$PROJECT_DIR$/css/user/usercenter.css" />
         <option value="$PROJECT_DIR$/application/views/user/revised.php" />
+        <option value="$PROJECT_DIR$/system/libraries/Upload.php" />
+        <option value="$PROJECT_DIR$/application/controllers/uploadimage.php" />
       </list>
     </option>
   </component>
@@ -142,11 +163,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -160,25 +177,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,13 +249,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1292" height="754" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2203252" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2203252" sideWeight="0.6705298" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -261,7 +265,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -328,11 +331,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="24" selection-start="9096" selection-end="9096" vertical-scroll-proportion="-10.064516" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="4682" vertical-scroll-proportion="0.0" />
@@ -345,17 +343,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.31320754" />
+        <state line="30" column="35" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.31320754">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="119" selection-start="1681" selection-end="1681" vertical-scroll-proportion="-9.225806" />
+        <state line="32" column="119" selection-start="1681" selection-end="1681" vertical-scroll-proportion="-9.225806">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="197" selection-start="1554" selection-end="1631" vertical-scroll-proportion="0.29433963" />
+        <state line="30" column="197" selection-start="1554" selection-end="1631" vertical-scroll-proportion="0.29433963">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
@@ -377,29 +381,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/upcomingmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="24" selection-start="3505" selection-end="3505" vertical-scroll-proportion="0.8528302" />
+        <state line="70" column="24" selection-start="3505" selection-end="3505" vertical-scroll-proportion="0.8528302">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/password.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="26" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.018867925" />
+        <state line="50" column="26" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.018867925">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="35" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.49056605" />
+        <state line="133" column="35" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.49056605">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="244" column="19" selection-start="4192" selection-end="4238" vertical-scroll-proportion="0.5017422" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="768" selection-end="777" vertical-scroll-proportion="0.049056605">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/user/usercenter.css">
@@ -412,6 +415,20 @@
     <entry file="file://$PROJECT_DIR$/application/views/user/revised.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="60" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.24528302">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libraries/Upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="911" column="38" selection-start="21297" selection-end="21297" vertical-scroll-proportion="-5.0338984">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="973" selection-end="973" vertical-scroll-proportion="0.44150943">
           <folding />
         </state>
       </provider>

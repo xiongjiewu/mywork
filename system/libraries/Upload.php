@@ -928,9 +928,8 @@ class CI_Upload {
 		$str = '';
 		foreach ($this->error_msg as $val)
 		{
-			$str .= $open.$val.$close;
+			$str .= $val;
 		}
-
 		return $str;
 	}
 
