@@ -1,6 +1,8 @@
 div.help_daohang {
     float: left;
     margin-top: 40px;
+    margin-left: 60px;
+    position: fixed;
 }
 div.help_daohang ul {
     float: left;
@@ -33,6 +35,6 @@ div.help_content {
     width: 700px;
     border: 1px solid #C2E4FF;
     padding: 20px 50px;
-    margin-left: 20px;
+    margin-left: 280px;
     background: none repeat scroll 0 0 #fff;
 }

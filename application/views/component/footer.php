@@ -1,4 +1,3 @@
-
 <footer class="footer">
     <div class="container">
         <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo"
@@ -11,11 +10,11 @@
         <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a
                 href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <ul class="footer-links">
-            <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+            <li><a href="<?php echo get_url("/topic/index/3/");?>">关于我们</a></li>
             <li class="muted">&middot;</li>
-            <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+            <li><a href="<?php echo get_url("/topic/index/4/");?>">联系方式</a></li>
             <li class="muted">&middot;</li>
-            <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
+            <li><a href="<?php echo get_url("/topic/index/5/");?>">免责声明</a></li>
         </ul>
     </div>
 </footer>

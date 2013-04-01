@@ -145,3 +145,11 @@ div.head_top_menus ul.nav li.username a.icon-envelope {
 .navbar-inverse .navbar-inner {
     border-bottom: 2px solid #FF6600;
 }
+.footer {
+    height: 200px;
+    border-top: 2px solid #FF6600;
+    background: url("/images/common/body_b.png") repeat;
+}
+.footer a:link,.footer a:visited,.footer a:active {
+    color: #0088CC;
+}

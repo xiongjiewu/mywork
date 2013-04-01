@@ -9,19 +9,25 @@ class Latestmovie extends CI_Controller {
     {
         $this->load->model('Backgroundadmin');
         $sortStr = $this->_movieSortType[5]['sort'];
-        $time = strtotime(date("Y-m-01",time()));
+        $nTime = time();
+        $time = strtotime(date("Y-m-01",$nTime));
         $movieList = array();
         $monthArr = array();
-        for($i = 1;$i <= get_config_value("last_movie_month");$i++) {
+        $monthCount = get_config_value("last_movie_month");
+        for($i = 1;$i <= $monthCount;$i++) {
             $sTime = strtotime(date("Y-m-01 00:00:00",$time));//当前月开始时间
             $nMonth = strtotime("+1 month",$time);//下个月
             $nMonthFirstDayTime = strtotime(date("Y-m-01",$nMonth));//下个月第一天
+            if ($nMonthFirstDayTime > $nTime) {
+                $nMonthFirstDayTime = $nTime;
+            }
             $eTime = strtotime(date("Y-m-d 23:59:59",$nMonthFirstDayTime - 86400));//当前月最后时间
             $infoList  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
             if (!empty($infoList)) {
                 $movieList[date("y年m月",$time)] = $infoList;
                 $monthArr[date("y年m月",$time)] = date("Ym",$time);
             }
+            $time = strtotime(date("Y-m-01",$time));
             $time = strtotime("-1 month",$time);
         }
         if (empty($movieList)) {//当查询电影信息不存在
