@@ -5,6 +5,7 @@
  */
 class Useraction extends CI_Controller
 {
+    private $_cookiePre = __CLASS__;
     public function index()
     {
 
@@ -33,6 +34,14 @@ class Useraction extends CI_Controller
             echo "请输入内容！";
             exit;
         }
+        $cookieName = $this->_cookiePre . "_" . $data['dyId'] . "_" . $this->userId;
+        $cookieVal = $this->get_cookie($cookieName);
+        $time = time();
+        //在规定时间之内不能连续发表评论
+        if (!empty($cookieVal) && ($time <= ($cookieVal + get_config_value("max_post_time")))) {
+            $this->jump_to("/error/index/5?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}/")));
+            exit;
+        }
         $info['infoId'] = $data['dyId'];
         $info['userName'] = $this->userName;
         $info['userId'] = $this->userId;
@@ -44,6 +53,7 @@ class Useraction extends CI_Controller
             $this->jump_to("/error/index/3?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}")));
             exit;
         } else {
+            $this->set_cookie($cookieName,$time);
             $this->jump_to("/detail/index/{$data['dyId']}#createpost");
         }
     }
@@ -55,12 +65,22 @@ class Useraction extends CI_Controller
             echo json_encode(array("code" => "error","info" => "非法操作"));
             exit;
         }
+        $ip  = ip2long($this->getUserIP());
+        $dingCookieName = $this->_cookiePre . "_" . $ip . "_" . $data['pid'];
+        if (!empty($ip)) {
+            $dingCookieVal = $this->get_cookie($dingCookieName);
+            if (!empty($dingCookieVal) && ($dingCookieVal == $data['pid'])) {
+                echo json_encode(array("code" => "error","info" => "同一个评论只能顶1次"));
+                exit;
+            }
+        }
         $this->load->model('Yingping');
         $res = $this->Yingping->updateYingpingInfoById($data['pid'],array("ding" => "ding + 1"));
         if (empty($res)) {
             echo json_encode(array("code" => "error","info" => "网络连接失败，清重新操作！"));
             exit;
         } else {
+            $this->set_cookie($dingCookieName,$data['pid']);
             echo json_encode(array("code" => "ok","info" => "操作成功"));
             exit;
         }

@@ -5,6 +5,7 @@
      */
 class Loginaction extends CI_Controller {
 
+
     private function _checkCommon($username,$password,$remember)
     {
         $result = array(

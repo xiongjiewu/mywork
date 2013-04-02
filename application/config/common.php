@@ -6,6 +6,8 @@ $config['img_base_url'] = "http://www.img.dianying8.tv";
 $config['base_url'] = "http://www.dianying8.tv";
 $config['base_name'] = "电影吧";
 
+$config['max_post_time'] = 5;//允许5秒之内不能重复发表评论
+
 
 $config['movieType'] = array(
     1 => "动作",
@@ -90,6 +92,7 @@ $config['error_code'] = array(
     2 => array("content" => "您需要登录才可以发表评论","return_url" => "/"),
     3 => array("content" => "网络连接失败，请重新操作！","return_url" => "/"),
     4 => array("content" => "您访问的页面已过期，请重新操作！","return_url" => "/"),
+    5 => array("content" => "为了防止灌水，在". $config['max_post_time']."秒之内不能连续发表评论","return_url" => "/"),
 );
 
 $config['movie_type'] = array(
