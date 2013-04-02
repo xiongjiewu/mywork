@@ -66,3 +66,68 @@
         </div>
     <?php endif; ?>
 </div>
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
+            init.daoHangDingWei();
+            var daohangObj = $("ul.dy_bs-docs-sidenav");
+            daohangObj.bind("mouseover",function(){
+                $(this).addClass("bs-docs-sidenav-over");
+            });
+            daohangObj.bind("mouseleave",function(){
+                $(this).removeClass("bs-docs-sidenav-over");
+            });
+            daohangObj.find("li a").each(function(){
+                $(this).bind("click",function(){
+                    daohangObj.find("li a.click").removeClass("click");
+                    $(this).addClass("click");
+                });
+            });
+            var dyInfoLiObj = $("li.dy_info_li");
+            dyInfoLiObj.each(function(){
+                $(this).bind("mouseover",function(){
+                    $(this).addClass("li_over");
+                    $(this).find("span.shoucang_action").show();
+                });
+                $(this).bind("click",function(){
+                    var url = $($(this).find("a").get(0)).attr("href");
+                    window.location.href = url;
+                });
+                $(this).find("a").each(function(){
+                    $(this).bind("click",function(event){
+                        event.stopPropagation();
+                    });
+                });
+            });
+            dyInfoLiObj.each(function(){
+                $(this).bind("mouseleave",function(){
+                    $(this).removeClass("li_over");
+                    $(this).find("span.shoucang_action").hide();
+                });
+            });
+            daohangObj.find("a").each(function(){
+                $(this).bind("click",function(){
+                    var name = $(this).attr("name");
+                    var sH = $("#"+name+"").offset().top;
+                    $(window).scrollTop(sH - 50);
+                });
+            });
+            var shoucangObj = $("span.shoucang_dy");
+            shoucangObj.each(function(){
+                $(this).bind("click",function(event){
+                    <?php if (empty($userId)):?>
+                        var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/latestmovie/'));?>";
+                        window.location.href = url;
+                        event.stopPropagation();
+                    <?php else:?>
+                        init.ajaxShouCang($(this));
+                        event.stopPropagation();
+                    <?php endif;?>
+                });
+            });
+            $(window).bind("scroll", function() {//当滚动条滚动时
+                init.daoHangDingWei();
+            });
+        });
+    })(jQuery)
+</script>
