@@ -27,7 +27,7 @@
             </a>
             <a class="menu-item <?php if ($index == 4):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/notice/");?>">
                 <i class="manpropcond"></i>
-                订阅电影通知
+                电影通知
                 <span class="arrow-icon"></span>
             </a>
             <a class="menu-item <?php if ($index == 5):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/feedback/suggest/");?>">

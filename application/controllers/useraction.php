@@ -268,6 +268,11 @@ class Useraction extends CI_Controller
             exit;
         }
         $this->load->model('Shoucang');
+        $userShouCangCount = $this->Shoucang->getInfoCountByFiled(array("userId"=>$this->userId,"del"=>0));
+        if ($userShouCangCount >= get_config_value("shoucang_max_count")) {
+            echo json_encode(array("code" => "error","info" => "最多可收藏{$userShouCangCount}部电影"));
+            exit;
+        }
         $info = $this->Shoucang->getInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
         if (empty($info)) {
             $this->Shoucang->insertShouCangInfo(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0,"time"=>time()));

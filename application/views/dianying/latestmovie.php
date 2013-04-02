@@ -31,6 +31,11 @@
                                            href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">
                                             <?php echo $mVal['name'];?>
                                         </a>
+                                        <?php if (empty($shouCangInfo[$mVal['id']])):?>
+                                            <span class="shoucang_action shoucang_dy" title="点击收藏" val="<?php echo $mVal['id'];?>"></span>
+                                        <?php else:?>
+                                            <span class="shoucang_action shoucang_dy_y" title="已收藏"></span>
+                                        <?php endif;?>
                                     </div>
                                     <div class="dy_link_down">
                                         <?php if (!empty($watchLinkInfo[$mVal['id']])): ?>

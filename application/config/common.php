@@ -174,8 +174,10 @@ $config['web_name'] = "电影吧";
 $config['AuthCookieName'] = "MyAuth_Dianying8Info";
 $config['dianying8Secques']  = "dianying8@cookie.com";
 
-$config['notice_max_count'] = 20;
+$config['notice_max_count'] = 20;//订阅通知最大个数
 
-$config['changepassword_max_time'] = 600;
+$config['shoucang_max_count'] = 30;//最多收藏个数
 
-$config['last_movie_month'] = 6;
+$config['changepassword_max_time'] = 600;//允许修改密码页面过期失效时间
+
+$config['last_movie_month'] = 6;//最新上映展示月个数

@@ -63,4 +63,20 @@ class Shoucang extends CI_Model {
         $result = $query->result_array();
         return empty($result[0]) ? array() : $result[0];
     }
+    public function getInfoCountByFiled($queryInfo = array())
+    {
+        if (empty($queryInfo) || !is_array($queryInfo)) {
+            return false;
+        }
+        $keyArr = $valArr = array();
+        foreach($queryInfo as $infoKey => $infoVal) {
+            $keyArr[] = "{$infoKey} = ?";
+            $valArr[] = $infoVal;
+        }
+        $keyStr = implode(" and ",$keyArr);
+        $sql = "select count(1) as cn from `tbl_shoucang` where {$keyStr};";
+        $query = $this->db->query($sql,$valArr);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
 }

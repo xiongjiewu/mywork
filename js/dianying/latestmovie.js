@@ -13,6 +13,25 @@
             });
             daohangObj.find("li a.click").removeClass("click");
             daohangObj.find("li a[name='"+id+"']").addClass("click");
+        },
+        ajaxShouCang: function (obj) {
+            var id = obj.attr("val");
+            if (id && (id != undefined)) {
+                $.ajax({
+                    url: "/useraction/shoucang/",
+                    type: "post",
+                    data: {id: id},
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.error == "error") {
+                            alert(result.info);
+                        } else {
+                            obj.removeClass("shoucang_dy").addClass("shoucang_dy_y");
+                            obj.attr("title","已收藏");
+                        }
+                    }
+                })
+            }
         }
     };
     $(document).ready(function(){
@@ -34,6 +53,7 @@
         dyInfoLiObj.each(function(){
             $(this).bind("mouseover",function(){
                 $(this).addClass("li_over");
+                $(this).find("span.shoucang_action").show();
             });
             $(this).bind("click",function(){
                 var url = $($(this).find("a").get(0)).attr("href");
@@ -48,6 +68,7 @@
         dyInfoLiObj.each(function(){
             $(this).bind("mouseleave",function(){
                 $(this).removeClass("li_over");
+                $(this).find("span.shoucang_action").hide();
             });
         });
         daohangObj.find("a").each(function(){
@@ -55,6 +76,13 @@
                 var name = $(this).attr("name");
                 var sH = $("#"+name+"").offset().top;
                 $(window).scrollTop(sH - 50);
+            });
+        });
+        var shoucangObj = $("span.shoucang_dy");
+        shoucangObj.each(function(){
+            $(this).bind("click",function(event){
+                init.ajaxShouCang($(this));
+                event.stopPropagation();
             });
         });
         $(window).bind("scroll", function() {//当滚动条滚动时

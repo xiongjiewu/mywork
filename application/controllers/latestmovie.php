@@ -43,6 +43,12 @@ class Latestmovie extends CI_Controller {
                 $movieList[$movieListKey] = $movieListVal;
             }
         }
+        if (!empty($this->userId)) {
+            $this->load->model("Shoucang");
+            $shouCangInfo = $this->Shoucang->getUserShoucangInfo($this->userId);
+            $shouCangInfo = $this->initArrById($shouCangInfo,"infoId");
+            $this->set_attr("shouCangInfo",$shouCangInfo);
+        }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("monthArr",$monthArr);
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
