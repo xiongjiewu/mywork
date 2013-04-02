@@ -31,8 +31,13 @@ var init = {
                 url: url,
                 type: "post",
                 data: {pid: pid},
-                success: function () {
-                    ding.html(count + 1);
+                dataType:"json",
+                success: function (result) {
+                    if (result.code && (result.code == "error")) {
+                        alert(result.info);
+                    } else {
+                        ding.html(count + 1);
+                    }
                 }
             })
         }
