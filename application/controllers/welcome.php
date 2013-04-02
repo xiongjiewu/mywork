@@ -55,7 +55,7 @@ class Welcome extends CI_Controller {
         }
         $this->set_attr("baseNum",6);
         $this->load->set_css(array("/css/index/index.css"));
-        $this->load->set_title("电影吧，！");
+        $this->load->set_title("我们只专注于电影，您想看的就是我们宗旨 - " . get_config_value("base_name"));
         $this->set_view('index/index','base');
 
 	}

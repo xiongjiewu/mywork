@@ -32,7 +32,6 @@ div.bs-docs-sidebar {
     border-top: 1px solid #eee;
 }
 
-
 .pllist * {
     font-size: 14px;
     line-height: 25px;
@@ -265,4 +264,7 @@ div.span9 table.error_table tr td.image {
 div.span9 table.error_table tr td.text {
     border-left:none ;
     padding-top: 120px;
+}
+table.table-bordered tr td {
+    border: none;
 }

@@ -50,7 +50,7 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
-        $this->load->set_title("电影吧，国内最强阵容");
+        $this->load->set_title("重温经典列表 - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);

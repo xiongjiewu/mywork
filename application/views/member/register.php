@@ -5,7 +5,7 @@
         <div class="register_top_middel">
             <div class="register_main_table">
                 <table>
-                    <tr><th colspan="2">注册电影吧</th></tr>
+                    <tr><th colspan="2">注册<?php echo get_config_value("base_name");?></th></tr>
                     <tr><td class="ui_error"></td></tr>
                     <tr>
                         <td class="user_input">
@@ -124,7 +124,7 @@
             </div>
             <div class="register_main_right">
                 <table>
-                    <tr><th>用电影吧账号<a class="show_login_ui" href="<?php echo get_url("/login/");?>">登录</a></th></tr>
+                    <tr><th>用<?php echo get_config_value("base_name");?>账号<a class="show_login_ui" href="<?php echo get_url("/login/");?>">登录</a></th></tr>
                 </table>
             </div>
         </div>

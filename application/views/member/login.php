@@ -3,7 +3,7 @@
         <div class="login_ui_title">
             <table>
                 <tr>
-                    <td class="l_t">登录电影吧</td>
+                    <td class="l_t">登录<?php echo get_config_value("base_name");?></td>
                     <td class=""></td>
                 </tr>
             </table>
@@ -35,7 +35,7 @@
         <div class="login_ui_other">
             <table>
                 <tr class="login_ui_border">
-                    <td>还没有电影吧账号？<a href="<?php echo get_url("/register/")?>" class="register">马上注册</a></td>
+                    <td>还没有<?php echo get_config_value("base_name");?>账号？<a href="<?php echo get_url("/register/")?>" class="register">马上注册</a></td>
                 </tr>
             </table>
         </div>
