@@ -117,9 +117,16 @@
                 +我要提供链接
             </div>
             <div class="add_link">
+                <form action="" method="post" onsubmit="return false;">
+                <select class="link_type" name="link_type" id="link_type">
+                    <option value="0">链接类型</option>
+                    <option value="1">观看</option>
+                    <option value="2">下载</option>
+                </select>
                 <input type="text" class="add_input" name="add_link" id="add_link" value="">
-                <input type="button" class="add_submit" name="add_submit" id="add_submit" value="提交">
+                <input type="submit" class="add_submit" name="add_submit" id="add_submit" value="提交">
                 <input type="button" class="add_cancel" name="add_cancel" id="add_cancel" value="取消">
+                </form>
             </div>
         </section>
         <?php if (!empty($watchLinkInfo)): ?>
@@ -327,6 +334,32 @@
                     var sH = $("#"+name+"").offset().top;
                     $(window).scrollTop(sH - 50);
                 });
+            });
+            $("div.user_add").bind("click",function() {
+                $(this).css("display","none");
+                $("div.add_link").css("display","block");
+            });
+            $("input.add_cancel").bind("click",function(){
+                $(this).parent().parent().css("display","none");
+                $("div.user_add").css("display","block");
+            });
+            $("input.add_submit").bind("click",function(){
+                var type = $("#link_type").val();
+                var url = $.trim($("#add_link").val());
+                var strRegex = "^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$";
+                var re = new RegExp(strRegex);
+                if (type == 0) {
+                    alert("请选择链接类型！");
+                } else if (!url || (url == undefined)) {
+                    alert("请输入链接！");
+                }
+                else if (!re.test(url)) {
+                    alert("请输入正确的链接！");
+                } else {
+                    var id = <?php echo $dyInfo['id'];?>;
+                    init.ajaxAddLink(id,type,url);
+                }
+                return false;
             });
             $(window).bind("scroll", function() {//当滚动条滚动时
                 init.daoHangDingWei();

@@ -80,7 +80,7 @@ class Useraction extends CI_Controller
             echo json_encode(array("code" => "error","info" => "网络连接失败，清重新操作！"));
             exit;
         } else {
-            $this->set_cookie($dingCookieName,$data['pid']);
+            $this->set_cookie($dingCookieName,$data['pid'],365 * 86400);
             echo json_encode(array("code" => "ok","info" => "操作成功"));
             exit;
         }
@@ -285,7 +285,7 @@ class Useraction extends CI_Controller
     {
         $result = array(
             "code" => "error",
-            "info" => "",
+            "info" => "参数错误",
         );
         $id = $this->input->post("id");
         $count = $this->input->post("count");
@@ -315,5 +315,28 @@ class Useraction extends CI_Controller
         $result['info']['count']  = $count + count($YingpingInfo);
         echo json_encode($result);
         exit;
+    }
+
+    public function addlink() {
+        $result = array(
+            "code" => "error",
+            "info" => "参数错误",
+        );
+        $id = $this->input->post("id");
+        $type = $this->input->post("type");
+        $url = $this->input->post("url");
+        if (empty($id) || !isset($type) || ($type != 1 && $type != 2) || !empty($url)) {
+            echo json_encode($result);
+            exit;
+        }
+        if (!strpos($url,"http://")) {
+            $url .= "http://";
+        }
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            $result['info'] = "请输入正确的链接";
+            echo json_encode($result);
+            exit;
+        }
+
     }
 }

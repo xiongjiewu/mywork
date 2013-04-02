@@ -156,5 +156,18 @@ var init = {
         });
         daohangObj.find("li a.click").removeClass("click");
         daohangObj.find("li a[name='"+id+"']").addClass("click");
+    },
+    ajaxAddLink:function(id,type,url) {
+        if (id && type && url) {
+            $.ajax({
+                url:"/useraction/addlink/",
+                type:"post",
+                data:{id:id,type:type,url:url},
+                dataType:"json",
+                success:function(result){
+
+                }
+            });
+        }
     }
 };

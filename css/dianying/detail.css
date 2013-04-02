@@ -256,18 +256,23 @@ div.baidu_share {
     margin: 5px 0 10px 0;
 }
 div.user_add {
-    display: none;
     float: right;
     margin-right: 10px;
     cursor: pointer;
     color: #0088cc;
 }
 div.add_link {
+    display: none;
     float: right;
     margin-right: 10px;
 }
-div.add_link input {
+div.add_link * {
     float: left;
+}
+div.add_link select.link_type {
+    width: 100px;
+    margin-right: 10px;
+    height: 26px;
 }
 div.add_link input.add_input {
     height: 15px;
