@@ -36,7 +36,11 @@ class Detail extends CI_Controller {
         }
         $this->set_attr("YingpingInfo",$YingpingInfo);
 
-        if (!empty($this->userId)) {
+        if (!empty($this->userId)) {//已登录
+            $this->load->model('Admin');
+            $adminInfo = $this->Admin->getAdminInfoByUserId($this->userId);
+            $this->set_attr("adminInfo",$adminInfo);
+
             $this->load->model('Shoucang');
             $shoucangInfo = $this->Shoucang->getInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
             $this->set_attr("shoucangInfo",$shoucangInfo);

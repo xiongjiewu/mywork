@@ -193,6 +193,9 @@
                                                             class="up_cnt"><?php echo $infoVal['ding'];?></font>)</span>
                                                 </div>
                                                 <div class="right">
+                                                    <?php if (!empty($adminInfo)):?>
+                                                        <a href="<?php echo get_url("/editpost/index/{$infoVal['id']}/");?>">编辑</a>&nbsp;|&nbsp;
+                                                    <?php endif;?>
                                                     <a class="reply" href="javascript:void(0);">回复</a>
                                                     <em><?php echo $YingpingInfoI++;?>楼</em>
                                                 </div>
