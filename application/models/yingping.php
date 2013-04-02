@@ -60,4 +60,26 @@ class Yingping extends CI_Model {
         $sql = "update `tbl_yingping` set {$setStr} where id = {$id} limit 1;";
         return $this->db->query($sql);
     }
+
+    /** 根据条件获取影评信息
+     * @param array $queryInfo 条件数组
+     * @return array|bool
+     */
+    public function getYingPingInfoByFiled($queryInfo = array())
+    {
+        if (empty($queryInfo) || !is_array($queryInfo)) {
+            return false;
+        }
+        $keyArr = $valArr = array();
+        foreach($queryInfo as $infoKey => $infoVal) {
+            $keyArr[] = "{$infoKey} = ?";
+            $valArr[] = $infoVal;
+        }
+        $keyStr = implode(" and ",$keyArr);
+        $fildStr = implode(",",$this->_fileArr);
+        $sql = "select {$fildStr} from `tbl_yingping` where {$keyStr} limit 1;";
+        $query = $this->db->query($sql,$valArr);
+        $result = $query->result_array();
+        return empty($result[0]) ? array() : $result[0];
+    }
 }

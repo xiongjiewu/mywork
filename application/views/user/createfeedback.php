@@ -34,7 +34,7 @@
                                     <textarea class="xheditor" name="content" id="content"></textarea>
                                     <p></p>
                                     <input type="submit" id="create_post_button" class="btn btn-primary" value="提交反馈"><span
-                                        style="color: #aaa">（ctrl+enter快捷回复）</span>
+                                        style="color: #aaa">（ctrl+enter快捷提交）</span>
                                 </td>
                                 <td class="error_text">
                                 </td>

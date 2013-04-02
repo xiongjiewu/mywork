@@ -50,7 +50,6 @@ class Detail extends CI_Controller {
             $moticeInfo = $this->Notice->getNoticeInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
             $this->set_attr("moticeInfo",$moticeInfo);
         }
-        $this->load->helper('url');
         $this->load->set_title("电影吧，国内最强阵容");
         $this->load->set_css(array("css/dianying/detail.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
@@ -67,9 +66,5 @@ class Detail extends CI_Controller {
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_view('dianying/detail');
-
     }
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

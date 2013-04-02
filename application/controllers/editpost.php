@@ -9,6 +9,32 @@ class Editpost extends CI_Controller {
             $this->jump_to("/");
             exit;
         }
-
+        $this->load->model('Admin');
+        $adminInfo = $this->Admin->getAdminInfoByUserId($this->userId);
+        if (empty($adminInfo)) {//不是管理员
+            $this->jump_to("/");
+            exit;
+        }
+        $this->load->model('Yingping');
+        $YingpingInfo = $this->Yingping->getYingPingInfoByFiled(array("id"=>$id));
+        if (empty($YingpingInfo) || ($YingpingInfo['del'] == 1)) {
+            $this->jump_to("/");
+            exit;
+        }
+        $content = $this->input->post("content");
+        if ($content != "") {
+            $this->Yingping->updateYingpingInfoById($id,array("content"=>"'{$content}'"));
+            $this->jump_to("/detail/index/{$YingpingInfo['infoId']}/");
+            exit;
+        }
+        $this->set_attr("YingpingInfo",$YingpingInfo);
+        $this->load->set_title("电影吧，国内最强阵容");
+        $this->load->set_css(array("css/dianying/editpost.css"));
+        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/editpost.js"));
+        $this->load->set_top_index(-1);
+        $this->load->set_head_img(false);
+        $this->load->set_move_js(false);
+        $this->set_attr("YingpingInfo",$YingpingInfo);
+        $this->set_view('dianying/editpost');
     }
 }
