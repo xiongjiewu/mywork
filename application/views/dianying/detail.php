@@ -112,6 +112,15 @@
                 </script>
             </div>
             <!-- Baidu Button END -->
+            &nbsp;&nbsp;
+            <div class="user_add">
+                +我要提供链接
+            </div>
+            <div class="add_link">
+                <input type="text" class="add_input" name="add_link" id="add_link" value="">
+                <input type="button" class="add_submit" name="add_submit" id="add_submit" value="提交">
+                <input type="button" class="add_cancel" name="add_cancel" id="add_cancel" value="取消">
+            </div>
         </section>
         <?php if (!empty($watchLinkInfo)): ?>
             <section id="watchlink">

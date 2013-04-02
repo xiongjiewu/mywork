@@ -255,3 +255,24 @@ ul.bs-docs-sidenav li a:hover {
 div.baidu_share {
     margin: 5px 0 10px 0;
 }
+div.user_add {
+    display: none;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #0088cc;
+}
+div.add_link {
+    float: right;
+    margin-right: 10px;
+}
+div.add_link input {
+    float: left;
+}
+div.add_link input.add_input {
+    height: 15px;
+}
+div.add_link input.add_submit,div.add_link input.add_cancel {
+    height: 25px;
+    margin-left: 5px;
+}
