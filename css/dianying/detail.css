@@ -211,9 +211,13 @@ div.read_more_load {
 }
 div.bs-docs-example{
     *width: 920px;
+    margin: 0;
 }
 table.table-bordered {
     *width: 960px;
+}
+table.dy_info_table tr td span.name {
+    font-size: 17px;
 }
 ul.bs-docs-sidenav {
     width: 120px;
@@ -247,4 +251,7 @@ ul.bs-docs-sidenav-over {
 ul.bs-docs-sidenav li a:hover {
     background-color: #0088CC;
     color: #fff;
+}
+div.baidu_share {
+    margin: 5px 0 10px 0;
 }

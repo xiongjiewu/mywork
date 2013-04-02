@@ -13,7 +13,7 @@
     </div>
     <div class="span9">
         <section id="info" class="dy_detail">
-            <h1>
+            <h1 style="display: none;">
                 <?php echo $dyInfo['name'];?>
             </h1>
 
@@ -47,6 +47,14 @@
                         </td>
                         <td>
                             <table class="table dy_info_table">
+                                <tr>
+                                    <td>
+                                        <strong>片名：</strong>
+                                        <span class="name">
+                                            <?php echo $dyInfo['name'];?>
+                                        </span>
+                                    </td>
+                                </tr>
                                 <tr class="">
                                     <td>
                                         <strong>主演：</strong><?php $zhuyao = preg_split("/;+|；+/", $dyInfo['zhuyan']);echo implode("、", $zhuyao);?>
@@ -86,6 +94,24 @@
                     </tr>
                 </table>
             </div>
+            <!-- Baidu Button BEGIN -->
+            <div class="baidu_share">
+                <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                    <span class="bds_more">分享到：</span>
+                    <a class="bds_qzone"></a>
+                    <a class="bds_tsina"></a>
+                    <a class="bds_tqq"></a>
+                    <a class="bds_renren"></a>
+                    <a class="bds_t163"></a>
+                    <a class="shareCount"></a>
+                </div>
+                <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
+                <script type="text/javascript" id="bdshell_js"></script>
+                <script type="text/javascript">
+                    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+                </script>
+            </div>
+            <!-- Baidu Button END -->
         </section>
         <?php if (!empty($watchLinkInfo)): ?>
             <section id="watchlink">
