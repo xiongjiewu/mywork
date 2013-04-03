@@ -165,7 +165,7 @@ var init = {
                 data:{id:id,type:type,url:url},
                 dataType:"json",
                 success:function(result){
-
+                    alert(result.info);
                 }
             });
         }

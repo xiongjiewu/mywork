@@ -325,6 +325,7 @@ class Useraction extends CI_Controller
         $id = $this->input->post("id");
         $type = $this->input->post("type");
         $url = $this->input->post("url");
+        var_dump($id,$type,$url);
         if (empty($id) || !isset($type) || ($type != 1 && $type != 2) || !empty($url)) {
             echo json_encode($result);
             exit;
@@ -337,6 +338,11 @@ class Useraction extends CI_Controller
             echo json_encode($result);
             exit;
         }
-
+        $this->load->medol("Addlink");
+        $this->Addlink->insertUserInfo(array("infoId"=>$id,"link"=>$url,"type"=>$type,"time"=>time()));
+        $result['code'] = "success";
+        $result['info'] = "提交成功";
+        echo json_encode($result);
+        exit;
     }
 }

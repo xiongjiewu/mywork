@@ -346,7 +346,7 @@
             $("input.add_submit").bind("click",function(){
                 var type = $("#link_type").val();
                 var url = $.trim($("#add_link").val());
-                var strRegex = "^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$";
+                var strRegex = "^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc|tv|me (:s[0-9]{1-4})?/$";
                 var re = new RegExp(strRegex);
                 if (type == 0) {
                     alert("请选择链接类型！");

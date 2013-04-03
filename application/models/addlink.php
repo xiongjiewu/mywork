@@ -1,7 +1,7 @@
 <?php
-class Admin extends CI_Model {
+class Addlink extends CI_Model {
 
-    private $_filedArr = array("id","userId","time","type");
+    private $_filedArr = array("id","infoId","type","link","time");
 
     function __construct()
     {
@@ -14,4 +14,12 @@ class Admin extends CI_Model {
         return implode(",",$this->_filedArr);
     }
 
+    public function insertUserInfo($info = array())
+    {
+        if (empty($info)) {
+            return false;
+        }
+        $this->db->insert('tbl_userGive',$info);
+        return $this->db->insert_id();
+    }
 }

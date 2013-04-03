@@ -1,0 +1,10 @@
+/application/config/database.php
+.php~
+.buildpath
+.project
+.settings
+.pydevproject
+*.swpi
+*.conflict
+.idea/
+.buildpath

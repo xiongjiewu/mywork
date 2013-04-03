@@ -143,7 +143,7 @@ class Backgroundadmin extends CI_Model {
         $query = $this->db->query($sql);
         $result = $query->result_array();
         if (!$all) {
-            return $result[0] ? $result[0] : false;
+            return !empty($result[0]) ? $result[0] : false;
         } else {
             return $result;
         }
