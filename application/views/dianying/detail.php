@@ -112,6 +112,7 @@
                 </script>
             </div>
             <!-- Baidu Button END -->
+            <?php if (!empty($dyInfo['time1']) && ($dyInfo['time1'] <= time())):?>
             &nbsp;&nbsp;
             <div class="user_add">
                 +我要提供链接
@@ -128,6 +129,7 @@
                 <input type="button" class="add_cancel" name="add_cancel" id="add_cancel" value="取消">
                 </form>
             </div>
+            <?php endif;?>
         </section>
         <?php if (!empty($watchLinkInfo)): ?>
             <section id="watchlink">
