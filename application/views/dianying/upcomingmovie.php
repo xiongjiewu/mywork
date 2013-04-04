@@ -74,7 +74,7 @@
                     <?php endif;?>
                 });
             });
-            $("table.table").each(function(){
+            $("div.container table.table").each(function(){
                $(this).bind("mouseover",function(){
                    $(this).addClass("table_over");
                });
