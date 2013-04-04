@@ -288,6 +288,10 @@ div.watchLink_info {
 div.watchLink_info table.table {
     margin-bottom: 0;
 }
+div.watchLink_info table.table tr.tr_over {
+    background-color: #eee;
+    cursor: pointer;
+}
 div.watchLink_info table.table tr th {
     border: none;
     text-align: center;

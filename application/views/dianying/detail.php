@@ -146,7 +146,7 @@
                         <?php $watchLinkInfoI = 1;?>
                         <?php $watchLinkInfoCount = count($watchLinkInfo);?>
                         <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-                            <tr class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
+                            <tr title="点击观看" class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
                                 <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
@@ -161,7 +161,6 @@
         <?php if (!empty($downLoadLinkInfo)): ?>
             <section id="downlink">
                 <br>
-
                 <p>
                     <?php $downLoadLinkInfoI = 0;?>
                     <?php foreach ($downLoadLinkInfo as $downLoadLinkInfoKey => $downLoadLinkInfoVal): ?>
@@ -364,6 +363,24 @@
                     init.ajaxAddLink(id,type,url);
                 }
                 return false;
+            });
+            var trObj = $("div.watchLink_info table.table tr");
+            trObj.each(function(){
+                $(this).bind("mouseover",function(){
+                    $(this).addClass("tr_over");
+                });
+                $(this).bind("mouseleave",function(){
+                    $(this).removeClass("tr_over");
+                });
+                $(this).bind("click",function(){
+                    var url = $($(this).find("a").get(0)).attr("href");
+                    window.open(url);
+                });
+                $(this).find("a").each(function(){
+                   $(this).bind("click",function(event){
+                       event.stopPropagation();
+                   });
+                });
             });
             $(window).bind("scroll", function() {//当滚动条滚动时
                 init.daoHangDingWei();
