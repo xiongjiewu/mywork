@@ -8,7 +8,7 @@
         </div>
         <div id="usermain">
             <div class="show mod-dist-r">
-                <div class="modbox2">
+                <div class="modbox2" style="border: none;">
                     <?php if ($type == "data"):?>
                         <table class="change_pass_table">
                             <tr>
