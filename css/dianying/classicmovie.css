@@ -268,3 +268,7 @@ div.span9 table.error_table tr td.text {
 table.table-bordered tr td {
     border: none;
 }
+table.table_over {
+    cursor: pointer;
+    background-color: #E0EEEE;
+}
