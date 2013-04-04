@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index/index.css" afterPath="$PROJECT_DIR$/css/index/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/index.php" afterPath="$PROJECT_DIR$/application/views/index/index.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +64,7 @@
     <file path="/background.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365046636542" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/views/background/useradd.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365046693726" ignored="false" />
     <file path="/classicmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365082319406" ignored="false" />
-    <file path="/index.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365083364086" ignored="false" />
+    <file path="/index.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365083861364" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,19 +84,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/index/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="73" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.25855514">
+            <state line="44" column="73" selection-start="1687" selection-end="1687" vertical-scroll-proportion="-4.387097">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/index/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="16" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+            <state line="26" column="18" selection-start="511" selection-end="511" vertical-scroll-proportion="0.6350877">
               <folding />
             </state>
           </provider>
@@ -137,8 +135,8 @@
         <option value="$PROJECT_DIR$/css/dianying/search.css" />
         <option value="$PROJECT_DIR$/js/dianying/search.js" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
-        <option value="$PROJECT_DIR$/css/index/index.css" />
         <option value="$PROJECT_DIR$/application/views/index/index.php" />
+        <option value="$PROJECT_DIR$/css/index/index.css" />
       </list>
     </option>
   </component>
@@ -508,16 +506,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index/index.css">
+    <entry file="file://$PROJECT_DIR$/application/views/index/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="16" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+        <state line="44" column="73" selection-start="1687" selection-end="1687" vertical-scroll-proportion="-4.387097">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/index/index.php">
+    <entry file="file://$PROJECT_DIR$/css/index/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="73" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.25855514">
+        <state line="26" column="18" selection-start="511" selection-end="511" vertical-scroll-proportion="0.6350877">
           <folding />
         </state>
       </provider>
