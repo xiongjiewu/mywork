@@ -21,3 +21,13 @@ div.bs-docs-example table tr td table.table tr td {
 div.bs-docs-example table tr td table.table tr.lastOne td {
     border-bottom: none;
 }
+
+table.new_dy ul {
+    float: left;
+    margin-left: 0;
+}
+table.new_dy ul li {
+    float: left;
+    list-style: none;
+    padding: 8px;
+}
