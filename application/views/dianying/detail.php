@@ -132,26 +132,28 @@
         <?php if (!empty($watchLinkInfo)): ?>
             <section id="watchlink">
                 <br>
-                <table class="table table-bordered">
-                    <tr class="info">
-                        <th>播放类型</th>
-                        <th>来源网站</th>
-                        <th>是否收费</th>
-                        <th>高清程度</th>
-                        <th>观看链接</th>
-                    </tr>
-                    <?php $watchLinkInfoI = 1;?>
-                    <?php $watchLinkInfoCount = count($watchLinkInfo);?>
-                    <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-                        <tr class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
-                            <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
-                            <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
-                            <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
-                            <td><?php echo $qingxiType[$watchLinkInfoVal['qingxi']];?></td>
-                            <td><a target="_blank" href="<?php echo $watchLinkInfoVal['link']; ?>">点击观看</a></td>
+                <div class="watchLink_info">
+                    <table class="table">
+                        <tr class="info">
+                            <th>播放类型</th>
+                            <th>来源网站</th>
+                            <th>是否收费</th>
+                            <th>高清程度</th>
+                            <th>观看链接</th>
                         </tr>
-                    <?php endforeach;?>
-                </table>
+                        <?php $watchLinkInfoI = 1;?>
+                        <?php $watchLinkInfoCount = count($watchLinkInfo);?>
+                        <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
+                            <tr class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
+                                <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
+                                <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
+                                <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
+                                <td><?php echo $qingxiType[$watchLinkInfoVal['qingxi']];?></td>
+                                <td><a target="_blank" href="<?php echo $watchLinkInfoVal['link']; ?>">点击观看</a></td>
+                            </tr>
+                        <?php endforeach;?>
+                    </table>
+                </div>
             </section>
         <?php endif;?>
         <?php if (!empty($downLoadLinkInfo)): ?>

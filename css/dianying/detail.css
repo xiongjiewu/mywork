@@ -281,3 +281,20 @@ div.add_link input.add_submit,div.add_link input.add_cancel {
     height: 25px;
     margin-left: 5px;
 }
+div.watchLink_info {
+    border:1px solid #ddd;
+    margin-bottom: 20px;
+}
+div.watchLink_info table.table {
+    margin-bottom: 0;
+}
+div.watchLink_info table.table tr th {
+    border: none;
+    text-align: center;
+    background-color: #FFFDE3;
+    color: #666;
+}
+div.watchLink_info table.table tr td {
+    text-align: center;
+    font-size: 13px;
+}
