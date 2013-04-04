@@ -11,22 +11,22 @@
         <div id="usermain">
             <input type="hidden" name="type" id="type" value="<?php echo $type;?>">
             <div class="show mod-dist-r">
-                <div class="modbox2">
-                    <div class="select_create">
-                        <select class="" name="shaixuan" id="shaixuan">
-                            <?php foreach($selectData as $selectKey => $selectVal):?>
-                                <option value="<?php echo $selectKey;?>"><?php echo $selectVal;?></option>
-                            <?php endforeach;?>
-                        </select>
-                        <div class="<?php if ($type == "want"):?>iWant<?php else:?>iWant iWant_su<?php endif;?>">
-                            <?php if ($type == "want"):?>
-                                <a href="<?php echo get_url("/usercenter/createfeedback/{$type}/");?>" class="btn btn-warning">反馈我想看</a>
-                            <?php else:?>
-                                <a href="<?php echo get_url("/usercenter/createfeedback/{$type}/");?>" class="btn btn-warning">反馈投诉与建议</a>
-                            <?php endif;?>
-                        </div>
+                <div class="select_create">
+                    <select class="" name="shaixuan" id="shaixuan">
+                        <?php foreach($selectData as $selectKey => $selectVal):?>
+                            <option value="<?php echo $selectKey;?>"><?php echo $selectVal;?></option>
+                        <?php endforeach;?>
+                    </select>
+                    <div class="<?php if ($type == "want"):?>iWant<?php else:?>iWant iWant_su<?php endif;?>">
+                        <?php if ($type == "want"):?>
+                            <a href="<?php echo get_url("/usercenter/createfeedback/{$type}/");?>" class="btn btn-warning">反馈我想看</a>
+                        <?php else:?>
+                            <a href="<?php echo get_url("/usercenter/createfeedback/{$type}/");?>" class="btn btn-warning">反馈投诉与建议</a>
+                        <?php endif;?>
                     </div>
-                    <table class="table table-bordered">
+                </div>
+                <div class="modbox2">
+                    <table class="table">
                         <tr>
                             <th class="chose_all"><?php if (!empty($feedbackInfos)):?><span class="chose_all">全选</span><?php else:?>全选<?php endif;?></th>
                             <th class="title">标题</th>
@@ -54,19 +54,19 @@
                             <tr><td colspan="4">对不起，您查看的信息暂无！</td></tr>
                         <?php endif;?>
                     </table>
-                    <?php if (!empty($feedbackInfos)):?>
-                        <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
-                        <?php if ($feedBackCount > $limit):?>
-                            <table class="page">
-                                <tr>
-                                    <td>
-                                        <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
-                                    </td>
-                                </tr>
-                            </table>
-                        <?php endif;?>
-                    <?php endif;?>
                 </div>
+                <?php if (!empty($feedbackInfos)):?>
+                    <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
+                    <?php if ($feedBackCount > $limit):?>
+                        <table class="page">
+                            <tr>
+                                <td>
+                                    <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
+                                </td>
+                            </tr>
+                        </table>
+                    <?php endif;?>
+                <?php endif;?>
             </div>
         </div>
     </div>

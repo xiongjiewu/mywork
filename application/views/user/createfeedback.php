@@ -12,7 +12,7 @@
         </div>
         <div id="usermain">
             <div class="show mod-dist-r">
-                <div class="modbox2">
+                <div class="modbox2" style="border: none;">
                     <form id="edit_feedback" name="edit_feedback" action="<?php echo get_url("/usercenter/createfeedbacksubmit/");?>" method="post">
                         <table class="edit_xheditor_table">
                             <tr>

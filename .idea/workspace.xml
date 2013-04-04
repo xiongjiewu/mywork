@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/createfeedback.php" afterPath="$PROJECT_DIR$/application/views/user/createfeedback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/feedback.php" afterPath="$PROJECT_DIR$/application/views/user/feedback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/login.css" afterPath="$PROJECT_DIR$/css/member/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/login.php" afterPath="$PROJECT_DIR$/application/views/member/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/message.php" afterPath="$PROJECT_DIR$/application/views/user/message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/mycollect.php" afterPath="$PROJECT_DIR$/application/views/user/mycollect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/notice.php" afterPath="$PROJECT_DIR$/application/views/user/notice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/register.css" afterPath="$PROJECT_DIR$/css/member/register.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/register.php" afterPath="$PROJECT_DIR$/application/views/member/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/user/usercenter.css" afterPath="$PROJECT_DIR$/css/user/usercenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/usercenter.php" afterPath="$PROJECT_DIR$/application/views/user/usercenter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
@@ -11,7 +22,7 @@
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364908855180" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364943969506" ignored="false" />
     <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365006841022" ignored="false" />
-    <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364702116645" ignored="false" />
+    <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042975365" ignored="false" />
     <file path="/upcomingmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364723328362" ignored="false" />
     <file path="/upcomingmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364723224929" ignored="false" />
     <file path="/upcomingmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364723175934" ignored="false" />
@@ -34,7 +45,7 @@
     <file path="/welcome.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913564868" ignored="false" />
     <file path="/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365036905225" ignored="false" />
     <file path="/help.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741339254" ignored="false" />
-    <file path="/register.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364739388336" ignored="false" />
+    <file path="/register.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365041976751" ignored="false" />
     <file path="/help.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364740380828" ignored="false" />
     <file path="/topic.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741205494" ignored="false" />
     <file path="/topic.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364742065947" ignored="false" />
@@ -48,13 +59,17 @@
     <file path="/editpost.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913301247" ignored="false" />
     <file path="/yingping.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364911941779" ignored="false" />
     <file path="/editpost.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913319065" ignored="false" />
-    <file path="/createfeedback.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913378348" ignored="false" />
-    <file path="/login.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364914344463" ignored="false" />
+    <file path="/createfeedback.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043548702" ignored="false" />
+    <file path="/login.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042315608" ignored="false" />
     <file path="/classicmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364914500218" ignored="false" />
     <file path="/addlink.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365037826287" ignored="false" />
     <file path="/backgroundadmin.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364998722982" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/jobs/sendemail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365035313039" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365036687786" ignored="false" />
+    <file path="/register.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365041907793" ignored="false" />
+    <file path="/login.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042337411" ignored="false" />
+    <file path="/usercenter.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043502512" ignored="false" />
+    <file path="/feedback.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043309041" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,19 +89,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/member/register.css">
+      <file leaf-file-name="createfeedback.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/createfeedback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="14" column="57" selection-start="768" selection-end="768" vertical-scroll-proportion="-11.741936">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="message.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/user/message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="29" selection-start="558" selection-end="558" vertical-scroll-proportion="-0.29657796">
+            <state line="68" column="30" selection-start="3961" selection-end="3961" vertical-scroll-proportion="0.9011407">
               <folding />
             </state>
           </provider>
@@ -111,22 +128,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
-        <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
-        <option value="$PROJECT_DIR$/application/views/member/login.php" />
-        <option value="$PROJECT_DIR$/application/views/member/register.php" />
-        <option value="$PROJECT_DIR$/css/dianying/classicmovie.css" />
-        <option value="$PROJECT_DIR$/css/dianying/detail.css" />
-        <option value="$PROJECT_DIR$/application/controllers/detail.php" />
-        <option value="$PROJECT_DIR$/js/dianying/detail.js" />
-        <option value="$PROJECT_DIR$/application/controllers/latestmovie.php" />
-        <option value="$PROJECT_DIR$/application/models/backgroundadmin.php" />
         <option value="$PROJECT_DIR$/system/helpers/url_helper.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/application/models/addlink.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
+        <option value="$PROJECT_DIR$/css/member/register.css" />
+        <option value="$PROJECT_DIR$/application/views/member/register.php" />
+        <option value="$PROJECT_DIR$/application/views/member/login.php" />
+        <option value="$PROJECT_DIR$/css/member/login.css" />
+        <option value="$PROJECT_DIR$/application/views/user/usercenter.php" />
+        <option value="$PROJECT_DIR$/application/views/user/feedback.php" />
+        <option value="$PROJECT_DIR$/application/views/user/notice.php" />
+        <option value="$PROJECT_DIR$/application/views/user/mycollect.php" />
+        <option value="$PROJECT_DIR$/css/user/usercenter.css" />
+        <option value="$PROJECT_DIR$/application/views/user/createfeedback.php" />
+        <option value="$PROJECT_DIR$/application/views/user/message.php" />
       </list>
     </option>
   </component>
@@ -178,6 +195,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,59 +400,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/system/core/CodeIgniter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="683" selection-end="683" vertical-scroll-proportion="0.4509434" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="23" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/helpers/url_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="530" column="21" selection-start="11219" selection-end="11227" vertical-scroll-proportion="0.049056605" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="32" selection-start="4453" selection-end="4453" vertical-scroll-proportion="0.15139443">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/gd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="557" column="18" selection-start="14714" selection-end="14714" vertical-scroll-proportion="0.3555133" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/codeimg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="31" selection-start="7084" selection-end="7104" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="41" selection-start="8876" selection-end="8876" vertical-scroll-proportion="0.04942966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="572" column="27" selection-start="13572" selection-end="13572" vertical-scroll-proportion="-1.7741935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/mysql.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="606" column="9" selection-start="21675" selection-end="21675" vertical-scroll-proportion="0.3528302">
@@ -424,23 +428,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/member/login.css">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="24" column="29" selection-start="558" selection-end="558" vertical-scroll-proportion="-0.29657796">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/member/register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="336" column="22" selection-start="9518" selection-end="9518" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="558" selection-end="558" vertical-scroll-proportion="-0.29657796">
+        <state line="128" column="78" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.24714829">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/member/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="19" selection-start="4062" selection-end="4062" vertical-scroll-proportion="0.8599641">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/member/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="47" selection-start="228" selection-end="239" vertical-scroll-proportion="0.24714829">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/usercenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="20" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.6539924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/feedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="37" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.70342207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/notice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="1002" selection-end="1002" vertical-scroll-proportion="-1.8709677">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/user/usercenter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="297" column="19" selection-start="5740" selection-end="5740" vertical-scroll-proportion="0.705104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/mycollect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="28" selection-start="2440" selection-end="2440" vertical-scroll-proportion="0.54372627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/createfeedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="57" selection-start="768" selection-end="768" vertical-scroll-proportion="-11.741936">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="30" selection-start="3961" selection-end="3961" vertical-scroll-proportion="0.9011407">
           <folding />
         </state>
       </provider>

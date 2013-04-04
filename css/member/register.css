@@ -326,3 +326,29 @@ div.doing {
     background: url("/images/icon/move.gif") no-repeat scroll 50% 30% #FFFFFF;
     opacity: 0.6;
 }
+a.jump_login {
+    background: url("/images/Login/comm_img.gif") no-repeat scroll right 0 transparent;
+    font-size: 16px;
+    height: auto;
+    line-height: 60px;
+    padding: 9px 23px 10px 23px;
+    position: relative;
+    color: #666;
+    font-weight: bold;
+}
+a.jump_login:hover {
+    color: #333;
+    background-position: right -40px;
+}
+
+a.jump_login i {
+    background: url("/images/Login/comm_img.gif") no-repeat scroll 0 0 transparent;
+    height: 38px;
+    border: 0 none;
+    display: block;
+    left: -2px;
+    position: absolute;
+    top: 0;
+    visibility: visible;
+    width: 3px;
+}

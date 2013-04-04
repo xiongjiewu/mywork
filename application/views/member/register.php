@@ -124,7 +124,19 @@
             </div>
             <div class="register_main_right">
                 <table>
-                    <tr><th>用<?php echo get_config_value("base_name");?>账号<a class="show_login_ui" href="<?php echo get_url("/login/");?>">登录</a></th></tr>
+                    <tr>
+                        <td>
+                            已有<?php echo get_config_value("base_name");?>账号,立即登录
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="jump_login" href="<?php echo get_url("/login/")?>">
+                                <i></i>
+                                登录
+                            </a>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

@@ -7,7 +7,7 @@
         <div id="usermain">
             <div class="show mod-dist-r">
                 <div class="modbox2">
-                    <table class="table table-bordered">
+                    <table class="table">
                         <tr>
                             <th><?php if (!empty($movieList)):?><span class="chose_all">全选</span><?php else:?>全选<?php endif;?></th>
                             <th>电影名</th>
@@ -37,10 +37,10 @@
                             <tr><td colspan="9">目前，您还没有收藏任何影片，您可以去<a href="<?php echo get_url("/latestmovie/");?>">最新上映</a>列表看看</td></tr>
                         <?php endif;?>
                     </table>
-                    <?php if (!empty($movieList)):?>
-                    <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
-                    <?php endif;?>
                 </div>
+                <?php if (!empty($movieList)):?>
+                    <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
+                <?php endif;?>
             </div>
         </div>
     </div>

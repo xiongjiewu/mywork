@@ -3,8 +3,11 @@
         <div class="login_ui_title">
             <table>
                 <tr>
-                    <td class="l_t">登录<?php echo get_config_value("base_name");?></td>
-                    <td class=""></td>
+                    <td class="l_t" colspan="2">
+                        <div class="login_title">
+                            登录<?php echo get_config_value("base_name");?>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>

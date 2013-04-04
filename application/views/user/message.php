@@ -6,15 +6,15 @@
         </div>
         <div id="usermain">
             <div class="show mod-dist-r">
+                <div class="select_create">
+                    <select class="" name="shaixuan" id="shaixuan">
+                        <?php foreach($selectData as $selectKey => $selectVal):?>
+                            <option value="<?php echo $selectKey;?>"><?php echo $selectVal;?></option>
+                        <?php endforeach;?>
+                    </select>
+                </div>
                 <div class="modbox2">
-                    <div class="select_create">
-                        <select class="" name="shaixuan" id="shaixuan">
-                            <?php foreach($selectData as $selectKey => $selectVal):?>
-                                <option value="<?php echo $selectKey;?>"><?php echo $selectVal;?></option>
-                            <?php endforeach;?>
-                        </select>
-                    </div>
-                    <table class="table table-bordered">
+                    <table class="table">
                         <tr>
                             <th class="chose_all"><?php if (!empty($userMessageList)):?><span class="chose_all">全选</span><?php else:?>全选<?php endif;?></th>
                             <th class="title">内容</th>
@@ -54,19 +54,19 @@
                             <tr><td colspan="5">目前，您查看的信息暂无！</td></tr>
                         <?php endif;?>
                     </table>
-                    <?php if (!empty($userMessageList)):?>
-                        <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
-                        <?php if ($userMessageCount > $limit):?>
-                            <table class="page">
-                                <tr>
-                                    <td>
-                                        <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
-                                    </td>
-                                </tr>
-                            </table>
-                        <?php endif;?>
-                    <?php endif;?>
                 </div>
+                <?php if (!empty($userMessageList)):?>
+                    <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
+                    <?php if ($userMessageCount > $limit):?>
+                        <table class="page">
+                            <tr>
+                                <td>
+                                    <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
+                                </td>
+                            </tr>
+                        </table>
+                    <?php endif;?>
+                <?php endif;?>
             </div>
         </div>
     </div>

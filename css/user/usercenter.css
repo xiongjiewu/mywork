@@ -278,16 +278,24 @@ div.doing {
     color: #333333;
     text-decoration: none;
 }
+.modbox2 {
+    border: 1px solid #ddd;
+}
 .modbox2 table.table {
     width: 100%;
     float: left;
+    margin-bottom: 0;
 }
 .modbox2 table.table tr th {
+    background-color: #FFFDE3;
     height: 20px;
     text-align: center;
+    border: none;
+    color: #888888;
 }
 .modbox2 table.table tr td {
     text-align: center;
+    font-size: 13px;
 }
 .modbox2 table.table tr td.name {
     width: 120px;
@@ -318,6 +326,7 @@ div.doing {
 }
 a.btn-info,a.btn-info:hover,a.btn-info:active,a.btn-info:visited {
     color: #fff;
+    margin-top: 20px;
 }
 .bs-docs-example div.zhushi {
     float: left;

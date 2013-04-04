@@ -9,7 +9,7 @@
         <div id="usermain">
             <div class="show mod-dist-r">
                 <div class="modbox2">
-                    <table class="table table-bordered">
+                    <table class="table">
                         <tr>
                             <th>电影名</th>
                             <th>主演</th>
@@ -41,10 +41,12 @@
                         <?php endforeach;?>
                         <?php endif;?>
                     </table>
-                    <?php if (!empty($more_url)):?>
-                    <a href="<?php echo $more_url;?>" class="btn btn-info">更多>></a>
-                    <?php endif;?>
                 </div>
+                <br>
+                <br>
+                <?php if (!empty($more_url)):?>
+                    <a href="<?php echo $more_url;?>" class="btn btn-info">更多>></a>
+                <?php endif;?>
             </div>
         </div>
     </div>

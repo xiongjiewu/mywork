@@ -164,3 +164,7 @@ div.login {
     width: 100%;
     z-index: 10000;
 }
+div.login_title {
+    float: left;
+    margin-left: 100px;
+}
