@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/latestmovie.js" afterPath="$PROJECT_DIR$/js/dianying/latestmovie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365053339096" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365055977257" ignored="false" />
-    <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365056858398" ignored="false" />
+    <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365057134367" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364943969506" ignored="false" />
     <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365053374367" ignored="false" />
     <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042975365" ignored="false" />
@@ -86,7 +86,7 @@
       <file leaf-file-name="latestmovie.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="45" selection-start="7354" selection-end="7354" vertical-scroll-proportion="-3.548387">
+            <state line="39" column="109" selection-start="2617" selection-end="2617" vertical-scroll-proportion="-1.032258">
               <folding />
             </state>
           </provider>
@@ -113,7 +113,7 @@
       <file leaf-file-name="latestmovie.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="41" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.7199282">
+            <state line="48" column="9" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.7666068">
               <folding />
             </state>
           </provider>
@@ -477,7 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="45" selection-start="7354" selection-end="7354" vertical-scroll-proportion="-3.548387">
+        <state line="39" column="109" selection-start="2617" selection-end="2617" vertical-scroll-proportion="-1.032258">
           <folding />
         </state>
       </provider>
@@ -491,7 +491,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="41" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.7199282">
+        <state line="48" column="9" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.7666068">
           <folding />
         </state>
       </provider>

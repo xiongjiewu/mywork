@@ -37,26 +37,28 @@
                                             <span class="shoucang_action shoucang_dy_y" title="已收藏"></span>
                                         <?php endif;?>
                                     </div>
-                                    <div class="dy_link_down">
-                                        <?php if (!empty($watchLinkInfo[$mVal['id']])): ?>
-                                        <div class="dy_watch_down">
-                                            <div class="watch_down">观看：</div>
-                                            <?php $watchLinkI = 1; ?>
-                                            <?php foreach ($watchLinkInfo[$mVal['id']] as $watchKey => $watchVal): ?>
-                                                <a title="点击观看" class="" href="<?php echo $watchVal['link']; ?>" target="_blank">链接<?php echo $watchLinkI++;?></a>
-                                            <?php endforeach; ?>
+                                    <?php if (!empty($watchLinkInfo[$mVal['id']]) || !empty($downLoadLinkInfo[$mVal['id']])): ?>
+                                        <div class="dy_link_down">
+                                            <?php if (!empty($watchLinkInfo[$mVal['id']])): ?>
+                                            <div class="dy_watch_down">
+                                                <div class="watch_down">观看：</div>
+                                                <?php $watchLinkI = 1; ?>
+                                                <?php foreach ($watchLinkInfo[$mVal['id']] as $watchKey => $watchVal): ?>
+                                                    <a title="点击观看" class="" href="<?php echo $watchVal['link']; ?>" target="_blank">链接<?php echo $watchLinkI++;?></a>
+                                                <?php endforeach; ?>
+                                            </div>
+                                            <?php endif;?>
+                                            <?php if (!empty($downLoadLinkInfo[$mVal['id']])): ?>
+                                            <div class="dy_watch_down">
+                                                <div class="watch_down">下载：</div>
+                                                <?php $downLinkI = 1; ?>
+                                                <?php foreach ($downLoadLinkInfo[$mVal['id']] as $downKey => $downVal): ?>
+                                                    <a title="点击下载" class="" href="<?php echo $downVal['link']; ?>" target="_blank">链接<?php echo $downLinkI++;?></a>
+                                                <?php endforeach; ?>
+                                            </div>
+                                            <?php endif;?>
                                         </div>
-                                        <?php endif;?>
-                                        <?php if (!empty($downLoadLinkInfo[$mVal['id']])): ?>
-                                        <div class="dy_watch_down">
-                                            <div class="watch_down">下载：</div>
-                                            <?php $downLinkI = 1; ?>
-                                            <?php foreach ($downLoadLinkInfo[$mVal['id']] as $downKey => $downVal): ?>
-                                                <a title="点击下载" class="" href="<?php echo $downVal['link']; ?>" target="_blank">链接<?php echo $downLinkI++;?></a>
-                                            <?php endforeach; ?>
-                                        </div>
-                                        <?php endif;?>
-                                    </div>
+                                    <?php endif;?>
                                     <div class="dy_jianjie">
                                         <table>
                                             <tr>

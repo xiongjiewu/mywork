@@ -34,14 +34,18 @@ var init = {
     },
     showWatchAndDownLink:function(obj){
         var p = obj.find("div.dy_link_down");
-        p.show();
-        p.animate({right:"0"});
+        if (p && (p != undefined)) {
+            p.show();
+            p.animate({right:"0"});
+        }
     },
     hideWatchAndDownLink:function(obj){
         var p = obj.find("div.dy_link_down");
-        p.css("background-color","#fff");
-        p.animate({right:"-137px"},"fast");
-        p.css("background-color","#E0EEEE");
-        p.hide();
+        if (p && (p != undefined)) {
+            p.css("background-color","#fff");
+            p.animate({right:"-137px"},"fast");
+            p.css("background-color","#E0EEEE");
+            p.hide();
+        }
     }
 };
