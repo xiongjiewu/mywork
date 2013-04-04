@@ -64,7 +64,7 @@
                                     <td><strong>导演：</strong><?php echo $dyInfo['daoyan'];?></td>
                                 </tr>
                                 <tr class="">
-                                    <td><strong>年份：</strong><?php echo date("Y", strtotime($dyInfo['nianfen']));?>年</td>
+                                    <td><strong>年份：</strong><?php echo substr($dyInfo['nianfen'],0,4);?>年</td>
                                 </tr>
                                 <tr class="">
                                     <td><strong>时长：</strong><?php echo $dyInfo['shichang'];?>分钟</td>
@@ -144,7 +144,7 @@
                     <?php $watchLinkInfoCount = count($watchLinkInfo);?>
                     <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
                         <tr class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
-                            <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>播放器</td>
+                            <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
                             <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
                             <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
                             <td><?php echo $qingxiType[$watchLinkInfoVal['qingxi']];?></td>

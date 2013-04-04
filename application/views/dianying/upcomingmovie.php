@@ -18,7 +18,7 @@
                     <span>|</span>
                     <strong>主演：</strong><?php $zhuyao = preg_split("/;+|；+/", $movieVal['zhuyan']);echo implode("、", $zhuyao);?>
                     <span>|</span>
-                    <strong>年份：</strong><?php echo date("Y", strtotime($movieVal['nianfen']));?>年
+                    <strong>年份：</strong><?php echo substr($movieVal['nianfen'],0,4);?>年
                     <span>|</span>
                     <strong>时长：</strong><?php echo $movieVal['shichang'];?>分
                     <span>|</span>
