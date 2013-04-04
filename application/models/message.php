@@ -73,7 +73,7 @@ class Message extends CI_Model {
         return empty($result[0]['cn']) ? 0 : $result[0]['cn'];
     }
 
-    public function getMessageInfoByIds($uid,$ids = array(),$del = 0)
+    public function getMessageInfoByIds($uid,$ids = array())
     {
         $uid = intval($uid);
         if (empty($uid) || empty($ids) || !is_array($ids)) {
@@ -81,8 +81,8 @@ class Message extends CI_Model {
         }
         $ids = array_unique($ids);
         $idStr = implode(",",$ids);
-        $sql = "select {$this->_getFiledStr()} from `tbl_message` where userId = ? and id in ({$idStr}) and del = ?;";
-        $query = $this->db->query($sql,array($uid,$del));
+        $sql = "select {$this->_getFiledStr()} from `tbl_message` where userId = ? and id in ({$idStr});";
+        $query = $this->db->query($sql,array($uid));
         $result = $query->result_array();
         return empty($result) ? array() : $result;
     }

@@ -22,7 +22,7 @@
             </a>
             <a class="menu-item <?php if ($index == 3):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/feedback/");?>">
                 <i class="icon-edit"></i>
-                反馈我想看
+                反馈想看
                 <span class="arrow-icon"></span>
             </a>
             <a class="menu-item <?php if ($index == 4):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/notice/");?>">
@@ -32,7 +32,7 @@
             </a>
             <a class="menu-item <?php if ($index == 5):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/feedback/suggest/");?>">
                 <i class="ask"></i>
-                投诉与建议
+                投诉建议
                 <span class="arrow-icon"></span>
             </a>
         </div>

@@ -8,8 +8,12 @@
         <div id="usermain">
             <div class="show mod-dist-r">
                 <div class="modbox2">
-                    <table class="table table-bordered">
-                        <tr><td><?php echo $messageInfo['content'];?></td></tr>
+                    <table class="table">
+                        <tr>
+                            <td style="text-align: left;border: none">
+                                <?php echo $messageInfo['content'];?>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
