@@ -31,5 +31,18 @@ var init = {
                 }
             })
         }
+    },
+    showWatchAndDownLink:function(obj){
+        var p = obj.find("div.dy_link_down");
+        p.show();
+        p.animate({right:"0"});
+    },
+    hideWatchAndDownLink:function(obj){
+        var p = obj.find("div.dy_link_down");
+        p.css("background-color","#fff");
+        p.animate({right:"-137px"},function(){
+            p.css("background-color","#E0EEEE");
+            p.hide();
+        });
     }
 };

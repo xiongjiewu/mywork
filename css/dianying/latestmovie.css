@@ -69,6 +69,7 @@ div.bs-docs-example div.dy_info_list ul.info_list {
 }
 div.bs-docs-example div.dy_info_list ul.info_list li {
     float: left;
+    position: relative;
     border: 1px solid #DDDDDD;
     padding: 10px 0 10px 5px;
     overflow: hidden;
@@ -115,18 +116,44 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l span.shoucang
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l span.shoucang_dy_y {
     background: url("/images/common/dy_add.png") no-repeat scroll -9px 0 transparent;
 }
-div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
+
+
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_jianjie {
     float: left;
     width: 130px;
-    height: 100px;
+    height: 110px;
     font-size: 13px;
     margin-left: 7px;
+    overflow: hidden;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_jianjie table {
+    background: none;
+}
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_jianjie table tr td.dy_jianjie_t {
+    width: 50px;
+    float: left;
+}
+
+div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
+    position: absolute;
+    display: none;
+    right: -137px;
+    bottom: 0;
+    /*display: none;*/
+    width: 137px;
+    height: 130px;
+    font-size: 13px;
+    margin-left: 7px;
+    z-index: 1001;
+    background-color: #E0EEEE;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down {
     float: left;
     width: 100%;
     height: 40px;
     color: #999;
+    margin-top: 10px;
+    margin-left: 7px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down a{
     color: #444;

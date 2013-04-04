@@ -57,6 +57,26 @@
                                         </div>
                                         <?php endif;?>
                                     </div>
+                                    <div class="dy_jianjie">
+                                        <table>
+                                            <tr>
+                                                <td class="dy_jianjie_t">时长：</td>
+                                                <td><?php echo $mVal['shichang'];?>分钟</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dy_jianjie_t">类型：</td>
+                                                <td><?php echo $movieType[$mVal['type']];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dy_jianjie_t">地区：</td>
+                                                <td><?php echo $moviePlace[$mVal['diqu']];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dy_jianjie_t">主演：</td>
+                                                <td><?php echo $mVal['zhuyan'];?></td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </li>
                             <?php endforeach;?>
                         </ul>
@@ -88,6 +108,7 @@
                 $(this).bind("mouseover",function(){
                     $(this).addClass("li_over");
                     $(this).find("span.shoucang_action").show();
+                    init.showWatchAndDownLink($(this));
                 });
                 $(this).bind("click",function(){
                     var url = $($(this).find("a").get(0)).attr("href");
@@ -103,6 +124,7 @@
                 $(this).bind("mouseleave",function(){
                     $(this).removeClass("li_over");
                     $(this).find("span.shoucang_action").hide();
+                    init.hideWatchAndDownLink($(this));
                 });
             });
             daohangObj.find("a").each(function(){

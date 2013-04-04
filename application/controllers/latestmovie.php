@@ -58,6 +58,8 @@ class Latestmovie extends CI_Controller {
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($ids);
         $downLoadLinkInfo = $this->_initArr($downLoadLinkInfo);
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);
+        $this->set_attr("moviePlace",$this->_moviePlace);
+        $this->set_attr("movieType",$this->_movieType);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_title("最新上映列表 - 我们只专注于电影 - " . get_config_value("base_name"));
@@ -73,7 +75,7 @@ class Latestmovie extends CI_Controller {
             return $nfo;
         }
         $result = array();
-        foreach($nfo as $infoKey => $infoVal) {
+        foreach($nfo as $infoVal) {
             $result[$infoVal['infoId']][] = $infoVal;
         }
         return $result;
