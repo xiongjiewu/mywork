@@ -14,7 +14,7 @@
                 $(this).removeClass("table_over");
             });
             $(this).bind("click",function(){
-               var url = $($(this).find("a").get(0)).attr("href");
+                var url = $($(this).find("a").get(0)).attr("href");
                 window.location.href = url;
             });
             $(this).find("a").each(function(){
