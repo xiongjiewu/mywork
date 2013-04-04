@@ -29,12 +29,12 @@
             </tr>
             <tr>
                 <td>
-                    <?php if (!empty($movieVal['time2'])): ?>
-                        <strong>内陆上映时间：</strong><?php echo date("Y-m-d", $movieVal['time2']); ?>
+                    <?php if (!empty($movieVal['time1'])): ?>
+                        <strong>内陆上映时间：</strong><?php echo date("Y-m-d", $movieVal['time1']); ?>
                     <?php endif;?>
                     <?php if (!empty($movieVal['time2'])): ?>
                         <span>|</span>
-                        <strong>港台上映时间：</strong><?php echo date("Y-m-d", $movieVal['time1']); ?>
+                        <strong>港台上映时间：</strong><?php echo date("Y-m-d", $movieVal['time2']); ?>
                     <?php endif;?>
                     <?php if (!empty($movieVal['time3'])): ?>
                         <span>|</span>
