@@ -40,9 +40,8 @@ var init = {
     hideWatchAndDownLink:function(obj){
         var p = obj.find("div.dy_link_down");
         p.css("background-color","#fff");
-        p.animate({right:"-137px"},function(){
-            p.css("background-color","#E0EEEE");
-            p.hide();
-        });
+        p.animate({right:"-137px"},"fast");
+        p.css("background-color","#E0EEEE");
+        p.hide();
     }
 };
