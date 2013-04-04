@@ -325,23 +325,26 @@ class Useraction extends CI_Controller
         $id = $this->input->post("id");
         $type = $this->input->post("type");
         $url = $this->input->post("url");
-        var_dump($id,$type,$url);
-        if (empty($id) || !isset($type) || ($type != 1 && $type != 2) || !empty($url)) {
+        if (empty($id) || !isset($type) || ($type != 1 && $type != 2) || empty($url)) {
             echo json_encode($result);
             exit;
         }
-        if (!strpos($url,"http://")) {
-            $url .= "http://";
+        if (!strstr($url,"http://")) {
+            $url = "http://{$url}";
         }
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
             $result['info'] = "请输入正确的链接";
             echo json_encode($result);
             exit;
         }
-        $this->load->medol("Addlink");
-        $this->Addlink->insertUserInfo(array("infoId"=>$id,"link"=>$url,"type"=>$type,"time"=>time()));
+        $this->load->model("Addlink");
+        $url = mysql_real_escape_string($url);
+        $info = $this->Addlink->getLinkInfoByFiled(array("link"=>$url));
+        if (empty($info)) {
+            $this->Addlink->insertLinkInfo(array("infoId"=>$id,"link"=>$url,"type"=>$type,"time"=>time()));
+        }
         $result['code'] = "success";
-        $result['info'] = "提交成功";
+        $result['info'] = "提交成功，感谢您对我们工作的支持！";
         echo json_encode($result);
         exit;
     }

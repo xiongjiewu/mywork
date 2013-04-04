@@ -148,7 +148,7 @@
                             <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
                             <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
                             <td><?php echo $qingxiType[$watchLinkInfoVal['qingxi']];?></td>
-                            <td><a href="<?php echo $watchLinkInfoVal['link']; ?>">点击观看</a></td>
+                            <td><a target="_blank" href="<?php echo $watchLinkInfoVal['link']; ?>">点击观看</a></td>
                         </tr>
                     <?php endforeach;?>
                 </table>
@@ -161,7 +161,7 @@
                 <p>
                     <?php $downLoadLinkInfoI = 0;?>
                     <?php foreach ($downLoadLinkInfo as $downLoadLinkInfoKey => $downLoadLinkInfoVal): ?>
-                        <a href="<?php echo $downLoadLinkInfoVal['link']; ?>"
+                        <a target="_blank" href="<?php echo $downLoadLinkInfoVal['link']; ?>"
                            class="btn btn-small <?php if (($downLoadLinkInfoI % 4) == 0): ?>btn-primary<?php elseif (($downLoadLinkInfoI % 4) == 1): ?>btn-warning<?php elseif (($downLoadLinkInfoI % 4) == 2): ?>btn-success<?php elseif (($downLoadLinkInfoI % 4) == 3): ?>btn-danger<?php endif; ?>"><?php echo $downLoadType[$downLoadLinkInfoVal['type']];?>
                             下载(<?php echo $downLoadLinkInfoVal['size']?>M)</a>
                         <?php $downLoadLinkInfoI++; ?>
