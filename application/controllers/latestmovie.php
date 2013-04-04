@@ -18,10 +18,10 @@ class Latestmovie extends CI_Controller {
             $sTime = strtotime(date("Y-m-01 00:00:00",$time));//当前月开始时间
             $nMonth = strtotime("+1 month",$time);//下个月
             $nMonthFirstDayTime = strtotime(date("Y-m-01",$nMonth));//下个月第一天
-            if ($nMonthFirstDayTime > $nTime) {
-                $nMonthFirstDayTime = $nTime;
-            }
             $eTime = strtotime(date("Y-m-d 23:59:59",$nMonthFirstDayTime - 86400));//当前月最后时间
+            if ($eTime > $nTime) {
+                $eTime = $nTime;
+            }
             $infoList  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
             if (!empty($infoList)) {
                 $movieList[date("y年m月",$time)] = $infoList;
