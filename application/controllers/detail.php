@@ -15,7 +15,8 @@ class Detail extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $dyInfo = $this->Backgroundadmin->getDetailInfo($id,0);
         if (empty($dyInfo)) {
-            redirect("/" );
+            $this->jump_to("/error/index/1/");
+            exit;
         }
         $this->set_attr("userId",$this->userId);
         $dyInfo['jieshao'] = $this->splitStr($dyInfo['jieshao'],200);

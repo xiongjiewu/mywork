@@ -149,7 +149,7 @@
                         <?php $watchLinkInfoI = 1;?>
                         <?php $watchLinkInfoCount = count($watchLinkInfo);?>
                         <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-                            <tr title="点击观看" class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
+                            <tr title="点击观看" class="dy_link_info <?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
                                 <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
@@ -367,7 +367,7 @@
                 }
                 return false;
             });
-            var trObj = $("div.watchLink_info table.table tr");
+            var trObj = $("div.watchLink_info table.table tr.dy_link_info");
             trObj.each(function(){
                 $(this).bind("mouseover",function(){
                     $(this).addClass("tr_over");

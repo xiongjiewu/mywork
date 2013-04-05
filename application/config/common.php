@@ -88,7 +88,7 @@ $config['shoufeiType'] = array(
 $config['base_uri'] = "";
 
 $config['error_code'] = array(
-    1 => array("content" => "您访问的内容或者网页不存在","return_url" => "/"),
+    1 => array("content" => "您访问的内容被删除或网页不存在","return_url" => "/"),
     2 => array("content" => "您需要登录才可以发表评论","return_url" => "/"),
     3 => array("content" => "网络连接失败，请重新操作！","return_url" => "/"),
     4 => array("content" => "您访问的页面已过期，请重新操作！","return_url" => "/"),
@@ -183,4 +183,4 @@ $config['changepassword_max_time'] = 600;//允许修改密码页面过期失效�
 $config['last_movie_month'] = 6;//最新上映展示月个数
 
 
-$config['post_show_count'] = 10;//评论显示个数
+$config['post_show_count'] = 20;//评论显示个数

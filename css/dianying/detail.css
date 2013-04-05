@@ -315,3 +315,6 @@ section {
     float: left;
     width: 100%;
 }
+section#createpost {
+    *margin-top: 20px;
+}
