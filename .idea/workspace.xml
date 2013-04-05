@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/detail.css" afterPath="$PROJECT_DIR$/css/dianying/detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365131977263" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365055977257" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365057134367" ignored="false" />
-    <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365136227776" ignored="false" />
+    <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365136394640" ignored="false" />
     <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365136064205" ignored="false" />
     <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042975365" ignored="false" />
     <file path="/upcomingmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365053414394" ignored="false" />
@@ -88,7 +87,7 @@
       <file leaf-file-name="detail.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="14" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.2804428">
+            <state line="318" column="5" selection-start="5595" selection-end="5595" vertical-scroll-proportion="0.8081181">
               <folding />
             </state>
           </provider>
@@ -488,6 +487,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="131" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="158" column="132" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.0">
@@ -497,16 +503,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="131" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="14" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.2804428">
+        <state line="318" column="5" selection-start="5595" selection-end="5595" vertical-scroll-proportion="0.8081181">
           <folding />
         </state>
       </provider>
