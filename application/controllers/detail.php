@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * 网站详细信息页面
+ * 网站电影详细信息页面
  * added by xiongjiewu at 2013-3-4
  */
 class Detail extends CI_Controller {
@@ -22,7 +22,8 @@ class Detail extends CI_Controller {
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
         $this->load->model('Yingping');
-        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,10);
+        $limit = get_config_value("post_show_count");
+        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,$limit);
         if (!empty($YingpingInfo)) {
             $userIds = array();
             foreach($YingpingInfo as $InfoKey => $infoVal) {
@@ -33,7 +34,11 @@ class Detail extends CI_Controller {
             $userInfos = $this->User->getUserInfosByIds($userIds);
             $userInfos = $this->initArrById($userInfos,"id");
             $this->set_attr("userInfos",$userInfos);
+
+            $yingpingCount = $this->Yingping->getYingPingCountByDyId($id);
+            $this->set_attr("yingpingCount",$yingpingCount);
         }
+        $this->set_attr("limit",$limit);
         $this->set_attr("YingpingInfo",$YingpingInfo);
 
         if (!empty($this->userId)) {//已登录

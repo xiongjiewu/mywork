@@ -91,10 +91,12 @@ var init = {
     appendYingPing:function(count,result,obj) {
         var yingping = result.info.yingping;
         var userinfo = result.info.userinfo;
-        var resultCount = result.info.count;
+        var user_type = $("#user_type").val();
+        var resultCount = $("#YingpingInfoICount").val();
+        var limit = $("#limit").val();
         var sHtml = "";
         $("div.lastOne").removeClass("lastOne");
-        if ((parseInt(count) + 10) != resultCount) {
+        if ((parseInt(count) + parseInt(limit)) == resultCount) {
             obj.html("已没有更多评论");
             obj.css("cursor","default");
         } else {
@@ -106,6 +108,10 @@ var init = {
             if (count == resultCount) {
                 c = "lastOne";
             }
+            var edit = "";
+            if (user_type == 1) {
+                edit = '<a href="/editpost/index/'+val.id+'/">编辑</a> | ';
+            }
             sHtml += '<table cellspacing="0" cellpadding="0" border="0">' +
                 '<tbody><tr><td class="userPro" valign="top">' +
                 '<div class="left"><img class="lazy" style="display: inline;" ' +
@@ -114,7 +120,7 @@ var init = {
                 '<div class="info"><div class="left"><a class="user_name" id="">'+val.userName+'</a>' +
                 '发表于'+val.date+' <span class="up_btn" pid="'+val.id+'" ' +
                 'style="cursor:pointer; color:#4E84AE;">顶(<font class="up_cnt">'+val.ding+'</font>)</span>' +
-                '</div><div class="right"><a class="reply" href="javascript:void(0);">回复</a><em>'+(count++)+'楼' +
+                '</div><div class="right">'+edit+'<a class="reply" href="javascript:void(0);">回复</a><em>'+(count++)+'楼' +
                 '</em></div></div><p class="word">'+val.content+'</p></div></td></tr></tbody>' +
                 '</table>';
         });

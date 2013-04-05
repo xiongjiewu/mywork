@@ -1,3 +1,6 @@
+<input type="hidden" name="YingpingInfoICount" id="YingpingInfoICount" value="<?php echo $yingpingCount;?>">
+<input type="hidden" name="user_type" id="user_type" value="<?php echo empty($adminInfo) ? 0 : 1;?>">
+<input type="hidden" name="limit" id="limit" value="<?php echo $limit;?>">
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
@@ -226,7 +229,7 @@
                                 </tbody>
                             </table>
                         <?php endforeach; ?>
-                        <?php if ($YingpingInfoICount == 10):?>
+                        <?php if ($yingpingCount > $limit):?>
                             <div class="read_more">点击查看更多...</div>
                         <?php else:?>
                             <div class="read_more" style="cursor: default">已没有更多评论</div>
