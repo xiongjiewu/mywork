@@ -243,6 +243,7 @@ div.span9 table.table tr td.info_image img{
 div.span9 table.page {
     float: left;
     width: 100%;
+    background: none;
 }
 div.span9 table.page tr td {
     border-top: 1px solid #eee;
