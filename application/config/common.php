@@ -183,4 +183,4 @@ $config['changepassword_max_time'] = 600;//允许修改密码页面过期失效�
 $config['last_movie_month'] = 6;//最新上映展示月个数
 
 
-$config['post_show_count'] = 10;//评论显示个数
+$config['post_show_count'] = 20;//评论显示个数
