@@ -139,27 +139,11 @@ $config['menus'] = array(
         "class" => "dy_sort",
         "type_info" => $config['movie_type'],
     ),
-);
-$config['background_menus'] = array(
     array(
-        "titlle" => "后台首页",
-        "link" => get_url("/background/"),
-    ),
-    array(
-        "titlle" => "电影列表",
-        "link" => get_url("/background/movielist/"),
-    ),
-    array(
-        "titlle" => "上传电影",
-        "link" => get_url("/background/upmovie/"),
-    ),
-    array(
-        "titlle" => "管理管理员",
-        "link" => get_url("/background/admin/"),
-    ),
-    array(
-        "titlle" => "回收站",
-        "link" => get_url("/background/recycle/"),
+        "index" => "",
+        "titlle" => "反馈我想看",
+        "link" => get_url("/usercenter/feedback/"),
+        "class" => "",
     ),
 );
 
