@@ -1,4 +1,4 @@
-<input type="hidden" name="YingpingInfoICount" id="YingpingInfoICount" value="<?php echo $yingpingCount;?>">
+<input type="hidden" name="YingpingInfoICount" id="YingpingInfoICount" value="<?php echo empty($yingpingCount) ? 0 : $yingpingCount;?>">
 <input type="hidden" name="user_type" id="user_type" value="<?php echo empty($adminInfo) ? 0 : 1;?>">
 <input type="hidden" name="limit" id="limit" value="<?php echo $limit;?>">
 <div class="row">
@@ -385,7 +385,7 @@
                    });
                 });
             });
-            
+
             $(window).bind("scroll", function() {//当滚动条滚动时
                 init.daoHangDingWei();
             });
