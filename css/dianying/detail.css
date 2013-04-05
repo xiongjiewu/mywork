@@ -308,3 +308,7 @@ div.watchLink_info table.table tr td {
     text-align: center;
     font-size: 13px;
 }
+section {
+    float: left;
+    width: 100%;
+}

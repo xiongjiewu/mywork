@@ -385,6 +385,7 @@
                    });
                 });
             });
+            
             $(window).bind("scroll", function() {//当滚动条滚动时
                 init.daoHangDingWei();
             });

@@ -156,7 +156,7 @@ var init = {
         dyInfoObj.find("section").each(function(){
             var dyInfoTop = $(this).offset().top;
             var dyInfoH = $(this).height();
-            if (parseInt(daohangTop) >= parseInt(dyInfoTop) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
+            if (parseInt(daohangTop) >= parseInt(dyInfoTop) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH) + 35)) {
                 id = $(this).attr("id");
             }
         });

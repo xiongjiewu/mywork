@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/detail.css" afterPath="$PROJECT_DIR$/css/dianying/detail.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/detail.js" afterPath="$PROJECT_DIR$/js/dianying/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/detail.php" afterPath="$PROJECT_DIR$/application/controllers/detail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/editpost.php" afterPath="$PROJECT_DIR$/application/controllers/editpost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/yingping.php" afterPath="$PROJECT_DIR$/application/models/yingping.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365131977263" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365055977257" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365057134367" ignored="false" />
-    <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365132740601" ignored="false" />
-    <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365135247047" ignored="false" />
+    <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365135579579" ignored="false" />
+    <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365135717306" ignored="false" />
     <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365042975365" ignored="false" />
     <file path="/upcomingmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365053414394" ignored="false" />
     <file path="/upcomingmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365061346374" ignored="false" />
@@ -90,65 +86,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="detail.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="312" column="15" selection-start="5511" selection-end="5511" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="detail.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="45" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.0">
+            <state line="158" column="132" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1365135275490" expanded="false" signature="3929:3945" placeholder="..." />
+                <marker date="1365135943772" expanded="false" signature="3929:3945" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/config/common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="31" selection-start="4311" selection-end="4313" vertical-scroll-proportion="0.79241514">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="useraction.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="52" selection-start="11182" selection-end="11182" vertical-scroll-proportion="-3.3548386">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="52" selection-start="862" selection-end="897" vertical-scroll-proportion="-8.387096">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yingping.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/yingping.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="42" selection-start="1503" selection-end="1525" vertical-scroll-proportion="3.8983052">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="detail.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="43" selection-start="249" selection-end="254" vertical-scroll-proportion="-1.6774193">
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="387" column="12" selection-start="20888" selection-end="20888" vertical-scroll-proportion="0.45627376">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,14 +142,14 @@
         <option value="$PROJECT_DIR$/js/dianying/search.js" />
         <option value="$PROJECT_DIR$/application/views/index/index.php" />
         <option value="$PROJECT_DIR$/css/index/index.css" />
-        <option value="$PROJECT_DIR$/css/dianying/detail.css" />
         <option value="$PROJECT_DIR$/application/controllers/editpost.php" />
         <option value="$PROJECT_DIR$/application/models/yingping.php" />
         <option value="$PROJECT_DIR$/application/controllers/detail.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
-        <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
-        <option value="$PROJECT_DIR$/js/dianying/detail.js" />
         <option value="$PROJECT_DIR$/application/config/common.php" />
+        <option value="$PROJECT_DIR$/css/dianying/detail.css" />
+        <option value="$PROJECT_DIR$/js/dianying/detail.js" />
+        <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
       </list>
     </option>
   </component>
@@ -255,6 +217,10 @@
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -270,7 +236,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,13 +440,6 @@
         <state line="44" column="73" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.25855514" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="16" selection-start="3541" selection-end="3541" vertical-scroll-proportion="-3.642857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="87" selection-start="2898" selection-end="2977" vertical-scroll-proportion="0.6425856">
@@ -486,51 +463,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/yingping.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="42" selection-start="1503" selection-end="1525" vertical-scroll-proportion="3.8983052">
+        <state line="47" column="42" selection-start="1503" selection-end="1525" vertical-scroll-proportion="-0.4618474">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="862" selection-end="897" vertical-scroll-proportion="-8.387096">
+        <state line="24" column="52" selection-start="862" selection-end="897" vertical-scroll-proportion="0.49429658">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="52" selection-start="11182" selection-end="11182" vertical-scroll-proportion="-3.3548386">
+        <state line="296" column="52" selection-start="11182" selection-end="11182" vertical-scroll-proportion="0.19771864">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="43" selection-start="249" selection-end="254" vertical-scroll-proportion="-1.6774193">
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="45" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1365135275490" expanded="false" signature="3929:3945" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="31" selection-start="4311" selection-end="4313" vertical-scroll-proportion="0.79241514">
+        <state line="185" column="31" selection-start="4311" selection-end="4313" vertical-scroll-proportion="0.7547529">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="312" column="15" selection-start="5511" selection-end="5511" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="132" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1365135943772" expanded="false" signature="3929:3945" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="387" column="12" selection-start="20888" selection-end="20888" vertical-scroll-proportion="0.45627376">
           <folding />
         </state>
       </provider>
