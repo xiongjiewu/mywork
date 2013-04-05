@@ -45,6 +45,18 @@ class Yingping extends CI_Model {
         return empty($result) ? array() : $result;
     }
 
+    public function getYingPingCountByDyId($dyId,$del = 0)
+    {
+        $dyId = intval($dyId);
+        if (empty($dyId)) {
+            return false;
+        }
+        $sql = "select count(1) as cn from `tbl_yingping` where infoId = ? and del = {$del};";
+        $query = $this->db->query($sql,array($dyId));
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
+
     public function updateYingpingInfoById($id,$data = array())
     {
         $id = intval($id);

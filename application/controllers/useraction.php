@@ -294,7 +294,9 @@ class Useraction extends CI_Controller
             exit;
         }
         $this->load->model('Yingping');
-        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,10);
+        $limit = get_config_value("post_show_count");
+        $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,$limit);
+        $result['info'] = array();
         if (!empty($YingpingInfo)) {
             $userIds = array();
             foreach($YingpingInfo as $InfoKey => $infoVal) {

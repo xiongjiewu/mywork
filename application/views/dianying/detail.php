@@ -1,3 +1,6 @@
+<input type="hidden" name="YingpingInfoICount" id="YingpingInfoICount" value="<?php echo $yingpingCount;?>">
+<input type="hidden" name="user_type" id="user_type" value="<?php echo empty($adminInfo) ? 0 : 1;?>">
+<input type="hidden" name="limit" id="limit" value="<?php echo $limit;?>">
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
@@ -146,7 +149,7 @@
                         <?php $watchLinkInfoI = 1;?>
                         <?php $watchLinkInfoCount = count($watchLinkInfo);?>
                         <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-                            <tr class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
+                            <tr title="点击观看" class="<?php if ($watchLinkInfoI++ % 2 == 1): ?><?php else: ?><?php endif; ?>">
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?></td>
                                 <td><?php echo $bofangqiType[$watchLinkInfoVal['player']];?>网</td>
                                 <td><?php echo $shoufeiType[$watchLinkInfoVal['shoufei']];?></td>
@@ -161,7 +164,6 @@
         <?php if (!empty($downLoadLinkInfo)): ?>
             <section id="downlink">
                 <br>
-
                 <p>
                     <?php $downLoadLinkInfoI = 0;?>
                     <?php foreach ($downLoadLinkInfo as $downLoadLinkInfoKey => $downLoadLinkInfoVal): ?>
@@ -227,7 +229,7 @@
                                 </tbody>
                             </table>
                         <?php endforeach; ?>
-                        <?php if ($YingpingInfoICount == 10):?>
+                        <?php if ($yingpingCount > $limit):?>
                             <div class="read_more">点击查看更多...</div>
                         <?php else:?>
                             <div class="read_more" style="cursor: default">已没有更多评论</div>
@@ -365,6 +367,25 @@
                 }
                 return false;
             });
+            var trObj = $("div.watchLink_info table.table tr");
+            trObj.each(function(){
+                $(this).bind("mouseover",function(){
+                    $(this).addClass("tr_over");
+                });
+                $(this).bind("mouseleave",function(){
+                    $(this).removeClass("tr_over");
+                });
+                $(this).bind("click",function(){
+                    var url = $($(this).find("a").get(0)).attr("href");
+                    window.open(url);
+                });
+                $(this).find("a").each(function(){
+                   $(this).bind("click",function(event){
+                       event.stopPropagation();
+                   });
+                });
+            });
+            
             $(window).bind("scroll", function() {//当滚动条滚动时
                 init.daoHangDingWei();
             });

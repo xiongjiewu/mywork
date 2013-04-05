@@ -181,3 +181,6 @@ $config['shoucang_max_count'] = 30;//最多收藏个数
 $config['changepassword_max_time'] = 600;//允许修改密码页面过期失效时间
 
 $config['last_movie_month'] = 6;//最新上映展示月个数
+
+
+$config['post_show_count'] = 10;//评论显示个数

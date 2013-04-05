@@ -210,7 +210,8 @@ div.read_more_load {
     background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
 }
 div.bs-docs-example{
-    *width: 920px;
+    width: 96%;
+    float: left;
     margin: 0;
 }
 table.table-bordered {
@@ -260,11 +261,13 @@ div.user_add {
     margin-right: 10px;
     cursor: pointer;
     color: #0088cc;
+    *margin-top: -15px;
 }
 div.add_link {
     display: none;
     float: right;
     margin-right: 10px;
+    *margin-top: -15px;
 }
 div.add_link * {
     float: left;
@@ -273,6 +276,7 @@ div.add_link select.link_type {
     width: 100px;
     margin-right: 10px;
     height: 26px;
+    *padding: 5px 0;
 }
 div.add_link input.add_input {
     height: 15px;
@@ -282,11 +286,17 @@ div.add_link input.add_submit,div.add_link input.add_cancel {
     margin-left: 5px;
 }
 div.watchLink_info {
+    float: left;
+    width: 100%;
     border:1px solid #ddd;
     margin-bottom: 20px;
 }
 div.watchLink_info table.table {
     margin-bottom: 0;
+}
+div.watchLink_info table.table tr.tr_over {
+    background-color: #eee;
+    cursor: pointer;
 }
 div.watchLink_info table.table tr th {
     border: none;
@@ -297,4 +307,8 @@ div.watchLink_info table.table tr th {
 div.watchLink_info table.table tr td {
     text-align: center;
     font-size: 13px;
+}
+section {
+    float: left;
+    width: 100%;
 }
