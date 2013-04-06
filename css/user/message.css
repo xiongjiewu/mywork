@@ -1,0 +1,30 @@
+.modbox2 {
+    border: none;
+}
+.modbox2 table.table {
+    margin-top: 20px;
+}
+.modbox2 table.table tr th {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.modbox2 table.table tr th.chose {
+    border-left: 1px solid #ddd;
+}
+.modbox2 table.table tr th.action_do {
+    border-right: 1px solid #ddd;
+}
+.modbox2 table.table tr.content td {
+    padding: 10px 10px;
+    line-height: 25px;
+    text-align: left;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.modbox2 table.table tr th.chose {
+    width: 50px;
+}
+.modbox2 table.table tr th.action_do {
+    width: 250px;
+}

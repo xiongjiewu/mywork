@@ -644,7 +644,7 @@ class Usercenter extends CI_Controller
         $userMessageList = $this->Message->getMessageListByFiled($queryArr,($page-1) * $this->_messageLimit,$this->_messageLimit);
         if (!empty($userMessageList)) {
             foreach($userMessageList as $messageKey => $messageVal) {
-                $userMessageList[$messageKey]['content'] = $this->splitStr($messageVal['content'],15);
+                $userMessageList[$messageKey]['content'] = $this->ubb2Html($messageVal['content']);
             }
         }
         $this->set_attr("userMessageList",$userMessageList);
@@ -659,7 +659,7 @@ class Usercenter extends CI_Controller
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_css(array("/css/user/usercenter.css","/css/user/message.css"));
         $this->load->set_js(array("/js/user/message.js"));
         $this->set_view("user/message");
     }

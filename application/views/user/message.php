@@ -14,25 +14,19 @@
                     </select>
                 </div>
                 <div class="modbox2">
-                    <table class="table">
-                        <tr>
-                            <th class="chose_all"><?php if (!empty($userMessageList)):?><span class="chose_all">全选</span><?php else:?>全选<?php endif;?></th>
-                            <th class="title">内容</th>
-                            <th class="action_do">时间</th>
-                            <th class="action_do">操作</th>
-                            <th class="system_reply">查看消息</th>
-                        </tr>
                         <?php if (!empty($userMessageList)):?>
+                            <?php $userMessageI = 1;?>
                             <?php foreach($userMessageList as $messageVal):?>
-                                <tr <?php if ($messageVal['is_read'] == 0):?>class="no_read"<?php endif;?>>
-                                    <td><input type="checkbox" name="ids[]" value="<?php echo $messageVal['id'];?>"></td>
-                                    <td>
-                                        <?php echo $messageVal['content'];?>
-                                    </td>
-                                    <td class="message_time">
-                                        <?php echo date("Y-m-d H:i:s",$messageVal['time']);?>
-                                    </td>
-                                    <td class="action message_action">
+                                <table class="table">
+                                <tr>
+                                    <th class="chose">
+                                        <input type="checkbox" name="ids[]" value="<?php echo $messageVal['id'];?>">
+                                    </th>
+                                    <th class="time">
+                                        时间:<?php echo date("Y-m-d H:i:s",$messageVal['time']);?>
+                                    </th>
+                                    <th class="action_do">
+                                        操作:
                                         <span class="del" v="<?php echo $messageVal['id'];?>">删除</span>
                                         |
                                         <span class="read" is_read="<?php echo $messageVal['is_read'];?>" v="<?php echo $messageVal['id'];?>">
@@ -42,18 +36,24 @@
                                                 标未读
                                             <?php endif;?>
                                         </span>
-                                    </td>
-                                    <td class="show_reply">
-                                        <a href="<?php echo get_url("/usercenter/messageinfo/{$messageVal['id']}/");?>">
-                                            详情
-                                        </a>
+                                    </th>
+                                </tr>
+                                <tr class="content<?php if ($messageVal['is_read'] == 0):?> no_read content<?php endif;?>">
+                                    <td colspan="3">
+                                        <?php echo $messageVal['content'];?>
                                     </td>
                                 </tr>
+                            </table>
+                            <?php $userMessageI++;?>
                             <?php endforeach;?>
                         <?php else:?>
-                            <tr><td colspan="5">目前，您查看的信息暂无！</td></tr>
+                        <table>
+                            <tr>
+                                <td colspan="3">目前，您查看的信息暂无！</td>
+                            </tr>
+                        </table>
                         <?php endif;?>
-                    </table>
+
                 </div>
                 <?php if (!empty($userMessageList)):?>
                     <a href="javascript:void(0);" class="btn btn-info">批量删除</a>
