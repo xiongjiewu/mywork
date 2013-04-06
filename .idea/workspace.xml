@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/base.php" afterPath="$PROJECT_DIR$/application/views/base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/upcomingmovie.css" afterPath="$PROJECT_DIR$/css/dianying/upcomingmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" afterPath="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/password.php" afterPath="$PROJECT_DIR$/application/controllers/password.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365226225156" ignored="false" />
+    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365244846116" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365055977257" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365057134367" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365136394640" ignored="false" />
@@ -78,6 +77,7 @@
     <file path="/message.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365225900475" ignored="false" />
     <file path="/message.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365225579759" ignored="false" />
     <file path="/base.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365227594908" ignored="false" />
+    <file path="$PROJECT_DIR$/../admin/application/config/common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365244903761" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,62 +96,7 @@
     <favorites_list name="dianying8" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="1" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upcomingmovie.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/dianying/upcomingmovie.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="12" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.47339448">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upcomingmovie.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/dianying/upcomingmovie.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/base.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="18" selection-start="7471" selection-end="7471" vertical-scroll-proportion="-12.774194">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upcomingmovie.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dianying/upcomingmovie.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="37" selection-start="4594" selection-end="4594" vertical-scroll-proportion="-10.290322">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="latestmovie.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="49" selection-start="7891" selection-end="7920" vertical-scroll-proportion="-3.580645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -170,7 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/user/createfeedback.php" />
         <option value="$PROJECT_DIR$/application/views/user/editfeedback.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/editpost.php" />
         <option value="$PROJECT_DIR$/application/models/globalfunction.php" />
@@ -178,7 +122,6 @@
         <option value="$PROJECT_DIR$/application/models/message.php" />
         <option value="$PROJECT_DIR$/application/views/user/message.php" />
         <option value="$PROJECT_DIR$/css/user/message.css" />
-        <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
         <option value="$PROJECT_DIR$/css/dianying/classicmovie.css" />
         <option value="$PROJECT_DIR$/css/dianying/latestmovie.css" />
@@ -186,6 +129,8 @@
         <option value="$PROJECT_DIR$/application/views/base.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/upcomingmovie.css" />
+        <option value="$PROJECT_DIR$/application/controllers/password.php" />
+        <option value="$PROJECT_DIR$/application/config/common.php" />
       </list>
     </option>
   </component>
@@ -251,25 +196,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,43 +214,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,7 +289,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2781457" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23261589" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -474,114 +365,88 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/user/message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="47" selection-start="3792" selection-end="3792" vertical-scroll-proportion="0.24210526">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="100" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.5742972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="826" selection-end="924" vertical-scroll-proportion="0.50570345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/user/message.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.09122807">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="41" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.04942966">
-          <folding />
-        </state>
+        <state line="2" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.09122807" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="421" column="13" selection-start="15452" selection-end="15452" vertical-scroll-proportion="14.988593">
-          <folding />
-        </state>
+        <state line="421" column="13" selection-start="15452" selection-end="15452" vertical-scroll-proportion="14.988593" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="1" selection-start="4825" selection-end="4825" vertical-scroll-proportion="0.7263158">
-          <folding />
-        </state>
+        <state line="274" column="1" selection-start="4825" selection-end="4825" vertical-scroll-proportion="0.7263158" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="32" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.36692014">
-          <folding />
-        </state>
+        <state line="54" column="32" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.36692014" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="274" selection-end="274" vertical-scroll-proportion="0.43856332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="1" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="18" selection-start="274" selection-end="274" vertical-scroll-proportion="0.43856332" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/base.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="18" selection-start="7471" selection-end="7471" vertical-scroll-proportion="-12.774194">
-          <folding />
-        </state>
+        <state line="127" column="18" selection-start="7471" selection-end="7471" vertical-scroll-proportion="0.7528517" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="2" selection-start="1837" selection-end="1837" vertical-scroll-proportion="2.443609">
-          <folding />
-        </state>
+        <state line="50" column="2" selection-start="1837" selection-end="1837" vertical-scroll-proportion="2.443609" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="49" selection-start="7891" selection-end="7920" vertical-scroll-proportion="-3.580645">
-          <folding />
-        </state>
+        <state line="135" column="49" selection-start="7891" selection-end="7920" vertical-scroll-proportion="0.21102661" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dianying/upcomingmovie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/upcomingmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="37" selection-start="4594" selection-end="4594" vertical-scroll-proportion="-10.290322">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/upcomingmovie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="12" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.47339448">
+        <state line="296" column="12" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.47339448" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dianying/upcomingmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="37" selection-start="4594" selection-end="4594" vertical-scroll-proportion="0.60646385" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="1" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.7537594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="48" selection-start="102" selection-end="132" vertical-scroll-proportion="0.22807017" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="2" selection-start="358" selection-end="729" vertical-scroll-proportion="0.69201523">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="9" selection-start="2117" selection-end="2117" vertical-scroll-proportion="-0.83870965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="87" selection-start="1968" selection-end="2047" vertical-scroll-proportion="0.04942966">
           <folding />
         </state>
       </provider>

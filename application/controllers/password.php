@@ -19,6 +19,7 @@ class Password extends CI_Controller {
         if (empty($r)) {
             $this->jump_to("/");
         }
+        $this->load->set_title("密码更改 - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
@@ -39,6 +40,7 @@ class Password extends CI_Controller {
             $this->jump_to("/");
             exit;
         }
+        $this->load->set_title("密码更改 - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->set_attr("email",$userInfo['email']);
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
@@ -64,6 +66,7 @@ class Password extends CI_Controller {
             $this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));
             exit;
         }
+        $this->load->set_title("密码更改 - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->set_attr("key",$key);
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
