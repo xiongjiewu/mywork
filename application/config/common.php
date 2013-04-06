@@ -5,6 +5,7 @@ $config['user_photo'] = "/images/re_su.png";
 $config['img_base_url'] = "http://www.img.dianying8.tv";
 $config['base_url'] = "http://www.dianying8.tv";
 $config['base_name'] = "电影吧";
+$config['base_title'] = "我们只专注于电影，您想看的就是我们宗旨";
 
 $config['max_post_time'] = 5;//允许5秒之内不能重复发表评论
 

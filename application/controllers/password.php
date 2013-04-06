@@ -19,7 +19,7 @@ class Password extends CI_Controller {
         if (empty($r)) {
             $this->jump_to("/");
         }
-        $this->load->set_title("密码更改 - 我们只专注于电影 - " . get_config_value("base_name"));
+        $this->load->set_title("密码更改 - " . get_config_value("base_name") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
