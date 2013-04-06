@@ -49,7 +49,7 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
-        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . get_config_value("base_name") . " - " . get_config_value("base_name"));
+        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
@@ -89,7 +89,7 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
-        $this->load->set_title($type . "年 - " . get_config_value("base_name") . " - " . get_config_value("base_name"));
+        $this->load->set_title($type . "年 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
@@ -129,7 +129,7 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
-        $this->load->set_title($this->_moviePlace[$type] . "片 - " . get_config_value("base_name") . " - " . get_config_value("base_name"));
+        $this->load->set_title($this->_moviePlace[$type] . "片 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);

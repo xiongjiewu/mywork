@@ -28,7 +28,7 @@ class Editpost extends CI_Controller {
             exit;
         }
         $this->set_attr("YingpingInfo",$YingpingInfo);
-        $this->load->set_title("编辑回复 - " . get_config_value("base_name") ." - " . get_config_value("base_name"));
+        $this->load->set_title("编辑回复 - " . get_config_value("base_title") ." - " . get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/editpost.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/editpost.js"));
         $this->load->set_top_index(-1);

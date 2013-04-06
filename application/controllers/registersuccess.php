@@ -11,7 +11,7 @@ class Registersuccess extends CI_Controller {
         if (empty($this->userId) || !isset($code) || ($this->userId != base64_decode($code))) {//验证不通过跳转至首页
             $this->jump_to("/");
         }
-        $this->load->set_title("注册成功 - " . get_config_value("base_name") . " - " . get_config_value("base_name"));
+        $this->load->set_title("注册成功 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("css/member/register.css","css/member/registersuccess.css"));

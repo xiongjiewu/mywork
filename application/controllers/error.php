@@ -14,7 +14,7 @@ class Error extends CI_Controller {
             if (!empty($bgurl)) {
                 $pageCode['return_url'] = $bgurl;
             }
-            $this->load->set_title("出错啦！ - " . get_config_value("base_name") ." - " . get_config_value("base_name"));
+            $this->load->set_title("出错啦！ - " . get_config_value("base_title") ." - " . get_config_value("base_name"));
             $this->set_attr("pageCode",$pageCode);
             $this->load->set_css(array("css/error/error.css"));
             $this->load->set_top_index(-1);

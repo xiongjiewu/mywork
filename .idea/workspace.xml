@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/latestmovie.css" afterPath="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/login.css" afterPath="$PROJECT_DIR$/css/member/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/member/login.js" afterPath="$PROJECT_DIR$/js/member/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/login.php" afterPath="$PROJECT_DIR$/application/views/member/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/logout.php" afterPath="$PROJECT_DIR$/application/controllers/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/register.css" afterPath="$PROJECT_DIR$/css/member/register.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/classicmovie.php" afterPath="$PROJECT_DIR$/application/controllers/classicmovie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/detail.php" afterPath="$PROJECT_DIR$/application/controllers/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/editpost.php" afterPath="$PROJECT_DIR$/application/controllers/editpost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/error.php" afterPath="$PROJECT_DIR$/application/controllers/error.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/latestmovie.php" afterPath="$PROJECT_DIR$/application/controllers/latestmovie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/password.php" afterPath="$PROJECT_DIR$/application/controllers/password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/register.php" afterPath="$PROJECT_DIR$/application/controllers/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/registersuccess.php" afterPath="$PROJECT_DIR$/application/controllers/registersuccess.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/search.php" afterPath="$PROJECT_DIR$/application/controllers/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/topic.php" afterPath="$PROJECT_DIR$/application/controllers/topic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" afterPath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/usercenter.php" afterPath="$PROJECT_DIR$/application/controllers/usercenter.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,55 +112,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/member/login.php">
+      <file leaf-file-name="loginaction.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/loginaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="62" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-2.7096775">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/member/register.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="328" column="17" selection-start="9306" selection-end="9306" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="25" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/member/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="14" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="latestmovie.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="20" selection-start="295" selection-end="365" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/member/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="69" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.57247704">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="27.870968">
               <folding />
             </state>
           </provider>
@@ -162,7 +124,79 @@
       <file leaf-file-name="logout.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="23" selection-start="236" selection-end="236" vertical-scroll-proportion="-8.387096">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resgiteraction.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/resgiteraction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.612904">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="83" selection-start="1256" selection-end="1256" vertical-scroll-proportion="-5.290323">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="90" selection-start="632" selection-end="632" vertical-scroll-proportion="-5.032258">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upcomingmovie.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="73" selection-start="1406" selection-end="1416" vertical-scroll-proportion="-3.612903">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usercenter.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="765" column="83" selection-start="28152" selection-end="28162" vertical-scroll-proportion="0.18067227">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/error.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="75" selection-start="625" selection-end="625" vertical-scroll-proportion="-8.387096">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="latestmovie.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="73" selection-start="2963" selection-end="2963" vertical-scroll-proportion="-8.387096">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="84" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-8.387096">
               <folding />
             </state>
           </provider>
@@ -187,22 +221,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/latestmovie.php" />
-        <option value="$PROJECT_DIR$/application/controllers/login.php" />
-        <option value="$PROJECT_DIR$/application/controllers/password.php" />
-        <option value="$PROJECT_DIR$/application/controllers/register.php" />
-        <option value="$PROJECT_DIR$/application/controllers/registersuccess.php" />
-        <option value="$PROJECT_DIR$/application/controllers/search.php" />
-        <option value="$PROJECT_DIR$/application/controllers/topic.php" />
-        <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/config/common.php" />
-        <option value="$PROJECT_DIR$/css/main/main.css" />
-        <option value="$PROJECT_DIR$/application/controllers/logout.php" />
-        <option value="$PROJECT_DIR$/application/views/member/login.php" />
-        <option value="$PROJECT_DIR$/css/dianying/latestmovie.css" />
         <option value="$PROJECT_DIR$/css/member/register.css" />
         <option value="$PROJECT_DIR$/css/member/login.css" />
         <option value="$PROJECT_DIR$/js/member/login.js" />
+        <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
+        <option value="$PROJECT_DIR$/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/application/controllers/register.php" />
+        <option value="$PROJECT_DIR$/application/controllers/registersuccess.php" />
+        <option value="$PROJECT_DIR$/application/controllers/password.php" />
+        <option value="$PROJECT_DIR$/application/controllers/editpost.php" />
+        <option value="$PROJECT_DIR$/application/controllers/error.php" />
+        <option value="$PROJECT_DIR$/application/controllers/latestmovie.php" />
+        <option value="$PROJECT_DIR$/application/controllers/detail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/search.php" />
+        <option value="$PROJECT_DIR$/application/controllers/topic.php" />
+        <option value="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
+        <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
       </list>
     </option>
   </component>
@@ -301,6 +335,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,100 +503,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/resgiteraction.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="20.129032" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="84" selection-start="1257" selection-end="1257" vertical-scroll-proportion="-7.548387" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="91" selection-start="633" selection-end="633" vertical-scroll-proportion="-7.548387" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.064516" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="17" selection-start="1719" selection-end="1719" vertical-scroll-proportion="62.064518" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="769" column="31" selection-start="28321" selection-end="28321" vertical-scroll-proportion="0.45627376" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="24" selection-start="2590" selection-end="2601" vertical-scroll-proportion="0.29657796">
+        <state line="91" column="76" selection-start="4104" selection-end="4104" vertical-scroll-proportion="-76.32258">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main/main.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="13" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.62711865">
+        <state line="16" column="71" selection-start="511" selection-end="521" vertical-scroll-proportion="-13.419354">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="71" selection-start="364" selection-end="364" vertical-scroll-proportion="-10.064516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/registersuccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="71" selection-start="478" selection-end="478" vertical-scroll-proportion="-10.903226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="648" selection-end="648" vertical-scroll-proportion="-18.451612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/editpost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="71" selection-start="1168" selection-end="1178" vertical-scroll-proportion="-7.548387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="75" selection-start="625" selection-end="625" vertical-scroll-proportion="-8.387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/latestmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="73" selection-start="2963" selection-end="2963" vertical-scroll-proportion="-8.387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="84" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-8.387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/loginaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="27.870968">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="236" selection-end="236" vertical-scroll-proportion="-8.387096">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/resgiteraction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="25" vertical-scroll-proportion="-0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.612904">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/member/login.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="62" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-2.7096775">
+        <state line="30" column="83" selection-start="1256" selection-end="1256" vertical-scroll-proportion="-5.290323">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/member/register.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="17" selection-start="9306" selection-end="9306" vertical-scroll-proportion="0.0">
+        <state line="21" column="90" selection-start="632" selection-end="632" vertical-scroll-proportion="-5.032258">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/dianying/latestmovie.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="295" selection-end="365" vertical-scroll-proportion="0.0">
+        <state line="33" column="73" selection-start="1406" selection-end="1416" vertical-scroll-proportion="-3.612903">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/member/login.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="14" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/member/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="69" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.57247704">
+        <state line="765" column="83" selection-start="28152" selection-end="28162" vertical-scroll-proportion="0.18067227">
           <folding />
         </state>
       </provider>
