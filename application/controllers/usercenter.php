@@ -419,6 +419,7 @@ class Usercenter extends CI_Controller
         $type = trim($this->input->post("type"));
         $this->Feedback->updateFeedbackInfo(array("title" => $title,"content" => $content),array("id"=>$id));
         $this->jump_to("/usercenter/editsuccess/{$type}/");
+        exit;
     }
 
     private function _showSuccess($type = "want",$index = null)
@@ -444,7 +445,7 @@ class Usercenter extends CI_Controller
     public function createfeedback($type = "want")
     {
         $type = in_array($type,array("want","suggest")) ? $type : "want";
-
+        $this->load->set_title((($type == "want") ? "反馈我想看" : "投诉与建议") . " - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->set_attr("type",$type);
         $this->set_attr("userId", $this->userId);
         $userInfo = $this->_getUserInfo();
