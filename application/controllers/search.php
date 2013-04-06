@@ -15,6 +15,7 @@ class Search extends CI_Controller {
         }
         $this->set_attr("searchW",$searchW);
         $this->load->model('Backgroundadmin');
+        $searchW = mysql_real_escape_string($searchW);
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW));
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             if ($infoKey < 4) {

@@ -1,0 +1,56 @@
+div.chose_all{
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+div.chose_all span {
+    cursor: pointer;
+    color: #0088cc;
+}
+.modbox2 {
+    border: none;
+}
+.modbox2 table.table {
+    margin-top: 20px;
+}
+.modbox2 table.firstOne {
+    margin-top: 0;
+}
+.modbox2 table.table tr th {
+    font-size: 13px;
+    font-weight: 500;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.modbox2 table.table tr th.chose {
+    border-left: 1px solid #ddd;
+}
+.modbox2 table.table tr th.action_do {
+    border-right: 1px solid #ddd;
+}
+.modbox2 table.table tr.content td {
+    padding: 10px 10px;
+    line-height: 25px;
+    text-align: left;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.modbox2 table.table tr.content td span {
+    color: #999;
+}
+.modbox2 table.table tr th.chose {
+    width: 50px;
+}
+.modbox2 table.table tr th.action_do {
+    width: 200px;
+    text-align: right;
+}
+.modbox2 table.table tr th.action_do span {
+    color: #0088cc;
+    cursor: pointer;
+}
+table.page {
+    margin-top: 20px;
+    margin-right: 0;
+}

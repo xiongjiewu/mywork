@@ -36,7 +36,7 @@
         <?php endforeach; ?>
     <?php endif;?>
 
-</head
+</head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">

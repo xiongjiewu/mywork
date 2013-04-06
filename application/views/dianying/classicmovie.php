@@ -52,7 +52,7 @@
         <?php endif;?>
 
         <?php else:?>
-            <table class="table table-bordered error_table">
+            <table class="table error_table">
                 <tr>
                     <td class="image"><img src="/images/error.png"></td>
                     <td class="text">糟糕，您检索的信息暂无或者信息有误，您可以检索其他信息！</td>

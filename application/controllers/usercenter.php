@@ -419,6 +419,7 @@ class Usercenter extends CI_Controller
         $type = trim($this->input->post("type"));
         $this->Feedback->updateFeedbackInfo(array("title" => $title,"content" => $content),array("id"=>$id));
         $this->jump_to("/usercenter/editsuccess/{$type}/");
+        exit;
     }
 
     private function _showSuccess($type = "want",$index = null)
@@ -444,7 +445,7 @@ class Usercenter extends CI_Controller
     public function createfeedback($type = "want")
     {
         $type = in_array($type,array("want","suggest")) ? $type : "want";
-
+        $this->load->set_title((($type == "want") ? "反馈我想看" : "投诉与建议") . " - 我们只专注于电影 - " . get_config_value("base_name"));
         $this->set_attr("type",$type);
         $this->set_attr("userId", $this->userId);
         $userInfo = $this->_getUserInfo();
@@ -638,19 +639,18 @@ class Usercenter extends CI_Controller
         $this->load->model("Message");
         $userMessageCount = $this->Message->getMessageCountByFiled($queryArr);
         $userMessageCount = ($userMessageCount > $this->_messageMaxCount) ? $this->_messageMaxCount : $userMessageCount;
-        if (($userMessageCount > 0) && ($page > ceil($userMessageCount/$this->_noticeLimit))) {
+        if (($userMessageCount > 0) && ($page > ceil($userMessageCount/$this->_messageLimit))) {
             $page = ceil($userMessageCount/$this->_noticeLimit);
         }
         $userMessageList = $this->Message->getMessageListByFiled($queryArr,($page-1) * $this->_messageLimit,$this->_messageLimit);
         if (!empty($userMessageList)) {
             foreach($userMessageList as $messageKey => $messageVal) {
-                $userMessageList[$messageKey]['content'] = $this->splitStr($messageVal['content'],15);
+                $userMessageList[$messageKey]['content'] = $this->ubb2Html($messageVal['content']);
             }
         }
         $this->set_attr("userMessageList",$userMessageList);
         $this->set_attr("userMessageCount",$userMessageCount);
-        $this->set_attr("limit",$this->_noticeLimit);
-
+        $this->set_attr("limit",$this->_messageLimit);
         $base_url = get_url("/usercenter/message/") . $read . "/";
         $fenye = $this->set_page_info($page,$this->_messageLimit,$userMessageCount,$base_url);
         $this->set_attr("fenye",$fenye);
@@ -659,7 +659,7 @@ class Usercenter extends CI_Controller
         $this->load->set_head_img(false);
         $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("/css/user/usercenter.css"));
+        $this->load->set_css(array("/css/user/usercenter.css","/css/user/message.css"));
         $this->load->set_js(array("/js/user/message.js"));
         $this->set_view("user/message");
     }

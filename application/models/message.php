@@ -50,7 +50,7 @@ class Message extends CI_Model {
             $valArr[] = $infoVal;
         }
         $keyStr = implode(" and ",$keyArr);
-        $sql = "select {$this->_getFiledStr()} from `tbl_message` where {$keyStr} limit {$offset},{$limit};";
+        $sql = "select {$this->_getFiledStr()} from `tbl_message` where {$keyStr} order by time desc limit {$offset},{$limit};";
         $query = $this->db->query($sql,$valArr);
         $result = $query->result_array();
         return empty($result) ? array() : $result;

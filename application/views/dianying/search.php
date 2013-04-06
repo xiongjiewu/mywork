@@ -47,7 +47,7 @@
             <?php endforeach;?>
 
         <?php else:?>
-            <table class="table table-bordered error_table">
+            <table class="table error_table">
                 <tr>
                     <td class="image"><img src="/images/error.png"></td>
                     <td class="text">糟糕，您搜索的信息暂无，您可以尝试换个方式搜索！</td>
