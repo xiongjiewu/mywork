@@ -142,7 +142,7 @@ $config['menus'] = array(
     array(
         "index" => "",
         "titlle" => "反馈我想看",
-        "link" => get_url("/usercenter/feedback/"),
+        "link" => get_url("/usercenter/createfeedback/want/"),
         "class" => "",
     ),
 );

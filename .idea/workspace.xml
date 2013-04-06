@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/user/message.css" afterPath="$PROJECT_DIR$/css/user/message.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/user/message.js" afterPath="$PROJECT_DIR$/js/user/message.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/message.php" afterPath="$PROJECT_DIR$/application/models/message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/message.php" afterPath="$PROJECT_DIR$/application/views/user/message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/usercenter.php" afterPath="$PROJECT_DIR$/application/controllers/usercenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,49 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="usercenter.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
+      <file leaf-file-name="common.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/config/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="339" selection-end="339" vertical-scroll-proportion="-5.387097">
+            <state line="144" column="59" selection-start="3364" selection-end="3364" vertical-scroll-proportion="0.34600762">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/message.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="100" selection-start="1680" selection-end="1680" vertical-scroll-proportion="-4.8474574">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/user/message.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.09541284">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/user/message.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="47" selection-start="3792" selection-end="3792" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/message.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="826" selection-end="924" vertical-scroll-proportion="-8.580646">
-              <folding>
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -169,7 +126,6 @@
         <option value="$PROJECT_DIR$/application/views/dianying/search.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/classicmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/classicmovie.css" />
-        <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
         <option value="$PROJECT_DIR$/application/views/user/createfeedback.php" />
         <option value="$PROJECT_DIR$/application/views/user/editfeedback.php" />
@@ -180,6 +136,7 @@
         <option value="$PROJECT_DIR$/application/views/user/message.php" />
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
         <option value="$PROJECT_DIR$/css/user/message.css" />
+        <option value="$PROJECT_DIR$/application/config/common.php" />
       </list>
     </option>
   </component>
@@ -294,7 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="36" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.14828898">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/detail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="251" column="108" selection-start="15037" selection-end="15037" vertical-scroll-proportion="0.5931559">
@@ -521,37 +471,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/user/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="47" selection-start="3792" selection-end="3792" vertical-scroll-proportion="0.0">
+        <state line="117" column="47" selection-start="3792" selection-end="3792" vertical-scroll-proportion="0.24210526">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="100" selection-start="1680" selection-end="1680" vertical-scroll-proportion="-4.8474574">
+        <state line="52" column="100" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.5742972">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="826" selection-end="924" vertical-scroll-proportion="-8.580646">
+        <state line="17" column="30" selection-start="826" selection-end="924" vertical-scroll-proportion="0.50570345">
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
+    <entry file="file://$PROJECT_DIR$/css/user/message.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="339" selection-end="339" vertical-scroll-proportion="-5.387097">
+        <state line="2" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.09122807">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/user/message.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.09541284">
+        <state line="12" column="31" selection-start="339" selection-end="339" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="59" selection-start="3364" selection-end="3364" vertical-scroll-proportion="0.34600762">
           <folding />
         </state>
       </provider>
