@@ -49,7 +49,7 @@
 <script type="text/javascript">
     var editor = $('.xheditor').xheditor(
         {
-            tools: 'Cut,Copy,Paste,Pastetext,|,Emot,Fontface,FontSize,Bold,Italic,Underline',
+            tools: 'Cut,Copy,Paste,Pastetext,|,Emot,Fontface,FontSize,Bold,Italic,Underline,Link',
             skin: 'vista',
             showBlocktag: true,
             internalScript: true,
