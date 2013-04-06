@@ -638,7 +638,7 @@ class Usercenter extends CI_Controller
         $this->load->model("Message");
         $userMessageCount = $this->Message->getMessageCountByFiled($queryArr);
         $userMessageCount = ($userMessageCount > $this->_messageMaxCount) ? $this->_messageMaxCount : $userMessageCount;
-        if (($userMessageCount > 0) && ($page > ceil($userMessageCount/$this->_noticeLimit))) {
+        if (($userMessageCount > 0) && ($page > ceil($userMessageCount/$this->_messageLimit))) {
             $page = ceil($userMessageCount/$this->_noticeLimit);
         }
         $userMessageList = $this->Message->getMessageListByFiled($queryArr,($page-1) * $this->_messageLimit,$this->_messageLimit);
@@ -649,8 +649,7 @@ class Usercenter extends CI_Controller
         }
         $this->set_attr("userMessageList",$userMessageList);
         $this->set_attr("userMessageCount",$userMessageCount);
-        $this->set_attr("limit",$this->_noticeLimit);
-
+        $this->set_attr("limit",$this->_messageLimit);
         $base_url = get_url("/usercenter/message/") . $read . "/";
         $fenye = $this->set_page_info($page,$this->_messageLimit,$userMessageCount,$base_url);
         $this->set_attr("fenye",$fenye);

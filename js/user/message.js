@@ -81,12 +81,12 @@
             var t = obj.attr("is_read");
             if (t == 0) {
                 obj.html("标未读");
-                obj.parent().parent().removeClass("no_read");
+                obj.parent().parent().prev().removeClass("no_read");
                 obj.attr("is_read",1);
                 this.ajaxRead(id,1);
             } else {
                 obj.html("标已读");
-                obj.parent().parent().addClass("no_read");
+                obj.parent().parent().prev().addClass("no_read");
                 obj.attr("is_read",0);
                 this.ajaxRead(id,0);
             }
@@ -115,9 +115,9 @@
     };
     $(document).ready(function () {
         init.cancelChose();
-        var choseAllObj = $(".modbox2 table.table tr th span.chose_all");
+        var choseAllObj = $("div.chose_all span");
         var checkBoxObj = $("input[name='ids[]']");
-        var spanObj = $(".modbox2 table.table tr td.action span");
+        var spanObj = $(".modbox2 table.table tr th.action_do span");
         var mulDelObj = $("a.btn-info");
         choseAllObj.bind("click", function () {
             init.choseAll($(this));
