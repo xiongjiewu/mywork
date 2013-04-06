@@ -11,7 +11,7 @@
                 </tr>
             </table>
         </div>
-        <form name="login_form" id="login_form" method="post">
+        <form name="login_form" id="login_form" method="post" onsubmit="return false;">
             <input type="hidden" name="bgurl" id="bgurl" value="<?php echo empty($bgurl) ? "":$bgurl;?>">
             <div class="login_ui_table">
                 <table>

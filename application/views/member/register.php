@@ -1,7 +1,7 @@
 <div class="doing"></div>
 <div class="register_main">
     <div class="register_top_top"></div>
-    <form action="" id="register_form">
+    <form action="" id="register_form" method="post" onsubmit="return false;">
         <div class="register_top_middel">
             <div class="register_main_table">
                 <table>
