@@ -35,7 +35,6 @@
             <script type="text/javascript" src="/<?php echo trim($jsVal, "/"); ?>"></script>
         <?php endforeach; ?>
     <?php endif;?>
-
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -70,11 +69,13 @@
                             <?php endif;?>
                         </li>
                     <?php endforeach;?>
-                    <li class="search" style="margin-left: 150px">
-                        <form name="search_dy" id="search_dy" onsubmit="return false;" action="<?php echo get_url("/search/");?>">
+                    <li class="search" style="margin-left: 100px">
+                        <form autocomplete="off" name="search_dy" id="search_dy" onsubmit="return false;" action="<?php echo get_url("/search/");?>">
                             <input type="text" class="search_value" name="search" id="search" value="<?php if (isset($data['searchW'])):?><?php echo $data['searchW'];?><?php else:?>搜索您喜欢的影片...<?php endif;?>">
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
+                        <div class="about_search">
+                        </div>
                     </li>
                     </ul>
                     <?php if (!empty($userName)): ?>
@@ -114,7 +115,6 @@
     <header class="jumbotron subhead" id="overview">
         <div class="container">
             <h1>电影吧</h1>
-
             <p class="lead">您还在为找不到电影资源而苦恼嘛？你还在为大量的影片资源无法挑选而苦恼嘛？</p>
         </div>
     </header>
@@ -128,90 +128,5 @@
     <?php endif;?>
 </div>
 <?php $this->load->view("component/footer");?>
-<script type="text/javascript">
-    (function ($) {
-        var initOjb = {
-            addCladdToLi: function (obj, c) {
-                obj.addClass(c);
-            },
-            removeClass: function (obj, c) {
-                obj.removeClass(c);
-            },
-            removeSpecailStr:function (s) {
-                var pattern = new RegExp("[`~!@#$^&*()=|{}':;'%+《》『』,\\[\\]<>/?~！@#￥……&*（）&mdash;—|{}【】‘；：”“'。，、？]");
-                var rs = "";
-                for (var i = 0; i < s.length; i++) {
-                    rs = rs + s.substr(i, 1).replace(pattern, '');
-                }
-                return rs;
-            }
-        };
-        $(document).ready(function () {
-            $("#search").bind("focus", function () {
-                var search_val = $.trim($(this).val());
-                if (search_val == "搜索您喜欢的影片...") {
-                    $("#search").val("");
-                }
-            });
-            $("#search").bind("blur", function () {
-                var search_val = $.trim($(this).val());
-                if (!search_val || search_val == undefined) {
-                    $("#search").val("搜索您喜欢的影片...");
-                }
-            });
-            $("#search_dy").submit(function(){
-                var search_val = $.trim($("#search").val());
-                    search_val = initOjb.removeSpecailStr(search_val);
-                if (!search_val || (search_val == "搜索您喜欢的影片...")) {
-                    window.location.href = "<?php echo get_url("/classicmovie/");?>";
-                    return false;
-                } else {
-                    window.location.href = "<?php echo get_url("/search?key=");?>" + search_val;
-                    return false;
-                }
-            });
-            $("div.head_top_menus ul.nav li.dy_sort").mouseover(function () {
-                initOjb.addCladdToLi($(this), "show_sort");
-                $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").show();
-            });
-            $("div.head_top_menus ul.nav li.dy_sort").mouseleave(function () {
-                initOjb.removeClass($(this), "show_sort");
-                $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").hide();
-            })
-            $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").mouseover(function () {
-                $(this).show();
-                initOjb.addCladdToLi($("div.head_top_menus ul.nav li.dy_sort"), "show_sort");
-            });
-            $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").mouseleave(function () {
-                $(this).hide();
-                initOjb.removeClass($("div.head_top_menus ul.nav li.dy_sort"), "show_sort");
-            });
-            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseover(function(){
-                $("div.head_top_menus ul.nav li.username div.user_in").show();
-            });
-            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseleave(function(){
-                $("div.head_top_menus ul.nav li.username div.user_in").hide();
-            });
-        });
-    })(jQuery);
-</script>
-<?php if($this->load->get_move_js()):?>
-<script src="/js/base/bootstrap-transition.js"></script>
-<script src="/js/base/bootstrap-alert.js"></script>
-<script src="/js/base/bootstrap-modal.js"></script>
-<script src="/js/base/bootstrap-dropdown.js"></script>
-<script src="/js/base/bootstrap-scrollspy.js"></script>
-<script src="/js/base/bootstrap-tab.js"></script>
-<script src="/js/base/bootstrap-tooltip.js"></script>
-<script src="/js/base/bootstrap-popover.js"></script>
-<script src="/js/base/bootstrap-button.js"></script>
-<script src="/js/base/bootstrap-collapse.js"></script>
-<script src="/js/base/bootstrap-carousel.js"></script>
-<script src="/js/base/bootstrap-typeahead.js"></script>
-<script src="/js/base/bootstrap-affix.js"></script>
-<script src="/js/base/holder/holder.js"></script>
-<script src="/js/base/google-code-prettify/prettify.js"></script>
-<script src="/js/base/application.js"></script>
-<?php endif;?>
 </body>
 </html>
