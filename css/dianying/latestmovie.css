@@ -157,13 +157,14 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down {
     float: left;
-    width: 100%;
+    width: 96%;
     height: 40px;
     color: #999;
     margin-top: 10px;
     margin-left: 7px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down a{
+    float: left;
     color: #444;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down div.watch_down {
