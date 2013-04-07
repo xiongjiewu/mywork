@@ -5,6 +5,11 @@ body{
 table,div.bs-docs-sidebar ul li a{
     background-color: #fff;
 }
+.navbar .nav {
+    float: left;
+    width: 92%;
+    min-width: 92%;
+}
 /*搜索框*/
 ul li.search {
     width: 190px;
