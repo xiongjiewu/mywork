@@ -1,5 +1,5 @@
 <?php if (!empty($newestDyInfo)): ?>
-    <div class="bs-docs-example" style=" width: 1130px;float: left;">
+    <div class="bs-docs-example">
         <table class="new_dy">
             <tr>
                 <td class="new_title"><strong>最新<p></p>热门</strong></td>

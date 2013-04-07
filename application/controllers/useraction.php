@@ -6,8 +6,7 @@
 class Useraction extends CI_Controller
 {
     private $_cookiePre = __CLASS__;
-    public function index()
-    {
+    public function index() {
 
 
     }

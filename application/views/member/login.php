@@ -1,3 +1,4 @@
+<div class="doing"></div>
 <div class="login">
     <div class="login_ui" id="login_ui_pan">
         <div class="login_ui_title">
@@ -11,7 +12,7 @@
                 </tr>
             </table>
         </div>
-        <form name="login_form" id="login_form" method="post">
+        <form name="login_form" id="login_form" method="post" onsubmit="return false;">
             <input type="hidden" name="bgurl" id="bgurl" value="<?php echo empty($bgurl) ? "":$bgurl;?>">
             <div class="login_ui_table">
                 <table>
@@ -30,8 +31,16 @@
                             <input type="password" class="password" name="password">
                         </td>
                     </tr>
-                    <tr><td class="ui_remember"><input type="checkbox" name="checkbox" class="remember">记住登录状态&nbsp;&nbsp;<a href="<?php echo get_url("/password?r=" . time())?>">忘记密码？</a></td></tr>
-                    <tr><td class="ui_login"><input type="submit" class="submit" name="login_submit" value="登&nbsp;录"></td></tr>
+                    <tr>
+                        <td class="ui_remember">
+                            <input type="checkbox" name="checkbox" class="remember">记住登录状态&nbsp;&nbsp;<a href="<?php echo get_url("/password?r=" . time())?>">忘记密码？</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ui_login">
+                            <input type="submit" class="submit" name="login_submit" value="登&nbsp;录">
+                        </td>
+                    </tr>
                 </table>
             </div>
         </form>

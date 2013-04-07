@@ -324,6 +324,8 @@ div.doing {
     height: 98%;
     z-index: 9999;
     background: url("/images/icon/move.gif") no-repeat scroll 50% 30% #FFFFFF;
+    filter:alpha(Opacity=60);
+    -moz-opacity:0.6;
     opacity: 0.6;
 }
 a.jump_login {

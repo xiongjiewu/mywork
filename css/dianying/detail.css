@@ -1,3 +1,7 @@
+div.row {
+    margin: 0 auto;
+    width: 100%;
+}
 ul.dy_bs-docs-sidenav {
     position: fixed;
 }
@@ -22,7 +26,10 @@ table tr td.dy_info_img img {
     height: 250px;
 }
 div.bs-docs-sidebar {
+    float: left;
     margin-top: 40px;
+    margin-left: 0;
+    width: 24%;
 }
 .pllist {
     height: auto;
@@ -60,11 +67,16 @@ div.bs-docs-sidebar {
 }
 
 .pllist table  .userPro img {
+    float: left;
     display: inline;
     color: transparent;
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #DDDDDD;
     padding: 2px;
+    width: 70%;
+    height: 40%;
+    min-width: 50px;
+    min-height: 40px;
 }
 .commentTextList {
     font-size: 14px;
@@ -221,6 +233,7 @@ table.dy_info_table tr td span.name {
     font-size: 17px;
 }
 ul.bs-docs-sidenav {
+    float: left;
     width: 120px;
     text-align: center;
     font-weight: bold;
@@ -237,8 +250,9 @@ ul.bs-docs-sidenav li a {
     float: left;
 }
 div.span9 {
-    margin-left: -40px;
-    width: 920px;
+    float: left;
+    margin-left: -10%;
+    width: 86%;
 }
 ul.bs-docs-sidenav li a.click {
     color: #fff;

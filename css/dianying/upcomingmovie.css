@@ -260,9 +260,10 @@ table.table tr td.dy_name span {
     font-size: 13px;
     color: #fff;
     background: none repeat scroll 0 0 #000000;
-    filter:alpha(Opacity=50);
-    -moz-opacity:0.5;
-    opacity: 0.5;
+    filter:alpha(Opacity=75);
+    -moz-opacity:0.75;
+    opacity: 0.75;
+    font-weight: bold;
     overflow: hidden;
 }
 table.table tr td.dy_name a {
@@ -289,18 +290,4 @@ span.dy_notic {
 }
 table.table-bordered {
     width: 98%;
-}
-a.go_to_top {
-    display: none;
-    position: fixed;
-    width: 48px;
-    right: 6px;
-    bottom: 100px;
-    cursor: pointer;
-    height: 48px;
-    background: url("/images/common/go_top.png") no-repeat -3px 0 transparent;
-    z-index: 9999;
-}
-a.go_to_top:hover {
-    background-position: -3px -100px;
 }

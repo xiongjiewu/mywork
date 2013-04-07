@@ -74,7 +74,7 @@
                                                 <td><?php echo $moviePlace[$mVal['diqu']];?></td>
                                             </tr>
                                             <tr>
-                                                <td class="dy_jianjie_t">主演：</td>
+                                                <td class="dy_jianjie_t" valign="top">主演：</td>
                                                 <td><?php echo $mVal['zhuyan'];?></td>
                                             </tr>
                                         </table>

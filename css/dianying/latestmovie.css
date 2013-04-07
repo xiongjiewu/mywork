@@ -1,22 +1,29 @@
+div.row {
+    margin: 0 auto;
+    width: 100%;
+}
 .bs-docs-example {
-    width: 1010px;
+    width: 100%;
     float: left;
     margin-top: 0;
     padding: 0;
 }
 div.span3 {
+    float: left;
     width: 120px;
     margin-top: 40px;
     margin-right: 20px;
+    margin-left: 0;
 }
 ul.bs-docs-sidenav {
+    float: left;
     width: 120px;
     text-align: center;
     font-weight: bold;
     margin-top: 0;
     position: fixed;
-    filter:alpha(Opacity=50);
-    -moz-opacity:0.5;
+    filter:alpha(Opacity=60);
+    -moz-opacity:0.6;
     opacity: 0.6;
     background: none;
 }
@@ -37,7 +44,7 @@ ul.bs-docs-sidenav li a:hover {
 div.dy_total {
     margin-top: 40px;
     float: left;
-    width: 1020px;
+    width: 87%;
 }
 div.bs-docs-example div.dy_info_list {
     float: left;
@@ -64,7 +71,7 @@ div.bs-docs-example div.title h3 {
 }
 div.bs-docs-example div.dy_info_list ul.info_list {
     float: left;
-    width: 96%;
+    min-width: 96%;
     padding-bottom: 20px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li {
@@ -76,6 +83,8 @@ div.bs-docs-example div.dy_info_list ul.info_list li {
     list-style: none;
     margin-right: 25px;
     margin-top: 10px;
+    min-width: 30%;
+    width: 30%;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li.li_over {
     border: #D1EEEE solid 1px;
@@ -91,9 +100,9 @@ div.bs-docs-example div.dy_info_list ul.info_list li a {
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l {
     float: left;
-    width: 150px;
+    width: 50%;
     overflow: hidden;
-    height: 100px;
+    height: 105px;
     margin-left: 4px;
     position: relative;
 }
@@ -120,8 +129,8 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l span.shoucang
 
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_jianjie {
     float: left;
-    width: 130px;
-    height: 110px;
+    width: 43%;
+    height: 108px;
     font-size: 13px;
     margin-left: 7px;
     overflow: hidden;
@@ -139,8 +148,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
     display: none;
     right: -137px;
     bottom: 0;
-    /*display: none;*/
-    width: 137px;
+    width: 46%;
     height: 130px;
     font-size: 13px;
     margin-left: 7px;
@@ -149,13 +157,14 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down {
     float: left;
-    width: 100%;
+    width: 96%;
     height: 40px;
     color: #999;
     margin-top: 10px;
     margin-left: 7px;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down a{
+    float: left;
     color: #444;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down div.watch_down {

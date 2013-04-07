@@ -22,6 +22,6 @@
                     event.stopPropagation();
                 });
             });
-        })
+        });
     })
 })(jQuery);

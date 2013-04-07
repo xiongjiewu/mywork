@@ -56,7 +56,7 @@ class Detail extends CI_Controller {
             $moticeInfo = $this->Notice->getNoticeInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
             $this->set_attr("moticeInfo",$moticeInfo);
         }
-        $this->load->set_title("{$dyInfo['name']} - 我们只专注于电影 - " . get_config_value("base_name"));
+        $this->load->set_title("{$dyInfo['name']} - " . get_config_value("base_title") .  " - " . get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/detail.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
         $this->load->set_top_index(-1);

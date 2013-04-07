@@ -35,11 +35,10 @@
             <script type="text/javascript" src="/<?php echo trim($jsVal, "/"); ?>"></script>
         <?php endforeach; ?>
     <?php endif;?>
-
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="navbar navbar-inverse navbar-fixed-top" style="min-width: 100%;float: left;max-height: 44px;">
+    <div class="navbar-inner" style="min-width: 100%;float: left">
         <div class="container top_head">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
@@ -47,7 +46,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="brand" style="float: left;" href="/">电影吧</a>
-            <div class="nav-collapse collapse head_top_menus">
+
+            <div class="nav-collapse collapse head_top_menus" style="float: left;width: 93%;">
                 <ul class="nav">
                     <?php $menus = get_config_value("menus")?>
                     <?php $index = $this->load->get_top_index();?>
@@ -57,55 +57,86 @@
                             <?php if (!empty($menuVal['index']) && ($menuVal['index'] == "list")): ?>
                                 <div class="dy_type_list">
                                     <table class="table">
-                                        <?php foreach($menuVal['type_info'] as $infokey => $infoVal):?>
-                                        <tr>
-                                            <th><?php echo $infoVal['type'];?></th>
-                                            <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
-                                                <td><a <?php if ($index == $menuKey && $infokey == $data['bigtype'] && $key == $data['type']):?>class="active" <?php endif;?> href="<?php echo $infoVal['base_url'] . $key;?>"><?php echo $infoDetail;?></a></td>
-                                            <?php endforeach;?>
-                                        </tr>
+                                        <?php foreach ($menuVal['type_info'] as $infokey => $infoVal): ?>
+                                            <tr>
+                                                <th><?php echo $infoVal['type'];?></th>
+                                                <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
+                                                    <td>
+                                                        <a <?php if ($index == $menuKey && $infokey == $data['bigtype'] && $key == $data['type']): ?>class="active" <?php endif;?>
+                                                           href="<?php echo $infoVal['base_url'] . $key; ?>"><?php echo $infoDetail;?></a>
+                                                    </td>
+                                                <?php endforeach;?>
+                                            </tr>
                                         <?php endforeach;?>
                                     </table>
                                 </div>
                             <?php endif;?>
                         </li>
                     <?php endforeach;?>
-                    <li class="search" style="margin-left: 150px">
-                        <form name="search_dy" id="search_dy" onsubmit="return false;" action="<?php echo get_url("/search/");?>">
-                            <input type="text" class="search_value" name="search" id="search" value="<?php if (isset($data['searchW'])):?><?php echo $data['searchW'];?><?php else:?>搜索您喜欢的影片...<?php endif;?>">
+                    <li class="search" style="margin-left: 100px">
+                        <form autocomplete="off" name="search_dy" id="search_dy" onsubmit="return false;"
+                              action="<?php echo get_url("/search/"); ?>">
+                            <input type="text" class="search_value" name="search" id="search"
+                                   value="<?php if (isset($data['searchW'])): ?><?php echo $data['searchW']; ?><?php else: ?>搜索您喜欢的影片...<?php endif; ?>">
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
+                        <div class="about_search">
+                            <?php if (isset($data['searchW'])): ?>
+                                <span><?php echo $data['searchW']; ?></span><?php endif;?>
+                        </div>
                     </li>
-                    </ul>
                     <?php if (!empty($userName)): ?>
-                    <ul class="nav" style=" float: right;*margin-right: -150px;">
-                        <li class="username">
-                            <a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user icon-user"></i><?php echo $userName;?>(<?php echo $userNoReadMessageCount;?>)</a>
+                        <li class="username" style="float: right">
+                            <a href="<?php echo get_url("/usercenter/"); ?>"><i
+                                    class="icon-user icon-user"></i><?php echo $userName;?>
+                                (<?php echo $userNoReadMessageCount;?>)
+                            </a>
                             <div class="user_in">
                                 <table class="table">
-                                    <tr><td><a href="<?php echo get_url("/usercenter/");?>"><i class="icon-user"></i><?php echo $userName;?></a><a <?php if ($userNoReadMessageCount > 0):?>class="message" href="<?php echo get_url("/usercenter/message/0/")?>" title="有新消息" <?php else:?>href="<?php echo get_url("/usercenter/message/")?>" class="icon-envelope"<?php endif;?>></a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/mycollect/");?>"><i class="icon-film"></i>我&nbsp;的&nbsp;收&nbsp;藏</a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/feedback/");?>"><i class="icon-edit"></i>反馈我想看</a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/usercenter/notice/");?>"><i class="icon-volume-up"></i>我的电影通知</a></td></tr>
-                                    <tr><td><a href="<?php echo get_url("/logout/");?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a></td></tr>
+                                    <tr>
+                                        <td><a href="<?php echo get_url("/usercenter/"); ?>"><i
+                                                    class="icon-user"></i><?php echo $userName;?></a><a
+                                                <?php if ($userNoReadMessageCount > 0): ?>class="message"
+                                                href="<?php echo get_url("/usercenter/message/0/") ?>" title="有新消息"
+                                                <?php else: ?>href="<?php echo get_url("/usercenter/message/") ?>"
+                                                class="icon-envelope"<?php endif;?>></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="<?php echo get_url("/usercenter/mycollect/"); ?>"><i
+                                                    class="icon-film"></i>我&nbsp;的&nbsp;收&nbsp;藏</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="<?php echo get_url("/usercenter/feedback/"); ?>"><i
+                                                    class="icon-edit"></i>反馈我想看</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="<?php echo get_url("/usercenter/notice/"); ?>"><i
+                                                    class="icon-volume-up"></i>我的电影通知</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="<?php echo get_url("/logout/"); ?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
                         </li>
-                    </ul>
                     <?php else: ?>
-                    <ul class="nav" style="float: right;*margin-right: -150px;">
-                        <li class="loginr">
-                            <a href="<?php echo get_url("/login/"); ?>" title="登录" style="padding-left: 5px;padding-right: 5px">
-                                <i class="icon-user icon-user"></i>
+                        <li class="loginr" style="margin-left: 0;float: right">
+                            <a href="<?php echo get_url("/register/"); ?>" title="注册"
+                               style="padding-left: 5px;padding-right: 5px">
+                                <i class="icon-pencil"></i>
+                                注册
                             </a>
                         </li>
-                        <li class="loginr" style="margin-left: 0;">
-                            <a href="<?php echo get_url("/register/"); ?>" title="注册" style="padding-left: 5px;padding-right: 5px">
-                                <i class="icon-pencil icon-user"></i>
+                        <li class="loginr" style="float: right">
+                            <a href="<?php echo get_url("/login/"); ?>" title="登录"
+                               style="padding-left: 5px;padding-right: 5px">
+                                <i class="icon-user"></i>
+                                登录
                             </a>
                         </li>
-                    </ul>
                     <?php endif;?>
+                </ul>
             </div>
         </div>
     </div>
@@ -128,90 +159,5 @@
     <?php endif;?>
 </div>
 <?php $this->load->view("component/footer");?>
-<script type="text/javascript">
-    (function ($) {
-        var initOjb = {
-            addCladdToLi: function (obj, c) {
-                obj.addClass(c);
-            },
-            removeClass: function (obj, c) {
-                obj.removeClass(c);
-            },
-            removeSpecailStr:function (s) {
-                var pattern = new RegExp("[`~!@#$^&*()=|{}':;'%+《》『』,\\[\\]<>/?~！@#￥……&*（）&mdash;—|{}【】‘；：”“'。，、？]");
-                var rs = "";
-                for (var i = 0; i < s.length; i++) {
-                    rs = rs + s.substr(i, 1).replace(pattern, '');
-                }
-                return rs;
-            }
-        };
-        $(document).ready(function () {
-            $("#search").bind("focus", function () {
-                var search_val = $.trim($(this).val());
-                if (search_val == "搜索您喜欢的影片...") {
-                    $("#search").val("");
-                }
-            });
-            $("#search").bind("blur", function () {
-                var search_val = $.trim($(this).val());
-                if (!search_val || search_val == undefined) {
-                    $("#search").val("搜索您喜欢的影片...");
-                }
-            });
-            $("#search_dy").submit(function(){
-                var search_val = $.trim($("#search").val());
-                    search_val = initOjb.removeSpecailStr(search_val);
-                if (!search_val || (search_val == "搜索您喜欢的影片...")) {
-                    window.location.href = "<?php echo get_url("/classicmovie/");?>";
-                    return false;
-                } else {
-                    window.location.href = "<?php echo get_url("/search?key=");?>" + search_val;
-                    return false;
-                }
-            });
-            $("div.head_top_menus ul.nav li.dy_sort").mouseover(function () {
-                initOjb.addCladdToLi($(this), "show_sort");
-                $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").show();
-            });
-            $("div.head_top_menus ul.nav li.dy_sort").mouseleave(function () {
-                initOjb.removeClass($(this), "show_sort");
-                $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").hide();
-            })
-            $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").mouseover(function () {
-                $(this).show();
-                initOjb.addCladdToLi($("div.head_top_menus ul.nav li.dy_sort"), "show_sort");
-            });
-            $("div.head_top_menus ul.nav  li.dy_sort div.dy_type_list").mouseleave(function () {
-                $(this).hide();
-                initOjb.removeClass($("div.head_top_menus ul.nav li.dy_sort"), "show_sort");
-            });
-            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseover(function(){
-                $("div.head_top_menus ul.nav li.username div.user_in").show();
-            });
-            $("div.head_top_menus ul.nav li.username,div.head_top_menus ul.nav li.username div.user_in").mouseleave(function(){
-                $("div.head_top_menus ul.nav li.username div.user_in").hide();
-            });
-        });
-    })(jQuery);
-</script>
-<?php if($this->load->get_move_js()):?>
-<script src="/js/base/bootstrap-transition.js"></script>
-<script src="/js/base/bootstrap-alert.js"></script>
-<script src="/js/base/bootstrap-modal.js"></script>
-<script src="/js/base/bootstrap-dropdown.js"></script>
-<script src="/js/base/bootstrap-scrollspy.js"></script>
-<script src="/js/base/bootstrap-tab.js"></script>
-<script src="/js/base/bootstrap-tooltip.js"></script>
-<script src="/js/base/bootstrap-popover.js"></script>
-<script src="/js/base/bootstrap-button.js"></script>
-<script src="/js/base/bootstrap-collapse.js"></script>
-<script src="/js/base/bootstrap-carousel.js"></script>
-<script src="/js/base/bootstrap-typeahead.js"></script>
-<script src="/js/base/bootstrap-affix.js"></script>
-<script src="/js/base/holder/holder.js"></script>
-<script src="/js/base/google-code-prettify/prettify.js"></script>
-<script src="/js/base/application.js"></script>
-<?php endif;?>
 </body>
 </html>

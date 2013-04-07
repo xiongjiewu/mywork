@@ -19,6 +19,7 @@ class Topic extends CI_Controller {
                 exit;
             }
         }
+        $this->load->set_title("{$info['title']} - 帮助中心 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $info['content'] = $this->ubb2Html($info['content']);
         $this->set_attr("info",$info);
         $helpInfos = $this->Help->getHelpInfoList(0,50);

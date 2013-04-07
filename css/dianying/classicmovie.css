@@ -1,3 +1,7 @@
+div.row {
+    margin: 0 auto;
+    width: 100%;
+}
 ul.dy_bs-docs-sidenav {
     position: fixed;
 }
@@ -22,6 +26,7 @@ table tr td.dy_info_img img {
     height: 250px;
 }
 div.bs-docs-sidebar {
+    margin-left: 0;
     margin-top: 15px;
 }
 .pllist {
@@ -210,6 +215,7 @@ div.read_more_load {
 }
 div.bs-docs-sidebar,ul.bs-docs-sidenav {
     width: 180px;
+    float: left;
 }
 ul.bs-docs-sidenav li {
     width: 100%;
@@ -224,21 +230,36 @@ ul li.dy_title_text a,ul li.dy_title_text a:hover {
     background-color: #fff;
     color: #0088CC;
 }
-.span9 {
-    width: 900px;
+div.span9 {
+    float: left;
+    width: 81%;
+    margin-left: 2.5%;
 }
 div.span9 table.table {
-    margin-left: 20px;
+    margin-left: 4%;
     margin-top: 10px;
     float: left;
-    width: 200px;
+    width: 21%;
+    padding-bottom: 10px;
 }
 div.span9 table.firstRow {
     margin-top: 45px;
 }
+div.span9 table.table tr td {
+    border: medium none;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    width: 93%;
+}
+div.span9 table.table tr td.info_image {
+    width: 92%;
+    height: 100%;
+    float: left;
+}
 div.span9 table.table tr td.info_image img{
-    width: 180px;
-    height: 150px;
+    width: 100%;
+    height: 250px;
 }
 div.span9 table.page {
     float: left;
@@ -251,16 +272,23 @@ div.span9 table.page tr td {
     padding: 20px;
 }
 div.span9 table.error_table {
-    width: 100%;
+    width: 96%;
     float: left;
     margin-top: 45px;
 }
 div.span9 table.error_table tr td {
+    float: left;
     padding: 50px 0;
+    border: medium none;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    width: 73%;
 }
 div.span9 table.error_table tr td.image {
-    width: 180px;
     height: 150px;
+    margin-left: 50px;
+    width: 180px;
 }
 div.span9 table.error_table tr td.text {
     border-left:none ;

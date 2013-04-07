@@ -1,8 +1,17 @@
 body{
     background: url("/images/common/pattern.png") repeat 0 0 transparent;
+    font-family:"微软雅黑";
 }
 table,div.bs-docs-sidebar ul li a{
     background-color: #fff;
+}
+.navbar .nav {
+    float: left;
+    width: 100%;
+    /*min-width: 92%;*/
+}
+ul.nav li.loginr a{
+    font-size: 13px;
 }
 /*搜索框*/
 ul li.search {
@@ -11,6 +20,34 @@ ul li.search {
     float: right;
     background: url("/images/head/search7.png") repeat scroll 0 -35px transparent;
     margin-top: 8px;
+    position: relative;
+}
+
+ul li.search div.about_search {
+    display: none;
+    position: absolute;
+    top: 24px;
+    border: 1px solid #aaa;
+    border-top: none;
+    z-index: 99999;
+    background-color: #fff;
+    left: 9px;
+    top: 24px;
+    width: 171px;
+    overflow: hidden;
+    z-index: 99999;
+}
+ul li.search div.about_search span {
+    float: left;
+    width: 91%;
+    cursor: pointer;
+    margin: 5px 3px;
+    padding-left: 10px;
+    color: #999;
+}
+ul li.search div.about_search span:hover {
+    background-color: #eee;
+    color: #0088cc;
 }
 
 ul li.search input.search_value {
@@ -36,12 +73,15 @@ ul li.search input.submit {
 ul li.login_register {
     float: right;
 }
-.top_head,.top_head:after {
-    *float: left;
+div.top_head,.top_head:after {
+    margin: 0 auto;
     *margin-left: 80px;
-    width: 1170px;
+    width: 95%;
 }
-.top_head a.brand {
+.navbar-inner .container {
+    width: 92%;
+}
+div.top_head a.brand {
     float: right;
 }
 div.head_top_menus ul.nav li.dy_sort {
@@ -64,7 +104,7 @@ div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
     left: -1px;
     top: 35px;
     height: 100px;
-    width: 400px;
+    width: 570px;
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     border: 1px solid #eee;
@@ -152,4 +192,26 @@ div.head_top_menus ul.nav li.username a.icon-envelope {
 }
 .footer a:link,.footer a:visited,.footer a:active {
     color: #0088CC;
+}
+header.jumbotron {
+    min-width: 100%;
+    float: left;
+}
+div.container {
+    width: 92%;
+    min-width: 1130px;
+}
+a.go_to_top {
+    display: none;
+    position: fixed;
+    width: 48px;
+    right: 6px;
+    bottom: 100px;
+    cursor: pointer;
+    height: 48px;
+    background: url("/images/common/go_top.png") no-repeat -3px 0 transparent;
+    z-index: 9999;
+}
+a.go_to_top:hover {
+    background-position: -3px -100px;
 }
