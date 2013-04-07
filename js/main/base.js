@@ -78,13 +78,11 @@ var initOjb = {
         });
         $(document).bind("click",function(e){
             var target  = $(e.target);
-            alert(target.html() + "sad" + searchAbount.html());
-            if (target.html() != searchAbount.html() && target.attr("id") != searchObj.attr("id")) {
+            if (target.text() != searchAbount.text() && target.text() != searchObj.text()) {
                 searchAbount.hide();
-            } else if (target.html() == searchAbount.html()) {
+            } else if (target.text() && target.text() == searchAbount.text()) {
                 searchAbount.show();
             } else {
-
                 initOjb.getSearchInfoDo(searchObj,searchAbount);
             }
             e.stopPropagation();

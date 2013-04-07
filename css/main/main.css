@@ -64,12 +64,12 @@ ul li.search input.submit {
 ul li.login_register {
     float: right;
 }
-.top_head,.top_head:after {
+div.top_head,.top_head:after {
     *float: left;
     *margin-left: 80px;
     width: 1170px;
 }
-.top_head a.brand {
+div.top_head a.brand {
     float: right;
 }
 div.head_top_menus ul.nav li.dy_sort {
@@ -180,4 +180,12 @@ div.head_top_menus ul.nav li.username a.icon-envelope {
 }
 .footer a:link,.footer a:visited,.footer a:active {
     color: #0088CC;
+}
+header.jumbotron {
+    width: 100%;
+    float: left;
+}
+div.container {
+    width: 92%;
+    min-width: 1130px;
 }

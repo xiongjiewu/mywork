@@ -75,6 +75,7 @@
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
                         <div class="about_search">
+                            <?php if (isset($data['searchW'])):?><span><?php echo $data['searchW'];?></span><?php endif;?>
                         </div>
                     </li>
                     </ul>
