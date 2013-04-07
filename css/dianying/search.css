@@ -239,6 +239,7 @@ div.span9 table.table {
     margin-top: 10px;
     float: left;
     width: 21%;
+    padding-bottom: 10px;
 }
 div.span9 table.firstRow {
     margin-top: 45px;
