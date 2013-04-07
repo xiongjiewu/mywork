@@ -16,10 +16,6 @@
     </div>
     <div class="span9">
         <section id="info" class="dy_detail">
-            <h1 style="display: none;">
-                <?php echo $dyInfo['name'];?>
-            </h1>
-
             <div class="bs-docs-example">
                 <table class="dy_detail_table">
                     <tr>
@@ -254,7 +250,7 @@
             showBlocktag: true,
             internalScript: true,
             internalStyle: true,
-            width: 780,
+            width: "95%",
             height: 200,
             fullscreen: false,
             sourceMode: false,
