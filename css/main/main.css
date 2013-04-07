@@ -182,7 +182,7 @@ div.head_top_menus ul.nav li.username a.icon-envelope {
     color: #0088CC;
 }
 header.jumbotron {
-    width: 100%;
+    min-width: 100%;
     float: left;
 }
 div.container {
