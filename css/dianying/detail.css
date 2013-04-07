@@ -29,6 +29,7 @@ div.bs-docs-sidebar {
     float: left;
     margin-top: 40px;
     margin-left: 0;
+    width: 24%;
 }
 .pllist {
     height: auto;
@@ -250,8 +251,8 @@ ul.bs-docs-sidenav li a {
 }
 div.span9 {
     float: left;
-    margin-left: -40px;
-    width: 79%;
+    margin-left: -10%;
+    width: 86%;
 }
 ul.bs-docs-sidenav li a.click {
     color: #fff;
