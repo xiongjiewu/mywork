@@ -37,8 +37,8 @@
     <?php endif;?>
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="navbar navbar-inverse navbar-fixed-top" style="min-width: 100%;float: left">
+    <div class="navbar-inner" style="min-width: 100%;float: left">
         <div class="container top_head">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>

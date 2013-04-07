@@ -1,5 +1,6 @@
 body{
     background: url("/images/common/pattern.png") repeat 0 0 transparent;
+    font-family:"微软雅黑";
 }
 table,div.bs-docs-sidebar ul li a{
     background-color: #fff;
@@ -65,9 +66,10 @@ ul li.login_register {
     float: right;
 }
 div.top_head,.top_head:after {
-    *float: left;
+    margin: 0 auto;
     *margin-left: 80px;
-    width: 1170px;
+    width: 95%;
+    min-width: 95%;
 }
 div.top_head a.brand {
     float: right;
@@ -92,7 +94,7 @@ div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
     left: -1px;
     top: 35px;
     height: 100px;
-    width: 540px;
+    width: 570px;
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     border: 1px solid #eee;

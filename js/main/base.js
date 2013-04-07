@@ -123,5 +123,15 @@ var initOjb = {
         topMenusObj.mouseleave(function () {
             $("div.head_top_menus ul.nav li.username div.user_in").hide();
         });
+        $(window).bind("scroll", function() {//当滚动条滚动时
+            if ($(window).scrollTop() > 50) {
+                $("a.go_to_top").show();
+            } else {
+                $("a.go_to_top").hide();
+            }
+        });
+        $("a.go_to_top").bind("click",function(){
+            $(window).scrollTop(0);
+        });
     });
 })(jQuery);
