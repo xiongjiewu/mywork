@@ -250,7 +250,7 @@
     padding-left: 35px;
 }
 .register_main .register_main_table tr td .error2{
-    background: url("/images/Register/register3.png")no-repeat scroll 0 -133px transparent;
+    background: url("/images/Register/register3.png")no-repeat 0 -131px;
     height: 20px;
     position: absolute;
     top: 20px;
@@ -333,7 +333,7 @@ a.jump_login {
     font-size: 16px;
     height: auto;
     line-height: 60px;
-    padding: 9px 23px 10px 23px;
+    padding: 8px 23px 10px 23px;
     position: relative;
     color: #666;
     font-weight: bold;

@@ -20,9 +20,7 @@
                                     用户名只能由中英文、数字和下划线“_”组成，2--20个字符
                                 </span>
                             </div>
-                            <div class="register_error1">
-
-                            </div>
+                            <div class="register_error1"></div>
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +33,7 @@
                             <div class="email_ts register_error">
                                 <span class="email_ts_top"></span>
                                 <span class="email_ts_main">
-                                    请输入正确的安全邮箱，不需验证，用于找回密码
+                                    请输入正确的安全邮箱，不需验证，用于找回密码、接收电影订阅通知等
                                 </span>
                             </div>
                             <div class="register_error1">
