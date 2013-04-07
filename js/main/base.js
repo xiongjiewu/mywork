@@ -133,5 +133,14 @@ var initOjb = {
         $("a.go_to_top").bind("click",function(){
             $(window).scrollTop(0);
         });
+        $("ul.nav li.loginr a").each(function() {
+            var i = $(this).find("i");
+            $(this).bind("mouseover",function(){
+                i.addClass("icon-white");
+            });
+            $(this).bind("mouseleave",function(){
+                i.removeClass("icon-white");
+            });
+        })
     });
 })(jQuery);
