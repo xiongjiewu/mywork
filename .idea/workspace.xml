@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main/base.js" afterPath="$PROJECT_DIR$/js/main/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/register.css" afterPath="$PROJECT_DIR$/css/member/register.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/register.php" afterPath="$PROJECT_DIR$/application/views/member/register.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
@@ -38,7 +39,7 @@
     <file path="/welcome.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365299625578" ignored="false" />
     <file path="/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365083726709" ignored="false" />
     <file path="/help.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741339254" ignored="false" />
-    <file path="/register.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365257814537" ignored="false" />
+    <file path="/register.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365350839670" ignored="false" />
     <file path="/help.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364740380828" ignored="false" />
     <file path="/topic.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741205494" ignored="false" />
     <file path="/topic.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364742065947" ignored="false" />
@@ -59,7 +60,7 @@
     <file path="/backgroundadmin.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365172535329" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/jobs/sendemail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365146256153" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365036687786" ignored="false" />
-    <file path="/register.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365041907793" ignored="false" />
+    <file path="/register.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365351538864" ignored="false" />
     <file path="/login.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365266482185" ignored="false" />
     <file path="/usercenter.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043502512" ignored="false" />
     <file path="/feedback.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043309041" ignored="false" />
@@ -87,6 +88,7 @@
     <file path="/login.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365266626623" ignored="false" />
     <file path="/base.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365349165159" ignored="false" />
     <file path="/search.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365345783143" ignored="false" />
+    <file path="/register.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365351168338" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,40 +108,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main/main.css">
+      <file leaf-file-name="register.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/member/register.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="246" selection-end="264" vertical-scroll-proportion="-11.142858">
+            <state line="259" column="14" selection-start="7596" selection-end="7596" vertical-scroll-proportion="0.705104">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main/base.js">
+      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="17" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.90664274">
+            <state line="22" column="57" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-6.903226">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/base.php">
+      <file leaf-file-name="register.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/member/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="53" selection-start="7911" selection-end="7911" vertical-scroll-proportion="-7.7419353">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="22" column="47" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,9 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/main/base.css" />
-        <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
-        <option value="$PROJECT_DIR$/application/views/dianying/classicmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/detail.css" />
         <option value="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
         <option value="$PROJECT_DIR$/js/dianying/classicmovie.js" />
@@ -179,6 +167,9 @@
         <option value="$PROJECT_DIR$/css/main/main.css" />
         <option value="$PROJECT_DIR$/application/views/base.php" />
         <option value="$PROJECT_DIR$/js/main/base.js" />
+        <option value="$PROJECT_DIR$/application/views/member/register.php" />
+        <option value="$PROJECT_DIR$/js/member/register.js" />
+        <option value="$PROJECT_DIR$/css/member/register.css" />
       </list>
     </option>
   </component>
@@ -262,7 +253,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="member" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -277,6 +268,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="member" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,27 +488,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/index/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.045614034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="306" column="16" selection-start="5325" selection-end="5325" vertical-scroll-proportion="-8.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/latestmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="44" selection-start="2020" selection-end="2020" vertical-scroll-proportion="0.74698794">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="6" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.7623574">
@@ -579,7 +567,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/base.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="53" selection-start="7911" selection-end="7911" vertical-scroll-proportion="-7.7419353">
+        <state line="126" column="53" selection-start="7911" selection-end="7911" vertical-scroll-proportion="0.45627376">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -598,6 +586,27 @@
     <entry file="file://$PROJECT_DIR$/js/main/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="141" column="17" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.90664274">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="57" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-6.903226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/member/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="47" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/member/register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="259" column="14" selection-start="7596" selection-end="7596" vertical-scroll-proportion="0.705104">
           <folding />
         </state>
       </provider>
