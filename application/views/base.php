@@ -89,8 +89,8 @@
                         <li class="username" style="float: right">
                             <a href="<?php echo get_url("/usercenter/"); ?>"><i
                                     class="icon-user icon-user"></i><?php echo $userName;?>
-                                (<?php echo $userNoReadMessageCount;?>)</a>
-
+                                (<?php echo $userNoReadMessageCount;?>)
+                            </a>
                             <div class="user_in">
                                 <table class="table">
                                     <tr>
@@ -124,13 +124,15 @@
                         <li class="loginr" style="margin-left: 0;float: right">
                             <a href="<?php echo get_url("/register/"); ?>" title="注册"
                                style="padding-left: 5px;padding-right: 5px">
-                                <i class="icon-pencil icon-user"></i>
+                                <i class="icon-pencil"></i>
+                                注册
                             </a>
                         </li>
                         <li class="loginr" style="float: right">
                             <a href="<?php echo get_url("/login/"); ?>" title="登录"
                                style="padding-left: 5px;padding-right: 5px">
-                                <i class="icon-user icon-user"></i>
+                                <i class="icon-user"></i>
+                                登录
                             </a>
                         </li>
                     <?php endif;?>

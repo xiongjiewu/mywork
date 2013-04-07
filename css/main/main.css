@@ -10,6 +10,9 @@ table,div.bs-docs-sidebar ul li a{
     width: 100%;
     /*min-width: 92%;*/
 }
+ul.nav li.loginr a{
+    font-size: 13px;
+}
 /*搜索框*/
 ul li.search {
     width: 190px;
