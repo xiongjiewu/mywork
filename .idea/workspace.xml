@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/classicmovie.css" afterPath="$PROJECT_DIR$/css/dianying/classicmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/latestmovie.css" afterPath="$PROJECT_DIR$/css/dianying/latestmovie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/dianying/search.css" afterPath="$PROJECT_DIR$/css/dianying/search.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main/base.js" afterPath="$PROJECT_DIR$/js/main/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/search.php" afterPath="$PROJECT_DIR$/application/controllers/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +26,7 @@
     <file path="/useraction.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365133995010" ignored="false" />
     <file path="/password.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364719422993" ignored="false" />
     <file path="/sendsuccess.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364720090524" ignored="false" />
-    <file path="/search.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365319388013" ignored="false" />
+    <file path="/search.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365345516333" ignored="false" />
     <file path="/uploadimage.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732082520" ignored="false" />
     <file path="/revised.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365070692547" ignored="false" />
     <file path="/a.dummy" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365325702967" ignored="false" />
@@ -107,19 +107,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="classicmovie.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
+      <file leaf-file-name="search.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="17" selection-start="5045" selection-end="5100" vertical-scroll-proportion="-13.821428">
+            <state line="22" column="65" selection-start="918" selection-end="918" vertical-scroll-proportion="0.4809886">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/dianying/search.css">
+      <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="13" selection-start="4719" selection-end="4719" vertical-scroll-proportion="0.31578946">
+            <state line="8" column="82" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,20 +146,20 @@
       <list>
         <option value="$PROJECT_DIR$/css/main/base.css" />
         <option value="$PROJECT_DIR$/application/views/dianying/detail.php" />
-        <option value="$PROJECT_DIR$/application/controllers/search.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/classicmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/detail.css" />
         <option value="$PROJECT_DIR$/application/views/dianying/latestmovie.php" />
         <option value="$PROJECT_DIR$/application/views/base.php" />
         <option value="$PROJECT_DIR$/css/main/main.css" />
         <option value="$PROJECT_DIR$/js/dianying/classicmovie.js" />
-        <option value="$PROJECT_DIR$/js/main/base.js" />
         <option value="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
         <option value="$PROJECT_DIR$/css/dianying/upcomingmovie.css" />
         <option value="$PROJECT_DIR$/css/user/usercenter.css" />
         <option value="$PROJECT_DIR$/css/dianying/latestmovie.css" />
         <option value="$PROJECT_DIR$/css/dianying/classicmovie.css" />
         <option value="$PROJECT_DIR$/css/dianying/search.css" />
+        <option value="$PROJECT_DIR$/js/main/base.js" />
+        <option value="$PROJECT_DIR$/application/controllers/search.php" />
       </list>
     </option>
   </component>
@@ -225,7 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,51 +239,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dianying" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="45" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.6425856">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/dianying/detail.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="306" column="16" selection-start="5325" selection-end="5325" vertical-scroll-proportion="-8.25">
@@ -516,13 +469,6 @@
     <entry file="file://$PROJECT_DIR$/css/main/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="13" selection-start="2089" selection-end="2089" vertical-scroll-proportion="-11.857142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="11" selection-start="5074" selection-end="5074" vertical-scroll-proportion="0.90664274">
           <folding />
         </state>
       </provider>
@@ -569,16 +515,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
+    <entry file="file://$PROJECT_DIR$/css/dianying/search.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="17" selection-start="5045" selection-end="5100" vertical-scroll-proportion="-13.821428">
+        <state line="272" column="13" selection-start="4719" selection-end="4719" vertical-scroll-proportion="0.31578946">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/dianying/search.css">
+    <entry file="file://$PROJECT_DIR$/css/dianying/classicmovie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="13" selection-start="4719" selection-end="4719" vertical-scroll-proportion="0.31578946">
+        <state line="289" column="17" selection-start="5045" selection-end="5100" vertical-scroll-proportion="0.71402216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="82" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="65" selection-start="918" selection-end="918" vertical-scroll-proportion="0.4809886">
           <folding />
         </state>
       </provider>

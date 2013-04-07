@@ -9,7 +9,7 @@ class Search extends CI_Controller {
         $this->load->model('Backgroundadmin');
     }
     private  function _pregReplacespeaStr($searchW) {
-        $searchW = preg_replace('/[^\w\d\x80-\xff]+/','',rawurldecode($searchW));//过滤特殊字符
+        $searchW = preg_replace('/[~!@#$^&*()=|{}\':;\'%+《》『』,\\[\\]<>\/\?~！@#￥……&*（）;—|{}【】‘；：”“\'。，、\？]+/','',rawurldecode($searchW));//过滤特殊字符
         return $searchW;
     }
 
