@@ -271,16 +271,23 @@ div.span9 table.page tr td {
     padding: 20px;
 }
 div.span9 table.error_table {
-    width: 100%;
+    width: 96%;
     float: left;
     margin-top: 45px;
 }
 div.span9 table.error_table tr td {
+    float: left;
     padding: 50px 0;
+    border: medium none;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    width: 73%;
 }
 div.span9 table.error_table tr td.image {
-    width: 180px;
     height: 150px;
+    margin-left: 50px;
+    width: 180px;
 }
 div.span9 table.error_table tr td.text {
     border-left:none ;
