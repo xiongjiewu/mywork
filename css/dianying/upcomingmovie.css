@@ -290,17 +290,3 @@ span.dy_notic {
 table.table-bordered {
     width: 98%;
 }
-a.go_to_top {
-    display: none;
-    position: fixed;
-    width: 48px;
-    right: 6px;
-    bottom: 100px;
-    cursor: pointer;
-    height: 48px;
-    background: url("/images/common/go_top.png") no-repeat -3px 0 transparent;
-    z-index: 9999;
-}
-a.go_to_top:hover {
-    background-position: -3px -100px;
-}

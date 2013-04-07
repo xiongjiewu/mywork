@@ -1,3 +1,4 @@
+<a class="go_to_top" title="回到顶部"></a>
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
