@@ -47,7 +47,7 @@
             </button>
             <a class="brand" style="float: left;" href="/">电影吧</a>
 
-            <div class="nav-collapse collapse head_top_menus">
+            <div class="nav-collapse collapse head_top_menus" style="float: left;width: 93%;">
                 <ul class="nav">
                     <?php $menus = get_config_value("menus")?>
                     <?php $index = $this->load->get_top_index();?>

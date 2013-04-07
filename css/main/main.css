@@ -7,8 +7,8 @@ table,div.bs-docs-sidebar ul li a{
 }
 .navbar .nav {
     float: left;
-    width: 92%;
-    min-width: 92%;
+    width: 100%;
+    /*min-width: 92%;*/
 }
 /*搜索框*/
 ul li.search {
@@ -74,11 +74,9 @@ div.top_head,.top_head:after {
     margin: 0 auto;
     *margin-left: 80px;
     width: 95%;
-    min-width: 95%;
 }
 .navbar-inner .container {
     width: 92%;
-    min-width: 92%;
 }
 div.top_head a.brand {
     float: right;
