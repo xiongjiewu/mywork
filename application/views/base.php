@@ -19,7 +19,7 @@
     <![endif]-->
     <!--[if IE 6]>
     <link href="/css/main/ie6.min.css" rel="stylesheet">
-    <script src="/js/main/ie6.js"></script>
+    <script type="text/javascript" src="/js/main/ie6.js"></script>
     <![endif]-->
     <?php $css = $this->load->get_css();?>
     <?php if (!empty($css)): ?>
@@ -29,6 +29,10 @@
     <?php endif;?>
     <script type="text/javascript" src="/js/main/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="/js/main/base.js"></script>
+    <?php if ($this->load->get_login_pan()):?>
+        <link href="/css/member/loginpan.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/member/loginpan.js"></script>
+    <?php endif;?>
     <?php $js = $this->load->get_js();?>
     <?php if (!empty($js)): ?>
         <?php foreach ($js as $jsKey => $jsVal): ?>
@@ -159,5 +163,8 @@
     <?php endif;?>
 </div>
 <?php $this->load->view("component/footer");?>
+<?php if ($this->load->get_login_pan()):?>
+<?php $this->load->view("component/loginpan");?>
+<?php endif;?>
 </body>
 </html>

@@ -5,6 +5,11 @@
      */
 class Login extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->set_login_pan(false);
+    }
+
     public function index()
     {
         if (!empty($this->userId)) {//已登录，跳转至首页

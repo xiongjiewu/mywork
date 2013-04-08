@@ -27,7 +27,7 @@ class Topic extends CI_Controller {
         $this->load->set_css(array("css/member/topic.css"));
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->set_view("member/topic");
     }
 }

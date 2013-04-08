@@ -67,9 +67,11 @@
             $("table.table tr td span.btn").each(function(){
                 $(this).bind("click",function(event){
                     <?php if (empty($userId)):?>
-                        var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?>";
-                        window.location.href = url;
+                        logPanInit.showLoginPan();
                         event.stopPropagation();
+<!--                        var url = "--><?php //echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?><!--";-->
+<!--                        window.location.href = url;-->
+<!--                        event.stopPropagation();-->
                     <?php else:?>
                         init.ajaxInertNotice($(this),event);
                     <?php endif;?>

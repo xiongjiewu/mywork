@@ -51,6 +51,7 @@ class CI_Controller
             $this->load->model("Message");
             $userNoReadMessageCount = $this->Message->getMessageCountByFiled(array("userId"=>$this->userId,"del"=>0,"is_read" =>0));
             $this->_attr['userNoReadMessageCount'] = $userNoReadMessageCount;
+            $this->load->set_login_pan(false);
         }
         if (!empty($this->userName)) {
             $this->_attr['userName'] = $this->userName;

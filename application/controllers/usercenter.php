@@ -68,7 +68,7 @@ class Usercenter extends CI_Controller
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->load->set_top_index(-1);
         $this->load->set_css(array("css/user/usercenter.css"));
         $this->load->set_js(array("js/user/usercenter.js"));
