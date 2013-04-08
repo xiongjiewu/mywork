@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,39 +112,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="common.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/common.php">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.580646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logout.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="88" selection-start="301" selection-end="301" vertical-scroll-proportion="0.48237476">
-              <folding>
-                <marker date="1365438031199" expanded="true" signature="242:367" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="20" selection-start="1904" selection-end="1904" vertical-scroll-proportion="-5.709677">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="38" selection-start="910" selection-end="924" vertical-scroll-proportion="-14.258064">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.04942966">
               <folding />
             </state>
           </provider>
@@ -169,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/member/login.js" />
         <option value="$PROJECT_DIR$/application/views/base.php" />
         <option value="$PROJECT_DIR$/application/views/component/loginpan.php" />
         <option value="$PROJECT_DIR$/application/views/dianying/upcomingmovie.php" />
@@ -185,6 +155,7 @@
         <option value="$PROJECT_DIR$/js/dianying/detail.js" />
         <option value="$PROJECT_DIR$/application/views/member/logout.php" />
         <option value="$PROJECT_DIR$/application/controllers/logout.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -236,60 +207,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,8 +297,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="25" width="1280" height="750" extended-state="5" />
-    <editor active="true" />
+    <frame x="5" y="25" width="1280" height="750" extended-state="4" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -551,24 +468,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="20" selection-start="1904" selection-end="1904" vertical-scroll-proportion="-5.709677">
+        <state line="66" column="20" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.3365019">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="38" selection-start="910" selection-end="924" vertical-scroll-proportion="-14.258064">
+        <state line="26" column="38" selection-start="910" selection-end="924" vertical-scroll-proportion="0.8403042">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="88" selection-start="301" selection-end="301" vertical-scroll-proportion="0.48237476">
+        <state line="9" column="14" selection-start="212" selection-end="212" vertical-scroll-proportion="0.43413728">
           <folding>
-            <marker date="1365438031199" expanded="true" signature="242:367" placeholder="..." />
+            <marker date="1365438031199" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.04942966">
+          <folding />
         </state>
       </provider>
     </entry>
