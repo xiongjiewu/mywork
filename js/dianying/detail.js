@@ -47,20 +47,27 @@ var init = {
         var id = $("#current_id").val();
         var action = $("#action").val();
         if (id && action) {
-            if (action == "notice") {
-                this.ajaxInertNotice(id,function(result){
-                    if (result.code && result.code == "error") {
-                        alert(result.info);
-                    }
-                    window.location.reload();
-                });
-            } else {
-                this.ajaxShouCang(id,function(result){
-                    if (result.code && result.code == "error") {
-                        alert(result.info);
-                    }
-                    window.location.reload();
-                });
+            switch (action) {
+                case  "notice" :
+                    this.ajaxInertNotice(id,function(result){
+                        if (result.code && result.code == "error") {
+                            alert(result.info);
+                        }
+                        window.location.reload();
+                    });
+                    break;
+                case "shoucang" :
+                    this.ajaxShouCang(id,function(result){
+                        if (result.code && result.code == "error") {
+                            alert(result.info);
+                        }
+                        window.location.reload();
+                    });
+                    break;
+                case "post" :
+                    break;
+                default :
+                    break;
             }
         }
     },

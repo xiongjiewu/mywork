@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/detail.js" afterPath="$PROJECT_DIR$/js/dianying/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dianying/detail.php" afterPath="$PROJECT_DIR$/application/views/dianying/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/latestmovie.js" afterPath="$PROJECT_DIR$/js/dianying/latestmovie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dianying/upcomingmovie.js" afterPath="$PROJECT_DIR$/js/dianying/upcomingmovie.js" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +46,7 @@
     <file path="/common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365259357409" ignored="false" />
     <file path="/loginaction.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364903851863" ignored="false" />
     <file path="/error.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364904443888" ignored="false" />
-    <file path="/detail.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365434476203" ignored="false" />
+    <file path="/detail.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365434687546" ignored="false" />
     <file path="/shoucang.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364909106316" ignored="false" />
     <file path="/editpost.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913301247" ignored="false" />
     <file path="/yingping.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365134666226" ignored="false" />
@@ -115,12 +112,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="detail.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="detail.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="40" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.0">
+            <state line="70" column="13" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.95332134">
               <folding>
-                <marker date="1365434554076" expanded="false" signature="5026:5042" placeholder="..." />
+                <marker date="1365434696089" expanded="true" signature="5276:5292" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -135,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="latestmovie.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="latestmovie.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="41" selection-start="990" selection-end="990" vertical-scroll-proportion="0.486535">
+            <state line="16" column="40" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -595,19 +592,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
+    <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="40" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1365434554076" expanded="false" signature="5026:5042" placeholder="..." />
-          </folding>
+        <state line="16" column="40" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dianying/latestmovie.js">
+    <entry file="file://$PROJECT_DIR$/js/dianying/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="990" selection-end="990" vertical-scroll-proportion="0.486535">
-          <folding />
+        <state line="70" column="13" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.95332134">
+          <folding>
+            <marker date="1365434696089" expanded="true" signature="5276:5292" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
