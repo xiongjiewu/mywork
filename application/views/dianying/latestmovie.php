@@ -1,3 +1,4 @@
+<input type="hidden" name="current_id" id="current_id" value="">
 <div class="row">
     <?php if (!empty($movieList)): ?>
         <div class="span3 bs-docs-sidebar">
@@ -140,11 +141,12 @@
             shoucangObj.each(function(){
                 $(this).bind("click",function(event){
                     <?php if (empty($userId)):?>
-                        var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/latestmovie/'));?>";
-                        window.location.href = url;
+                        var id = $(this).attr("val");
+                        $("#current_id").val(id);
+                        logPanInit.showLoginPan("init.loginCallBack");
                         event.stopPropagation();
                     <?php else:?>
-                        init.ajaxShouCang($(this));
+                        init.shouCangDo($(this));
                         event.stopPropagation();
                     <?php endif;?>
                 });

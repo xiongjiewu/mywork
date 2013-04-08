@@ -19,6 +19,7 @@
 .login_ui .login_ui_title table{
     padding: 5px 10px;
     background-color:#dedede;
+    margin-left: 10px;
 }
 .login_ui .login_ui_title table tr td.l_t{
     text-align: left;

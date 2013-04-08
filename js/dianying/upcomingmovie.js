@@ -18,17 +18,19 @@ var init = {
         }
     },
     ajaxInertNotice:function(id,callBack) {
-        $.ajax({
-            url:"/useraction/insertnotice/",
-            type:"post",
-            data:{id:id},
-            dataType:"json",
-            success:function(result){
-                if (callBack) {
-                    callBack(result);
+        if (id) {
+            $.ajax({
+                url:"/useraction/insertnotice/",
+                type:"post",
+                data:{id:id},
+                dataType:"json",
+                success:function(result){
+                    if (callBack) {
+                        callBack(result);
+                    }
                 }
-            }
-        });
+            });
+        }
     },
     insertNoticeDo:function(obj,event) {
         var id = obj.attr("val");
