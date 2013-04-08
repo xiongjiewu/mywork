@@ -1,8 +1,0 @@
-<IfModule mod_rewrite.c>
-RewriteEngine on
-#设置根目录
-RewriteBase /
-#去掉链接地址中index.php字符串
-RewriteCond $1 !^(index\.php|images|css|js|\.txt)
-RewriteRule ^(.*)$ /index.php/$1 [L]
-</IfModule>
