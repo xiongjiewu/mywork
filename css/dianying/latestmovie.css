@@ -113,7 +113,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l img.dy_img {
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_name_l span.shoucang_action {
     display: none;
-    bottom: 18px;
+    bottom: 23px;
     height: 15px;
     position: absolute;
     right: 0;
@@ -166,6 +166,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_wat
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down a{
     float: left;
     color: #444;
+    width: 25%;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down div.watch_down {
     float: left;
