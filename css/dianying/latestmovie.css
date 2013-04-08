@@ -146,9 +146,9 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_jianjie table tr td.
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down {
     position: absolute;
     display: none;
-    right: -137px;
+    right: -48%;
     bottom: 0;
-    width: 46%;
+    width: 48%;
     height: 130px;
     font-size: 13px;
     margin-left: 7px;

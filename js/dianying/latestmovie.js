@@ -43,7 +43,7 @@ var init = {
         var p = obj.find("div.dy_link_down");
         if (p && (p != undefined)) {
             p.css("background-color","#fff");
-            p.animate({right:"-137px"},"fast");
+            p.animate({right:"-48%"},"fast");
             p.css("background-color","#E0EEEE");
             p.hide();
         }
