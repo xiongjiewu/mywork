@@ -19,9 +19,8 @@ var init = {
             this.ajaxShouCang(id,function(result){
                 if (result.code && result.code == "error") {
                     alert(result.info);
-                } else {
-                    window.location.reload();
                 }
+                window.location.reload();
             });
         }
     },
