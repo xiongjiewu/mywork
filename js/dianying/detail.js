@@ -1,11 +1,6 @@
 var init = {
     post_submit: function (editor) {
         var content = editor.getSource();
-        var user_id = $.trim($("#user_id").val());
-        if (!user_id || (user_id == undefined)) {
-            alert("请先登录!");
-            return false;
-        }
         if (!content || (content == undefined)) {
             alert("请输入内容!");
             return false;
@@ -65,6 +60,7 @@ var init = {
                     });
                     break;
                 case "post" :
+                    window.location.reload();
                     break;
                 default :
                     break;

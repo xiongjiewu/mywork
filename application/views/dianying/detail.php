@@ -260,9 +260,11 @@
             emotMark: false,
             shortcuts: {'ctrl+enter': function () {
                 <?php if (!empty($userId)):?>
-                return $("#create_post_button").trigger("click");
+                    return $("#create_post_button").trigger("click");
                 <?php else:?>
-                alert("请先登录！");
+                    $("#current_id").val(0);
+                    $("#action").val("post");
+                    logPanInit.showLoginPan("init.loginCallBack");
                 <?php endif;?>
             }}
         }
@@ -274,8 +276,9 @@
                 <?php if (!empty($userId)):?>
                     return init.post_submit(editor);
                 <?php else:?>
-                    var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                    window.location.href = url;
+                    $("#current_id").val(0);
+                    $("#action").val("post");
+                    logPanInit.showLoginPan("init.loginCallBack");
                     return false;
                 <?php endif;?>
             });
@@ -289,8 +292,9 @@
                     <?php if (!empty($userId)):?>
                         return $("#create_post_button").trigger("click");
                     <?php else:?>
-                        var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                        window.location.href = url;
+                        $("#current_id").val(0);
+                        $("#action").val("post");
+                        logPanInit.showLoginPan("init.loginCallBack");
                         return false;
                     <?php endif;?>
                 }

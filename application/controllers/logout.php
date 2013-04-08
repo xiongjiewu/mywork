@@ -8,7 +8,7 @@ class Logout extends CI_Controller {
     public function index()
     {
         //退出操作
-        echo "Logout...";
+        echo '<html lang="en"><head><meta charset="utf-8"></head><body>Logout...</body>';
         $this->remove_login_cookie();
         $re_url = $_SERVER['HTTP_REFERER'];
         $re_url = isset($re_url)?$re_url:"/";
