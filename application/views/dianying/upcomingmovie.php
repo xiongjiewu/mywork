@@ -1,4 +1,5 @@
 <a class="go_to_top" title="回到顶部"></a>
+<input type="hidden" name="current_id" id="current_id" value="">
 <?php if (!empty($movieList)): ?>
     <?php $movieListI = 1; ?>
     <?php foreach ($movieList as $movieKey => $movieVal): ?>
@@ -67,13 +68,12 @@
             $("table.table tr td span.btn").each(function(){
                 $(this).bind("click",function(event){
                     <?php if (empty($userId)):?>
-                        logPanInit.showLoginPan();
+                        var id = $(this).attr("val");
+                        $("#current_id").val(id);
+                        logPanInit.showLoginPan("init.loginCallBack");
                         event.stopPropagation();
-<!--                        var url = "--><?php //echo get_url('/login?bgurl=') . base64_encode(get_url('/upcomingmovie/'));?><!--";-->
-<!--                        window.location.href = url;-->
-<!--                        event.stopPropagation();-->
                     <?php else:?>
-                        init.ajaxInertNotice($(this),event);
+                        init.insertNoticeDo($(this),event);
                     <?php endif;?>
                 });
             });

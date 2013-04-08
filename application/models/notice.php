@@ -87,7 +87,7 @@ class Notice extends CI_Model {
         return empty($result) ? array() : $result;
     }
 
-    public function updateUserNptiInfoById($uId,$idArr = array())
+    public function updateUserNoticeInfoById($uId,$idArr = array())
     {
         $uId = intval($uId);
         if (empty($uId) || empty($idArr)) {
@@ -96,7 +96,7 @@ class Notice extends CI_Model {
         $idArr = array_unique($idArr);
         $idStr = implode(",",$idArr);
         $where = "id in ({$idStr}) and userId = {$uId}";
-        $sql = $this->db->update_string('tbl_userFeedback', array("del" =>1), $where);
+        $sql = $this->db->update_string('tbl_notice', array("del" =>1), $where);
         return $this->db->query($sql);
     }
 }

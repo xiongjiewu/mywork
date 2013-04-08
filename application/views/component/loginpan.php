@@ -1,4 +1,5 @@
 <div class="login_register_all"></div>
+<input type="hidden" name="login_call_back" id="login_call_back" value="">
 <div class="login_ui login_pan_ui">
     <div class="login_ui_title">
         <table>

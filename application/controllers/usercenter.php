@@ -68,7 +68,6 @@ class Usercenter extends CI_Controller
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $this->load->set_head_img(false);
-        
         $this->load->set_top_index(-1);
         $this->load->set_css(array("css/user/usercenter.css"));
         $this->load->set_js(array("js/user/usercenter.js"));
@@ -102,7 +101,7 @@ class Usercenter extends CI_Controller
         }
         $this->load->set_title("我的收藏 - 用户中心 -  " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("/js/user/mycollect.js"));
@@ -168,7 +167,6 @@ class Usercenter extends CI_Controller
 
         $this->load->set_title("修改资料 - 用户中心 -  " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("/js/user/revised.js"));
@@ -323,7 +321,6 @@ class Usercenter extends CI_Controller
 
         $this->load->set_title((($type == "want")?"我的反馈" : "投诉与建议") . " - 用户中心 -  " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("/js/user/feedback.js"));
@@ -352,7 +349,6 @@ class Usercenter extends CI_Controller
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/editfeedback.js"));
@@ -431,7 +427,6 @@ class Usercenter extends CI_Controller
         $type = in_array($type,array("want","suggest")) ? $type : "want";
         $this->set_attr("type",$type);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_title($text . " - 用户中心 -  " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
@@ -451,7 +446,6 @@ class Usercenter extends CI_Controller
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/createfeedback.js"));
@@ -547,7 +541,6 @@ class Usercenter extends CI_Controller
 
         $this->load->set_title("我订阅的电影通知 - 用户中心 -  " . get_config_value("base_title") .  " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("/js/user/notice.js"));
@@ -572,13 +565,7 @@ class Usercenter extends CI_Controller
             exit;
         }
 
-        $resIdArr = array();
-        foreach ($idArr as $idV) {
-            $idV = intval($idV);
-            if (!empty($idV)) {
-                $resIdArr[] = $idV;
-            }
-        }
+        $resIdArr = $idArr;
         $this->load->model("Notice");
         $res = $this->Notice->updateUserNoticeInfoById($this->userId, $resIdArr);
         if (empty($res)) {
@@ -656,7 +643,6 @@ class Usercenter extends CI_Controller
 
         $this->load->set_title("系统消息 - 用户中心 -  " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css","/css/user/message.css"));
         $this->load->set_js(array("/js/user/message.js"));
@@ -767,7 +753,6 @@ class Usercenter extends CI_Controller
         $messageInfo[0]['content'] = $this->ubb2Html($messageInfo[0]['content']);
         $this->set_attr("messageInfo",$messageInfo[0]);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->set_view("user/messageinfo");
