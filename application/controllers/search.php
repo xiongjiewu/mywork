@@ -38,13 +38,13 @@ class Search extends CI_Controller {
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
         $this->load->set_head_img(false);
         
-        $this->load->set_title("搜'{$searchW}'相关的影片 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title("搜'{$searchW}'相关的影片 - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/search.css"));
         $this->load->set_js(array("/js/dianying/search.js"));
         $this->load->set_top_index(-1);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",get_config_value("movie_type"));
+        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
         $this->set_view('dianying/search');
     }
 

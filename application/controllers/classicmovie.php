@@ -10,7 +10,7 @@ class Classicmovie extends CI_Controller {
     private $_limit = 20;
 
     public function index() {
-        return $this->type();
+        $this->type(null,1);
     }
 
     public function type($type = null,$page = 1)
@@ -49,13 +49,13 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . $this->base_title . " - " . ("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",get_config_value("movie_type"));
+        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
         $this->set_view('dianying/classicmovie');
     }
 
@@ -89,13 +89,13 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title($type . "年 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title($type . "年 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",get_config_value("movie_type"));
+        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
         $this->set_view('dianying/classicmovie');
     }
 
@@ -129,13 +129,13 @@ class Classicmovie extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title($this->_moviePlace[$type] . "片 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title($this->_moviePlace[$type] . "片 - " . $this->base_title . " - " . ("base_name"));
         $this->load->set_css(array("/css/dianying/classicmovie.css"));
         $this->load->set_js(array("/js/dianying/classicmovie.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",get_config_value("movie_type"));
+        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
         $this->set_view('dianying/classicmovie');
     }
 }

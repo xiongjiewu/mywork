@@ -19,7 +19,7 @@ class Login extends CI_Controller {
         if (isset($bgUrl)) {
             $this->set_attr("bgurl",base64_decode($bgUrl));
         }
-        $this->load->set_title("用户登录 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title("用户登录 - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/login.css"));

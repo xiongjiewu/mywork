@@ -37,7 +37,7 @@ class Useraction extends CI_Controller
         $cookieVal = $this->get_cookie($cookieName);
         $time = time();
         //在规定时间之内不能连续发表评论
-        if (!empty($cookieVal) && ($time <= ($cookieVal + get_config_value("max_post_time")))) {
+        if (!empty($cookieVal) && ($time <= ($cookieVal + ("max_post_time")))) {
             $this->jump_to("/error/index/5?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}/")));
             exit;
         }
@@ -118,8 +118,8 @@ class Useraction extends CI_Controller
         }
         $this->load->model('Notice');
         $userNoticeCount = $this->Notice->getNoticeCountByFiled(array("userId" => $this->userId,"reply"=>0,"del"=>0));
-        if ($userNoticeCount >= get_config_value("notice_max_count")) {
-            $result['info'] = "最多可预订" . get_config_value("notice_max_count") . "个通知";
+        if ($userNoticeCount >= APF::get_instance()->get_config_value("notice_max_count")) {
+            $result['info'] = "最多可预订" . ("notice_max_count") . "个通知";
             echo json_encode($result);
             exit;
         }
@@ -189,10 +189,10 @@ class Useraction extends CI_Controller
                 $emailData['email'] = $email;
                 $emailData['userName'] = $username;
                 $emailData['time'] = time();
-                $emailData['title'] = "密码改更-" . get_config_value("base_name");
+                $emailData['title'] = "密码改更-" . APF::get_instance()->get_config_value("base_name");
                 $time = date("Y-m-d H:i:s");
-                $url = trim(get_config_value("base_url"),"/") . "/password/change?key={$key}";
-                $emailData['content'] = "尊敬的{$userInfo['userName']}用户，您在{$time}发出更改密码行为，请点击链接[url={$url}]{$url}[/url]完成更改。如非您本人操作，请与" . get_config_value("base_name") . "管理员联系或者更改安全邮箱。谢谢！";
+                $url = trim(("base_url"),"/") . "/password/change?key={$key}";
+                $emailData['content'] = "尊敬的{$userInfo['userName']}用户，您在{$time}发出更改密码行为，请点击链接[url={$url}]{$url}[/url]完成更改。如非您本人操作，请与" . APF::get_instance()->get_config_value("base_name") . "管理员联系或者更改安全邮箱。谢谢！";
                 $this->Email->insertEmailInfo($emailData);
                 $result['code'] = $userInfo['id'];
                 $result['info'] = time();
@@ -236,7 +236,7 @@ class Useraction extends CI_Controller
                 echo json_encode($result);
                 exit;
             } else {
-                $maxTime = get_config_value("changepassword_max_time");
+                $maxTime = ("changepassword_max_time");
                 if (time() > ($info['time'] + $maxTime)) {//页面已过期
                     $result['code'] = '页面已过期';
                     $result['info'] = get_url("/password?r=" . time());
@@ -268,7 +268,7 @@ class Useraction extends CI_Controller
         }
         $this->load->model('Shoucang');
         $userShouCangCount = $this->Shoucang->getInfoCountByFiled(array("userId"=>$this->userId,"del"=>0));
-        if ($userShouCangCount >= get_config_value("shoucang_max_count")) {
+        if ($userShouCangCount >= APF::get_instance()->get_config_value("shoucang_max_count")) {
             echo json_encode(array("code" => "error","info" => "最多可收藏{$userShouCangCount}部电影"));
             exit;
         }
@@ -293,7 +293,7 @@ class Useraction extends CI_Controller
             exit;
         }
         $this->load->model('Yingping');
-        $limit = get_config_value("post_show_count");
+        $limit = ("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,$limit);
         $result['info'] = array();
         if (!empty($YingpingInfo)) {
@@ -306,7 +306,7 @@ class Useraction extends CI_Controller
             $this->load->model('User');
             $userInfos = $this->User->getUserInfosByIds($userIds);
             foreach($userInfos as $userKey => $userVal) {
-                $userInfos[$userKey]['photo'] = empty($userVal['photo']) ? trim(get_config_value("img_base_url"), "/") . get_config_value("user_photo") : trim(get_config_value("img_base_url"), "/") . $userVal['photo'];
+                $userInfos[$userKey]['photo'] = empty($userVal['photo']) ? trim(("img_base_url"), "/") . ("user_photo") : trim(("img_base_url"), "/") . $userVal['photo'];
             }
             $userInfos = $this->initArrById($userInfos,"id");
             $result['info']['yingping'] = $YingpingInfo;

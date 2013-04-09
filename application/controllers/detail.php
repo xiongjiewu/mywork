@@ -23,7 +23,7 @@ class Detail extends CI_Controller {
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
         $this->load->model('Yingping');
-        $limit = get_config_value("post_show_count");
+        $limit = ("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,$limit);
         if (!empty($YingpingInfo)) {
             $userIds = array();
@@ -56,7 +56,7 @@ class Detail extends CI_Controller {
             $moticeInfo = $this->Notice->getNoticeInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
             $this->set_attr("moticeInfo",$moticeInfo);
         }
-        $this->load->set_title("{$dyInfo['name']} - " . get_config_value("base_title") .  " - " . get_config_value("base_name"));
+        $this->load->set_title("{$dyInfo['name']} - " . ("base_title") .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/detail.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
         $this->load->set_top_index(-1);

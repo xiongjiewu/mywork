@@ -2,10 +2,9 @@
 $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
 $config['user_photo'] = "/images/re_su.png";
-$config['img_base_url'] = "http://www.img.dianying8.tv";
-$config['base_url'] = "http://www.dianying8.tv";
-$config['base_name'] = "电影吧";
-$config['base_title'] = "我们只专注于电影，您想看的就是我们宗旨";
+
+$config['img_base_url'] = "http://www.local.img.dianying8.tv";
+$config['base_url'] = "http://www.local.dianying8.tv";
 
 $config['max_post_time'] = 5;//允许5秒之内不能重复发表评论
 
@@ -157,16 +156,14 @@ $config['menus'] = array(
     ),
 );
 
-$config['charset'] = "utf-8";
-
-$config['cookie_domain'] = ".dianying8.tv";//cookie域名
+$config['cookie_domain'] = ".local.dianying8.tv";//cookie域名
 $config['cookie_path'] = '/';//cookie路径
-$config['resgiter_code_cookie_name'] = 'register_code_answer';
+$config['resgiter_code_cookie_name'] = 'local_register_code_answer';
 
 $config['web_name'] = "电影吧";
 
-$config['AuthCookieName'] = "MyAuth_Dianying8Info";
-$config['dianying8Secques']  = "dianying8@cookie.com";
+$config['AuthCookieName'] = "local_MyAuth_Dianying8Info";
+$config['dianying8Secques']  = "localdianying8@cookie.com";
 
 $config['notice_max_count'] = 20;//订阅通知最大个数
 

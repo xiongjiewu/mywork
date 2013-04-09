@@ -34,7 +34,7 @@ class Uploadimage extends CI_Controller {
             $imageFullPath = "/images" . $imageFullPathArr[1];
             $result["status"] = "ok";
             $result["path"] = $imageFullPath;
-            $result["fullPath"] = trim(get_config_value("img_base_url"),"/") . $imageFullPath;
+            $result["fullPath"] = trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $imageFullPath;
             unset($result["error"]);
         }
         $this->load->view('uploadfile/uploadfilereturn',array("data"=>$result));

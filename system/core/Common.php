@@ -569,13 +569,10 @@ if ( ! function_exists('get_config_value'))
             return null;
         }
         static $config;
-
-        if (isset($config))
+        if (isset($config[$name]))
         {
-            $value = isset($config[$name]) ? $config[$name] : null;
-            return $value;
+            return $config[$name];
         }
-
         // Is the config file in the environment folder?
         $value = null;
         if (defined('GACONFIGPATH')) {

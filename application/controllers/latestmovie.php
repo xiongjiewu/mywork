@@ -32,6 +32,7 @@ class Latestmovie extends CI_Controller {
         }
         if (empty($movieList)) {//当查询电影信息不存在
             $this->jump_to("/error/");
+            exit;
         }
         $ids = array();
         foreach($movieList as $movieListKey => $movieListVal) {

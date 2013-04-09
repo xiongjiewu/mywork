@@ -4,7 +4,7 @@
     <div class="login_ui_title">
         <table>
             <tr>
-                <td class="l_t">登录<?php echo get_config_value("base_name");?></td>
+                <td class="l_t">登录<?php echo APF::get_instance()->get_config_value("base_name");?></td>
                 <td class="l_c close_login_ui"></td>
             </tr>
         </table>
@@ -35,7 +35,7 @@
     <div class="login_ui_other">
         <table>
             <tr class="login_ui_border">
-                <td style="text-align: center;padding-bottom: 20px">还没有<?php echo get_config_value("base_name");?>账号？<a href="/register/" class="register">马上注册</a></td>
+                <td style="text-align: center;padding-bottom: 20px">还没有<?php echo APF::get_instance()->get_config_value("base_name");?>账号？<a href="/register/" class="register">马上注册</a></td>
             </tr>
         </table>
     </div>

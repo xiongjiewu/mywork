@@ -131,7 +131,7 @@ class Codeimg extends CI_Controller {
         $border = self::REGISTER_CODE_IMG_BORDER;
         $this->set_show_mode($width,  $height,  $font_num,  $font_color,  $font_size,  $path,  $font_style,$b_color,$code_num,$line_num,$f_s,$border);
         $code = $this->createImage();
-        $this->set_cookie(get_config_value('resgiter_code_cookie_name'),self::get_id($code));//获取验证码的值并转加密存到scookie中;
+        $this->set_cookie(('resgiter_code_cookie_name'),self::get_id($code));//获取验证码的值并转加密存到scookie中;
         $this->set_content_type("image/PNG");
     }
 

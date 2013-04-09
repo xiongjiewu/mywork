@@ -5,7 +5,7 @@
         <div class="register_top_middel">
             <div class="register_main_table">
                 <table>
-                    <tr><th colspan="2">注册<?php echo get_config_value("base_name");?></th></tr>
+                    <tr><th colspan="2">注册<?php echo APF::get_instance()->get_config_value("base_name");?></th></tr>
                     <tr><td class="ui_error"></td></tr>
                     <tr>
                         <td class="user_input">
@@ -124,7 +124,7 @@
                 <table>
                     <tr>
                         <td>
-                            已有<?php echo get_config_value("base_name");?>账号,立即登录
+                            已有<?php echo APF::get_instance()->get_config_value("base_name");?>账号,立即登录
                         </td>
                     </tr>
                     <tr>

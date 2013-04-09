@@ -5,6 +5,7 @@ class CI_Controller
 
     private static $instance;
 
+    protected $base_title;
     protected $_movieType;
 
     protected $_moviePlace;
@@ -28,14 +29,14 @@ class CI_Controller
     public function __construct()
     {
         self::$instance =& $this;
-
-        $this->_shoufeiType = get_config_value("shoufeiType");
-        $this->_bofangqiType = get_config_value("bofangqiType");
-        $this->_downLoadType = get_config_value("downLoadType");
-        $this->_moviePlace = get_config_value("moviePlace");
-        $this->_qingxiType = get_config_value("qingxiType");
-        $this->_movieSortType = get_config_value("movieSortType");
-        $this->_movieType = get_config_value("movieType");
+        $this->base_title = APF::get_instance()->get_config_value("base_title");
+        $this->_shoufeiType = APF::get_instance()->get_config_value("shoufeiType");
+        $this->_bofangqiType = APF::get_instance()->get_config_value("bofangqiType");
+        $this->_downLoadType = APF::get_instance()->get_config_value("downLoadType");
+        $this->_moviePlace = APF::get_instance()->get_config_value("moviePlace");
+        $this->_qingxiType = APF::get_instance()->get_config_value("qingxiType");
+        $this->_movieSortType = APF::get_instance()->get_config_value("movieSortType");
+        $this->_movieType = APF::get_instance()->get_config_value("movieType");
 
         foreach (is_loaded() as $var => $class) {
             $this->$var =& load_class($class);
@@ -146,7 +147,7 @@ class CI_Controller
 
     public function jump_to($url, $location = true)
     {
-        $url = get_config_value("base_uri") . $url;
+        $url = APF::get_instance()->get_config_value("base_uri") . $url;
         $this->load->helper('url');
         redirect("{$url}", $location);
     }
@@ -180,10 +181,10 @@ class CI_Controller
     public function set_cookie($name, $value, $expire = 0, $path = NULL, $domain = NULL, $secure = FALSE, $httponly = FALSE)
     {
         if (!$path) {
-            $path = get_config_value(self::CONFIG_N_COOKIE_PATH);
+            $path = APF::get_instance()->get_config_value(self::CONFIG_N_COOKIE_PATH);
         }
         if (!$domain) {
-            $domain = get_config_value(self::CONFIG_N_COOKIE_DOMAIN);
+            $domain = APF::get_instance()->get_config_value(self::CONFIG_N_COOKIE_DOMAIN);
         }
         return setcookie($name, $value,
             $expire ? time() + intval($expire) : 0,
@@ -263,8 +264,8 @@ class CI_Controller
         if (empty($username) || empty($userid)) {
             return false;
         }
-        $cookiename = get_config_value("AuthCookieName");
-        $jiaSecques = get_config_value("dianying8Secques");
+        $cookiename = APF::get_instance()->get_config_value("AuthCookieName");
+        $jiaSecques = APF::get_instance()->get_config_value("dianying8Secques");
         $enStr = $this->encrypt("$userid\t$username\t$jiaSecques\t$time", null);
         if ($time > 0 && $remember > 0) {
             $this->set_cookie($cookiename, $enStr, $time);
@@ -329,7 +330,7 @@ class CI_Controller
 
     protected function decryptCookie()
     {
-        $cookiename = get_config_value("AuthCookieName");
+        $cookiename = APF::get_instance()->get_config_value("AuthCookieName");
         $cookie = $this->get_cookie($cookiename);
         if ($cookie) {
             $cookiestr = self::decrypt($cookie, md5($_SERVER['HTTP_USER_AGENT']));
@@ -357,24 +358,24 @@ class CI_Controller
 
     protected function remove_login_cookie()
     {
-        $cookie_name = get_config_value('AuthCookieName');
-        $cookie_path = get_config_value('cookie_path');
-        $cookie_domain = get_config_value('cookie_domain');
+        $cookie_name = APF::get_instance()->get_config_value('AuthCookieName');
+        $cookie_path = APF::get_instance()->get_config_value('cookie_path');
+        $cookie_domain = APF::get_instance()->get_config_value('cookie_domain');
         $this->remove_cookie($cookie_name,$cookie_path,$cookie_domain);
         return true;
     }
 
     public function set_content_type($content_type, $charset=NULL) {
         if (!$charset && preg_match('/^text/i', $content_type)) {
-            $charset = get_config_value('charset');
+            $charset = APF::get_instance()->get_config_value('charset');
             if (!$charset) {
                 $charset = 'utf-8';
             }
         }
         if ($charset) {
-            $this->set_header("content-type", "$content_type; charset=$charset");
+            APF::get_instance()->set_header("content-type", "$content_type; charset=$charset");
         } else {
-            $this->set_header("content-type", $content_type);
+            APF::get_instance()->set_header("content-type", $content_type);
         }
     }
 }

@@ -80,7 +80,7 @@ class Resgiteraction extends CI_Controller {
         if (!isset($code)) {
             return $result;
         }
-        $cookie_code = $this->get_cookie(get_config_value('resgiter_code_cookie_name'));
+        $cookie_code = $this->get_cookie(('resgiter_code_cookie_name'));
         $cookie_code = self::get_idx($cookie_code);
         if (strtolower($cookie_code) != strtolower($code)) {
             $result['info'] = '验证码不正确';
@@ -139,7 +139,7 @@ class Resgiteraction extends CI_Controller {
         $info['password'] = base64_encode(md5($data['password2']));
         $info['ip'] = ip2long($this->getUserIP());
         $info['time'] = time();
-        $info['photo'] = get_config_value("user_photo");
+        $info['photo'] = ("user_photo");
         $this->load->model('User');
         $id = $this->User->insertUserInfo($info);
         if (!empty($id)) {

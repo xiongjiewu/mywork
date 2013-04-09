@@ -37,7 +37,7 @@ class Welcome extends CI_Controller {
         }
         $this->set_attr("baseNum",6);
         $this->load->set_css(array("/css/index/index.css"));
-        $this->load->set_title("首页 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title("首页 - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->set_view('index/index','base');
 
 	}

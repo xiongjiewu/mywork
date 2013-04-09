@@ -31,7 +31,7 @@ class Upcomingmovie extends CI_Controller {
         $this->load->set_head_img(false);
         
         $this->set_attr("movieList",$movieList);
-        $this->load->set_title("即将上映列表 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
+        $this->load->set_title("即将上映列表 - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/upcomingmovie.css"));
         $this->load->set_js(array("/js/dianying/upcomingmovie.js"));
         $this->load->set_top_index(2);

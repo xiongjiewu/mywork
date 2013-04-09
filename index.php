@@ -65,6 +65,8 @@ if (file_exists("/home/www/config/GA_VERSION")) {
     }
 }
 
+include(SYSDIR . "/classes/apf.php");
+
 // The path to the "application" folder
 if (is_dir($application_folder)) {
     define('APPPATH', $application_folder . '/');
