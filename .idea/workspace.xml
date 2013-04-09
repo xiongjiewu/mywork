@@ -5,34 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/classes/apf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Common.php" afterPath="$PROJECT_DIR$/system/core/Common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system/core/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/classicmovie.php" afterPath="$PROJECT_DIR$/application/controllers/classicmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/codeimg.php" afterPath="$PROJECT_DIR$/application/controllers/codeimg.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/detail.php" afterPath="$PROJECT_DIR$/application/controllers/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main/docs.css" afterPath="$PROJECT_DIR$/css/main/docs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/editpost.php" afterPath="$PROJECT_DIR$/application/controllers/editpost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/error.php" afterPath="$PROJECT_DIR$/application/controllers/error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/latestmovie.php" afterPath="$PROJECT_DIR$/application/controllers/latestmovie.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/login.php" afterPath="$PROJECT_DIR$/application/views/member/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/component/loginpan.php" afterPath="$PROJECT_DIR$/application/views/component/loginpan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/password.php" afterPath="$PROJECT_DIR$/application/controllers/password.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/register.php" afterPath="$PROJECT_DIR$/application/controllers/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/member/register.php" afterPath="$PROJECT_DIR$/application/views/member/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/registersuccess.php" afterPath="$PROJECT_DIR$/application/controllers/registersuccess.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/resgiteraction.php" afterPath="$PROJECT_DIR$/application/controllers/resgiteraction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/search.php" afterPath="$PROJECT_DIR$/application/controllers/search.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/topic.php" afterPath="$PROJECT_DIR$/application/controllers/topic.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" afterPath="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadimage.php" afterPath="$PROJECT_DIR$/application/controllers/uploadimage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/usercenter.php" afterPath="$PROJECT_DIR$/application/controllers/usercenter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/welcome.php" afterPath="$PROJECT_DIR$/application/controllers/welcome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,9 +20,9 @@
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365433413405" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365432217921" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365341067816" ignored="false" />
-    <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365507173249" ignored="false" />
+    <file path="/detail.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365519273415" ignored="false" />
     <file path="/usercenter.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365431748047" ignored="false" />
-    <file path="/upcomingmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365431276491" ignored="false" />
+    <file path="/upcomingmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365519394182" ignored="false" />
     <file path="/upcomingmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365343327869" ignored="false" />
     <file path="/upcomingmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365431345485" ignored="false" />
     <file path="/latestmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365517694341" ignored="false" />
@@ -61,7 +41,7 @@
     <file path="$PROJECT_DIR$/../admin/application/views/background/recycle.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732948593" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/controllers/background.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365258797396" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/js/background/movielist.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732977439" ignored="false" />
-    <file path="/welcome.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365516642022" ignored="false" />
+    <file path="/welcome.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365519358054" ignored="false" />
     <file path="/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365516600786" ignored="false" />
     <file path="/help.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741339254" ignored="false" />
     <file path="/register.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365350839670" ignored="false" />
@@ -79,7 +59,7 @@
     <file path="/yingping.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365134666226" ignored="false" />
     <file path="/editpost.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364913319065" ignored="false" />
     <file path="/createfeedback.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365043548702" ignored="false" />
-    <file path="/login.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365426736944" ignored="false" />
+    <file path="/login.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365519480989" ignored="false" />
     <file path="/classicmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365345753344" ignored="false" />
     <file path="/addlink.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365037826287" ignored="false" />
     <file path="/backgroundadmin.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365517653466" ignored="false" />
@@ -142,7 +122,35 @@
     <favorites_list name="dianying8" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="60" selection-start="610" selection-end="627" vertical-scroll-proportion="-6.064516">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="60" selection-start="353" selection-end="353" vertical-scroll-proportion="-10.064516">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="79" selection-start="621" selection-end="621" vertical-scroll-proportion="0.15969582">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -161,13 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/registersuccess.php" />
-        <option value="$PROJECT_DIR$/application/controllers/topic.php" />
-        <option value="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
-        <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
-        <option value="$PROJECT_DIR$/application/controllers/welcome.php" />
-        <option value="$PROJECT_DIR$/application/controllers/latestmovie.php" />
-        <option value="$PROJECT_DIR$/application/models/backgroundadmin.php" />
         <option value="$PROJECT_DIR$/application/views/component/loginpan.php" />
         <option value="$PROJECT_DIR$/css/main/docs.css" />
         <option value="$PROJECT_DIR$/application/views/member/register.php" />
@@ -176,7 +177,14 @@
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
         <option value="$PROJECT_DIR$/application/controllers/search.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadimage.php" />
+        <option value="$PROJECT_DIR$/application/controllers/detail.php" />
         <option value="$PROJECT_DIR$/application/config/common.php" />
+        <option value="$PROJECT_DIR$/application/controllers/welcome.php" />
+        <option value="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
+        <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
+        <option value="$PROJECT_DIR$/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/application/controllers/register.php" />
+        <option value="$PROJECT_DIR$/application/controllers/topic.php" />
       </list>
     </option>
   </component>
@@ -284,6 +292,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -372,14 +416,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1292" height="750" extended-state="4" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30666667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18861789" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22764228" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -454,52 +498,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/backgroundadmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="8" selection-start="3797" selection-end="3797" vertical-scroll-proportion="1.1958175" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/component/loginpan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="82" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.79087454" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/icon/glyphicons-halflings-white.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main/docs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="29" selection-start="4664" selection-end="4668" vertical-scroll-proportion="0.3327032">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="41" selection-start="6077" selection-end="6077" vertical-scroll-proportion="0.35741445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/member/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="19" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.6425856">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="41" selection-start="413" selection-end="427" vertical-scroll-proportion="0.18441065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="-1.0019011">
           <folding />
         </state>
       </provider>
@@ -539,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1863118">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="90" selection-start="1431" selection-end="1443" vertical-scroll-proportion="-13.193548">
@@ -553,9 +547,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="66" selection-start="2515" selection-end="2533" vertical-scroll-proportion="-8.387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="173" selection-end="173" vertical-scroll-proportion="0.19771864">
+        <state line="3" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.14828898">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="33" selection-start="575" selection-end="575" vertical-scroll-proportion="0.57984793">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="58" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.5931559">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="62" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.5931559">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="751" column="72" selection-start="27702" selection-end="27702" vertical-scroll-proportion="34.304184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="60" selection-start="610" selection-end="627" vertical-scroll-proportion="-6.064516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="60" selection-start="353" selection-end="353" vertical-scroll-proportion="-10.064516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="79" selection-start="621" selection-end="621" vertical-scroll-proportion="0.15969582">
           <folding />
         </state>
       </provider>

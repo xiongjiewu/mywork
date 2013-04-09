@@ -1,4 +1,7 @@
 <?php
+$config['base_name'] = "电影吧";
+$config['base_title'] = "我们只专注于电影，您想看的就是我们宗旨";
+
 $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
 $config['user_photo'] = "/images/re_su.png";

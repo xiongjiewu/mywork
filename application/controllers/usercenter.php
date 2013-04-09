@@ -64,7 +64,7 @@ class Usercenter extends CI_Controller
         $this->set_attr("movieList", $movieList);
         $this->set_attr("userId", $this->userId);
 
-        $this->load->set_title("用户中心首页 - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("用户中心首页 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $userInfo = $this->_getUserInfo();
         $this->set_attr("userInfo", $userInfo);
         $this->load->set_head_img(false);
@@ -99,7 +99,7 @@ class Usercenter extends CI_Controller
             $shouCangInfo = $this->initArrById($shouCangInfo, "infoId");
             $this->set_attr("shouCangInfo", $shouCangInfo);
         }
-        $this->load->set_title("我的收藏 - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("我的收藏 - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         
         $this->load->set_top_index(-1);
@@ -165,7 +165,7 @@ class Usercenter extends CI_Controller
         $type = in_array($type,array("data","picture","password")) ? $type : "data";
         $this->set_attr("type",$type);
 
-        $this->load->set_title("修改资料 - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("修改资料 - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
@@ -319,7 +319,7 @@ class Usercenter extends CI_Controller
         $fenye = $this->set_page_info($page,$this->_feedBackLimit,$feedBackCount,$base_url);
         $this->set_attr("fenye",$fenye);
 
-        $this->load->set_title((($type == "want")?"我的反馈" : "投诉与建议") . " - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type == "want")?"我的反馈" : "投诉与建议") . " - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
@@ -342,7 +342,7 @@ class Usercenter extends CI_Controller
             $this->jump_to("/usercenter/feedback/{$type}/");
             exit;
         }
-        $this->load->set_title((($type == "want")?"编辑我的反馈" : "编辑投诉与建议") . " - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type == "want")?"编辑我的反馈" : "编辑投诉与建议") . " - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->set_attr("feedbackInfo",$feedbackInfo[0]);
         $this->set_attr("type",$type);
         $this->set_attr("userId", $this->userId);
@@ -427,7 +427,7 @@ class Usercenter extends CI_Controller
         $type = in_array($type,array("want","suggest")) ? $type : "want";
         $this->set_attr("type",$type);
         $this->load->set_head_img(false);
-        $this->load->set_title($text . " - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title($text . " - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->set_view("user/editsuccess");
@@ -440,7 +440,7 @@ class Usercenter extends CI_Controller
     public function createfeedback($type = "want")
     {
         $type = in_array($type,array("want","suggest")) ? $type : "want";
-        $this->load->set_title((($type == "want") ? "反馈我想看" : "投诉与建议") . " - " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type == "want") ? "反馈我想看" : "投诉与建议") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->set_attr("type",$type);
         $this->set_attr("userId", $this->userId);
         $userInfo = $this->_getUserInfo();
@@ -539,7 +539,7 @@ class Usercenter extends CI_Controller
         $fenye = $this->set_page_info($page,$this->_noticeLimit,$userNoticeCount,$base_url);
         $this->set_attr("fenye",$fenye);
 
-        $this->load->set_title("我订阅的电影通知 - 用户中心 -  " . ("base_title") .  " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("我订阅的电影通知 - 用户中心 -  " . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
@@ -641,7 +641,7 @@ class Usercenter extends CI_Controller
         $fenye = $this->set_page_info($page,$this->_messageLimit,$userMessageCount,$base_url);
         $this->set_attr("fenye",$fenye);
 
-        $this->load->set_title("系统消息 - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("系统消息 - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css","/css/user/message.css"));
@@ -749,7 +749,7 @@ class Usercenter extends CI_Controller
         if ($messageInfo[0]['is_read'] == 0) {//未读
             $this->Message->updateUserMessageInfoById($this->userId, array($id),array("is_read" =>1));
         }
-        $this->load->set_title("系统消息详细信息 - 用户中心 -  " . ("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("系统消息详细信息 - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $messageInfo[0]['content'] = $this->ubb2Html($messageInfo[0]['content']);
         $this->set_attr("messageInfo",$messageInfo[0]);
         $this->load->set_head_img(false);
