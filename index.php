@@ -1,5 +1,4 @@
 <?php
-
 define('ENVIRONMENT', 'development');
 if (defined('ENVIRONMENT')) {
     switch (ENVIRONMENT) {
@@ -59,6 +58,12 @@ define('FCPATH', str_replace(SELF, '', __FILE__));
 // Name of the "system folder"
 define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 
+if (file_exists("/home/www/config/GA_VERSION")) {
+    $GA_VERSION = file_get_contents("/home/www/config/GA_VERSION");
+    if ($GA_VERSION == 1) {
+        define('GACONFIGPATH', "/home/www/config");
+    }
+}
 
 // The path to the "application" folder
 if (is_dir($application_folder)) {

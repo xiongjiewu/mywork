@@ -12,18 +12,18 @@
                     <?php if ($type == "data"):?>
                         <table class="change_pass_table">
                             <tr>
-                                <td>
+                                <td style="width: 100px">
                                     <code>*</code>安全邮箱：
                                 </td>
                                 <td>
-                                    <input type="text" name="email" id="email" value="<?php echo $userInfo['email'];?>">
+                                    <input type="text" style="width: 250px" name="email" id="email" value="<?php echo $userInfo['email'];?>">
                                 </td>
                                 <td class="error_text">
                                 </td>
                             </tr>
                             <tr class="submit">
-                                <td colspan="2">
-                                    <input style="margin-left: 86px;" type="button" name="change_email" id="change_email" value="确认更改" class="btn btn-primary">
+                                <td colspan="3" style="width: 100%">
+                                    <input style=" margin-left: 100px;" type="button" name="change_email" id="change_email" value="确认更改" class="btn btn-primary">
                                 </td>
                             </tr>
                         </table>
@@ -37,7 +37,7 @@
                                 <span class="btn upload">上传</span>
                                 <span class="btn cancel">取消</span>
                                 <form name="userphone" id="userphone" method="post" action="<?php echo rtrim(get_url(get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
-                                    <input type="file" name="image" id="image">
+                                    <input type="file" style="display: none;" name="image" id="image">
                                     <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(get_config_value("img_base_url"),"/") . get_config_value("user_photo");?>">
                                     <input type="hidden" name="userphoto" id="userphoto" value="">
                                     <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
@@ -56,7 +56,7 @@
                                     <code>*</code>旧密码：
                                 </td>
                                 <td>
-                                    <input type="password" name="odlpass" id="oldpass" value="">
+                                    <input style="width: 250px" type="password" name="odlpass" id="oldpass" value="">
                                 </td>
                                 <td class="error_text">
                                 </td>
@@ -66,7 +66,7 @@
                                     <code>*</code>新密码：
                                 </td>
                                 <td>
-                                    <input type="password" name="newpass1" id="newpass1">
+                                    <input style="width: 250px" type="password" name="newpass1" id="newpass1">
                                 </td>
                                 <td class="error_text">
                                 </td>
@@ -76,7 +76,7 @@
                                     <code>*</code>再确认：
                                 </td>
                                 <td>
-                                    <input type="password" name="newpass2" id="newpass2">
+                                    <input style="width: 250px" type="password" name="newpass2" id="newpass2">
                                 </td>
                                 <td class="error_text">
                                 </td>

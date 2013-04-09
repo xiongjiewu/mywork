@@ -577,25 +577,35 @@ if ( ! function_exists('get_config_value'))
         }
 
         // Is the config file in the environment folder?
-        if ( ! defined('ENVIRONMENT') OR ! file_exists($file_path = APPPATH.'config/'.ENVIRONMENT.'/' . $file . '.php'))
-        {
-            $file_path = APPPATH.'config/' . $file . '.php';
+        $value = null;
+        if (defined('GACONFIGPATH')) {
+            $file_path = GACONFIGPATH . "/" . $file . '.php';
+            if (file_exists($file_path)) {
+                require($file_path);
+                $value = isset($config[$name]) ? $config[$name] : null;
+            }
         }
+        if ($value == null) {
+            if ( ! defined('ENVIRONMENT') OR ! file_exists($file_path = APPPATH.'config/'.ENVIRONMENT.'/' . $file . '.php'))
+            {
+                $file_path = APPPATH.'config/' . $file . '.php';
+            }
 
-        // Fetch the config file
-        if ( ! file_exists($file_path))
-        {
-            exit('The configuration file does not exist.');
+            // Fetch the config file
+            if ( ! file_exists($file_path))
+            {
+                exit('The configuration file does not exist.');
+            }
+
+            require($file_path);
+
+            // Does the $config array exist in the file?
+            if ( ! isset($config) OR ! is_array($config))
+            {
+                exit('Your config file does not appear to be formatted correctly.');
+            }
+            $value = isset($config[$name]) ? $config[$name] : null;
         }
-
-        require($file_path);
-
-        // Does the $config array exist in the file?
-        if ( ! isset($config) OR ! is_array($config))
-        {
-            exit('Your config file does not appear to be formatted correctly.');
-        }
-        $value = isset($config[$name]) ? $config[$name] : null;
         return $value;
     }
 }

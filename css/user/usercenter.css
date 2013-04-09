@@ -346,6 +346,7 @@ table.change_pass_table tr td code,table.edit_xheditor_table tr td code{
 table.change_pass_table tr td {
     float: left;
     margin: 10px 0;
+    *padding-top: 20px;
 }
 table.change_pass_table tr td.error_text {
     color: #ff0000;
@@ -361,7 +362,7 @@ table.change_pass_table tr.submit td input {
     cursor: pointer;
     font-weight: bold;
     height: 40px;
-    width: 220px;
+    width: 250px;
     margin-left: 72px;
 }
 .modbox2 table.table tr th.chose_all {

@@ -260,7 +260,10 @@
             emotMark: false,
             shortcuts: {'ctrl+enter': function () {
                 <?php if (!empty($userId)):?>
-                    return $("#create_post_button").trigger("click");
+                    if (init.post_submit(editor)) {
+                        $("#create_post").submit();
+                    }
+                    return true;
                 <?php else:?>
                     $("#current_id").val(0);
                     $("#action").val("post");
