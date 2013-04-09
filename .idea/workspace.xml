@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/useraction.php" afterPath="$PROJECT_DIR$/application/controllers/useraction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/classicmovie.php" afterPath="$PROJECT_DIR$/application/controllers/classicmovie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365517965649" ignored="false" />
+    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522366497" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365433413405" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365432217921" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365341067816" ignored="false" />
@@ -78,7 +80,7 @@
     <file path="/message.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365225900475" ignored="false" />
     <file path="/message.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365225579759" ignored="false" />
     <file path="/base.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365426668997" ignored="false" />
-    <file path="$PROJECT_DIR$/../admin/application/config/common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365244903761" ignored="false" />
+    <file path="$PROJECT_DIR$/../admin/application/config/common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522481906" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/views/background/upmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365258777936" ignored="false" />
     <file path="/upmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365258772723" ignored="false" />
     <file path="/classicmovie.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365518601573" ignored="false" />
@@ -90,13 +92,14 @@
     <file path="/Loginpan.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365425819343" ignored="false" />
     <file path="/loginpan.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365429673270" ignored="false" />
     <file path="/Loader.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365426393829" ignored="false" />
-    <file path="/Controller.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365517143725" ignored="false" />
+    <file path="/Controller.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522525066" ignored="false" />
     <file path="/loginpan.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365431393169" ignored="false" />
     <file path="/loginpan.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365432547388" ignored="false" />
     <file path="/DB.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365511028808" ignored="false" />
     <file path="/Common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365516300513" ignored="false" />
     <file path="/apf.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365516571743" ignored="false" />
     <file path="/docs.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365518114288" ignored="false" />
+    <file path="$PROJECT_DIR$/../admin/system/core/Controller.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522695619" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="useraction.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
+      <file leaf-file-name="common.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/config/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="68" selection-start="797" selection-end="797" vertical-scroll-proportion="0.6987952">
+            <state line="168" column="57" selection-start="3952" selection-end="3977" vertical-scroll-proportion="0.60456276">
               <folding />
             </state>
           </provider>
@@ -148,10 +151,8 @@
         <option value="$PROJECT_DIR$/css/main/docs.css" />
         <option value="$PROJECT_DIR$/application/views/member/register.php" />
         <option value="$PROJECT_DIR$/application/views/member/login.php" />
-        <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadimage.php" />
         <option value="$PROJECT_DIR$/application/controllers/detail.php" />
-        <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/controllers/welcome.php" />
         <option value="$PROJECT_DIR$/application/controllers/upcomingmovie.php" />
         <option value="$PROJECT_DIR$/application/controllers/usercenter.php" />
@@ -159,7 +160,9 @@
         <option value="$PROJECT_DIR$/application/controllers/register.php" />
         <option value="$PROJECT_DIR$/application/controllers/topic.php" />
         <option value="$PROJECT_DIR$/application/controllers/search.php" />
+        <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
+        <option value="$PROJECT_DIR$/application/config/common.php" />
       </list>
     </option>
   </component>
@@ -285,6 +288,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -377,10 +398,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30666667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22764228" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23170732" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -389,6 +409,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30666667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -539,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="163" selection-end="163" vertical-scroll-proportion="-4.193548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="34" selection-start="1474" selection-end="1474" vertical-scroll-proportion="-13.193548">
@@ -553,16 +567,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="0" selection-start="3831" selection-end="3831" vertical-scroll-proportion="0.32931727">
+        <state line="31" column="69" selection-start="798" selection-end="798" vertical-scroll-proportion="-0.83870965">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="68" selection-start="797" selection-end="797" vertical-scroll-proportion="0.6987952">
+        <state line="5" column="32" selection-start="163" selection-end="163" vertical-scroll-proportion="0.04942966">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="57" selection-start="3952" selection-end="3977" vertical-scroll-proportion="0.60456276">
           <folding />
         </state>
       </provider>

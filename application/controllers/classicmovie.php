@@ -135,7 +135,7 @@ class Classicmovie extends CI_Controller {
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
+        $this->set_attr("movieSortType",$this->_movieSortType);
         $this->set_view('dianying/classicmovie');
     }
 }
