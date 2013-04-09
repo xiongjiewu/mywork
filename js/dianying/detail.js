@@ -60,7 +60,7 @@ var init = {
                     });
                     break;
                 case "post" :
-                    window.location.reload();
+                    post();
                     break;
                 default :
                     break;

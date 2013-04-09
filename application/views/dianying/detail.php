@@ -180,7 +180,7 @@
                     <textarea class="xheditor" name="content" id="content"></textarea>
 
                     <p></p>
-                    <input type="submit" id="create_post_button" class="btn btn-large btn-primary" value="发表评论"><span
+                    <input type="button" id="create_post_button" class="btn btn-large btn-primary" value="发表评论"><span
                         style="color: #aaa">（ctrl+enter快捷回复）</span>
                     <br>
 
@@ -269,12 +269,22 @@
             }}
         }
     );
+    function post() {
+        if (init.post_submit(editor)) {
+            $("#create_post").submit();
+        } else {
+            window.location.reload();
+        }
+    }
     (function ($) {
         $(document).ready(function () {
             editor.addShortcuts("ctrl+enter");
-            $("#create_post").submit(function () {
+            $("#create_post_button").bind("click",function () {
                 <?php if (!empty($userId)):?>
-                    return init.post_submit(editor);
+                    if (init.post_submit(editor)) {
+                        $("#create_post").submit();
+                    }
+                    return true;
                 <?php else:?>
                     $("#current_id").val(0);
                     $("#action").val("post");
@@ -290,7 +300,10 @@
                 var e = event.keyCode || event.which;
                 if (e == 13 && event.ctrlKey == true) {
                     <?php if (!empty($userId)):?>
-                        return $("#create_post_button").trigger("click");
+                        if (init.post_submit(editor)) {
+                            $("#create_post").submit();
+                        }
+                        return true;
                     <?php else:?>
                         $("#current_id").val(0);
                         $("#action").val("post");
