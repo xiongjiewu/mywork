@@ -1,3 +1,21 @@
+var logPanInit = {
+    showLoginPan:function(callBack) {
+        $("div.login_register_all").show();
+        var obj = $("div.login_pan_ui");
+        obj.css("top",((jQuery(window).height()-obj.height())/2)+"px");
+        obj.css("left",((jQuery(window).width()-obj.width())/2)+"px");
+        obj.css("display","block");
+        if (callBack) {
+            $("#login_call_back").val(callBack);
+        }
+        return true;
+    },
+    hideLoginPan:function() {
+        $("div.login_register_all").hide();
+        $("div.login_pan_ui").hide();
+        return true;
+    }
+};
 (function ($) {
     $(document).ready(function () {
         var userpasObj = $("input[name='username'],input[name='password']");
@@ -24,7 +42,7 @@
         loginSubmitObj.mouseleave(function () {
             $(this).removeClass("submit_over");
         });
-        $("#login_form").submit(function () {
+        $("#login_pan").submit(function () {
             var username = $.trim($("input[name='username']").val());
             var password = $.trim($("input[name='password']").val());
             if (!username || !password) {
@@ -47,11 +65,10 @@
                         if ((result.code == "error")) {
                             $("td.loginpan_error").html(result.info);
                         } else {
-                            var bgurl = $("#bgurl").val();
-                            if (bgurl && (bgurl != undefined)) {
-                                window.location.href = bgurl;
-                            } else {
-                                window.location.href = "/usercenter/";
+                            logPanInit.hideLoginPan();
+                            var callBack = $("#login_call_back").val();//回调函数
+                            if (callBack) {
+                                eval(callBack+"()");
                             }
                         }
                     }
@@ -59,6 +76,8 @@
             }
             return false;
         });
-
+        $(".close_login_ui").bind("click",function(){
+            logPanInit.hideLoginPan();
+        });
     });
 })(jQuery);

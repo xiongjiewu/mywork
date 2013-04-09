@@ -1154,15 +1154,15 @@ class CI_Loader {
         return $this->show_head_img;
     }
 
-    public $move_js = true;
+    public $login_pan = true;
 
-    public function set_move_js($show = true)
+    public function set_login_pan($show = true)
     {
-        $this->move_js = $show;
+        $this->login_pan = $show;
     }
-    public function get_move_js()
+    public function get_login_pan()
     {
-        return $this->move_js;
+        return $this->login_pan;
     }
 }
 

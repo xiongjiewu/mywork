@@ -1,11 +1,6 @@
 var init = {
     post_submit: function (editor) {
         var content = editor.getSource();
-        var user_id = $.trim($("#user_id").val());
-        if (!user_id || (user_id == undefined)) {
-            alert("请先登录!");
-            return false;
-        }
         if (!content || (content == undefined)) {
             alert("请输入内容!");
             return false;
@@ -43,8 +38,36 @@ var init = {
         }
         return true;
     },
-    ajaxShouCang: function (obj) {
-        var id = obj.attr("val");
+    loginCallBack:function(){
+        var id = $("#current_id").val();
+        var action = $("#action").val();
+        if (id && action) {
+            switch (action) {
+                case  "notice" :
+                    this.ajaxInertNotice(id,function(result){
+                        if (result.code && result.code == "error") {
+                            alert(result.info);
+                        }
+                        window.location.reload();
+                    });
+                    break;
+                case "shoucang" :
+                    this.ajaxShouCang(id,function(result){
+                        if (result.code && result.code == "error") {
+                            alert(result.info);
+                        }
+                        window.location.reload();
+                    });
+                    break;
+                case "post" :
+                    window.location.reload();
+                    break;
+                default :
+                    break;
+            }
+        }
+    },
+    ajaxShouCang: function (id,callBack) {
         if (id && (id != undefined)) {
             $.ajax({
                 url: "/useraction/shoucang/",
@@ -52,26 +75,31 @@ var init = {
                 data: {id: id},
                 dataType: "json",
                 success: function (result) {
-                    if (result.error == "error") {
-                        alert(result.info);
-                    } else {
-                        obj.removeClass("shoucang").addClass("shoucang_do");
-                        obj.html('<i class="icon-star icon-white"></i>已收藏');
+                    if (callBack) {
+                        callBack(result);
                     }
                 }
             })
         }
     },
-    changeNoticeBtn:function(obj)
-    {
+    shouCangDo:function(obj) {
+        var id = obj.attr("val");
+        this.ajaxShouCang(id,function(result){
+            if (result.error == "error") {
+                alert(result.info);
+            } else {
+                obj.removeClass("shoucang").addClass("shoucang_do");
+                obj.html('<i class="icon-star icon-white"></i>已收藏');
+            }
+        });
+    },
+    changeNoticeBtn:function(obj) {
         obj.removeClass("dy_notic").addClass("dy_notic_btn");
         obj.html('<i class="icon-check icon-white"></i>已订阅观看通知');
         return true;
 
     },
-    ajaxInertNotice:function(obj)
-    {
-        var id = obj.attr("val");
+    ajaxInertNotice:function(id,callBack) {
         if (id) {
             $.ajax({
                 url:"/useraction/insertnotice/",
@@ -79,14 +107,23 @@ var init = {
                 data:{id:id},
                 dataType:"json",
                 success:function(result){
-                    if (result.code && result.code == "error") {
-                        alert(result.info);
-                    } else {
-                        init.changeNoticeBtn(obj);
+                    if (callBack) {
+                        callBack(result);
                     }
                 }
             });
         }
+    },
+    insertNoticeDo:function(obj,event) {
+        var id = obj.attr("val");
+        this.ajaxInertNotice(id,function(result){
+            if (result.code && result.code == "error") {
+                alert(result.info);
+            } else {
+                init.changeNoticeBtn(obj);
+            }
+        });
+        event.stopPropagation();
     },
     appendYingPing:function(count,result,obj) {
         var yingping = result.info.yingping;

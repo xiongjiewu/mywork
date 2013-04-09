@@ -33,7 +33,7 @@ class Editpost extends CI_Controller {
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/editpost.js"));
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->set_attr("YingpingInfo",$YingpingInfo);
         $this->set_view('dianying/editpost');
     }

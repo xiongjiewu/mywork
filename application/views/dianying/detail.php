@@ -1,6 +1,8 @@
 <input type="hidden" name="YingpingInfoICount" id="YingpingInfoICount" value="<?php echo empty($yingpingCount) ? 0 : $yingpingCount;?>">
 <input type="hidden" name="user_type" id="user_type" value="<?php echo empty($adminInfo) ? 0 : 1;?>">
 <input type="hidden" name="limit" id="limit" value="<?php echo $limit;?>">
+<input type="hidden" name="current_id" id="current_id" value="">
+<input type="hidden" name="action" id="action" value="">
 <div class="row">
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav dy_bs-docs-sidenav" style="*width: 220px;">
@@ -258,9 +260,11 @@
             emotMark: false,
             shortcuts: {'ctrl+enter': function () {
                 <?php if (!empty($userId)):?>
-                return $("#create_post_button").trigger("click");
+                    return $("#create_post_button").trigger("click");
                 <?php else:?>
-                alert("请先登录！");
+                    $("#current_id").val(0);
+                    $("#action").val("post");
+                    logPanInit.showLoginPan("init.loginCallBack");
                 <?php endif;?>
             }}
         }
@@ -272,8 +276,9 @@
                 <?php if (!empty($userId)):?>
                     return init.post_submit(editor);
                 <?php else:?>
-                    var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                    window.location.href = url;
+                    $("#current_id").val(0);
+                    $("#action").val("post");
+                    logPanInit.showLoginPan("init.loginCallBack");
                     return false;
                 <?php endif;?>
             });
@@ -287,8 +292,9 @@
                     <?php if (!empty($userId)):?>
                         return $("#create_post_button").trigger("click");
                     <?php else:?>
-                        var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                        window.location.href = url;
+                        $("#current_id").val(0);
+                        $("#action").val("post");
+                        logPanInit.showLoginPan("init.loginCallBack");
                         return false;
                     <?php endif;?>
                 }
@@ -298,19 +304,23 @@
             });
             $("span.shoucang").bind("click", function () {
                 <?php if (empty($userId)):?>
-                var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                window.location.href = url;
+                    var id = $(this).attr("val");
+                    $("#current_id").val(id);
+                    $("#action").val("shoucang");
+                    logPanInit.showLoginPan("init.loginCallBack");
                 <?php else:?>
-                init.ajaxShouCang($(this));
+                     init.shouCangDo($(this));
                 <?php endif;?>
             });
             $("span.dy_notic").each(function () {
                 $(this).bind("click", function () {
                     <?php if (empty($userId)):?>
-                    var url = "<?php echo get_url('/login?bgurl=') . base64_encode(get_url('/detail/index/'.$dyInfo['id'].'/'));?>";
-                    window.location.href = url;
+                        var id = $(this).attr("val");
+                        $("#current_id").val(id);
+                        $("#action").val("notice");
+                        logPanInit.showLoginPan("init.loginCallBack");
                     <?php else:?>
-                    init.ajaxInertNotice($(this));
+                        init.insertNoticeDo($(this));
                     <?php endif;?>
                 });
             });

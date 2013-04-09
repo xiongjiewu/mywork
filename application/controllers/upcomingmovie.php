@@ -29,7 +29,7 @@ class Upcomingmovie extends CI_Controller {
             $this->set_attr("userNoticeInfos",$userNoticeInfos);
         }
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("即将上映列表 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/upcomingmovie.css"));

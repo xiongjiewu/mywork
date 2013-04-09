@@ -61,7 +61,7 @@ class Detail extends CI_Controller {
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
-        $this->load->set_move_js(false);
+        
         $this->set_attr("dyInfo",$dyInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);
