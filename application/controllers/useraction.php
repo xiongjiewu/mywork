@@ -29,7 +29,7 @@ class Useraction extends CI_Controller
         if (empty($data['dyId'])) {
             echo "参数错误";
             exit;
-        } elseif (!isset($data['content'])) {
+        } elseif (!isset($data['content']) || ($data['content'] == "")) {
             echo "请输入内容！";
             exit;
         }
