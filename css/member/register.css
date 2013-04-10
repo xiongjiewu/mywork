@@ -156,10 +156,10 @@
     z-index: 11;
 }
 .register_main .register_main_table tr td .username_ts .username_ts_main{
-    background: url("/images/Register/register3.png") no-repeat scroll 0 -47px transparent;
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -55px transparent;
     font-size: 13px;
-    height: 36px;
-    padding: 18px 40px 18px 31px;
+    height: 30px;
+    padding: 14px 40px 18px 31px;
     position: absolute;
     top: 20px;
     width: 258px;
@@ -174,10 +174,10 @@
     z-index: 11;
 }
 .register_main .register_main_table tr td .email_ts .email_ts_main{
-    background: url("/images/Register/register3.png") no-repeat scroll 0 -47px transparent;
+    background: url("/images/Register/register3.png") no-repeat scroll 0 -55px transparent;
     font-size: 13px;
-    height: 36px;
-    padding: 18px 40px 18px 31px;
+    height: 30px;
+    padding: 14px 40px 18px 31px;
     position: absolute;
     top: 20px;
     width: 258px;
