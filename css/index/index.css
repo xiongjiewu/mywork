@@ -21,13 +21,46 @@ div.bs-docs-example table tr td table.table tr td {
 div.bs-docs-example table tr td table.table tr.lastOne td {
     border-bottom: none;
 }
-
+table tr td.dy_info_list {
+}
 table.new_dy ul {
+    width: 100%;
+    white-space:nowrap;
+    overflow: hidden;
     float: left;
     margin-left: 0;
 }
 table.new_dy ul li {
+    word-wrap: break-word;
+    word-break: normal;
+    display: inline-block;
+     float: left;
+     list-style: none;
+     padding: 8px;
+ }
+table.new_dy ul li a {
+    word-wrap: break-word;
+    word-break: normal;
     float: left;
-    list-style: none;
+    display: inline-block;
+}
+dl.new_dy {
+    float: left;
+    width: 100%;
+}
+dl.new_dy dt {
+    float: left;
+    padding-left: 10px;
+    width: 50px;
+}
+dl.new_dy dd  span {
+    float: left;
+    display: block;
     padding: 8px;
+    padding-top: 0;
+}
+dl.new_dy dd  span a {
+    width: 100%;
+    float: left;
+    display: block;
 }

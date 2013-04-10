@@ -3,7 +3,7 @@
         <table class="new_dy">
             <tr>
                 <td class="new_title"><strong>最新<p></p>热门</strong></td>
-                <td>
+                <td class="dy_info_list">
                     <ul>
                         <?php foreach ($newestDyInfo as $nesInfoVal): ?>
                             <li>

@@ -157,8 +157,9 @@ div.head_top_menus ul.nav li.username div.user_in{
     left: 5px;
     top: 0;
     background-color: #fff;
-    height: 168px;
-    min-width: 115px;
+    height: 413%;
+    *height: 450%;
+    width: 84%;
     border: 1px solid #eee;
     border-top: none;
 }
@@ -171,6 +172,7 @@ div.head_top_menus ul.nav li.username div.user_in table.table tr td a {
 }
 div.user_in table.table {
     margin-left: 0;
+    margin-bottom: 0;
 }
 div.user_in table.table tr td {
     border-top: 1px solid #ddd;

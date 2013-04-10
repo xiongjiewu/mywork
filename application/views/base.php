@@ -111,11 +111,11 @@
                                     </tr>
                                     <tr>
                                         <td><a href="<?php echo get_url("/usercenter/feedback/"); ?>"><i
-                                                    class="icon-edit"></i>反馈我想看</a></td>
+                                                    class="icon-edit"></i>反&nbsp;馈&nbsp;想&nbsp;看</a></td>
                                     </tr>
                                     <tr>
                                         <td><a href="<?php echo get_url("/usercenter/notice/"); ?>"><i
-                                                    class="icon-volume-up"></i>我的电影通知</a></td>
+                                                    class="icon-volume-up"></i>电&nbsp;影&nbsp;通&nbsp;知</a></td>
                                     </tr>
                                     <tr>
                                         <td><a href="<?php echo get_url("/logout/"); ?>"><i class="icon-off"></i>退&nbsp;出&nbsp;登&nbsp;录</a>
