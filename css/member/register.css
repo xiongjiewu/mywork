@@ -277,6 +277,9 @@
     width: 30px;
     z-index: 10;
 }
+.register_main .register_main_table tr td span.code_icon_over {
+    background: url("/images/Register/register2.png") no-repeat scroll -24px -135px transparent;
+}
 .register_main .register_main_table tr td input.re_code {
     background: url("/images/Register/register2.png") no-repeat scroll -66px -161px transparent;
     width: 78px;
