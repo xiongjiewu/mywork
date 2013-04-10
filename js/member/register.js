@@ -20,7 +20,7 @@
         },
         error_common: function (e, title) {
             e.find("div.register_error1").addClass("error2");
-            e.find("div.register_error1").html(title);
+            e.find("div.register_error1").html("<i></i><dd>"+title+"</dd>");
             return false;
         },
         check_blur: function (t) {
@@ -76,6 +76,8 @@
                     } else {
                         return true;
                     }
+                } else {
+                    return false;
                 }
             }
         },

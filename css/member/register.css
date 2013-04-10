@@ -250,14 +250,20 @@
     padding-left: 35px;
 }
 .register_main .register_main_table tr td .error2{
-    background: url("/images/Register/register3.png")no-repeat 0 -131px;
     height: 20px;
     position: absolute;
     top: 20px;
     width: 300px;
-    padding-left: 35px;
     color: red;
     z-index: 0;
+}
+.register_main .register_main_table tr td .error2 * {
+    float: left;
+}
+.register_main .register_main_table tr td .error2 i {
+    width: 20px;
+    height: 20px;
+    background: url("/images/Register/register3.png") no-repeat scroll -14px -131px transparent
 }
 .register_main .register_main_table tr td .error3{
     background: none;
