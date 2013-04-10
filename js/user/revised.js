@@ -5,7 +5,7 @@ var init = {
         var image = imageVal.split(".");
         if (!image[1] || (image[1] != 'png') && (image[1] != 'gif') && (image[1] != 'jpg')) {
             alert("只能传格式为png\|gif\|jpg的图片!");
-            $(t).val("");
+            t.val("");
             $("div.user_image").find("div.doing").hide();
             return true;
         } else {
@@ -165,8 +165,8 @@ var init = {
 };
 (function ($) {
     $(document).ready(function () {
-        $("#image").live("change", function () {
-            init.imageAtion(this);
+        $("#image").bind("change", function () {
+            init.imageAtion($(this));
         });
         $("div.user_image").find("span.cancel").bind("click", function () {
             init.cancelUploadImg($(this));
