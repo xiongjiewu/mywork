@@ -121,7 +121,7 @@
       <file leaf-file-name="footer.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/component/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="43" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.8403042">
+            <state line="18" column="52" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.88973385">
               <folding />
             </state>
           </provider>
@@ -518,7 +518,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/component/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.8403042">
+        <state line="18" column="52" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.88973385">
           <folding />
         </state>
       </provider>
