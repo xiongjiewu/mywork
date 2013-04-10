@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main/main.css" afterPath="$PROJECT_DIR$/css/main/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/member/register.css" afterPath="$PROJECT_DIR$/css/member/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/member/register.js" afterPath="$PROJECT_DIR$/js/member/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/revised.php" afterPath="$PROJECT_DIR$/application/views/user/revised.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/component/usercenterleft.php" afterPath="$PROJECT_DIR$/application/views/component/usercenterleft.php" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,28 +118,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/member/register.php">
+      <file leaf-file-name="uploadimage.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.032258">
+            <state line="36" column="70" selection-start="1392" selection-end="1429" vertical-scroll-proportion="-10.064516">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/member/register.js">
+      <file leaf-file-name="revised.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/user/revised.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="10" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0">
+            <state line="51" column="42" selection-start="1858" selection-end="1867" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/member/register.css">
+      <file leaf-file-name="useraction.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="254" column="14" selection-start="7450" selection-end="7450" vertical-scroll-proportion="0.26275992">
+            <state line="86" column="29" selection-start="2999" selection-end="3008" vertical-scroll-proportion="2.5084746">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="revised.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/user/revised.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="36" selection-start="4634" selection-end="4634" vertical-scroll-proportion="0.19771864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usercenterleft.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/component/usercenterleft.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="244" selection-start="334" selection-end="334" vertical-scroll-proportion="19.096775">
               <folding />
             </state>
           </provider>
@@ -166,8 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/topic.php" />
-        <option value="$PROJECT_DIR$/application/controllers/search.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
         <option value="$PROJECT_DIR$/application/config/common.php" />
         <option value="$PROJECT_DIR$/application/views/component/footer.php" />
@@ -182,6 +196,8 @@
         <option value="$PROJECT_DIR$/css/main/main.css" />
         <option value="$PROJECT_DIR$/js/member/register.js" />
         <option value="$PROJECT_DIR$/css/member/register.css" />
+        <option value="$PROJECT_DIR$/application/views/component/usercenterleft.php" />
+        <option value="$PROJECT_DIR$/application/views/user/revised.php" />
       </list>
     </option>
   </component>
@@ -264,6 +280,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="member" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -315,6 +349,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dianying8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,31 +579,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="48.387096" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.516129" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.612904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.580646" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="261.67743" />
@@ -590,16 +643,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/member/register.js">
+    <entry file="file://$PROJECT_DIR$/css/member/register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0">
+        <state line="254" column="14" selection-start="7450" selection-end="7450" vertical-scroll-proportion="0.26275992">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/member/register.css">
+    <entry file="file://$PROJECT_DIR$/js/member/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="14" selection-start="7450" selection-end="7450" vertical-scroll-proportion="0.26275992">
+        <state line="19" column="10" selection-start="710" selection-end="710" vertical-scroll-proportion="0.46678635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/user/revised.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="42" selection-start="1858" selection-end="1867" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="70" selection-start="1392" selection-end="1429" vertical-scroll-proportion="-10.064516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/component/usercenterleft.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="244" selection-start="334" selection-end="334" vertical-scroll-proportion="19.096775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="29" selection-start="2999" selection-end="3008" vertical-scroll-proportion="2.5084746">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/revised.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="36" selection-start="4634" selection-end="4634" vertical-scroll-proportion="0.19771864">
           <folding />
         </state>
       </provider>

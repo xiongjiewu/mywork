@@ -31,14 +31,14 @@
                     <div class="span9">
                         <div class="bs-docs-example">
                             <div class="user_image">
-                                <img src="<?php echo $userInfo['photo'] ? trim(get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(get_config_value("img_base_url"),"/") . get_config_value("user_photo");?>">
+                                <img src="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
                                 <div class="doing"></div>
                                 <span class="btn shangchuan">上传头像</span>
                                 <span class="btn upload">上传</span>
                                 <span class="btn cancel">取消</span>
-                                <form name="userphone" id="userphone" method="post" action="<?php echo rtrim(get_url(get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
+                                <form name="userphone" id="userphone" method="post" action="<?php echo rtrim(get_url(APF::get_instance()->get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
                                     <input type="file" style="display: none;" name="image" id="image">
-                                    <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(get_config_value("img_base_url"),"/") . get_config_value("user_photo");?>">
+                                    <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
                                     <input type="hidden" name="userphoto" id="userphoto" value="">
                                     <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
                                     <input type="submit" name="submit" id="submit" style="display: none;">
