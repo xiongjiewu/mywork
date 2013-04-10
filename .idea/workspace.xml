@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210919d9-44fd-4823-8fa4-49d139d3ba04" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/classicmovie.php" afterPath="$PROJECT_DIR$/application/controllers/classicmovie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/common.php" afterPath="$PROJECT_DIR$/application/config/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/component/footer.php" afterPath="$PROJECT_DIR$/application/views/component/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dianying8.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522366497" ignored="false" />
+    <file path="/Dummy.txt" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365592959309" ignored="false" />
     <file path="/latestmovie.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365433413405" ignored="false" />
     <file path="/latestmovie.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365432217921" ignored="false" />
     <file path="/detail.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365341067816" ignored="false" />
@@ -34,7 +33,7 @@
     <file path="$PROJECT_DIR$/../admin/application/views/background/movielist.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732917178" ignored="false" />
     <file path="/movielist.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732676817" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/application/views/background/recycle.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732948593" ignored="false" />
-    <file path="$PROJECT_DIR$/../admin/application/controllers/background.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365258797396" ignored="false" />
+    <file path="$PROJECT_DIR$/../admin/application/controllers/background.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365522846744" ignored="false" />
     <file path="$PROJECT_DIR$/../admin/js/background/movielist.js" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364732977439" ignored="false" />
     <file path="/welcome.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365519358054" ignored="false" />
     <file path="/index.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365516600786" ignored="false" />
@@ -44,7 +43,7 @@
     <file path="/topic.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364741205494" ignored="false" />
     <file path="/topic.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364742065947" ignored="false" />
     <file path="/main.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365348798779" ignored="false" />
-    <file path="/footer.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364825990579" ignored="false" />
+    <file path="/footer.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365593006890" ignored="false" />
     <file path="/common.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1365513383911" ignored="false" />
     <file path="/loginaction.php" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364903851863" ignored="false" />
     <file path="/error.css" changelist="210919d9-44fd-4823-8fa4-49d139d3ba04" time="1364904443888" ignored="false" />
@@ -119,10 +118,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="common.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/config/common.php">
+      <file leaf-file-name="footer.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/component/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="57" selection-start="3952" selection-end="3977" vertical-scroll-proportion="0.60456276">
+            <state line="17" column="43" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.8403042">
               <folding />
             </state>
           </provider>
@@ -147,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/component/loginpan.php" />
         <option value="$PROJECT_DIR$/css/main/docs.css" />
         <option value="$PROJECT_DIR$/application/views/member/register.php" />
         <option value="$PROJECT_DIR$/application/views/member/login.php" />
@@ -163,6 +161,7 @@
         <option value="$PROJECT_DIR$/application/controllers/classicmovie.php" />
         <option value="$PROJECT_DIR$/application/controllers/useraction.php" />
         <option value="$PROJECT_DIR$/application/config/common.php" />
+        <option value="$PROJECT_DIR$/application/views/component/footer.php" />
       </list>
     </option>
   </component>
@@ -252,7 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dianying" />
+              <option name="myItemId" value="component" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,42 +266,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianying8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,7 +363,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23170732" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23577236" sideWeight="0.6933333" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -476,114 +439,86 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/dianying/classicmovie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="41" selection-start="413" selection-end="427" vertical-scroll-proportion="0.18441065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/loginaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.83302414">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.83302414" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/uploadimage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="90" selection-start="1431" selection-end="1443" vertical-scroll-proportion="-13.193548">
-          <folding />
-        </state>
+        <state line="36" column="90" selection-start="1431" selection-end="1443" vertical-scroll-proportion="-13.193548" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="66" selection-start="2515" selection-end="2533" vertical-scroll-proportion="-8.387096">
-          <folding />
-        </state>
+        <state line="58" column="66" selection-start="2515" selection-end="2533" vertical-scroll-proportion="-8.387096" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/welcome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="58" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.5931559">
-          <folding />
-        </state>
+        <state line="39" column="58" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.5931559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/upcomingmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="62" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.5931559">
-          <folding />
-        </state>
+        <state line="33" column="62" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.5931559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/usercenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="751" column="72" selection-start="27702" selection-end="27702" vertical-scroll-proportion="34.304184">
-          <folding />
-        </state>
+        <state line="751" column="72" selection-start="27702" selection-end="27702" vertical-scroll-proportion="34.304184" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/topic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="79" selection-start="621" selection-end="621" vertical-scroll-proportion="0.15969582">
-          <folding />
-        </state>
+        <state line="21" column="79" selection-start="621" selection-end="621" vertical-scroll-proportion="0.15969582" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="74" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.4068441">
-          <folding />
-        </state>
+        <state line="40" column="74" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.4068441" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="610" selection-end="627" vertical-scroll-proportion="-6.064516">
-          <folding />
-        </state>
+        <state line="21" column="60" selection-start="610" selection-end="627" vertical-scroll-proportion="-6.064516" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="60" selection-start="353" selection-end="353" vertical-scroll-proportion="0.5931559">
-          <folding />
-        </state>
+        <state line="12" column="60" selection-start="353" selection-end="353" vertical-scroll-proportion="0.5931559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="34" selection-start="1474" selection-end="1474" vertical-scroll-proportion="-13.193548">
-          <folding />
-        </state>
+        <state line="47" column="34" selection-start="1474" selection-end="1474" vertical-scroll-proportion="-13.193548" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/useraction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="69" selection-start="798" selection-end="798" vertical-scroll-proportion="-0.83870965">
-          <folding />
-        </state>
+        <state line="31" column="69" selection-start="798" selection-end="798" vertical-scroll-proportion="-0.83870965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/classicmovie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="163" selection-end="163" vertical-scroll-proportion="0.04942966">
-          <folding />
-        </state>
+        <state line="5" column="32" selection-start="163" selection-end="163" vertical-scroll-proportion="0.04942966" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="57" selection-start="3952" selection-end="3977" vertical-scroll-proportion="0.60456276">
+        <state line="168" column="57" selection-start="3952" selection-end="3977" vertical-scroll-proportion="0.21863118">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/component/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.8403042">
           <folding />
         </state>
       </provider>
