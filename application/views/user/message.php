@@ -24,7 +24,7 @@
                         <?php foreach ($userMessageList as $messageVal): ?>
                             <table class="table<?php if ($userMessageI == 1):?> firstOne<?php endif;?>">
                                 <tr class="content<?php if ($messageVal['is_read'] == 0): ?> no_read content<?php endif; ?>">
-                                    <td colspan="3">
+                                    <td colspan="2">
                                         <?php echo $messageVal['content'];?>
                                         <span class="time">
                                             (
@@ -44,9 +44,6 @@
                                 <tr>
                                     <th class="chose">
                                         <input type="checkbox" name="ids[]" value="<?php echo $messageVal['id']; ?>">
-                                    </th>
-                                    <th class="time">
-
                                     </th>
                                     <th class="action_do">
                                         操作:

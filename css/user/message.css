@@ -40,10 +40,10 @@ div.chose_all span {
     color: #999;
 }
 .modbox2 table.table tr th.chose {
-    width: 50px;
+    width: 5%;
 }
 .modbox2 table.table tr th.action_do {
-    width: 200px;
+    width: 95%;
     text-align: right;
 }
 .modbox2 table.table tr th.action_do span {
