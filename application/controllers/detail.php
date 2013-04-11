@@ -23,7 +23,7 @@ class Detail extends CI_Controller {
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
         $this->load->model('Yingping');
-        $limit = ("post_show_count");
+        $limit = APF::get_instance()->get_config_value("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,$limit);
         if (!empty($YingpingInfo)) {
             $userIds = array();

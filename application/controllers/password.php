@@ -60,7 +60,7 @@ class Password extends CI_Controller {
             $this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));
             exit;
         }
-        $maxTime = ("changepassword_max_time");
+        $maxTime = APF::get_instance()->get_config_value("changepassword_max_time");
         if (time() > ($info['time'] + $maxTime)) {//页面已过期
             $this->Changepassword->updateInfoByFiled(array("del" => 0),array("hash_key" => "'{$key}'"));
             $this->jump_to("/error/index/4?bgurl=" . base64_encode(get_url("/password?r=" . time())));

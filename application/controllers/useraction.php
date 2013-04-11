@@ -37,7 +37,7 @@ class Useraction extends CI_Controller
         $cookieVal = $this->get_cookie($cookieName);
         $time = time();
         //在规定时间之内不能连续发表评论
-        if (!empty($cookieVal) && ($time <= ($cookieVal + ("max_post_time")))) {
+        if (!empty($cookieVal) && ($time <= ($cookieVal + APF::get_instance()->get_config_value("max_post_time")))) {
             $this->jump_to("/error/index/5?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}/")));
             exit;
         }
@@ -236,7 +236,7 @@ class Useraction extends CI_Controller
                 echo json_encode($result);
                 exit;
             } else {
-                $maxTime = ("changepassword_max_time");
+                $maxTime = APF::get_instance()->get_config_value("changepassword_max_time");
                 if (time() > ($info['time'] + $maxTime)) {//页面已过期
                     $result['code'] = '页面已过期';
                     $result['info'] = get_url("/password?r=" . time());
@@ -293,7 +293,7 @@ class Useraction extends CI_Controller
             exit;
         }
         $this->load->model('Yingping');
-        $limit = ("post_show_count");
+        $limit = APF::get_instance()->get_config_valueF("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,$limit);
         $result['info'] = array();
         if (!empty($YingpingInfo)) {
