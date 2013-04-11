@@ -168,8 +168,8 @@ class Usercenter extends CI_Controller
         $this->load->set_title("修改资料 - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
-        $this->load->set_css(array("/css/user/usercenter.css"));
-        $this->load->set_js(array("/js/user/revised.js"));
+        $this->load->set_css(array("/css/user/usercenter.css","/css/main/uploadify.css"));
+        $this->load->set_js(array("/js/uploadify/jquery.uploadify.min.js","/js/user/revised.js"));
         $this->set_attr("moviePlace", $this->_moviePlace);
         $this->set_attr("movieType", $this->_movieType);
         $this->set_view("user/revised");

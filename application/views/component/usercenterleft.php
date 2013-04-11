@@ -1,7 +1,7 @@
 <div class="left_container">
     <div class="side-boxer">
         <div class="user-info">
-            <img src="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
+            <img src="<?php echo !empty($userInfo['photo']) ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
             <dl>
                 <dt><?php echo $userInfo['userName'];?></dt>
                 <dd style="margin-left: 0">

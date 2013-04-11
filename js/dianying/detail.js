@@ -114,7 +114,7 @@ var init = {
             });
         }
     },
-    insertNoticeDo:function(obj,event) {
+    insertNoticeDo:function(obj) {
         var id = obj.attr("val");
         this.ajaxInertNotice(id,function(result){
             if (result.code && result.code == "error") {
@@ -123,7 +123,6 @@ var init = {
                 init.changeNoticeBtn(obj);
             }
         });
-        event.stopPropagation();
     },
     appendYingPing:function(count,result,obj) {
         var yingping = result.info.yingping;

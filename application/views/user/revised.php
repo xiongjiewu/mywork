@@ -45,6 +45,11 @@
                                 </form>
 				                <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
                             </div>
+                            <div class="test" style="margin-left: 200px">
+                                <div id="queue"></div>
+                                <input type="file" name="fileInput" id="fileInput" multiple="true"/>
+                                <a href="javascript:$('#fileInput').uploadify('upload','*');">上传</a>
+                            </div>
                             <div class="zhushi">
                                 只能传格式为png、gif、jpg的图片,最大不能超过2M!
                             </div>
@@ -94,3 +99,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $('#fileInput').uploadify ({
+           'swf':'/js/uploadify/uploadify.swf', //指定上传控件的主体文件，默认‘uploader.swf’
+           'uploader':'<?php echo rtrim(get_url(APF::get_instance()->get_config_value("image_upload_url")),"/") . "/index/{$userId}/user/fileInput";?>' //指定服务器端上传处理文件，默认‘upload.php‘
+        });
+    });
+</script>

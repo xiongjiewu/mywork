@@ -131,7 +131,7 @@ class Codeimg extends CI_Controller {
         $border = self::REGISTER_CODE_IMG_BORDER;
         $this->set_show_mode($width,  $height,  $font_num,  $font_color,  $font_size,  $path,  $font_style,$b_color,$code_num,$line_num,$f_s,$border);
         $code = $this->createImage();
-        $this->set_cookie(('resgiter_code_cookie_name'),self::get_id($code));//获取验证码的值并转加密存到scookie中;
+        $this->set_cookie(APF::get_instance()->get_config_value('resgiter_code_cookie_name'),self::get_id($code));//获取验证码的值并转加密存到scookie中;
         $this->set_content_type("image/PNG");
     }
 
@@ -143,8 +143,6 @@ class Codeimg extends CI_Controller {
         //设置一些默认值
         $this->textNum = 4;
         $this->fontSize = 15;
-        require_class('APF_PageHelper');
-        require_class("Const_BaseConst");
         $path = self::REGISTER_CODE_IMG_FONT_PATH;//获取字体文件绝对路径
         $this->fontFamily = $path;//设置字体，可以改成linux的目录
         $this->textLang = 'en';
