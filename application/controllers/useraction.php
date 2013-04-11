@@ -293,7 +293,7 @@ class Useraction extends CI_Controller
             exit;
         }
         $this->load->model('Yingping');
-        $limit = APF::get_instance()->get_config_valueF("post_show_count");
+        $limit = APF::get_instance()->get_config_value("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,$count,$limit);
         $result['info'] = array();
         if (!empty($YingpingInfo)) {
