@@ -138,7 +138,7 @@ var init = {
         } else {
             obj.html("点击查看更多...");
         }
-        count++;
+        var louCount = parseInt(resultCount) - parseInt(count);
         $(yingping).each(function(index,val) {
             var c = "";
             if (count == resultCount) {
@@ -156,11 +156,11 @@ var init = {
                 '<div class="info"><div class="left"><a class="user_name" id="">'+val.userName+'</a>' +
                 '发表于'+val.date+' <span class="up_btn" pid="'+val.id+'" ' +
                 'style="cursor:pointer; color:#4E84AE;">顶(<font class="up_cnt">'+val.ding+'</font>)</span>' +
-                '</div><div class="right">'+edit+'<a class="reply" href="javascript:void(0);">回复</a><em>'+(count++)+'楼' +
+                '</div><div class="right">'+edit+'<a class="reply" href="javascript:void(0);">回复</a><em>'+(louCount--)+'楼' +
                 '</em></div></div><p class="word">'+val.content+'</p></div></td></tr></tbody>' +
                 '</table>';
         });
-        $("#pinglun_count").val(parseInt(count) - 1);
+        $("#pinglun_count").val(parseInt(count));
         obj.before(sHtml);
     },
     ajaxGetYingPingInfo:function(id,count,obj)

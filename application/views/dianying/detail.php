@@ -188,6 +188,7 @@
                     <?php if (!empty($YingpingInfo)): ?>
                     <div id="pllist" class="pllist">
                         <?php $YingpingInfoI = 1; ?>
+                        <?php $YingpingInfoTotalCount = $yingpingCount; ?>
                         <?php $YingpingInfoICount = count($YingpingInfo); ?>
                         <?php foreach ($YingpingInfo as $infoKey => $infoVal): ?>
                             <table cellspacing="0" cellpadding="0" border="0">
@@ -217,7 +218,7 @@
                                                         <a href="<?php echo get_url("/editpost/index/{$infoVal['id']}/");?>">编辑</a>&nbsp;|&nbsp;
                                                     <?php endif;?>
                                                     <a class="reply" href="javascript:void(0);">回复</a>
-                                                    <em><?php echo $YingpingInfoI++;?>楼</em>
+                                                    <em><?php echo $YingpingInfoTotalCount--;?>楼</em>
                                                 </div>
                                             </div>
                                             <p class="word"><?php echo $infoVal['content'];?></p>
@@ -226,6 +227,7 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            <?php $YingpingInfoI++;?>
                         <?php endforeach; ?>
                         <?php if ($yingpingCount > $limit):?>
                             <div class="read_more">点击查看更多...</div>
