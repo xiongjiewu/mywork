@@ -26,7 +26,7 @@
                                     <div class="dy_name_l">
                                         <a class="dy_name"
                                            href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">
-                                            <img class="dy_img" src="<?php echo trim(get_config_value("img_base_url"),"/") . $mVal['image'];?>">
+                                            <img class="dy_img" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $mVal['image'];?>">
                                         </a>
                                         <a class="dy_name"
                                            href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">

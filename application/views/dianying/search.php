@@ -30,7 +30,7 @@
                     <tr>
                         <td class="info_image">
                             <a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>">
-                                <img src="<?php echo trim(get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                                <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
                             </a>
                         </td>
                     </tr>
