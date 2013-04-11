@@ -12,7 +12,7 @@ class Uploadimage extends CI_Controller {
             "error" => "服务连接失败，请重新尝试!",
         );
         $config['upload_path']         = "./.././img/images/{$path}/";
-        $config['allowed_types']     = 'png|gif|jpg';
+        $config['allowed_types']     = 'png|gif|jpg|PNG|GIF|JPG';
         $config['max_size']          = '2048';
         $config['max_width']          = '1024';
         $config['max_height']         = '768';

@@ -3,7 +3,7 @@ var init = {
         $("div.user_image").find("div.doing").show();
         var imageVal = $(t).val();
         var image = imageVal.split(".");
-        if (!image[1] || (image[1] != 'png') && (image[1] != 'gif') && (image[1] != 'jpg')) {
+        if (!image[1] || (image[1].toLowerCase() != 'png') && (image[1].toLowerCase() != 'gif') && (image[1].toLowerCase() != 'jpg')) {
             alert("只能传格式为png\|gif\|jpg的图片!");
             t.val("");
             $("div.user_image").find("div.doing").hide();
