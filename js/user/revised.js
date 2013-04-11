@@ -13,12 +13,8 @@ var init = {
         }
     },
     upload_image: function () {
-        $('#submit').disabled = true;
-        var url = $("#upload_url").val();
         var form = $("form[name='userphone']");
-        form.attr("target", 'upload_frame');
-        form.attr("action", url);
-        $('#submit').trigger("click");
+        form.submit();
     },
     upload_finish: function (reault) {
         if (reault.status == "no") {
