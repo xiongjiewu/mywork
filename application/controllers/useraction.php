@@ -298,15 +298,23 @@ class Useraction extends CI_Controller
         $result['info'] = array();
         if (!empty($YingpingInfo)) {
             $userIds = array();
+            $yingPingI = 1;
+            $yingPingCount = count($YingpingInfo);
             foreach($YingpingInfo as $InfoKey => $infoVal) {
                 $YingpingInfo[$InfoKey]['content'] = $this->ubb2Html($infoVal['content']);
                 $YingpingInfo[$InfoKey]['date'] = date("Y-m-d H:i:s",$infoVal['time']);
                 $userIds[] = $infoVal['userId'];
+                if ($yingPingI == $yingPingCount) {
+                    $YingpingInfo[$InfoKey]['c'] = "lastOne";
+                } else {
+                    $YingpingInfo[$InfoKey]['c'] = "";
+                }
+                $yingPingI++;
             }
             $this->load->model('User');
             $userInfos = $this->User->getUserInfosByIds($userIds);
             foreach($userInfos as $userKey => $userVal) {
-                $userInfos[$userKey]['photo'] = empty($userVal['photo']) ? trim(("img_base_url"), "/") . ("user_photo") : trim(("img_base_url"), "/") . $userVal['photo'];
+                $userInfos[$userKey]['photo'] = empty($userVal['photo']) ? trim(APF::get_instance()->get_config_value("img_base_url"), "/") . APF::get_instance()->get_config_value("user_photo") : trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $userVal['photo'];
             }
             $userInfos = $this->initArrById($userInfos,"id");
             $result['info']['yingping'] = $YingpingInfo;

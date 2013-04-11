@@ -132,7 +132,7 @@ var init = {
         var limit = $("#limit").val();
         var sHtml = "";
         $("div.lastOne").removeClass("lastOne");
-        if ((parseInt(count) + parseInt(limit)) == resultCount) {
+        if ((parseInt(count) + parseInt(limit)) >= resultCount) {
             obj.html("已没有更多评论");
             obj.css("cursor","default");
         } else {
@@ -140,10 +140,6 @@ var init = {
         }
         var louCount = parseInt(resultCount) - parseInt(count);
         $(yingping).each(function(index,val) {
-            var c = "";
-            if (count == resultCount) {
-                c = "lastOne";
-            }
             var edit = "";
             if (user_type == 1) {
                 edit = '<a href="/editpost/index/'+val.id+'/">编辑</a> | ';
@@ -152,13 +148,14 @@ var init = {
                 '<tbody><tr><td class="userPro" valign="top">' +
                 '<div class="left"><img class="lazy" style="display: inline;" ' +
                 'src="'+userinfo[val.userId].photo+'" width="50" height="50">' +
-                '</div></td><td class="commentTextList" valign="top"><div class="comment '+c+' notFirst">' +
+                '</div></td><td class="commentTextList" valign="top"><div class="comment '+val.c+' notFirst">' +
                 '<div class="info"><div class="left"><a class="user_name" id="">'+val.userName+'</a>' +
                 '发表于'+val.date+' <span class="up_btn" pid="'+val.id+'" ' +
                 'style="cursor:pointer; color:#4E84AE;">顶(<font class="up_cnt">'+val.ding+'</font>)</span>' +
                 '</div><div class="right">'+edit+'<a class="reply" href="javascript:void(0);">回复</a><em>'+(louCount--)+'楼' +
                 '</em></div></div><p class="word">'+val.content+'</p></div></td></tr></tbody>' +
                 '</table>';
+            count++;
         });
         $("#pinglun_count").val(parseInt(count));
         obj.before(sHtml);
