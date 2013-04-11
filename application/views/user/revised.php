@@ -41,14 +41,9 @@
                                     <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
                                     <input type="hidden" name="userphoto" id="userphoto" value="">
                                     <input type="submit" name="userphone_button" id="userphone_button" style="display: none;">
-                                    <input type="submit" name="submit" id="submit" style="display: none;">
+                                    <input type="submit" name="submit_button" id="submit_button" style="display: none;">
                                 </form>
 				                <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
-                            </div>
-                            <div class="test" style="margin-left: 200px">
-                                <div id="queue"></div>
-                                <input type="file" name="fileInput" id="fileInput" multiple="true"/>
-                                <a href="javascript:$('#fileInput').uploadify('upload','*');">上传</a>
                             </div>
                             <div class="zhushi">
                                 只能传格式为png、gif、jpg的图片,最大不能超过2M!
@@ -99,11 +94,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-       $('#fileInput').uploadify ({
-           'swf':'/js/uploadify/uploadify.swf', //指定上传控件的主体文件，默认‘uploader.swf’
-           'uploader':'<?php echo rtrim(get_url(APF::get_instance()->get_config_value("image_upload_url")),"/") . "/index/{$userId}/user/fileInput";?>' //指定服务器端上传处理文件，默认‘upload.php‘
-        });
-    });
-</script>
