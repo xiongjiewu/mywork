@@ -22,11 +22,12 @@ div.bs-docs-example table tr td table.table tr.lastOne td {
     border-bottom: none;
 }
 table tr td.dy_info_list {
+    float: left;
 }
 table.new_dy ul {
     width: 100%;
-    white-space:nowrap;
-    overflow: hidden;
+    *white-space:nowrap;
+    overflow:hidden;
     float: left;
     margin-left: 0;
 }
