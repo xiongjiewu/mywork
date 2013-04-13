@@ -8,7 +8,7 @@ class Error extends CI_Controller {
         public function index($index = null)
         {
             $index = empty($index) ? 1 : $index;
-            $errorCode = ("error_code");
+            $errorCode = APF::get_instance()->get_config_value("error_code");
             $pageCode = $errorCode[$index];
             $bgurl = base64_decode($this->input->get("bgurl"));
             if (!empty($bgurl)) {

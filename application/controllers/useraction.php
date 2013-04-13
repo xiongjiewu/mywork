@@ -191,7 +191,7 @@ class Useraction extends CI_Controller
                 $emailData['time'] = time();
                 $emailData['title'] = "密码改更-" . APF::get_instance()->get_config_value("base_name");
                 $time = date("Y-m-d H:i:s");
-                $url = trim(("base_url"),"/") . "/password/change?key={$key}";
+                $url = trim(APF::get_instance()->get_config_value("base_url"),"/") . "/password/change?key={$key}";
                 $emailData['content'] = "尊敬的{$userInfo['userName']}用户，您在{$time}发出更改密码行为，请点击链接[url={$url}]{$url}[/url]完成更改。如非您本人操作，请与" . APF::get_instance()->get_config_value("base_name") . "管理员联系或者更改安全邮箱。谢谢！";
                 $this->Email->insertEmailInfo($emailData);
                 $result['code'] = $userInfo['id'];

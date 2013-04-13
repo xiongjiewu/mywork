@@ -21,6 +21,7 @@ class Password extends CI_Controller {
         }
         $this->load->set_title("密码更改 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_head_img(false);
+        $this->load->set_login_pan(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
         $this->load->set_js(array("/js/member/password.js"));
@@ -44,6 +45,7 @@ class Password extends CI_Controller {
         $this->set_attr("email",$userInfo['email']);
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
+        $this->load->set_login_pan(false);
         $this->load->set_css(array("/css/member/sendsuccess.css"));
         $this->set_view("member/sendsuccess");
     }
@@ -69,6 +71,7 @@ class Password extends CI_Controller {
         $this->load->set_title("密码更改 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->set_attr("key",$key);
         $this->load->set_head_img(false);
+        $this->load->set_login_pan(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
         $this->load->set_js(array("/js/member/password.js"));
