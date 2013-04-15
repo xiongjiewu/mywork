@@ -175,6 +175,7 @@ div.user_image span {;
     position: absolute;
     bottom: 0;
     left: 0;
+    *left: -4px;
     width: 79%;
     height: 20px;
     text-align: center;
