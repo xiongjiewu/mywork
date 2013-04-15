@@ -78,7 +78,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li {
     float: left;
     position: relative;
     border: 1px solid #DDDDDD;
-    padding: 10px 0 10px 5px;
+    padding: 10px 0 10px 4px;
     overflow: hidden;
     list-style: none;
     margin-right: 25px;
@@ -166,7 +166,7 @@ div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_wat
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down a{
     float: left;
     color: #444;
-    width: 25%;
+    width: 26%;
 }
 div.bs-docs-example div.dy_info_list ul.info_list li div.dy_link_down div.dy_watch_down div.watch_down {
     float: left;
