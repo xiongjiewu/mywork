@@ -37,16 +37,16 @@
                                 <span class="btn upload">上传</span>
                                 <span class="btn cancel">取消</span>
                                 <form name="userphone" id="userphone" target="upload_frame" method="post" action="<?php echo rtrim(get_url(APF::get_instance()->get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
-                                    <input type="file" style="display: none;" name="image" id="image">
+                                    <input type="file" class="image" name="image" id="image">
                                     <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
                                     <input type="hidden" name="userphoto" id="userphoto" value="">
                                     <input type="submit" name="userphone_button" id="userphone_button" style="display: none;">
-                                    <input type="submit" name="submit_button" id="submit_button" style="display: none;">
+                                    <input type="submit" name="submit_button" class="submit_button" id="submit_button" style="display: none;">
                                 </form>
 				                <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
                             </div>
                             <div class="zhushi">
-                                只能传格式为png、gif、jpg的图片,最大不能超过2M!
+                                (双击上传图片按钮)只能传格式为png、gif、jpg的图片,最大不能超过2M!
                             </div>
                         </div>
                     </div>
