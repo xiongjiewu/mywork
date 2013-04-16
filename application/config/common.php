@@ -158,23 +158,24 @@ $config['menus'] = array(
         "class" => "",
     ),
 );
-
 $config['cookie_domain'] = ".local.dianying8.tv";//cookie域名
 $config['cookie_path'] = '/';//cookie路径
 $config['resgiter_code_cookie_name'] = 'local_register_code_answer';
-
 $config['web_name'] = "电影吧";
-
 $config['AuthCookieName'] = "local_MyAuth_Dianying8Info";
 $config['dianying8Secques']  = "localdianying8@cookie.com";
-
 $config['notice_max_count'] = 20;//订阅通知最大个数
-
 $config['shoucang_max_count'] = 30;//最多收藏个数
-
 $config['changepassword_max_time'] = 600;//允许修改密码页面过期失效时间
-
 $config['last_movie_month'] = 6;//最新上映展示月个数
-
-
 $config['post_show_count'] = 20;//评论显示个数
+$config['email_login_url'] = array(//邮箱类型以及登录链接
+    "qq" => "http://mail.qq.com/",
+    "163" => "http://mail.163.com/",
+    "126" => "http://mail.126.com/",
+    "139" => "http://mail.10086.cn/",
+    "sina" => "http://mail.sina.com.cn/",
+    "sohu" => "http://mail.sohu.com/",
+    "tom" => "http://web.mail.tom.com/webmail/login/index.action"
+);
+

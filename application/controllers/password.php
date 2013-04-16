@@ -41,6 +41,12 @@ class Password extends CI_Controller {
             $this->jump_to("/");
             exit;
         }
+        $emailTypeArr = explode("@",$userInfo['email']);
+        $emailTypeStr = explode(".",$emailTypeArr[1]);
+        $emailLoginUrl = APF::get_instance()->get_config_value("email_login_url");
+        if (!empty($emailLoginUrl[strtolower($emailTypeStr[0])])) {
+            $this->set_attr("emailUrl",$emailLoginUrl[strtolower($emailTypeStr[0])]);
+        }
         $this->load->set_title("密码更改 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->set_attr("email",$userInfo['email']);
         $this->load->set_head_img(false);

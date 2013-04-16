@@ -7,18 +7,21 @@ div.main{
 div.content {
     background-color: #fff;
     width: 800px;
-    padding: 150px;
+    padding:30px 150px;
     margin: 0 auto;
     margin-top: 40px;
+    border: 1px solid #aaa;
+    float: left;
 }
 div.error_img {
-    width: 770px;
+    width: 800px;
     float: left;
 }
-img {
+div.error_img i {
+    background: url("/images/common/publish.png") no-repeat scroll -200px -275px transparent;
     float: left;
-    border: none;
-    margin-top: -85px;
+    height: 21px;
+    width: 20px;
 }
 
 div.error_mes {
@@ -26,10 +29,30 @@ div.error_mes {
     margin-top: 10px;
 }
 div.error_mes span {
-    font-size: 17px;
+    font-size: 15px;
     color: #0088cc;
 }
 a {
     color: #0054AF;
     text-decoration: none;
+}
+a.login_url {
+    background: url("/images/common/publish.png") no-repeat scroll 1px -60px transparent;
+    float: left;
+    height: 50px;
+    margin-top: 20px;
+    width: 182px;
+}
+div.other {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+div.other table {
+    float: left;
+    width: 100%;
+}
+div.other table tr th,div.other table tr td {
+    text-align: left;
+    padding-top: 10px;
 }
