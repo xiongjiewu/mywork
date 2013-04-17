@@ -9,7 +9,7 @@ div.content {
     border: 1px solid #AAAAAA;
     float: left;
     margin: 40px auto 0;
-    padding: 25px 19px 60px 14px;
+    padding: 25px 19px 50px 14px;
     width: 96%;
 }
 div.error_img {
