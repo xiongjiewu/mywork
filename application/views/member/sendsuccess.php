@@ -16,7 +16,7 @@
                     <td>1. 如果没有收到<?php echo APF::get_instance()->get_config_value("base_name");?>系统发送的email，请去垃圾邮件目录里找找看。</td>
                 </tr>
                 <tr>
-                    <td>2. 还是没有，在途中？等不及， <a href="<?php echo get_url("/password?r=" . time());?>">返回重填</a></td>
+                    <td>2. 还是没有，在途中？等不及， <a href="<?php echo get_url("/password?r=" . time());?>">返回重新申请</a></td>
                 </tr>
             </table>
         </div>
