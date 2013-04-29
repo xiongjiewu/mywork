@@ -26,7 +26,7 @@
                     <span>|</span>
                     <strong>地区：</strong><?php echo $moviePlace[$movieVal['diqu']];?>
                     <span>|</span>
-                    <strong>类型：</strong><?php echo $movieType[$movieVal['type']];?>片
+                    <strong>类型：</strong><?php echo ($movieType[$movieVal['type']] == "其他")? $movieType[$movieVal['type']] : $movieType[$movieVal['type']] . "片";?>
                 </td>
             </tr>
             <tr>
