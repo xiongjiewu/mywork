@@ -113,7 +113,7 @@
                 </script>
             </div>
             <!-- Baidu Button END -->
-            <?php if (!empty($dyInfo['time1']) && ($dyInfo['time1'] <= time())):?>
+            <?php if (empty($watchLinkInfo)):?>
             &nbsp;&nbsp;
             <div class="user_add">
                 +我要提供链接
