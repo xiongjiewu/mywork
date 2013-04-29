@@ -56,7 +56,7 @@ class Usercenter extends CI_Controller
             foreach ($hotInfos as $hotVal) {
                 $idArr[] = $hotVal['infoId'];
             }
-            $movieList = $this->Backgroundadmin->getDetailInfo($idArr, false, true);
+            $movieList = $this->Backgroundadmin->getDetailInfo($idArr, 0, true);
             $hotInfos = $this->initArrById($hotInfos, "infoId");
             $this->set_attr("hotInfos", $hotInfos);
         }
