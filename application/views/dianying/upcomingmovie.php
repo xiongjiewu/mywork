@@ -16,9 +16,9 @@
                     </div>
                 </td>
                 <td>
-                    <strong>导演：</strong><?php echo $movieVal['daoyan'];?>
+                    <strong>导演：</strong><?php echo trim($movieVal['daoyan']);?>
                     <span>|</span>
-                    <strong>主演：</strong><?php $zhuyao = preg_split("/;+|；+/", $movieVal['zhuyan']);echo implode("、", $zhuyao);?>
+                    <strong>主演：</strong><?php $zhuyao = preg_split("/;+|；+/", $movieVal['zhuyan']);echo trim(implode("、", $zhuyao));?>
                     <span>|</span>
                     <strong>年份：</strong><?php echo substr($movieVal['nianfen'],0,4);?>年
                     <span>|</span>
@@ -56,7 +56,7 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>简介：</strong><?php echo $movieVal['jieshao'];?></td>
+                <td><strong>简介：</strong><?php echo trim($movieVal['jieshao']);?></td>
             </tr>
         </table>
         <?php $movieListI++; ?>
