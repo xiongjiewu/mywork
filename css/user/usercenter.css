@@ -189,8 +189,9 @@ div.user_image input.image {
     -moz-opacity:0;
     z-index: 101111;
     height: 50px;
-    width: 200px;
+    /*width: 200px;*/
     bottom: -1px;
+    cursor: pointer;
 }
 
 div.user_image input.submit_button {
