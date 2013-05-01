@@ -15,7 +15,7 @@ class Research extends CI_Controller {
             exit;
         }
 
-        $ip = ip2long($this->getUserIP());
+        $ip = $this->getUserIP();
         $params = $this->input->post();
         if (!empty($params) && is_array($params)) {
             $params['content'] = mysql_real_escape_string($params['content']);

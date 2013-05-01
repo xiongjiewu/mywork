@@ -5,7 +5,7 @@
  */
 class Closeresearchpan extends CI_Controller {
     public function index() {
-        $ip = ip2long($this->getUserIP());
+        $ip = $this->getUserIP();
         if (empty($this->Researchguide)) {
             $this->load->model("Researchguide");
         }

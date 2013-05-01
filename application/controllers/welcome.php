@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
         }
         $willInfo = $this->Backgroundadmin->getNewestInfo(2);
         if (!empty($willInfo[0])) {
-            $idStr = trim($theNewestInfo[0]['infoIdStr'],";");
+            $idStr = trim($willInfo[0]['infoIdStr'],";");
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
                 $willDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
@@ -28,7 +28,7 @@ class Welcome extends CI_Controller {
         }
         $classInfo = $this->Backgroundadmin->getNewestInfo(3);
         if (!empty($classInfo[0])) {
-            $idStr = trim($theNewestInfo[0]['infoIdStr'],";");
+            $idStr = trim($classInfo[0]['infoIdStr'],";");
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
                 $classDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);

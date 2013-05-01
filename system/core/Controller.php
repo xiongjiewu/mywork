@@ -65,7 +65,7 @@ class CI_Controller
         if (empty($this->Researchguide)) {
             $this->load->model("Researchguide");
         }
-        $ip = ip2long($this->getUserIP());
+        $ip = $this->getUserIP();
         $ipResearchInfo = $this->Researchguide->getResearchGuideInfoByFiled(array("ip"=>$ip));
         if (empty($ipResearchInfo)) {
             $this->_attr['showResearchPan'] = true;
