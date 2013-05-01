@@ -100,11 +100,13 @@ $config['shoufeiType'] = array(
 $config['base_uri'] = "";
 
 $config['error_code'] = array(
-    1 => array("content" => "您访问的内容已被删除或网页不存在","return_url" => "/"),
-    2 => array("content" => "您需要登录才可以发表评论","return_url" => "/"),
-    3 => array("content" => "网络连接失败，请重新操作！","return_url" => "/"),
-    4 => array("content" => "您访问的页面已过期，请重新操作！","return_url" => "/"),
-    5 => array("content" => "为了防止灌水，在". $config['max_post_time']."秒之内不能连续发表评论","return_url" => "/"),
+    1 => array("title" => "","content" => "您访问的内容已被删除或网页不存在","return_url" => "/"),
+    2 => array("title" => "","content" => "您需要登录才可以发表评论","return_url" => "/"),
+    3 => array("title" => "","content" => "网络连接失败，请重新操作！","return_url" => "/"),
+    4 => array("title" => "","content" => "您访问的页面已过期，请重新操作！","return_url" => "/"),
+    5 => array("title" => "","content" => "为了防止灌水，在". $config['max_post_time']."秒之内不能连续发表评论","return_url" => "/"),
+    6 => array("title" => "感谢您的参与！","content" => "您已经填写过调查问卷，感谢您对我们工作的支持！～","return_url" => "/"),
+    7 => array("title" => "感谢您的参与！","content" => "调查问卷成功提交，感谢您对我们工作的支持！～","return_url" => "/"),
 );
 
 $config['movie_type'] = array(
@@ -128,34 +130,41 @@ $config['movie_type'] = array(
 $config['menus'] = array(
     array(
         "index" => "",
-        "titlle" => "首&nbsp;&nbsp;&nbsp;页",
+        "title" => "首&nbsp;&nbsp;&nbsp;页",
         "link" => "/",
         "class" => "",
     ),
     array(
         "index" => "",
-        "titlle" => "最新上映",
+        "title" => "最新上映",
         "link" => get_url("/latestmovie/"),
         "class" => "",
     ),
     array(
         "index" => "",
-        "titlle" => "即将上映",
+        "title" => "即将上映",
         "link" => get_url("/upcomingmovie/"),
         "class" => "",
     ),
     array(
         "index" => "list",
-        "titlle" => "重温经典",
+        "title" => "重温经典",
         "link" => get_url("/classicmovie/"),
         "class" => "dy_sort",
         "type_info" => $config['movie_type'],
     ),
     array(
         "index" => "",
-        "titlle" => "反馈我想看",
+        "title" => "反馈我想看",
         "link" => get_url("/usercenter/createfeedback/want/"),
         "class" => "",
+    ),
+    array(
+        "index" => "research",
+        "title" => "功能问卷调查",
+        "link" => get_url("/research?uu=" . substr(time(),0,9)),
+        "class" => "",
+        "type_info" => array(),
     ),
 );
 $config['cookie_domain'] = ".local.dianying8.tv";//cookie域名

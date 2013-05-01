@@ -55,6 +55,16 @@ var initOjb = {
             searchAbount.html("");
             searchAbount.hide();
         }
+    },
+    ajaxCloseResearchPan:function() {
+        $.ajax({
+            type:"post",
+            url:"/closeresearchpan/",
+            dataType:"json",
+            success:function() {
+                window.location.reload();
+            }
+        });
     }
 };
 (function ($) {
@@ -135,11 +145,16 @@ var initOjb = {
         });
         $("ul.nav li.loginr a").each(function() {
             var i = $(this).find("i");
-            $(this).bind("mouseover",function(){
+            $(this).bind("mouseover",function() {
                 i.addClass("icon-white");
             });
-            $(this).bind("mouseleave",function(){
+            $(this).bind("mouseleave",function() {
                 i.removeClass("icon-white");
+            });
+        });
+        $(".close_research").each(function() {
+            $(this).bind("click",function() {
+                initOjb.ajaxCloseResearchPan();
             });
         })
     });

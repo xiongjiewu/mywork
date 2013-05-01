@@ -47,6 +47,7 @@ class CI_Controller
 
         $this->load->initialize();
 
+        //用户id
         if (!empty($this->userId)) {
             $this->_attr['userId'] = $this->userId;
             $this->load->model("Message");
@@ -54,9 +55,35 @@ class CI_Controller
             $this->_attr['userNoReadMessageCount'] = $userNoReadMessageCount;
             $this->load->set_login_pan(false);
         }
+
+        //用户名称
         if (!empty($this->userName)) {
             $this->_attr['userName'] = $this->userName;
         }
+
+        //问卷调查
+        if (empty($this->Researchguide)) {
+            $this->load->model("Researchguide");
+        }
+        $ip = ip2long($this->getUserIP());
+        $ipResearchInfo = $this->Researchguide->getResearchGuideInfoByFiled(array("ip"=>$ip));
+        if (empty($ipResearchInfo)) {
+            $this->_attr['showResearchPan'] = true;
+        } else {
+            $this->_attr['showResearchPan'] = false;
+        }
+
+        //是否填过调查问卷
+        if (empty($this->Researchinsert)) {
+            $this->load->model("Researchinsert");
+        }
+        $researchInfo = $this->Researchinsert->getResearchInfoByFiled(array("ip"=>$ip));
+        if (empty($researchInfo)) {
+            $this->_attr['notDoResearch'] = true;
+        } else {
+            $this->_attr['notDoResearch'] = false;
+        }
+
         log_message('debug', "Controller Class Initialized");
     }
 
@@ -77,7 +104,7 @@ class CI_Controller
         $this->load->view($main, $this->_attr);
     }
 
-    private $_attr;
+    protected $_attr;
 
     public function set_attr($name, $value)
     {

@@ -56,26 +56,28 @@
                     <?php $menus = get_config_value("menus")?>
                     <?php $index = $this->load->get_top_index();?>
                     <?php foreach ($menus as $menuKey => $menuVal): ?>
-                        <li class="<?php if ($index == $menuKey): ?>active<?php endif; ?> <?php echo $menuVal['class']; ?>">
-                            <a href="<?php echo $menuVal['link']; ?>"><?php echo $menuVal['titlle'];?></a>
-                            <?php if (!empty($menuVal['index']) && ($menuVal['index'] == "list")): ?>
-                                <div class="dy_type_list">
-                                    <table class="table">
-                                        <?php foreach ($menuVal['type_info'] as $infokey => $infoVal): ?>
-                                            <tr>
-                                                <th><?php echo $infoVal['type'];?></th>
-                                                <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
-                                                    <td>
-                                                        <a <?php if ($index == $menuKey && $infokey == $data['bigtype'] && $key == $data['type']): ?>class="active" <?php endif;?>
-                                                           href="<?php echo $infoVal['base_url'] . $key; ?>"><?php echo $infoDetail;?></a>
-                                                    </td>
-                                                <?php endforeach;?>
-                                            </tr>
-                                        <?php endforeach;?>
-                                    </table>
-                                </div>
-                            <?php endif;?>
-                        </li>
+                        <?php if (($menuVal['index'] != "research") || !empty($notDoResearch)):?>
+                            <li class="<?php if ($index == $menuKey): ?>active<?php endif; ?> <?php echo $menuVal['class']; ?>">
+                                <a href="<?php echo $menuVal['link']; ?>"><?php echo $menuVal['title'];?></a>
+                                <?php if (!empty($menuVal['index']) && ($menuVal['index'] == "list")): ?>
+                                    <div class="dy_type_list">
+                                        <table class="table">
+                                            <?php foreach ($menuVal['type_info'] as $infokey => $infoVal): ?>
+                                                <tr>
+                                                    <th><?php echo $infoVal['type'];?></th>
+                                                    <?php foreach ($infoVal['info'] as $key => $infoDetail): ?>
+                                                        <td>
+                                                            <a <?php if ($index == $menuKey && $infokey == $data['bigtype'] && $key == $data['type']): ?>class="active" <?php endif;?>
+                                                               href="<?php echo $infoVal['base_url'] . $key; ?>"><?php echo $infoDetail;?></a>
+                                                        </td>
+                                                    <?php endforeach;?>
+                                                </tr>
+                                            <?php endforeach;?>
+                                        </table>
+                                    </div>
+                                <?php endif;?>
+                            </li>
+                        <?php endif;?>
                     <?php endforeach;?>
                     <li class="search" style="margin-left: 100px">
                         <form autocomplete="off" name="search_dy" id="search_dy" onsubmit="return false;"
@@ -149,7 +151,7 @@
     <header class="jumbotron subhead" id="overview">
         <div class="container">
             <h1>电影吧</h1>
-            <p class="lead">您还在为找不到电影资源而苦恼嘛？您还在为大量的影片资源无法挑选而苦恼嘛？您想看的就是我们的宗旨...</p>
+            <p class="lead">您还在为找不到电影资源而苦恼嘛？您还在为大量的影片资源无法挑选而苦恼嘛？</p>
         </div>
     </header>
 <?php endif;?>
@@ -161,9 +163,12 @@
         <?php $this->load->view($view); ?>
     <?php endif;?>
 </div>
-<?php $this->load->view("component/footer");?>
+<?php $this->load->view("component/footer");//底部?>
 <?php if ($this->load->get_login_pan()):?>
-<?php $this->load->view("component/loginpan");?>
+    <?php $this->load->view("component/loginpan");//登录框?>
+<?php endif;?>
+<?php if (!empty($showResearchPan)):?>
+    <?php $this->load->view("component/researchpan");//调查问卷?>
 <?php endif;?>
 </body>
 </html>

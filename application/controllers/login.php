@@ -12,6 +12,9 @@ class Login extends CI_Controller {
 
     public function index()
     {
+        //不展示调查问卷提示框
+        $this->_attr['showResearchPan'] = false;
+
         if (!empty($this->userId)) {//已登录，跳转至首页
             $this->jump_to("/");
         }
