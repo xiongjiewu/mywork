@@ -112,17 +112,17 @@ $config['error_code'] = array(
 $config['movie_type'] = array(
     array(
         "type" => "类型",
-        "base_url" => get_url("/classicmovie/type/"),
+        "base_url" => get_url("/moviceguide/type/"),
         "info" => $config['movieType'],
     ),
     array(
         "type" => "年份",
-        "base_url" => get_url("/classicmovie/year/"),
+        "base_url" => get_url("/moviceguide/year/"),
         "info" => array(2004=>2004,2005=>2005,2006=>2006,2007=>2007,2008 => 2008,2009 => 2009,2010 => 2010,2011 => 2011,2012 => 2012,2013 => 2013),
     ),
     array(
         "type" => "地区",
-        "base_url" => get_url("/classicmovie/place/"),
+        "base_url" => get_url("/moviceguide/place/"),
         "info" => $config['moviePlace'],
     ),
 );
@@ -148,8 +148,8 @@ $config['menus'] = array(
     ),
     array(
         "index" => "list",
-        "title" => "重温经典",
-        "link" => get_url("/classicmovie/"),
+        "title" => "电影导航",
+        "link" => get_url("/moviceguide/"),
         "class" => "dy_sort",
         "type_info" => $config['movie_type'],
     ),

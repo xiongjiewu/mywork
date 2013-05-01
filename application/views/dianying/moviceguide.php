@@ -3,7 +3,7 @@
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
             <li <?php if ($type == "all"):?>class="active" <?php endif;?>>
-                <a href="<?php echo get_url("/classicmovie/");?>">
+                <a href="<?php echo get_url("/moviceguide/");?>">
                     <i class="icon-chevron-right"></i> 全部
                 </a>
             </li>

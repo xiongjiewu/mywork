@@ -3,7 +3,7 @@
  * 网站重温经典列表页
  * added by xiongjiewu at 2013-3-4
  */
-class Classicmovie extends CI_Controller {
+class Moviceguide extends CI_Controller {
 
     private $_maxCount = 500;//最大允许显示电影个数
     private $_maxPage = 50;//最大允许页码
@@ -44,19 +44,19 @@ class Classicmovie extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
-        $base_url = get_url("/classicmovie/type/{$type}/");
+        $base_url = get_url("/moviceguide/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
         $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/classicmovie.css"));
-        $this->load->set_js(array("/js/dianying/classicmovie.js"));
+        $this->load->set_css(array("/css/dianying/moviceguide.css"));
+        $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
-        $this->set_view('dianying/classicmovie');
+        $this->set_view('dianying/moviceguide');
     }
 
     public function year($type = 1,$page = 1) {
@@ -84,19 +84,19 @@ class Classicmovie extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
-        $base_url = get_url("/classicmovie/type/{$type}/");
+        $base_url = get_url("/moviceguide/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
         $this->load->set_title($type . "年 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/classicmovie.css"));
-        $this->load->set_js(array("/js/dianying/classicmovie.js"));
+        $this->load->set_css(array("/css/dianying/moviceguide.css"));
+        $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
-        $this->set_view('dianying/classicmovie');
+        $this->set_view('dianying/moviceguide');
     }
 
     public function place($type = 1,$page = 1) {
@@ -124,18 +124,18 @@ class Classicmovie extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
-        $base_url = get_url("/classicmovie/type/{$type}/");
+        $base_url = get_url("/moviceguide/type/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
         $this->load->set_title($this->_moviePlace[$type] . "片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/classicmovie.css"));
-        $this->load->set_js(array("/js/dianying/classicmovie.js"));
+        $this->load->set_css(array("/css/dianying/moviceguide.css"));
+        $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(3);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
-        $this->set_view('dianying/classicmovie');
+        $this->set_view('dianying/moviceguide');
     }
 }
