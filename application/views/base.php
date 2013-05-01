@@ -149,8 +149,7 @@
     <header class="jumbotron subhead" id="overview">
         <div class="container">
             <h1>电影吧</h1>
-
-            <p class="lead">您还在为找不到电影资源而苦恼嘛？你还在为大量的影片资源无法挑选而苦恼嘛？</p>
+            <p class="lead">您还在为找不到电影资源而苦恼嘛？您还在为大量的影片资源无法挑选而苦恼嘛？您想看的就是我们的宗旨...</p>
         </div>
     </header>
 <?php endif;?>

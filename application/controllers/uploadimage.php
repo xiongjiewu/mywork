@@ -5,17 +5,17 @@
  */
 class Uploadimage extends CI_Controller {
 
-    public function index($data = null,$path = "dy",$fileName = "image")
+    public function index($data = null,$path = "dy",$fileName = "image",$width = 100,$height = 100)
     {
         $result = array(
             "status" => "no",
             "error" => "服务连接失败，请重新尝试!",
         );
-        $config['upload_path']         = "./.././img/images/{$path}/";
-        $config['allowed_types']     = 'png|gif|jpg|PNG|GIF|JPG';
-        $config['max_size']          = '2048';
-        $config['max_width']          = '1024';
-        $config['max_height']         = '768';
+        $config['upload_path']         = "./.././img/images/{$path}/";//保存地址
+        $config['allowed_types']     = 'png|gif|jpg|PNG|GIF|JPG';//图片类型
+        $config['max_size']          = '2048';//限制大小/M
+        $config['max_width']          = '1024';//限制最大宽度
+        $config['max_height']         = '768';//限制最大高度
         $config['file_name']         = md5($data . date('YmdHis'));
 
         $this->load->library('upload', $config);
@@ -26,12 +26,22 @@ class Uploadimage extends CI_Controller {
         } else {
             $data = array('upload_data' => $this->upload->data());
         }
-        if (!empty($data['error'])) {
+        if (!empty($data['error'])) {//上传失败
             $result["error"] = $data['error'];
         } else {
+            //图片全路径
             $imageFullPath = $data['upload_data']['full_path'];
-            $imageFullPathArr = explode("images",$imageFullPath);
+
+            //图片剪裁
+            $fileNameArr = explode(".",$imageFullPath);
+            $fileType = $fileNameArr[count($fileNameArr) - 1];//图片类型
+            $this->load->model('Resizeimage');
+            $resizeImageInfo = $this->Resizeimage->resizeImageDo(imagecreatefromjpeg($data['upload_data']['full_path']),$width,$height,$config['upload_path'],$config['file_name'] . "_{$width}x{$height}.",$fileType);
+
+            //获取图片地址
+            $imageFullPathArr = explode("images",$resizeImageInfo);
             $imageFullPath = "/images" . $imageFullPathArr[1];
+
             $result["status"] = "ok";
             $result["path"] = $imageFullPath;
             $result["fullPath"] = trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $imageFullPath;
