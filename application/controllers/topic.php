@@ -7,6 +7,9 @@ class Topic extends CI_Controller {
 
     public function index($id = null)
     {
+        //不展示调查问卷提示框
+        $this->_attr['showResearchPan'] = false;
+
         if (empty($id)) {
             $this->jump_to("/");
             exit;

@@ -7,6 +7,9 @@ class Registersuccess extends CI_Controller {
 
     public function index()
     {
+        //不展示调查问卷提示框
+        $this->_attr['showResearchPan'] = false;
+
         $code = $this->input->get("code");
         if (empty($this->userId) || !isset($code) || ($this->userId != base64_decode($code))) {//验证不通过跳转至首页
             $this->jump_to("/");

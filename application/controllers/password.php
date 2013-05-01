@@ -11,6 +11,8 @@ class Password extends CI_Controller {
             $this->jump_to("/");
             exit;
         }
+        //不展示调查问卷提示框
+        $this->_attr['showResearchPan'] = false;
     }
 
     public function index()
