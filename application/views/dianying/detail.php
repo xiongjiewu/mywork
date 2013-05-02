@@ -64,9 +64,11 @@
                                 <tr class="">
                                     <td><strong>导演：</strong><?php echo $dyInfo['daoyan'];?></td>
                                 </tr>
+                                <?php if (!empty($dyInfo['nianfen'])):?>
                                 <tr class="">
                                     <td><strong>年份：</strong><?php echo substr($dyInfo['nianfen'],0,4);?>年</td>
                                 </tr>
+                                <?php endif;?>
                                 <tr class="">
                                     <td><strong>时长：</strong><?php echo $dyInfo['shichang'];?>分钟</td>
                                 </tr>
