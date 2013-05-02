@@ -146,12 +146,12 @@ $config['menus'] = array(
         "link" => get_url("/upcomingmovie/"),
         "class" => "",
     ),
-    array(
-        "index" => "",
-        "title" => "重温经典",
-        "link" => get_url("/classmovice/"),
-        "class" => "",
-    ),
+//    array(
+//        "index" => "",
+//        "title" => "重温经典",
+//        "link" => get_url("/classmovice/"),
+//        "class" => "",
+//    ),
     array(
         "index" => "list",
         "title" => "电影导航",
