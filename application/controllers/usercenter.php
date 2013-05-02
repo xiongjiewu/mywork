@@ -94,7 +94,7 @@ class Usercenter extends CI_Controller
                 $idArr[] = $scVal['infoId'];
             }
             $this->load->model("Backgroundadmin");
-            $movieList = $this->Backgroundadmin->getDetailInfo($idArr, false, true);
+            $movieList = $this->Backgroundadmin->getDetailInfo($idArr, 0, true);
             $this->set_attr("movieList", $movieList);
             $shouCangInfo = $this->initArrById($shouCangInfo, "infoId");
             $this->set_attr("shouCangInfo", $shouCangInfo);
