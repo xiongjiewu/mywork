@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * 网站重温经典列表页
+ * 网站电影导航页
  * added by xiongjiewu at 2013-3-4
  */
 class Moviceguide extends CI_Controller {
@@ -49,10 +49,10 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "重温经典列表") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "电影导航") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
-        $this->load->set_top_index(3);
+        $this->load->set_top_index(4);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
@@ -92,7 +92,7 @@ class Moviceguide extends CI_Controller {
         $this->load->set_title($type . "年 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
-        $this->load->set_top_index(3);
+        $this->load->set_top_index(4);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
@@ -132,7 +132,7 @@ class Moviceguide extends CI_Controller {
         $this->load->set_title($this->_moviePlace[$type] . "片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
-        $this->load->set_top_index(3);
+        $this->load->set_top_index(4);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));

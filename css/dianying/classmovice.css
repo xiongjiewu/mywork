@@ -1,0 +1,38 @@
+div.classmovice_list {
+    float: left;
+    width: 99%;
+    border: 5px solid #eee;
+    background-color: #fff;
+    margin-top: 40px;
+}
+div.classmovice_list ul.list_info {
+    float: left;
+    margin: 50px 85px;
+    width: 93%;
+}
+div.classmovice_list ul.list_info li {
+    float: left;
+    list-style: none;
+    width: 10%;
+    overflow: hidden;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    padding: 5px;
+    border: 2px solid #eee;
+}
+div.classmovice_list ul.list_info li img {
+    width: 150px;
+    height: 200px;
+}
+div.classmovice_list ul.list_info li div.title{
+    margin-top: 5px;
+}
+div.page_info {
+    width: 97%;
+    float: left;
+    padding: 30px 0;
+}
+table.page {
+    background: none repeat scroll 0 0 transparent;
+    margin: 0 auto;
+}
