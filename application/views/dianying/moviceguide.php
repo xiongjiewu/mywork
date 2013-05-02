@@ -43,13 +43,13 @@
             </table>
         <?php endforeach;?>
         <?php if ($mouvieCount > $limit):?>
-        <table class="page">
-            <tr>
-                <td>
-                    <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
-                </td>
-            </tr>
-        </table>
+            <table class="page">
+                <tr>
+                    <td>
+                        <?php $this->load->view("component/pagenew", array("fenye" => $fenye));?>
+                    </td>
+                </tr>
+            </table>
         <?php endif;?>
 
         <?php else:?>

@@ -282,7 +282,7 @@ class Backgroundadmin extends CI_Model {
         if ($type != null) {
             $typeStr = "type = {$type} and ";
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where {$typeStr} del = {$del} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$typeStr} del = {$del} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -293,7 +293,7 @@ class Backgroundadmin extends CI_Model {
         if ($type != null) {
             $typeStr = "type = {$type} and ";
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where {$typeStr} del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where {$typeStr} del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
@@ -307,7 +307,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($nianfen) || !isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where nianfen = {$nianfen} and del = {$del} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where nianfen = {$nianfen} and del = {$del} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -317,7 +317,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($nianfen)) {
             return false;
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where nianfen = {$nianfen} and del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where nianfen = {$nianfen} and del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
@@ -331,7 +331,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($diqu) || !isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where diqu = {$diqu} and del = {$del} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where diqu = {$diqu} and del = {$del} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -341,7 +341,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($diqu)) {
             return false;
         }
-        $sql = "select count(1) as cn from tbl_detailInfo where diqu = {$diqu} and del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where diqu = {$diqu} and del = {$del}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
@@ -352,7 +352,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($searchW)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from tbl_detailInfo where name like '{$searchW}%' and del = 0 limit {$limit};";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where name like '{$searchW}%' and del = 0 limit {$limit};";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -366,5 +366,29 @@ class Backgroundadmin extends CI_Model {
         $sql = "SELECT COUNT(infoId) AS cn,infoId FROM `tbl_yingping` GROUP BY infoId ORDER BY cn DESC limit {$limit};";
         $query = $this->db->query($sql);
         return $query->result_array();
+    }
+
+    /** 获取top电影（经典电影）
+     * @param $offset
+     * @param $limit
+     * @return bool
+     */
+    public function getTopMoviceInfo($offset,$limit) {
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($offset) || empty($limit)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where topType = 1 and del = 0 limit {$offset},{$limit};";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return $result;
+    }
+
+    public function getTopMoviceInfoCount() {
+        $sql = "select count(1) as cn from `tbl_detailInfo` where topType = 1 and del = 0";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
     }
 }
