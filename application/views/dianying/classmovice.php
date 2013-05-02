@@ -6,7 +6,7 @@
                     <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
                 </a>
                 <div class="title">
-                    <a href="/detail/index/<?php echo $moviceVal['id'];?>/">
+                    <a href="/detail/index/<?php echo $moviceVal['id'];?>/" title="<?php echo $moviceVal['name'];?>">
                         <?php echo $moviceVal['name'];?>
                     </a>
                 </div>
