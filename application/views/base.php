@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" style="float: left;" href="/">电影吧</a>
+            <a class="brand" style="color:#fff;float: left;" href="/">电影吧</a>
 
             <div class="nav-collapse collapse head_top_menus" style="float: left;width: 93%;">
                 <ul class="nav">
