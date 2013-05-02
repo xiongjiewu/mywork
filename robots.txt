@@ -1,0 +1,20 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yahoo
+Allow: /
+
+User-agent: YodaoBot
+Allow: /
+
+User-agent: Sosospider/Sosoimagespider
+Allow: /
+
+User-agent: sogou
+Allow: /
+
+User-agent: msnbot
+Allow: /

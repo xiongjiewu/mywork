@@ -147,6 +147,12 @@ $config['menus'] = array(
         "class" => "",
     ),
     array(
+        "index" => "",
+        "title" => "重温经典",
+        "link" => get_url("/classmovice/"),
+        "class" => "",
+    ),
+    array(
         "index" => "list",
         "title" => "电影导航",
         "link" => get_url("/moviceguide/"),
