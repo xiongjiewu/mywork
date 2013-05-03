@@ -84,7 +84,7 @@ class Moviceguide extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
-        $base_url = get_url("/moviceguide/type/{$type}/");
+        $base_url = get_url("/moviceguide/year/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
@@ -124,7 +124,7 @@ class Moviceguide extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
-        $base_url = get_url("/moviceguide/type/{$type}/");
+        $base_url = get_url("/moviceguide/place/{$type}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
