@@ -7,7 +7,7 @@ class Moviceguide extends CI_Controller {
 
     private $_maxCount = 500;//最大允许显示电影个数
     private $_maxPage = 50;//最大允许页码
-    private $_limit = 20;
+    private $_limit = 21;
 
     public function index() {
         $this->type(null,1);
