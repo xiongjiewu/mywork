@@ -44,7 +44,12 @@ $config['bofangqiType'] = array(
     4 => "奇艺",
     5 => "优酷",
     6 => "土豆",
-    7 => "其他",
+    7 => "搜狐",
+    8 => "新浪",
+    9 => "风行",
+    10 => "pptv",
+    11 => "pps",
+    12 => "其他",
 );
 
 $config['qingxiType'] = array(
