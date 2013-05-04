@@ -304,20 +304,27 @@ class Backgroundadmin extends CI_Model {
         $nianfen = intval($nianfen);
         $offset = intval($offset);
         $limit = intval($limit);
-        if (!isset($nianfen) || !isset($offset) || !isset($limit)) {
+        if (!isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where nianfen = {$nianfen} and del = {$del} limit {$offset},$limit";
+        $where = "";
+        if (!empty($nianfen)) {
+            $where .= "nianfen = {$nianfen} and ";
+        }
+        $where .= "del = {$del}";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where  {$where} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function getDetailInfoCountByNianFen($nianfen,$del = 0)
     {
         $nianfen = intval($nianfen);
-        if (!isset($nianfen)) {
-            return false;
+        $where = "";
+        if (!empty($nianfen)) {
+            $where .= "nianfen = {$nianfen} and ";
         }
-        $sql = "select count(1) as cn from `tbl_detailInfo` where nianfen = {$nianfen} and del = {$del}";
+        $where .= "del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where {$where};";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
@@ -328,20 +335,27 @@ class Backgroundadmin extends CI_Model {
         $diqu = intval($diqu);
         $offset = intval($offset);
         $limit = intval($limit);
-        if (!isset($diqu) || !isset($offset) || !isset($limit)) {
+        if (!isset($offset) || !isset($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where diqu = {$diqu} and del = {$del} limit {$offset},$limit";
+        $where = "";
+        if (!empty($diqu)) {
+            $where .= "diqu = {$diqu} and ";
+        }
+        $where .= "del = {$del}";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function getDetailInfoCountByDiQu($diqu,$del = 0)
     {
         $diqu = intval($diqu);
-        if (!isset($diqu)) {
-            return false;
+        $where = "";
+        if (!empty($diqu)) {
+            $where .= "diqu = {$diqu} and ";
         }
-        $sql = "select count(1) as cn from `tbl_detailInfo` where diqu = {$diqu} and del = {$del}";
+        $where .= "del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where {$where}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
