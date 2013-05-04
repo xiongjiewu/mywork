@@ -49,7 +49,7 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "电影导航") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "按类型检索") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(4);
