@@ -4,7 +4,7 @@
             <div class="item">
                 <label><?php echo $typeVal['type'];?>：</label>
                 <ul>
-                    <li>
+                    <li <?php if ($typeKey != $bigtype || $type == "all"):?>class="active" <?php endif;?>>
                         <a href="<?php echo $typeVal['base_url'];?>">全部</a>
                     </li>
                     <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal): ?>

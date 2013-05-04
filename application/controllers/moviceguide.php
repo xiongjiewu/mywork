@@ -49,7 +49,7 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "电影导航") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type != "all")? $this->_movieType[$type] . "片" : "按类型检索") . " - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(4);
@@ -59,8 +59,13 @@ class Moviceguide extends CI_Controller {
         $this->set_view('dianying/moviceguide');
     }
 
-    public function year($type = 1,$page = 1) {
-        $type = intval($type);
+    public function year($type = null,$page = 1) {
+        if (empty($type) || ($type == "all")) {
+            $type = "all";
+            $typeS = null;
+        } else {
+            $type = $typeS = intval($type);
+        }
         $page = intval($page);
         $page = ($page > $this->_maxPage) ? $this->_maxPage : $page;
         $this->set_attr("bigtype",1);
@@ -68,12 +73,12 @@ class Moviceguide extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByNianFen($type);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByNianFen($typeS);
         $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
             $page = ceil($mouvieCount / $limit);
         }
-        $movieList = $this->Backgroundadmin->getDetailInfoByNianFen($type,($page - 1) * $limit,$limit);
+        $movieList = $this->Backgroundadmin->getDetailInfoByNianFen($typeS,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
                 $movieList[$infoKey]['class'] = "firstRow";
@@ -89,7 +94,7 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title($type . "年 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type == "all") ? "按年份检索" : $type) ."年 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(4);
@@ -99,8 +104,13 @@ class Moviceguide extends CI_Controller {
         $this->set_view('dianying/moviceguide');
     }
 
-    public function place($type = 1,$page = 1) {
-        $type = intval($type);
+    public function place($type = null,$page = 1) {
+        if (empty($type) || ($type == "all")) {
+            $type = "all";
+            $typeS = null;
+        } else {
+            $type = $typeS = intval($type);
+        }
         $page = intval($page);
         $page = ($page > $this->_maxPage) ? $this->_maxPage : $page;
         $this->set_attr("bigtype",2);
@@ -108,12 +118,12 @@ class Moviceguide extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $limit = $this->_limit;
         $this->set_attr("limit",$limit);
-        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByDiQu($type);
+        $mouvieCount = $this->Backgroundadmin->getDetailInfoCountByDiQu($typeS);
         $mouvieCount = ($mouvieCount > $this->_maxCount) ? $this->_maxCount : $mouvieCount;
         if ($mouvieCount > 0 && $page > ceil($mouvieCount / $limit)) {
             $page = ceil($mouvieCount / $limit);
         }
-        $movieList = $this->Backgroundadmin->getDetailInfoByDiQ($type,($page - 1) * $limit,$limit);
+        $movieList = $this->Backgroundadmin->getDetailInfoByDiQ($typeS,($page - 1) * $limit,$limit);
         foreach($movieList as $infoKey => $infoVal) {
             if ($infoKey < 4) {
                 $movieList[$infoKey]['class'] = "firstRow";
@@ -129,7 +139,7 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("fenye",$fenye);
         $this->load->set_head_img(false);
         
-        $this->load->set_title($this->_moviePlace[$type] . "片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title((($type == "all") ? "按地区检索" : $this->_moviePlace[$type]) . "片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/moviceguide.css"));
         $this->load->set_js(array("/js/dianying/moviceguide.js"));
         $this->load->set_top_index(4);
