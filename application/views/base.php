@@ -34,6 +34,12 @@
         <link href="/css/member/loginpan.css" rel="stylesheet">
         <script type="text/javascript" src="/js/member/loginpan.js"></script>
     <?php endif;?>
+    <?php $js = $this->load->get_js();?>
+    <?php if (!empty($js)): ?>
+        <?php foreach ($js as $jsKey => $jsVal): ?>
+            <script type="text/javascript" src="/<?php echo trim($jsVal, "/"); ?>"></script>
+        <?php endforeach; ?>
+    <?php endif;?>
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 <div class="navbar navbar-inverse navbar-fixed-top" style="min-width: 100%;float: left;max-height: 44px;">
@@ -164,12 +170,6 @@
 <?php endif;?>
 <?php if (!empty($showResearchPan)):?>
     <?php $this->load->view("component/researchpan");//调查问卷?>
-<?php endif;?>
-<?php $js = $this->load->get_js();?>
-<?php if (!empty($js)): ?>
-    <?php foreach ($js as $jsKey => $jsVal): ?>
-        <script type="text/javascript" src="/<?php echo trim($jsVal, "/"); ?>"></script>
-    <?php endforeach; ?>
 <?php endif;?>
 </body>
 </html>
