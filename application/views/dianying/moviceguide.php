@@ -26,9 +26,15 @@
                         <?php echo $moviceVal['name'];?>
                     </a>
                 </div>
-                <div class="title">
-                    导演：<?php echo $moviceVal['daoyan'];?>
-                </div>
+                <?php if (!empty($moviceVal['daoyan'])):?>
+                    <div class="title">
+                        导演：<?php echo $moviceVal['daoyan'];?>
+                    </div>
+                <?php else:?>
+                    <div class="title">
+                        地区：<?php echo $moviePlace[$moviceVal['diqu']];?>
+                    </div>
+                <?php endif;?>
                 <div class="title">
                     类型：<?php echo $movieType[$moviceVal['type']];?>
                 </div>
