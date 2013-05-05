@@ -37,9 +37,15 @@
                     <tr>
                         <td>片名：<a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>"><?php echo $movieVal['name'];?></a></td>
                     </tr>
-                    <tr>
-                        <td>导演：<?php echo $movieVal['daoyan'];?></td>
-                    </tr>
+                    <?php if (!empty($movieVal['daoyan'])):?>
+                        <tr>
+                            <td>导演：<?php echo $movieVal['daoyan'];?></td>
+                        </tr>
+                    <?php else:?>
+                        <tr>
+                            <td>地区：<?php echo $moviePlace[$movieVal['diqu']];?></td>
+                        </tr>
+                    <?php endif;?>
                     <tr>
                         <td>地区：<?php echo $moviePlace[$movieVal['diqu']];?></td>
                     </tr>
