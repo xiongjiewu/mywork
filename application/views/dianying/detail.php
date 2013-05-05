@@ -61,17 +61,21 @@
                                         <strong>主演：</strong><?php $zhuyao = preg_split("/;+|；+/", $dyInfo['zhuyan']);echo implode("、", $zhuyao);?>
                                     </td>
                                 </tr>
-                                <tr class="">
-                                    <td><strong>导演：</strong><?php echo $dyInfo['daoyan'];?></td>
-                                </tr>
+                                <?php if (!empty($dyInfo['daoyan'])):?>
+                                    <tr class="">
+                                        <td><strong>导演：</strong><?php echo $dyInfo['daoyan'];?></td>
+                                    </tr>
+                                <?php endif;?>
                                 <?php if (!empty($dyInfo['nianfen'])):?>
                                 <tr class="">
                                     <td><strong>年份：</strong><?php echo substr($dyInfo['nianfen'],0,4);?>年</td>
                                 </tr>
                                 <?php endif;?>
-                                <tr class="">
-                                    <td><strong>时长：</strong><?php echo $dyInfo['shichang'];?>分钟</td>
-                                </tr>
+                                <?php if (!empty($dyInfo['shichang'])):?>
+                                    <tr class="">
+                                        <td><strong>时长：</strong><?php echo $dyInfo['shichang'];?>分钟</td>
+                                    </tr>
+                                <?php endif;?>
                                 <tr class="">
                                     <td><strong>类型：</strong><?php echo $movieType[$dyInfo['type']];?>片</td>
                                 </tr>
@@ -169,7 +173,11 @@
                     <?php foreach ($downLoadLinkInfo as $downLoadLinkInfoKey => $downLoadLinkInfoVal): ?>
                         <a target="_blank" href="<?php echo $downLoadLinkInfoVal['link']; ?>"
                            class="btn btn-small <?php if (($downLoadLinkInfoI % 4) == 0): ?>btn-primary<?php elseif (($downLoadLinkInfoI % 4) == 1): ?>btn-warning<?php elseif (($downLoadLinkInfoI % 4) == 2): ?>btn-success<?php elseif (($downLoadLinkInfoI % 4) == 3): ?>btn-danger<?php endif; ?>"><?php echo $downLoadType[$downLoadLinkInfoVal['type']];?>
-                            下载(<?php echo $downLoadLinkInfoVal['size']?>M)</a>
+                            下载
+                            <?php if ($downLoadLinkInfoVal['size'] > 0):?>
+                                (<?php echo $downLoadLinkInfoVal['size']?>M)
+                            <?php endif;?>
+                        </a>
                         <?php $downLoadLinkInfoI++; ?>
                     <?php endforeach;?>
                 </p>
