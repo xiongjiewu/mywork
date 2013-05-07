@@ -80,7 +80,7 @@
                             </li>
                         <?php endif;?>
                     <?php endforeach;?>
-                    <li class="search" style="margin-left: 100px">
+                    <li class="search" style="margin-left: 20px">
                         <form autocomplete="off" name="search_dy" id="search_dy" onsubmit="return false;"
                               action="<?php echo get_url("/search/"); ?>">
                             <input type="text" class="search_value" name="search" id="search"
