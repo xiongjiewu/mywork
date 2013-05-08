@@ -50,6 +50,7 @@ $config['bofangqiType'] = array(
     10 => "pptv",
     11 => "pps",
     12 => "其他",
+    13 => "乐视",
 );
 
 $config['qingxiType'] = array(
