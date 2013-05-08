@@ -4,7 +4,7 @@
  * added by xiongjiewu at 2013-5-1
  */
 class Classmovice extends CI_Controller {
-    private $_limit = 28;
+    private $_limit = 40;
     public function index($page = 1) {
         $page = intval($page);
         $page = empty($page) ? 1 : $page;
