@@ -27,7 +27,7 @@ class Search extends CI_Controller {
         }
         $searchW = implode(":",$lastKeyArr);
         if (empty($searchW)) {
-            $this->jump_to("/classmovice/");
+            $this->jump_to("/moviceguide/");
             exit;
         }
         $this->set_attr("searchW",$searchW);

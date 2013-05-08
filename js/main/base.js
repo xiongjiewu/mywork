@@ -101,7 +101,7 @@ var initOjb = {
             var search_val = $.trim($("#search").val());
             search_val = initOjb.removeSpecailStr(search_val);
             if (!search_val || (search_val == "搜索您喜欢的影片...")) {
-                window.location.href = "/classmovice/";
+                window.location.href = "/moviceguide/";
                 return false;
             } else {
                 window.location.href = "/search?key=" + search_val;
