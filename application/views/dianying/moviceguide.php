@@ -27,7 +27,7 @@
                 </div>
                 <?php if (!empty($moviceVal['daoyan'])):?>
                     <div class="title">
-                        导演：<?php echo $moviceVal['daoyan'];?>
+                        导演：<?php echo trim($moviceVal['daoyan']);?>
                     </div>
                 <?php else:?>
                     <div class="title">
