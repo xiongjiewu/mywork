@@ -20,12 +20,12 @@ class Search extends CI_Controller {
     }
     public function index() {
         $searchW = $this->input->get("key");
-        $searchWArr = explode("/",$searchW);
+        $searchWArr = explode(":",$searchW);
         $lastKeyArr = array();
         foreach($searchWArr as $word) {
             $lastKeyArr[] = $this->_pregReplacespeaStr($word);;//过滤特殊字符
         }
-        $searchW = implode("/",$lastKeyArr);
+        $searchW = implode(":",$lastKeyArr);
         if (empty($searchW)) {
             $this->jump_to("/classmovice/");
             exit;
