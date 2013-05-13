@@ -11,6 +11,7 @@ class Detail extends CI_Controller {
         $id = intval($id);
         if (empty($id)) {
             redirect("/" );
+            exit;
         }
         $this->load->model('Backgroundadmin');
         $dyInfo = $this->Backgroundadmin->getDetailInfo($id,0);
