@@ -165,19 +165,19 @@ $config['menus'] = array(
         "class" => "dy_sort",
         "type_info" => $config['movie_type'],
     ),
-    array(
-        "index" => "",
-        "title" => "反馈我想看",
-        "link" => get_url("/usercenter/createfeedback/want/"),
-        "class" => "",
-    ),
-    array(
-        "index" => "research",
-        "title" => "功能问卷调查",
-        "link" => get_url("/research?uu=" . substr(time(),0,9)),
-        "class" => "",
-        "type_info" => array(),
-    ),
+//    array(
+//        "index" => "",
+//        "title" => "反馈我想看",
+//        "link" => get_url("/usercenter/createfeedback/want/"),
+//        "class" => "",
+//    ),
+//    array(
+//        "index" => "research",
+//        "title" => "功能问卷调查",
+//        "link" => get_url("/research?uu=" . substr(time(),0,9)),
+//        "class" => "",
+//        "type_info" => array(),
+//    ),
 );
 $config['cookie_domain'] = ".local.dianying8.tv";//cookie域名
 $config['cookie_path'] = '/';//cookie路径
