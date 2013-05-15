@@ -15,7 +15,7 @@ class Moviceguide extends CI_Controller {
 
     public function type($type = null,$page = 1)
     {
-        if (empty($type) || $type == "all") {
+        if (empty($type) || $type == "all" || empty($this->_movieType[$type])) {
             $type = "all";
             $typeS = null;
         } else {
@@ -105,7 +105,7 @@ class Moviceguide extends CI_Controller {
     }
 
     public function place($type = null,$page = 1) {
-        if (empty($type) || ($type == "all")) {
+        if (empty($type) || ($type == "all") || empty($this->_moviePlace[$type])) {
             $type = "all";
             $typeS = null;
         } else {
