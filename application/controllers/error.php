@@ -12,6 +12,10 @@ class Error extends CI_Controller {
 
             $index = empty($index) ? 1 : $index;
             $errorCode = APF::get_instance()->get_config_value("error_code");
+            if (empty($errorCode[$index])) {
+                $this->jump_to("/");
+                exit;
+            }
             $pageCode = $errorCode[$index];
             $bgurl = base64_decode($this->input->get("bgurl"));
             if (!empty($bgurl)) {
