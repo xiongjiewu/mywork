@@ -35,6 +35,8 @@ $config['moviePlace'] = array(
     8 => "加拿大",
     9 => "意大利",
     10 => "其他",
+    11 => "惊悚",
+    12 => "情色",
 );
 
 $config['bofangqiType'] = array(
