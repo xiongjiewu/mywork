@@ -21,9 +21,9 @@ $config['movieType'] = array(
     7 => "犯罪",
     8 => "剧情",
     9 => "战争",
-    10 => "其他",
     11 => "惊悚",
     12 => "情色",
+    10 => "其他",
 );
 
 $config['moviePlace'] = array(
