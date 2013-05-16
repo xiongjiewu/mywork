@@ -282,7 +282,7 @@ class Backgroundadmin extends CI_Model {
         if ($type != null) {
             $typeStr = "type = {$type} and ";
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$typeStr} del = {$del} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$typeStr} del = {$del} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -293,7 +293,7 @@ class Backgroundadmin extends CI_Model {
         if ($type != null) {
             $typeStr = "type = {$type} and ";
         }
-        $sql = "select count(1) as cn from `tbl_detailInfo` where {$typeStr} del = {$del}";
+        $sql = "select count(1) as cn from `tbl_detailInfo` where {$typeStr} del = {$del};";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
@@ -312,7 +312,7 @@ class Backgroundadmin extends CI_Model {
             $where .= "nianfen = {$nianfen} and ";
         }
         $where .= "del = {$del}";
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where  {$where} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where  {$where} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -343,7 +343,7 @@ class Backgroundadmin extends CI_Model {
             $where .= "diqu = {$diqu} and ";
         }
         $where .= "del = {$del}";
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} limit {$offset},$limit";
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
