@@ -80,8 +80,6 @@ div.home_middel div.home_middel_main div.home_middel_middel ul li a.menus_title 
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li a.menus_title:hover {
     color: #fff;
-    font-weight: bold;
-    font-size: 19px;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.home_search {
     background: url("/images/head/home_bg2.png") repeat scroll -756px -249px transparent;
@@ -144,14 +142,14 @@ div.home_middel div.home_middel_main div.home_middel_middel ul li.loginr a:hover
 }
 
 ul li.dy_sort {
-    border: 1px solid #1B1B1B;
+    /*border: 1px solid #1B1B1B;*/
     border-bottom: none;
     border-top: none;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort {
     position: relative;
     background-color: #FFF;
-    border-color: #eee;
+    border: 1px solid #eee;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a,div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a:hover {
     color: #000;
