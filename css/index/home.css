@@ -271,13 +271,13 @@ div.home_middel div.home_middel_main div.home_middel_dy_list ul {
     float: left;
 }
 div.home_middel div.home_middel_main div.home_middel_dy_list ul li {
-    background: url("/images/head/home_bg2.png") repeat scroll -590px -333px transparent;
+    background: url("/images/head/home_bg2.png") repeat scroll -587px -333px transparent;
     float: left;
     height: 200px;
     list-style: none outside none;
-    margin: 20px 15px 0 15px;
+    margin: 20px 12px 0;
     padding: 10px;
-    width: 120px;
+    width: 125px;
 }
 div.home_middel div.home_middel_main div.home_middel_dy_list ul li img {
     float: left;
@@ -322,4 +322,10 @@ ul li.home_search div.about_search span {
 ul li.home_search div.about_search span:hover {
     background-color: #eee;
     color: #0088cc;
+}
+
+.footer {
+    float: left;
+    margin-top: 0;
+    width: 100%;
 }

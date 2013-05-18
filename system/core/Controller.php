@@ -62,27 +62,29 @@ class CI_Controller
         }
 
         //问卷调查
-        if (empty($this->Researchguide)) {
-            $this->load->model("Researchguide");
-        }
-        $ip = $this->getUserIP();
-        $ipResearchInfo = $this->Researchguide->getResearchGuideInfoByFiled(array("ip"=>$ip));
-        if (empty($ipResearchInfo)) {
-            $this->_attr['showResearchPan'] = true;
-        } else {
-            $this->_attr['showResearchPan'] = false;
-        }
+//        if (empty($this->Researchguide)) {
+//            $this->load->model("Researchguide");
+//        }
+//        $ip = $this->getUserIP();
+//        $ipResearchInfo = $this->Researchguide->getResearchGuideInfoByFiled(array("ip"=>$ip));
+//        if (empty($ipResearchInfo)) {
+//            $this->_attr['showResearchPan'] = true;
+//        } else {
+//            $this->_attr['showResearchPan'] = false;
+//        }
+        $this->_attr['showResearchPan'] = false;
 
-        //是否填过调查问卷
-        if (empty($this->Researchinsert)) {
-            $this->load->model("Researchinsert");
-        }
-        $researchInfo = $this->Researchinsert->getResearchInfoByFiled(array("ip"=>$ip));
-        if (empty($researchInfo)) {
-            $this->_attr['notDoResearch'] = true;
-        } else {
-            $this->_attr['notDoResearch'] = false;
-        }
+//        //是否填过调查问卷
+//        if (empty($this->Researchinsert)) {
+//            $this->load->model("Researchinsert");
+//        }
+//        $researchInfo = $this->Researchinsert->getResearchInfoByFiled(array("ip"=>$ip));
+//        if (empty($researchInfo)) {
+//            $this->_attr['notDoResearch'] = true;
+//        } else {
+//            $this->_attr['notDoResearch'] = false;
+//        }
+        $this->_attr['notDoResearch'] = false;
 
         log_message('debug', "Controller Class Initialized");
     }
