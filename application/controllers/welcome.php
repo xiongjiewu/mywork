@@ -14,6 +14,8 @@ class Welcome extends CI_Controller {
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
                 $newestDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
+                shuffle($newestDyInfo);
+                $newestDyInfo = array_slice($newestDyInfo,0,12);
                 $this->set_attr("newestDyInfo",$newestDyInfo);
             }
         }
@@ -23,6 +25,8 @@ class Welcome extends CI_Controller {
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
                 $willDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
+                shuffle($willDyInfo);
+                $willDyInfo = array_slice($willDyInfo,0,12);
                 $this->set_attr("willDyInfo",$willDyInfo);
             }
         }
@@ -32,13 +36,16 @@ class Welcome extends CI_Controller {
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
                 $classDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
+                shuffle($classDyInfo);
+                $classDyInfo = array_slice($classDyInfo,0,12);
                 $this->set_attr("classDyInfo",$classDyInfo);
             }
         }
         $this->set_attr("baseNum",6);
-        $this->load->set_css(array("/css/index/index.css"));
+        $this->load->set_css(array("/css/index/home.css"));
+        $this->load->set_js(array("/js/index/home.js"));
         $this->load->set_title("首页 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->set_view('index/index','base');
+        $this->set_view('index/home','common');
 
 	}
 }

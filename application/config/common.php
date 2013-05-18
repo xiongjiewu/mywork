@@ -138,7 +138,7 @@ $config['movie_type'] = array(
 
 $config['menus'] = array(
     array(
-        "index" => "",
+        "index" => "index",
         "title" => "首&nbsp;&nbsp;&nbsp;页",
         "link" => "/",
         "class" => "",

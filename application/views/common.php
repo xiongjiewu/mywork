@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="电影最齐全的网站，我们只专于电影，用户想看的就是我们的宗旨。在这里，您可以找到任何您想看的电影，各种超清电影提供中。"/>
     <title><?php if ($this->load->get_title()):?><?php echo $this->load->get_title();?><?php else:?>电影吧<?php endif;?></title>
     <link rel="stylesheet" rev="stylesheet" href="/css/main/main.css" type="text/css" />
+    <link href="/css/main/base.css" rel="stylesheet">
     <?php $css = $this->load->get_css();?>
     <?php if (!empty($css)):?>
     <?php foreach($css as $cssKey => $cssVal):?>
