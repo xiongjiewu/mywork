@@ -20,6 +20,7 @@ class Search extends CI_Controller {
     }
     public function index() {
         $searchW = $this->input->get("key");
+        $searchW = htmlspecialchars($searchW);
         $searchWArr = explode(":",$searchW);
         $lastKeyArr = array();
         foreach($searchWArr as $word) {
