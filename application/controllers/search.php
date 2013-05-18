@@ -64,7 +64,8 @@ class Search extends CI_Controller {
             echo json_encode($result);
             exit;
         }
-        $searchMovieInfo = $this->_getDetailInfoBySearchW($word);
+        $searchMovieInfo = $this->_getDetailInfoBySearchW($word,20);
+        $searchMovieInfo = $this->_getMoviceNameInfos($searchMovieInfo);
         if (!empty($searchMovieInfo)) {
             $result["code"] = "success";
             $result["info"] = array();
@@ -72,5 +73,24 @@ class Search extends CI_Controller {
         }
         echo json_encode($result);
         exit;
+    }
+
+    /** 拼接电影名字数组，去掉重复名字
+     * @param $searchMovieInfo
+     */
+    private function _getMoviceNameInfos($searchMovieInfo) {
+        if (empty($searchMovieInfo)) {
+            return false;
+        }
+        $resultArr = array();
+        foreach($searchMovieInfo as $sVal) {
+            $resultArr[] = $sVal['name'];
+        }
+        $resultArr = array_unique($resultArr);
+        $newResArr = array();
+        foreach($resultArr as $resVal) {
+            $newResArr[]['name'] = $resVal;
+        }
+        return $newResArr;
     }
 }
