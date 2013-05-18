@@ -224,6 +224,7 @@ ul li.username div.user_in{
     border: 1px solid #eee;
     border-top: none;
     top: -12px;
+    z-index: 1090;
 }
 ul li.username div.user_in table.table tr td {
     line-height: 5px;
