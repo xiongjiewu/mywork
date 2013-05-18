@@ -4,11 +4,15 @@
             <div class="item">
                 <label><?php echo $typeVal['type'];?>：</label>
                 <ul>
-                    <li <?php if ($typeKey != $bigtype || $type == "all"):?>class="active" <?php endif;?>>
+                    <li <?php if (($typeKey != $bigtype && ($param[$typeKey] == "all")) || ($typeKey == $bigtype && $type == "all")):?>class="active" <?php endif;?>>
                         <a href="<?php echo $typeVal['base_url'];?>">全部</a>
                     </li>
-                    <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal): ?>
-                        <li <?php if ($typeKey == $bigtype && $typeValKey == $type):?>class="active" <?php endif;?>><a href="<?php echo $typeVal['base_url'] . $typeValKey; ?>"><?php echo $typeInfoVal;?></a></li>
+                    <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal):?>
+                        <li <?php if ($typeInfoVal['active']):?>class="active" <?php endif;?>>
+                            <a href="<?php echo $typeInfoVal['url']; ?>">
+                                <?php echo $typeInfoVal['name'];?>
+                            </a>
+                        </li>
                     <?php endforeach;?>
                 </ul>
             </div>

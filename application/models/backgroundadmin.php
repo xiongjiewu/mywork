@@ -405,4 +405,34 @@ class Backgroundadmin extends CI_Model {
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
+
+    public function getDetailInfoByCondition($condition = "",$offset,$limit,$del = 0)
+    {
+        $offset = intval($offset);
+        $limit = intval($limit);
+        if (!isset($offset) || !isset($limit)) {
+            return false;
+        }
+        if (empty($condition)) {
+            $where = "del = {$del}";
+        } else {
+            $where = "{$condition} and del = 0";
+        }
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} order by createtime desc limit {$offset},$limit";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function getDetailInfoCountByCondition($condition = "",$del = 0)
+    {
+        if (empty($condition)) {
+            $where = "del = {$del}";
+        } else {
+            $where = "{$condition} and del = 0";
+        }
+        $sql = "select count(1) as cn from `tbl_detailInfo` where {$where};";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
 }
