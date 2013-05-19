@@ -3,7 +3,9 @@
  * 网站后台页面
  * added by xiongjiewu at 2013-3-4
  */
+define("APP_ROOT",dirname(__FILE__) . "/../split");
 class Search extends CI_Controller {
+    private $_maxLen = 25;
     public function __construct() {
         parent::__construct();
         $this->load->model('Backgroundadmin');
@@ -26,18 +28,36 @@ class Search extends CI_Controller {
     public function index() {
         $searchW = $this->input->get("key");
         $searchW = htmlspecialchars($searchW);
-        $searchWArr = explode(":",$searchW);
-        $lastKeyArr = array();
-        foreach($searchWArr as $word) {
-            $lastKeyArr[] = $this->_pregReplacespeaStr($word);;//过滤特殊字符
-        }
-        $searchW = implode(":",$lastKeyArr);
         if (empty($searchW)) {
             $this->jump_to("/moviceguide/");
             exit;
         }
+        $searchW = $this->_pregReplacespeaStr($searchW);
         $this->set_attr("searchW",$searchW);
-        $searchMovieInfo = $this->_getDetailInfoBySearchW($searchW);
+        //长度截取
+        if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
+            $searchW = mb_substr($searchW,0,$this->_maxLen);
+        }
+        //分词数组
+        $wordArr = array();
+        $this->load->model("Wordsplit");
+        $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
+
+        //开始匹配搜索关键字的电影
+        $searchMovieInfo = array();
+        foreach($wordArr[0] as $wordVal) {
+            $searchInfo = $this->_getDetailInfoBySearchW($wordVal);
+            if (!empty($searchInfo)) {
+                foreach($searchInfo as $sKey => $sInfo) {
+                    //替换名称中的搜索关键字
+                    $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
+                }
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+            }
+        }
+        
+        //去掉重复电影
+        $searchMovieInfo = $this->initArr($searchMovieInfo);
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             if ($infoKey < 4) {
                 $searchMovieInfo[$infoKey]['class'] = "firstRow";
@@ -98,5 +118,18 @@ class Search extends CI_Controller {
             $newResArr[]['name'] = $resVal;
         }
         return $newResArr;
+    }
+
+    private function initArr($arr,$filed = "id") {
+        if (empty($arr)) {
+            return $arr;
+        }
+        $result = array();
+        foreach($arr as $aV) {
+            if (empty($result[$aV[$filed]])) {
+                $result[$aV[$filed]] = $aV;
+            }
+        }
+        return $result;
     }
 }
