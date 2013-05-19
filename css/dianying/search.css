@@ -233,6 +233,7 @@ ul li.dy_title_text a,ul li.dy_title_text a:hover {
 }
 div.span9 {
     width: 81%;
+    margin-top: 40px;
 }
 div.span9 table.table {
     margin-left: 4%;
