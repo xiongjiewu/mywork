@@ -35,6 +35,7 @@ var initOjb = {
         }
     },
     wordSpanMouseOver:function(t) {
+        t.parent().find("span.mouse_hover").removeClass("mouse_hover");
         t.addClass("mouse_hover");
         return true;
     },
