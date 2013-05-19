@@ -8,6 +8,11 @@ class Search extends CI_Controller {
         parent::__construct();
         $this->load->model('Backgroundadmin');
     }
+
+    /** 过滤特殊字符
+     * @param $searchW
+     * @return mixed
+     */
     private  function _pregReplacespeaStr($searchW) {
         $searchW = preg_replace('/[^\w\d\x80-\xff]+/','',rawurldecode($searchW));//过滤特殊字符
         return $searchW;

@@ -28,13 +28,13 @@ var initOjb = {
             });
         }
     },
-    jumpSearch:function(t) {
+    jumpSearch: function (t) {
         var word = $.trim($(t).html());
         if (word) {
             window.location.href = "/search?key=" + word;
         }
     },
-    getSearchInfoDo:function(searchObj,searchAbount) {
+    getSearchInfoDo: function (searchObj, searchAbount) {
         var search_val = $.trim(searchObj.val());
         search_val = this.removeSpecailStr(search_val);
         if (search_val && (search_val != undefined) && (search_val != "搜索您喜欢的影片...")) {
@@ -42,7 +42,7 @@ var initOjb = {
                 if (result.code == "success") {
                     var sHtml = "";
                     $(result.info).each(function (index, val) {
-                        sHtml += "<span class='word' onclick='initOjb.jumpSearch(this)'>"+ $.trim(val.name)+"</span>";
+                        sHtml += "<span class='word' onclick='initOjb.jumpSearch(this)'>" + $.trim(val.name) + "</span>";
                     });
                     searchAbount.html(sHtml);
                     searchAbount.show();
@@ -56,12 +56,12 @@ var initOjb = {
             searchAbount.hide();
         }
     },
-    ajaxCloseResearchPan:function() {
+    ajaxCloseResearchPan: function () {
         $.ajax({
-            type:"post",
-            url:"/closeresearchpan/",
-            dataType:"json",
-            success:function() {
+            type: "post",
+            url: "/closeresearchpan/",
+            dataType: "json",
+            success: function () {
                 window.location.reload();
             }
         });
@@ -72,30 +72,31 @@ var initOjb = {
         var searchObj = $("#search");
         var searchAbount = $("div.about_search");
         searchObj.bind("keyup", function () {
-            initOjb.getSearchInfoDo(searchObj,searchAbount);
+            initOjb.getSearchInfoDo(searchObj, searchAbount);
         });
         searchObj.bind("focus", function () {
             var search_val = $.trim($(this).val());
             if (search_val == "搜索您喜欢的影片...") {
                 $("#search").val("");
             }
-            $("ul li.home_search").addClass("home_search_over");
         });
         searchObj.bind("blur", function () {
             var search_val = $.trim($(this).val());
             if (!search_val || search_val == undefined) {
                 $("#search").val("搜索您喜欢的影片...");
             }
-            $("ul li.home_search").removeClass("home_search_over");
         });
-        $(document).bind("click",function(e){
-            var target  = $(e.target);
-            if (target.text() != searchAbount.text() && target.text() != searchObj.text()) {
-                searchAbount.hide();
-            } else if (target.text() && target.text() == searchAbount.text()) {
+        $(document).bind("click", function (e) {
+            var target = $(e.target);
+            if (target.attr("id") && target.attr("id") == "search") {
+                initOjb.getSearchInfoDo(searchObj, searchAbount);
+                $("ul li.home_search").addClass("home_search_over");
+            } else if (target.attr("class") && target.attr("class") == "about_search") {
                 searchAbount.show();
+                $("ul li.home_search").addClass("home_search_over");
             } else {
-                initOjb.getSearchInfoDo(searchObj,searchAbount);
+                $("ul li.home_search").removeClass("home_search_over");
+                searchAbount.hide();
             }
             e.stopPropagation();
         });
@@ -135,17 +136,17 @@ var initOjb = {
         topMenusObj.mouseleave(function () {
             $("ul li.username div.user_in").hide();
         });
-        $("ul li.loginr a").each(function() {
+        $("ul li.loginr a").each(function () {
             var i = $(this).find("i");
-            $(this).bind("mouseover",function() {
+            $(this).bind("mouseover", function () {
                 i.addClass("icon-white");
             });
-            $(this).bind("mouseleave",function() {
+            $(this).bind("mouseleave", function () {
                 i.removeClass("icon-white");
             });
         });
-        $(".close_research").each(function() {
-            $(this).bind("click",function() {
+        $(".close_research").each(function () {
+            $(this).bind("click", function () {
                 initOjb.ajaxCloseResearchPan();
             });
         })

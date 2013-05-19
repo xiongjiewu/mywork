@@ -87,13 +87,13 @@ var initOjb = {
             }
         });
         $(document).bind("click",function(e){
-            var target  = $(e.target);
-            if (target.text() != searchAbount.text() && target.text() != searchObj.text()) {
-                searchAbount.hide();
-            } else if (target.text() && target.text() == searchAbount.text()) {
+            var target = $(e.target);
+            if (target.attr("id") && target.attr("id") == "search") {
+                initOjb.getSearchInfoDo(searchObj, searchAbount);
+            } else if (target.attr("class") && target.attr("class") == "about_search") {
                 searchAbount.show();
             } else {
-                initOjb.getSearchInfoDo(searchObj,searchAbount);
+                searchAbount.hide();
             }
             e.stopPropagation();
         });
