@@ -55,7 +55,7 @@ class Search extends CI_Controller {
                 $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
             }
         }
-        
+
         //去掉重复电影
         $searchMovieInfo = $this->initArr($searchMovieInfo);
         foreach($searchMovieInfo as $infoKey => $infoVal) {
