@@ -34,6 +34,14 @@ var initOjb = {
             window.location.href = "/search?key=" + word;
         }
     },
+    wordSpanMouseOver:function(t) {
+        t.addClass("mouse_hover");
+        return true;
+    },
+    wordSpanMouseLeave:function(t) {
+        t.removeClass("mouse_hover");
+        return true;
+    },
     getSearchInfoDo:function(searchObj,searchAbount) {
         var search_val = $.trim(searchObj.val());
         search_val = this.removeSpecailStr(search_val);
@@ -42,7 +50,7 @@ var initOjb = {
                 if (result.code == "success") {
                     var sHtml = "";
                     $(result.info).each(function (index, val) {
-                        sHtml += "<span class='word' onclick='initOjb.jumpSearch(this)'>"+ $.trim(val.name)+"</span>";
+                        sHtml += "<span class='word' onmouseout='initOjb.wordSpanMouseLeave($(this))' onmouseover='initOjb.wordSpanMouseOver($(this))' onclick='initOjb.jumpSearch(this)'>"+ $.trim(val.name)+"</span>";
                     });
                     searchAbount.html(sHtml);
                     searchAbount.show();
@@ -71,8 +79,52 @@ var initOjb = {
     $(document).ready(function () {
         var searchObj = $("#search");
         var searchAbount = $("div.about_search");
-        searchObj.bind("keyup", function () {
-            initOjb.getSearchInfoDo(searchObj,searchAbount);
+        var ki = 0,firstVal;
+        searchObj.bind("keyup", function (e) {
+            var search_val = $.trim($(this).val());
+            if (ki == 0) {//记录原始值
+                firstVal = search_val;
+            }
+            var event = e || window.event;
+            var keycode = event.which || event.keyCode;
+            if (keycode == 40 || keycode == 38 || keycode == 37 || keycode == 39 || keycode == 13) {//向下箭头被触发
+                var searchHtml = $.trim(searchAbount.html());
+                if (searchHtml.length > 0) {
+                    var currentSpan = $("div.about_search span.mouse_hover");
+                    var firstSpan = $(searchAbount.find("span").get(0));
+                    var lastSpan = $(searchAbount.find("span").get(searchAbount.find("span").length - 1));
+                    if (keycode == 40) {
+                        var nextSpan = currentSpan.next();
+                        if (currentSpan.length > 0 && nextSpan.length > 0) {
+                            currentSpan.removeClass("mouse_hover");
+                            nextSpan.addClass("mouse_hover");
+                            searchObj.val(nextSpan.html());
+                        } else if (currentSpan.length > 0 && nextSpan.length == 0) {
+                            currentSpan.removeClass("mouse_hover");
+                            searchObj.val(firstVal);
+                        } else {
+                            firstSpan.addClass("mouse_hover");
+                            searchObj.val(firstSpan.html());
+                        }
+                    } else if (keycode == 38) {
+                        var preSpan = currentSpan.prev();
+                        if (currentSpan.length > 0 && preSpan.length > 0) {
+                            currentSpan.removeClass("mouse_hover");
+                            preSpan.addClass("mouse_hover");
+                            searchObj.val(preSpan.html());
+                        } else if (currentSpan.length > 0 && preSpan.length == 0) {
+                            currentSpan.removeClass("mouse_hover");
+                            searchObj.val(firstVal);
+                        } else {
+                            lastSpan.addClass("mouse_hover");
+                            searchObj.val(lastSpan.html());
+                        }
+                    }
+                }
+            } else {
+                initOjb.getSearchInfoDo(searchObj,searchAbount);
+            }
+            ki++;
         });
         searchObj.bind("focus", function () {
             var search_val = $.trim($(this).val());

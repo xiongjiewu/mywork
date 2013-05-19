@@ -317,7 +317,8 @@ ul li.home_search div.about_search span {
     padding-left: 10px;
     width: 91%;
 }
-ul li.home_search div.about_search span:hover {
+
+ul li.home_search div.about_search span.mouse_hover {
     background-color: #eee;
     color: #0088cc;
 }

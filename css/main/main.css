@@ -45,7 +45,7 @@ ul li.search div.about_search span {
     padding-left: 10px;
     color: #999;
 }
-ul li.search div.about_search span:hover {
+ul li.search div.about_search span.mouse_hover {
     background-color: #eee;
     color: #0088cc;
 }
