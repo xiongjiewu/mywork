@@ -13,9 +13,9 @@ class Welcome extends CI_Controller {
             $idStr = trim($theNewestInfo[0]['infoIdStr'],";");
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
+                shuffle($ids);
+                $ids = array_slice($ids,0,12);
                 $newestDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
-                shuffle($newestDyInfo);
-                $newestDyInfo = array_slice($newestDyInfo,0,12);
                 $this->set_attr("newestDyInfo",$newestDyInfo);
             }
         }
@@ -24,9 +24,9 @@ class Welcome extends CI_Controller {
             $idStr = trim($willInfo[0]['infoIdStr'],";");
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
+                shuffle($ids);
+                $ids = array_slice($ids,0,12);
                 $willDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
-                shuffle($willDyInfo);
-                $willDyInfo = array_slice($willDyInfo,0,12);
                 $this->set_attr("willDyInfo",$willDyInfo);
             }
         }
@@ -35,9 +35,9 @@ class Welcome extends CI_Controller {
             $idStr = trim($classInfo[0]['infoIdStr'],";");
             $ids = explode(";",$idStr);
             if (!empty($ids)) {
+                shuffle($ids);
+                $ids = array_slice($ids,0,12);
                 $classDyInfo = $this->Backgroundadmin->getDetailInfo($ids,null,true);
-                shuffle($classDyInfo);
-                $classDyInfo = array_slice($classDyInfo,0,12);
                 $this->set_attr("classDyInfo",$classDyInfo);
             }
         }
