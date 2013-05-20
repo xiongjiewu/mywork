@@ -145,6 +145,7 @@ ul li.dy_sort {
     /*border: 1px solid #1B1B1B;*/
     border-bottom: none;
     border-top: none;
+    position: relative;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort {
     position: relative;
@@ -163,7 +164,7 @@ ul  li.show_sort a,ul li.show_sort a:hover{
     background-color: #FFF;
     color: #000;
 }
-ul  li.dy_sort div.dy_type_list{
+ul li.dy_sort div.dy_type_list{
     display: none;
     position: absolute;
     left: -1px;
