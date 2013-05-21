@@ -90,6 +90,7 @@ div.month_list ul li div.info_detail dl {
     height: 70%;
     float: left;
     margin-bottom: 5px;
+   margin-top: 0;
 }
 div.month_list ul li div.info_detail dl dt {
     float: left;
