@@ -1,17 +1,17 @@
 var init = {
     daoHangDingWei:function() {
-        var dyInfoObj = $("div.dy_total");
-        var daohangObj = $("ul.dy_bs-docs-sidenav");
+        var dyInfoObj = $("div.lastmovice_list");
+        var daohangObj = $("ul.time_daohang_list");
         var daohangTop = daohangObj.offset().top,id;
-        dyInfoObj.find("div.bs-docs-example").each(function(){
+        dyInfoObj.find("ul.info_list_do").each(function(){
             var dyInfoTop = $(this).offset().top;
             var dyInfoH = $(this).height();
-            if (parseInt(daohangTop) >= (parseInt(dyInfoTop) - 50) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
+            if (parseInt(daohangTop) >= (parseInt(dyInfoTop) - 130) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
                 id = $(this).attr("id");
             }
         });
-        daohangObj.find("li a.click").removeClass("click");
-        daohangObj.find("li a[name='"+id+"']").addClass("click");
+        daohangObj.find("li.current").removeClass("current");
+        daohangObj.find("li[name='"+id+"']").addClass("current");
     },
     loginCallBack:function(){
         var id = $("#current_id").val();

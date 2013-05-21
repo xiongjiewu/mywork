@@ -28,8 +28,16 @@ class Detail extends CI_Controller {
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,$limit);
         if (!empty($YingpingInfo)) {
             $userIds = array();
+            $preg = "/^(https?:\/\/)?(((www\.)?[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)?\.([a-zA-Z]+))|(([0-1]?[0-9]?[0-9]|2[0-5][0-5])\.([0-1]?[0-9]?[0-9]|2[0-5][0-5])\.([0-1]?[0-9]?[0-9]|2[0-5][0-5])\.([0-1]?[0-9]?[0-9]|2[0-5][0-5]))(\:\d{0,4})?)(\/[\w- .\/?%&=]*)?$/i";
             foreach($YingpingInfo as $InfoKey => $infoVal) {
                 $YingpingInfo[$InfoKey]['content'] = $this->ubb2Html($infoVal['content']);
+
+                //匹配内容中的链接
+                preg_match($preg, $YingpingInfo[$InfoKey]['content'], $matches);
+                //过滤非站内广告链接
+                if (!empty($matches[0]) && strpos($matches[0],".dianying8.tv") === false && strpos($matches[0],".dianyingba.tv") === false) {
+                    $YingpingInfo[$InfoKey]['content'] = str_replace($matches[0],"顶！",$YingpingInfo[$InfoKey]['content']);
+                }
                 $userIds[] = $infoVal['userId'];
             }
             $this->load->model('User');

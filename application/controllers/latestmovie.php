@@ -24,8 +24,8 @@ class Latestmovie extends CI_Controller {
             }
             $infoList  = $this->Backgroundadmin->getDetailInfoListByTime($sTime,$eTime,0,$sortStr);
             if (!empty($infoList)) {
-                $movieList[date("y年m月",$time)] = $infoList;
-                $monthArr[date("y年m月",$time)] = date("Ym",$time);
+                $movieList[date("Y.m",$time)] = $infoList;
+                $monthArr[date("Y.m",$time)] = date("Ym",$time);
             }
             $time = strtotime(date("Y-m-01",$time));
             $time = strtotime("-1 month",$time);
@@ -63,11 +63,11 @@ class Latestmovie extends CI_Controller {
         $this->set_attr("movieType",$this->_movieType);
         $this->load->set_head_img(false);
         
-        $this->load->set_title("最新上映列表 - " . get_config_value("base_title") . " - " . get_config_value("base_name"));
-        $this->load->set_css(array("css/dianying/latestmovie.css"));
+        $this->load->set_title("最新上映列表 - " . APF::get_instance()->get_config_value("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_css(array("css/dianying/newlatestmovie.css"));
         $this->load->set_js(array("js/dianying/latestmovie.js"));
         $this->load->set_top_index(1);
-        $this->set_view('dianying/latestmovie');
+        $this->set_view('dianying/newlatestmovie');
     }
 
     private function _initArr($nfo)

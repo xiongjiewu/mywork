@@ -91,12 +91,12 @@ div.head_top_menus ul.nav li.dy_sort {
 }
 div.head_top_menus ul.nav li.show_sort {
     position: relative;
-    background-color: #FFF;
-    border-color: #eee;
+    background-color: #101010;
+    border-color: #101010;
 }
 div.head_top_menus ul.nav  li.show_sort a,div.head_top_menus ul.nav  li.show_sort a:hover{
-    background-color: #FFF;
-    color: #000;
+    background-color: #101010;
+    color: #9F9F9F;
 }
 div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
     display: none;
@@ -105,9 +105,9 @@ div.head_top_menus ul.nav  li.dy_sort div.dy_type_list{
     top: 35px;
     height: 100px;
     width: 650px;
-    background:none repeat scroll 0 0 #FFFFFF;
+    background:none repeat scroll 0 0 #101010;
     z-index: 1000;
-    border: 1px solid #eee;
+    border: 1px solid #101010;
     border-top: none;
     opacity:1;
 }
@@ -115,6 +115,7 @@ div.head_top_menus ul.nav li.dy_sort div.dy_type_list table {
     margin: 10px;
     width: 97%;
     opacity:1;
+    background:none repeat scroll 0 0 #101010;
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr th,div.head_top_menus ul.nav  li.dy_sort div.dy_type_list table tr td {
     border: none;
@@ -125,6 +126,8 @@ div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a.active {
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a{
     font-size: 13px;
+    background:none repeat scroll 0 0 #101010;
+    color: #9F9F9F;
 }
 div.head_top_menus ul.nav li.dy_sort div.dy_type_list table tr td a:hover {
     color:#0088CC ;

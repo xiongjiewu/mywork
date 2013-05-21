@@ -151,10 +151,11 @@ class Globalfunction extends CI_Model {
 
             function getUrl($match)
             {
-                //外链允许白名单 by xingjiewu
+                //外链允许白名单 by xingjiewu,外链直接返回***
                 if (preg_match('/(dianying8.tv|dianyingba.tv)/i', $match[1])) {
                     return '<a href="' . $match[1] . '" target="_blank">' . (!empty($match[2]) ? $match[2] : $match[1]) . '</a>';
                 } else {
+                    return "顶！";
                     return !empty($match[2]) ? $match[2] : $match[1];
                 }
             }

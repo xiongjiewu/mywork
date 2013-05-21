@@ -1,0 +1,142 @@
+body {
+    background: #dadad9 repeat;
+}
+div.lastmovice_main {
+    width: 100%;
+    margin: 40px auto;
+}
+div.time_daohang {
+    float: left;
+    margin-left: 0;
+    margin-top: 50px;
+}
+div.time_daohang ul {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+}
+div.time_daohang ul li {
+    font-family:times new roman, Arial, Helv, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #9b9b9b;
+    background: url("/images/head/latestmovie.png") no-repeat scroll -6px -214px transparent;
+    list-style: none outside none;
+    padding: 15px 26px;
+    text-align: center;
+    cursor: pointer;
+}
+div.time_daohang ul li.current {
+    background: url("/images/head/latestmovie.png") no-repeat scroll -6px -279px transparent;
+    color: #191919;
+}
+div.time_daohang ul li:hover {
+    background: url("/images/head/latestmovie.png") no-repeat scroll -6px -279px transparent;
+    color: #191919;
+}
+div.lastmovice_list {
+    float: left;
+    margin-left: 150px;
+}
+div.month_list {
+    float: left;
+    padding: 10px 20px;
+}
+div.month_list div.title_text {
+    font-size: 30px;
+    font-family:"华文行楷",STXingkai,Arial,Helv,Helvetica,sans-serif;
+    color: #191919;
+}
+div.month_list ul {
+    float: left;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+div.month_list ul li {
+    background: url("/images/head/latestmovie.png") no-repeat scroll 0 -2px transparent;
+    float: left;
+    height: 180px;
+    list-style: none outside none;
+    width: 310px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+div.month_list ul li:hover {
+    height: 178px;
+    width: 308px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background-color: #E0EEEE;
+}
+div.month_list ul li div.info_img {
+    float: left;
+    height: 172px;
+    width: 120px;
+}
+div.month_list ul li div.info_img img {
+    height: 170px;
+    width: 118px;
+    border: 1px solid #eee;
+}
+div.month_list ul li div.info_detail {
+    float: left;
+    width: 170px;
+    margin-left: 15px;
+    height: 172px;
+}
+div.month_list ul li div.info_detail dl {
+    width: 100%;
+    height: 70%;
+    float: left;
+    margin-bottom: 5px;
+}
+div.month_list ul li div.info_detail dl dt {
+    float: left;
+    width: 100%;
+}
+div.month_list ul li div.info_detail dl dt a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 500;
+}
+div.month_list ul li div.info_detail dl dt a:hover {
+    text-decoration: underline;
+}
+div.month_list ul li div.info_detail dl dd {
+    margin-left: 0;
+    font-size: 13px;
+    float: left;
+    width: 100%;
+}
+div.month_list ul li div.info_detail dl dd span {
+    float: left;
+    margin-top: 5px;
+    width: 100%;
+    overflow: hidden;
+    height: 20px;
+}
+div.month_list ul li div.info_detail dl dd span.time {
+    font-family: times new roman,Arial,Helv,Helvetica,sans-serif;
+    font-size: 14px;
+}
+div.month_list ul li div.info_detail dl dd span i {
+    color: #666;
+    font-style: normal;
+}
+div.month_list ul li div.info_detail div.watch_link_list {
+    float: left;
+    width: 100%;
+}
+div.month_list ul li div.info_detail div.watch_link_list a {
+    float: left;
+    height: 20px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+    width: 70px;
+}
+div.month_list ul li div.info_detail div.watch_link_list i {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 20px;
+}

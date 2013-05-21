@@ -149,11 +149,11 @@ ul li.dy_sort {
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort {
     position: relative;
-    background-color: #FFF;
-    border: 1px solid #eee;
+    background-color: #101010;
+    border: 1px solid #101010;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a,div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a:hover {
-    color: #000;
+    color: #9F9F9F;
     font-weight: 100;
 }
 div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a.menus_title {
@@ -161,8 +161,8 @@ div.home_middel div.home_middel_main div.home_middel_middel ul li.show_sort a.me
     font-size: 20px;
 }
 ul  li.show_sort a,ul li.show_sort a:hover{
-    background-color: #FFF;
-    color: #000;
+    background-color: #101010;
+    color: #9F9F9F;
 }
 ul li.dy_sort div.dy_type_list{
     display: none;
@@ -171,9 +171,9 @@ ul li.dy_sort div.dy_type_list{
     top: 35px;
     height: 100px;
     width: 655px;
-    background:none repeat scroll 0 0 #FFFFFF;
+    background:none repeat scroll 0 0 #101010;
     z-index: 1000;
-    border: 1px solid #eee;
+    border: 1px solid #101010;
     border-top: none;
     opacity:1;
 }
@@ -181,18 +181,19 @@ ul li.dy_sort div.dy_type_list table {
     margin: 10px;
     width: 97%;
     opacity:1;
+    background:none repeat scroll 0 0 #101010;
 }
 ul li.dy_sort div.dy_type_list table tr th,ul  li.dy_sort div.dy_type_list table tr td {
     border: none;
     line-height: 10px;
 }
-ul li.dy_sort div.dy_type_list table tr td a.active {
+div.home_middel div.home_middel_main div.home_middel_middel ul li.dy_sort div.dy_type_list table tr td a.active {
     color: #0088CC;
 }
 ul li.dy_sort div.dy_type_list table tr td a{
     font-size: 13px;
 }
-ul li.dy_sort div.dy_type_list table tr td a:hover {
+div.home_middel div.home_middel_main div.home_middel_middel ul li.dy_sort div.dy_type_list table tr td a:hover {
     color:#0088CC ;
     font-size:13px ;
 }
