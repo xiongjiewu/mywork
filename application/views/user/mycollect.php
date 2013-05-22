@@ -22,8 +22,9 @@
                         <?php if (!empty($movieList)):?>
                         <?php foreach($movieList as $movieVal):?>
                             <tr>
+                                <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
                                 <td class="chose"><input type="checkbox" name="ids[]" value="<?php echo $shouCangInfo[$movieVal['id']]['id'];?>"></td>
-                                <td class="name"><a href="<?php echo get_url("/detail/index/{$movieVal['id']}/")?>"><?php echo $movieVal['name'];?></a></td>
+                                <td class="name"><a href="<?php echo get_url("/detail/index/{$idStr}/")?>"><?php echo $movieVal['name'];?></a></td>
                                 <td><?php echo $movieVal['zhuyan'];?></td>
                                 <td class="daoyan"><?php echo $movieVal['daoyan'];?></td>
                                 <td class="nianfen"><?php echo date("Y",strtotime($movieVal['nianfen']));?>年</td>

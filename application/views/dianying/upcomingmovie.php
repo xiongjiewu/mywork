@@ -7,7 +7,8 @@
             <tr>
                 <td class="dy_name" rowspan="3" valign="middle">
                     <div class="dy_name_detail">
-                        <a href="<?php echo get_url("/detail/index/{$movieVal['id']}"); ?>">
+                        <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
+                        <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
                             <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
                         </a>
                         <span class="">

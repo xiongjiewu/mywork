@@ -21,11 +21,12 @@
     <ul class="list_info">
         <?php foreach($movieList as $moviceVal):?>
             <li>
-                <a href="/detail/index/<?php echo $moviceVal['id'];?>/">
+                <?php $idStr = APF::get_instance()->encodeId($moviceVal['id']);?>
+                <a href="/detail/index/<?php echo $idStr;?>/">
                     <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
                 </a>
                 <div class="title">
-                    <a href="/detail/index/<?php echo $moviceVal['id'];?>/" title="<?php echo $moviceVal['name'];?>">
+                    <a href="/detail/index/<?php echo $idStr;?>/" title="<?php echo $moviceVal['name'];?>">
                         <?php echo $moviceVal['name'];?>
                     </a>
                 </div>

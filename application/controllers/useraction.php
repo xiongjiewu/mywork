@@ -52,8 +52,9 @@ class Useraction extends CI_Controller
             $this->jump_to("/error/index/3?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}")));
             exit;
         } else {
+            $idStr = APF::get_instance()->encodeId($data['dyId']);
             $this->set_cookie($cookieName,$time,600);
-            $this->jump_to("/detail/index/{$data['dyId']}#createpost");
+            $this->jump_to("/detail/index/{$idStr}#createpost");
         }
     }
 

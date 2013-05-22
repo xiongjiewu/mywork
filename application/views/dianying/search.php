@@ -29,13 +29,14 @@
                 <table class="table table-bordered <?php echo $movieVal['class'];?>">
                     <tr>
                         <td class="info_image">
-                            <a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>">
+                            <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
+                            <a href="<?php echo get_url("/detail/index/{$idStr}");?>/">
                                 <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <td>片名：<a href="<?php echo get_url("/detail/index/{$movieVal['id']}");?>"><?php echo $movieVal['name'];?></a></td>
+                        <td>片名：<a href="<?php echo get_url("/detail/index/{$idStr}");?>/"><?php echo $movieVal['name'];?></a></td>
                     </tr>
                     <?php if (!empty($movieVal['daoyan'])):?>
                         <tr>

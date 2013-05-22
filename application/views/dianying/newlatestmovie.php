@@ -17,14 +17,15 @@
                     <?php foreach ($movieVal as $mKey => $mVal): ?>
                         <li title="点击查看详情">
                             <div class="info_img">
-                                <a href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>">
+                                <?php $idStr = APF::get_instance()->encodeId($mVal['id']);?>
+                                <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
                                     <img alt="<?php echo $mVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $mVal['image'];?>">
                                 </a>
                             </div>
                             <div class="info_detail">
                                 <dl>
                                     <dt>
-                                        <a href="<?php echo get_url("/detail/index/{$mVal['id']}"); ?>"><?php echo $mVal['name'];?></a>
+                                        <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/"><?php echo $mVal['name'];?></a>
                                     </dt>
                                     <dd>
                                         <span class="time"><?php echo date("Y.m.d",$mVal['time1'])?></span>

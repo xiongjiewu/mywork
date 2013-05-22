@@ -106,11 +106,12 @@
                     <ul>
                         <?php foreach($newestDyInfo as $dyInfoVal):?>
                             <li>
-                                <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
+                                <a href="/detail/index/<?php echo $idStr;?>/">
                                     <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>">
                                 </a>
                                 <div class="dy_title">
-                                    <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                    <a href="/detail/index/<?php echo $idStr;?>/">
                                         <?php echo $dyInfoVal['name'];?>
                                     </a>
                                 </div>
@@ -130,11 +131,12 @@
                     <ul>
                         <?php foreach($willDyInfo as $dyInfoVal):?>
                             <li>
-                                <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
+                                <a href="/detail/index/<?php echo $idStr;?>/">
                                     <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>">
                                 </a>
                                 <div class="dy_title">
-                                    <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                    <a href="/detail/index/<?php echo $idStr;?>/">
                                         <?php echo $dyInfoVal['name'];?>
                                     </a>
                                 </div>
@@ -154,11 +156,12 @@
                     <ul>
                         <?php foreach($classDyInfo as $dyInfoVal):?>
                             <li>
-                                <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
+                                <a href="/detail/index/<?php echo $idStr;?>/">
                                     <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>">
                                 </a>
                                 <div class="dy_title">
-                                    <a href="/detail/index/<?php echo $dyInfoVal['id'];?>/">
+                                    <a href="/detail/index/<?php echo $idStr;?>/">
                                         <?php echo $dyInfoVal['name'];?>
                                     </a>
                                 </div>
