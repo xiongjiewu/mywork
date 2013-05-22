@@ -8,12 +8,12 @@ class Detail extends CI_Controller {
     public function index($id = null)
     {
         $this->load->helper('url');
+        //将id字符串解密，转换成数字id
+        $id = intval(APF::get_instance()->decodeId($id));
         if (empty($id)) {
             redirect("/" );
             exit;
         }
-        //将id字符串解密，转换成数字id
-        $id = intval(APF::get_instance()->decodeId($id));
         $this->load->model('Backgroundadmin');
         $dyInfo = $this->Backgroundadmin->getDetailInfo($id,0);
         if (empty($dyInfo)) {

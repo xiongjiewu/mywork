@@ -39,7 +39,8 @@ class APF {
         header("$name: $value", FALSE, $http_reponse_code);
     }
 
-    static private $key = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-abcdefghijklmnopqrstuvwxyz:0123456789"; //可以多位 保证每位的字符在URL里面正常显示即可
+    static private $key = "abcdefghijklmnopqrstuvwxyz0123456789"; //可以多位 保证每位的字符在URL里面正常显示即可
+    static private $_md5Len  = 10;//附加md5值长度
     /** 将id转换成字符串
      * @param $value
      * @return string
@@ -53,6 +54,8 @@ class APF {
         }
         $result = "";
         while( isset($arr[0]) ) $result .= substr(self::$key, array_pop($arr), 1 );
+        $md5Time = md5(microtime());
+        $result = substr($md5Time,0,self::$_md5Len) . $result . substr($md5Time,self::$_md5Len,self::$_md5Len);
         return $result;
     }
     /** 将字符串转换成id
@@ -60,7 +63,9 @@ class APF {
      * @return string
      */
     public function decodeId($value) {
-        $base = strlen( self::$key );
+        $valueLen = strlen($value);
+        $value = substr($value,self::$_md5Len,$valueLen - self::$_md5Len * 2);
+        $base = strlen(self::$key);
         $num = 0;
         $key = array_flip( str_split(self::$key) );
         $arr = str_split($value);
