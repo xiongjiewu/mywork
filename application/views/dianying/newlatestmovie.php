@@ -1,3 +1,5 @@
+<a class="go_to_top" title="回到顶部"></a>
+<input type="hidden" name="current_id" id="current_id" value="">
 <div class="lastmovice_main">
     <div class="time_daohang">
         <ul class="time_daohang_list">

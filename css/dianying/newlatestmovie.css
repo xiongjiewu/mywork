@@ -39,7 +39,7 @@ div.lastmovice_list {
 }
 div.month_list {
     float: left;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 div.month_list div.title_text {
     font-size: 30px;
@@ -58,7 +58,7 @@ div.month_list ul li {
     height: 180px;
     list-style: none outside none;
     width: 310px;
-    margin-right: 40px;
+    margin-right: 14px;
     margin-bottom: 20px;
     padding: 10px;
 }
