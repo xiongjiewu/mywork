@@ -381,6 +381,16 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
+    public function getDetailInfoBySearchDaoYan($searchW,$limit=10)
+    {
+        if (!isset($searchW)) {
+            return false;
+        }
+        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where daoyan like '{$searchW}%' and del = 0 limit {$limit};";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getHotYingDyInfos($limit)
     {
         $limit = intval($limit);

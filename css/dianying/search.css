@@ -318,6 +318,6 @@ table.table_over {
     cursor: pointer;
     background-color: #E0EEEE;
 }
-table tr td a em {
+table tr td em {
     color: #ff0000;
 }
