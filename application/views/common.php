@@ -38,5 +38,11 @@
     </div>
 </div>
 <?php $this->load->view("component/footer");//底部?>
+<!-- 百度流量统计js start-->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F105a468dfb25231597f17f7accf5c0c4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度流量统计js end-->
 </body>
 </html>
