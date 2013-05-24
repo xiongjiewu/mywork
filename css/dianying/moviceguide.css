@@ -22,10 +22,14 @@ div.type_list div.item label {
     float: left;
     color: #808080;
     cursor: default;
+    margin-top: 3px;
+    margin-bottom: 10px;
 }
 div.type_list div.item ul {
     float: left;
     margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 10px;
 }
 div.type_list div.item ul li {
     list-style: none;
