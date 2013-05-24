@@ -23,6 +23,11 @@
                                 <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
                                     <img alt="<?php echo $mVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $mVal['image'];?>">
                                 </a>
+                                <?php if (empty($shouCangInfo[$mVal['id']])):?>
+                                    <span class="shoucang_action shoucang_dy" title="点击收藏" val="<?php echo $mVal['id'];?>"></span>
+                                <?php else:?>
+                                    <span class="shoucang_action shoucang_dy_y" title="已收藏"></span>
+                                <?php endif;?>
                             </div>
                             <div class="info_detail">
                                 <dl>
@@ -82,30 +87,6 @@
                     $(window).scrollTop(sH - 130);
                 });
             });
-            var dyInfoLiObj = $("li.dy_info_li");
-            dyInfoLiObj.each(function(){
-                $(this).bind("mouseover",function(){
-                    $(this).addClass("li_over");
-                    $(this).find("span.shoucang_action").show();
-                    init.showWatchAndDownLink($(this));
-                });
-                $(this).bind("click",function(){
-                    var url = $($(this).find("a").get(0)).attr("href");
-                    window.location.href = url;
-                });
-                $(this).find("a").each(function(){
-                    $(this).bind("click",function(event){
-                        event.stopPropagation();
-                    });
-                });
-            });
-            dyInfoLiObj.each(function(){
-                $(this).bind("mouseleave",function(){
-                    $(this).removeClass("li_over");
-                    $(this).find("span.shoucang_action").hide();
-                    init.hideWatchAndDownLink($(this));
-                });
-            });
             var shoucangObj = $("span.shoucang_dy");
             shoucangObj.each(function(){
                 $(this).bind("click",function(event){
@@ -123,6 +104,12 @@
             $("div.month_list ul li").each(function(){
                 var aObj = $(this).find("a");
                 var url = $(aObj.get(0)).attr("href");
+                $(this).bind("mouseover",function(){
+                    $(this).find("span.shoucang_action").show();
+                });
+                $(this).bind("mouseleave",function(){
+                    $(this).find("span.shoucang_action").hide();
+                });
                 $(this).bind("click",function(){
                     window.location.href = url;
                 });

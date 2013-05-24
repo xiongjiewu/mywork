@@ -47,7 +47,7 @@ class Latestmovie extends CI_Controller {
         if (!empty($this->userId)) {
             $this->set_attr("userId",$this->userId);
             $this->load->model("Shoucang");
-            $shouCangInfo = $this->Shoucang->getUserShoucangInfo($this->userId);
+            $shouCangInfo = $this->Shoucang->getUserShoucangInfoByInfoIds($this->userId,$ids);
             $shouCangInfo = $this->initArrById($shouCangInfo,"infoId");
             $this->set_attr("shouCangInfo",$shouCangInfo);
         }

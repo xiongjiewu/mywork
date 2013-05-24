@@ -86,6 +86,22 @@ class Moviceguide extends CI_Controller {
         return $resultArr;
     }
 
+    /** 设置用户电影收藏信息
+     * @param $movieList
+     */
+    private function _setShouCangInfo($movieList) {
+        if (!empty($this->userId)) {
+            $idArr = array();
+            foreach($movieList as $moviceVal) {
+                $idArr[] = $moviceVal['id'];
+            }
+            $this->load->model("Shoucang");
+            $shouCangInfo = $this->Shoucang->getUserShoucangInfoByInfoIds($this->userId,$idArr);
+            $shouCangInfo = $this->initArrById($shouCangInfo,"infoId");
+            $this->set_attr("shouCangInfo",$shouCangInfo);
+        }
+    }
+
     public function type($type = null,$year = "all",$diqu = "all",$page = 1)
     {
         $condition = array();
@@ -142,6 +158,11 @@ class Moviceguide extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
+
+        //用户收藏信息
+        $this->_setShouCangInfo($movieList);
+
+        //分页
         $base_url = get_url("/moviceguide/type/{$type}/{$year}/{$diqu}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
@@ -215,6 +236,11 @@ class Moviceguide extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
+
+        //用户收藏信息
+        $this->_setShouCangInfo($movieList);
+
+        //分页
         $base_url = get_url("/moviceguide/year/{$type}/{$ty}/{$diqu}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);
@@ -290,6 +316,11 @@ class Moviceguide extends CI_Controller {
         }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
+
+        //用户收藏信息
+        $this->_setShouCangInfo($movieList);
+
+        //分页
         $base_url = get_url("/moviceguide/place/{$type}/{$ty}/{$year}/");
         $fenye = $this->set_page_info($page,$limit,$mouvieCount,$base_url);
         $this->set_attr("fenye",$fenye);

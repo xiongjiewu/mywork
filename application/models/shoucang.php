@@ -79,4 +79,21 @@ class Shoucang extends CI_Model {
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
+
+    public function getUserShoucangInfoByInfoIds($uId,$infoIds = array())
+    {
+        $uId = intval($uId);
+        if (empty($uId) || empty($infoIds) || (!is_array($infoIds) && !intval($infoIds))) {
+            return false;
+        }
+        if (!is_array($infoIds)) {
+            $infoIds = array($infoIds);
+        } else {
+            $infoIds = array_unique($infoIds);
+        }
+        $sql = "select {$this->_getFiledStr()} from `tbl_shoucang` where userId = {$uId} and infoId in (" . implode(",",$infoIds) . ") and del = 0;";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result) ? array() : $result;
+    }
 }

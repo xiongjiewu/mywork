@@ -69,11 +69,29 @@ div.month_list ul li:hover {
     cursor: pointer;
     background-color: #E0EEEE;
 }
+
+div.month_list ul li span.shoucang_action {
+    display: none;
+    bottom: 1px;
+    height: 15px;
+    position: absolute;
+    right: 1px;
+    width: 14px;
+}
+div.month_list ul li span.shoucang_dy {
+    background: url("/images/common/dy_add.png") no-repeat scroll -29px 0 transparent;
+}
+div.month_list ul li span.shoucang_dy_y {
+    background: url("/images/common/dy_add.png") no-repeat scroll -9px 0 transparent;
+}
+
 div.month_list ul li div.info_img {
     float: left;
     height: 172px;
     width: 120px;
+    position: relative;
 }
+
 div.month_list ul li div.info_img img {
     height: 170px;
     width: 118px;
