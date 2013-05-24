@@ -20,11 +20,27 @@ class Search extends CI_Controller {
         return $searchW;
     }
 
+    /** 根据主演搜索电影名
+     * @param $name
+     * @return mixed
+     */
+    private function _getDetailInfoBySearchName($name,$limit = 10) {
+        $name = mysql_real_escape_string($name);
+        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit);
+        return $searchMovieInfo;
+    }
+
+    /** 根据电影名称关键字搜索电影
+     * @param $searchW
+     * @param int $limit
+     * @return mixed
+     */
     private function _getDetailInfoBySearchW($searchW,$limit  = 10) {
         $searchW = mysql_real_escape_string($searchW);
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit);
         return $searchMovieInfo;
     }
+
     public function index() {
         $searchW = $this->input->get("key");
         $searchW = htmlspecialchars($searchW);
@@ -46,11 +62,28 @@ class Search extends CI_Controller {
         //开始匹配搜索关键字的电影
         $searchMovieInfo = array();
         foreach($wordArr[0] as $wordVal) {
+            //电影名搜索
             $searchInfo = $this->_getDetailInfoBySearchW($wordVal);
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
                     //替换名称中的搜索关键字
                     $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
+                    //替换名称中的搜索关键字
+                    if (!empty($searchInfo[$sKey]['zhuyan'])) {
+                        $searchInfo[$sKey]['zhuyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['zhuyan']);
+                    }
+                }
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+            }
+
+            //电影主演搜索
+            $searchInfo = $this->_getDetailInfoBySearchName($wordVal);
+            if (!empty($searchInfo)) {
+                foreach($searchInfo as $sKey => $sInfo) {
+                    //替换名称中的搜索关键字
+                    $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
+                    //替换名称中的搜索关键字
+                    $searchInfo[$sKey]['zhuyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['zhuyan']);
                 }
                 $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
             }
