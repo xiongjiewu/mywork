@@ -99,6 +99,10 @@ div.search_dy_detail p {
     margin-bottom: 5px;
     font-size: 14px;
 }
+div.search_dy_detail p.zhuyan {
+    height: 20px;
+    overflow: hidden;
+}
 div.search_dy_detail p span {
     color: #757575;
 }

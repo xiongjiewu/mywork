@@ -37,7 +37,7 @@
                                     <?php echo $movieVal['name'];?>
                                 </a>
                             </p>
-                            <p class="other">
+                            <p class="zhuyan">
                                 <span>主演：</span><?php echo $movieVal['zhuyan'];?>
                             </p>
                             <p class="other">
