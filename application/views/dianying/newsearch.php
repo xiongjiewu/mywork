@@ -1,3 +1,4 @@
+<a class="go_to_top" title="回到顶部"></a>
 <div class="search_main">
     <div class="search_left">
         <?php $typeCount = count($movieSortType);?>
