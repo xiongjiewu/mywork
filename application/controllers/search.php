@@ -3,7 +3,6 @@
  * 网站后台页面
  * added by xiongjiewu at 2013-3-4
  */
-define("APP_ROOT",dirname(__FILE__) . "/../split");
 class Search extends CI_Controller {
     private $_maxLen = 25;
     public function __construct() {
@@ -24,7 +23,7 @@ class Search extends CI_Controller {
      * @param $name
      * @return mixed
      */
-    private function _getDetailInfoBySearchDaoYan($name,$limit = 10) {
+    private function _getDetailInfoBySearchDaoYan($name,$limit = 20) {
         $name = mysql_real_escape_string($name);
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit);
         return $searchMovieInfo;
@@ -34,7 +33,7 @@ class Search extends CI_Controller {
      * @param $name
      * @return mixed
      */
-    private function _getDetailInfoBySearchName($name,$limit = 10) {
+    private function _getDetailInfoBySearchName($name,$limit = 20) {
         $name = mysql_real_escape_string($name);
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit);
         return $searchMovieInfo;
@@ -45,7 +44,7 @@ class Search extends CI_Controller {
      * @param int $limit
      * @return mixed
      */
-    private function _getDetailInfoBySearchW($searchW,$limit  = 10) {
+    private function _getDetailInfoBySearchW($searchW,$limit  = 20) {
         $searchW = mysql_real_escape_string($searchW);
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit);
         return $searchMovieInfo;
@@ -58,6 +57,7 @@ class Search extends CI_Controller {
             $this->jump_to("/moviceguide/");
             exit;
         }
+        //过滤特殊字符
         $searchW = $this->_pregReplacespeaStr($searchW);
         $this->set_attr("searchW",$searchW);
         //长度截取
@@ -71,76 +71,103 @@ class Search extends CI_Controller {
 
         //开始匹配搜索关键字的电影
         $searchMovieInfo = array();
+        $wordArr[0] = array_unique($wordArr[0]);
         foreach($wordArr[0] as $wordVal) {
+            $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             $searchInfo = $this->_getDetailInfoBySearchW($wordVal);
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
                     //替换名称中的搜索关键字
-                    $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
-                    //替换名称中的搜索关键字
-                    if (!empty($searchInfo[$sKey]['zhuyan'])) {
-                        $searchInfo[$sKey]['zhuyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['zhuyan']);
+                    $sInfo['name'] = str_replace($wordVal,$str,$sInfo['name']);
+                    //替换主演中的搜索关键字
+                    if (!empty($sInfo['zhuyan'])) {
+                        $sInfo['zhuyan'] = str_replace("/","、",$sInfo['zhuyan']);
+                        $sInfo['zhuyan'] = str_replace($wordVal,$str,$sInfo['zhuyan']);
                     }
-                    if (!empty($searchInfo[$sKey]['daoyan'])) {
-                        $searchInfo[$sKey]['daoyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['daoyan']);
+                    //替换导演中的搜索关键字
+                    if (!empty($sInfo['daoyan'])) {
+                        $sInfo['daoyan'] = str_replace("/","、",$sInfo['daoyan']);
+                        $sInfo['daoyan'] = str_replace($wordVal,$str,$sInfo['daoyan']);
                     }
+                    $sInfo['jieshao'] = str_replace("&nbsp;","",$sInfo['jieshao']);
+                    $sInfo['jieshao'] = str_replace("\t","",$sInfo['jieshao']);
+                    $searchInfo[$sKey] = $sInfo;
                 }
                 $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
             }
 
             //电影主演搜索
-            $searchInfo = $this->_getDetailInfoBySearchName($wordVal);
-            if (!empty($searchInfo)) {
-                foreach($searchInfo as $sKey => $sInfo) {
+            $searchInfo1 = $this->_getDetailInfoBySearchName($wordVal);
+            if (!empty($searchInfo1)) {
+                foreach($searchInfo1 as $sKey1 => $sInfo1) {
                     //替换名称中的搜索关键字
-                    $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
-                    //替换名称中的搜索关键字
-                    $searchInfo[$sKey]['zhuyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['zhuyan']);
-                    if (!empty($searchInfo[$sKey]['daoyan'])) {
-                        $searchInfo[$sKey]['daoyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['daoyan']);
+                    $sInfo1['name'] = str_replace($wordVal,$str,$sInfo1['name']);
+                    //替换主演中的搜索关键字
+                    $sInfo1['zhuyan'] = str_replace("/","、",$sInfo1['zhuyan']);
+                    $sInfo1['zhuyan'] = str_replace($wordVal,$str,$sInfo1['zhuyan']);
+                    //替换导演中的搜索关键字
+                    if (!empty($sInfo1['daoyan'])) {
+                        $sInfo1['daoyan'] = str_replace("/","、",$sInfo1['daoyan']);
+                        $sInfo1['daoyan'] = str_replace($wordVal,$str,$sInfo1['daoyan']);
                     }
+                    $sInfo1['jieshao'] = str_replace("&nbsp;","",$sInfo1['jieshao']);
+                    $sInfo1['jieshao'] = str_replace("\t","",$sInfo1['jieshao']);
+                    $searchInfo1[$sKey1] = $sInfo1;
                 }
-                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo1);
             }
 
             //电影导演搜索
-            $searchInfo = $this->_getDetailInfoBySearchDaoYan($wordVal);
-            if (!empty($searchInfo)) {
-                foreach($searchInfo as $sKey => $sInfo) {
+            $searchInfo2 = $this->_getDetailInfoBySearchDaoYan($wordVal);
+            if (!empty($searchInfo2)) {
+                foreach($searchInfo2 as $sKey2 => $sInfo2) {
                     //替换名称中的搜索关键字
-                    $searchInfo[$sKey]['name'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['name']);
+                    $sInfo2['name'] = str_replace($wordVal,$str,$sInfo2['name']);
                     //替换名称中的搜索关键字
-                    if (!empty($searchInfo[$sKey]['zhuyan'])) {
-                        $searchInfo[$sKey]['zhuyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['zhuyan']);
+                    if (!empty($sInfo2['zhuyan'])) {
+                        $sInfo2['zhuyan'] = str_replace("/","、",$sInfo2['zhuyan']);
+                        $sInfo2['zhuyan'] = str_replace($wordVal,$str,$sInfo2['zhuyan']);
                     }
-                    $searchInfo[$sKey]['daoyan'] = str_replace($wordVal,"<em>{$wordVal}</em>",$sInfo['daoyan']);
+                    $sInfo2['daoyan'] = str_replace("/","、",$sInfo2['daoyan']);
+                    $sInfo2['daoyan'] = str_replace($wordVal,$str,$sInfo2['daoyan']);
+                    $sInfo2['jieshao'] = str_replace("&nbsp;","",$sInfo2['jieshao']);
+                    $sInfo2['jieshao'] = str_replace("\t","",$sInfo2['jieshao']);
+                    $searchInfo2[$sKey2] = $sInfo2;
                 }
-                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo2);
             }
         }
 
+
         //去掉重复电影
-        $searchMovieInfo = $this->initArr($searchMovieInfo);
+        $searchMovieInfo = $this->_initArr($searchMovieInfo);
+        $ids = array();
         foreach($searchMovieInfo as $infoKey => $infoVal) {
-            if ($infoKey < 4) {
-                $searchMovieInfo[$infoKey]['class'] = "firstRow";
-            } else {
-                $searchMovieInfo[$infoKey]['class'] = "";
+            $ids[] = $infoVal['id'];
+            $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
+            $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
+            $infoVal['jieshao'] = str_replace("&nbsp;","",$infoVal['jieshao']);
+            if (mb_strlen($infoVal['jieshao'],"UTF-8") > 95) {
+                $searchMovieInfo[$infoKey]['jieshao'] = mb_substr($infoVal['jieshao'],0,95,"UTF-8") . "...";
             }
-            $searchMovieInfo[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
         }
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
+
+        //观看链接
+        $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
+        $watchLinkInfo = $this->_getNewArrById($watchLinkInfo);
+        $this->set_attr("watchLinkInfo",$watchLinkInfo);
+
         $this->load->set_head_img(false);
-        
         $this->load->set_title("搜'{$searchW}'相关的影片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/search.css"));
-        $this->load->set_js(array("/js/dianying/search.js"));
+        $this->load->set_css(array("/css/dianying/newsearch.css"));
+        $this->load->set_js(array("/js/dianying/newsearch.js"));
         $this->load->set_top_index(-1);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
-        $this->set_view('dianying/search');
+        $this->set_view('dianying/newsearch');
     }
 
     public function ajaxgetdyinfo(){
@@ -184,7 +211,7 @@ class Search extends CI_Controller {
         return $newResArr;
     }
 
-    private function initArr($arr,$filed = "id") {
+    private function _initArr($arr,$filed = "id") {
         if (empty($arr)) {
             return $arr;
         }
@@ -196,4 +223,17 @@ class Search extends CI_Controller {
         }
         return $result;
     }
+
+    private function _getNewArrById($nfo)
+    {
+        if (empty($nfo)) {
+            return $nfo;
+        }
+        $result = array();
+        foreach($nfo as $infoVal) {
+            $result[$infoVal['infoId']][] = $infoVal;
+        }
+        return $result;
+    }
+
 }

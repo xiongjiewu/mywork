@@ -21,6 +21,7 @@ class Detail extends CI_Controller {
             exit;
         }
         $this->set_attr("userId",$this->userId);
+        $dyInfo['jieshao'] = str_replace("　　","",$dyInfo['jieshao']);
         $dyInfo['jieshao'] = $this->splitStr($dyInfo['jieshao'],200);
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);

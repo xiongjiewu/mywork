@@ -12,8 +12,8 @@ class Wordsplit extends CI_Model {
     {
         require(SPLIT_APP.'/pscws4.class.php');
         $pscws = new PSCWS4();
-        $pscws->set_dict(APP_ROOT.'/scws/dict.utf8.xdb');
-        $pscws->set_rule(APP_ROOT.'/scws/rules.utf8.ini');
+        $pscws->set_dict(SPLIT_APP.'/scws/dict.utf8.xdb');
+        $pscws->set_rule(SPLIT_APP.'/scws/rules.utf8.ini');
         $pscws->set_ignore(true);
         $pscws->send_text($title);
         $words = $pscws->get_tops(5);

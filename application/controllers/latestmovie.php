@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * 网站电影列表页
+ * 网站最新上映电影列表页
  * added by xiongjiewu at 2013-3-4
  */
 class Latestmovie extends CI_Controller {
