@@ -32,7 +32,7 @@ div.search_left ul li {
     font-size: 14px;
 }
 div.search_left ul li.title_text {
-    width: 100%;
+    width: 110px;
     float: left;
     color: #bbb;
     margin-left: 10px;
