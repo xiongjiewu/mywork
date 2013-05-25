@@ -36,6 +36,9 @@
                                 <a href="<?php echo get_url("/detail/index/{$idStr}");?>/">
                                     <?php echo $movieVal['name'];?>
                                 </a>
+                                <?php if (!empty($movieVal['nianfen'])):?>
+                                <span class="nianfen">年份：<?php echo $movieVal['nianfen'];?></span>
+                                <?php endif;?>
                             </p>
                             <p class="zhuyan">
                                 <span>主演：</span><?php echo $movieVal['zhuyan'];?>
