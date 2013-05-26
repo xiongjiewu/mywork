@@ -47,13 +47,13 @@
                     <li <?php if ($i == 0):?>class="first_one"<?php endif;?> title="点击查看详情">
                         <div class="search_dy_img">
                             <a href="<?php echo get_url("/detail/index/{$idStr}");?>/">
-                                <img alt="" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                                <img alt="<?php echo $movieVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
                             </a>
                         </div>
                         <div class="search_dy_detail">
                             <p class="title">
                                 <a href="<?php echo get_url("/detail/index/{$idStr}");?>/">
-                                    <?php echo $movieVal['name'];?>
+                                    <?php echo $movieVal['s_name'];?>
                                 </a>
                                 <?php if (!empty($movieVal['nianfen'])):?>
                                 <span class="nianfen">年份：<?php echo $movieVal['nianfen'];?></span>

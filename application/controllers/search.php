@@ -118,7 +118,7 @@ class Search extends CI_Controller {
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
                     //替换名称中的搜索关键字
-                    $sInfo['name'] = str_replace($wordVal,$str,$sInfo['name']);
+                    $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
                     //替换主演中的搜索关键字
                     if (!empty($sInfo['zhuyan'])) {
                         $sInfo['zhuyan'] = str_replace("/","、",$sInfo['zhuyan']);
@@ -141,7 +141,7 @@ class Search extends CI_Controller {
             if (!empty($searchInfo1)) {
                 foreach($searchInfo1 as $sKey1 => $sInfo1) {
                     //替换名称中的搜索关键字
-                    $sInfo1['name'] = str_replace($wordVal,$str,$sInfo1['name']);
+                    $sInfo1['s_name'] = str_replace($wordVal,$str,$sInfo1['name']);
                     //替换主演中的搜索关键字
                     $sInfo1['zhuyan'] = str_replace("/","、",$sInfo1['zhuyan']);
                     $sInfo1['zhuyan'] = str_replace($wordVal,$str,$sInfo1['zhuyan']);
@@ -162,7 +162,7 @@ class Search extends CI_Controller {
             if (!empty($searchInfo2)) {
                 foreach($searchInfo2 as $sKey2 => $sInfo2) {
                     //替换名称中的搜索关键字
-                    $sInfo2['name'] = str_replace($wordVal,$str,$sInfo2['name']);
+                    $sInfo2['s_name'] = str_replace($wordVal,$str,$sInfo2['name']);
                     //替换名称中的搜索关键字
                     if (!empty($sInfo2['zhuyan'])) {
                         $sInfo2['zhuyan'] = str_replace("/","、",$sInfo2['zhuyan']);
