@@ -226,7 +226,7 @@ class Search extends CI_Controller {
             echo json_encode($result);
             exit;
         }
-        $searchMovieInfo = $this->_getDetailInfoBySearchW($word,20);
+        $searchMovieInfo = $this->_getDetailInfoBySearchW($word);
         $searchMovieInfo = $this->_getMoviceNameInfos($searchMovieInfo);
         if (!empty($searchMovieInfo)) {
             $result["code"] = "success";
