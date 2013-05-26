@@ -181,7 +181,7 @@ class Search extends CI_Controller {
 
         //去掉重复电影
         $searchMovieInfo = $this->_initArr($searchMovieInfo);
-        $ids = array();
+        $ids = $nianfenArr = array();
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             $ids[] = $infoVal['id'];
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
@@ -190,7 +190,11 @@ class Search extends CI_Controller {
             if (mb_strlen($infoVal['jieshao'],"UTF-8") > 95) {
                 $searchMovieInfo[$infoKey]['jieshao'] = mb_substr($infoVal['jieshao'],0,95,"UTF-8") . "...";
             }
+            //年份，用作按年份排序
+            $nianfenArr[] = empty($infoVal['nianfen']) ? 0 : $infoVal['nianfen'];
         }
+        //按年份排序
+        array_multisort($nianfenArr, SORT_DESC,$searchMovieInfo);
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接
