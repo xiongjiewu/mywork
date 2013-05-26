@@ -25,7 +25,7 @@ class Search extends CI_Controller {
      */
     private function _getDetailInfoBySearchDaoYan($name,$limit = 20) {
         $name = mysql_real_escape_string($name);
-        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit);
+        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit,true);
         return $searchMovieInfo;
     }
 
@@ -35,7 +35,7 @@ class Search extends CI_Controller {
      */
     private function _getDetailInfoBySearchName($name,$limit = 20) {
         $name = mysql_real_escape_string($name);
-        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit);
+        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit,true);
         return $searchMovieInfo;
     }
 
@@ -46,7 +46,7 @@ class Search extends CI_Controller {
      */
     private function _getDetailInfoBySearchW($searchW,$limit  = 20) {
         $searchW = mysql_real_escape_string($searchW);
-        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit);
+        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,true);
         return $searchMovieInfo;
     }
 
