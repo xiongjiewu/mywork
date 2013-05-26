@@ -75,8 +75,18 @@ div.search_dy_info ul li:hover {
     height: 178px;
     border: 1px solid #ddd;
 }
-div.search_dy_info ul li.first_one {
+div.search_dy_info ul li.first_one,div.search_dy_info ul li.no_data {
     margin-top: 0;
+}
+div.search_dy_info ul li.no_data div.error_imga {
+    float: left;
+    width: 200px;
+    height: 178px;
+}
+div.search_dy_info ul li.no_data div.error_text {
+    float: left;
+    margin-top: 100px;
+    font-size: 17px;
 }
 div.search_dy_img {
     width: 140px;

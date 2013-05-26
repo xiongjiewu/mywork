@@ -91,6 +91,15 @@
                     </li>
                     <?php $i++;?>
                 <?php endforeach;?>
+                <?php else:?>
+                    <li class="no_data">
+                        <div class="error_imga">
+                            <img src="/images/error.png">
+                        </div>
+                        <div class="error_text">
+                            糟糕，您搜索的信息暂无，您可以尝试换个方式搜索！
+                        </div>
+                    </li>
             <?php endif;?>
         </ul>
     </div>
