@@ -361,14 +361,14 @@ class Backgroundadmin extends CI_Model {
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
 
-    public function getDetailInfoBySearchW($searchW,$limit=10,$nianFenOrder = false)
+    public function getDetailInfoBySearchW($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {
             return false;
         }
         $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where name like '{$searchW}%'";
-        if ($nianFenOrder) {
-            $sql .= " and del = 0 order by nianfen desc limit {$limit}";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
             $sql .= " and del = 0 limit {$limit}";
         }
@@ -376,14 +376,14 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
-    public function getDetailInfoBySearchZhuYan($searchW,$limit=10,$nianFenOrder = false)
+    public function getDetailInfoBySearchZhuYan($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {
             return false;
         }
         $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where zhuyan like '{$searchW}%'";
-        if ($nianFenOrder) {
-            $sql .= " and del = 0 order by nianfen desc limit {$limit}";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
             $sql .= " and del = 0 limit {$limit}";
         }
@@ -391,14 +391,14 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
-    public function getDetailInfoBySearchDaoYan($searchW,$limit=10,$nianFenOrder = false)
+    public function getDetailInfoBySearchDaoYan($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {
             return false;
         }
         $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where daoyan like '{$searchW}%'";
-        if ($nianFenOrder) {
-            $sql .= " and del = 0 order by nianfen desc limit {$limit}";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
             $sql .= " and del = 0 limit {$limit}";
         }

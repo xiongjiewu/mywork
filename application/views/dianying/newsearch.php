@@ -4,19 +4,37 @@
         <?php $typeCount = count($movieSortType);?>
         <?php $typeI = 1;?>
         <?php foreach ($movieSortType as $typeKey => $typeVal):?>
-        <ul <?php if($typeI == $typeCount):?>class="last_one"<?php endif;?>>
-            <li class="title_text"><?php echo $typeVal['type'];?></li>
-            <li class="current">
-                <a href="<?php echo $typeVal['base_url'];?>">全部</a>
-            </li>
-            <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal): ?>
-                <li>
-                    <a href="<?php echo $typeVal['base_url'] . $typeValKey; ?>/">
-                        <?php echo $typeInfoVal;?>
-                    </a>
-                </li>
-            <?php endforeach;?>
-        </ul>
+            <ul <?php if($typeI == $typeCount):?>class="last_one"<?php endif;?>>
+                <li class="title_text"><?php echo $typeVal['type'];?></li>
+                <?php if ($typeKey == 0 ):?>
+                    <li <?php if ($type == "all"):?>class="current"<?php endif;?>>
+                        <a href="/search/index/all/<?php echo $year;?>/<?php echo $diqu;?>?key=<?php echo $searchW;?>">全部</a>
+                    </li>
+                <?php elseif($typeKey == 1):?>
+                    <li <?php if ($year == "all"):?>class="current"<?php endif;?>>
+                        <a href="/search/index/<?php echo $type;?>/all/<?php echo $diqu;?>?key=<?php echo $searchW;?>">全部</a>
+                    </li>
+                <?php else:?>
+                    <li <?php if ($diqu == "all"):?>class="current"<?php endif;?>>
+                        <a href="/search/index/<?php echo $type;?>/<?php echo $year;?>/all?key=<?php echo $searchW;?>">全部</a>
+                    </li>
+                <?php endif;?>
+                <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal): ?>
+                    <?php if ($typeKey == 0 ):?>
+                        <li <?php if ($type == $typeValKey):?>class="current"<?php endif;?>>
+                            <a href="/search/index/<?php echo $typeValKey;?>/<?php echo $year;?>/<?php echo $diqu;?>?key=<?php echo $searchW;?>"><?php echo $typeInfoVal;?></a>
+                        </li>
+                    <?php elseif($typeKey == 1):?>
+                        <li <?php if ($year == $typeValKey):?>class="current"<?php endif;?>>
+                            <a href="/search/index/<?php echo $type;?>/<?php echo $typeValKey;?>/<?php echo $diqu;?>?key=<?php echo $searchW;?>"><?php echo $typeInfoVal;?></a>
+                        </li>
+                    <?php else:?>
+                        <li <?php if ($diqu == $typeValKey):?>class="current"<?php endif;?>>
+                            <a href="/search/index/<?php echo $type;?>/<?php echo $year;?>/<?php echo $typeValKey;?>?key=<?php echo $searchW;?>"><?php echo $typeInfoVal;?></a>
+                        </li>
+                    <?php endif;?>
+                <?php endforeach;?>
+            </ul>
             <?php $typeI++;?>
        <?php endforeach;?>
     </div>

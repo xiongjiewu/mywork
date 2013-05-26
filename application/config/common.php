@@ -38,6 +38,18 @@ $config['moviePlace'] = array(
     9 => "意大利",
     10 => "其他",
 );
+$config['movieNianFen'] = array(
+    2004=>2004,
+    2005=>2005,
+    2006=>2006,
+    2007=>2007,
+    2008 => 2008,
+    2009 => 2009,
+    2010 => 2010,
+    2011 => 2011,
+    2012 => 2012,
+    2013 => 2013
+);
 
 $config['bofangqiType'] = array(
     1 => "快播",
@@ -127,7 +139,7 @@ $config['movie_type'] = array(
     array(
         "type" => "年份",
         "base_url" => get_url("/moviceguide/year/"),
-        "info" => array(2004=>2004,2005=>2005,2006=>2006,2007=>2007,2008 => 2008,2009 => 2009,2010 => 2010,2011 => 2011,2012 => 2012,2013 => 2013),
+        "info" => $config['movieNianFen'],
     ),
     array(
         "type" => "地区",

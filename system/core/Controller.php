@@ -6,19 +6,22 @@ class CI_Controller
     private static $instance;
 
     protected $base_title;
+    //电影类型
     protected $_movieType;
-
+    //电影地区
     protected $_moviePlace;
-
+    //播放器类型
     protected $_bofangqiType;
-
+    //清晰度
     protected $_qingxiType;
-
+    //收费
     protected $_shoufeiType;
-
+    //下载链接类型
     protected $_downLoadType;
 
     protected $_movieSortType;
+    //电影年份
+    protected $_movieNianFen;
 
     const CONFIG_N_COOKIE_DOMAIN = "cookie_domain";
     const CONFIG_N_COOKIE_PATH = "cookie_path";
@@ -37,6 +40,7 @@ class CI_Controller
         $this->_qingxiType = APF::get_instance()->get_config_value("qingxiType");
         $this->_movieSortType = APF::get_instance()->get_config_value("movieSortType");
         $this->_movieType = APF::get_instance()->get_config_value("movieType");
+        $this->_movieNianFen = APF::get_instance()->get_config_value("movieNianFen");
 
         foreach (is_loaded() as $var => $class) {
             $this->$var =& load_class($class);
