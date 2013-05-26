@@ -1,5 +1,6 @@
 body{
-    background: url("/images/common/pattern.png") repeat 0 0 transparent;
+    /*background: url("/images/common/pattern.png") repeat 0 0 transparent;*/
+    background: none repeat scroll 0 0 #DADAD9;
     font-family:"微软雅黑";
 }
 table,div.bs-docs-sidebar ul li a{
