@@ -376,6 +376,21 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
+    public function getDetailInfoByDyName($searchW,$limit=10,$other = false)
+    {
+        if (!isset($searchW)) {
+            return false;
+        }
+        $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where name = '{$searchW}'";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
+        } else {
+            $sql .= " and del = 0 limit {$limit}";
+        }
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function getDetailInfoBySearchZhuYan($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {

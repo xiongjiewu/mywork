@@ -56,6 +56,19 @@ class Search extends CI_Controller {
         return $searchMovieInfo;
     }
 
+    /** 根据电影名称关键字搜索电影
+     * @param $searchW
+     * @param int $limit
+     * @return mixed
+     */
+    private function _getDetailInfoByDyName($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
+        $searchW = mysql_real_escape_string($searchW);
+        $conStr = $this->_getMoviceCon($type,$year,$diqu);
+        $conStr .= " order by nianfen desc";
+        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoByDyName(trim($searchW),$limit,$conStr);
+        return $searchMovieInfo;
+    }
+
     /** 根据类型、年份、地区拼接筛选条件
      * @param string $type
      * @param string $year
@@ -115,7 +128,11 @@ class Search extends CI_Controller {
         foreach($wordArr[0] as $wordVal) {
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
-            $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu);
+            if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
+                $searchInfo = $this->_getDetailInfoByDyName($wordVal,$type,$year,$diqu);
+            } else {
+                $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu);
+            }
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
                     //替换名称中的搜索关键字
@@ -185,7 +202,6 @@ class Search extends CI_Controller {
         }
 
         $ids = $nianfenArr = $existWatch = array();
-
         foreach($firstMoviceInfo as $searchVal) {
             $existWatch[] = $searchVal['exist_watch'];
         }
@@ -196,9 +212,7 @@ class Search extends CI_Controller {
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("&nbsp;","",$infoVal['jieshao']);
-            if (mb_strlen($infoVal['jieshao'],"UTF-8") > 95) {
-                $searchMovieInfo[$infoKey]['jieshao'] = mb_substr($infoVal['jieshao'],0,95,"UTF-8") . "...";
-            }
+            $searchMovieInfo[$infoKey]['jieshao'] = $this->splitStr($infoVal['jieshao'],95);
             //年份，用作按年份排序
             $nianfenArr[] = empty($infoVal['nianfen']) ? 0 : $infoVal['nianfen'];
         }
