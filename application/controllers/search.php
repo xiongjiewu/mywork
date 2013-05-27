@@ -98,10 +98,6 @@ class Search extends CI_Controller {
         $this->load->model("Wordsplit");
         $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
 
-        //开始匹配搜索关键字的电影
-        $searchMovieInfo = array();
-        $wordArr[0] = array_unique($wordArr[0]);
-
         //类型、年份、地区筛选
         $type = empty($this->_movieType[intval($type)]) ? "all" : $type;
         $year = empty($this->_movieNianFen[intval($year)]) ? "all" : $year;
@@ -110,7 +106,12 @@ class Search extends CI_Controller {
         $this->set_attr("year",$year);
         $this->set_attr("diqu",$diqu);
 
+        //开始匹配搜索关键字的电影
+        $searchMovieInfo = $firstMoviceInfo = array();
+        $wordArr[0] = array_unique($wordArr[0]);
+
         //开始查询信息
+        $moviceI = 0;
         foreach($wordArr[0] as $wordVal) {
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
@@ -133,7 +134,11 @@ class Search extends CI_Controller {
                     $sInfo['jieshao'] = str_replace("\t","",$sInfo['jieshao']);
                     $searchInfo[$sKey] = $sInfo;
                 }
-                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+                if ($moviceI == 0) {//全匹配信息数组
+                    $firstMoviceInfo = array_merge($firstMoviceInfo,$searchInfo);
+                } else {
+                    $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo);
+                }
             }
 
             //电影主演搜索
@@ -154,7 +159,11 @@ class Search extends CI_Controller {
                     $sInfo1['jieshao'] = str_replace("\t","",$sInfo1['jieshao']);
                     $searchInfo1[$sKey1] = $sInfo1;
                 }
-                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo1);
+                if ($moviceI == 0) {//全匹配信息数组
+                    $firstMoviceInfo = array_merge($firstMoviceInfo,$searchInfo1);
+                } else {
+                    $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo1);
+                }
             }
 
             //电影导演搜索
@@ -174,13 +183,15 @@ class Search extends CI_Controller {
                     $sInfo2['jieshao'] = str_replace("\t","",$sInfo2['jieshao']);
                     $searchInfo2[$sKey2] = $sInfo2;
                 }
-                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo2);
+                if ($moviceI == 0) {//全匹配信息数组
+                    $firstMoviceInfo = array_merge($firstMoviceInfo,$searchInfo2);
+                } else {
+                    $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo2);
+                }
             }
+            $moviceI++;
         }
 
-
-        //去掉重复电影
-        $searchMovieInfo = $this->_initArr($searchMovieInfo);
         $ids = $nianfenArr = array();
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             $ids[] = $infoVal['id'];
@@ -195,6 +206,9 @@ class Search extends CI_Controller {
         }
         //按年份排序
         array_multisort($nianfenArr, SORT_DESC,$searchMovieInfo);
+        $searchMovieInfo = array_merge($firstMoviceInfo,$searchMovieInfo);
+        //去掉重复电影
+        $searchMovieInfo = $this->_initArr($searchMovieInfo);
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接
