@@ -26,7 +26,7 @@ class Search extends CI_Controller {
     private function _getDetailInfoBySearchDaoYan($name,$type = '',$year = '',$diqu = '',$limit = 20) {
         $name = mysql_real_escape_string($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by nianfen desc,exist_watch desc";
+        $conStr .= " order by exist_watch desc,nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit,$conStr);
         return $searchMovieInfo;
     }
@@ -38,7 +38,7 @@ class Search extends CI_Controller {
     private function _getDetailInfoBySearchName($name,$type = '',$year = '',$diqu = '',$limit = 20) {
         $name = mysql_real_escape_string($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by nianfen desc,exist_watch desc";
+        $conStr .= " order by exist_watch desc,nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit,$conStr);
         return $searchMovieInfo;
     }
@@ -51,7 +51,7 @@ class Search extends CI_Controller {
     private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 20) {
         $searchW = mysql_real_escape_string($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by nianfen desc,exist_watch desc";
+        $conStr .= " order by exist_watch desc,nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,$conStr);
         return $searchMovieInfo;
     }
