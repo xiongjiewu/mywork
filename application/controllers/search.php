@@ -122,7 +122,11 @@ class Search extends CI_Controller {
         //开始匹配搜索关键字的电影
         $searchMovieInfo = $firstMoviceInfo = array();
         $wordArr[0] = array_unique($wordArr[0]);
-        $wordArr[0] = array_merge(array($searchW),$wordArr[0]);
+        if (in_array($searchW,$wordArr[0])) {
+            $wordArr[0] = array_merge(array($searchW),$wordArr[0]);
+        } else {
+            $wordArr[0] = array_merge(array($searchW,$searchW),$wordArr[0]);
+        }
 
         //开始查询信息
         $moviceI = 0;
