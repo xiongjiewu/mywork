@@ -159,11 +159,7 @@ class Search extends CI_Controller {
                     $sInfo1['jieshao'] = str_replace("\t","",$sInfo1['jieshao']);
                     $searchInfo1[$sKey1] = $sInfo1;
                 }
-                if ($moviceI == 0) {//全匹配信息数组
-                    $firstMoviceInfo = array_merge($firstMoviceInfo,$searchInfo1);
-                } else {
-                    $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo1);
-                }
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo1);
             }
 
             //电影导演搜索
@@ -183,11 +179,7 @@ class Search extends CI_Controller {
                     $sInfo2['jieshao'] = str_replace("\t","",$sInfo2['jieshao']);
                     $searchInfo2[$sKey2] = $sInfo2;
                 }
-                if ($moviceI == 0) {//全匹配信息数组
-                    $firstMoviceInfo = array_merge($firstMoviceInfo,$searchInfo2);
-                } else {
-                    $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo2);
-                }
+                $searchMovieInfo = array_merge($searchMovieInfo,$searchInfo2);
             }
             $moviceI++;
         }
