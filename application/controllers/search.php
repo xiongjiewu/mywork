@@ -185,6 +185,13 @@ class Search extends CI_Controller {
         }
 
         $ids = $nianfenArr = $existWatch = array();
+
+        foreach($firstMoviceInfo as $searchVal) {
+            $existWatch[] = $searchVal['exist_watch'];
+        }
+        //按是否有观看链接排序
+        array_multisort($existWatch, SORT_DESC,$firstMoviceInfo);
+
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
@@ -198,12 +205,6 @@ class Search extends CI_Controller {
         //按年份排序
         array_multisort($nianfenArr, SORT_DESC,$searchMovieInfo);
         $searchMovieInfo = array_merge($firstMoviceInfo,$searchMovieInfo);
-        foreach($searchMovieInfo as $searchVal) {
-            $existWatch[] = $searchVal['exist_watch'];
-        }
-        //按是否有观看链接排序
-        array_multisort($existWatch, SORT_DESC,$searchMovieInfo);
-
         //去掉重复电影
         $searchMovieInfo = $this->_initArr($searchMovieInfo,$ids);
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
