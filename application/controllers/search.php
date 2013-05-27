@@ -23,10 +23,10 @@ class Search extends CI_Controller {
      * @param $name
      * @return mixed
      */
-    private function _getDetailInfoBySearchDaoYan($name,$type = '',$year = '',$diqu = '',$limit = 20) {
+    private function _getDetailInfoBySearchDaoYan($name,$type = '',$year = '',$diqu = '',$limit = 50) {
         $name = mysql_real_escape_string($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by exist_watch desc,nianfen desc";
+        $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit,$conStr);
         return $searchMovieInfo;
     }
@@ -35,10 +35,10 @@ class Search extends CI_Controller {
      * @param $name
      * @return mixed
      */
-    private function _getDetailInfoBySearchName($name,$type = '',$year = '',$diqu = '',$limit = 20) {
+    private function _getDetailInfoBySearchName($name,$type = '',$year = '',$diqu = '',$limit = 50) {
         $name = mysql_real_escape_string($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by exist_watch desc,nianfen desc";
+        $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit,$conStr);
         return $searchMovieInfo;
     }
@@ -48,10 +48,10 @@ class Search extends CI_Controller {
      * @param int $limit
      * @return mixed
      */
-    private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 20) {
+    private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
         $searchW = mysql_real_escape_string($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
-        $conStr .= " order by exist_watch desc,nianfen desc";
+        $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,$conStr);
         return $searchMovieInfo;
     }
@@ -184,9 +184,8 @@ class Search extends CI_Controller {
             $moviceI++;
         }
 
-        $ids = $nianfenArr = array();
+        $ids = $nianfenArr = $existWatch = array();
         foreach($searchMovieInfo as $infoKey => $infoVal) {
-            $ids[] = $infoVal['id'];
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("&nbsp;","",$infoVal['jieshao']);
@@ -199,8 +198,14 @@ class Search extends CI_Controller {
         //按年份排序
         array_multisort($nianfenArr, SORT_DESC,$searchMovieInfo);
         $searchMovieInfo = array_merge($firstMoviceInfo,$searchMovieInfo);
+        foreach($searchMovieInfo as $searchVal) {
+            $existWatch[] = $searchVal['exist_watch'];
+        }
+        //按是否有观看链接排序
+        array_multisort($existWatch, SORT_DESC,$searchMovieInfo);
+
         //去掉重复电影
-        $searchMovieInfo = $this->_initArr($searchMovieInfo);
+        $searchMovieInfo = $this->_initArr($searchMovieInfo,$ids);
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接
@@ -262,7 +267,7 @@ class Search extends CI_Controller {
         return $newResArr;
     }
 
-    private function _initArr($arr,$filed = "id") {
+    private function _initArr($arr,&$ids = array(),$filed = "id") {
         if (empty($arr)) {
             return $arr;
         }
@@ -270,6 +275,7 @@ class Search extends CI_Controller {
         foreach($arr as $aV) {
             if (empty($result[$aV[$filed]])) {
                 $result[$aV[$filed]] = $aV;
+                $ids[] = $aV[$filed];
             }
         }
         return $result;
