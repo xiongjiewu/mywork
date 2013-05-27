@@ -104,12 +104,12 @@ class Search extends CI_Controller {
         $searchW = $this->input->get("key");
         //过滤特殊字符
         $searchW = htmlspecialchars($searchW);
-        $searchW = $this->_pregReplacespeaStr($searchW);var_dump($searchW);
+        $searchW = $this->_pregReplacespeaStr($searchW);
         if (empty($searchW)) {
             $this->jump_to("/moviceguide/");
             exit;
         }
-        
+
         $this->set_attr("searchW",$searchW);
         //长度截取
         if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
