@@ -78,6 +78,9 @@ div.search_dy_info ul li:hover {
 div.search_dy_info ul li.first_one,div.search_dy_info ul li.no_data {
     margin-top: 0;
 }
+div.search_dy_info ul li.no_data {
+    cursor: default;
+}
 div.search_dy_info ul li.no_data div.error_imga {
     float: left;
     width: 200px;

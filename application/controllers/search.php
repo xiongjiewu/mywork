@@ -10,12 +10,20 @@ class Search extends CI_Controller {
         $this->load->model('Backgroundadmin');
     }
 
+    /** 过滤sql特殊字符
+     * @param $str
+     * @return string
+     */
+    private function _repeatSpeStr($str) {
+        return mysql_real_escape_string($str);
+    }
+
     /** 过滤特殊字符
      * @param $searchW
      * @return mixed
      */
     private  function _pregReplacespeaStr($searchW) {
-        $searchW = preg_replace('/[^\w\d\x80-\xff]+/','',rawurldecode($searchW));//过滤特殊字符
+        $searchW = preg_replace('/\'+|"+/','',rawurldecode($searchW));//过滤特殊字符
         return $searchW;
     }
 
@@ -24,7 +32,7 @@ class Search extends CI_Controller {
      * @return mixed
      */
     private function _getDetailInfoBySearchDaoYan($name,$type = '',$year = '',$diqu = '',$limit = 50) {
-        $name = mysql_real_escape_string($name);
+        $name = $this->_repeatSpeStr($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($name),$limit,$conStr);
@@ -36,7 +44,7 @@ class Search extends CI_Controller {
      * @return mixed
      */
     private function _getDetailInfoBySearchName($name,$type = '',$year = '',$diqu = '',$limit = 50) {
-        $name = mysql_real_escape_string($name);
+        $name = $this->_repeatSpeStr($name);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($name),$limit,$conStr);
@@ -49,7 +57,7 @@ class Search extends CI_Controller {
      * @return mixed
      */
     private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
-        $searchW = mysql_real_escape_string($searchW);
+        $searchW = $this->_repeatSpeStr($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,$conStr);
@@ -62,7 +70,7 @@ class Search extends CI_Controller {
      * @return mixed
      */
     private function _getDetailInfoByDyName($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
-        $searchW = mysql_real_escape_string($searchW);
+        $searchW = $this->_repeatSpeStr($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
         $searchMovieInfo = $this->Backgroundadmin->getDetailInfoByDyName(trim($searchW),$limit,$conStr);
@@ -94,13 +102,14 @@ class Search extends CI_Controller {
 
     public function index($type = "all",$year = "all",$diqu = "all") {
         $searchW = $this->input->get("key");
+        //过滤特殊字符
         $searchW = htmlspecialchars($searchW);
+        $searchW = $this->_pregReplacespeaStr($searchW);var_dump($searchW);
         if (empty($searchW)) {
             $this->jump_to("/moviceguide/");
             exit;
         }
-        //过滤特殊字符
-        $searchW = $this->_pregReplacespeaStr($searchW);
+        
         $this->set_attr("searchW",$searchW);
         //长度截取
         if (mb_strlen($searchW,"utf8") > $this->_maxLen) {

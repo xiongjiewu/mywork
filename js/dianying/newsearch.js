@@ -3,8 +3,10 @@
         $("div.search_dy_info ul li").each(function(){
             var aObj = $(this).find("a");
             var url = $(aObj.get(0)).attr("href");
-            $(this).bind("click",function(){
-                window.location.href = url;
+            $(this).bind("click",function() {
+                if (!$(this).hasClass("no_data")) {
+                    window.location.href = url;
+                }
             });
             aObj.each(function() {
                 if ($(this).attr("href")) {

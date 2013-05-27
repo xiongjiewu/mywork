@@ -84,7 +84,7 @@
                         <form autocomplete="off" name="search_dy" id="search_dy" onsubmit="return false;"
                               action="<?php echo get_url("/search/"); ?>">
                             <input type="text" class="search_value" name="search" id="search"
-                                   value="<?php if (isset($data['searchW'])): ?><?php echo $data['searchW']; ?><?php else: ?>搜索您喜欢的影片...<?php endif; ?>">
+                                   value="<?php if (isset($data['searchW'])): ?><?php echo $data['searchW']; ?><?php else: ?>搜影片、演员、导演...<?php endif; ?>">
                             <input type="submit" class="submit" name="search_submit" id="search_submit" value="">
                         </form>
                         <div class="about_search">

@@ -45,8 +45,8 @@ var initOjb = {
     },
     getSearchInfoDo:function(searchObj,searchAbount) {
         var search_val = $.trim(searchObj.val());
-        search_val = this.removeSpecailStr(search_val);
-        if (search_val && (search_val != undefined) && (search_val != "搜索您喜欢的影片...")) {
+        //search_val = this.removeSpecailStr(search_val);
+        if (search_val && (search_val != undefined) && (search_val != "搜影片、演员、导演...")) {
             this.ajaxGetSearchInfo(search_val, function (result) {
                 if (result.code == "success") {
                     var sHtml = "";
@@ -129,14 +129,14 @@ var initOjb = {
         });
         searchObj.bind("focus", function () {
             var search_val = $.trim($(this).val());
-            if (search_val == "搜索您喜欢的影片...") {
+            if (search_val == "搜影片、演员、导演...") {
                 $("#search").val("");
             }
         });
         searchObj.bind("blur", function () {
             var search_val = $.trim($(this).val());
             if (!search_val || search_val == undefined) {
-                $("#search").val("搜索您喜欢的影片...");
+                $("#search").val("搜影片、演员、导演...");
             }
         });
         $(document).bind("click",function(e){
@@ -152,8 +152,8 @@ var initOjb = {
         });
         $("#search_dy").submit(function () {
             var search_val = $.trim($("#search").val());
-            search_val = initOjb.removeSpecailStr(search_val);
-            if (!search_val || (search_val == "搜索您喜欢的影片...")) {
+            //search_val = initOjb.removeSpecailStr(search_val);
+            if (!search_val || (search_val == "搜影片、演员、导演...")) {
                 window.location.href = "/moviceguide/";
                 return false;
             } else {
