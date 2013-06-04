@@ -46,6 +46,16 @@ class Latestmovie extends CI_Controller {
                 $time = strtotime("-1 month",$time);
             }
 
+            $ids = array();
+            foreach($movieList as $movieListKey => $movieListVal) {
+                if (!empty($movieListVal)) {
+                    foreach($movieListVal as $mKey => $mVal) {
+                        $ids[] = $mVal['id'];
+                        $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
+                    }
+                    $movieList[$movieListKey] = $movieListVal;
+                }
+            }
             //观看链接
             $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
             $watchLinkInfo = $this->_initArr($watchLinkInfo);
@@ -72,16 +82,15 @@ class Latestmovie extends CI_Controller {
             $monthArr = $lastTotalInfo['monthArr'];
             $watchLinkInfo = $lastTotalInfo['watchLinkInfo'];
             $downLoadLinkInfo = $lastTotalInfo['downLoadLinkInfo'];
-        }
-
-        $ids = array();
-        foreach($movieList as $movieListKey => $movieListVal) {
-            if (!empty($movieListVal)) {
-                foreach($movieListVal as $mKey => $mVal) {
-                    $ids[] = $mVal['id'];
-                    $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
+            $ids = array();
+            foreach($movieList as $movieListKey => $movieListVal) {
+                if (!empty($movieListVal)) {
+                    foreach($movieListVal as $mKey => $mVal) {
+                        $ids[] = $mVal['id'];
+                        $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
+                    }
+                    $movieList[$movieListKey] = $movieListVal;
                 }
-                $movieList[$movieListKey] = $movieListVal;
             }
         }
 
