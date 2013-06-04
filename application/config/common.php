@@ -1,5 +1,5 @@
 <?php
-$config['base_name'] = "电影吧";
+$config['base_name'] = "好吧";
 $config['base_title'] = "我们只专注于电影，您想看的就是我们宗旨";
 
 $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
@@ -28,13 +28,13 @@ $config['movieType'] = array(
 
 $config['moviePlace'] = array(
     1 => "中国",
-    2 => "韩国",
     3 => "美国",
-    4 => "日本",
-    5 => "俄罗斯",
-    6 => "法国",
-    7 => "英国",
     8 => "加拿大",
+    4 => "日本",
+    6 => "法国",
+    5 => "俄罗斯",
+    7 => "英国",
+    2 => "韩国",
     9 => "意大利",
     10 => "其他",
 );
@@ -147,7 +147,15 @@ $config['movie_type'] = array(
         "info" => $config['moviePlace'],
     ),
 );
-
+$nTime = time();
+$time = strtotime(date("Y-m-01",$nTime));
+$monthCount = 6;
+$monthArr  =array();
+for($i = 1;$i <= $monthCount;$i++) {
+    $monthArr[date("Y年m月",$time)] = date("Ym",$time);
+    $time = strtotime(date("Y-m-01",$time));
+    $time = strtotime("-1 month",$time);
+}
 $config['menus'] = array(
     array(
         "index" => "index",
@@ -156,20 +164,22 @@ $config['menus'] = array(
         "class" => "",
     ),
     array(
-        "index" => "",
+        "index" => "movie_last",
         "title" => "最新上映",
         "link" => get_url("/latestmovie/"),
-        "class" => "",
+        "class" => "movie_last",
+        "type_info" => $monthArr,
     ),
     array(
-        "index" => "",
+        "index" => "upcoming_movie",
         "title" => "即将上映",
         "link" => get_url("/upcomingmovie/"),
         "class" => "",
+        "type_info" => "",
     ),
     array(
-        "index" => "",
-        "title" => "重温经典",
+        "index" => "top_movie",
+        "title" => "排行榜",
         "link" => get_url("/classmovice/"),
         "class" => "",
     ),
@@ -180,24 +190,11 @@ $config['menus'] = array(
         "class" => "dy_sort",
         "type_info" => $config['movie_type'],
     ),
-//    array(
-//        "index" => "",
-//        "title" => "反馈我想看",
-//        "link" => get_url("/usercenter/createfeedback/want/"),
-//        "class" => "",
-//    ),
-//    array(
-//        "index" => "research",
-//        "title" => "功能问卷调查",
-//        "link" => get_url("/research?uu=" . substr(time(),0,9)),
-//        "class" => "",
-//        "type_info" => array(),
-//    ),
 );
 $config['cookie_domain'] = ".local.dianying8.tv";//cookie域名
 $config['cookie_path'] = '/';//cookie路径
 $config['resgiter_code_cookie_name'] = 'local_register_code_answer';
-$config['web_name'] = "电影吧";
+$config['web_name'] = "好吧";
 $config['AuthCookieName'] = "local_MyAuth_Dianying8Info";
 $config['dianying8Secques']  = "localdianying8@cookie.com";
 $config['notice_max_count'] = 20;//订阅通知最大个数
@@ -215,3 +212,7 @@ $config['email_login_url'] = array(//邮箱类型以及登录链接
     "tom" => "http://web.mail.tom.com/webmail/login/index.action"
 );
 
+//搜索缓存key
+$config['search_cache_key'] = "search_cache_key_count";
+//浏览记录cookie名
+$config['look_cookie_key'] = "user_look_cookie_val_info";

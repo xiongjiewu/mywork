@@ -26,7 +26,7 @@ class Backgroundadmin extends CI_Model {
     private $_detailfInfoFild = array(
         "id","name","type","jieshao","zhuyan","time0","time1","time2","time3","diqu","nianfen","daoyan","shichang","image","del","exist_watch",
     );
-    private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei");
+    private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei","beizhu");
     private $_downLinkFild = array("id","infoId","link","size","type");
 
     private function _getFiledStr()
@@ -473,6 +473,12 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
+    /**
+     * 根据条件获取电影信息总数
+     * @param $condition 条件
+     * @param string $type 最大还是最小id
+     * @return bool
+     */
     public function getDetailInfoCountByCondition($condition = "",$del = 0)
     {
         if (empty($condition)) {
@@ -481,6 +487,32 @@ class Backgroundadmin extends CI_Model {
             $where = "{$condition} and del = 0";
         }
         $sql = "select count(1) as cn from `tbl_detailInfo` where {$where};";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result[0]) ? 0 : $result[0]['cn'];
+    }
+
+    /**
+     * 根据类别获取top电影
+     * @param int $topType
+     * @param int $offset
+     * @param int $limit
+     * @return mixed
+     */
+    public function getTopMoviceInfoByType($topType = 1,$offset = 0, $limit = 10) {
+        $sql = "select * from `tbl_movieScore` where type = {$topType} order by score desc limit {$offset},{$limit}";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return $result;
+    }
+
+    /**
+     * 获取电影总数
+     * @return int
+     */
+    public function getdyCount()
+    {
+        $sql = "select count(1) as cn from `tbl_detailInfo` where del = 0;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];

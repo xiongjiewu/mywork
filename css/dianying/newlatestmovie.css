@@ -7,8 +7,10 @@ div.lastmovice_main {
 }
 div.time_daohang {
     float: left;
+    /*position: fixed;*/
+    margin-top: 60px;
     margin-left: 0;
-    margin-top: 50px;
+    width: 130px;
 }
 div.time_daohang ul {
     position: fixed;
@@ -21,7 +23,7 @@ div.time_daohang ul li {
     color: #9b9b9b;
     background: url("/images/head/latestmovie.png") no-repeat scroll -6px -214px transparent;
     list-style: none outside none;
-    padding: 15px 26px;
+    padding: 10px 26px;
     text-align: center;
     cursor: pointer;
 }
@@ -36,6 +38,7 @@ div.time_daohang ul li:hover {
 div.lastmovice_list {
     float: left;
     margin-left: 150px;
+    margin-top: -67px;
 }
 div.month_list {
     float: left;

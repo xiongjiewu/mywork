@@ -9,6 +9,7 @@
                 <?php $dI++;?>
             <?php endforeach;?>
         </ul>
+        <div class="clear"></div>
     </div>
     <div class="lastmovice_list">
         <?php foreach ($movieList as $movieKey => $movieVal): ?>
@@ -72,6 +73,7 @@
             </div>
         <?php endforeach;?>
     </div>
+    <div class="clear"></div>
 </div>
 <script type="text/javascript">
     (function($){
@@ -84,7 +86,7 @@
                     $(this).addClass("current");
                     var name = $(this).attr("name");
                     var sH = $("#"+name+"").offset().top;
-                    $(window).scrollTop(sH - 130);
+                    $(window).scrollTop(sH - 256);
                 });
             });
             var shoucangObj = $("span.shoucang_dy");

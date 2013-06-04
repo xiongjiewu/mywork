@@ -6,7 +6,7 @@ var init = {
         dyInfoObj.find("ul.info_list_do").each(function(){
             var dyInfoTop = $(this).offset().top;
             var dyInfoH = $(this).height();
-            if (parseInt(daohangTop) >= (parseInt(dyInfoTop) - 130) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
+            if (parseInt(daohangTop) >= (parseInt(dyInfoTop) - 256) && parseInt(daohangTop) <= (parseInt(dyInfoTop) + parseInt(dyInfoH))) {
                 id = $(this).attr("id");
             }
         });

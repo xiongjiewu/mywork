@@ -1,0 +1,642 @@
+div.home_top {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-width: 1024px;
+    height: 455px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+div.home_top ul {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+div.home_top ul li {
+    cursor: pointer;
+    float: left;
+    list-style: none;
+    height: 150px;
+    width: 7%;
+    background-color: #eee;
+    border: 1px solid #fff;
+    /*border-left: none;*/
+    /*border-bottom: none;*/
+    position: relative;
+}
+div.home_top ul li a {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.home_top ul li.li_over {
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+div.home_top ul li.li_over_current {
+    border: 1px solid #08A6CD;
+}
+div.home_top ul li div.home_top_dy_detail {
+    display: none;
+    position: absolute;
+    width: 86px;
+    height: 144px;
+    left: 100px;
+    top: -1px;
+    z-index: 10234;
+    background-color: #08A6CD;
+    padding: 3px;
+    padding-right: 10px;
+    border: 1px solid #08A6CD;
+}
+div.home_top ul li div.home_top_dy_detail_left {
+    left: -102px;
+}
+div.home_top ul li div.home_top_dy_detail div.home_top_dy_detail_info {
+    font-size: 13px;
+    float: left;
+    margin-left: 5px;
+    width: 100%;
+    height: 18px;
+    overflow: hidden;
+    margin-top: 5px;
+    white-space:nowrap;
+}
+div.home_top ul li div.home_top_dy_detail div.detail_name  {
+    height: 36px;
+    word-wrap: break-word;
+    word-break: normal;
+    font-size: 14px;
+}
+div.home_top ul li a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /*filter:alpha(Opacity=80);*/
+    /*-moz-opacity:0.5;*/
+    /*opacity: 0.5;*/
+}
+div.home_top div.home_web {
+    height: 303px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 406px;
+    z-index: 1001;
+    background-color: #3e3e3e;
+}
+div.home_top div.home_web div.home_web_count {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: url("/images/common/dianyingqiang2.png") no-repeat transparent;
+}
+div.home_top div.home_web div.home_web_count span {
+    color: #FF7F24;
+    float: left;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 77px;
+    margin-top: 76px;
+}
+div.home_middel_main {
+    width: 1200px;
+    margin: 20px auto;
+}
+div.tab_list {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px dashed #ddd;
+    border-top: 1px dashed #ddd;
+}
+div.tab_list ul {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.tab_list ul li {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 100%;
+}
+div.tab_list ul li a {
+    bottom: 0;
+    height: 60px;
+    left: 10px;
+    position: absolute;
+    width: 173px;
+}
+div.tab_list ul li.tab_list_li_1 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -52px transparent;
+}
+div.tab_list ul li.tab_list_li_1 a:hover {
+    height: 93%;
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -32px -114px transparent;
+}
+div.tab_list ul li.tab_list_li_2 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -212px -52px transparent;
+    left: 100px;
+}
+div.tab_list ul li.tab_list_li_3 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -175px transparent;
+    height: 40px;
+    left: 131px;
+}
+div.tab_list ul li.tab_list_li_4 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -214px -124px transparent;
+    height: 40px;
+    left: 187px;
+}
+div.movice_info_list {
+    width: 100%;
+    margin-top: 20px;
+    float: left;
+}
+div.movice_info_list div.title {
+    width: 100%;
+    float: left;
+}
+div.movice_info_list div.title h2 a {
+    color: #08a6cd;
+    font-size: 30px;
+    text-decoration: none;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+}
+div.movice_info_list div.info_list {
+    float: left;
+}
+div.movice_info_list div.info_list ul {
+    margin: 0;
+    padding: 0;
+}
+div.movice_info_list div.info_list ul li {
+    float: left;
+    list-style: none;
+    background-color: #f8f8f8;
+    width: 138px;
+    height: 180px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+div.movice_info_list div.info_list ul li.first_one_li {
+    width: 305px;
+    height: 392px;
+    margin-right: 6px;
+}
+div.movice_info_list_list div.info_list ul li.first_one_li:hover {
+    border: 1px solid #08A6CD;
+    cursor: pointer;
+}
+div.movice_info_list div.info_list ul li.first_one_li p {
+    width: 302px;
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 5px;
+    color: #999;
+    font-size: 14px;
+}
+div.movice_info_list div.info_list ul li.first_one_li p.first_zhuyan {
+    white-space:nowrap;
+}
+div.movice_info_list div.info_list ul li.first_one_li p a {
+    text-decoration: none;
+    color: #999;
+}
+div.movice_info_list div.info_list ul li.first_one_li p a:hover {
+    color: #08a6cd;;
+}
+div.movice_info_list div.info_list ul li.first_one_li p.first_name {
+    height: 30px;
+}
+div.movice_info_list div.info_list ul li.first_one_li p.first_name a {
+    font-size: 22px;
+    color: #666;
+}
+div.movice_info_list div.info_list ul li.first_one_li p.first_name a.dy_type  {
+    font-size:15px;
+    margin-left: 20px;
+}
+div.movice_info_list div.info_list ul li.first_one_li p.first_jieshao {
+    height: 60px;
+    line-height: 20px;
+}
+div.movice_info_list div.info_list ul li.first_one_li a.first_img {
+    width: 302px;
+    height: 265px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    background-color: #fff;
+}
+div.movice_info_list div.info_list ul li.first_one_li a.first_img img {
+    width: 100%;
+    /*height: 100%;*/
+    float: left;
+}
+
+div.movice_info_list div.info_list ul li a.img {
+    float: left;
+    width: 140px;
+    height: 130px;
+    background-color: #fff;
+    overflow: hidden;
+    display: block;
+
+}
+div.movice_info_list div.info_list ul li a.img img {
+    width: 100%;
+    /*height: 100%;*/
+    float: left;
+}
+div.movice_info_list div.info_list ul li a.img_today {
+    height: 170px;
+}
+div.movice_info_list div.info_list ul li p {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    width: 140px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    padding-top: 3px;
+}
+div.movice_info_list div.info_list ul li p.zhuyan {
+    margin-top: 1px;
+    color: #999;
+}
+div.movice_info_list div.info_list ul li p a {
+    text-decoration: none;
+}
+div.movice_info_list div.info_list ul li p.name a {
+    font-size: 14px;
+    color: #595959;
+}
+div.movice_info_list div.info_list ul li p.zhuyan a {
+    font-size: 13px;
+    color: #969595;
+}
+/*今天推荐*/
+div.today_list {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+div.today_list ul li {
+    float: left;
+    background-color: #eee;
+    margin-right: 5px;
+    width: 200px;
+    height: 200px;
+}
+div.movice_info_list div.info_list ul li.today_info_li {
+    position: relative;
+    overflow: hidden;
+}
+div.movice_info_list div.info_list ul li.today_info_li p.today_name {
+    height: 40px;
+    left: 10px;
+    padding: 6px;
+    position: absolute;
+    top: 130px;
+    width: 130px;
+    z-index: 100;
+    filter:alpha(Opacity=60);
+    -moz-opacity:0.6;
+    opacity: 0.6;
+    padding: 5px;
+    background-color: #000;
+}
+div.movice_info_list div.info_list ul li p.today_name a {
+    float: left;
+    font-size: 14px;
+    margin-bottom: 3px;
+    color: #fff;
+}
+div.movice_info_list div.info_list ul li p.today_name a.t_zhuyan {
+    margin-right: 3px;
+    color: #969595;
+}
+div.movice_info_list div.info_list ul li p.today_name a.t_zhuyan:hover {
+    color: #08a6cd;
+}
+div.movice_info_list div.info_list ul li p.today_name a.t_name {
+    height: 20px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    width: 90%;
+}
+div.movice_class_info_list div.info_list {
+    width: 1022px;
+}
+div.movice_info_list div.info_list ul li.other_li:hover {
+    cursor: pointer;
+    border: 2px solid #08A6CD;
+    width: 136px;
+    height: 178px;
+}
+div.movice_info_list div.info_list ul li.first_one_li:hover p.first_name a.name,
+div.movice_info_list div.info_list ul li.other_li:hover p.name a,
+div.movice_info_list_list div.info_list ul li.first_one_li p.first_name a:hover,
+div.movice_info_list div.info_list ul li.other_li p a:hover {
+    color: #08A6CD;
+}
+/*经典电影类型列表 start*/
+div.movice_class_info_list div.info_list ul li.first_one_li {
+    width: 138px;
+    height: 392px;
+    background-color: #fdfdfd;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div {
+    float: left;
+    width: 100%;
+    float: left;
+    /*margin-bottom: 15px;*/
+    margin-top: 3px;
+    width: 100%;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div.sort_type {
+    margin-top: 3px;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div.sort_list {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div span {
+    float: left;
+    font-size: 14px;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div span.type_text {
+    width: 100%;
+    color: #a0a0a0;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div span.type_info a {
+    float: left;
+    color: #414141;
+    margin-top: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+div.movice_class_info_list div.info_list ul li.first_one_li div span.type_info a:hover {
+    color: #08A6CD;
+}
+/*经典电影类型列表 end*/
+
+/*经典电影豆瓣top10列表 start*/
+div.top_info_list {
+    float: left;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    /*height: 370px;*/
+    width: 138px;
+    margin-left: 6px;
+    padding: 10px;
+    margin-top: 5px;
+}
+div.top_info_list span {
+    float: left;
+    width: 100%;
+}
+div.top_info_list span.top_title {
+    font-size: 20px;
+}
+div.top_info_list span.top_name_list {
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+    border-bottom:1px dashed #ddd;
+}
+div.top_info_list span.top_first_list {
+    height: 150px;
+    background-color: #eee;
+    position: relative;
+}
+div.top_info_list span.last_one {
+    border-bottom: none;
+}
+div.top_info_list span.top_first_list i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    font-style: normal;
+    width: 96%;
+    background: none repeat scroll 0 0 #000000;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+    padding: 3px;
+}
+div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list i a {
+    font-size: 15px;
+}
+div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list i a:hover {
+    float: left;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    color: #FFFFFF;
+    line-height: 20px;
+}
+div.top_info_list span.top_first_list i em {
+    float: left;
+    font-style: normal;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+div.top_info_list span.top_name_list b {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -237px -9px transparent;
+    float: left;
+    height: 15px;
+    width: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 15px;
+}
+div.top_info_list span.top_name_list b.last {
+    background: none;
+    border: 1px solid #999;
+    color: #666;
+}
+div.top_info_list span.top_name_list a {
+    float: left;
+    margin-left: 5px;
+    height: 20px;
+    width: 65%;
+    overflow: hidden;
+    font-size: 13px;
+    color: #414141;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: normal !important;
+    line-height: 20px;
+}
+div.top_info_list span.top_first_list a {
+    margin-left: 0;
+}
+div.top_info_list span.top_first_list b {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -201px -9px transparent;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 36px;
+    left: 0;
+    line-height: 27px;
+    position: absolute;
+    text-align: center;
+    top: -2px;
+    width: 25px;
+}
+div.top_info_list span.top_name_list i.score {
+    font-style: normal;
+    font-size: 13px;
+    color: #FF5C38;
+}
+div.top_info_list span.top_name_list a:hover {
+    color: #08A6CD;
+}
+div.top_info_list span.top_name_list a.first_top,div.top_info_list span.top_name_list a.first_top img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.top_info_list span.top_title em {
+    float: right;
+    font-size: 13px;
+    line-height: 25px;
+}
+div.top_info_list span.top_title em a {
+    color: #08A6CD;
+    text-decoration: none;
+}
+/*经典电影豆瓣top10列表 end*/
+/*摇摇朦胧效果 start*/
+div.home_yaoyao_main {
+    display: none;
+    width: 100%;
+    position: absolute;
+    height: 3500px;
+    top: 0;
+    left: 0;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    z-index: 1092;
+    background-color: #000;
+}
+div.yaoyao_movice_info {
+    padding: 10px;
+    position: absolute;
+    z-index: 20020;
+    border: 5px solid #444;
+    width: 700px;
+    height: 300px;
+    left: 300px;
+    top: -330px;
+    background-color: #111;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_img {
+    float: left;
+    width: 200px;
+    height: 300px;
+    background-color: #fff;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_img a {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_img a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list {
+    color: #fff;
+    float: left;
+    width: 480px;
+    margin-left: 20px;
+    height: 270px;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table {
+    width: 100%;
+    float: left;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr {
+    float: left;
+    width: 100%;
+    text-align: left;
+    /*margin-bottom: 10px;*/
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td {
+    font-size: 14px;
+    color: #CCCCCC;
+    float: left;
+    padding: 5px 0;
+    width: 475px;
+    overflow: hidden;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td.movice {
+    white-space: nowrap;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td span {
+    color: #999;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td.jieshao {
+    height: 70px;
+    line-height: 25px;
+    width: 470px;
+    overflow: hidden;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr th {
+    float: left;
+    width: 100%;
+    font-size: 25px;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr th a {
+    color: #fff;
+    float: left;
+    text-decoration: none;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td a {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td a.play_now {
+    width: 150px;
+    float: left;
+    height: 30px;
+    background: url("/images/common/play_icon.png") no-repeat 1px -30px transparent;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td a.play_now:hover {
+    background-position: 1px 0;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr td span.yaoyao_again {
+    color: #08A6CD;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+div.yaoyao_movice_info div.yaoyao_movice_info_list table tr th span.close_yaoyao {
+    background: url("/images/Login/close2.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 25px;
+    text-align: right;
+    width: 25px;
+    float: right;
+}
+/*摇摇朦胧效果 end*/

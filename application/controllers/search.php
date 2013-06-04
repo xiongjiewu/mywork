@@ -101,7 +101,7 @@ class Search extends CI_Controller {
     }
 
     public function index($type = "all",$year = "all",$diqu = "all") {
-        $searchW = $this->input->get("key");
+        $searchW = trim($this->input->get("key"));
         //过滤特殊字符
         $searchW = htmlspecialchars($searchW);
         $searchW = $this->_pregReplacespeaStr($searchW);
@@ -111,6 +111,15 @@ class Search extends CI_Controller {
         }
 
         $this->set_attr("searchW",$searchW);
+
+        //缓存设置，为热门搜索使用,保存5个小时
+        $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
+        if (empty($searchCacheInfo[$searchW])) {
+            $searchCacheInfo[$searchW] = 1;
+        } else {
+            $searchCacheInfo[$searchW]++;
+        }
+        $this->cache->file->save($this->search_cache_key,$searchCacheInfo,5 * 60 * 60);
         //长度截取
         if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
             $searchW = mb_substr($searchW,0,$this->_maxLen);
@@ -222,7 +231,6 @@ class Search extends CI_Controller {
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("&nbsp;","",$infoVal['jieshao']);
-            $searchMovieInfo[$infoKey]['jieshao'] = $this->splitStr($infoVal['jieshao'],95);
             //年份，用作按年份排序
             $nianfenArr[] = empty($infoVal['nianfen']) ? 0 : $infoVal['nianfen'];
         }
@@ -231,6 +239,10 @@ class Search extends CI_Controller {
         $searchMovieInfo = array_merge($firstMoviceInfo,$searchMovieInfo);
         //去掉重复电影
         $searchMovieInfo = $this->_initArr($searchMovieInfo,$ids);
+        //介绍截取
+        foreach($searchMovieInfo as $infoKey => $infoVal) {
+            $searchMovieInfo[$infoKey]['jieshao'] = $this->splitStr($infoVal['jieshao'],100);
+        }
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接
@@ -262,7 +274,7 @@ class Search extends CI_Controller {
             echo json_encode($result);
             exit;
         }
-        $searchMovieInfo = $this->_getDetailInfoBySearchW($word);
+        $searchMovieInfo = $this->_getDetailInfoBySearchW($word,'','','',20);
         $searchMovieInfo = $this->_getMoviceNameInfos($searchMovieInfo);
         if (!empty($searchMovieInfo)) {
             $result["code"] = "success";
@@ -282,12 +294,22 @@ class Search extends CI_Controller {
         }
         $resultArr = array();
         foreach($searchMovieInfo as $sVal) {
-            $resultArr[] = $sVal['name'];
+            $sVal['name'] = trim($sVal['name']);
+            $resultArr[$sVal['name']] = $sVal;
         }
-        $resultArr = array_unique($resultArr);
         $newResArr = array();
-        foreach($resultArr as $resVal) {
-            $newResArr[]['name'] = $resVal;
+        $i = 0;
+        foreach($resultArr as $resultVal) {
+            $resultVal['image'] = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $resultVal['image'];
+            $resultVal['typeText'] = $this->_movieType[$resultVal['type']];
+            $resultVal['zhuyan'] = empty($resultVal['zhuyan']) ? "暂无" : str_replace("、","/",$resultVal['zhuyan']);;
+            $resultVal['daoyan'] = empty($resultVal['daoyan']) ? "暂无" : str_replace("、","/",$resultVal['daoyan']);
+            $resultVal['nianfen'] = empty($resultVal['nianfen']) ? "暂无" : $resultVal['nianfen'];
+            $resultVal['url'] = "/detail/index/" . APF::get_instance()->encodeId($resultVal['id']);
+            $resultVal['typeUrl'] = "/moviceguide/type/" . $resultVal['type'] . "/";
+            $resultVal['jieshao'] = str_replace("　　","",trim($resultVal['jieshao']));
+//            $resultVal['jieshao'] = $this->splitStr($resultVal['jieshao'],30);
+            $newResArr[$i++] = $resultVal;
         }
         return $newResArr;
     }

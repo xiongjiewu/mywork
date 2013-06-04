@@ -327,6 +327,9 @@ class Useraction extends CI_Controller
         exit;
     }
 
+    /**
+     * 增加新链接
+     */
     public function addlink() {
         $result = array(
             "code" => "error",
@@ -357,5 +360,40 @@ class Useraction extends CI_Controller
         $result['info'] = "提交成功，感谢您对我们工作的支持！";
         echo json_encode($result);
         exit;
+    }
+
+    /**
+     * 随机获取摇摇电影
+     */
+    public function getyaoyaomovice() {
+        //随机数
+        $rNum = rand(1,100);
+        $this->load->model('Backgroundadmin');
+        if ($rNum <= 40) {//小于40，选取经典之外的有观看链接的电影
+            $condition = "exist_watch = 1";
+        } else {//经典电影
+            $condition = "exist_watch = 1 and topType > 0";
+        }
+        $count = $this->Backgroundadmin->getDetailInfoCountByCondition($condition);
+        //随机抽取位移量
+        $offset = rand(0,$count - 1);
+        //电影信息
+        $moviceInfo = array();
+        $moviceInfo = $this->Backgroundadmin->getDetailInfoByCondition($condition,$offset,1);
+        $moviceInfo = $moviceInfo[0];
+        //电影图片
+        $moviceInfo['image'] = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceInfo['image'];
+        //id加密
+        $moviceInfo['idStr'] = APF::get_instance()->encodeId($moviceInfo['id']);
+        $moviceInfo['typeText'] = $this->_movieType[$moviceInfo['type']];
+        $moviceInfo['diquText'] = $this->_moviePlace[$moviceInfo['diqu']];
+        $moviceInfo['daoyan'] = empty($moviceInfo['daoyan']) ? "暂无"  : $moviceInfo['daoyan'];
+        $moviceInfo['zhuyan'] = empty($moviceInfo['zhuyan']) ? "暂无"  : $moviceInfo['zhuyan'];
+        $moviceInfo['zhuyan'] = str_replace("/","、",$moviceInfo['zhuyan']);
+        $zhuyanArr = explode("、",$moviceInfo['zhuyan']);
+        $moviceInfo['zhuyan'] = implode("、",array_slice($zhuyanArr,0,3));
+        $moviceInfo['jieshao'] = str_replace("　　","",trim($moviceInfo['jieshao']));
+        $moviceInfo['jieshao'] = $this->splitStr($moviceInfo['jieshao'],100);
+        echo json_encode($moviceInfo);
     }
 }

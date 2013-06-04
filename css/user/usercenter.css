@@ -1,3 +1,7 @@
+div.user_main {
+    width: 1200px;
+    margin: 40px auto;
+}
 div.row {
     margin: 0 auto;
     margin-top: 20px;

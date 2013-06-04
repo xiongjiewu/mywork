@@ -1,0 +1,322 @@
+body {
+    background-color: #DADAD9;
+}
+div.dy_bottom {
+    width: 100%;
+    float: left;
+}
+div.detail_main {
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 1185px;
+}
+div.detail_info {
+    float: left;
+    width: 1145px;
+    height: 290px;
+    padding: 20px;
+    background: url("/images/dy/detail_bg.png") 0 0 transparent;
+}
+div.detail_info_img {
+    float: left;
+    height: 290px;
+    width: 200px;
+    background-color: #eee;
+}
+div.detail_info_img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.detail_info_list {
+    float: left;
+    width: 910px;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+div.detail_info_list ul {
+    float: left;
+}
+div.detail_info_list ul li {
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    color: #333;
+}
+div.detail_info_list ul li.zhuyan {
+    margin-top: 20px;
+}
+div.detail_info_list ul li.dy_name {
+    color: #08A6CD;
+    font-size: 25px;
+}
+div.detail_info_list ul li span {
+    color: #999;
+}
+div.watchLink {
+    float: left;
+    width: 1150px;
+    margin-top: 20px;
+    background-color: #f3f3f3;
+    padding: 10px 15px;
+    padding-bottom: 40px;
+}
+div.watchLink div.watch_title {
+    font-size: 13px;
+    width: 98%;
+    float: left;
+    padding:5px 10px;
+}
+div.watchLink div.watch_title h1 {
+    color: #999;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+div.watchLink div.watchLink_list span {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+div.watchLink div.watchLink_list a {
+    float: left;
+    height: 20px;
+    /*background-color: #DADAD9;*/
+    /*width: 70px;*/
+}
+div.watchLink div.watchLink_list b {
+    font-size: 13px;
+    font-weight: 100;
+    color: #999;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 20px !important;
+    height: 22px;
+    border: 1px solid #ddd;
+    line-height: 20px !important;
+    line-height: 22px;
+    margin-left: -1px;
+    letter-spacing:3px;
+}
+div.post_main {
+    float: left;
+    width: 810px;
+    background-color: #F3F3F3;
+    margin-top: 20px;
+}
+div.post_main div.post_form {
+    float: left;
+    padding: 20px;
+    width: 810px;
+}
+div.post_main div.post_form textarea.xheditor {
+    float: left;
+    width: 100%;
+}
+div.post_main div.post_form div.submit_post {
+    float: right;
+}
+div.post_main div.post_form div.submit_post input {
+    border: 1px solid green;
+    float: left;
+    height: 50px;
+    margin-right: 41px;
+    margin-top: 20px;
+    width: 160px;
+    background-color: #2FA1AE;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #eee;
+    letter-spacing:5px;
+}
+.pllist {
+    border-top: 1px solid #EEEEEE;
+    float: left;
+    height: auto;
+    margin: 20px;
+    width: 94%;
+    padding-top: 20px;
+    margin-top: 0;
+}
+
+
+.pllist * {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.pllist table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td.userPro {
+    vertical-align: top;
+    width: 75px;
+    height: 67px;
+}
+
+.pllist table th, td, caption {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+}
+
+.pllist table .left {
+    float: left;
+    width: 70%;
+    height: 40%;
+}
+
+.pllist table  .userPro img {
+    float: left;
+    display: inline;
+    color: transparent;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 2px;
+    width: 70%;
+    height: 40%;
+    min-width: 50px;
+    min-height: 40px;
+}
+.commentTextList {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+.pllist .comment {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 0 0 11px;
+}
+
+
+.pllist .info {
+    clear: both;
+    color: #BBBBBB;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pllist .right {
+    float: right;
+}
+
+.info .right .reply {
+    font-size: 14px !important;
+    letter-spacing: 0 !important;
+}
+
+.info .right .reply {
+    font-size: 14px !important;
+    letter-spacing: 0 !important;
+}
+
+.word {
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: 0;
+    word-break: break-all;
+}
+
+div.read_more {
+    margin: 5px;
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #CEE1EE;
+    text-align: center;
+    cursor: pointer;
+    color: #336699;
+    font-weight: bold;
+    background-color: #F0F5F8;
+}
+div.read_more_load {
+    color: #fff;
+    background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
+}
+
+.pllist .lastOne {
+    border-bottom: none;
+}
+.pllist .notFirst {
+    margin-top: 10px;
+}
+.left a,.left a:hover {
+    text-decoration: none;
+    color: #0088CC;
+}
+div.right_main {
+    float: left;
+    margin-top: 20px;
+    width: 330px;
+    background-color: #F3F3F3;
+    margin-left: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+div.right_main div.right_title {
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+div.right_main div.right_dy {
+    float: left;
+}
+div.right_main div.right_dy ul {
+    float: left;
+}
+div.right_main div.right_dy ul li {
+    list-style: none;
+    float: left;
+    margin-right: 15px;
+    margin-top: 20px;
+    width: 100px;
+}
+div.right_main div.right_dy ul li.last_one {
+    margin-right: 0;
+}
+div.right_main div.right_dy ul li a.img_dy {
+    float: left;
+    width: 100px;
+    height: 130px;
+    background-color: #fff;
+}
+div.right_main div.right_dy ul li a.img_dy img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.right_main div.right_dy ul li p {
+    float: left;
+    height: 20px;
+    margin: 10px 0 0;
+    overflow: hidden;
+    width: 100px;
+}
+div.right_main div.right_dy ul li p a {
+    font-size: 13px;
+    color: #666;
+}
+div.right_main div.right_dy ul li p a:hover {
+    color: #0088CC;
+}
+div.yingpingCount {
+    margin-left: 20px;
+    color: #999;
+    float: left;
+    margin-bottom: 5px;
+}
+footer.footer {
+    background-color: #F3F3F3;
+}

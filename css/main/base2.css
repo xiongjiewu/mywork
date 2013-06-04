@@ -1,0 +1,508 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f3f3f3;
+    width: 100%;
+    min-width: 1024px;
+    font-family: "微软雅黑";
+}
+div.main {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+div.container {
+    float: left;
+    width: 100%;
+}
+.clear {
+    clear: both;
+}
+a:hover {
+    color: #08a6cd;;
+}
+a {
+    color: #0088CC;
+    text-decoration: none;
+}
+img {
+    border: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+div.header_main {
+    width: 100%;
+    float: left;
+    margin: 0;
+    height: 100px;
+    background: url("/images/common/top_bg.png") repeat 0 0 transparent;
+    z-index: 1001010;
+}
+div.header_search {
+    width: 700px;
+    height: 60px;
+    margin: 20px auto;
+}
+div.header_search div.form_info {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+div.header_search div.form_info form {
+    float: left;
+}
+div.header_search input.search {
+    font-size: 15px;
+    width: 495px;
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 5px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    float: left;
+    color: #999;
+}
+div.header_search input.submit {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -37px -15px transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 34px;
+    margin-left: 10px;
+    text-align: center;
+    width: 140px;
+    font-size: 18px;
+}
+/*搜索框匹配填充 start*/
+div.header_search div.form_info div.about_search {
+    display: none;
+    border: 1px solid #DDDDDD;
+    left: 0;
+    position: absolute;
+    top: 35px;
+    width: 510px;
+    z-index: 99999;
+    background: #fff;
+}
+div.header_search div.form_info div.about_search ul {
+    float: left;
+    width: 100%;
+}
+div.header_search div.form_info div.about_search ul li {
+    list-style: none;
+    width: 490px;
+    height: 20px;
+    float: left;
+    padding: 10px;
+    color: #777;
+    cursor: pointer;
+    position: relative;
+}
+div.header_search div.form_info div.about_search ul li.mouse_hover {
+    background-color: #08A6CD;
+    color: #fff;
+}
+div.header_search div.form_info div.about_search ul li.mouse_hover div.about_info_list table,
+div.header_search div.form_info div.about_search ul li.mouse_hover div.about_info_list table tr th,
+div.header_search div.form_info div.about_search ul li.mouse_hover div.about_info_list table tr th
+{
+    color: #777;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list {
+    display: none;
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    height: 210px;
+    left: 510px;
+    padding: 10px;
+    position: absolute;
+    top: -1px;
+    width: 300px;
+    cursor: default;
+    z-index: 100000;
+}
+div.header_search div.form_info div.about_search ul li.mouse_hover div.about_info_list{
+    display: block;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_img {
+    float: left;
+    width: 100px;
+    height: 150px;
+    background-color: #eee;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_img a,
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_img a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail {
+    float: left;
+    width: 190px;
+    margin-left: 10px;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table {
+    float: left;
+    background-color: #fff;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table a {
+    color: #555;
+    text-decoration: none;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table a:hover {
+    color: #08A6CD;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table a.about_info_list_detail_play {
+    color: #08A6CD;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr th,
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr td {
+    text-align: left;
+    font-size: 14px;
+    width: 190px;
+    float: left;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr td {
+    height: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr td.jianjie {
+    height: 50px;
+}
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr td a.about_info_list_detail_play {
+    float: left;
+}
+/*搜索框匹配填充 end*/
+div.header_search div.hot_search {
+    width: 100%;
+    float: left;
+    height: 20px;
+}
+div.header_search div.hot_search ul {
+    float: left;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 2px;
+    padding: 0;
+}
+div.header_search div.hot_search ul li {
+    font-size: 13px;
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+}
+div.header_search div.hot_search ul li a {
+    color: #999;
+    text-decoration: none;
+}
+div.header_search div.hot_search ul li a:hover {
+    color: #0088CC;
+}
+div.header_tab {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 52px;
+    background: url("/images/common/daohang_bg.png") repeat 0 0 transparent;
+}
+div.header_tab ul li {
+    width: 171px;
+    float: left;
+    text-align: center;
+    background: url("/images/common/daohang_fenge.png") no-repeat scroll 166px 0 transparent;
+    height: 50px;
+    position: relative;
+}
+div.header_tab ul li a {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 50px;
+    float: left;
+    text-decoration: none;
+    color: #015e75;
+    height: 100%;
+    width: 100%;
+}
+div.header_tab ul li a:hover {
+    background-color: #08a6cd;
+    color: #fff;
+}
+div.header_tab ul li.logo {
+    position: relative;
+}
+div.header_tab ul li.logo a {
+    position: absolute;
+}
+div.header_tab ul li.logo a.logo1 {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll 0 -218px transparent;
+    bottom: 20px;
+    height: 70px;
+    left: 10px;
+    width: 255px;
+    z-index: 101;
+}
+div.header_tab ul li.first_one a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*padding: 10px;*/
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    z-index: 1002;
+}
+div.header_tab div.small_menus_list {
+    display: none;
+    position: absolute;
+    z-index: 1000011;
+    top: 50px;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #DADADA;
+    background-color: #F5F5F5;
+    overflow: hidden;
+    padding: 10px 0;
+}
+div.header_tab div.last_small_menus div.small_menus_main {
+    margin: 0 auto;
+    width: 1090px;
+    height: 100%;
+}
+div.header_tab div.dy_sort div.small_menus_main {
+    width: 100%;
+    float: left;
+    margin-left: 10px;
+}
+div.header_tab div.last_small_menus div.small_menus_main span {
+    float: left;
+    padding:0 20px;
+    border-right: 1px solid #CCCCCC;
+    line-height: 30px;
+}
+div.header_tab div.dy_sort div.small_menus_main span {
+    padding:0 5px;
+    font-size: 13px;
+}
+div.header_tab div.dy_sort div.small_menus_main span.type_title {
+    border-right: none;
+    color: #999;
+}
+div.header_tab div.last_small_menus div.small_menus_main span.last_one_span  {
+    border-right: none;
+}
+div.header_tab div.last_small_menus div.small_menus_main span a {
+    color: #666;
+}
+div.header_tab div.last_small_menus div.small_menus_main span a:hover {
+    color: #0088CC;
+}
+/*置顶样式*/
+a.go_to_top {
+    display: none;
+    position: fixed;
+    width: 48px;
+    right: 6px;
+    bottom: 100px;
+    cursor: pointer;
+    height: 48px;
+    background: url("/images/common/go_top.png") no-repeat -3px 0 transparent;
+    z-index: 9999;
+}
+a.go_to_top:hover {
+    background-position: -3px -100px;
+}
+div.login_register_pan {
+    float: right;
+    margin-top: -70px;
+    margin-right: 120px;
+}
+div.login_register_pan div {
+    float: left;
+}
+div.login_register_pan div a {
+    float: left;
+    padding:5px;
+    padding-left: 15px;
+    color: #676767;
+}
+div.login_register_pan div a.logout {
+    font-size: 13px;
+    padding-left: 2px;
+}
+div.login_register_pan div.login a i {
+    float: left;
+    padding: 10px;
+    background: url("/images/common/shouye_new_sucai.png") -292px -9px transparent;
+}
+div.login_register_pan div.resgister a i {
+    float: left;
+    padding: 10px;
+    background: url("/images/common/shouye_new_sucai.png") -267px -9px transparent;
+}
+div.login_register_pan div.look {
+    position: relative;
+}
+div.login_register_pan div.look a i {
+    float: left;
+    padding: 10px;
+    background: url("/images/common/shouye_new_sucai.png") -312px -9px transparent;
+}
+div.login_register_pan div.look a {
+    padding-right: 15px;
+}
+div.login_register_pan div.look a:hover {
+    background-color: #fff;
+}
+div.login_register_pan div.look div.look_re {
+    display: none;
+    padding: 0 0 10px 10px;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    z-index: 100982;
+}
+div.login_register_pan div.look div.look_re div.look_info {
+    width: 300px;
+    float: left;
+    background-color: #FFFFFF;
+}
+div.login_register_pan div.look div.look_re a i {
+    float: left;
+    padding: 10px;
+    background: url("/images/common/shouye_new_sucai.png") -312px -9px transparent;
+}
+div.login_register_pan div.look div.look_re a {
+    float: right;
+    padding-right: 15px;
+    background-color: #FFFFFF;
+}
+div.login_register_pan div.look:hover div.look_re {
+    display: block;
+}
+div.login_register_pan div.look div.look_re span {
+    float: left;
+    width: 95%;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-bottom: 1px dashed #eee;
+}
+div.login_register_pan div.look div.look_re span.last_span {
+    border-bottom: none;
+    margin-bottom: 5px;
+}
+div.login_register_pan div.look div.look_re span a {
+    width: 87%;
+    float: left;
+}
+div.login_register_pan div.look div.look_re span a:hover {
+    color: #08A6CD;
+}
+div.login_register_pan div.look div.look_re span a b {
+    color: #08A6CD;
+    font-weight: normal;
+    float: right;
+}
+div.login_register_pan div.look div.look_re span a.again:hover {
+    text-decoration: underline;
+}
+div.login_register_pan div.look div.look_re span.nothing {
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+}
+footer.footer {
+    margin-top: 40px;
+    float: left;
+    width: 100%;
+    background-color: #DADAD9;
+}
+footer.footer div.footer_main {
+    margin: 20px auto;
+    width: 1200px;
+}
+footer.footer div.footer_main div.footer_left {
+    float: left;
+    width: 1000px;
+}
+footer.footer div.footer_main div.footer_left div {
+    float: left;
+    width: 100%;
+}
+footer.footer div.footer_main div.footer_left div ul {
+    float: left;
+    width: 100%;
+}
+footer.footer div.footer_main div.footer_left div.footer_title {
+    color: #444444;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+}
+footer.footer div.footer_main div.footer_left div ul li {
+    float: left;
+}
+
+footer.footer div.footer_main div.footer_left div ul.web-list li {
+    width: 80px;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+}
+footer.footer div.footer_main div.footer_left div ul.web-list li a {
+    color: #969696;
+    font-size: 13px;
+}
+.Line {
+    width: 1000px;
+    margin: 40px 100px;
+    float: left;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #C4C4C4;
+    height: 1px;
+    overflow: hidden;
+}
+footer.footer div.footer_bottom {
+    float: left;
+    margin: 0 100px;
+}
+footer.footer div.footer_bottom div {
+    float: left;
+}
+footer.footer div.footer_bottom div.footer_logo a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll 1px -219px transparent;
+    float: left;
+    height: 100px;
+    width: 310px;
+}
+footer.footer div.footer_bottom ul {
+    width: 100%;
+    float: left;
+}
+footer.footer div.footer_bottom ul li {
+    float: left;
+    margin-right: 20px;
+}
+footer.footer div.footer_bottom ul li a {
+    color: #444;
+}
+footer.footer div.footer_bottom ul li.mail a {
+    color: #0088CC;
+}
+footer.footer div.footer_bottom p {
+    margin-top: 20px;
+}

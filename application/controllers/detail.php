@@ -5,6 +5,8 @@
  */
 class Detail extends CI_Controller {
 
+    private $_caiLimit = 6;
+
     public function index($id = null)
     {
         $this->load->helper('url');
@@ -20,10 +22,61 @@ class Detail extends CI_Controller {
             $this->jump_to("/error/index/1/");
             exit;
         }
+        //cookie名称+浏览记录
+        $userLookInfo = $this->get_cookie($this->look_cookie_key);
+        if (!empty($userLookInfo)) {
+            $userLookInfo = json_decode($userLookInfo,true);
+        }
+        $lookArr = array("id" => $dyInfo['id'],"name" => $dyInfo['name']);
+        if (!empty($userLookInfo) && !in_array($lookArr,$userLookInfo)) {
+            $userLookInfo = array_merge(array($dyInfo['id'] => $lookArr),$userLookInfo);
+            $userLookInfo  = array_slice($userLookInfo,0,5);
+            $this->set_cookie($this->look_cookie_key,json_encode($userLookInfo));
+        } elseif(empty($userLookInfo)) {
+            $userLookInfo  = array();
+            $userLookInfo[$dyInfo['id']] = array("id" => $dyInfo['id'],"name" => $dyInfo['name']);
+            $this->set_cookie($this->look_cookie_key,json_encode($userLookInfo));
+        }
+
         $this->set_attr("userId",$this->userId);
+
+        //电影介绍
         $dyInfo['jieshao'] = str_replace("　　","",$dyInfo['jieshao']);
-        $dyInfo['jieshao'] = $this->splitStr($dyInfo['jieshao'],200);
+        $dyInfo['jieshao'] = $this->splitStr($dyInfo['jieshao'],115);
+
+        //第一个导演信息+猜你喜欢信息
+        $caiNiXiHuanInfo  = array();
+        if ($dyInfo['daoyan'] != "暂无") {
+            $daoyan = str_replace("/","、",$dyInfo['daoyan']);
+            $daoyanArr = explode("、",$daoyan);
+            $daoyanName = $daoyanArr[0];
+            $conStr = " order by nianfen desc";
+            $caiNiXiHuanInfo = $this->Backgroundadmin->getDetailInfoBySearchDaoYan(trim($daoyanName),$this->_caiLimit,$conStr);
+        }
+        //猜你喜欢不够数，则获取主演相关
+        $xiHuanCount = count($caiNiXiHuanInfo);
+        if ($xiHuanCount < $this->_caiLimit) {
+            if ($dyInfo['zhuyan'] != "暂无") {
+                $zhuyan = str_replace("/","、",$dyInfo['zhuyan']);
+                $zhuyanArr = explode("、",$zhuyan);
+                $zhuyanName = $zhuyanArr[0];
+                $conStr = " order by nianfen desc";
+                $caiNiXiHuanInfo2 = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($zhuyanName),$this->_caiLimit - $xiHuanCount,$conStr);
+                $caiNiXiHuanInfo = array_merge($caiNiXiHuanInfo,$caiNiXiHuanInfo2);
+            }
+        }
+        //猜你喜欢不够数，则获取类型相关
+        $xiHuanCount = count($caiNiXiHuanInfo);
+        if ($xiHuanCount < $this->_caiLimit) {
+            $conStr = " type = " . $dyInfo['type'];
+            $caiNiXiHuanInfo3 = $this->Backgroundadmin->getDetailInfoByCondition($conStr,0,$this->_caiLimit - $xiHuanCount,$conStr);
+            $caiNiXiHuanInfo = array_merge($caiNiXiHuanInfo,$caiNiXiHuanInfo3);
+        }
+        $this->set_attr("caiNiXiHuanInfo",$caiNiXiHuanInfo);
+
+        //观看链接
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
+        //下载链接
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
         $this->load->model('Yingping');
         $limit = APF::get_instance()->get_config_value("post_show_count");
@@ -68,8 +121,8 @@ class Detail extends CI_Controller {
             $this->set_attr("moticeInfo",$moticeInfo);
         }
         $this->load->set_title("{$dyInfo['name']} - " . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("css/dianying/detail.css"));
-        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js"));
+        $this->load->set_css(array("css/dianying/newdetail.css"));
+        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/newdetail.js"));
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
         
@@ -82,6 +135,6 @@ class Detail extends CI_Controller {
         $this->set_attr("bofangqiType",$this->_bofangqiType);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_view('dianying/detail');
+        $this->set_view('dianying/newdetail');
     }
 }

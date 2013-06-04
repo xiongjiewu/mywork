@@ -1,4 +1,5 @@
-<div class="row">
+<div class="user_main">
+    <div class="row">
     <?php $this->load->view("component/usercenterleft",array("userInfo" =>$userInfo,"index"=>2));?>
     <div class="right_container">
         <div class="main-tab">
@@ -45,4 +46,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

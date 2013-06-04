@@ -1,3 +1,4 @@
+<div class="user_main">
 <div class="row">
     <?php $this->load->view("component/usercenterleft",array("userInfo" =>$userInfo,"index"=>0));?>
     <div class="right_container">
@@ -93,4 +94,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

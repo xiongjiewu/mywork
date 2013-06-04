@@ -19,6 +19,9 @@ var logPanInit = {
 (function ($) {
     $(document).ready(function () {
         var userpasObj = $("input[name='username'],input[name='password']");
+        //将登录朦胧效果高度设置为整个页面的高度
+        var mainHeight = $("#total_info_main").height();
+        $("div.login_register_all").css("height",mainHeight + "px");
         userpasObj.val("");
         userpasObj.focus(function () {
             $(this).addClass("input_over");

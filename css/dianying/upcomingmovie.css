@@ -1,18 +1,31 @@
-ul.dy_bs-docs-sidenav {
-    position: fixed;
+div.upcoming_main {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
 }
 .dy_detail {
     padding-top: 35px;
 }
-.bs-docs-example table {
+div.upcoming_main table {
+    background-color: #FFFFFF;
+    float: left;
+    margin-bottom: 20px;
     width: 100%;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+div.upcoming_main table tr td {
+    padding: 10px;
+}
+div.upcoming_main table:hover {
+    background-color: #e0eeee;
 }
 table tr td.dy_info_img {
     width: 200px;
     padding: 0 10px 10px 10px;
     valign:top;
 }
-.bs-docs-example table tr td table {
+div.upcoming_main table tr td table {
     width: 98%;
 }
 table tr td.dy_info_img img {
@@ -209,10 +222,6 @@ div.read_more_load {
     color: #fff;
     background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
 }
-.bs-docs-example {
-    width: 1130px;
-    float: left;
-}
 table {
     width: 100%;
     margin-left: 10px;
@@ -223,7 +232,7 @@ table.table tr td {
     color: #999;
 }
 table.firstOneT{
-    margin-top: 40px;
+    /*margin-top: 40px;*/
 }
 table.table_over {
     background-color: #E0EEEE;
@@ -277,8 +286,10 @@ table.table tr td strong {
     color: #888;
 }
 table.table tr td span.btn {
+    background-color: #EEEEEE;
+    border: 1px solid #ccc;
+    color: #333333;
     padding: 1px 12px;
-    color: #333;
 }
 table.table tr td span.dy_notic_btn {
     color: #aaa;

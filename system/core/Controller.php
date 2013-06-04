@@ -23,6 +23,12 @@ class CI_Controller
     //电影年份
     protected $_movieNianFen;
 
+    //搜索缓存key
+    protected $search_cache_key;
+
+    //浏览记录cookie名称
+    protected $look_cookie_key;
+
     const CONFIG_N_COOKIE_DOMAIN = "cookie_domain";
     const CONFIG_N_COOKIE_PATH = "cookie_path";
 
@@ -41,6 +47,15 @@ class CI_Controller
         $this->_movieSortType = APF::get_instance()->get_config_value("movieSortType");
         $this->_movieType = APF::get_instance()->get_config_value("movieType");
         $this->_movieNianFen = APF::get_instance()->get_config_value("movieNianFen");
+        $this->search_cache_key = APF::get_instance()->get_config_value("search_cache_key");
+
+        //浏览记录cookie名称
+        $lookCookieName = APF::get_instance()->get_config_value("look_cookie_key");
+        $this->look_cookie_key = $lookCookieName . ip2long($this->getUserIP());
+        $userLookInfo = $this->get_cookie($this->look_cookie_key);
+        if (!empty($userLookInfo)) {
+            $this->_attr["userLookInfo"] = json_decode($userLookInfo,true);
+        }
 
         foreach (is_loaded() as $var => $class) {
             $this->$var =& load_class($class);
@@ -65,31 +80,18 @@ class CI_Controller
             $this->_attr['userName'] = $this->userName;
         }
 
-        //问卷调查
-//        if (empty($this->Researchguide)) {
-//            $this->load->model("Researchguide");
-//        }
-//        $ip = $this->getUserIP();
-//        $ipResearchInfo = $this->Researchguide->getResearchGuideInfoByFiled(array("ip"=>$ip));
-//        if (empty($ipResearchInfo)) {
-//            $this->_attr['showResearchPan'] = true;
-//        } else {
-//            $this->_attr['showResearchPan'] = false;
-//        }
         $this->_attr['showResearchPan'] = false;
-
-//        //是否填过调查问卷
-//        if (empty($this->Researchinsert)) {
-//            $this->load->model("Researchinsert");
-//        }
-//        $researchInfo = $this->Researchinsert->getResearchInfoByFiled(array("ip"=>$ip));
-//        if (empty($researchInfo)) {
-//            $this->_attr['notDoResearch'] = true;
-//        } else {
-//            $this->_attr['notDoResearch'] = false;
-//        }
         $this->_attr['notDoResearch'] = false;
 
+        $this->load->driver('cache');
+        //热门搜索关键词
+        $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
+        //按搜索个数降序排序
+        if (!empty($searchCacheInfo)) {
+            arsort($searchCacheInfo);
+            $searchCacheInfo = array_slice($searchCacheInfo,0,5);
+            $this->_attr['data']['searchCacheInfo'] = $searchCacheInfo;
+        }
         log_message('debug', "Controller Class Initialized");
     }
 
@@ -98,7 +100,7 @@ class CI_Controller
         return self::$instance;
     }
 
-    public function set_view($view, $main = "base")
+    public function set_view($view, $main = "base2")
     {
         $this->load->set_view($view);
         $this->load->view($main, $this->_attr);
@@ -199,7 +201,7 @@ class CI_Controller
         return $str;
     }
 
-    public function initArrById($arr = array(), $type = "infoId")
+    public function initArrById($arr = array(), $type = "infoId",&$typeInfo = array())
     {
         if (empty($arr)) {
             return $arr;
@@ -207,6 +209,7 @@ class CI_Controller
         $result = array();
         foreach ($arr as $arrVal) {
             $result[$arrVal[$type]] = $arrVal;
+            $typeInfo[] = $arrVal[$type];
         }
         return $result;
     }

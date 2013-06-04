@@ -115,7 +115,7 @@
                     <tr><td class="ui_register"><input type="submit" class="submit" name="register_submit" value="注&nbsp;册"></td></tr>
                     <tr>
                         <td class="ui_remember">
-                            <input type="checkbox" class="remember" name="register_check" checked="checked">同意《<a href="<?php echo get_url("/topic/index/1/");?>">电影吧网络协议</a>》
+                            <input type="checkbox" class="remember" name="register_check" checked="checked">同意《<a href="<?php echo get_url("/topic/index/1/");?>">好吧网络协议</a>》
                         </td>
                     </tr>
                 </table>
