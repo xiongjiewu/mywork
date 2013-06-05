@@ -517,4 +517,19 @@ class Backgroundadmin extends CI_Model {
         $result = $query->result_array();
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
+
+    /**
+     * 根据条件获取电影信息
+     * @param $conditionStr
+     * @return bool
+     */
+    public function getMovieInfoByCon($conditionStr) {
+        if (empty($conditionStr)) {
+            return false;
+        }
+        $sql = "select * from `tbl_detailInfo` where {$conditionStr};";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return $result;
+    }
 }

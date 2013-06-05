@@ -335,3 +335,7 @@ section {
 section#createpost {
     *margin-top: 20px;
 }
+div.header_search div.form_info div.about_search ul li div.about_info_list div.about_info_list_detail table tr em {
+    color: #EE6100;
+    font-style: normal;
+}

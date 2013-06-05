@@ -8,6 +8,8 @@ class Search extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Backgroundadmin');
+        $this->load->model('Actinfo');
+        $this->load->model('Directorinfo');
     }
 
     /** 过滤sql特殊字符
@@ -77,6 +79,60 @@ class Search extends CI_Controller {
         return $searchMovieInfo;
     }
 
+    /**
+     * 根据演员名称获取电影信息
+     * @param $searchW
+     * @param string $type
+     * @param string $year
+     * @param string $diqu
+     */
+    private function _getMovieInfoBYYanYuan($searchW,$type = '',$year = '',$diqu = '') {
+        $searchW = $this->_repeatSpeStr($searchW);
+        $movieIdInfo = $this->Actinfo->getActinfoByActinName($searchW);
+        $movieInfos = $ids = array();
+        if (!empty($movieIdInfo)) {
+            foreach($movieIdInfo as $movieIdVal) {
+                $ids[] = $movieIdVal['infoId'];
+            }
+            $conStr = $this->_getMoviceCon($type,$year,$diqu);
+            if (empty($conStr)) {
+                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0  order by nianfen desc";
+            } else {
+                $conStr .= " order by nianfen desc";
+                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0 " . $conStr;
+            }
+            $movieInfos = $this->Backgroundadmin->getMovieInfoByCon($conditionStr);
+        }
+        return $movieInfos;
+    }
+
+    /**
+     * 根据导演名称获取电影信息
+     * @param $searchW
+     * @param string $type
+     * @param string $year
+     * @param string $diqu
+     */
+    private function _getMovieInfoBYDaoYuan($searchW,$type = '',$year = '',$diqu = '') {
+        $searchW = $this->_repeatSpeStr($searchW);
+        $movieIdInfo = $this->Directorinfo->getDirectorinfoByDirectorName($searchW);
+        $movieInfos = $ids = array();
+        if (!empty($movieIdInfo)) {
+            foreach($movieIdInfo as $movieIdVal) {
+                $ids[] = $movieIdVal['infoId'];
+            }
+            $conStr = $this->_getMoviceCon($type,$year,$diqu);
+            if (empty($conStr)) {
+                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0  order by nianfen desc";
+            } else {
+                $conStr .= " order by nianfen desc";
+                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0 " . $conStr;
+            }
+            $movieInfos = $this->Backgroundadmin->getMovieInfoByCon($conditionStr);
+        }
+        return $movieInfos;
+    }
+
     /** 根据类型、年份、地区拼接筛选条件
      * @param string $type
      * @param string $year
@@ -100,42 +156,14 @@ class Search extends CI_Controller {
         return empty($con) ? "" : " and " . implode(" and ",$con);
     }
 
-    public function index($type = "all",$year = "all",$diqu = "all") {
-        $searchW = trim($this->input->get("key"));
-        //过滤特殊字符
-        $searchW = htmlspecialchars($searchW);
-        $searchW = $this->_pregReplacespeaStr($searchW);
-        if (empty($searchW)) {
-            $this->jump_to("/moviceguide/");
-            exit;
-        }
-
-        $this->set_attr("searchW",$searchW);
-
-        //缓存设置，为热门搜索使用,保存5个小时
-        $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
-        if (empty($searchCacheInfo[$searchW])) {
-            $searchCacheInfo[$searchW] = 1;
-        } else {
-            $searchCacheInfo[$searchW]++;
-        }
-        $this->cache->file->save($this->search_cache_key,$searchCacheInfo,5 * 60 * 60);
-        //长度截取
-        if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
-            $searchW = mb_substr($searchW,0,$this->_maxLen);
-        }
+    /**
+     * 搜索主函数
+     */
+    private function _searchMian($searchW,$type,$year,$diqu,$limit = 50) {
         //分词数组
         $wordArr = array();
         $this->load->model("Wordsplit");
         $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
-
-        //类型、年份、地区筛选
-        $type = empty($this->_movieType[intval($type)]) ? "all" : $type;
-        $year = empty($this->_movieNianFen[intval($year)]) ? "all" : $year;
-        $diqu = empty($this->_moviePlace[intval($diqu)]) ? "all" : $diqu;
-        $this->set_attr("type",$type);
-        $this->set_attr("year",$year);
-        $this->set_attr("diqu",$diqu);
 
         //开始匹配搜索关键字的电影
         $searchMovieInfo = $firstMoviceInfo = array();
@@ -148,9 +176,9 @@ class Search extends CI_Controller {
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
-                $searchInfo = $this->_getDetailInfoByDyName($wordVal,$type,$year,$diqu);
+                $searchInfo = $this->_getDetailInfoByDyName($wordVal,$type,$year,$diqu,$limit);
             } else {
-                $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu);
+                $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu,$limit);
             }
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
@@ -178,7 +206,7 @@ class Search extends CI_Controller {
             }
 
             //电影主演搜索
-            $searchInfo1 = $this->_getDetailInfoBySearchName($wordVal,$type,$year,$diqu);
+            $searchInfo1 = $this->_getMovieInfoBYYanYuan($wordVal,$type,$year,$diqu);
             if (!empty($searchInfo1)) {
                 foreach($searchInfo1 as $sKey1 => $sInfo1) {
                     //替换名称中的搜索关键字
@@ -199,7 +227,7 @@ class Search extends CI_Controller {
             }
 
             //电影导演搜索
-            $searchInfo2 = $this->_getDetailInfoBySearchDaoYan($wordVal,$type,$year,$diqu);
+            $searchInfo2 = $this->_getMovieInfoBYDaoYuan($wordVal,$type,$year,$diqu,$limit);
             if (!empty($searchInfo2)) {
                 foreach($searchInfo2 as $sKey2 => $sInfo2) {
                     //替换名称中的搜索关键字
@@ -227,7 +255,7 @@ class Search extends CI_Controller {
         //按是否有观看链接排序
         array_multisort($existWatch, SORT_DESC,$firstMoviceInfo);
 
-        foreach($searchMovieInfo as $infoKey => $infoVal) {
+        foreach($searchMovieInfo as $infoVal) {
             $infoVal['jieshao'] = str_replace("","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("　　","",$infoVal['jieshao']);
             $infoVal['jieshao'] = str_replace("&nbsp;","",$infoVal['jieshao']);
@@ -243,6 +271,50 @@ class Search extends CI_Controller {
         foreach($searchMovieInfo as $infoKey => $infoVal) {
             $searchMovieInfo[$infoKey]['jieshao'] = $this->splitStr($infoVal['jieshao'],100);
         }
+        return array($searchMovieInfo,$ids);
+    }
+
+    /**
+     * 页面入口函数
+     * @param string $type
+     * @param string $year
+     * @param string $diqu
+     */
+    public function index($type = "all",$year = "all",$diqu = "all") {
+        $searchW = trim($this->input->get("key"));
+        //过滤特殊字符
+        $searchW = htmlspecialchars($searchW);
+        $searchW = $this->_pregReplacespeaStr($searchW);
+        if (empty($searchW)) {
+            $this->jump_to("/moviceguide/");
+            exit;
+        }
+        $this->set_attr("searchW",$searchW);
+
+        //缓存设置，为热门搜索使用,保存5个小时
+        $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
+        if (empty($searchCacheInfo[$searchW])) {
+            $searchCacheInfo[$searchW] = 1;
+        } else {
+            $searchCacheInfo[$searchW]++;
+        }
+        $this->cache->file->save($this->search_cache_key,$searchCacheInfo,5 * 60 * 60);
+        //长度截取
+        if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
+            $searchW = mb_substr($searchW,0,$this->_maxLen);
+        }
+
+        //类型、年份、地区筛选
+        $type = empty($this->_movieType[intval($type)]) ? "all" : $type;
+        $year = empty($this->_movieNianFen[intval($year)]) ? "all" : $year;
+        $diqu = empty($this->_moviePlace[intval($diqu)]) ? "all" : $diqu;
+        $this->set_attr("type",$type);
+        $this->set_attr("year",$year);
+        $this->set_attr("diqu",$diqu);
+
+
+        //搜索处理
+        list($searchMovieInfo,$ids) = $this->_searchMian($searchW,$type,$year,$diqu,50);
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接
@@ -274,7 +346,8 @@ class Search extends CI_Controller {
             echo json_encode($result);
             exit;
         }
-        $searchMovieInfo = $this->_getDetailInfoBySearchW($word,'','','',20);
+        $searchMovieInfo = $this->_searchMian($word,'','','',20);
+        $searchMovieInfo = $searchMovieInfo[0];
         $searchMovieInfo = $this->_getMoviceNameInfos($searchMovieInfo);
         if (!empty($searchMovieInfo)) {
             $result["code"] = "success";
@@ -308,7 +381,6 @@ class Search extends CI_Controller {
             $resultVal['url'] = "/detail/index/" . APF::get_instance()->encodeId($resultVal['id']);
             $resultVal['typeUrl'] = "/moviceguide/type/" . $resultVal['type'] . "/";
             $resultVal['jieshao'] = str_replace("　　","",trim($resultVal['jieshao']));
-//            $resultVal['jieshao'] = $this->splitStr($resultVal['jieshao'],30);
             $newResArr[$i++] = $resultVal;
         }
         return $newResArr;
