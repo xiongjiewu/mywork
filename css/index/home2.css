@@ -87,13 +87,19 @@ div.home_top ul li a img {
     /*-moz-opacity:0.5;*/
     /*opacity: 0.5;*/
 }
+
+div.home_top ul li.web_count_main {
+    width: 28%;
+    height: 304px;
+    float: right;
+    border: none;
+    cursor: default;
+}
 div.home_top div.home_web {
-    height: 303px;
-    position: absolute;
+    height: 100%;
     right: 0;
     top: 0;
-    width: 406px;
-    z-index: 1001;
+    width: 100%;
     background-color: #3e3e3e;
 }
 div.home_top div.home_web div.home_web_count {

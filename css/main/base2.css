@@ -343,12 +343,12 @@ div.login_register_pan div a.logout {
     font-size: 13px;
     padding-left: 2px;
 }
-div.login_register_pan div.login a i {
+div.login_register_pan div.login_pan a i {
     float: left;
     padding: 10px;
     background: url("/images/common/shouye_new_sucai.png") -292px -11px transparent;
 }
-div.login_register_pan div.resgister a i {
+div.login_register_pan div.resgister_pan a i {
     float: left;
     padding: 10px;
     background: url("/images/common/shouye_new_sucai.png") -267px -9px transparent;
@@ -383,7 +383,7 @@ div.login_register_pan div.look div.look_re div.look_info {
 div.login_register_pan div.look div.look_re a i {
     float: left;
     padding: 10px;
-    background: url("/images/common/shouye_new_sucai.png") -312px -9px transparent;
+    background: url("/images/common/shouye_new_sucai.png") -312px -11px transparent;
 }
 div.login_register_pan div.look div.look_re a {
     float: right;

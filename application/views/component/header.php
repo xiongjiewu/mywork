@@ -24,13 +24,13 @@
     <!-- 登录，注册、浏览记录 start   -->
     <div class="login_register_pan">
         <?php if (empty($userName) && empty($userId)):?>
-        <div class="login">
+        <div class="login_pan">
             <a class="" href="/login/">
                 <i></i>
                 登录
             </a>
         </div>
-        <div class="resgister">
+        <div class="resgister_pan">
             <a class="" href="/register/">
                 <i></i>
                 注册

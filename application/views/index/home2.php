@@ -1,24 +1,30 @@
 <div class="home_top">
     <ul>
+      <?php $topMovieInfosI = 0;?>
        <?php foreach($topMovieInfos as $topVal):?>
             <?php $idStr = APF::get_instance()->encodeId($topVal['id']);?>
             <?php $zhuyan = str_replace("、","/",$topVal['zhuyan'])?>
             <?php $daoyan = str_replace("、","/",$topVal['daoyan'])?>
             <?php $nianfen = $topVal['nianfen'];?>
-        <li title="点击查看详情">
-            <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
-                <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
-            </a>
-        </li>
+            <?php if ($topMovieInfosI == 10):?>
+                <li class="web_count_main">
+                    <div class="home_web">
+                        <div class="home_web_count">
+                            <span class="dy_count">
+                                <?php echo $dyCount;?>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            <?php endif;?>
+            <li title="点击查看详情">
+                <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
+                    <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
+                </a>
+            </li>
+            <?php $topMovieInfosI++;?>
         <?php endforeach;?>
     </ul>
-    <div class="home_web">
-        <div class="home_web_count">
-            <span class="dy_count">
-                <?php echo $dyCount;?>
-            </span>
-        </div>
-    </div>
 </div>
 <div class="home_middel_main">
     <div class="tab_list">
