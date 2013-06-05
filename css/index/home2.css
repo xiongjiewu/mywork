@@ -40,9 +40,9 @@ div.home_top ul li a {
     height: 100%;
 }
 div.home_top ul li.li_over {
-    filter:alpha(Opacity=80);
-    -moz-opacity:0.8;
-    opacity: 0.8;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
 }
 div.home_top ul li.li_over_current {
     border: 1px solid #08A6CD;

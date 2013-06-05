@@ -25,13 +25,13 @@
     <div class="login_register_pan">
         <?php if (empty($userName) && empty($userId)):?>
         <div class="login">
-            <a class="" href="/login?t=<?php echo time();?>">
+            <a class="" href="/login/">
                 <i></i>
                 登录
             </a>
         </div>
         <div class="resgister">
-            <a class="" href="/register?t=<?php echo time();?>">
+            <a class="" href="/register/">
                 <i></i>
                 注册
             </a>
