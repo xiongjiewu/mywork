@@ -11,36 +11,6 @@
                 '<span>简介:</span>' + jieshao + '</p>';
             obj.html(htmlStr);
         },
-        bindUlLiAction: function (topObj) {
-            topObj.find("li").each(function () {
-                var that = $(this);
-                var leftOffset = this.offsetLeft;
-                var url = $(that.find("a").get(0)).attr("href");
-                var dyDetailObj = that.find("div.home_top_dy_detail");
-                var maxLeft = 500;
-                if (leftOffset > maxLeft) {
-                    that.find("div.home_top_dy_detail").addClass("home_top_dy_detail_left");
-                }
-                that.bind("click", function () {
-                    window.location.href = url;
-                });
-                //点击a，阻止冒泡排序
-                that.find("a").each(function () {
-                    $(this).bind("click", function (event) {
-                        event.stopPropagation();
-                    });
-                });
-                that.bind("mouseover", function () {
-                    topObj.find("li").addClass("li_over");
-                    that.removeClass("li_over").addClass("li_over_current");
-                    dyDetailObj.show();
-                });
-                that.bind("mouseleave", function () {
-                    dyDetailObj.hide();
-                    that.removeClass("li_over_current");
-                });
-            });
-        },
         initYaoyaoInfo: function (result) {
             var yaoyaoObj = $("div.yaoyao_movice_info_img");
             var aObj = yaoyaoObj.find("a");
@@ -109,8 +79,11 @@
             var arr = new Array(liLen);
             var i = 0;
             liObj.each(function () {
-                arr[i] = $(this).html();
-                i++;
+                var that = $(this);
+                if (!that.hasClass("web_count_main")) {
+                    arr[i] = $(this).html();
+                    i++;
+                }
             });
             var outputArr = arr.slice();
             var len = outputArr.length;
@@ -119,12 +92,14 @@
             }
             var j = 0;
             liObj.each(function () {
-                $(this).html(outputArr[j]);
-                j++;
+                var that = $(this);
+                if (!that.hasClass("web_count_main")) {
+                    $(this).html(outputArr[j]);
+                    j++;
+                }
             });
             if (cishu > 10) {
                 $("div.home_yaoyao_main").show();
-                this.bindUlLiAction(topObj);
                 this.showYaoYaoMovice();
                 //运行完毕则清除
                 clearInterval(aa);
@@ -133,11 +108,6 @@
     };
     $(document).ready(function () {
         var topObj = $("div.home_top ul");
-//        topObj.bind("mouseleave", function () {
-//            topObj.find("li").removeClass("li_over");
-//            topObj.find("li").removeClass("li_over_current");
-//        });
-//        init.bindUlLiAction(topObj);
         var dyInfoListObj = $("div.movice_info_list_list div.info_list ul");
         dyInfoListObj.find("li").each(function () {
             var that = $(this);
@@ -188,14 +158,8 @@
             $("div.home_yaoyao_main").hide();
             $("div.yaoyao_movice_info").hide();
         });
-//        var todayLiObj = $("div.movice_info_list div.info_list ul li.today_info_li");
-//        todayLiObj.each(function () {
-//            $(this).bind("mouseover", function () {
-//                $(this).find("p.today_name").animate({top: "130px"}, 200);
-//            });
-//            $(this).bind("mouseleave", function () {
-//                $(this).find("p.today_name").animate({top: "200px"}, 100);
-//            });
-//        });
+        var firstLiObj = $("ul li.top_first_li");
+        var liWith = firstLiObj.width();
+        $("ul li.top_last_li").width(liWith - 2);
     })
 })(jQuery);

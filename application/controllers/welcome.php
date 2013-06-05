@@ -6,7 +6,7 @@
 class Welcome extends CI_Controller {
 
     private $_limit = 18;//最新上映和即将上映电影个数
-    private $_topMovieLimit = 42;//电影墙电影个数
+    private $_topMovieLimit = 34;//电影墙电影个数
     private $_cacheP = "home_total_dy_info_";//缓存前缀
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
