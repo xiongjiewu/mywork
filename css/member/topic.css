@@ -1,8 +1,11 @@
 div.help_daohang {
     float: left;
     margin-top: 40px;
-    margin-left: 60px;
+    margin-left: 80px;
     position: fixed;
+    border: 1px solid #C2E4FF;
+    border-right: none;
+    width: 150px;
 }
 div.help_daohang ul {
     float: left;
@@ -10,24 +13,40 @@ div.help_daohang ul {
     padding: 0;
 }
 div.help_daohang ul li {
-    list-style: none;
-    padding: 10px;
-    width: 150px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px dashed #C2E4FF;
+    float: left;
+    list-style: none outside none;
+    /*padding: 10px;*/
     text-align: center;
-    border-top: 1px solid #C2E4FF;
-    background: none repeat scroll 0 0 #E9F6FF;
+    width: 150px;
+}
+div.help_daohang ul li:hover {
+    background-color: #08a6cd;
+}
+div.help_daohang ul li:hover a {
+    color: #fff;
+    text-decoration: none;
 }
 div.help_daohang ul li a {
-    text-decoration: underline;
+    float: left;
+    height: 100%;
+    padding: 10px;
+    text-decoration: none;
+    width: 130px;
+}
+div.help_daohang ul li.fisrt_one {
+    border-top: none;
 }
 div.help_daohang ul li.current {
-    background: url("/images/common/li_left.gif") no-repeat scroll 25px 14px #FFFFFF;
+    background-color: #08a6cd;
 }
 div.help_daohang ul li.current a {
     text-decoration: none;
     font: 15px;
     font-weight: bold;
     color: #000;
+    color: #fff;
 }
 div.help_content {
     margin-top: 40px;
@@ -35,6 +54,7 @@ div.help_content {
     width: 70%;
     border: 1px solid #C2E4FF;
     padding: 20px 50px;
-    margin-left: 280px;
+    margin-left: 231px;
     background: none repeat scroll 0 0 #fff;
+    min-height: 500px;
 }
