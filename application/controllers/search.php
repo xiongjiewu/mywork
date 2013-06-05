@@ -126,7 +126,7 @@ class Search extends CI_Controller {
                 $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0  order by nianfen desc";
             } else {
                 $conStr .= " order by nianfen desc";
-                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0 " . $conStr;
+                $conditionStr = " id in(" . implode(",",$ids) . ") and del = 0  " . $conStr;
             }
             $movieInfos = $this->Backgroundadmin->getMovieInfoByCon($conditionStr);
         }
@@ -347,7 +347,7 @@ class Search extends CI_Controller {
             exit;
         }
         $searchMovieInfo = $this->_searchMian($word,'','','',20);
-        $searchMovieInfo = $searchMovieInfo[0];
+        $searchMovieInfo = array_slice($searchMovieInfo[0],0,20);
         $searchMovieInfo = $this->_getMoviceNameInfos($searchMovieInfo);
         if (!empty($searchMovieInfo)) {
             $result["code"] = "success";
