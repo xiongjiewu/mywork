@@ -63,15 +63,21 @@ class Detail extends CI_Controller {
                 $conStr = " order by nianfen desc";
                 $caiNiXiHuanInfo2 = $this->Backgroundadmin->getDetailInfoBySearchZhuYan(trim($zhuyanName),$this->_caiLimit - $xiHuanCount,$conStr);
                 $caiNiXiHuanInfo = array_merge($caiNiXiHuanInfo,$caiNiXiHuanInfo2);
+                //去重
+                $caiNiXiHuanInfo = $this->initArrById($caiNiXiHuanInfo,"id");
             }
         }
         //猜你喜欢不够数，则获取类型相关
         $xiHuanCount = count($caiNiXiHuanInfo);
         if ($xiHuanCount < $this->_caiLimit) {
             $conStr = " type = " . $dyInfo['type'];
-            $caiNiXiHuanInfo3 = $this->Backgroundadmin->getDetailInfoByCondition($conStr,0,$this->_caiLimit - $xiHuanCount,$conStr);
+            $caiNiXiHuanInfo3 = $this->Backgroundadmin->getDetailInfoByCondition($conStr,0,$this->_caiLimit,$conStr);
             $caiNiXiHuanInfo = array_merge($caiNiXiHuanInfo,$caiNiXiHuanInfo3);
+            //去重
+            $caiNiXiHuanInfo = $this->initArrById($caiNiXiHuanInfo,"id");
         }
+        unset($caiNiXiHuanInfo[$dyInfo['id']]);
+        $caiNiXiHuanInfo = array_slice($caiNiXiHuanInfo,0,$this->_caiLimit);
         $this->set_attr("caiNiXiHuanInfo",$caiNiXiHuanInfo);
 
         //观看链接
