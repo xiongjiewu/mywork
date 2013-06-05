@@ -195,16 +195,20 @@ var initOjb = {
             var that = $(this);
             that.bind("mouseover",function() {
                 var type = that.attr("type");
-                var smallMenusObj = that.parent().parent().find("div." + type);
-                if (smallMenusObj.length > 0) {
-                    smallMenusObj.show();
+                if (type) {
+                    var smallMenusObj = that.parent().parent().find("div." + type);
+                    if (smallMenusObj.length > 0) {
+                        smallMenusObj.show();
+                    }
                 }
             });
             that.bind("mouseleave",function() {
                 var type = that.attr("type");
-                var smallMenusObj = that.parent().parent().find("div." + type);
-                if (smallMenusObj.length > 0) {
-                    smallMenusObj.hide();
+                if (type) {
+                    var smallMenusObj = that.parent().parent().find("div." + type);
+                    if (smallMenusObj.length > 0) {
+                        smallMenusObj.hide();
+                    }
                 }
             });
         });
