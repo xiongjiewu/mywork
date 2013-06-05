@@ -12,6 +12,7 @@ div.home_top ul {
     width: 100%;
     margin: 0;
     padding: 0;
+    background-color: #000;
 }
 div.home_top ul li {
     cursor: pointer;
@@ -24,6 +25,14 @@ div.home_top ul li {
     /*border-left: none;*/
     /*border-bottom: none;*/
     position: relative;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+}
+div.home_top ul li:hover {
+    filter:alpha(Opacity=100);
+    -moz-opacity:1;
+    opacity: 1;
 }
 div.home_top ul li a {
     float: left;

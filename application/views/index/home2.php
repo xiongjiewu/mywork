@@ -9,12 +9,6 @@
             <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
                 <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
             </a>
-            <div class="home_top_dy_detail">
-                <div class="home_top_dy_detail_info detail_name"><?php echo $topVal['name'];?></div>
-                <div class="home_top_dy_detail_info">主演：<?php echo empty($zhuyan) ? "暂无" : $zhuyan;?></div>
-                <div class="home_top_dy_detail_info">导演：<?php echo empty($daoyan) ? "暂无" : $daoyan;?></div>
-                <div class="home_top_dy_detail_info">年份：<?php echo empty($nianfen) ? "暂无" : $nianfen;?></div>
-            </div>
         </li>
         <?php endforeach;?>
     </ul>

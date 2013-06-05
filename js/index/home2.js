@@ -133,11 +133,11 @@
     };
     $(document).ready(function () {
         var topObj = $("div.home_top ul");
-        topObj.bind("mouseleave", function () {
-            topObj.find("li").removeClass("li_over");
-            topObj.find("li").removeClass("li_over_current");
-        });
-        init.bindUlLiAction(topObj);
+//        topObj.bind("mouseleave", function () {
+//            topObj.find("li").removeClass("li_over");
+//            topObj.find("li").removeClass("li_over_current");
+//        });
+//        init.bindUlLiAction(topObj);
         var dyInfoListObj = $("div.movice_info_list_list div.info_list ul");
         dyInfoListObj.find("li").each(function () {
             var that = $(this);
