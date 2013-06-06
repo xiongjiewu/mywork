@@ -70,6 +70,12 @@ class Welcome extends CI_Controller {
             $homeTotalDyInfo['doubanTopMovice'] = $doubanTopMovice;
             //电影详细信息
             $doubanDetailInfo = $this->Backgroundadmin->getDetailInfo($idArr,0,true);
+            $scoreArr = array();
+            foreach($doubanDetailInfo as $doubanKey => $doubanVal) {
+                $scoreArr[] = $doubanTopMovice[$doubanVal['id']]['score'];
+                $doubanDetailInfo[$doubanKey]['score'] = $doubanTopMovice[$doubanVal['id']]['score'];
+            }
+            array_multisort($scoreArr,SORT_DESC,$doubanDetailInfo);
             $homeTotalDyInfo['doubanDetailInfo'] = $doubanDetailInfo;
 
             //今日推荐

@@ -500,7 +500,7 @@ class Backgroundadmin extends CI_Model {
      * @return mixed
      */
     public function getTopMoviceInfoByType($topType = 1,$offset = 0, $limit = 10) {
-        $sql = "select * from `tbl_movieScore` where type = {$topType} order by score desc limit {$offset},{$limit}";
+        $sql = "select * from `tbl_movieScore` where type = {$topType} and del = 0 order by score desc limit {$offset},{$limit}";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
