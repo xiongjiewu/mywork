@@ -159,16 +159,20 @@
             $("div.yaoyao_movice_info").hide();
         });
         //设置顶部电影墙li宽度与长度，为了兼容所有浏览器，只能用js控制
-        var totalWitch = topObj.width();
-        var totalHeigth = topObj.height();
-        var oneWidth = Math.round((totalWitch / 14) * 10) / 10;
-        var oneHeigth = Math.round((totalHeigth / 3) * 10) / 10;
+        var homeTopObj = $("div.home_top");
+        var totalWitch = homeTopObj.width();
+        var totalHeigth = homeTopObj.height();
+        var oneWidth = Math.ceil(totalWitch / 14);
+        var oneHeigth = Math.ceil(totalHeigth / 3);
         topObj.find("li").each(function() {
             var that = $(this);
             if (that.hasClass("web_count_main")) {
-                var currentW = oneWidth * 4 -2;
-                var currentH = oneHeigth * 2 -2;
+                var currentW = totalWitch - oneWidth * 10 - 2;
+                var currentH = totalHeigth - oneHeigth - 1;
                 that.width(currentW);
+                that.height(currentH);
+            } else if (that.hasClass("top_last_li")) {
+                that.width(totalWitch - oneWidth * 13 - 2);
                 that.height(currentH);
             } else {
                 that.width(oneWidth - 2);
