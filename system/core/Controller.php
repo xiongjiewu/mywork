@@ -89,7 +89,7 @@ class CI_Controller
         //按搜索个数降序排序
         if (!empty($searchCacheInfo)) {
             arsort($searchCacheInfo);
-            $searchCacheInfo = array_slice($searchCacheInfo,0,5);
+            $searchCacheInfo = array_slice($searchCacheInfo,0,8);
             $this->_attr['data']['searchCacheInfo'] = $searchCacheInfo;
         }
         log_message('debug', "Controller Class Initialized");
