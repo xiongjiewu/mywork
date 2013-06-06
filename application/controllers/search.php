@@ -291,14 +291,6 @@ class Search extends CI_Controller {
         }
         $this->set_attr("searchW",$searchW);
 
-        //缓存设置，为热门搜索使用,保存5个小时
-        $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
-        if (empty($searchCacheInfo[$searchW])) {
-            $searchCacheInfo[$searchW] = 1;
-        } else {
-            $searchCacheInfo[$searchW]++;
-        }
-        $this->cache->file->save($this->search_cache_key,$searchCacheInfo,5 * 60 * 60);
         //长度截取
         if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
             $searchW = mb_substr($searchW,0,$this->_maxLen);
@@ -315,6 +307,16 @@ class Search extends CI_Controller {
 
         //搜索处理
         list($searchMovieInfo,$ids) = $this->_searchMian($searchW,$type,$year,$diqu,50);
+        if (!empty($searchMovieInfo)) {
+            //缓存设置，为热门搜索使用,保存5个小时
+            $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
+            if (empty($searchCacheInfo[$searchW])) {
+                $searchCacheInfo[$searchW] = 1;
+            } else {
+                $searchCacheInfo[$searchW]++;
+            }
+            $this->cache->file->save($this->search_cache_key,$searchCacheInfo,5 * 60 * 60);
+        }
         $this->set_attr("searchMovieInfo",$searchMovieInfo);
 
         //观看链接

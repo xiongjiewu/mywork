@@ -75,7 +75,7 @@
                 $(this).find("div.home_top_dy_detail").hide();
                 $(this).unbind("mouseover");
             });
-            var liLen = liObj.length;
+            var liLen = liObj.length - 1;
             var arr = new Array(liLen);
             var i = 0;
             liObj.each(function () {
@@ -158,8 +158,22 @@
             $("div.home_yaoyao_main").hide();
             $("div.yaoyao_movice_info").hide();
         });
-        var firstLiObj = $("ul li.top_first_li");
-        var liWith = firstLiObj.width();
-        $("ul li.top_last_li").width(liWith - 2);
+        //设置顶部电影墙li宽度与长度，为了兼容所有浏览器，只能用js控制
+        var totalWitch = topObj.width();
+        var totalHeigth = topObj.height();
+        var oneWidth = Math.round((totalWitch / 14) * 10) / 10;
+        var oneHeigth = Math.round((totalHeigth / 3) * 10) / 10;
+        topObj.find("li").each(function() {
+            var that = $(this);
+            if (that.hasClass("web_count_main")) {
+                var currentW = oneWidth * 4 -2;
+                var currentH = oneHeigth * 2 -2;
+                that.width(currentW);
+                that.height(currentH);
+            } else {
+                that.width(oneWidth - 2);
+                that.height(oneHeigth - 2 );
+            }
+        });
     })
 })(jQuery);
