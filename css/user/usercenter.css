@@ -176,14 +176,16 @@ div.bs-docs-example div.user_image img {
 }
 
 div.user_image span {;
-    position: absolute;
+    background-color: #EEEEEE;
     bottom: 0;
+    height: 30px;
     left: 0;
-    *left: -4px;
-    width: 79%;
-    height: 20px;
+    line-height: 30px;
+    position: absolute;
     text-align: center;
+    width: 100%;
     z-index: 99;
+    *left: -4px;
 }
 
 div.user_image input.image {
@@ -359,6 +361,7 @@ table.change_pass_table {
 table.change_pass_table tr td code,table.edit_xheditor_table tr td code{
     background-color: #fff;
     border: none;
+    color: #ff0000;
 }
 table.change_pass_table tr td {
     float: left;
@@ -400,15 +403,27 @@ div.select_create select {
     float: left;
 }
 div.select_create div.iWant {
-    width: 100px;
     float: right;
+    margin-bottom: 20px;
+    margin-right: 21px;
 }
 div.select_create div.iWant_su {
     width: 150px;
     float: right;
 }
-div.select_create div.iWant a,div.select_create div.iWant a:hover {
-    color: #fff;
+div.select_create div.iWant a {
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    color: #333333;
+    padding: 1px 12px;
+}
+div.select_create div.iWant a:hover {
+
 }
 table.edit_success {
     float: left;
