@@ -148,14 +148,6 @@ class Moviceguide extends CI_Controller {
             $page = ceil($mouvieCount / $limit);
         }
         $movieList = $this->Backgroundadmin->getDetailInfoByCondition($conditionStr,($page - 1) * $limit,$limit);
-        foreach($movieList as $infoKey => $infoVal) {
-            if ($infoKey < 4) {
-                $movieList[$infoKey]['class'] = "firstRow";
-            } else {
-                $movieList[$infoKey]['class'] = "";
-            }
-            $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
-        }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
 
@@ -226,14 +218,6 @@ class Moviceguide extends CI_Controller {
             $page = ceil($mouvieCount / $limit);
         }
         $movieList = $this->Backgroundadmin->getDetailInfoByCondition($conditionStr,($page - 1) * $limit,$limit);
-        foreach($movieList as $infoKey => $infoVal) {
-            if ($infoKey < 4) {
-                $movieList[$infoKey]['class'] = "firstRow";
-            } else {
-                $movieList[$infoKey]['class'] = "";
-            }
-            $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
-        }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
 
@@ -306,14 +290,6 @@ class Moviceguide extends CI_Controller {
             $page = ceil($mouvieCount / $limit);
         }
         $movieList = $this->Backgroundadmin->getDetailInfoByCondition($conditionStr,($page - 1) * $limit,$limit);
-        foreach($movieList as $infoKey => $infoVal) {
-            if ($infoKey < 4) {
-                $movieList[$infoKey]['class'] = "firstRow";
-            } else {
-                $movieList[$infoKey]['class'] = "";
-            }
-            $movieList[$infoKey]['daoyan'] = $this->splitStr($infoVal['daoyan'],9);
-        }
         $this->set_attr("movieList",$movieList);
         $this->set_attr("mouvieCount",$mouvieCount);
 
