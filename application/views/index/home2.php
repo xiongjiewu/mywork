@@ -17,7 +17,7 @@
                     </div>
                 </li>
             <?php endif;?>
-            <li title="点击查看详情" <?php if ($topMovieInfosI == 0):?>class="top_first_li"<?php elseif ($topMovieInfosI == (count($topMovieInfos) - 1)):?>class="top_last_li"<?php endif;?>>
+            <li title="<?php echo $topVal['name'];?>" <?php if ($topMovieInfosI == 0):?>class="top_first_li"<?php elseif ($topMovieInfosI == (count($topMovieInfos) - 1)):?>class="top_last_li"<?php endif;?>>
                 <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
                     <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
                 </a>
