@@ -85,7 +85,7 @@
                         <div>
                             <span>简介:</span>
                             <span class="jieshao">
-                                <?php echo $moviceVal['jieshao'];?><a href="/detail/index/<?php echo $idStr;?>/">[了解详情]</a>
+                                <?php echo $moviceVal['jieshao'];?><a target="_blank" href="<?php echo $moviceIds[$moviceVal['id']]['link'];;?>">[了解详情]</a>
                             </span>
                         </div>
                     </div>

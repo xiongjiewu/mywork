@@ -232,6 +232,12 @@ $config['pai_hang'] = array(
             "htmlTitle" => "IMDB<em>TOP250</em>",
             "base_url" => "/classmovice/index/top/2/",
         ),
+        3 => array(//时光网
+            "title" => "时光网 TOP100",
+            "s_title" => "时光网",
+            "htmlTitle" => "时光网<em>TOP100</em>",
+            "base_url" => "/classmovice/index/top/3/",
+        ),
     ),
     "prize" => array(//奖项排行榜
     ),

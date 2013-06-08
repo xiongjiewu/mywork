@@ -56,6 +56,8 @@ class Classmovice extends CI_Controller {
         //电影列表
         $moviceIds = $this->Moviescore->getTopMoviceInfoByType($type,($page - 1) * $this->_limit,$this->_limit);
         $moviceIds = $this->initArrById($moviceIds,"infoId",$idsArr);
+        $this->set_attr("moviceIds",$moviceIds);
+
         //电影详细信息
         $moviceList = $this->Backgroundadmin->getDetailInfo($idsArr,0,true);
         $scoreArr = array();
