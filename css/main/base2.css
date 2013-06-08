@@ -425,46 +425,46 @@ div.login_register_pan div.look div.look_re span.nothing {
     padding: 20px 0;
     color: #666;
 }
-footer.footer {
+div.footer {
     margin-top: 40px;
     float: left;
     width: 100%;
     background-color: #DADAD9;
 }
-footer.footer div.footer_main {
+div.footer div.footer_main {
     margin: 20px auto;
     width: 1200px;
 }
-footer.footer div.footer_main div.footer_left {
+div.footer div.footer_main div.footer_left {
     float: left;
     width: 1000px;
 }
-footer.footer div.footer_main div.footer_left div {
+div.footer div.footer_main div.footer_left div {
     float: left;
     width: 100%;
 }
-footer.footer div.footer_main div.footer_left div ul {
+div.footer div.footer_main div.footer_left div ul {
     float: left;
     width: 100%;
 }
-footer.footer div.footer_main div.footer_left div.footer_title {
+div.footer div.footer_main div.footer_left div.footer_title {
     color: #444444;
     font-size: 16px;
     height: 36px;
     line-height: 36px;
 }
-footer.footer div.footer_main div.footer_left div ul li {
+div.footer div.footer_main div.footer_left div ul li {
     float: left;
 }
 
-footer.footer div.footer_main div.footer_left div ul.web-list li {
+div.footer div.footer_main div.footer_left div ul.web-list li {
     width: 80px;
     float: left;
     height: 24px;
     line-height: 24px;
     overflow: hidden;
 }
-footer.footer div.footer_main div.footer_left div ul.web-list li a {
+div.footer div.footer_main div.footer_left div ul.web-list li a {
     color: #969696;
     font-size: 13px;
 }
@@ -477,34 +477,34 @@ footer.footer div.footer_main div.footer_left div ul.web-list li a {
     height: 1px;
     overflow: hidden;
 }
-footer.footer div.footer_bottom {
+div.footer div.footer_bottom {
     float: left;
     margin: 0 100px;
 }
-footer.footer div.footer_bottom div {
+div.footer div.footer_bottom div {
     float: left;
 }
-footer.footer div.footer_bottom div.footer_logo a {
+div.footer div.footer_bottom div.footer_logo a {
     background: url("/images/common/shouye_new_sucai.png") repeat scroll 1px -219px transparent;
     float: left;
     height: 100px;
     width: 310px;
 }
-footer.footer div.footer_bottom ul {
+div.footer div.footer_bottom ul {
     width: 100%;
     float: left;
 }
-footer.footer div.footer_bottom ul li {
+div.footer div.footer_bottom ul li {
     float: left;
     margin-right: 20px;
 }
-footer.footer div.footer_bottom ul li a {
+div.footer div.footer_bottom ul li a {
     color: #444;
 }
-footer.footer div.footer_bottom ul li.mail a {
+div.footer div.footer_bottom ul li.mail a {
     color: #0088CC;
 }
-footer.footer div.footer_bottom p {
+div.footer div.footer_bottom p {
     margin-top: 20px;
 }
 div.btn-group a {
