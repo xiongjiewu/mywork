@@ -35,7 +35,7 @@
                             <?php foreach($zhuyanArr as $zyVal):?>
                                 <a href="/search?key=<?php echo $zyVal;?>" class="class_user"><?php echo $zyVal;?></a>
                                 <?php if ($zhuyanI != $zhuyanCount):?>
-                                、
+                                /
                                 <?php endif;?>
                                 <?php $zhuyanI++;?>
                             <?php endforeach;?>
