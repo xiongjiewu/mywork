@@ -142,7 +142,7 @@ class CI_Controller
 
         if ($page == 1) {
             $result[] = array(
-                "link" => $base_url  . "1/",
+                "link" => "javascript:void(0)",
                 "page" => "首页",
                 "able" => false,
                 "current" => false,
@@ -177,7 +177,7 @@ class CI_Controller
         }
         if ($page == $totalPage) {
             $result[] = array(
-                "link" => $base_url  . $totalPage ."/",
+                "link" => "javascript:void(0)",
                 "page" => "尾页",
                 "able" => false,
                 "current" => false,
