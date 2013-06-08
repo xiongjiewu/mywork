@@ -22,9 +22,10 @@ class Editpost extends CI_Controller {
             exit;
         }
         $content = $this->input->post("content");
+        $idStr = APF::get_instance()->encodeId($YingpingInfo['infoId']);
         if ($content != "") {
             $this->Yingping->updateYingpingInfoById($id,array("content"=>"'{$content}'"));
-            $this->jump_to("/detail/index/{$YingpingInfo['infoId']}/");
+            $this->jump_to("/detail/index/{$idStr}/");
             exit;
         }
         $this->set_attr("YingpingInfo",$YingpingInfo);
