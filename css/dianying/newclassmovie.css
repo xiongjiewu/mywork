@@ -115,6 +115,7 @@ div.class_main div.class_right li span i {
 }
 div.class_main div.class_right li span a.class_user {
     color: #aaa;
+    font-size: 13px;
 }
 div.class_main div.class_right li span a:hover {
     color: #08A6CD;
