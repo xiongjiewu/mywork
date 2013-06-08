@@ -238,6 +238,12 @@ $config['pai_hang'] = array(
             "htmlTitle" => "时光网<em>TOP100</em>",
             "base_url" => "/classmovice/index/top/3/",
         ),
+        4 => array(//时光网
+            "title" => "百度搜索排行榜",
+            "s_title" => "百度",
+            "htmlTitle" => "百度<em>搜索排行榜</em>",
+            "base_url" => "/classmovice/index/top/4/",
+        ),
     ),
     "prize" => array(//奖项排行榜
     ),

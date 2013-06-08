@@ -30,9 +30,16 @@
                                     <?php echo $moviceVal['name'];?>
                                 </a>
                             </h1>
-                            <div class="class_score">
-                                <?php echo $paiHangInfo[$listType][$type]['s_title'];?>评分：<i><?php echo $moviceVal['score'];?></i>
-                            </div>
+
+                                <?php if ($listType == "top" && $type == 4):?>
+                                    <div class="class_score class_search">
+                                        <?php echo $paiHangInfo[$listType][$type]['s_title'];?>搜索量：<i><?php echo $moviceVal['search'];?></i>
+                                    </div>
+                                <?php else:?>
+                                    <div class="class_score">
+                                    <?php echo $paiHangInfo[$listType][$type]['s_title'];?>评分：<i><?php echo $moviceVal['score'];?></i>
+                                    </div>
+                                <?php endif;?>
                         </div>
                         <div>
                             <span>主演:</span>

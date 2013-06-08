@@ -11,6 +11,7 @@ class Classmovice extends CI_Controller {
         parent::__construct();
         $this->load->model('Backgroundadmin');
         $this->load->model('Moviescore');
+        $this->load->model('Moviesearch');
         $this->_paiHangInfo = APF::get_instance()->get_config_value("pai_hang");
         $this->set_attr("paiHangInfo",$this->_paiHangInfo);
     }
@@ -47,26 +48,53 @@ class Classmovice extends CI_Controller {
      */
     private function _topList($type = 1,$page = 1) {
         $listType = "top";
-        //总数
-        $totalCount = $this->Moviescore->getTopMovieCount($type);
-        $this->set_attr("totalCount",$totalCount);
+
         $this->set_attr("limit",$this->_limit);
 
-        $page = ($page > ceil($totalCount / $this->_limit)) ? $totalCount / $this->_limit : $page;
-        //电影列表
-        $moviceIds = $this->Moviescore->getTopMoviceInfoByType($type,($page - 1) * $this->_limit,$this->_limit);
-        $moviceIds = $this->initArrById($moviceIds,"infoId",$idsArr);
-        $this->set_attr("moviceIds",$moviceIds);
 
-        //电影详细信息
-        $moviceList = $this->Backgroundadmin->getDetailInfo($idsArr,0,true);
-        $scoreArr = array();
-        foreach($moviceList as $topKey => $topVal) {
-            $scoreArr[] = $moviceIds[$topVal['id']]['score'];
-            $moviceList[$topKey]['score'] = $moviceIds[$topVal['id']]['score'];
-            $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
+        //电影列表
+        if ($type == 4) {//百度搜索排行榜
+            //总数
+            $totalCount = $this->Moviesearch->getSearchMovieCount($type);
+            $this->set_attr("totalCount",$totalCount);
+
+            $page = ($page > ceil($totalCount / $this->_limit)) ? $totalCount / $this->_limit : $page;
+            $moviceIds = $this->Moviesearch->getSearchMoviceInfoByType($type,($page - 1) * $this->_limit,$this->_limit);
+            $moviceIds = $this->initArrById($moviceIds,"infoId",$idsArr);
+            $this->set_attr("moviceIds",$moviceIds);
+
+            //电影详细信息
+            $moviceList = $this->Backgroundadmin->getDetailInfo($idsArr,0,true);
+            $serchArr = array();
+            foreach($moviceList as $topKey => $topVal) {
+                $serchArr[] = $moviceIds[$topVal['id']]['search'];
+                $moviceList[$topKey]['search'] = $moviceIds[$topVal['id']]['search'];
+                $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
+            }
+            array_multisort($serchArr,SORT_DESC,$moviceList);
+            $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . " - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
+        } else {//top排行榜
+            //总数
+            $totalCount = $this->Moviescore->getTopMovieCount($type);
+            $this->set_attr("totalCount",$totalCount);
+
+            $page = ($page > ceil($totalCount / $this->_limit)) ? $totalCount / $this->_limit : $page;
+            $moviceIds = $this->Moviescore->getTopMoviceInfoByType($type,($page - 1) * $this->_limit,$this->_limit);
+            $moviceIds = $this->initArrById($moviceIds,"infoId",$idsArr);
+            $this->set_attr("moviceIds",$moviceIds);
+
+            //电影详细信息
+            $moviceList = $this->Backgroundadmin->getDetailInfo($idsArr,0,true);
+            $scoreArr = array();
+            foreach($moviceList as $topKey => $topVal) {
+                $scoreArr[] = $moviceIds[$topVal['id']]['score'];
+                $moviceList[$topKey]['score'] = $moviceIds[$topVal['id']]['score'];
+                $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
+            }
+            array_multisort($scoreArr,SORT_DESC,$moviceList);
+            $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . "排行榜 - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         }
-        array_multisort($scoreArr,SORT_DESC,$moviceList);
+
         $this->set_attr("moviceList",$moviceList);
 
         //分页
@@ -75,7 +103,6 @@ class Classmovice extends CI_Controller {
         $this->set_attr("fenye",$fenye);
 
         $this->load->set_head_img(false);
-        $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . "排行榜 - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/newclassmovie.css"));
         $this->load->set_js(array("/js/dianying/newclassmovie.js"));
         $this->set_view('dianying/newclassmovie');

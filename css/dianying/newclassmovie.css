@@ -92,6 +92,9 @@ div.class_main div.class_right li div.class_dy_info div.class_score {
     float: right;
     width: 150px;
 }
+div.class_main div.class_right li div.class_dy_info div.class_search {
+    width: 200px;
+}
 div.class_main div.class_right li div.class_dy_info div.class_score i {
     color: #ff0000;
 }
