@@ -25,7 +25,7 @@
     <div class="login_register_pan">
         <?php if (empty($userName) && empty($userId)):?>
         <div class="login_pan">
-            <a class="" href="/login/">
+            <a class="login_total_page" href="javascript:void(0);">
                 <i></i>
                 登录
             </a>
