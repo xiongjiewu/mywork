@@ -178,26 +178,26 @@ class CI_Controller
         if ($page == $totalPage) {
             $result[] = array(
                 "link" => "javascript:void(0)",
-                "page" => "尾页",
+                "page" => "»",
                 "able" => false,
                 "current" => false,
             );
             $result[] = array(
                 "link" => "javascript:void(0)",
-                "page" => "»",
+                "page" => "尾页",
                 "able" => false,
                 "current" => false,
             );
         } else {
             $result[] = array(
-                "link" => $base_url  . $totalPage ."/",
-                "page" => "尾页",
+                "link" => $base_url . ($page + 1) . "/",
+                "page" => "»",
                 "able" => true,
                 "current" => false,
             );
             $result[] = array(
-                "link" => $base_url . ($page + 1) . "/",
-                "page" => "»",
+                "link" => $base_url  . $totalPage ."/",
+                "page" => "尾页",
                 "able" => true,
                 "current" => false,
             );
