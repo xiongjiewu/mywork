@@ -222,11 +222,13 @@ $config['pai_hang'] = array(
     "top" => array(//top排行榜
         1 => array(//豆瓣
             "title" => "豆瓣TOP250",
+            "s_title" => "豆瓣",
             "htmlTitle" => "豆&nbsp;&nbsp;&nbsp;瓣<em>TOP250</em>",
             "base_url" => "/classmovice/index/top/1/",
         ),
         2 => array(//imdb
             "title" => "IMDB TOP250",
+            "s_title" => "IMDB",
             "htmlTitle" => "IMDB<em>TOP250</em>",
             "base_url" => "/classmovice/index/top/2/",
         ),

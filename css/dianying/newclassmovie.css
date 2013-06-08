@@ -62,20 +62,59 @@ div.class_main div.class_right {
     padding: 0 10px;
 }
 div.class_main div.class_right li {
-    float: left;
-    width: 170px;
-    height: 275px;
-    padding: 5px;
+    background-color: #FFFFFF;
     box-shadow: 2px 2px 3px #DDDDDD;
-    background-color: #fff;
-    margin-right: 10px;
+    float: left;
     margin-bottom: 20px;
+    padding: 20px;
+    width: 910px;
 }
-div.class_main div.class_right li.last {
-    margin-right: 0;
+div.class_main div.class_right li div.class_dy_info {
+    float: left;
+    width: 735px;
+    margin-left: 20px;
+}
+div.class_main div.class_right li div.class_dy_info h1 {
+    padding: 0;
+    margin:0;
+    color: #08A6CD;
+    font-size: 25px;
+    margin-bottom: 10px;
+    float: left;
+}
+div.class_main div.class_right li div.class_dy_info div.class_dy_top a {
+    color: #454545;
+}
+div.class_main div.class_right li div.class_dy_info div.class_dy_top {
+    margin-top: 0;
+}
+div.class_main div.class_right li div.class_dy_info div.class_score {
+    float: right;
+    width: 150px;
+}
+div.class_main div.class_right li div.class_dy_info div.class_score i {
+    color: #ff0000;
+}
+div.class_main div.class_right li div.class_dy_info div {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    color: #999999;
+}
+div.class_main div.class_right li div.class_dy_info div span {
+    margin-right: 10px;
+    float: left;
+}
+div.class_main div.class_right li div.class_dy_info div span.jieshao {
+    color: #454545;
+    line-height: 20px;
+    width: 675px;
+}
+div.class_main div.class_right li div.class_dy_info div span.jieshao a {
+    color: #08A6CD;
 }
 div.class_main div.class_right li a.class_img {
-    width: 100%;
+    width: 150px;
     height: 220px;
     float: left;
     background-color: #eee;
@@ -85,38 +124,9 @@ div.class_main div.class_right li a.class_img img {
     height: 100%;
     float: left;
 }
-div.class_main div.class_right li span {
-    width: 100%;
-    height: 20px;
-    float: left;
-    overflow: hidden;
-    margin-top: 5px;
-    color: #aaa;
-}
-div.class_main div.class_right li span.class_name {
-    overflow: hidden;
-    height: 23px;
-    width: 95%;
-    padding: 0 5px;
-}
-div.class_main div.class_right li span a.class_name {
-    float: left;
-    width: 84%;
-    overflow: hidden;
-    height: 100%;
-    font-size: 20px;
+div.class_main div.class_right li div.class_dy_info div a {
     color: #454545;
 }
-div.class_main div.class_right li span i {
-    float: left;
-    height: 100%;
-    line-height: 20px;
-    color: red;
-}
-div.class_main div.class_right li span a.class_user {
-    color: #aaa;
-    font-size: 13px;
-}
-div.class_main div.class_right li span a:hover {
+div.class_main div.class_right li div.class_dy_info div a:hover {
     color: #08A6CD;
 }

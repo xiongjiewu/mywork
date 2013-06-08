@@ -4,7 +4,7 @@
  * added by xiongjiewu at 2013-5-1
  */
 class Classmovice extends CI_Controller {
-    private $_limit = 40;
+    private $_limit = 20;
     private $_paiHangInfo;
 
     public function __construct() {
@@ -30,6 +30,11 @@ class Classmovice extends CI_Controller {
 
         $page = intval($page);
         $page = empty($page) ? 1 : $page;
+
+        $this->load->set_top_index(3);
+        $this->set_attr("moviePlace",$this->_moviePlace);
+        $this->set_attr("movieType",$this->_movieType);
+        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
 
         $functionName = "_" . $listType . "List";//拼接处理函数
         return $this->$functionName($type,$page);
@@ -57,6 +62,7 @@ class Classmovice extends CI_Controller {
         foreach($moviceList as $topKey => $topVal) {
             $scoreArr[] = $moviceIds[$topVal['id']]['score'];
             $moviceList[$topKey]['score'] = $moviceIds[$topVal['id']]['score'];
+            $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
         }
         array_multisort($scoreArr,SORT_DESC,$moviceList);
         $this->set_attr("moviceList",$moviceList);
@@ -70,10 +76,6 @@ class Classmovice extends CI_Controller {
         $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . "排行榜 - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/newclassmovie.css"));
         $this->load->set_js(array("/js/dianying/newclassmovie.js"));
-        $this->load->set_top_index(3);
-        $this->set_attr("moviePlace",$this->_moviePlace);
-        $this->set_attr("movieType",$this->_movieType);
-        $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
         $this->set_view('dianying/newclassmovie');
     }
 }
