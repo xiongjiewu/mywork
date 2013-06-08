@@ -99,7 +99,7 @@
                     <input type="hidden" name="dyId" value="<?php echo $dyInfo['id']; ?>">
                     <textarea class="xheditor" name="content" id="content"></textarea>
                     <div class="submit_post">
-                        <input type="submit" name="create_post_button" id="create_post_button" value="发表言论">
+                        <input type="submit" name="create_post_button" id="create_post_button" value="发表评论">
                     </div>
                 </form>
             </div>
