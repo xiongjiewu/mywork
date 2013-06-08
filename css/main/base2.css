@@ -534,6 +534,7 @@ div.btn-group a {
     float: left;
     text-align: center;
     margin-left: 5px;
+    background-color: #fff;
 }
 div.btn-group a:hover,div.btn-group a.btn-primary {
     background-color: #0088CC;
