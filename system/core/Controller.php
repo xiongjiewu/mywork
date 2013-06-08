@@ -139,7 +139,14 @@ class CI_Controller
             $max +=  ($bNum + 1 - $page);
         }
         $max = ($max > $totalPage) ? $totalPage : $max;
+
         if ($page == 1) {
+            $result[] = array(
+                "link" => $base_url  . "1/",
+                "page" => "首页",
+                "able" => false,
+                "current" => false,
+            );
             $result[] = array(
                 "link" => "javascript:void(0)",
                 "page" => "«",
@@ -147,6 +154,12 @@ class CI_Controller
                 "current" => false,
             );
         } else {
+            $result[] = array(
+                "link" => $base_url  . "1/",
+                "page" => "首页",
+                "able" => true,
+                "current" => false,
+            );
             $result[] = array(
                 "link" => $base_url . ($page - 1) . "/",
                 "page" => "«",
@@ -164,12 +177,24 @@ class CI_Controller
         }
         if ($page == $totalPage) {
             $result[] = array(
+                "link" => $base_url  . $totalPage ."/",
+                "page" => "尾页",
+                "able" => false,
+                "current" => false,
+            );
+            $result[] = array(
                 "link" => "javascript:void(0)",
                 "page" => "»",
                 "able" => false,
                 "current" => false,
             );
         } else {
+            $result[] = array(
+                "link" => $base_url  . $totalPage ."/",
+                "page" => "尾页",
+                "able" => true,
+                "current" => false,
+            );
             $result[] = array(
                 "link" => $base_url . ($page + 1) . "/",
                 "page" => "»",

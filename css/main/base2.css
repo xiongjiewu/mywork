@@ -235,7 +235,7 @@ div.header_tab ul li a {
     height: 100%;
     width: 100%;
 }
-div.header_tab ul li a:hover {
+div.header_tab ul li a:hover,div.header_tab ul li.current a {
     background-color: #08a6cd;
     color: #fff;
 }
@@ -506,4 +506,21 @@ footer.footer div.footer_bottom ul li.mail a {
 }
 footer.footer div.footer_bottom p {
     margin-top: 20px;
+}
+div.btn-group a {
+    padding: 10px;
+    border: 1px solid #0088CC;
+    float: left;
+    text-align: center;
+    margin-left: 5px;
+}
+div.btn-group a:hover,div.btn-group a.btn-primary {
+    background-color: #0088CC;
+    color: #fff;
+}
+div.btn-group a.enable,div.btn-group a.enable:hover {
+    border: 1px solid #aaa;
+    color: #aaa;
+    background-color: #eee;
+    cursor: default;
 }

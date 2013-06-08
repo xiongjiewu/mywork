@@ -299,7 +299,7 @@
                             <img alt="<?php echo $doubanVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $doubanVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a href=""><?php echo $doubanVal['name'];?></a>
+                            <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
                             <em><?php echo $doubanTopMovice[$doubanVal['id']]['score'];?></em>
                         </i>
                     </span>
