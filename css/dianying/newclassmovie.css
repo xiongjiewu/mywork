@@ -1,0 +1,121 @@
+div.class_main {
+    margin: 40px auto;
+    width: 1200px;
+}
+div.class_main div.class_left {
+    float: left;
+    width: 140px;
+    height: 1000px;
+    padding: 10px;
+    background: url("/images/common/paihang_sucai.png") no-repeat 150px 0 transparent;
+}
+div.class_main div.class_left li {
+    float: left;
+    width: 100%;
+}
+div.class_main div.class_left li.list {
+    margin-bottom: 5px;
+}
+div.class_main div.class_left li.class_left_title {
+    height: 40px;
+}
+div.class_main div.class_left li.title_top {
+    background: url("/images/common/paihang_sucai.png") no-repeat -20px 0 transparent;
+}
+div.class_main div.class_left li.title_prize {
+    margin-top: 50px;
+    background: url("/images/common/paihang_sucai.png") no-repeat -20px -38px transparent;
+}
+div.class_main div.class_left li.class_left_fenge {
+    padding: 5px 0;
+    background: url("/images/common/paihang_sucai.png") no-repeat -20px -90px transparent;
+    margin-bottom: 10px;
+}
+div.class_main div.class_left li a {
+    float: left;
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #454545;
+}
+div.class_main div.class_left li a:hover,div.class_main div.class_left li.current a {
+    background-color: #08A6CD;
+    color: #fff;
+}
+div.class_main div.class_left li a em{
+    font-style: normal;
+    font-size: 13px;
+    margin-left: 5px;
+    color: #999;
+}
+div.class_main div.class_left li a:hover em,div.class_main div.class_left li.current a em  {
+    color: #fff;
+}
+
+div.class_main div.class_right {
+    float: left;
+    width: 940px;
+    /*height: 1000px;*/
+    margin-left: 40px;
+    padding: 0 10px;
+}
+div.class_main div.class_right li {
+    float: left;
+    width: 170px;
+    height: 275px;
+    padding: 5px;
+    box-shadow: 2px 2px 3px #DDDDDD;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+div.class_main div.class_right li.last {
+    margin-right: 0;
+}
+div.class_main div.class_right li a.class_img {
+    width: 100%;
+    height: 220px;
+    float: left;
+    background-color: #eee;
+}
+div.class_main div.class_right li a.class_img img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+div.class_main div.class_right li span {
+    width: 100%;
+    height: 20px;
+    float: left;
+    overflow: hidden;
+    margin-top: 5px;
+    color: #aaa;
+}
+div.class_main div.class_right li span.class_name {
+    overflow: hidden;
+    height: 23px;
+    width: 95%;
+    padding: 0 5px;
+}
+div.class_main div.class_right li span a.class_name {
+    float: left;
+    width: 84%;
+    overflow: hidden;
+    height: 100%;
+    font-size: 20px;
+    color: #454545;
+}
+div.class_main div.class_right li span i {
+    float: left;
+    height: 100%;
+    line-height: 20px;
+    color: red;
+}
+div.class_main div.class_right li span a.class_user {
+    color: #aaa;
+}
+div.class_main div.class_right li span a:hover {
+    color: #08A6CD;
+}

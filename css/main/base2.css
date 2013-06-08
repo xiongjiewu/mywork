@@ -239,6 +239,16 @@ div.header_tab ul li a:hover,div.header_tab ul li.current a {
     background-color: #08a6cd;
     color: #fff;
 }
+div.header_tab ul li i {
+    background: url("/images/common/top_line_icon.png") no-repeat scroll -838px -5px transparent;
+    color: red;
+    height: 17px;
+    left: 148px;
+    position: absolute;
+    top: 33px;
+    width: 23px;
+}
+
 div.header_tab ul li.logo {
     position: relative;
 }
@@ -507,6 +517,17 @@ div.footer div.footer_bottom ul li.mail a {
 div.footer div.footer_bottom p {
     margin-top: 20px;
 }
+
+/*分页样式start*/
+div.page_info {
+    float: left;
+    padding: 30px 0;
+    width: 97%;
+}
+div.page_info table.page {
+    background: none repeat scroll 0 0 transparent;
+    margin: 0 auto;
+}
 div.btn-group a {
     padding: 10px;
     border: 1px solid #0088CC;
@@ -524,3 +545,4 @@ div.btn-group a.enable,div.btn-group a.enable:hover {
     background-color: #eee;
     cursor: default;
 }
+/*分页样式 end*/

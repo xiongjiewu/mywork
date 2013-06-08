@@ -86,12 +86,15 @@
         <li class="logo">
             <a class="logo1" href="/"></a>
         </li>
-        <?php $menus = get_config_value("menus")?>
+        <?php $menus = APF::get_instance()->get_config_value("menus")?>
         <?php $menusI = 1;?>
         <?php $index = $this->load->get_top_index();?>
         <?php foreach ($menus as $menuKey => $menuVal): ?>
             <li type="<?php echo $menuVal['class'];?>" class="<?php if ($menusI == 1):?>first_one<?php endif;?> <?php if ($index == $menuKey):?>current<?php endif;?>">
                 <a href="<?php echo $menuVal['link']; ?>"><?php echo $menuVal['title'];?></a>
+                <?php if (!empty($menuVal['new'])):?>
+                    <i></i>
+                <?php endif;?>
             </li>
             <?php $menusI++;?>
         <?php endforeach;?>

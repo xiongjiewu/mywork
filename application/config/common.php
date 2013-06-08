@@ -182,6 +182,7 @@ $config['menus'] = array(
         "title" => "排行榜",
         "link" => get_url("/classmovice/"),
         "class" => "",
+        "new" => true,
     ),
     array(
         "index" => "list",
@@ -216,3 +217,20 @@ $config['email_login_url'] = array(//邮箱类型以及登录链接
 $config['search_cache_key'] = "search_cache_key_count";
 //浏览记录cookie名
 $config['look_cookie_key'] = "user_look_cookie_val_info";
+//排行榜tab配置信息
+$config['pai_hang'] = array(
+    "top" => array(//top排行榜
+        1 => array(//豆瓣
+            "title" => "豆瓣TOP250",
+            "htmlTitle" => "豆&nbsp;&nbsp;&nbsp;瓣<em>TOP250</em>",
+            "base_url" => "/classmovice/index/top/1/",
+        ),
+        2 => array(//imdb
+            "title" => "IMDB TOP250",
+            "htmlTitle" => "IMDB<em>TOP250</em>",
+            "base_url" => "/classmovice/index/top/2/",
+        ),
+    ),
+    "prize" => array(//奖项排行榜
+    ),
+);
