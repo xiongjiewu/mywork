@@ -5,10 +5,13 @@
  */
 class Play extends CI_Controller {
 
+    private $_userWatchHistoryKey;//历史观看记录cookie名
+
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Backgroundadmin');
+        $this->_userWatchHistoryKey = "_userWatchHistory_info";
     }
 
     /** 入口主函数
@@ -41,6 +44,23 @@ class Play extends CI_Controller {
         $this->set_attr("watchInfo",$watchLinkInfo[$watchId]);
         unset($watchLinkInfo[$watchId]);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
+
+        //cookie名称+观看记录
+        $userWatchInfo = $this->get_cookie($this->_userWatchHistoryKey);
+        if (!empty($userWatchInfo)) {
+            $userWatchInfo = json_decode($userWatchInfo,true);
+        }
+        $lookArr = array("id" => $dyInfo['id'],"name" => $dyInfo['name']);
+        if (!empty($userWatchInfo) && !in_array($lookArr,$userWatchInfo)) {
+            $userWatchInfo = array_merge(array($dyInfo['id'] => $lookArr),$userWatchInfo);
+            $userWatchInfo  = array_slice($userWatchInfo,0,5);
+            $this->set_cookie($this->_userWatchHistoryKey,json_encode($userWatchInfo));
+        } elseif(empty($userWatchInfo)) {
+            $userWatchInfo  = array();
+            $userWatchInfo[$dyInfo['id']] = array("id" => $dyInfo['id'],"name" => $dyInfo['name']);
+            $this->set_cookie($this->_userWatchHistoryKey,json_encode($userWatchInfo));
+        }
+        $this->set_attr("userWatchInfo",$userWatchInfo);
 
         $this->load->set_title("{$dyInfo['name']} 在线观看 - "  . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/play.css"));

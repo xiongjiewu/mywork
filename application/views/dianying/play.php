@@ -41,13 +41,13 @@
         </div>
     <?php endif;?>
 
-    <?php if (!empty($userLookInfo)):?>
+    <?php if (!empty($userWatchInfo)):?>
     <div class="play_link_list">
         <ul>
             <li class="link_title">我的播放记录</li>
         <?php $lookI = 1;?>
-        <?php $lookCount = count($userLookInfo);?>
-        <?php foreach($userLookInfo as $lookVal):?>
+        <?php $lookCount = count($userWatchInfo);?>
+        <?php foreach($userWatchInfo as $lookVal):?>
             <li>
             <?php $idStr = APF::get_instance()->encodeId($lookVal['id']);?>
                 <a href="/detail/index/<?php echo $idStr;?>/">
