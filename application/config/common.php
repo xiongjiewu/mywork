@@ -220,6 +220,12 @@ $config['look_cookie_key'] = "user_look_cookie_val_info";
 //排行榜tab配置信息
 $config['pai_hang'] = array(
     "top" => array(//top排行榜
+        4 => array(//百度搜索排行榜，后面调整，经过协商，说这个比较重要调整致上面
+            "title" => "百度搜索排行榜",
+            "s_title" => "百度",
+            "htmlTitle" => "百度<em>搜索排行榜</em>",
+            "base_url" => "/classmovice/index/top/4/",
+        ),
         1 => array(//豆瓣
             "title" => "豆瓣TOP250",
             "s_title" => "豆瓣",
@@ -237,12 +243,6 @@ $config['pai_hang'] = array(
             "s_title" => "时光网",
             "htmlTitle" => "时光网<em>TOP100</em>",
             "base_url" => "/classmovice/index/top/3/",
-        ),
-        4 => array(//时光网
-            "title" => "百度搜索排行榜",
-            "s_title" => "百度",
-            "htmlTitle" => "百度<em>搜索排行榜</em>",
-            "base_url" => "/classmovice/index/top/4/",
         ),
     ),
     "prize" => array(//奖项排行榜

@@ -22,7 +22,7 @@ class Classmovice extends CI_Controller {
      * @param int $type
      * @param int $page
      */
-    public function index($listType = "top",$type = 1,$page = 1) {
+    public function index($listType = "top",$type = 4,$page = 1) {
         $listType = empty($this->_paiHangInfo[$listType]) ? "top" : $listType;//默认显示top排行
         $this->set_attr("listType",$listType);
 
