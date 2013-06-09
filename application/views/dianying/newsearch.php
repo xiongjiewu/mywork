@@ -80,7 +80,8 @@
                                 <?php $countI = 1;?>
                                 <?php foreach($wRes as $wInfo):?>
                                     <?php if ($countI > 8){break;}?>
-                                    <a title="点击观看(<?php if ($wInfo['shoufei'] == 1):?>免费<?php else:?>收费<?php endif;?>)" target="_blank" href="<?php echo $wInfo['link'];?>">
+                                    <?php $url = APF::get_instance()->get_real_url("play",$wInfo['infoId'],array("id"=>$wInfo['id']));?>
+                                    <a title="点击观看(<?php if ($wInfo['shoufei'] == 1):?>免费<?php else:?>收费<?php endif;?>)" target="_blank" href="<?php echo $url;?>">
                                         <img alt="<?php echo $movieVal['name'];?>" src="/images/webcon/icon<?php echo $wInfo['player'];?>.png">
                                     </a>
                                     <?php $countI++;?>

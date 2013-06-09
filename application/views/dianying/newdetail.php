@@ -70,7 +70,7 @@
         <div class="watchLink_list">
             <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
             <span>
-                <a class="" href="<?php echo $watchLinkInfoVal['link'];?>" target="_blank">
+                <a class="" href="<?php echo APF::get_instance()->get_real_url("play",$dyInfo['id'],array("id"=>$watchLinkInfoVal['id']));?>" target="_blank">
                     <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
                 </a>
                 <b>

@@ -55,7 +55,8 @@
                                     <?php endif;?>
                                     <?php foreach ($wRes as $wVal): ?>
                                         <?php if ($countI > 4){break;}?>
-                                        <a title="点击观看(<?php if ($wVal['shoufei'] == 1):?>免费<?php else:?>收费<?php endif;?>)" href="<?php echo $wVal['link'];?>" target="_blank">
+                                        <?php $url = APF::get_instance()->get_real_url("play",$wVal['infoId'],array("id"=>$wVal['id']));?>
+                                        <a title="点击观看(<?php if ($wVal['shoufei'] == 1):?>免费<?php else:?>收费<?php endif;?>)" href="<?php echo $url;?>" target="_blank">
                                             <img alt="<?php echo $mVal['name'];?>" src="/images/webcon/icon<?php echo $wVal['player'];?>.png">
                                         </a>
                                         <?php $countI++;?>

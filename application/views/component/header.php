@@ -38,7 +38,7 @@
         </div>
         <?php else:?>
             <div class="login">
-                <a class="" href="/usercenter?t=<?php echo time();?>">
+                <a class="" href="/usercenter/">
                     <i></i>
                     <?php echo $userName;?>(<?php echo empty($userNoReadMessageCount) ? $userNoReadMessageCount : "消息：" . $userNoReadMessageCount;?>)
                 </a>

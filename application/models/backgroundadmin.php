@@ -166,6 +166,28 @@ class Backgroundadmin extends CI_Model {
         return $result;
     }
 
+    /**
+     * 根据表tbl_watchLink id获取观看链接
+     * @param array $id
+     * @return bool
+     */
+    public function getWatchLinkInfo($id = array())
+    {
+        if (empty($id)) {
+            return false;
+        }
+        if (!is_array($id)) {
+            $id = array($id);
+        }
+        $id = array_unique($id);
+        $idStr = implode(",",$id);
+        $fildStr = implode(",",$this->_watchLinkFild);
+        $sql = "select {$fildStr} from `tbl_watchLink` where id in ({$idStr});";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return $result;
+    }
+
     public function getDownLoadLinkInfoByInfoId($id = array())
     {
         if (empty($id)) {

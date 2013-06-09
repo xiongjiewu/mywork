@@ -75,4 +75,43 @@ class APF {
         return $num;
     }
 
+    /**
+     * 拼接url统一函数
+     * @param $page
+     * @param $id
+     * @param array $params
+     * @return bool|string
+     */
+    public function get_real_url($page,$id,$params = array()) {
+        $id = intval($id);
+        if (empty($page) || empty($id)) {
+            return false;
+        }
+
+        switch(strtolower($page)) {
+            case "detail" :
+                $pri_url = "/detail/index/" . $this->encodeId($id);
+                break;
+            case "play" :
+                $pri_url = "/play/index/" . $this->encodeId($id);
+                break;
+            default ://待新增
+                $pri_url = "/";
+                break;
+        }
+        if (!empty($params) && is_array($params)) {
+            $pri_url .= "?" . http_build_query($params);
+        }
+        return $pri_url;
+    }
+
+    /**
+     * 拼接图片地址
+     * @param $image
+     * @return string
+     */
+    public function get_image_url($image) {
+        return trim($this->get_config_value("img_base_url"), "/") . $image;
+    }
+
 }

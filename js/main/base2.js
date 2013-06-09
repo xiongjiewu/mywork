@@ -1,4 +1,7 @@
 var initOjb = {
+    loginCallBack:function() {
+        window.location.reload();
+    },
     addCladdToLi: function (obj, c) {
         obj.addClass(c);
     },
@@ -229,7 +232,7 @@ var initOjb = {
         });
         //登录按钮点击事件
         $(".login_total_page").bind("click",function() {
-            logPanInit.showLoginPan();
+            logPanInit.showLoginPan("initOjb.loginCallBack");
         });
     });
 })(jQuery);

@@ -7,16 +7,20 @@ class Detail extends CI_Controller {
 
     private $_caiLimit = 6;
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->model('Backgroundadmin');
+    }
     public function index($id = null)
     {
-        $this->load->helper('url');
         //将id字符串解密，转换成数字id
         $id = intval(APF::get_instance()->decodeId($id));
         if (empty($id)) {
             redirect("/" );
             exit;
         }
-        $this->load->model('Backgroundadmin');
+
         $dyInfo = $this->Backgroundadmin->getDetailInfo($id,0);
         if (empty($dyInfo)) {
             $this->jump_to("/error/index/1/");
