@@ -19,9 +19,9 @@ var init = {
             }
 
         });
-        //登录按钮点击事件
-        $("a.play_login").bind("click",function() {
-            logPanInit.showLoginPan("init.loginCallBack");
-        });
+//        //登录按钮点击事件
+//        $("a.play_login").bind("click",function() {
+//            logPanInit.showLoginPan("init.loginCallBack");
+//        });
     })
 })(jQuery);

@@ -230,9 +230,9 @@ var initOjb = {
                $(this).blur();
            });
         });
-//        //登录按钮点击事件
-//        $(".login_total_page").bind("click",function() {
-//            logPanInit.showLoginPan("initOjb.loginCallBack");
-//        });
+        //登录按钮点击事件
+        $(".login_total_page").bind("click",function() {
+            logPanInit.showLoginPan("initOjb.loginCallBack");
+        });
     });
 })(jQuery);
