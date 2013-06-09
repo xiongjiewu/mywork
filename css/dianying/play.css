@@ -175,3 +175,6 @@ div.play_bottom ul li a {
     margin-bottom: 10px;
     text-align: center;
 }
+#bdshare_l, #bdshare_m {
+    z-index: 1000010101;
+}
