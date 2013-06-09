@@ -206,7 +206,7 @@ class CI_Controller
         if (!empty($params) && is_array($params)) {
             foreach($result as $reKey => $reVal) {
                 if ($reVal['able']) {
-
+                    $result[$reKey]['link'] .= "?" . http_build_query($params);
                 }
             }
         }
