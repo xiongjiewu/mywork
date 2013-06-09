@@ -37,8 +37,9 @@ class Useraction extends CI_Controller
         $cookieVal = $this->get_cookie($cookieName);
         $time = time();
         //在规定时间之内不能连续发表评论
+        $idsStr = APF::get_instance()->encodeId($data['dyId']);
         if (!empty($cookieVal) && ($time <= ($cookieVal + APF::get_instance()->get_config_value("max_post_time")))) {
-            $this->jump_to("/error/index/5?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}/")));
+            $this->jump_to("/error/index/5?bgurl=" . base64_encode(get_url("/detail/index/{$idsStr}/")));
             exit;
         }
         $info['infoId'] = $data['dyId'];
@@ -49,7 +50,7 @@ class Useraction extends CI_Controller
         $this->load->model('Yingping');
         $res = $this->Yingping->insertYingpingInfo($info);
         if (empty($res)) {
-            $this->jump_to("/error/index/3?bgurl=" . base64_encode(get_url("/detail/index/{$data['dyId']}")));
+            $this->jump_to("/error/index/3?bgurl=" . base64_encode(get_url("/detail/index/{$idsStr}")));
             exit;
         } else {
             $idStr = APF::get_instance()->encodeId($data['dyId']);
@@ -149,6 +150,9 @@ class Useraction extends CI_Controller
         exit;
     }
 
+    /**
+     * 更改密码操作
+     */
     public function changepassword() {
         $result = array(
             "code" => "error",
@@ -204,6 +208,9 @@ class Useraction extends CI_Controller
 
     }
 
+    /**
+     * 更改密码ajax验证信息
+     */
     public function changepassworddo() {
         $result = array(
             "code" => "请先退出登录",
@@ -256,6 +263,9 @@ class Useraction extends CI_Controller
         }
     }
 
+    /**
+     * 收藏ajax
+     */
     public function shoucang()
     {
         if (!$this->_checkLogin()) {
@@ -281,6 +291,9 @@ class Useraction extends CI_Controller
         exit;
     }
 
+    /**
+     * ajax获取影评
+     */
     public function getyingping()
     {
         $result = array(
@@ -369,7 +382,7 @@ class Useraction extends CI_Controller
         //随机数
         $rNum = rand(1,100);
         $this->load->model('Backgroundadmin');
-        if ($rNum <= 40) {//小于40，选取经典之外的有观看链接的电影
+        if ($rNum <= 40) {//小于40，选取有观看链接的电影
             $condition = "exist_watch = 1";
         } else {//经典电影
             $condition = "exist_watch = 1 and topType > 0";
