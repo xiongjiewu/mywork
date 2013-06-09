@@ -12,7 +12,7 @@ div.play_left {
     width: 150px;
     height: 100%;
     background: url("/images/common/play_left_bg.gif") repeat transparent;
-    z-index: 100202;
+    z-index: 1001;
 }
 
 div.play_left div.left_logo {
@@ -174,7 +174,4 @@ div.play_bottom ul li a {
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
-}
-#bdshare_l, #bdshare_m {
-    z-index: 1000010101;
 }
