@@ -119,7 +119,7 @@ class CI_Controller
         $this->_attr['data'][$name] = $value;
     }
 
-    public function set_page_info($page, $size, $totalCount, $base_url, $bNum = 3)
+    public function set_page_info($page, $size, $totalCount, $base_url, $bNum = 3,$params = array())
     {
         $page = intval($page);
         $size = intval($size);
@@ -201,6 +201,14 @@ class CI_Controller
                 "able" => true,
                 "current" => false,
             );
+        }
+        //拼接url后面的参数
+        if (!empty($params) && is_array($params)) {
+            foreach($result as $reKey => $reVal) {
+                if ($reVal['able']) {
+
+                }
+            }
         }
         return $result;
     }
