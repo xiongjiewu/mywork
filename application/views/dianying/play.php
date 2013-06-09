@@ -91,7 +91,7 @@
         <li>
             <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyInfo['id']);?>#createpost" target="_blank">点评</a>
             <?php if (empty($userName) && empty($userId)):?>
-                <a href="login" target="_blank" class="play_login">登录</a>
+                <a href="/login/" target="_blank" class="play_login">登录</a>
                 <a href="/register/" target="_blank">注册</a>
             <?php else:?>
                 <a href="/usercenter/" target="_blank">
