@@ -240,13 +240,14 @@ div.header_tab ul li a:hover,div.header_tab ul li.current a {
     color: #fff;
 }
 div.header_tab ul li i {
-    background: url("/images/common/icon_icon.png") no-repeat scroll -350px -400px transparent;
+    /*background: url("/images/common/icon_icon.png") no-repeat scroll -350px -400px transparent;*/
+    background: url("/images/common/header_icon_li.png") no-repeat scroll 0 -390px transparent;
     color: red;
     height: 17px;
-    left: 149px;
+    left: 140px;
     position: absolute;
-    top: -12px;
-    width: 23px;
+    top: -14px;
+    width: 29px;
 }
 
 div.header_tab ul li.logo {
