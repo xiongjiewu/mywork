@@ -116,6 +116,9 @@ $config['movieSortType'] = array(
 $config['shoufeiType'] = array(
     1 => "免费",
     2 => "收费",
+    3 => "预告",
+    4 => "特辑",
+    5 => "记录片"
 );
 
 $config['base_uri'] = "";
