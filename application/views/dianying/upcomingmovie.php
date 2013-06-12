@@ -24,8 +24,10 @@
                         <span>|</span>
                         <strong>年份：</strong><?php echo substr($movieVal['nianfen'],0,4);?>年
                         <span>|</span>
-                        <strong>时长：</strong><?php echo $movieVal['shichang'];?>分
-                        <span>|</span>
+                        <?php if (!empty($movieVal['shichang'])):?>
+                            <strong>时长：</strong><?php echo $movieVal['shichang'];?>分
+                            <span>|</span>
+                        <?php endif;?>
                         <strong>地区：</strong><?php echo $moviePlace[$movieVal['diqu']];?>
                         <span>|</span>
                         <strong>类型：</strong><?php echo ($movieType[$movieVal['type']] == "其他")? $movieType[$movieVal['type']] : $movieType[$movieVal['type']] . "片";?>
