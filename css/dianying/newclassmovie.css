@@ -68,6 +68,20 @@ div.class_main div.class_right li {
     margin-bottom: 20px;
     padding: 20px;
     width: 910px;
+    position: relative;
+}
+div.class_main div.class_right li b {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -201px -9px transparent;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 36px;
+    left: 0;
+    line-height: 27px;
+    position: absolute;
+    text-align: center;
+    top: -2px;
+    width: 25px;
 }
 div.class_main div.class_right li:hover {
     box-shadow: 2px 2px 3px #08A6CD;

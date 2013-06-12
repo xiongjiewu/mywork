@@ -50,6 +50,7 @@ class Classmovice extends CI_Controller {
         $listType = "top";
 
         $this->set_attr("limit",$this->_limit);
+        $this->set_attr("page",$page);
 
 
         //电影列表
