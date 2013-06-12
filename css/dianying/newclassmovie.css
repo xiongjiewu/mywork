@@ -69,6 +69,14 @@ div.class_main div.class_right li {
     padding: 20px;
     width: 910px;
 }
+div.class_main div.class_right li:hover {
+    box-shadow: 2px 2px 3px #08A6CD;
+    background-color: #e0eeee;
+    cursor: pointer;
+}
+div.class_main div.class_right li:hover div.class_dy_info div.class_dy_top a {
+    color: #08A6CD;
+}
 div.class_main div.class_right li div.class_dy_info {
     float: left;
     width: 735px;

@@ -38,7 +38,12 @@
                 <?php endif;?>
                 <li class="jianjie">
                     <span>简介：</span>
-                    <?php echo $dyInfo['jieshao'];?>
+                    <span class="jieshao_list" s_jieshao="<?php echo $dyInfo['s_jieshao'];?>" l_jieshao="<?php echo $dyInfo['jieshao'];?>">
+                        <?php echo $dyInfo['s_jieshao'];?>
+                    </span>
+                    <?php if ($dyInfo['s_jieshao'] != $dyInfo['jieshao']):?>
+                        <a href="javascript:void(0);" class="jieshao_more">[更多]</a>
+                    <?php endif;?>
                 </li>
             </ul>
         </div>
@@ -69,7 +74,7 @@
         </div>
         <div class="watchLink_list">
             <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-            <span>
+            <span title="点击观看">
                 <a class="" href="<?php echo APF::get_instance()->get_real_url("play",$dyInfo['id'],array("id"=>$watchLinkInfoVal['id']));?>" target="_blank">
                     <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
                 </a>
@@ -357,7 +362,21 @@
                        evant.stopPropagation();
                    });
                 });
-            })
+            });
+            var moreA = $("a.jieshao_more");
+            var jieshaoMore = $("span.jieshao_list");
+            var lJieShao = jieshaoMore.attr("l_jieshao");
+            var sJieShao = jieshaoMore.attr("s_jieshao");
+            moreA.bind("click",function() {
+                var cT = $(this).html();
+                if (cT == "[更多]") {
+                    jieshaoMore.html(lJieShao);
+                    $(this).html("[收起]");
+                } else {
+                    jieshaoMore.html(sJieShao);
+                    $(this).html("[更多]");
+                }
+            });
         })
     })(jQuery);
 </script>

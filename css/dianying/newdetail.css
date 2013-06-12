@@ -13,9 +13,11 @@ div.detail_main {
 div.detail_info {
     float: left;
     width: 1145px;
-    height: 290px;
+    /*height: 290px;*/
     padding: 20px;
-    background: url("/images/dy/detail_bg.png") 0 0 transparent;
+    /*background: url("/images/dy/detail_bg.png") 0 0 transparent;*/
+    background-color: #F3F3F3;
+    box-shadow: 2px 2px 3px #ddd;
 }
 div.detail_info_img {
     float: left;
@@ -54,6 +56,9 @@ div.detail_info_list ul li.dy_name {
 div.detail_info_list ul li span {
     color: #999;
 }
+div.detail_info_list ul li span.jieshao_list {
+    color: #333;
+}
 div.watchLink {
     float: left;
     width: 1150px;
@@ -78,12 +83,17 @@ div.watchLink div.watchLink_list span {
     margin-left: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px #ddd;
 }
 div.watchLink div.watchLink_list a {
     float: left;
     height: 20px;
     /*background-color: #DADAD9;*/
     /*width: 70px;*/
+}
+div.watchLink div.watchLink_list span:hover {
+    box-shadow: 2px 2px 3px #08A6CD;
+    background-color: #e0eeee;
 }
 div.watchLink div.watchLink_list b {
     font-size: 13px;

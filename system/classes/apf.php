@@ -114,4 +114,12 @@ class APF {
         return trim($this->get_config_value("img_base_url"), "/") . $image;
     }
 
+    public function splitStr($str, $len, $replace = "...")
+    {
+        if (mb_strlen($str, "UTF-8") > $len) {
+            $str = mb_substr($str, 0, $len, "UTF-8") . $replace;
+        }
+        return $str;
+    }
+
 }

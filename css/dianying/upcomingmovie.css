@@ -12,7 +12,8 @@ div.upcoming_main table {
     margin-bottom: 20px;
     width: 100%;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 3px #ddd;
 }
 div.upcoming_main table tr td {
     padding: 10px;
