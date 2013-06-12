@@ -10,10 +10,16 @@ class Welcome extends CI_Controller {
     private $_cacheP = "home_total_dy_info_";//缓存前缀
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
+    private $_topLimit = 15;
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Backgroundadmin');
+        $this->load->model('Moviesearch');
+    }
 
 	public function index()
 	{
-        $this->load->model('Backgroundadmin');
         //电影总数
         $dyCount = $this->Backgroundadmin->getdyCount();
         $this->set_attr("dyCount",$dyCount);
@@ -64,12 +70,24 @@ class Welcome extends CI_Controller {
                 }
             }
 
-            //豆瓣top电影
-            $doubanTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType();
-            $doubanTopMovice = $this->initArrById($doubanTopMovice,"infoId",$idArr);
-            $homeTotalDyInfo['doubanTopMovice'] = $doubanTopMovice;
+            //百度搜索排行榜
+            $moviceIds = $this->Moviesearch->getSearchMoviceInfoByType(4,0,$this->_topLimit);
+            $moviceIds = $this->initArrById($moviceIds,"infoId",$baiduIdsArr);
             //电影详细信息
-            $doubanDetailInfo = $this->Backgroundadmin->getDetailInfo($idArr,0,true);
+            $baiduDetailInfo = $this->Backgroundadmin->getDetailInfo($baiduIdsArr,0,true);
+            $serchArr = array();
+            foreach($baiduDetailInfo as $topKey => $topVal) {
+                $serchArr[] = $moviceIds[$topVal['id']]['search'];
+                $baiduDetailInfo[$topKey]['search'] = $moviceIds[$topVal['id']]['search'];
+            }
+            array_multisort($serchArr,SORT_DESC,$baiduDetailInfo);
+            $homeTotalDyInfo['baiduDetailInfo'] = $baiduDetailInfo;
+
+            //豆瓣top电影
+            $doubanTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(1,0,$this->_topLimit);
+            $doubanTopMovice = $this->initArrById($doubanTopMovice,"infoId",$doubanIdArr);
+            //电影详细信息
+            $doubanDetailInfo = $this->Backgroundadmin->getDetailInfo($doubanIdArr,0,true);
             $scoreArr = array();
             foreach($doubanDetailInfo as $doubanKey => $doubanVal) {
                 $scoreArr[] = $doubanTopMovice[$doubanVal['id']]['score'];
@@ -77,6 +95,33 @@ class Welcome extends CI_Controller {
             }
             array_multisort($scoreArr,SORT_DESC,$doubanDetailInfo);
             $homeTotalDyInfo['doubanDetailInfo'] = $doubanDetailInfo;
+
+            //IMDB top电影
+            $imdbTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(2,0,$this->_topLimit);
+            $imdbTopMovice = $this->initArrById($imdbTopMovice,"infoId",$imdbIdArr);
+            //电影详细信息
+            $imdbDetailInfo = $this->Backgroundadmin->getDetailInfo($imdbIdArr,0,true);
+            $scoreArr = array();
+            foreach($imdbDetailInfo as $imdbKey => $imdbVal) {
+                $scoreArr[] = $imdbTopMovice[$imdbVal['id']]['score'];
+                $imdbDetailInfo[$imdbKey]['score'] = $imdbTopMovice[$imdbVal['id']]['score'];
+            }
+            array_multisort($scoreArr,SORT_DESC,$imdbDetailInfo);
+            $homeTotalDyInfo['imdbDetailInfo'] = $imdbDetailInfo;
+
+            //时光网top电影
+            $mtimeTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(3,0,$this->_topLimit);
+            $mtimeTopMovice = $this->initArrById($mtimeTopMovice,"infoId",$mtimeIdArr);
+            //电影详细信息
+            $mtimeDetailInfo = $this->Backgroundadmin->getDetailInfo($mtimeIdArr,0,true);
+            $scoreArr = array();
+            foreach($mtimeDetailInfo as $mtimeKey => $mtimeVal) {
+                $scoreArr[] = $mtimeTopMovice[$mtimeVal['id']]['score'];
+                $mtimeDetailInfo[$mtimeKey]['score'] = $mtimeTopMovice[$mtimeVal['id']]['score'];
+            }
+            array_multisort($scoreArr,SORT_DESC,$mtimeDetailInfo);
+            $homeTotalDyInfo['mtimeDetailInfo'] = $mtimeDetailInfo;
+
 
             //今日推荐
             $todayMovieList = $this->Backgroundadmin->getDetailInfoByCondition("",0,$this->_todayLimit);
@@ -95,7 +140,9 @@ class Welcome extends CI_Controller {
             $newestDyInfo = $homeTotalDyInfo['newestDyInfo'];
             $willDyInfo = $homeTotalDyInfo['willDyInfo'];
             $classDyInfo = $homeTotalDyInfo['classDyInfo'];
-            $doubanTopMovice = $homeTotalDyInfo['doubanTopMovice'];
+            $baiduDetailInfo = $homeTotalDyInfo['baiduDetailInfo'];
+            $imdbDetailInfo = $homeTotalDyInfo['imdbDetailInfo'];
+            $mtimeDetailInfo = $homeTotalDyInfo['mtimeDetailInfo'];
             $doubanDetailInfo = $homeTotalDyInfo['doubanDetailInfo'];
             $todayMovieList = $homeTotalDyInfo['todayMovieList'];
         }
@@ -119,12 +166,18 @@ class Welcome extends CI_Controller {
         }
         $this->set_attr("willDyInfo",$willDyInfo);
         //经典电影
-        $classDyInfo = array_slice($classDyInfo,0,$this->_limit - 2);
+        $classDyInfo = array_slice($classDyInfo,0,$this->_limit - 5);
         shuffle($classDyInfo);
         $this->set_attr("classDyInfo",$classDyInfo);
+
+        //百度top10
+        $this->set_attr("baiduDetailInfo",$baiduDetailInfo);
         //豆瓣top10
-        $this->set_attr("doubanTopMovice",$doubanTopMovice);
         $this->set_attr("doubanDetailInfo",$doubanDetailInfo);
+        //imdb top10
+        $this->set_attr("imdbDetailInfo",$imdbDetailInfo);
+        //时光网top10
+        $this->set_attr("mtimeDetailInfo",$mtimeDetailInfo);
 
         //今日推荐
         shuffle($todayMovieList);

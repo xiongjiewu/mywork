@@ -179,5 +179,27 @@
                 that.height(oneHeigth - 2 );
             }
         });
+        var topAObj  =$("div.top_info_list div.top_title em a");
+        topAObj.each(function() {
+            $(this).bind("mouseover",function() {
+                var cA = $("div.top_tab").find("a.current");
+                var cT = cA.attr("type");
+                $("div." + cT).hide();
+                cA.removeClass("current");
+                $(this).addClass("current");
+                var type = $(this).attr("type");
+                $("div." + type).show();
+            });
+        });
+        var topSpanObj = $("div.top_info_list span.top_name_list");
+        topSpanObj.each(function() {
+            var url = $($(this).find("a").get(0)).attr("href");
+            $(this).bind("click",function() {
+                window.location.href = url;
+            });
+            $(this).find("a").click(function(event) {
+                event.stopPropagation();
+            });
+        })
     })
 })(jQuery);

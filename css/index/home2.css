@@ -353,7 +353,7 @@ div.movice_info_list div.info_list ul li p.today_name a.t_name {
     width: 100%;
 }
 div.movice_class_info_list div.info_list {
-    width: 1022px;
+    width: 855px;
 }
 div.movice_info_list div.info_list ul li.other_li:hover {
     cursor: pointer;
@@ -414,7 +414,7 @@ div.top_info_list {
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     /*height: 370px;*/
-    width: 138px;
+    width: 300px;
     margin-left: 6px;
     padding: 10px;
     margin-top: 5px;
@@ -423,8 +423,10 @@ div.top_info_list span {
     float: left;
     width: 100%;
 }
-div.top_info_list span.top_title {
-    font-size: 20px;
+div.top_info_list div.top_title h1 {
+    font-size: 15px;
+    margin-top: 5px;
+    float: left;
 }
 div.top_info_list span.top_name_list {
     height: 20px;
@@ -432,9 +434,40 @@ div.top_info_list span.top_name_list {
     margin-top: 10px;
     border-bottom:1px dashed #ddd;
 }
+div.top_info_list span.top_name_list:hover {
+    cursor: pointer;
+}
+div.top_info_list span.top_name_list:hover a {
+    color: #08A6CD;
+}
+div.top_info_list span.fisrt_s {
+    color: #FF0000;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 140px;
+}
+div.top_info_list span.fisrt_s em {
+    font-style: normal;
+    color: #666;
+}
+div.top_info_list span.top_jieshao {
+    float: left;
+    width: 165px;
+    margin-left: 10px;
+    font-size: 13px;
+    height: 104px;
+    overflow: hidden;
+    color: #AAAAAA;
+}
+div.top_info_list div.top_get {
+    float: left;
+}
 div.top_info_list span.top_first_list {
-    height: 150px;
-    background-color: #eee;
+    height: 127px;
+    /*background-color: #eee;*/
+    border-bottom: none;
     position: relative;
 }
 div.top_info_list span.last_one {
@@ -446,7 +479,7 @@ div.top_info_list span.top_first_list i {
     left: 0;
     height: 20px;
     font-style: normal;
-    width: 96%;
+    width: 119px;
     background: none repeat scroll 0 0 #000000;
     filter:alpha(Opacity=80);
     -moz-opacity:0.8;
@@ -458,17 +491,23 @@ div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list 
 }
 div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list i a:hover {
     float: left;
-    width: 100px;
+    width: 113px;
     height: 100%;
     overflow: hidden;
     color: #FFFFFF;
     line-height: 20px;
+}
+div.top_info_list span.top_first_list i a.name {
+    width: 100%;
+    max-width: 100%;
 }
 div.top_info_list span.top_first_list i em {
     float: left;
     font-style: normal;
     color: #FFFFFF;
     margin-right: 5px;
+    float: right;
+    font-size: 13px;
 }
 div.top_info_list span.top_name_list b {
     background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -237px -9px transparent;
@@ -490,7 +529,7 @@ div.top_info_list span.top_name_list a {
     float: left;
     margin-left: 5px;
     height: 20px;
-    width: 65%;
+    max-width: 60%;
     overflow: hidden;
     font-size: 13px;
     color: #414141;
@@ -519,23 +558,45 @@ div.top_info_list span.top_name_list i.score {
     font-style: normal;
     font-size: 13px;
     color: #FF5C38;
+    float: right;
+}
+div.top_info_list span.top_name_list i.score em {
+    font-style: normal;
+    color: #aaa;
 }
 div.top_info_list span.top_name_list a:hover {
     color: #08A6CD;
 }
+div.top_info_list span.top_name_list a.first_top:hover {
+    box-shadow: 2px 2px 3px #ddd;
+}
 div.top_info_list span.top_name_list a.first_top,div.top_info_list span.top_name_list a.first_top img {
     float: left;
-    width: 100%;
+    width: 125px;
     height: 100%;
 }
-div.top_info_list span.top_title em {
+div.top_info_list div.top_title div.top_tab {
     float: right;
+    border-right: 1px solid #dbdbdb;
+}
+div.top_info_list div.top_title em {
+    float: left;
     font-size: 13px;
     line-height: 25px;
+    font-style: normal;
 }
-div.top_info_list span.top_title em a {
-    color: #08A6CD;
+div.top_info_list div.top_title em a {
+    float: left;
+    padding: 1px 7px;
     text-decoration: none;
+    color: #989898;
+    border-style: solid none solid solid;
+    border-color: #dbdbdb;
+    border-width: 1px medium 1px 1px;
+}
+div.top_info_list div.top_title em a.current {
+    background-color: #08A6CD;
+    color: #fff;
 }
 /*经典电影豆瓣top10列表 end*/
 /*摇摇朦胧效果 start*/

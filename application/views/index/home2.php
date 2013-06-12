@@ -215,35 +215,146 @@
             </ul>
         </div>
         <div class="top_info_list">
-            <span class="top_title">
-                豆瓣TOP10
-                <em>
-                    <a href="/classmovice/">更多</a>
-                </em>
-            </span>
-            <?php $doubanValI = 1;?>
-            <?php foreach($doubanDetailInfo as $doubanVal):?>
-                <?php $idStr = APF::get_instance()->encodeId($doubanVal['id']);?>
-                <?php if ($doubanValI == 1):?>
-                    <span class="top_name_list top_first_list">
+            <div class="top_title">
+                <h1>经典风云榜</h1>
+                <div class="top_tab">
+                    <em>
+                        <a title="点击查看更多" class="current" type="baidu" href="/classmovice/index/top/4/">百度</a>
+                    </em>
+                    <em>
+                        <a title="点击查看更多" type="douban" href="/classmovice/index/top/1/">豆瓣</a>
+                    </em>
+                    <em>
+                        <a title="点击查看更多" type="imdb" href="/classmovice/index/top/2/">IMDB</a>
+                    </em>
+                    <em>
+                        <a title="点击查看更多" type="mtime" href="/classmovice/index/top/3/">时光网</a>
+                    </em>
+                </div>
+            </div>
+            <!--     百度top start     -->
+            <div class="top_get baidu">
+                <?php $baiduValI = 1;?>
+                <?php foreach($baiduDetailInfo as $baiduVal):?>
+                    <?php $idStr = APF::get_instance()->encodeId($baiduVal['id']);?>
+                    <?php if ($baiduValI == 1):?>
+                        <span class="top_name_list top_first_list">
+                        <b>01</b>
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                            <img alt="<?php echo $baiduVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $baiduVal['image'];?>">
+                        </a>
+                        <i class="top_name_info">
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $baiduVal['name'];?></a>
+                        </i>
+                        <span class="fisrt_s">
+                            <em>被搜</em><?php echo $baiduVal['search'];?>次
+                        </span>
+                        <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($baiduVal['jieshao'],60);?></span>
+                    </span>
+                    <?php else:?>
+                        <span class="top_name_list <?php if ($baiduValI == 15):?>last_one<?php endif;?>">
+                        <b class="<?php if ($baiduValI > 3):?>last<?php endif;?>"><?php echo ($baiduValI < 10) ? "0" . $baiduValI : $baiduValI;?></b>
+                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $baiduVal['name'];?></a>
+                        <i class="score"><em>被搜</em><?php echo $baiduVal['search'];?>次</i>
+                    </span>
+                    <?php endif;?>
+                    <?php $baiduValI++;?>
+                <?php endforeach;?>
+            </div>
+            <!--     百度top end     -->
+
+            <!--     豆瓣top start     -->
+            <div class="top_get douban" style="display: none;">
+                <?php $doubanValI = 1;?>
+                <?php foreach($doubanDetailInfo as $doubanVal):?>
+                    <?php $idStr = APF::get_instance()->encodeId($doubanVal['id']);?>
+                    <?php if ($doubanValI == 1):?>
+                        <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
                             <img alt="<?php echo $doubanVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $doubanVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
-                            <em><?php echo $doubanTopMovice[$doubanVal['id']]['score'];?></em>
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
                         </i>
+                        <span class="fisrt_s">
+                            <?php echo $doubanVal['score'];?>分
+                        </span>
+                        <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($doubanVal['jieshao'],60);?></span>
                     </span>
-                <?php else:?>
-                    <span class="top_name_list <?php if ($doubanValI == 10):?>last_one<?php endif;?>">
+                    <?php else:?>
+                        <span class="top_name_list <?php if ($doubanValI == 15):?>last_one<?php endif;?>">
                         <b class="<?php if ($doubanValI > 3):?>last<?php endif;?>"><?php echo ($doubanValI < 10) ? "0" . $doubanValI : $doubanValI;?></b>
                         <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
-                        <i class="score"><?php echo $doubanTopMovice[$doubanVal['id']]['score'];?></i>
+                        <i class="score"><?php echo $doubanVal['score'];?>分</i>
                     </span>
-                <?php endif;?>
-                <?php $doubanValI++;?>
-            <?php endforeach;?>
+                    <?php endif;?>
+                    <?php $doubanValI++;?>
+                <?php endforeach;?>
+            </div>
+            <!--     豆瓣top end     -->
+
+            <!--     imdb top start     -->
+            <div class="top_get imdb" style="display: none;">
+                <?php $imdbValI = 1;?>
+                <?php foreach($imdbDetailInfo as $imdbVal):?>
+                    <?php $idStr = APF::get_instance()->encodeId($imdbVal['id']);?>
+                    <?php if ($imdbValI == 1):?>
+                        <span class="top_name_list top_first_list">
+                        <b>01</b>
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                            <img alt="<?php echo $imdbVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $imdbVal['image'];?>">
+                        </a>
+                        <i class="top_name_info">
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $imdbVal['name'];?></a>
+                        </i>
+                        <span class="fisrt_s">
+                            <?php echo $imdbVal['score'];?>分
+                        </span>
+                        <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($imdbVal['jieshao'],60);?></span>
+                    </span>
+                    <?php else:?>
+                        <span class="top_name_list <?php if ($imdbValI == 15):?>last_one<?php endif;?>">
+                        <b class="<?php if ($imdbValI > 3):?>last<?php endif;?>"><?php echo ($imdbValI < 10) ? "0" . $imdbValI : $imdbValI;?></b>
+                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $imdbVal['name'];?></a>
+                        <i class="score"><?php echo $imdbVal['score'];?>分</i>
+                    </span>
+                    <?php endif;?>
+                    <?php $imdbValI++;?>
+                <?php endforeach;?>
+            </div>
+            <!--     imdb top end     -->
+
+            <!--     时光网 top start     -->
+            <div class="top_get mtime" style="display: none;">
+                <?php $mtimeValI = 1;?>
+                <?php foreach($mtimeDetailInfo as $mtimeVal):?>
+                    <?php $idStr = APF::get_instance()->encodeId($mtimeVal['id']);?>
+                    <?php if ($mtimeValI == 1):?>
+                        <span class="top_name_list top_first_list">
+                        <b>01</b>
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                            <img alt="<?php echo $mtimeVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $mtimeVal['image'];?>">
+                        </a>
+                        <i class="top_name_info">
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $mtimeVal['name'];?></a>
+                        </i>
+                        <span class="fisrt_s">
+                            <?php echo $mtimeVal['score'];?>分
+                        </span>
+                        <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($mtimeVal['jieshao'],60);?></span>
+                    </span>
+                    <?php else:?>
+                        <span class="top_name_list <?php if ($mtimeValI == 15):?>last_one<?php endif;?>">
+                        <b class="<?php if ($mtimeValI > 3):?>last<?php endif;?>"><?php echo ($mtimeValI < 10) ? "0" . $mtimeValI : $mtimeValI;?></b>
+                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $mtimeVal['name'];?></a>
+                        <i class="score"><?php echo $mtimeVal['score'];?>分</i>
+                    </span>
+                    <?php endif;?>
+                    <?php $mtimeValI++;?>
+                <?php endforeach;?>
+            </div>
+            <!--     时光网 top end     -->
         </div>
     </div>
     <!-- 重温经典 end   -->
