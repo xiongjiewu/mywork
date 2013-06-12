@@ -18,6 +18,7 @@ class Error extends CI_Controller {
             }
             $pageCode = $errorCode[$index];
             $bgurl = base64_decode($this->input->get("bgurl"));
+	    $bgurl = htmlspecialchars($bgurl);
             if (!empty($bgurl)) {
                 $pageCode['return_url'] = $bgurl;
             }

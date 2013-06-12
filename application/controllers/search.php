@@ -173,6 +173,7 @@ class Search extends CI_Controller {
         //开始查询信息
         $moviceI = 0;
         foreach($wordArr[0] as $wordVal) {
+	    $wordVal = htmlspecialchars($wordVal);
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
@@ -295,7 +296,7 @@ class Search extends CI_Controller {
         if (mb_strlen($searchW,"utf8") > $this->_maxLen) {
             $searchW = mb_substr($searchW,0,$this->_maxLen);
         }
-
+        $searchW = htmlspecialchars($searchW);
         //类型、年份、地区筛选
         $type = empty($this->_movieType[intval($type)]) ? "all" : $type;
         $year = empty($this->_movieNianFen[intval($year)]) ? "all" : $year;
@@ -307,7 +308,7 @@ class Search extends CI_Controller {
 
         //搜索处理
         list($searchMovieInfo,$ids) = $this->_searchMian($searchW,$type,$year,$diqu,50);
-        if (!empty($searchMovieInfo)) {
+        if (false && !empty($searchMovieInfo)) {//由于有人借助这个操作攻击我们网站，暂时停止关键词写入动作
             //缓存设置，为热门搜索使用,保存5个小时
             $searchCacheInfo = $this->cache->file->get($this->search_cache_key);
             if (empty($searchCacheInfo[$searchW])) {
