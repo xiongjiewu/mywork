@@ -155,74 +155,6 @@
     <?php endif;?>
     <!-- 今日推荐  end -->
 
-    <!-- 即将上映 start   -->
-    <div class="movice_info_list movice_info_list_list">
-        <div class="title">
-            <h2>
-                <a class="" href="/latestmovie/">
-                    即将上映
-                </a>
-            </h2>
-        </div>
-        <div class="info_list">
-            <ul>
-                <?php $willDyInfoI = 0;?>
-                <?php foreach($willDyInfo as $dyInfoVal):?>
-                    <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
-                    <?php $image = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>
-                    <?php $name = $dyInfoVal['name'];?>
-                    <?php $jieshao = str_replace("　　","",trim($dyInfoVal['jieshao']));?>
-                    <?php $type = $dyInfoVal['type'];?>
-                    <?php $typeText = $moviceType[$dyInfoVal['type']];?>
-                    <?php $zhuyan = str_replace("、","/",$dyInfoVal['zhuyan']);?>
-                    <?php $zhuyaoArr = explode("/",$zhuyan);?>
-                    <?php if ($willDyInfoI == 0):?>
-                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
-                            <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
-                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
-                            </a>
-                            <p class="first_name">
-                                <a class="name" href="/detail/index/<?php echo $idStr;?>/">
-                                    <?php echo $name;?>
-                                </a>
-                                <a class="dy_type" href="/moviceguide/type/<?php echo $type;?>/">
-                                    [<?php echo $typeText;?>]
-                                </a>
-                            </p>
-                            <p class="first_zhuyan">
-                                <span>主演:</span><?php echo empty($zhuyan) ? "暂无" : $zhuyan;?>
-                            </p>
-                            <p class="first_jieshao">
-                                <span>简介:</span><?php echo $jieshao;?>
-                            </p>
-                        </li>
-                    <?php else:?>
-                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
-                            <a class="img" href="/detail/index/<?php echo $idStr;?>/">
-                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
-                            </a>
-                            <p class="name">
-                                <a href="">
-                                    <?php echo $name;?>
-                                </a>
-                            </p>
-                            <p class="zhuyan">
-                                <?php if (empty($zhuyan)):?>
-                                    暂无
-                                <?php else:?>
-                                    <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                        <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
-                                    <?php endforeach;?>
-                                <?php endif;?>
-                        </li>
-                    <?php endif;?>
-                    <?php $willDyInfoI++;?>
-                <?php endforeach;?>
-            </ul>
-        </div>
-    </div>
-    <!-- 即将上映 end   -->
-
     <!-- 重温经典 start   -->
     <div class="movice_info_list movice_class_info_list">
         <div class="title">
@@ -315,6 +247,75 @@
         </div>
     </div>
     <!-- 重温经典 end   -->
+
+    <!-- 即将上映 start   -->
+    <div class="movice_info_list movice_info_list_list">
+        <div class="title">
+            <h2>
+                <a class="" href="/latestmovie/">
+                    即将上映
+                </a>
+            </h2>
+        </div>
+        <div class="info_list">
+            <ul>
+                <?php $willDyInfoI = 0;?>
+                <?php foreach($willDyInfo as $dyInfoVal):?>
+                    <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
+                    <?php $image = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>
+                    <?php $name = $dyInfoVal['name'];?>
+                    <?php $jieshao = str_replace("　　","",trim($dyInfoVal['jieshao']));?>
+                    <?php $type = $dyInfoVal['type'];?>
+                    <?php $typeText = $moviceType[$dyInfoVal['type']];?>
+                    <?php $zhuyan = str_replace("、","/",$dyInfoVal['zhuyan']);?>
+                    <?php $zhuyaoArr = explode("/",$zhuyan);?>
+                    <?php if ($willDyInfoI == 0):?>
+                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                            <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                            </a>
+                            <p class="first_name">
+                                <a class="name" href="/detail/index/<?php echo $idStr;?>/">
+                                    <?php echo $name;?>
+                                </a>
+                                <a class="dy_type" href="/moviceguide/type/<?php echo $type;?>/">
+                                    [<?php echo $typeText;?>]
+                                </a>
+                            </p>
+                            <p class="first_zhuyan">
+                                <span>主演:</span><?php echo empty($zhuyan) ? "暂无" : $zhuyan;?>
+                            </p>
+                            <p class="first_jieshao">
+                                <span>简介:</span><?php echo $jieshao;?>
+                            </p>
+                        </li>
+                    <?php else:?>
+                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                            <a class="img" href="/detail/index/<?php echo $idStr;?>/">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                            </a>
+                            <p class="name">
+                                <a href="">
+                                    <?php echo $name;?>
+                                </a>
+                            </p>
+                            <p class="zhuyan">
+                                <?php if (empty($zhuyan)):?>
+                                    暂无
+                                <?php else:?>
+                                    <?php foreach($zhuyaoArr as $zhuyanVal):?>
+                                        <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
+                                    <?php endforeach;?>
+                                <?php endif;?>
+                        </li>
+                    <?php endif;?>
+                    <?php $willDyInfoI++;?>
+                <?php endforeach;?>
+            </ul>
+        </div>
+    </div>
+    <!-- 即将上映 end   -->
+
 </div>
 <!-- 朦胧效果 整个页面覆盖 start -->
 <div class="home_yaoyao_main"></div>
