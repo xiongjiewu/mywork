@@ -16,6 +16,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('Backgroundadmin');
         $this->load->model('Moviesearch');
+        $this->load->model('Moviescore');
     }
 
 	public function index()
@@ -84,7 +85,7 @@ class Welcome extends CI_Controller {
             $homeTotalDyInfo['baiduDetailInfo'] = $baiduDetailInfo;
 
             //豆瓣top电影
-            $doubanTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(1,0,$this->_topLimit);
+            $doubanTopMovice = $this->Moviescore->getTopMoviceInfoByType(1,0,$this->_topLimit);
             $doubanTopMovice = $this->initArrById($doubanTopMovice,"infoId",$doubanIdArr);
             //电影详细信息
             $doubanDetailInfo = $this->Backgroundadmin->getDetailInfo($doubanIdArr,0,true);
@@ -97,7 +98,7 @@ class Welcome extends CI_Controller {
             $homeTotalDyInfo['doubanDetailInfo'] = $doubanDetailInfo;
 
             //IMDB top电影
-            $imdbTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(2,0,$this->_topLimit);
+            $imdbTopMovice = $this->Moviescore->getTopMoviceInfoByType(2,0,$this->_topLimit);
             $imdbTopMovice = $this->initArrById($imdbTopMovice,"infoId",$imdbIdArr);
             //电影详细信息
             $imdbDetailInfo = $this->Backgroundadmin->getDetailInfo($imdbIdArr,0,true);
@@ -110,7 +111,7 @@ class Welcome extends CI_Controller {
             $homeTotalDyInfo['imdbDetailInfo'] = $imdbDetailInfo;
 
             //时光网top电影
-            $mtimeTopMovice = $this->Backgroundadmin->getTopMoviceInfoByType(3,0,$this->_topLimit);
+            $mtimeTopMovice = $this->Moviescore->getTopMoviceInfoByType(3,0,$this->_topLimit);
             $mtimeTopMovice = $this->initArrById($mtimeTopMovice,"infoId",$mtimeIdArr);
             //电影详细信息
             $mtimeDetailInfo = $this->Backgroundadmin->getDetailInfo($mtimeIdArr,0,true);

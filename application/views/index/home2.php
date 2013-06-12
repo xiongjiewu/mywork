@@ -235,6 +235,7 @@
             <!--     百度top start     -->
             <div class="top_get baidu">
                 <?php $baiduValI = 1;?>
+                <?php $baiduValCount = count($baiduDetailInfo);?>
                 <?php foreach($baiduDetailInfo as $baiduVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($baiduVal['id']);?>
                     <?php if ($baiduValI == 1):?>
@@ -252,7 +253,7 @@
                         <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($baiduVal['jieshao'],60);?></span>
                     </span>
                     <?php else:?>
-                        <span class="top_name_list <?php if ($baiduValI == 15):?>last_one<?php endif;?>">
+                        <span class="top_name_list <?php if ($baiduValI == $baiduValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($baiduValI > 3):?>last<?php endif;?>"><?php echo ($baiduValI < 10) ? "0" . $baiduValI : $baiduValI;?></b>
                         <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $baiduVal['name'];?></a>
                         <i class="score"><em>被搜</em><?php echo $baiduVal['search'];?>次</i>
@@ -266,6 +267,7 @@
             <!--     豆瓣top start     -->
             <div class="top_get douban" style="display: none;">
                 <?php $doubanValI = 1;?>
+                <?php $doubanValCount = count($doubanDetailInfo);?>
                 <?php foreach($doubanDetailInfo as $doubanVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($doubanVal['id']);?>
                     <?php if ($doubanValI == 1):?>
@@ -283,7 +285,7 @@
                         <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($doubanVal['jieshao'],60);?></span>
                     </span>
                     <?php else:?>
-                        <span class="top_name_list <?php if ($doubanValI == 15):?>last_one<?php endif;?>">
+                        <span class="top_name_list <?php if ($doubanValI == $doubanValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($doubanValI > 3):?>last<?php endif;?>"><?php echo ($doubanValI < 10) ? "0" . $doubanValI : $doubanValI;?></b>
                         <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
                         <i class="score"><?php echo $doubanVal['score'];?>分</i>
@@ -297,6 +299,7 @@
             <!--     imdb top start     -->
             <div class="top_get imdb" style="display: none;">
                 <?php $imdbValI = 1;?>
+                <?php $imdbValCount = count($imdbDetailInfo);?>
                 <?php foreach($imdbDetailInfo as $imdbVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($imdbVal['id']);?>
                     <?php if ($imdbValI == 1):?>
@@ -314,7 +317,7 @@
                         <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($imdbVal['jieshao'],60);?></span>
                     </span>
                     <?php else:?>
-                        <span class="top_name_list <?php if ($imdbValI == 15):?>last_one<?php endif;?>">
+                        <span class="top_name_list <?php if ($imdbValI == $imdbValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($imdbValI > 3):?>last<?php endif;?>"><?php echo ($imdbValI < 10) ? "0" . $imdbValI : $imdbValI;?></b>
                         <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $imdbVal['name'];?></a>
                         <i class="score"><?php echo $imdbVal['score'];?>分</i>
@@ -328,6 +331,7 @@
             <!--     时光网 top start     -->
             <div class="top_get mtime" style="display: none;">
                 <?php $mtimeValI = 1;?>
+                <?php $mtimeValCount = count($mtimeDetailInfo);?>
                 <?php foreach($mtimeDetailInfo as $mtimeVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($mtimeVal['id']);?>
                     <?php if ($mtimeValI == 1):?>
@@ -345,7 +349,7 @@
                         <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($mtimeVal['jieshao'],60);?></span>
                     </span>
                     <?php else:?>
-                        <span class="top_name_list <?php if ($mtimeValI == 15):?>last_one<?php endif;?>">
+                        <span class="top_name_list <?php if ($mtimeValI == $mtimeValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($mtimeValI > 3):?>last<?php endif;?>"><?php echo ($mtimeValI < 10) ? "0" . $mtimeValI : $mtimeValI;?></b>
                         <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $mtimeVal['name'];?></a>
                         <i class="score"><?php echo $mtimeVal['score'];?>分</i>
