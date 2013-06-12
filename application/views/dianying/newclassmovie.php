@@ -19,7 +19,7 @@
             <?php $cI = 1;?>
             <?php foreach($moviceList as $moviceVal):?>
                 <?php $idStr = APF::get_instance()->encodeId($moviceVal['id']);?>
-                <li class="<?php if ($cI % 5 == 0):?>last<?php endif;?>" title="点击观看">
+                <li class="<?php if ($cI % 5 == 0):?>last<?php endif;?>" title="点击查看详情">
                     <a href="/detail/index/<?php echo $idStr;?>/" class="class_img">
                         <img alt="<?php echo $moviceVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
                     </a>
