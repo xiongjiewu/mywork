@@ -251,3 +251,5 @@ $config['pai_hang'] = array(
     "prize" => array(//奖项排行榜
     ),
 );
+//流量统计开关，本地不打开
+$config['web_statistics'] = false;
