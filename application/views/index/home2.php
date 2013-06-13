@@ -329,6 +329,7 @@
             <!--     imdb top end     -->
 
             <!--     时光网 top start     -->
+            <?php if (!empty($mtimeDetailInfo)):?>
             <div class="top_get mtime" style="display: none;">
                 <?php $mtimeValI = 1;?>
                 <?php $mtimeValCount = count($mtimeDetailInfo);?>
@@ -358,6 +359,7 @@
                     <?php $mtimeValI++;?>
                 <?php endforeach;?>
             </div>
+            <?php endif;?>
             <!--     时光网 top end     -->
         </div>
     </div>
