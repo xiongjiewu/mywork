@@ -66,15 +66,17 @@
         </script>
     </div>
     <!-- Baidu Button END -->
-    <!-- 观看链接 start   -->
-    <?php if (!empty($watchLinkInfo)): ?>
+
+    <!-- 观看链接 + 下载链接 start   -->
+    <?php if (!empty($watchLinkInfo) || !empty($downLoadLinkInfo)): ?>
     <div class="watchLink">
+        <?php if (!empty($watchLinkInfo)): ?>
         <div class="watch_title">
             <h1>观看链接</h1>
         </div>
         <div class="watchLink_list">
             <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
-            <span title="点击观看">
+            <span title="点击观看" class="watchlink_list">
                 <a class="" href="<?php echo APF::get_instance()->get_real_url("play",$dyInfo['id'],array("id"=>$watchLinkInfoVal['id']));?>" target="_blank">
                     <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
                 </a>
@@ -93,9 +95,35 @@
             </span>
             <?php endforeach;?>
         </div>
+        <?php endif;?>
+
+        <?php if (!empty($downLoadLinkInfo)): ?>
+            <div class="watch_title">
+                <h1>下载链接</h1>
+            </div>
+            <div class="watchLink_list">
+                <?php $downI = 1;?>
+                <?php foreach ($downLoadLinkInfo as $downLinkInfoKey => $downLinkInfoVal): ?>
+                    <span title="点击下载" class="downlink_list" val="<?php echo APF::get_instance()->encodeId($downLinkInfoVal['id']);?>">
+                        下载<?php echo (count($downLoadLinkInfo) == 1)? "" : $downI;?>:
+                        <?php if ($downLinkInfoVal['type'] == 1)://来自电影天堂?>
+                            <?php $linkArr = explode("[电影天堂www.dygod.cn]",$downLinkInfoVal['link']);?>
+                            <?php echo $linkArr[count($linkArr) - 1];?>
+                        <?php elseif ($downLinkInfoVal['type'] == 2)://来自飘花?>
+                            <?php $linkArr = explode("piaohua.com",$downLinkInfoVal['link']);?>
+                            <?php $linkArr = explode("com]",$linkArr[count($linkArr) - 1]);?>
+                            <?php echo $linkArr[count($linkArr) - 1];?>
+                        <?php endif;?>
+                    </span>
+                    <?php $downI++;?>
+                <?php endforeach;?>
+            </div>
+        <?php endif;?>
     </div>
     <?php endif;?>
-    <!-- 观看链接end   -->
+    <!-- 观看链接 + 下载链接 end   -->
+
+
     <div class="dy_bottom">
         <div class="post_main">
             <div class="post_form">
@@ -350,7 +378,8 @@
                     });
                 });
             });
-            var watchSpan = $("div.watchLink div.watchLink_list span");
+            //观看链接
+            var watchSpan = $("div.watchLink div.watchLink_list span.watchlink_list");
             watchSpan.each(function() {
                 var that = $(this);
                 that.bind("click",function() {
@@ -361,6 +390,15 @@
                    $(this).bind("click",function(evant) {
                        evant.stopPropagation();
                    });
+                });
+            });
+            //下载链接
+            var downSpan = $("div.watchLink div.watchLink_list span.downlink_list");
+            downSpan.each(function() {
+                var that = $(this);
+                that.bind("click",function() {
+                    var id = that.attr("val");
+                    init.ajaxGetDownLink(id);
                 });
             });
             var moreA = $("a.jieshao_more");

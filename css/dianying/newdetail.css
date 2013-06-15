@@ -83,6 +83,14 @@ div.watchLink div.watchLink_list span {
     margin-left: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+}
+div.watchLink div.watchLink_list span.downlink_list {
+    color: #08A6CD;
+}
+div.watchLink div.watchLink_list span.downlink_list:hover {
+    text-decoration: underline;
+}
+div.watchLink div.watchLink_list span.watchlink_list {
     box-shadow: 2px 2px 2px #ddd;
 }
 div.watchLink div.watchLink_list a {
@@ -91,7 +99,7 @@ div.watchLink div.watchLink_list a {
     /*background-color: #DADAD9;*/
     /*width: 70px;*/
 }
-div.watchLink div.watchLink_list span:hover {
+div.watchLink div.watchLink_list span.watchlink_list:hover {
     box-shadow: 2px 2px 3px #08A6CD;
     background-color: #e0eeee;
 }

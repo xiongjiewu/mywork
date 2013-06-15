@@ -136,6 +136,9 @@ div.search_dy_detail p.title span.nianfen{
     font-size: 14px;
     margin-left: 30px;
 }
+div.search_dy_detail p.title span.down_link {
+    color: #08A6CD;
+}
 div.search_dy_detail p.jianjie {
     height: 55px;
     overflow: hidden;

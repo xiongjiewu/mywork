@@ -409,4 +409,29 @@ class Useraction extends CI_Controller
         $moviceInfo['jieshao'] = $this->splitStr($moviceInfo['jieshao'],100);
         echo json_encode($moviceInfo);
     }
+
+    /**
+     * ajax获取下载链接
+     */
+    public function getdownlink() {
+        $id = $this->input->post("id");
+        if (empty($id)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+        $realId = intval(APF::get_instance()->decodeId($id));
+        if (empty($realId)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+        $this->load->model('Backgroundadmin');
+        //下载链接
+        $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoid($realId);
+        if (empty($downLoadLinkInfo[0]) || empty($downLoadLinkInfo[0]['link'])) {
+            echo json_encode(array("code" => "error","info" => "下载链接不存在"));
+            exit;
+        }
+        echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link']));
+        exit;
+    }
 }
