@@ -20,13 +20,13 @@
                 </li>
                 <li class="type">
                     <span>类型：</span>
-                    <a href="/moviceguide/type/<?php echo $dyInfo['type'];?>/1">
+                    <a href="/moviceguide/type/<?php echo $dyInfo['type'];?>/">
                         <?php echo $movieType[$dyInfo['type']];?>
                     </a>
                 </li>
                 <li class="diqu">
                     <span>地区：</span>
-                    <a href="/moviceguide/place/<?php echo $dyInfo['diqu'];?>/1">
+                    <a href="/moviceguide/place/<?php echo $dyInfo['diqu'];?>/">
                         <?php echo $moviePlace[$dyInfo['diqu']];?>
                     </a>
                 </li>
