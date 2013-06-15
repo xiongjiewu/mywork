@@ -25,9 +25,10 @@ class Backgroundadmin extends CI_Model {
     );
     private $_detailfInfoFild = array(
         "id","name","type","jieshao","zhuyan","time0","time1","time2","time3","diqu","nianfen","daoyan","shichang","image","del","exist_watch",
+        "exist_down",
     );
     private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei","beizhu");
-    private $_downLinkFild = array("id","infoId","link","size","type");
+    private $_downLinkFild = array("id","infoId","link","size","type","sourceLink");
 
     private function _getFiledStr()
     {
@@ -550,6 +551,28 @@ class Backgroundadmin extends CI_Model {
             return false;
         }
         $sql = "select * from `tbl_detailInfo` where {$conditionStr};";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return $result;
+    }
+
+    /**
+     * 根据下载链接id获取下载信息
+     * @param array $id
+     * @return bool
+     */
+    public function getDownLoadLinkInfoid($id = array())
+    {
+        if (empty($id)) {
+            return false;
+        }
+        if (!is_array($id)) {
+            $id = array($id);
+        }
+        $id = array_unique($id);
+        $idStr = implode(",",$id);
+        $fildStr = implode(",",$this->_downLinkFild);
+        $sql = "select {$fildStr} from `tbl_downLoad` where id in ({$idStr});";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;

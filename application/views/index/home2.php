@@ -447,3 +447,6 @@
     </div>
 </div>
 <!-- 朦胧效果 电影信息展示 end -->
+<!-- 分享start -->
+<?php //$this->load->view("component/fenxiangpan");//顶部?>
+<!-- 分享end -->

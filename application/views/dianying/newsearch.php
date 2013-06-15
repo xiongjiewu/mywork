@@ -58,6 +58,11 @@
                                 <?php if (!empty($movieVal['nianfen'])):?>
                                 <span class="nianfen">年份：<?php echo $movieVal['nianfen'];?></span>
                                 <?php endif;?>
+                                <?php if ($movieVal['exist_down'] == 1):?>
+                                    <span class="nianfen down_link">
+                                        [有下载链接]
+                                    </span>
+                                <?php endif;?>
                             </p>
                             <p class="zhuyan">
                                 <span>主演：</span><?php echo $movieVal['zhuyan'];?>
