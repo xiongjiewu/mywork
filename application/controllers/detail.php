@@ -47,7 +47,7 @@ class Detail extends CI_Controller {
 
         //电影介绍
         $dyInfo['jieshao'] = str_replace("　　","",$dyInfo['jieshao']);
-        $dyInfo['jieshao'] = str_replace("　　","",trim($dyInfo['jieshao']));
+        $dyInfo['jieshao'] = htmlspecialchars(str_replace("　　","",trim($dyInfo['jieshao'])));
         $dyInfo['s_jieshao'] = $this->splitStr($dyInfo['jieshao'],110);
 
         //第一个导演信息+猜你喜欢信息
