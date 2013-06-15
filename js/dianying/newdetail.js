@@ -236,7 +236,8 @@ var init = {
     DownloadDefault: function () {
         alert('迅雷打开失败，请先按装迅雷或使用IE内核浏览器下载！');
     },
-    ajaxGetDownLink: function (id) {
+    ajaxGetDownLink: function () {
+        var id = $("#currentDownId").val();
         if (id) {
             $.ajax({
                 url: "/useraction/getdownlink/",
@@ -248,7 +249,6 @@ var init = {
                         alert(result.info);
                     } else {
                         init.Download(result.info);//迅雷下载
-//                        window.location.href = result.info;
                     }
                 }
             });

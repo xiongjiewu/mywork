@@ -14,6 +14,7 @@ class Detail extends CI_Controller {
     }
     public function index($id = null)
     {
+        $this->set_attr("endcodeId",$id);
         //将id字符串解密，转换成数字id
         $id = intval(APF::get_instance()->decodeId($id));
         if (empty($id)) {
@@ -118,6 +119,8 @@ class Detail extends CI_Controller {
         $this->set_attr("YingpingInfo",$YingpingInfo);
 
         if (!empty($this->userId)) {//已登录
+            $this->set_attr("userId",$this->userId);
+
             $this->load->model('Admin');
             $adminInfo = $this->Admin->getAdminInfoByUserId($this->userId);
             $this->set_attr("adminInfo",$adminInfo);

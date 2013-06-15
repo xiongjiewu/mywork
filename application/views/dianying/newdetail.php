@@ -1,3 +1,4 @@
+<input type="hidden" value="" name="currentDownId" id="currentDownId">
 <div class="detail_main">
     <div class="detail_info">
         <div class="detail_info_img">
@@ -98,6 +99,7 @@
         <?php endif;?>
 
         <?php if (!empty($downLoadLinkInfo)): ?>
+            <a name="downlink_list"></a>
             <div class="watch_title">
                 <h1>下载链接</h1>
             </div>
@@ -398,7 +400,12 @@
                 var that = $(this);
                 that.bind("click",function() {
                     var id = that.attr("val");
-                    init.ajaxGetDownLink(id);
+                    $("#currentDownId").val(id);
+                    <?php if (empty($userId)):?>
+                        window.location.href = "/login?bgurl=<?php echo base64_encode("/detail/index/{$endcodeId}#downlink_list");?>";
+                    <?php else:?>
+                        init.ajaxGetDownLink(id);
+                    <?php endif;?>
                 });
             });
             var moreA = $("a.jieshao_more");
