@@ -400,11 +400,11 @@
                 var that = $(this);
                 that.bind("click",function() {
                     var id = that.attr("val");
-                    $("#currentDownId").val(id);
+//                    $("#currentDownId").val(id);
                     <?php if (empty($userId)):?>
                         window.location.href = "/login?bgurl=<?php echo base64_encode("/detail/index/{$endcodeId}#downlink_list");?>";
                     <?php else:?>
-                        init.ajaxGetDownLink();
+                        init.ajaxGetDownLink(id);
                     <?php endif;?>
                 });
             });

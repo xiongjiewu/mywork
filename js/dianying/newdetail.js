@@ -236,8 +236,7 @@ var init = {
     DownloadDefault: function () {
         alert('迅雷打开失败，请先按装迅雷或使用IE内核浏览器下载！');
     },
-    ajaxGetDownLink: function () {
-        var id = $("#currentDownId").val();
+    ajaxGetDownLink: function (id) {
         if (id) {
             $.ajax({
                 url: "/useraction/getdownlink/",
