@@ -107,12 +107,12 @@
                     <span title="点击下载" class="downlink_list" val="<?php echo APF::get_instance()->encodeId($downLinkInfoVal['id']);?>">
                         下载<?php echo (count($downLoadLinkInfo) == 1)? "" : $downI;?>:
                         <?php if ($downLinkInfoVal['type'] == 1)://来自电影天堂?>
-                            <?php $linkArr = explode("[电影天堂www.dygod.cn]",$downLinkInfoVal['link']);?>
+                            <?php $linkArr = explode("]",$downLinkInfoVal['link']);?>
                             <?php echo $linkArr[count($linkArr) - 1];?>
                         <?php elseif ($downLinkInfoVal['type'] == 2)://来自飘花?>
-                            <?php $linkArr = explode("piaohua.com",$downLinkInfoVal['link']);?>
-                            <?php $linkArr = explode("com]",$linkArr[count($linkArr) - 1]);?>
-                            <?php echo $linkArr[count($linkArr) - 1];?>
+                            <?php $linkArr = explode("com",$downLinkInfoVal['link']);?>
+                            <?php $link = trim($linkArr[count($linkArr) - 1],"]");?>
+                            <?php echo $link;?>
                         <?php endif;?>
                     </span>
                     <?php $downI++;?>

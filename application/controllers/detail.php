@@ -139,6 +139,11 @@ class Detail extends CI_Controller {
         
         $this->set_attr("dyInfo",$dyInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
+        foreach($downLoadLinkInfo as $downLoadLinkKey => $downLoadLinkVal) {
+            if (empty($downLoadLinkVal['link'])) {
+                unset($downLoadLinkInfo[$downLoadLinkKey]);
+            }
+        }
         $this->set_attr("downLoadLinkInfo",$downLoadLinkInfo);
         $this->set_attr("downLoadType",$this->_downLoadType);
         $this->set_attr("qingxiType",$this->_qingxiType);
