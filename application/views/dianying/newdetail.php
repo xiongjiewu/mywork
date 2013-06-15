@@ -404,7 +404,7 @@
                     <?php if (empty($userId)):?>
                         window.location.href = "/login?bgurl=<?php echo base64_encode("/detail/index/{$endcodeId}#downlink_list");?>";
                     <?php else:?>
-                        init.ajaxGetDownLink(id);
+                        init.ajaxGetDownLink();
                     <?php endif;?>
                 });
             });
