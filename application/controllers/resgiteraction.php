@@ -92,12 +92,18 @@ class Resgiteraction extends CI_Controller {
         }
     }
 
+    /**
+     * 检验验证码
+     */
     public function checkcode()
     {
         $code = trim($this->input->post("code"));
         echo json_encode($this->checkcodeCommon($code));
     }
 
+    /**
+     * 用户注册
+     */
     public function resgiter()
     {
         $data = $this->input->post();
@@ -144,6 +150,18 @@ class Resgiteraction extends CI_Controller {
         $id = $this->User->insertUserInfo($info);
         if (!empty($id)) {
             $this->setLoginCookie($info['userName'],$id);
+
+            //插入注册感谢信
+            $this->load->model("Email");
+            $configEmail = APF::get_instance()->get_config_value("register_think","email");
+            $emailInfo = array();
+            $emailInfo['title'] = $configEmail['title'];
+            $emailInfo['content'] = str_replace("{username}",$info['userName'],$configEmail['content']);
+            $emailInfo['email'] = $info['email'];
+            $emailInfo['time'] = time();
+            $emailInfo['userName'] = $info['userName'];
+            $this->Email->insertEmailInfo($emailInfo);
+
             echo json_encode(array("code" => "success","info" => base64_encode($id)));
             exit;
         } else {
