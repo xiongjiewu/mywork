@@ -25,7 +25,7 @@ class Backgroundadmin extends CI_Model {
     );
     private $_detailfInfoFild = array(
         "id","name","type","jieshao","zhuyan","time0","time1","time2","time3","diqu","nianfen","daoyan","shichang","image","del","exist_watch",
-        "exist_down",
+        "exist_down","playNum","downNum",
     );
     private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei","beizhu");
     private $_downLinkFild = array("id","infoId","link","size","type","sourceLink");

@@ -1,6 +1,6 @@
 <?php
 $config['base_name'] = "好吧";
-$config['base_title'] = "我们只专注于电影，旨在为您致力打造提供最快速、最方便的电影观看与下载通道";
+$config['base_title'] = "我们只专注于电影，旨在为您打造最快速、最方便的电影观看与下载通道";
 
 $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
@@ -153,7 +153,7 @@ $config['movie_type'] = array(
 $nTime = time();
 $time = strtotime(date("Y-m-01",$nTime));
 $monthCount = 6;
-$monthArr  =array();
+$monthArr = array();
 for($i = 1;$i <= $monthCount;$i++) {
     $monthArr[date("Y年m月",$time)] = date("Ym",$time);
     $time = strtotime(date("Y-m-01",$time));
@@ -206,6 +206,7 @@ $config['shoucang_max_count'] = 30;//最多收藏个数
 $config['changepassword_max_time'] = 600;//允许修改密码页面过期失效时间
 $config['last_movie_month'] = 6;//最新上映展示月个数
 $config['post_show_count'] = 20;//评论显示个数
+
 $config['email_login_url'] = array(//邮箱类型以及登录链接
     "qq" => "http://mail.qq.com/",
     "163" => "http://mail.163.com/",
@@ -220,6 +221,7 @@ $config['email_login_url'] = array(//邮箱类型以及登录链接
 $config['search_cache_key'] = "search_cache_key_count";
 //浏览记录cookie名
 $config['look_cookie_key'] = "user_look_cookie_val_info";
+
 //排行榜tab配置信息
 $config['pai_hang'] = array(
     "top" => array(//top排行榜

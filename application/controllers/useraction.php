@@ -435,6 +435,17 @@ class Useraction extends CI_Controller
             echo json_encode(array("code" => "error","info" => "下载链接不存在"));
             exit;
         }
+
+        //下载链接所属影片信息
+        $dyInfo = $this->Backgroundadmin->getDetailInfo($downLoadLinkInfo[0]['infoId'],0);
+        if (empty($dyInfo)) {
+            echo json_encode(array("code" => "error","info" => "下载链接不存在"));
+            exit;
+        }
+
+        //更新影片下载次数
+        $this->Backgroundadmin->updateDetailInfo($downLoadLinkInfo[0]['infoId'],array("downNum" => $dyInfo['downNum'] + 1));
+
         echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link']));
         exit;
     }

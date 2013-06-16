@@ -62,6 +62,9 @@ class Play extends CI_Controller {
         }
         $this->set_attr("userWatchInfo",$userWatchInfo);
 
+        //更新影片播放次数
+        $this->Backgroundadmin->updateDetailInfo($id,array("playNum" => $dyInfo['playNum'] + 1));
+
         $this->load->set_title("{$dyInfo['name']} 在线观看 - "  . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/play.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/play.js"));
