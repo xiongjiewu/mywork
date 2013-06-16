@@ -11,10 +11,10 @@
         <?php if (!empty($searchCacheInfo)):?>
             <div class="hot_search">
                 <ul>
-                    <?php foreach($searchCacheInfo as $searchKey => $searchVal):?>
-                        <?php $searchKey = trim($searchKey);?>
+                    <?php foreach($searchCacheInfo as $searchVal):?>
+                        <?php $searchVal = trim($searchVal);?>
                     <li>
-                        <a href="/search?key=<?php echo $searchKey;?>"><?php echo $searchKey;?></a>
+                        <a href="/search?key=<?php echo $searchVal;?>"><?php echo $searchVal;?></a>
                     </li>
                     <?php endforeach;?>
                 </ul>

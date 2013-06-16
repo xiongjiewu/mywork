@@ -83,18 +83,11 @@ class CI_Controller
         $this->_attr['showResearchPan'] = false;
         $this->_attr['notDoResearch'] = false;
 
-        $this->load->driver('cache');
         //热门搜索关键词
-        //$searchCacheInfo = $this->cache->file->get($this->search_cache_key);
-	$searchCacheInfo['中国合伙人'] = 100;
-        $searchCacheInfo['致我们终将逝去的青春'] = 90;
-        $searchCacheInfo['速度与激情6'] = 90;
-        $searchCacheInfo['周星驰'] = 80;
-        $searchCacheInfo['天机·富春山居图'] = 70;
-        $searchCacheInfo['钢铁侠3'] = 60;
+        $searchCacheInfo = APF::get_instance()->get_config_value("search_hot_word","word");
         //按搜索个数降序排序
         if (!empty($searchCacheInfo)) {
-            arsort($searchCacheInfo);
+            shuffle($searchCacheInfo);
             $searchCacheInfo = array_slice($searchCacheInfo,0,8);
             $this->_attr['data']['searchCacheInfo'] = $searchCacheInfo;
         }

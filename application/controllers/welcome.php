@@ -17,6 +17,7 @@ class Welcome extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $this->load->model('Moviesearch');
         $this->load->model('Moviescore');
+        $this->load->driver("cache");
     }
 
 	public function index()
