@@ -108,7 +108,9 @@
                 <?php foreach ($downLoadLinkInfo as $downLinkInfoKey => $downLinkInfoVal): ?>
                     <span title="点击下载" class="downlink_list" val="<?php echo APF::get_instance()->encodeId($downLinkInfoVal['id']);?>">
                         下载<?php echo (count($downLoadLinkInfo) == 1)? "" : $downI;?>:
-                        <?php if (strpos($downLinkInfoVal['link'],"thunder://") !== false)://来自电影天堂?>
+                        <?php if ($downLinkInfoVal['type'] == 5)://BT种子?>
+                            <?php echo $dyInfo['name'];?>BT下载
+                        <?php elseif (strpos($downLinkInfoVal['link'],"thunder://") !== false)://来自电影天堂?>
                             迅雷高速下载
                         <?php elseif ($downLinkInfoVal['type'] == 1)://来自电影天堂?>
                             <?php $linkArr = explode("]",$downLinkInfoVal['link']);?>

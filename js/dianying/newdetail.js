@@ -247,7 +247,11 @@ var init = {
                     if (result.code == "error") {
                         alert(result.info);
                     } else {
-                        init.Download(result.info);//迅雷下载
+                        if (result.type == 5) {//BT下载
+                            alert("BT下载地址为：" + result.info + ",请自行复制地址至浏览器中打开");
+                        } else {
+                            init.Download(result.info);//迅雷下载
+                        }
                     }
                 }
             });

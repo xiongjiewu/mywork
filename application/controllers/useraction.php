@@ -416,37 +416,37 @@ class Useraction extends CI_Controller
     public function getdownlink() {
         $id = $this->input->post("id");
         if (empty($id)) {
-            echo json_encode(array("code" => "error","info" => "参数错误"));
+            echo json_encode(array("code" => "error","info" => "参数错误","type" => 0));
             exit;
         }
         if (empty($this->userId)) {
-            echo json_encode(array("code" => "error","info" => "请先登录"));
+            echo json_encode(array("code" => "error","info" => "请先登录","type" => 0));
             exit;
         }
         $realId = intval(APF::get_instance()->decodeId($id));
         if (empty($realId)) {
-            echo json_encode(array("code" => "error","info" => "参数错误"));
+            echo json_encode(array("code" => "error","info" => "参数错误","type" => 0));
             exit;
         }
         $this->load->model('Backgroundadmin');
         //下载链接
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoid($realId);
         if (empty($downLoadLinkInfo[0]) || empty($downLoadLinkInfo[0]['link'])) {
-            echo json_encode(array("code" => "error","info" => "下载链接不存在"));
+            echo json_encode(array("code" => "error","info" => "下载链接不存在","type" => 0));
             exit;
         }
 
         //下载链接所属影片信息
         $dyInfo = $this->Backgroundadmin->getDetailInfo($downLoadLinkInfo[0]['infoId'],0);
         if (empty($dyInfo)) {
-            echo json_encode(array("code" => "error","info" => "下载链接不存在"));
+            echo json_encode(array("code" => "error","info" => "下载链接不存在","type" => 0));
             exit;
         }
 
         //更新影片下载次数
         $this->Backgroundadmin->updateDetailInfo($downLoadLinkInfo[0]['infoId'],array("downNum" => $dyInfo['downNum'] + 1));
 
-        echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link']));
+        echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link'],"type" => $downLoadLinkInfo[0]['type']));
         exit;
     }
 }
