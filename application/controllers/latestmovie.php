@@ -9,6 +9,7 @@ class Latestmovie extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('Backgroundadmin');
+        $this->load->driver('cache');
     }
     public function index()
     {
@@ -20,7 +21,6 @@ class Latestmovie extends CI_Controller {
         $cacheKey = $this->_cacheP . $today;
         //老的缓存key
         $oldCacheKey = $this->_cacheP . $yesToday;
-        $this->load->driver('cache');
         $lastTotalInfo = $this->cache->file->get($cacheKey);
         if ($lastTotalInfo === false) {
             $sortStr = $this->_movieSortType[5]['sort'];
