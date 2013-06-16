@@ -1,6 +1,6 @@
 <?php
 $config['base_name'] = "好吧";
-$config['base_title'] = "我们只专注于电影，您想看的就是我们宗旨";
+$config['base_title'] = "我们只专注于电影，旨在为您致力打造提供最快速、最方便的电影观看与下载通道";
 
 $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
