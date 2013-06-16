@@ -419,6 +419,10 @@ class Useraction extends CI_Controller
             echo json_encode(array("code" => "error","info" => "参数错误"));
             exit;
         }
+        if (empty($this->userId)) {
+            echo json_encode(array("code" => "error","info" => "请先登录"));
+            exit;
+        }
         $realId = intval(APF::get_instance()->decodeId($id));
         if (empty($realId)) {
             echo json_encode(array("code" => "error","info" => "参数错误"));
