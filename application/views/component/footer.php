@@ -33,6 +33,7 @@
                     <li><a href="/topic/index/4/" target="_blank">联系方式</a></li>
                     <li><a href="/topic/index/5/" target="_blank">免责声明</a></li>
                     <li class="mail"><a href="mailto:service@dianying8.tv">service@dianying8.tv</a></li>
+                    <li class="weibo"><a target="_blank" href="http://weibo.com/hao8movie">关注微博</a></li>
                 </ul>
                 <p>
                     Copyright © 2013 www.dianying8.tv All Rights Reserved <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备13011228号</a>

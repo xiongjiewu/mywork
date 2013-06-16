@@ -322,18 +322,18 @@ div.header_tab div.last_small_menus div.small_menus_main span a:hover {
 }
 /*置顶样式*/
 a.go_to_top {
-    display: none;
-    position: fixed;
-    width: 48px;
-    right: 6px;
+    background: url("/images/common/fankui2.png") no-repeat scroll 0 -120px transparent;
     bottom: 100px;
     cursor: pointer;
-    height: 48px;
-    background: url("/images/common/go_top.png") no-repeat -3px 0 transparent;
+    display: none;
+    height: 51px;
+    position: fixed;
+    right: 6px;
+    width: 60px;
     z-index: 9999;
 }
 a.go_to_top:hover {
-    background-position: -3px -100px;
+    background-position: 0 -171px;
 }
 div.login_register_pan {
     float: right;
@@ -508,12 +508,20 @@ div.footer div.footer_bottom ul {
 div.footer div.footer_bottom ul li {
     float: left;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 div.footer div.footer_bottom ul li a {
     color: #444;
 }
 div.footer div.footer_bottom ul li.mail a {
     color: #0088CC;
+}
+div.footer div.footer_bottom ul li.weibo a {
+    background: url("/images/common/fankui2.png") no-repeat scroll -28px -4px transparent;
+    border: 1px solid #EEEEEE;
+    padding: 2px 2px 2px 23px;
+    color: #999;
+    font-size: 13px;
 }
 div.footer div.footer_bottom p {
     margin-top: 20px;
