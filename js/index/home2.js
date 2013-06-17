@@ -14,7 +14,7 @@
         initYaoyaoInfo: function (result) {
             var yaoyaoObj = $("div.yaoyao_movice_info_img");
             var aObj = yaoyaoObj.find("a");
-            var url = "/detail/index/" + result.idStr;
+            var url = "/detail/index/" + result.idStr + "?from=yaoyao";
             var nianFenStr;
             if (result.nianfen == 0) {
                 nianFenStr = '<td><span class="">年份：</span>暂无</td>';

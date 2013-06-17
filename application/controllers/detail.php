@@ -27,6 +27,17 @@ class Detail extends CI_Controller {
             $this->jump_to("/error/index/1/");
             exit;
         }
+
+        //来自页面搜索页，则更新电影搜索次数
+        $from = $this->input->get("from");
+        if (!empty($from) && ($from == "search")) {
+            //更新影片播放次数
+            $this->Backgroundadmin->updateDetailInfo($id,array("searchNum" => $dyInfo['searchNum'] + 1));
+        } elseif (!empty($from) && ($from == "yaoyao")) {//来自页面摇一摇，则更新电影摇一摇次数
+            //更新影片播放次数
+            $this->Backgroundadmin->updateDetailInfo($id,array("yaoyaoNum" => $dyInfo['yaoyaoNum'] + 1));
+        }
+
         //cookie名称+浏览记录
         $userLookInfo = $this->get_cookie($this->look_cookie_key);
         if (!empty($userLookInfo)) {
