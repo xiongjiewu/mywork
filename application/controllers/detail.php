@@ -30,6 +30,7 @@ class Detail extends CI_Controller {
 
         //来自页面搜索页，则更新电影搜索次数
         $from = $this->input->get("from");
+        $from = htmlspecialchars($from);
         if (!empty($from) && ($from == "search")) {
             //更新影片播放次数
             $this->Backgroundadmin->updateDetailInfo($id,array("searchNum" => $dyInfo['searchNum'] + 1));

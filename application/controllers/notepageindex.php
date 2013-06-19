@@ -17,6 +17,7 @@ class Notepageindex extends CI_Controller {
 
     public function index() {
         $from = $this->input->post("from");//from字符串
+        $from = htmlspecialchars($from);
         $referUrl = $this->input->post("refer");//来源
         $currentUrl = $this->input->post("current");//被访问页面
         if (empty($from) || empty($referUrl) || empty($currentUrl)) {
