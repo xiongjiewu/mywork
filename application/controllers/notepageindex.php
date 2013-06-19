@@ -9,6 +9,8 @@ class Notepageindex extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Pageaccessindex');
+        $this->load->model('Backgroundadmin');
+        $this->load->model('Userviewingrecords');
         //配置信息
         $this->_pageIndexInfo = APF::get_instance()->get_config_value("page_index_open","pageindex");
     }
@@ -39,6 +41,37 @@ class Notepageindex extends CI_Controller {
         }
         //插入信息
         $this->Pageaccessindex->insertPageIndexInfo(array("referUrl" => $referUrl,"currentUrl" => $currentUrl,"ip" => $this->getUserIP(),"fromStr" => $from,"createTime" => time()));
+        echo json_encode(array("code" => "success","info" => "success"));
+        exit;
+    }
+
+    /**
+     * 用户观看记录
+     */
+    public function userviewinfo() {
+        if (empty($this->userId)) {
+            echo json_encode(array("code" => "error","info" => "未登录"));
+            exit;
+        }
+        $id = $this->input->post("id");//id字符串
+        $id = intval($id);
+        if (empty($id)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+        $dyInfo = $this->Backgroundadmin->getDetailInfo($id,0);
+        if (empty($dyInfo)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+
+        //查询，相同电影3小时之内不可再写入
+        $nowTime = time();
+        $info = $this->Userviewingrecords->getUserViewingRecordsLastInfo($this->userId,$id);
+        if (empty($info) || ($info["createTime"] - $nowTime) > 3 * 3600) {
+            //写入记录
+            $this->Userviewingrecords->insertUserViewingRecordsInfo(array("userId" => $this->userId,"infoId" => $id,"ip" => $this->getUserIP(),"createTime" => $nowTime));
+        }
         echo json_encode(array("code" => "success","info" => "success"));
         exit;
     }

@@ -102,3 +102,30 @@
         </li>
     </ul>
 </div>
+<?php if (!empty($userName) && !empty($userId)):?>
+<!-- 用户播放记录，小心不能删除哦，不然可有大麻烦js start-->
+<script type="text/javascript">
+    (function ($) {
+        var init = {
+            noteViewInfo: function (id) {//记录观看记录
+                if (id) {
+                    $.ajax({
+                        url: "/notepageindex/userviewinfo/",
+                        type: "post",
+                        data: {id:id},
+                        dataType: "json",
+                        success: function (result) {
+                            //noting
+                        }
+                    });
+                }
+            }
+        };
+        $(document).ready(function () {
+            var id = <?php echo $dyInfo['id'];?>;
+            init.noteViewInfo(id);
+        });
+    })(jQuery);
+</script>
+<!-- 用户播放记录，小心不能删除哦，不然可有大麻烦js end-->
+<?php endif;?>
