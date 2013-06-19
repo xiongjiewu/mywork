@@ -14,7 +14,7 @@
                     <?php foreach($searchCacheInfo as $searchVal):?>
                         <?php $searchVal = trim($searchVal);?>
                     <li>
-                        <a href="/search?key=<?php echo $searchVal;?>"><?php echo $searchVal;?></a>
+                        <a href="/search?key=<?php echo $searchVal;?>&from=hot_search_word"><?php echo $searchVal;?></a>
                     </li>
                     <?php endforeach;?>
                 </ul>

@@ -14,4 +14,5 @@ $config['page_index_open'] = array(
     "last_movie_list" => true,//最新上映页面
     "movieguide_movie_list" => true,//电影导航页面
     "comming_movie_list" => true,//即将上映页面
+    "hot_search_word" => true,//热门搜索关键词
 );
