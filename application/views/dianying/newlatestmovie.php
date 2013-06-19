@@ -21,7 +21,7 @@
                         <li title="点击查看详情">
                             <div class="info_img">
                                 <?php $idStr = APF::get_instance()->encodeId($mVal['id']);?>
-                                <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
+                                <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>?from=last_movie_list">
                                     <img alt="<?php echo $mVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $mVal['image'];?>">
                                 </a>
                                 <?php if (empty($shouCangInfo[$mVal['id']])):?>
@@ -33,7 +33,7 @@
                             <div class="info_detail">
                                 <dl>
                                     <dt>
-                                        <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/"><?php echo $mVal['name'];?></a>
+                                        <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>?from=last_movie_list"><?php echo $mVal['name'];?></a>
                                     </dt>
                                     <dd>
                                         <span class="time"><?php echo date("Y.m.d",$mVal['time1'])?></span>

@@ -23,13 +23,13 @@
                 <li class="<?php if ($cI % 5 == 0):?>last<?php endif;?>" title="点击查看详情">
                     <b><?php echo ($mI < 10)? "0" . $mI : $mI?></b>
                     <?php $mI++;?>
-                    <a href="/detail/index/<?php echo $idStr;?>/" class="class_img">
+                    <a href="/detail/index/<?php echo $idStr;?>?from=class_movie_list" class="class_img">
                         <img alt="<?php echo $moviceVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
                     </a>
                     <div class="class_dy_info">
                         <div class="class_dy_top">
                             <h1>
-                                <a href="/detail/index/<?php echo $idStr;?>/">
+                                <a href="/detail/index/<?php echo $idStr;?>?from=class_movie_list">
                                     <?php echo $moviceVal['name'];?>
                                 </a>
                             </h1>
