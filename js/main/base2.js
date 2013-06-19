@@ -49,7 +49,7 @@ var initOjb = {
     },
     getSearchInfoDo:function(searchObj,searchAbount) {
         var search_val = $.trim(searchObj.val());
-        if (search_val && (search_val != undefined) && (search_val != "搜您喜欢的影片、导演、演员...")) {
+        if (search_val && (search_val != undefined) && (search_val != "搜您喜欢的影片、导演、演员、下载资源...")) {
             this.ajaxGetSearchInfo(search_val, function (result) {
                 if (result.code == "success") {
                     var sHtml = "<ul>";
@@ -151,14 +151,14 @@ var initOjb = {
         });
         searchObj.bind("focus", function () {
             var search_val = $.trim($(this).val());
-            if (search_val == "搜您喜欢的影片、导演、演员...") {
+            if (search_val == "搜您喜欢的影片、导演、演员、下载资源...") {
                 $("#search").val("");
             }
         });
         searchObj.bind("blur", function () {
             var search_val = $.trim($(this).val());
             if (!search_val || search_val == undefined) {
-                $("#search").val("搜您喜欢的影片、导演、演员...");
+                $("#search").val("搜您喜欢的影片、导演、演员、下载资源...");
             }
         });
         $(document).bind("click",function(e){
@@ -175,7 +175,7 @@ var initOjb = {
         });
         $("#search_dy").submit(function () {
             var search_val = $.trim($("#search").val());
-            if (!search_val || (search_val == "搜您喜欢的影片、导演、演员...")) {
+            if (!search_val || (search_val == "搜您喜欢的影片、导演、演员、下载资源...")) {
                 window.location.href = "/moviceguide/";
                 return false;
             } else {

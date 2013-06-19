@@ -2,7 +2,7 @@
     <div class="header_search">
         <div class="form_info">
             <form name="search_dy" id="search_dy" onsubmit="return false;" action="/search" method="get" autocomplete="off">
-                <input type="text" name="search" id="search" class="search" value="<?php if (empty($searchW)):?>搜您喜欢的影片、导演、演员...<?php else:?><?php echo $searchW;?><?php endif;?>">
+                <input type="text" name="search" id="search" class="search" value="<?php if (empty($searchW)):?>搜您喜欢的影片、导演、演员、下载资源...<?php else:?><?php echo $searchW;?><?php endif;?>">
                 <input type="submit" value="搜 索" class="submit" id="search_do" name="search_do">
             </form>
             <div class="about_search">
