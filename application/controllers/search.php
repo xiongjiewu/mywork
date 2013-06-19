@@ -173,7 +173,7 @@ class Search extends CI_Controller {
         //开始查询信息
         $moviceI = 0;
         foreach($wordArr[0] as $wordVal) {
-	    $wordVal = htmlspecialchars($wordVal);
+	        $wordVal = htmlspecialchars($wordVal);
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
