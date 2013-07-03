@@ -14,7 +14,7 @@
                 </li>
             <?php elseif ($topMovieInfosI == 27):?>
                 <li class="top_last_li" title="意见反馈">
-                    <a class="first_img" href="/research" target="_blank">
+                    <a class="first_img" href="/usercenter/feedback/" target="_blank">
                         <img alt="意见反馈" src="/images/home/fankui3.png">
                     </a>
                 </li>
