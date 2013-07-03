@@ -1,0 +1,109 @@
+@import url('/css/main/reset.css');
+.clr {
+    clear: both;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.wrapper p {
+    clear: both;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.reference {
+    padding-top: 40px;
+}
+
+h1 {
+    font-size: 34px;
+    position: relative;
+    color: #000;
+    font-weight: 400;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+    font-size: 20px;
+}
+
+/* Header Style */
+.header {
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    font-size: 10px;
+    padding: 3px 5px;
+    background: #000;
+    opacity: 0.9;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.header a {
+    line-height: 18px;
+    padding: 0 4px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px #000;
+    color: #ddd;
+}
+
+.header a:hover {
+    color: #fff;
+}
+
+.header a span {
+    font-weight: bold;
+}
+
+.header span.right {
+    float: right;
+}
+
+@media screen and (max-width: 860px) {
+    .header a {
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        text-shadow: none;
+    }
+
+    .header span.right {
+        float: none;
+    }
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(http://themes.googleusercontent.com/static/fonts/opensanscondensed/v6/gk5FxslNkTTHtojXrkp-xF1YPouZEKgzpqZW9wN-3Ek.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://themes.googleusercontent.com/static/fonts/playfairdisplay/v7/9MkijrV-dEJ0-_NWV7E6N3aqFElqJjV-H5EUExnZgmU.woff) format('woff');
+}
+.ei-slider{
+    height: auto;
+}
+.ei-slider-thumbs{
+    display: none;
+}
+.ei-slider-large li{
+    position: relative;
+}

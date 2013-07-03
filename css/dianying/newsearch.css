@@ -1,13 +1,13 @@
 div.search_main  {
     width: 1150px;
     padding: 0 20px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
 /*左边检索框 start*/
 div.search_left {
     float: left;
     width: 173px;
-    height: 865px;
+    height: 1080px;
     border: 2px solid #ccc;
     background-color: #fff;
 }

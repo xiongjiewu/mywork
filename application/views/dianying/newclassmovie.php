@@ -1,5 +1,9 @@
-<a class="go_to_top" title="回到顶部"></a>
+<?php $this->load->view("component/ideapan");//返回顶部与提出意见标签?>
 <div class="class_main">
+    <div class="guide">
+        <a href="/">首页 </a>>
+        <span> 排行榜</span>
+    </div>
     <div class="class_left">
         <ul>
             <?php foreach($paiHangInfo as $paihangKey => $paihangVal):?>

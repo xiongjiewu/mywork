@@ -10,6 +10,7 @@ class Search extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $this->load->model('Actinfo');
         $this->load->model('Directorinfo');
+        $this->load->set_top_index(-1);
     }
 
     /** 过滤sql特殊字符
@@ -325,7 +326,7 @@ class Search extends CI_Controller {
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
-        $this->set_view('dianying/newsearch');
+        $this->set_view('dianying/newsearch','base3');
     }
 
     public function ajaxgetdyinfo(){

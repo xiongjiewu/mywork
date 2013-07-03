@@ -8,13 +8,11 @@ class Login extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->set_login_pan(false);
+        $this->load->set_top_index(-1);
     }
 
     public function index()
     {
-        //不展示调查问卷提示框
-        $this->_attr['showResearchPan'] = false;
-
         if (!empty($this->userId)) {//已登录，跳转至首页
             $this->jump_to("/");
         }
@@ -23,10 +21,8 @@ class Login extends CI_Controller {
             $this->set_attr("bgurl",base64_decode($bgUrl));
         }
         $this->load->set_title("用户登录 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_head_img(false);
-        $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/login.css"));
         $this->load->set_js(array("/js/member/login.js"));
-        $this->set_view("member/login");
+        $this->set_view("member/login","base3");
     }
 }

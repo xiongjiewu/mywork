@@ -1,0 +1,425 @@
+div.last_movie_top {
+    width: 100%;
+    height: 348px;
+    float: left;
+    background: url("/images/common/dyqiang.jpg") 0 0 transparent;
+}
+div.last_movie_top_list {
+    width: 46%;
+    height: 288px;
+    padding: 10px;
+    float: left;
+    margin: 20px 0 20px 10%;
+    background-color: #000;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+div.last_movie_top_list dl {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: #cfcfcf;
+}
+div.last_movie_top_list dl dt {
+    float: left;
+    width: 230px;
+    height: 100%;
+    margin: 0;
+}
+div.last_movie_top_list dl dt a {
+    float: left;
+    width: 220px;
+    height: 278px;
+    border: 5px solid #000;
+    background-color: #fff;
+    filter:alpha(Opacity=100);
+    -moz-opacity:1;
+    opacity: 1;
+}
+div.last_movie_top_list dl dt a img {
+    float: left;
+    width: 220px;
+    height: 278px;
+}
+div.last_movie_top_list dl dd {
+    float: left;
+    width: 59%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+div.last_movie_top_list dl dd.play_now {
+    position: absolute;
+    bottom: 0;
+    left: 227px;
+    z-index: 1001;
+}
+div.last_movie_top_list dl dd.play_now a {
+    background: url("/images/common/play_icon.png") no-repeat scroll 1px -30px transparent;
+    float: left;
+    height: 30px;
+    width: 150px;
+}
+div.last_movie_top_list dl dd.play_now span.yaoyao_again {
+    display: none;
+    color: #08A6CD;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    margin-top: 5px;
+}
+div.last_movie_top_list dl dd.play_now a:hover {
+    background-position: 1px 0;
+}
+div.last_movie_top_list dl dd h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+div.last_movie_top_list dl dd a {
+    color: #cfcfcf;
+}
+div.last_movie_top_list dl dd h1 a {
+    color: #fff;
+}
+
+div.last_movie_top_right {
+    background-color: #000000;
+    float: right;
+    height: 308px;
+    padding: 20px 10px;
+    width: 540px;
+    padding-right: 0;
+}
+div.right2 {
+    display: none;
+}
+div.last_movie_top_right ul {
+    float: left;
+}
+div.last_movie_top_right ul li {
+    border: 2px solid #000000;
+    float: left;
+    height: 95px;
+    padding: 2px;
+    width: 80px;
+}
+div.last_movie_top_right ul li.current {
+    border: 2px solid #08A6CD;
+}
+div.last_movie_top_right ul li a {
+    width: 100%;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+}
+div.last_movie_top_right ul li a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.last_movie_main {
+    width: 1200px;
+    margin: 0 auto;
+}
+div.last_movie_month {
+    width: 100%;
+    float: left;
+    height: 50px;
+    border: 1px solid #999;
+    margin-top: 20px;
+}
+div.month_dy_main {
+    float: left;
+    margin-top: 20px;
+    width: 897px;
+}
+.month_dy_list {
+    float: left;
+    width: 100%;
+}
+.month_dy_list ul {
+    float: left;
+    width: 100%;
+}
+.month_dy_list ul li {
+    float: left;
+}
+.month_dy_list ul li.title {
+    width: 100%;
+    background-color: #F5F5F5;
+}
+.month_dy_list ul li.title h1 {
+    font-size: 24px;
+    color: #08A6CD;
+    margin: 10px 20px;
+}
+.month_dy_list ul li.info {
+    background-color: #fff;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 265px;
+    list-style: none outside none;
+    margin: 5px;
+    padding: 10px;
+    width: 147px;
+}
+.month_dy_list ul li.info div.dy {
+    margin: 15px;
+    width: 120px;
+    float: left;
+}
+.month_dy_list ul li.info a.image_a {
+    background-color: #FFFFFF;
+    display: block;
+    float: left;
+    height: 220px;
+    overflow: hidden;
+    width: 140px;
+}
+.month_dy_list ul li.info a.image_a img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.month_dy_list ul li.info:hover {
+    cursor: pointer;
+    border: 2px solid #08A6CD;
+    width: 145px;
+    height: 263px;
+}
+.month_dy_list ul li.info p {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    padding: 3px 0 0;
+    width: 140px;
+}
+.month_dy_list ul li.info p.jieshao {
+    color: #999999;
+    margin-top: 1px;
+}
+.month_dy_list ul li.info p.name {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    padding: 3px 0 0;
+    width: 140px;
+}
+.month_dy_list ul li.info p.name a {
+    color: #595959;
+    font-size: 14px;
+}
+.month_dy_list ul li.info:hover p.name a {
+    color: #08A6CD;
+}
+.month_dy_list ul li.info p.jieshao a {
+    color: #969595;
+    font-size: 13px;
+}
+.month_dy_list ul li.info p.jieshao a:hover {
+    color: #08a6cd;
+}
+div.last_left_main {
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-left: 10px;
+    margin-top: 75px;
+    width: 290px;
+    background-color: #F8F8F8;
+}
+/*排行榜 start*/
+div.top_info_list {
+    /*background-color: #F8F8F8;*/
+    float: left;
+    padding: 10px;
+    width: 270px;
+    background: url("/images/common/jianbian.png") repeat-x 0 0 transparent;
+}
+div.top_info_list span {
+    float: left;
+    width: 100%;
+}
+div.top_info_list div.top_title h1 {
+    font-size: 15px;
+    margin-top: 5px;
+    float: left;
+}
+div.top_info_list span.top_name_list {
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+    border-bottom:1px dashed #ddd;
+}
+div.top_info_list span.top_name_list:hover {
+    cursor: pointer;
+}
+div.top_info_list span.top_name_list:hover a {
+    color: #08A6CD;
+}
+div.top_info_list span.fisrt_s {
+    color: #FF0000;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 130px;
+}
+div.top_info_list span.fisrt_s em {
+    font-style: normal;
+    color: #666;
+}
+div.top_info_list span.top_jieshao {
+    float: left;
+    width: 135px;
+    margin-left: 10px;
+    font-size: 13px;
+    height: 99px;
+    overflow: hidden;
+    color: #AAAAAA;
+}
+div.top_info_list div.top_get {
+    float: left;
+    width: 100%;
+}
+div.top_info_list span.top_first_list {
+    height: 127px;
+    /*background-color: #eee;*/
+    border-bottom: none;
+    position: relative;
+}
+div.top_info_list span.last_one {
+    border-bottom: none;
+}
+div.top_info_list span.top_first_list i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    font-style: normal;
+    width: 119px;
+    background: none repeat scroll 0 0 #000000;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+    padding: 3px;
+}
+div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list i a {
+    font-size: 15px;
+}
+div.top_info_list span.top_first_list i a,div.top_info_list span.top_first_list i a:hover {
+    float: left;
+    width: 113px;
+    height: 100%;
+    overflow: hidden;
+    color: #FFFFFF;
+    line-height: 20px;
+}
+div.top_info_list span.top_first_list i a.name {
+    width: 100%;
+    max-width: 100%;
+}
+div.top_info_list span.top_first_list i em {
+    float: left;
+    font-style: normal;
+    color: #FFFFFF;
+    margin-right: 5px;
+    float: right;
+    font-size: 13px;
+}
+div.top_info_list span.top_name_list b {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -237px -9px transparent;
+    float: left;
+    height: 15px;
+    width: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 15px;
+}
+div.top_info_list span.top_name_list b.last {
+    background: none;
+    border: 1px solid #999;
+    color: #666;
+}
+div.top_info_list span.top_name_list a {
+    float: left;
+    margin-left: 5px;
+    height: 20px;
+    max-width: 60%;
+    overflow: hidden;
+    font-size: 13px;
+    color: #414141;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: normal !important;
+    line-height: 20px;
+}
+div.top_info_list span.top_first_list a {
+    margin-left: 0;
+}
+div.top_info_list span.top_first_list b {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -201px -9px transparent;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 36px;
+    left: 0;
+    line-height: 27px;
+    position: absolute;
+    text-align: center;
+    top: -2px;
+    width: 25px;
+}
+div.top_info_list span.top_name_list i.score {
+    font-style: normal;
+    font-size: 13px;
+    color: #FF5C38;
+    float: right;
+}
+div.top_info_list span.top_name_list i.score em {
+    font-style: normal;
+    color: #aaa;
+}
+div.top_info_list span.top_name_list a:hover {
+    color: #08A6CD;
+}
+div.top_info_list span.top_name_list a.first_top:hover {
+    box-shadow: 2px 2px 3px #ddd;
+}
+div.top_info_list span.top_name_list a.first_top,div.top_info_list span.top_name_list a.first_top img {
+    float: left;
+    width: 125px;
+    height: 100%;
+}
+div.top_info_list div.top_title div.top_tab {
+    float: right;
+    border-right: 1px solid #dbdbdb;
+}
+div.top_info_list div.top_title em {
+    float: left;
+    font-size: 13px;
+    line-height: 25px;
+    font-style: normal;
+}
+div.top_info_list div.top_title em a {
+    float: left;
+    padding: 1px 7px;
+    text-decoration: none;
+    color: #989898;
+    border-style: solid none solid solid;
+    border-color: #dbdbdb;
+    border-width: 1px medium 1px 1px;
+}
+div.top_info_list div.top_title em a.current {
+    background-color: #08A6CD;
+    color: #fff;
+}
+/*排行榜 end*/

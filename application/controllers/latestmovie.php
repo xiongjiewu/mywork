@@ -46,16 +46,19 @@ class Latestmovie extends CI_Controller {
                 $time = strtotime("-1 month",$time);
             }
 
-            $ids = array();
+            $ids = $totalMovieInfo = array();
             foreach($movieList as $movieListKey => $movieListVal) {
                 if (!empty($movieListVal)) {
                     foreach($movieListVal as $mKey => $mVal) {
                         $ids[] = $mVal['id'];
+                        $totalMovieInfo[] = $mVal;
                         $movieListVal[$mKey]['jieshao'] = $this->splitStr($mVal['jieshao'],50);
                     }
                     $movieList[$movieListKey] = $movieListVal;
                 }
             }
+            $lastTotalInfo["totalMovieInfo"] = $totalMovieInfo;
+
             //观看链接
             $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($ids);
             $watchLinkInfo = $this->_initArr($watchLinkInfo);
@@ -92,6 +95,7 @@ class Latestmovie extends CI_Controller {
                     $movieList[$movieListKey] = $movieListVal;
                 }
             }
+            $totalMovieInfo = $lastTotalInfo["totalMovieInfo"];
         }
 
         $this->set_attr("movieList",$movieList);
@@ -105,16 +109,19 @@ class Latestmovie extends CI_Controller {
             $shouCangInfo = $this->initArrById($shouCangInfo,"infoId");
             $this->set_attr("shouCangInfo",$shouCangInfo);
         }
+        shuffle($totalMovieInfo);
+        $totalMovieInfo = array_slice($totalMovieInfo,0,18);
+        $this->set_attr("totalMovieInfo",$totalMovieInfo);
 
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
         $this->load->set_head_img(false);
         
         $this->load->set_title("最新上映列表 - " . APF::get_instance()->get_config_value("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("css/dianying/newlatestmovie.css"));
-        $this->load->set_js(array("js/dianying/latestmovie.js"));
+        $this->load->set_css(array("css/dianying/newlatestmovie2.css"));
+        $this->load->set_js(array("js/dianying/newlatestmovie2.js"));
         $this->load->set_top_index(1);
-        $this->set_view('dianying/newlatestmovie');
+        $this->set_view('dianying/newlatestmovie2');
     }
 
     private function _initArr($nfo)

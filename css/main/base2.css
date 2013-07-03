@@ -26,6 +26,9 @@ a {
     color: #0088CC;
     text-decoration: none;
 }
+a:hover {
+    color: #0088CC;
+}
 img {
     border: none;
 }
@@ -231,16 +234,15 @@ div.header_tab ul li a {
     line-height: 50px;
     float: left;
     text-decoration: none;
-    color: #015e75;
+    color: #333;
     height: 100%;
     width: 100%;
 }
 div.header_tab ul li a:hover,div.header_tab ul li.current a {
-    background-color: #08a6cd;
+    background: url("/images/head/daohangxuanzhong.png") repeat scroll 0 0 transparent;
     color: #fff;
 }
 div.header_tab ul li i {
-    /*background: url("/images/common/icon_icon.png") no-repeat scroll -350px -400px transparent;*/
     background: url("/images/common/header_icon_li.png") no-repeat scroll 0 -390px transparent;
     color: red;
     height: 17px;
@@ -319,6 +321,21 @@ div.header_tab div.last_small_menus div.small_menus_main span a {
 }
 div.header_tab div.last_small_menus div.small_menus_main span a:hover {
     color: #0088CC;
+}
+/*提意见样式*/
+a.give_idea {
+    background: url("/images/common/fankui2.png") no-repeat scroll 0 -27px transparent;
+    bottom: 151px;
+    cursor: pointer;
+    display: none;
+    height: 43px;
+    position: fixed;
+    right: 6px;
+    width: 60px;
+    z-index: 9999;
+}
+a.give_idea:hover {
+    background-position: 0 -72px;
 }
 /*置顶样式*/
 a.go_to_top {
@@ -556,3 +573,77 @@ div.btn-group a.enable,div.btn-group a.enable:hover {
     cursor: default;
 }
 /*分页样式 end*/
+
+/*摇一摇start*/
+div.tab_list {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px dashed #ddd;
+    border-top: 1px dashed #ddd;
+}
+div.tab_list ul {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.tab_list ul li {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 100%;
+}
+div.tab_list ul li a {
+    bottom: 0;
+    height: 60px;
+    left: 10px;
+    position: absolute;
+    width: 173px;
+}
+div.tab_list ul li.tab_list_li_1 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -52px transparent;
+}
+div.tab_list ul li.tab_list_li_1 a:hover {
+    height: 93%;
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -32px -114px transparent;
+}
+div.tab_list ul li.tab_list_li_2 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -212px -52px transparent;
+    left: 100px;
+}
+div.tab_list ul li.tab_list_li_3 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -175px transparent;
+    height: 40px;
+    left: 131px;
+}
+div.tab_list ul li.tab_list_li_4 a {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -214px -124px transparent;
+    height: 40px;
+    left: 187px;
+}
+/*摇一摇end*/
+div.menus_right {
+    float: right;
+    height: 100%;
+}
+div.menus_right span {
+    float: left;
+    margin-top: 17px;
+}
+div.menus_right span.last_one {
+    margin-right: 10px;
+}
+div.menus_right span a {
+    float: left;
+    border-right: 1px solid #888;
+    padding: 0 5px;
+    color: #666;
+}
+div.menus_right span a:hover {
+    color: #0088CC;
+    text-decoration: underline;
+}
+div.menus_right span.last_one a {
+    border-right: none;
+}

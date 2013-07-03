@@ -62,7 +62,7 @@ class Useraction extends CI_Controller
     public function ding()
     {
         $data = $this->input->post();
-        if (empty($data['pid'])) {
+        if (empty($data['pid']) || empty($this->userId)) {
             echo json_encode(array("code" => "error","info" => "非法操作"));
             exit;
         }
@@ -383,15 +383,14 @@ class Useraction extends CI_Controller
         $rNum = rand(1,100);
         $this->load->model('Backgroundadmin');
         if ($rNum <= 40) {//小于40，选取有观看链接的电影
-            $condition = "exist_watch = 1";
+            $condition = "exist_watch = 1 and del = 0 order by createtime desc";
         } else {//经典电影
-            $condition = "exist_watch = 1 and topType > 0";
+            $condition = "exist_watch = 1 and topType > 0 and del = 0 order by createtime desc";
         }
         $count = $this->Backgroundadmin->getDetailInfoCountByCondition($condition);
         //随机抽取位移量
         $offset = rand(0,$count - 1);
         //电影信息
-        $moviceInfo = array();
         $moviceInfo = $this->Backgroundadmin->getDetailInfoByCondition($condition,$offset,1);
         $moviceInfo = $moviceInfo[0];
         //电影图片
@@ -404,9 +403,9 @@ class Useraction extends CI_Controller
         $moviceInfo['zhuyan'] = empty($moviceInfo['zhuyan']) ? "暂无"  : $moviceInfo['zhuyan'];
         $moviceInfo['zhuyan'] = str_replace("/","、",$moviceInfo['zhuyan']);
         $zhuyanArr = explode("、",$moviceInfo['zhuyan']);
-        $moviceInfo['zhuyan'] = implode("、",array_slice($zhuyanArr,0,3));
+        $moviceInfo['zhuyan'] = implode("、",array_slice($zhuyanArr,0,APF::get_instance()->get_config_value("yaoyao_zhuyan_count")));
         $moviceInfo['jieshao'] = str_replace("　　","",trim($moviceInfo['jieshao']));
-        $moviceInfo['jieshao'] = $this->splitStr($moviceInfo['jieshao'],100);
+        $moviceInfo['jieshao'] = $this->splitStr($moviceInfo['jieshao'],APF::get_instance()->get_config_value("yaoyao_jieshao_len"));
         echo json_encode($moviceInfo);
     }
 

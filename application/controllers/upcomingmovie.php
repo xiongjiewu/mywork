@@ -32,11 +32,16 @@ class Upcomingmovie extends CI_Controller {
         
         $this->set_attr("movieList",$movieList);
         $this->load->set_title("即将上映列表 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/upcomingmovie.css"));
+        //$this->load->set_css(array("/css/dianying/upcomingmovie2.css","/css/main/style.css"));
+        //$this->load->set_js(array("/js/dianying/upcomingmovie2.js"));
+        $this->load->set_css(array("/css/dianying/upcomingmovie.css","/css/main/style.css"));
         $this->load->set_js(array("/js/dianying/upcomingmovie.js"));
-        $this->load->set_top_index(2);
+        $this->load->set_top_index(-1);
+        $this->set_attr("tabIndex",2);
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);
-        $this->set_view('dianying/upcomingmovie');
+        //第二版即将上映暂时不该版
+        $this->set_view('dianying/upcomingmovie','base3');
+//        $this->set_view('dianying/upcomingmovie2');
     }
 }

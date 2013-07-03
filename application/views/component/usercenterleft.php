@@ -1,7 +1,7 @@
 <div class="left_container">
     <div class="side-boxer">
         <div class="user-info">
-            <img src="<?php echo !empty($userInfo['photo']) ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
+            <img src="<?php echo APF::get_instance()->get_image_url($userInfo['photo']);?>">
             <dl>
                 <dt><?php echo $userInfo['userName'];?></dt>
                 <dd style="margin-left: 0">
@@ -12,7 +12,7 @@
         <div class="side-menu">
             <a class="menu-item <?php if ($index == 1):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/");?>">
                 <i class="collection"></i>
-                我的电影吧
+                我的<?php echo APF::get_instance()->get_config_value("base_name");?>
                 <span class="arrow-icon"></span>
             </a>
             <a class="menu-item <?php if ($index == 2):?>menu-focus<?php endif;?>" href="<?php echo get_url("/usercenter/mycollect/");?>">

@@ -19,6 +19,7 @@ class Usercenter extends CI_Controller
             $this->jump_to("/login/");
             exit;
         }
+        $this->load->set_top_index(-1);
     }
 
     private function _getUserInfo()
@@ -73,7 +74,7 @@ class Usercenter extends CI_Controller
         $this->load->set_js(array("js/user/usercenter.js"));
         $this->set_attr("moviePlace", $this->_moviePlace);
         $this->set_attr("movieType", $this->_movieType);
-        $this->set_view("user/usercenter");
+        $this->set_view("user/usercenter","base3");
     }
 
     /**
@@ -107,7 +108,7 @@ class Usercenter extends CI_Controller
         $this->load->set_js(array("/js/user/mycollect.js"));
         $this->set_attr("moviePlace", $this->_moviePlace);
         $this->set_attr("movieType", $this->_movieType);
-        $this->set_view("user/mycollect");
+        $this->set_view("user/mycollect","base3");
     }
 
     /**
@@ -172,7 +173,7 @@ class Usercenter extends CI_Controller
         $this->load->set_js(array("/js/uploadify/jquery.uploadify.min.js","/js/user/revised.js"));
         $this->set_attr("moviePlace", $this->_moviePlace);
         $this->set_attr("movieType", $this->_movieType);
-        $this->set_view("user/revised");
+        $this->set_view("user/revised","base3");
     }
 
     public function resetpassword()
@@ -326,7 +327,7 @@ class Usercenter extends CI_Controller
         $this->load->set_js(array("/js/user/feedback.js"));
         $this->set_attr("moviePlace", $this->_moviePlace);
         $this->set_attr("movieType", $this->_movieType);
-        $this->set_view("user/feedback");
+        $this->set_view("user/feedback","base3");
     }
 
     public function editfeedback($type = "want",$id = null)
@@ -430,7 +431,7 @@ class Usercenter extends CI_Controller
         $this->load->set_title($text . " - 用户中心 -  " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
-        $this->set_view("user/editsuccess");
+        $this->set_view("user/editsuccess","base3");
     }
     public function editsuccess($type = "want")
     {
@@ -449,7 +450,7 @@ class Usercenter extends CI_Controller
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/detail.js","/js/user/createfeedback.js"));
-        $this->set_view("user/createfeedback");
+        $this->set_view("user/createfeedback","base3");
     }
 
     public function createfeedbacksubmit()
@@ -544,7 +545,7 @@ class Usercenter extends CI_Controller
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
         $this->load->set_js(array("/js/user/notice.js"));
-        $this->set_view("user/notice");
+        $this->set_view("user/notice","base3");
     }
 
     public function delnotice()
@@ -646,7 +647,7 @@ class Usercenter extends CI_Controller
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css","/css/user/message.css"));
         $this->load->set_js(array("/js/user/message.js"));
-        $this->set_view("user/message");
+        $this->set_view("user/message","base3");
     }
 
     public function delmessage()
@@ -755,6 +756,6 @@ class Usercenter extends CI_Controller
         $this->load->set_head_img(false);
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/user/usercenter.css"));
-        $this->set_view("user/messageinfo");
+        $this->set_view("user/messageinfo","base3");
     }
 }

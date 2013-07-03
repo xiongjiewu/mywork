@@ -3,6 +3,8 @@
 <meta name="keywords" content="<?php echo APF::get_instance()->get_config_value("base_name");?>电影库,最新电影,电影排行榜,<?php echo APF::get_instance()->get_config_value("base_name");?>网"/>
 <meta property="qc:admins" content="5271500601611670646" />
 <meta property="wb:webmaster" content="80c06dc12155cdbd" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php if ($this->load->get_title()):?><?php echo $this->load->get_title();?><?php else:?>好吧<?php endif;?></title>
 <link rel="Shortcut Icon" href="/images/common/logohao.png" />
 <link href="/css/main/base2.css" rel="stylesheet">

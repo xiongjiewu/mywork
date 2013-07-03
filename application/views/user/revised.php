@@ -32,14 +32,15 @@
                     <div class="span9">
                         <div class="bs-docs-example">
                             <div class="user_image">
-                                <img src="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
+                                <?php $userImage = APF::get_instance()->get_image_url($userInfo['photo']);?>
+                                <img src="<?php echo $userImage;?>">
                                 <div class="doing"></div>
                                 <span class="btn shangchuan">上传头像</span>
                                 <span class="btn upload">上传</span>
                                 <span class="btn cancel">取消</span>
                                 <form name="userphone" id="userphone" target="upload_frame" method="post" action="<?php echo rtrim(get_url(APF::get_instance()->get_config_value("image_upload_url")),"/") . "/index/{$userId}/user";?>" autocomplete="off" enctype="multipart/form-data">
                                     <input type="file" size="1" class="image" name="image" id="image">
-                                    <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userInfo['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $userInfo['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"),"/") . APF::get_instance()->get_config_value("user_photo");?>">
+                                    <input type="hidden" name="moren_img" id="moren_img" value="<?php echo $userImage;?>">
                                     <input type="hidden" name="userphoto" id="userphoto" value="">
                                     <input type="submit" name="userphone_button" id="userphone_button" style="display: none;">
                                     <input type="submit" name="submit_button" class="submit_button" id="submit_button" style="display: none;">

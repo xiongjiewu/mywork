@@ -10,7 +10,7 @@ class Loginaction extends CI_Controller {
     {
         $result = array(
             "code" => "error",
-            "info" => "请输入登录帐号",
+            "info" => "请输入登录邮箱",
         );
         if (!isset($username)) {
             return $result;
@@ -20,9 +20,9 @@ class Loginaction extends CI_Controller {
             return $result;
         }
         $this->load->model('User');
-        $info = $this->User->getUserInfoByFiled(array("userName" => $username));
+        $info = $this->User->getUserInfoByFiled(array("email" => $username));
         if (empty($info)) {
-            $result['info'] = "帐号或密码不正确";
+            $result['info'] = "登录邮箱或密码不正确";
             return $result;
         } elseif ($info['password'] != base64_encode(md5($password))) {
             $result['info'] = "输入的密码不正确";
@@ -31,7 +31,7 @@ class Loginaction extends CI_Controller {
             $result['info'] = "此帐号已被管理员封禁";
             return $result;
         } else {
-            $this->setLoginCookie($username,$info['id'],86400,$remember);
+            $this->setLoginCookie($info['userName'],$info['id'],86400,$remember);
             $result['code'] = "success";
             $result['info'] = "success";
             return $result;

@@ -34,6 +34,9 @@ div.home_top ul li:hover {
     -moz-opacity:1;
     opacity: 1;
 }
+div.home_top ul li.top_last_li {
+    width: 95px;
+}
 div.home_top ul li a {
     float: left;
     width: 100%;
@@ -47,126 +50,33 @@ div.home_top ul li.li_over {
 div.home_top ul li.li_over_current {
     border: 1px solid #08A6CD;
 }
-div.home_top ul li div.home_top_dy_detail {
-    display: none;
-    position: absolute;
-    width: 86px;
-    height: 144px;
-    left: 100px;
-    top: -1px;
-    z-index: 10234;
-    background-color: #08A6CD;
-    padding: 3px;
-    padding-right: 10px;
-    border: 1px solid #08A6CD;
-}
-div.home_top ul li div.home_top_dy_detail_left {
-    left: -102px;
-}
-div.home_top ul li div.home_top_dy_detail div.home_top_dy_detail_info {
-    font-size: 13px;
-    float: left;
-    margin-left: 5px;
-    width: 100%;
-    height: 18px;
-    overflow: hidden;
-    margin-top: 5px;
-    white-space:nowrap;
-}
-div.home_top ul li div.home_top_dy_detail div.detail_name  {
-    height: 36px;
-    word-wrap: break-word;
-    word-break: normal;
-    font-size: 14px;
-}
 div.home_top ul li a img {
     float: left;
     width: 100%;
     height: 100%;
 }
-
-div.home_top ul li.web_count_main {
-    width: 28%;
-    height: 304px;
+/* 电影总数样式 start */
+div.movie_count_main {
+    float: left;
+    width: 100%;
+}
+div.count_real {
     float: right;
-    border: none;
-    cursor: default;
-    background-color: #3e3e3e;
-    filter:alpha(Opacity=100);
-    -moz-opacity:1;
-    opacity: 1;
-}
-div.home_top div.home_web {
-    height: 100%;
-    right: 0;
-    top: 0;
-    width: 100%;
-    background-color: #3e3e3e;
-}
-div.home_top div.home_web div.home_web_count {
-    float: left;
-    width: 100%;
-    height: 100%;
-    background: url("/images/common/dianyingqiang2.png") no-repeat 65px 35px transparent;
-}
-div.home_top div.home_web div.home_web_count span {
-    color: #FF7F24;
-    float: left;
-    font-size: 36px;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #444444;
+    font-family: "楷体";
     font-weight: bold;
-    margin-left: 136px;
-    margin-top: 112px;
 }
+div.count_real em {
+    color: #08A6CD;
+    font-style: normal;
+}
+/*电影总数样式 end*/
 div.home_middel_main {
     width: 1200px;
     margin: 20px auto;
-}
-div.tab_list {
-    float: left;
-    margin-top: 40px;
-    width: 100%;
-    height: 60px;
-    border-bottom: 1px dashed #ddd;
-    border-top: 1px dashed #ddd;
-}
-div.tab_list ul {
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-div.tab_list ul li {
-    position: relative;
-    float: left;
-    width: 300px;
-    height: 100%;
-}
-div.tab_list ul li a {
-    bottom: 0;
-    height: 60px;
-    left: 10px;
-    position: absolute;
-    width: 173px;
-}
-div.tab_list ul li.tab_list_li_1 a {
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -52px transparent;
-}
-div.tab_list ul li.tab_list_li_1 a:hover {
-    height: 93%;
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -32px -114px transparent;
-}
-div.tab_list ul li.tab_list_li_2 a {
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -212px -52px transparent;
-    left: 100px;
-}
-div.tab_list ul li.tab_list_li_3 a {
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -31px -175px transparent;
-    height: 40px;
-    left: 131px;
-}
-div.tab_list ul li.tab_list_li_4 a {
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -214px -124px transparent;
-    height: 40px;
-    left: 187px;
 }
 div.movice_info_list {
     width: 100%;
@@ -188,8 +98,9 @@ div.movice_info_list div.info_list {
     float: left;
 }
 div.movice_info_list div.info_list ul {
-    margin: 0;
     padding: 0;
+    float: left;
+    margin: 0 5px;
 }
 div.movice_info_list div.info_list ul li {
     float: left;
@@ -361,7 +272,7 @@ div.movice_info_list div.info_list ul li:hover p.today_name a.t_name {
     color: #08A6CD;
 }
 div.movice_class_info_list div.info_list {
-    width: 855px;
+    width: 860px;
 }
 div.movice_info_list div.info_list ul li.other_li:hover {
     cursor: pointer;
@@ -379,7 +290,8 @@ div.movice_info_list div.info_list ul li.other_li p a:hover {
 div.movice_class_info_list div.info_list ul li.first_one_li {
     width: 138px;
     height: 392px;
-    background-color: #fdfdfd;
+    background: url("/images/common/jianbian.png") repeat-x 0 0 transparent;
+    border-top: none;
 }
 div.movice_class_info_list div.info_list ul li.first_one_li div {
     float: left;
@@ -419,13 +331,17 @@ div.movice_class_info_list div.info_list ul li.first_one_li div span.type_info a
 /*经典电影豆瓣top10列表 start*/
 div.top_info_list {
     float: left;
-    background-color: #f8f8f8;
+    background-color: #fafafa;
     border: 1px solid #ccc;
-    /*height: 370px;*/
     width: 300px;
     margin-left: 6px;
-    padding: 10px;
     margin-top: 5px;
+}
+div.top_info_list div.top_title {
+    float: left;
+    width: 280px;
+    background: url("/images/common/jianbian.png") repeat-x 0 0 transparent;
+    padding: 10px 10px 0 10px;
 }
 div.top_info_list span {
     float: left;
@@ -462,15 +378,18 @@ div.top_info_list span.fisrt_s em {
 }
 div.top_info_list span.top_jieshao {
     float: left;
-    width: 165px;
+    width: 145px;
     margin-left: 10px;
     font-size: 13px;
-    height: 104px;
+    height: 99px;
     overflow: hidden;
     color: #AAAAAA;
 }
 div.top_info_list div.top_get {
+    background: url("/images/common/jianbian.png") repeat-x 0 0 transparent;
     float: left;
+    width: 280px;
+    padding: 0 10px 10px 10px;
 }
 div.top_info_list span.top_first_list {
     height: 127px;
@@ -725,3 +644,142 @@ div.yaoyao_movice_info div.yaoyao_movice_info_list table tr th span.close_yaoyao
     float: right;
 }
 /*摇摇朦胧效果 end*/
+/*中间索引条 start*/
+div.type_main {
+    float: left;
+    width: 1200px;
+    margin-top: 40px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #08A6CD #D0D0D0 #D0D0D0;
+    border-image: none;
+    border-radius: 5px 5px 5px 5px;
+    border-right: 1px solid #D0D0D0;
+    border-style: solid;
+    border-width: 2px 1px 1px;
+    height: 130px;
+}
+div.tab_type_list {
+    float: left;
+    background:url("/images/head/ico_movie_bg.png") 0 -200px;
+    background-repeat: repeat-x;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    height: 128px;
+    padding: 0 8px;
+}
+div.tab_type_list div.list_type {
+    float: left;
+    display: inline;
+    float: left;
+    font-size: 14px;
+    margin-left: 6px;
+    margin-top: 33px;
+    position: relative;
+    width: 372px;
+}
+div.tab_type_list div.list_place {
+    width: 193px;
+}
+div.tab_type_list div.list_type span.type_type {
+    color: #08A6CD;
+    display: inline-block;
+    font-size: 18px;
+    height: 26px;
+    left: 0;
+    line-height: 22px;
+    position: absolute;
+    text-align: center;
+    top: -28px;
+    width: 66px;
+}
+div.tab_type_list div.list_type ul {
+    float: left;
+    overflow: hidden;
+}
+div.tab_type_list div.list_type ul li {
+    border-left: 1px solid #DFDFE0;
+    float: left;
+    margin-left: -1px;
+    padding: 0 4px;
+    width: 56px;
+}
+div.tab_type_list div.type_info ul li {
+    width: 44px;
+}
+div.tab_type_list div.list_type ul li a {
+    display: inline-block;
+    height: 23px;
+    line-height: 23px;
+    margin: 0 0 4px;
+    overflow: hidden;
+    padding: 0 7px;
+    color:#444444;
+}
+div.tab_type_list div.list_type ul li a:hover {
+    border-radius: 2px;
+    background-color: #08A6CD;
+    color: #fff;
+}
+div.middel_line {
+    background: none repeat scroll 0 0 #DADADA;
+    border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 100%;
+    width: 1px;
+}
+/*中间索引条 end*/
+
+/*系列专题 start */
+div.movie_serial {
+    float: left;
+    width: 1200px;
+    border: 1px solid #CCCCCC;
+    height: 200px;
+    background-color: #fafafa;
+}
+div.movie_serial div.title_list {
+    float: left;
+    width: 380px;
+    padding: 20px;
+    padding-right: 30px;
+    background: url("/images/common/jianbian.png") repeat-x scroll 0 0 transparent;
+}
+div.movie_serial div.jiangxiang {
+    width: 285px;
+}
+div.movie_serial div.title_list div.s_title {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+div.movie_serial div.title_list div.s_title h1 {
+    margin: 0;
+    padding-right: 0;
+    font-size: 24px;
+    color: #444;
+}
+div.s_movie_list {
+    float: left;
+}
+div.s_movie_list ul {
+    float: left;
+    width: 100%;
+}
+div.s_movie_list ul li {
+    float: left;
+    height: 30px;
+}
+div.s_movie_list ul li a {
+    float: left;
+    padding: 5px;
+    color: #444;
+}
+div.s_movie_list ul li a:hover {
+    color: #fff;
+    background-color: #08A6CD;
+    border-radius: 2px;
+}
+/*系列专题 end */

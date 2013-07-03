@@ -1,6 +1,10 @@
-<a class="go_to_top" title="回到顶部"></a>
+<?php $this->load->view("component/ideapan");//返回顶部与提出意见标签?>
 <input type="hidden" name="current_id" id="current_id" value="">
 <div class="upcoming_main">
+    <div class="guide">
+        <a href="/">首页 </a>>
+        <span> 即将上映</span>
+    </div>
     <?php if (!empty($movieList)): ?>
         <?php $movieListI = 1; ?>
         <?php foreach ($movieList as $movieKey => $movieVal): ?>
@@ -66,6 +70,7 @@
             <?php $movieListI++; ?>
         <?php endforeach; ?>
     <?php endif; ?>
+    <div class="clear"></div>
 </div>
 <script type="text/javascript">
     (function($){

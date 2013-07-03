@@ -6,7 +6,7 @@
 class Welcome extends CI_Controller {
 
     private $_limit = 18;//最新上映和即将上映电影个数
-    private $_topMovieLimit = 34;//电影墙电影个数
+    private $_topMovieLimit = 42;//电影墙电影个数
     private $_cacheP = "home_total_dy_info_";//缓存前缀
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
         $classDyInfo = $doubanTopMovice = $doubanDetailInfo = array();
         if ($homeTotalDyInfo === false) {
             //电影墙信息
-            $conStr = "exist_watch = 1";
+            $conStr = "exist_watch = 1 and del = 0 order by createtime desc";
             $topMovieInfos = $this->Backgroundadmin->getDetailInfoByCondition($conStr,0,100);
             $homeTotalDyInfo['topMovieInfos'] = $topMovieInfos;
 
@@ -126,7 +126,8 @@ class Welcome extends CI_Controller {
 
 
             //今日推荐
-            $todayMovieList = $this->Backgroundadmin->getDetailInfoByCondition("",0,$this->_todayLimit);
+            $todayConStr = "del = 0 order by createtime desc";
+            $todayMovieList = $this->Backgroundadmin->getDetailInfoByCondition($todayConStr,0,$this->_todayLimit);
             $homeTotalDyInfo['todayMovieList'] = $todayMovieList;
 
             //新缓存起来，1天
@@ -168,7 +169,7 @@ class Welcome extends CI_Controller {
         }
         $this->set_attr("willDyInfo",$willDyInfo);
         //经典电影
-        $classDyInfo = array_slice($classDyInfo,0,$this->_limit - 5);
+        $classDyInfo = array_slice($classDyInfo,0,$this->_limit - 3);
         shuffle($classDyInfo);
         $this->set_attr("classDyInfo",$classDyInfo);
 
@@ -188,8 +189,21 @@ class Welcome extends CI_Controller {
 
         //类型信息
         $this->set_attr("moviceType",$this->_movieType);
+        //年份信息
+        $movieNianFen = $this->_movieNianFen;
+        rsort($movieNianFen);
+        $this->set_attr("movieNianFen",$movieNianFen);
+        //地区信息
+        $this->set_attr("moviePlace",$this->_moviePlace);
         //分类信息
         $this->set_attr("movieSortType",APF::get_instance()->get_config_value("movie_type"));
+        //演员
+        $yanYuan = APF::get_instance()->get_config_value("dianyingku_yanyuan");
+        $this->set_attr("yanYuan",array_slice($yanYuan,0,8));
+        //导演
+        $daoYan = APF::get_instance()->get_config_value("dianyingku_daoyan");
+        $this->set_attr("daoYan",array_slice($daoYan,0,8));
+
         $this->set_attr("baseNum",6);
         $this->load->set_css(array("/css/index/home2.css"));
         $this->load->set_js(array("/js/index/home2.js"));

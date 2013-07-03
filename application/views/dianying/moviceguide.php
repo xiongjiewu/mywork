@@ -1,3 +1,4 @@
+<?php $this->load->view("component/ideapan");//返回顶部与提出意见标签?>
 <input type="hidden" name="current_id" id="current_id" value="">
 <div class="classmovice_main">
     <div class="classmovice_list">
