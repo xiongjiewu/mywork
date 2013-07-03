@@ -128,10 +128,10 @@
                         </td>
                     </tr>
                     <tr>
-                       <td><a class="qq_register" href="/weblogin/qq/"></a></td>
+                        <td><a class="weibo_register" href="/weblogin/weibo/"></a></td>
                     </tr>
                     <tr>
-                        <td><a class="weibo_register" href="/weblogin/weibo/"></a></td>
+                       <td><a class="qq_register" href="/weblogin/qq/"></a></td>
                     </tr>
                     <tr>
                         <td><a class="renren_register" href="/weblogin/renren/"></a></td>

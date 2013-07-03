@@ -54,12 +54,12 @@
                     </tr>
                     <tr>
                         <td class="user_input app_login">
-                            <a class="qq_login" href="/weblogin/qq/"></a>
+                            <a class="weibo_login" href="/weblogin/weibo/"></a>
                         </td>
                     </tr>
                     <tr>
                         <td class="user_input app_login">
-                            <a class="weibo_login" href="/weblogin/weibo/"></a>
+                            <a class="qq_login" href="/weblogin/qq/"></a>
                         </td>
                     </tr>
                     <tr>
