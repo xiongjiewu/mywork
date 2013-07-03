@@ -162,9 +162,13 @@
         <?php if (!empty($watchLinkInfo) || !empty($downLoadLinkInfo)): ?>
             <div class="watch_down_link">
                 <div class="tab">
-                    <span class="watch_link current_tab" type="watch">观看地址</span>
-                    <i class="fenge_line"></i>
-                    <span class="down_link" type="down">下载地址</span>
+                    <?php if (!empty($watchLinkInfo)):?>
+                        <span class="watch_link current_tab" type="watch">观看地址</span>
+                        <i class="fenge_line"></i>
+                    <?php endif;?>
+                    <?php if (!empty($downLoadLinkInfo)):?>
+                        <span class="down_link<?php if (empty($watchLinkInfo)):?> current_tab<?php endif;?>" type="down">下载地址</span>
+                    <?php endif;?>
                 </div>
                 <?php if (!empty($watchLinkInfo)):?>
                 <div class="watchLink_list watch">

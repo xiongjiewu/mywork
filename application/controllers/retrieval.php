@@ -150,7 +150,8 @@ class Retrieval extends CI_Controller {
             exit;
         } else {
             foreach($infoList as $infoKey => $infoVal) {
-                $infoList[$infoKey]['url'] = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
+                $pageName = ($b == "d") ? "detail" : "people";
+                $infoList[$infoKey]['url'] = APF::get_instance()->get_real_url("/{$pageName}",$infoVal['id']);
             }
             echo json_encode(array("code" => "success","info" => $infoList,"nextOffset" => count($infoList) + $nextOffset));
             exit;
