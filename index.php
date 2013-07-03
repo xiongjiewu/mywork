@@ -1,5 +1,5 @@
 <?php
-define('ENVIRONMENT', 'development');
+define('ENVIRONMENT', 'production');
 if (defined('ENVIRONMENT')) {
     switch (ENVIRONMENT) {
         case 'development':
