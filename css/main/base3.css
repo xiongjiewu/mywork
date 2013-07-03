@@ -1,0 +1,298 @@
+div.new_head {
+    padding: 0;
+    margin: 0;
+    height: 35px;
+    width: 100%;
+    position: fixed;
+    background: url("/images/newhead/daohang_bg.png") repeat 0 0 transparent;
+    z-index: 100102;
+}
+div.new_head_mian {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+div.new_head_mian ul {
+    float: left;
+    width: 100%;
+}
+div.new_head_mian ul li {
+    float: left;
+    padding: 0 10px;
+    margin-top: 8px;
+}
+div.new_head_mian ul li a {
+    float: left;
+    color: #2b2b2b;
+    font-size: 15px;
+}
+div.new_head_mian ul li a:hover {
+    text-decoration: underline;
+}
+div.new_head_mian ul li a.current {
+    color: #08A6BC;
+}
+div.new_head_mian ul li.new_logo {
+    margin: 0;
+    padding: 0;
+}
+div.new_head_mian ul li.new_logo a {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll 1px -203px transparent;
+    color: #A4A4A4;
+    font-family: "time new roma";
+    font-size: 18px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 65px;
+    text-decoration: none;
+    width: 65px;
+}
+div.new_head_mian ul li span.fenge_line {
+    float: left;
+    background: none repeat scroll 0 0 #DADADA;
+    border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 15px;
+    width: 1px;
+    margin-top: 2px;
+}
+div.new_head_mian ul li.search_k {
+    border: 1px solid #bbb;
+    height: 25px;
+    margin-top: 4px;
+    padding-left:1px;
+    padding-right: 1px;
+    background-color: #fff;
+    position: relative;
+}
+/*搜索框匹配填充 start*/
+div.new_head_mian ul li.search_k div.about_search {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #bbb;
+    display: none;
+    left: -1px;
+    position: absolute;
+    top: 25px;
+    width: 181px;
+    z-index: 99999;
+}
+div.new_head_mian ul li.search_k div.about_search ul {
+    float: left;
+    width: 100%;
+}
+div.new_head_mian ul li.search_k div.about_search ul li {
+    color: #777777;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    list-style: none outside none;
+    margin-top: 0;
+    padding: 10px;
+    position: relative;
+    width: 161px;
+}
+div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover {
+    background-color: #08A6CD;
+    color: #fff;
+}
+div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list table,
+div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list table tr th,
+div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list table tr th
+{
+    color: #777;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list {
+    display: none;
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    height: 210px;
+    left: 181px;
+    padding: 10px;
+    position: absolute;
+    top: -1px;
+    width: 300px;
+    cursor: default;
+    z-index: 100000;
+}
+div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list{
+    display: block;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_img {
+    float: left;
+    width: 100px;
+    height: 150px;
+    background-color: #eee;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_img a,
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_img a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail {
+    float: left;
+    width: 190px;
+    margin-left: 10px;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table {
+    float: left;
+    background-color: #fff;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table a {
+    color: #555;
+    text-decoration: none;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table a:hover {
+    color: #08A6CD;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table a.about_info_list_detail_play {
+    color: #08A6CD;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table tr th,
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table tr td {
+    text-align: left;
+    font-size: 14px;
+    width: 190px;
+    float: left;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table tr td {
+    height: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table tr td.jianjie {
+    height: 50px;
+}
+div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table tr td a.about_info_list_detail_play {
+    float: left;
+}
+/*搜索框匹配填充 end*/
+div.new_head_mian ul li.search_k input.search_n {
+    float: left;
+    width: 150px;
+    height: 21px;
+    padding: 2px;
+    border: none;
+    color: #aaa;
+}
+div.new_head_mian ul li.search_k input.su_button {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -172px -37px transparent;
+    float: left;
+    height: 25px;
+    width: 25px;
+    border: none;
+    border-left:1px solid #bbb;
+    cursor: pointer;
+}
+div.new_head_mian ul li.look {
+    margin-top: 0;
+    padding-top: 8px;
+    padding-right: 4px;
+    position: relative;
+    width: 80px;
+    cursor: pointer;
+}
+div.new_head_mian ul li.look:hover {
+    width: 78px;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    background-color: #fff;
+}
+div.new_head_mian ul li.look a {
+    margin-left: 1px;
+}
+div.new_head_mian ul li.look i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -201px -33px transparent;
+    float: left;
+    height: 25px;
+    width: 17px;
+}
+div.new_head_mian ul li.look div.look_info {
+    position: absolute;
+    width: 250px;
+    right: -1px;
+    top: 33px;
+    background-color: #fff;
+    z-index: 10019;
+    border: 1px solid #bbb;
+    border-top: none;
+    display: none;
+    cursor: default;
+    padding: 10px;
+}
+div.new_head_mian ul li.look div.look_info ul {
+    float: left;
+    width: 100%;
+}
+div.new_head_mian ul li.look div.look_info ul li {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+div.new_head_mian ul li.look div.look_info ul li a {
+    color: #999;
+}
+div.new_head_mian ul li.look div.look_info ul li span {
+    float: right;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+div.new_head_mian ul li.look div.look_info ul li:hover a,div.new_head_mian ul li.look div.look_info ul li span a {
+    color: #08A6CD;
+}
+div.new_head_mian ul li.login {
+    margin-left: 15px;
+}
+div.new_head_mian ul li.username {
+    margin-left: 5px;
+    /*width: 80px;*/
+    height: 26px;
+    overflow: hidden;
+    padding-top: 8px;
+    margin-top: 0;
+    position: relative;
+}
+div.new_head_mian ul li.username i {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -292px -9px transparent;
+    float: left;
+    padding: 10px;
+}
+div.new_head_mian ul li.username:hover {
+    /*background-color: #fff;*/
+}
+div.new_head_mian ul li.username a.logout {
+    font-size: 13px;
+}
+div.new_head_mian ul li.username div.user_account {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: #fff;
+    left: 0;
+    top: 35px;
+    z-index: 101;
+    display: none;
+}
+div.new_head_mian ul li.look:hover a {
+    margin-left: 0;
+}
+div.new_head_mian ul li.look:hover div.look_info {
+    display: block;
+}
+div.container {
+    margin-top: 60px;
+}
+div.guide {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #999999;
+    font-size: 13px;
+}
+div.guide a {
+    color: #010101;
+}
+div.guide a:hover {
+    color: #08a6bc;
+}

@@ -186,44 +186,14 @@ var initOjb = {
         $(window).bind("scroll", function() {//当滚动条滚动时
             if ($(window).scrollTop() > 50) {
                 $("a.go_to_top").show();
+                $("a.give_idea").show();
             } else {
                 $("a.go_to_top").hide();
+                $("a.give_idea").hide();
             }
         });
         $("a.go_to_top").bind("click",function(){
             $(window).scrollTop(0);
-        });
-        var topTabLiObj = $("div.header_tab ul li");
-        topTabLiObj.each(function() {
-            var that = $(this);
-            that.bind("mouseover",function() {
-                var type = that.attr("type");
-                if (type) {
-                    var smallMenusObj = that.parent().parent().find("div." + type);
-                    if (smallMenusObj.length > 0) {
-                        smallMenusObj.show();
-                    }
-                }
-            });
-            that.bind("mouseleave",function() {
-                var type = that.attr("type");
-                if (type) {
-                    var smallMenusObj = that.parent().parent().find("div." + type);
-                    if (smallMenusObj.length > 0) {
-                        smallMenusObj.hide();
-                    }
-                }
-            });
-        });
-        var smallMenusObj = $("div.small_menus_list");
-        smallMenusObj.each(function() {
-            var that = $(this);
-            that.bind("mouseover",function() {
-                that.show();
-            });
-            that.bind("mouseleave",function() {
-                that.hide();
-            });
         });
         $("a").each(function() {
            $(this).bind("focus",function() {
@@ -233,6 +203,7 @@ var initOjb = {
         //登录按钮点击事件
         $(".login_total_page").bind("click",function() {
             logPanInit.showLoginPan("initOjb.loginCallBack");
+            return false;
         });
     });
 })(jQuery);

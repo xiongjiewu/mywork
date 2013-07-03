@@ -1,32 +1,5 @@
 div.research_content {
-    margin-top: 40px;
-    float: left;
-    width: 94%;
-}
-div.research_content table {
-    width: 100%;
-    float: left;
-}
-div.research_content table tr td {
-    padding:20px 50px 0 50px;
-    float: left;
-}
-div.research_content table tr td span input {
-    margin-top: -2px;
-    margin-right: 5px;
-}
-div.research_content table tr td span {
-    line-height: 10px;
-    margin-left: 20px;
-}
-div.research_content table tr td.textarea_text textarea{
-    width: 700px;
-    height: 200px;
-}
-div.research_content table tr td.last_one {
-    padding-bottom: 50px;
-}
-code {
-    border: none;
-    background: none;
+    margin: 40px auto;
+    width: 1200px;
+    background-color: #fff;
 }

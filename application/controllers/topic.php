@@ -4,6 +4,10 @@
  * added by xiongjiewu at 2013-3-4
  */
 class Topic extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
+        $this->load->set_top_index(-1);
+    }
 
     public function index($id = null)
     {
@@ -31,6 +35,6 @@ class Topic extends CI_Controller {
         $this->load->set_top_index(-1);
         $this->load->set_head_img(false);
         
-        $this->set_view("member/topic");
+        $this->set_view("member/topic","base3");
     }
 }

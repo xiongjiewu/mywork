@@ -1,0 +1,222 @@
+div.people_main {
+    width: 1200px;
+    margin: 40px auto;
+}
+div.people_left {
+    float: left;
+    width: 218px;
+}
+div.people_photo {
+    background: url("/images/common/renwu_sucai.png") no-repeat scroll -6px -190px transparent;
+    float: left;
+    height: 263px;
+    width: 208px;
+    padding: 5px;
+}
+div.people_photo img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.people_info {
+    float: left;
+    width: 214px;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+div.people_info ul {
+    float: left;
+    width: 100%;
+}
+div.people_info ul li {
+    float: left;
+    width: 194px;
+    height: 25px;
+    overflow: hidden;
+    line-height: 30px;
+    padding: 5px 10px;
+    border-bottom: 2px solid #ddd;
+    background-color: #f0f1f2;
+    font-family: "宋体";
+    font-size: 13px;
+}
+div.people_info ul li.name {
+    background-color: #e6e6e6;
+    color: #49474c;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+div.people_info ul li.last_info {
+    background: url("/images/common/renwu_sucai.png") no-repeat scroll -8px -469px transparent;
+    border-bottom: medium none;
+}
+
+div.people_right {
+    float: left;
+    width: 940px;
+    padding: 10px;
+    padding-top: 0;
+    margin-left: 20px;
+}
+div.right_top {
+    float: left;
+    width: 100%;
+}
+div.jieshao {
+    float: left;
+    width: 600px;
+}
+div.jieshao dl {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+div.jieshao dl dt {
+    float: left;
+    width: 100%;
+    padding: 0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    font-family: "微软雅黑";
+    border-bottom: 2px solid #ddd;
+}
+div.jieshao dl dd {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 13px;
+    color: #414141;
+    font-family: "宋体";
+    line-height: 25px;
+}
+div.jieshao dl dd a {
+    font-size: 15px;
+}
+div.jieshao dl dd a:hover {
+    text-decoration: underline;
+}
+div.prize {
+    margin-top: 40px;
+}
+
+div.peopel_ph {
+    float: right;
+    margin-top: 0;
+    width: 230px;
+    margin-right: 40px;
+}
+div.peopel_ph ul {
+    float: left;
+    width: 100%;
+}
+div.peopel_ph ul li {
+    float: left;
+    width: 100%;
+}
+div.peopel_ph ul li.title {
+    padding: 5px;
+    padding-right: 0;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+div.peopel_ph ul li.title a {
+    font-weight: 100;
+    font-size: 13px;
+    float: right;
+    color: #333;
+    font-family: "宋体";
+}
+div.peopel_ph ul li.photo_info {
+    background: url("/images/common/renwu_sucai.png") repeat scroll 0 0 transparent;
+    height: 150px;
+    width: 184px;
+    padding: 20px;
+    padding-left: 30px;
+    margin-left: 3px;
+}
+div.peopel_ph ul li.photo_info a,div.peopel_ph ul li.photo_info a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+div.peopel_ph ul li.img_count {
+    margin-left: 20px;
+    font-size: 14px;
+}
+div.peopel_ph ul li.img_count span {
+    color: red;
+}
+div.movie_list {
+    float: left;
+    width: 800px;
+    margin-top: 40px;
+}
+div.movie_list ul {
+    float: left;
+    width: 100%;
+}
+div.movie_list ul li {
+    float: left;
+    width: 115px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+div.movie_list ul li.last {
+    margin-right: 0;
+}
+div.movie_list ul li.movie_title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px 10px 5px;
+    border-bottom: 2px solid #ddd;
+    margin-top: 0;
+    margin-right: 0;
+}
+div.movie_list ul li a.img {
+    float: left;
+    width: 100%;
+    height: 160px;
+    background-color: #fff;
+}
+div.movie_list ul li a.img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.movie_list ul li span {
+    float: left;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+div.movie_list ul li span a {
+    color: #333;
+}
+div.img_list {
+    margin-top: 0;
+}
+div.img_list ul li.movie_title a {
+    margin-left: 30px;
+    font-size: 13px;
+    font-weight: 100;
+}
+div.img_list ul li.info {
+    width: 150px;
+    height: 200px;
+}
+div.img_list ul li img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}

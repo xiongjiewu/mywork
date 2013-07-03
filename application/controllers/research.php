@@ -6,16 +6,6 @@
 class Research extends CI_Controller {
 
     public function index() {
-        //不展示调查问卷提示框
-        $this->_attr['showResearchPan'] = false;
-
-        //用户已参加过调查问卷
-        if (empty($this->_attr['notDoResearch'])) {
-            $this->jump_to("/error/index/6/");
-            exit;
-        }
-
-        $ip = $this->getUserIP();
         $params = $this->input->post();
         if (!empty($params) && is_array($params)) {
             $params['content'] = mysql_real_escape_string($params['content']);
@@ -36,7 +26,7 @@ class Research extends CI_Controller {
 
         $this->load->set_head_img(false);
         $this->load->set_top_index(5);
-        $this->load->set_title("功能问卷调查 - " . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("意见反馈 - " . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/member/research.css"));
         $this->load->set_js(array("js/member/research.js"));
         $this->set_view('member/research');

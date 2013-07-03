@@ -354,7 +354,12 @@ a.jump_login:hover {
     color: #333;
     background-position: right -40px;
 }
-
+.register_main .register_main_right table tr td {
+    float: left;
+}
+td.has {
+    margin-top: 30px;
+}
 a.jump_login i {
     background: url("/images/Login/comm_img.gif") no-repeat scroll 0 0 transparent;
     height: 38px;
@@ -366,3 +371,44 @@ a.jump_login i {
     visibility: visible;
     width: 3px;
 }
+/* 第三方登录接口 start */
+a.qq_register {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -60px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.qq_register:hover {
+    background-position: -213px -60px;
+}
+a.weibo_register {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px 3px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.weibo_register:hover {
+    background-position: -213px 3px;
+}
+a.renren_register {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -186px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.renren_register:hover {
+    background-position: -213px -186px;
+}
+/* 第三方登录接口 end */

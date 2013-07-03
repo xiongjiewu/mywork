@@ -36,7 +36,11 @@ class Uploadimage extends CI_Controller {
             $fileNameArr = explode(".",$imageFullPath);
             $fileType = $fileNameArr[count($fileNameArr) - 1];//图片类型
             $this->load->model('Resizeimage');
-            $resizeImageInfo = $this->Resizeimage->resizeImageDo(imagecreatefromjpeg($data['upload_data']['full_path']),$width,$height,$config['upload_path'],$config['file_name'] . "_{$width}x{$height}.",$fileType);
+            $resizeImageInfo = $data['upload_data']['full_path'];
+            $simage = $this->_getImage($resizeImageInfo);
+            if (!empty($simage)) {
+                $resizeImageInfo = $this->Resizeimage->resizeImageDo($simage,$width,$height,$config['upload_path'],$config['file_name'] . "_{$width}x{$height}.",$fileType);
+            }
 
             //获取图片地址
             $imageFullPathArr = explode("images",$resizeImageInfo);
@@ -48,5 +52,26 @@ class Uploadimage extends CI_Controller {
             unset($result["error"]);
         }
         $this->load->view('uploadfile/uploadfilereturn',array("data"=>$result));
+    }
+
+    private function _getImage($resizeImageInfo) {
+        $imageInfo = getimagesize($resizeImageInfo);
+        switch ($imageInfo[2]) {
+            case 1:
+                $simage = imagecreatefromgif($resizeImageInfo);
+                break;
+            case 2:
+                $simage = imagecreatefromjpeg($resizeImageInfo);
+                break;
+            case 3:
+                $simage = imagecreatefrompng($resizeImageInfo);
+                break;
+            case 6:
+                $simage = imagecreatefromwbmp($resizeImageInfo);
+                break;
+            default:
+                $simage = false;
+        }
+        return $simage;
     }
 }

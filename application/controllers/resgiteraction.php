@@ -14,25 +14,18 @@ class Resgiteraction extends CI_Controller {
         if (!isset($username)) {
             return $result;
         } elseif (mb_strlen($username,"UTF-8") < 2) {
-            $result['info'] = '登录账号不能少于2个字符';
+            $result['info'] = '昵称不能少于2个字符';
             return $result;
         } else if (mb_strlen($username,"UTF-8") > 20) {
-            $result['info'] = '登录账号不能超过20个字符';
+            $result['info'] = '昵称不能超过20个字符';
             return $result;
         } elseif(!preg_match("/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u",$username)) {
-            $result['info'] = '登录账号只能由中英文、数字和下划线组成';
+            $result['info'] = '昵称只能由中英文、数字和下划线组成';
             return $result;
         }
-        $this->load->model('User');
-        $info = $this->User->getUserInfoByFiled(array("userName" => $username));
-        if (!empty($info)) {
-            $result['info'] = '登录帐号已存在';
-            return $result;
-        } else {
-            $result['code'] = 'success';
-            $result['info'] = 'success';
-            return $result;
-        }
+        $result['code'] = 'success';
+        $result['info'] = 'success';
+        return $result;
     }
 
     public function checkusername()
@@ -45,18 +38,18 @@ class Resgiteraction extends CI_Controller {
     {
         $result = array(
             "code" => "error",
-            "info" => "安全邮箱不能为空",
+            "info" => "登录邮箱不能为空",
         );
         if (!isset($email)) {
             return $result;
         } elseif(!preg_match("/^[0-9a-zA-Z]+(?:[\_\-][a-z0-9\-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]+$/i", $email)) {
-            $result['info'] = '安全邮箱格式不正确';
+            $result['info'] = '登录邮箱格式不正确';
             return $result;
         }
         $this->load->model('User');
         $info = $this->User->getUserInfoByFiled(array("email" => $email));
         if (!empty($info)) {
-            $result['info'] = '安全邮箱已存在';
+            $result['info'] = '登录邮箱已存在';
             return $result;
         } else {
             $result['code'] = 'success';

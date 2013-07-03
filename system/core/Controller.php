@@ -80,9 +80,6 @@ class CI_Controller
             $this->_attr['userName'] = $this->userName;
         }
 
-        $this->_attr['showResearchPan'] = false;
-        $this->_attr['notDoResearch'] = false;
-
         //热门搜索关键词
         $searchCacheInfo = APF::get_instance()->get_config_value("search_hot_word","word");
         //按搜索个数降序排序
@@ -154,13 +151,13 @@ class CI_Controller
             );
         } else {
             $result[] = array(
-                "link" => $base_url  . "1/",
+                "link" => $base_url  . "1",
                 "page" => "首页",
                 "able" => true,
                 "current" => false,
             );
             $result[] = array(
-                "link" => $base_url . ($page - 1) . "/",
+                "link" => $base_url . ($page - 1),
                 "page" => "«",
                 "able" => true,
                 "current" => false,
@@ -168,7 +165,7 @@ class CI_Controller
         }
         for ($i = $min; $i <= $max; $i++) {
             $result[] = array(
-                "link" => $base_url . $i . "/",
+                "link" => $base_url . $i,
                 "page" => $i,
                 "able" => true,
                 "current" => ($i == $page) ? true : false,
@@ -189,13 +186,13 @@ class CI_Controller
             );
         } else {
             $result[] = array(
-                "link" => $base_url . ($page + 1) . "/",
+                "link" => $base_url . ($page + 1) ,
                 "page" => "»",
                 "able" => true,
                 "current" => false,
             );
             $result[] = array(
-                "link" => $base_url  . $totalPage ."/",
+                "link" => $base_url  . $totalPage,
                 "page" => "尾页",
                 "able" => true,
                 "current" => false,

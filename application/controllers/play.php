@@ -67,9 +67,7 @@ class Play extends CI_Controller {
 
         $this->load->set_title("{$dyInfo['name']} 在线观看 - "  . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/play.css"));
-        $this->load->set_js(array("js/xheditor-1.2.1/xheditor-1.2.1.min.js","js/xheditor-1.2.1/xheditor_lang/zh-cn.js","js/dianying/play.js"));
-        $this->load->set_top_index(-1);
-        $this->load->set_head_img(false);
+        $this->load->set_js(array("js/dianying/play.js"));
         $this->set_attr("qingxiType",$this->_qingxiType);
         $this->set_attr("shoufeiType",$this->_shoufeiType);
         $this->set_attr("bofangqiType",$this->_bofangqiType);

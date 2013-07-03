@@ -11,8 +11,7 @@ class Password extends CI_Controller {
             $this->jump_to("/");
             exit;
         }
-        //不展示调查问卷提示框
-        $this->_attr['showResearchPan'] = false;
+        $this->load->set_top_index(-1);
     }
 
     public function index()
@@ -27,7 +26,7 @@ class Password extends CI_Controller {
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
         $this->load->set_js(array("/js/member/password.js"));
-        $this->set_view("member/password");
+        $this->set_view("member/password","base3");
     }
 
     public function sendsuccess($id = null) {
@@ -55,7 +54,7 @@ class Password extends CI_Controller {
         $this->load->set_top_index(-1);
         $this->load->set_login_pan(false);
         $this->load->set_css(array("/css/member/sendsuccess.css"));
-        $this->set_view("member/sendsuccess");
+        $this->set_view("member/sendsuccess","base3");
     }
 
     public function change() {
@@ -83,6 +82,6 @@ class Password extends CI_Controller {
         $this->load->set_top_index(-1);
         $this->load->set_css(array("/css/member/password.css"));
         $this->load->set_js(array("/js/member/password.js"));
-        $this->set_view("member/changepassword");
+        $this->set_view("member/changepassword","base3");
     }
 }

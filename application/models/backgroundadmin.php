@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * 电影查询主要model
+ * Class Backgroundadmin
+ */
 class Backgroundadmin extends CI_Model {
 
     function __construct()
@@ -23,17 +26,7 @@ class Backgroundadmin extends CI_Model {
         "shichang" => array("null" => false,'title' => "时长"),
         "image" => array("null",'title' => "图片")
     );
-    private $_detailfInfoFild = array(
-        "id","name","type","jieshao","zhuyan","time0","time1","time2","time3","diqu","nianfen","daoyan","shichang","image","del","exist_watch",
-        "exist_down","playNum","downNum","searchNum","yaoyaoNum",
-    );
-    private $_watchLinkFild = array("id","infoId","link","player","qingxi","shoufei","beizhu");
-    private $_downLinkFild = array("id","infoId","link","size","type","sourceLink");
 
-    private function _getFiledStr()
-    {
-        return implode(",",$this->_detailfInfoFild);
-    }
     public function checkDetail($info = array())
     {
         $result = array(
@@ -105,8 +98,7 @@ class Backgroundadmin extends CI_Model {
         if (!$desc) {
             $desc = "order by id asc";
         }
-        $fildStr = implode(",",$this->_detailfInfoFild);
-        $sql = "select {$fildStr} from `tbl_detailInfo` where del = ? {$desc} limit ?,?;";
+        $sql = "select * from `tbl_detailInfo` where del = ? {$desc} limit ?,?;";
         $query = $this->db->query($sql,array($del,$offset,$limit));
         return $query->result_array();
     }
@@ -116,8 +108,7 @@ class Backgroundadmin extends CI_Model {
         if (!$desc) {
             $desc = "order by id asc";
         }
-        $fildStr = implode(",",$this->_detailfInfoFild);
-        $sql = "select {$fildStr} from `tbl_detailInfo` where time1>={$sTime} and time1<={$eTime} and del = ? {$desc};";
+        $sql = "select * from `tbl_detailInfo` where time1>={$sTime} and time1<={$eTime} and del = ? {$desc};";
         $query = $this->db->query($sql,array($del));
         return $query->result_array();
     }
@@ -136,8 +127,7 @@ class Backgroundadmin extends CI_Model {
         if (isset($del) && ($del !== null)) {
             $where .= " and del = {$del}";
         }
-        $fildStr = implode(",",$this->_detailfInfoFild);
-        $sql = "select {$fildStr} from `tbl_detailInfo` {$where}";
+        $sql = "select * from `tbl_detailInfo` {$where}";
         if (!$all) {
             $sql .= " limit 1";
         }
@@ -160,8 +150,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $fildStr = implode(",",$this->_watchLinkFild);
-        $sql = "select {$fildStr} from `tbl_watchLink` where infoId in ({$idStr});";
+        $sql = "select * from `tbl_watchLink` where infoId in ({$idStr});";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -182,8 +171,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $fildStr = implode(",",$this->_watchLinkFild);
-        $sql = "select {$fildStr} from `tbl_watchLink` where id in ({$idStr});";
+        $sql = "select * from `tbl_watchLink` where id in ({$idStr});";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -199,8 +187,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $fildStr = implode(",",$this->_downLinkFild);
-        $sql = "select {$fildStr} from `tbl_downLoad` where infoId in ({$idStr});";
+        $sql = "select * from `tbl_downLoad` where infoId in ({$idStr});";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -305,7 +292,7 @@ class Backgroundadmin extends CI_Model {
         if ($type != null) {
             $typeStr = "type = {$type} and ";
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$typeStr} del = {$del} order by createtime desc limit {$offset},$limit";
+        $sql = "select * from `tbl_detailInfo` where {$typeStr} del = {$del} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -335,7 +322,7 @@ class Backgroundadmin extends CI_Model {
             $where .= "nianfen = {$nianfen} and ";
         }
         $where .= "del = {$del}";
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where  {$where} order by createtime desc limit {$offset},$limit";
+        $sql = "select * from `tbl_detailInfo` where  {$where} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -366,7 +353,7 @@ class Backgroundadmin extends CI_Model {
             $where .= "diqu = {$diqu} and ";
         }
         $where .= "del = {$del}";
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} order by createtime desc limit {$offset},$limit";
+        $sql = "select * from `tbl_detailInfo` where {$where} order by createtime desc limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -389,7 +376,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($searchW)) {
             return false;
         }
-        $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where name like '{$searchW}%'";
+        $sql = "select * from `tbl_detailInfo` where name like '{$searchW}%'";
         if ($other) {
             $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
@@ -404,7 +391,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($searchW)) {
             return false;
         }
-        $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where name = '{$searchW}'";
+        $sql = "select * from `tbl_detailInfo` where name = '{$searchW}'";
         if ($other) {
             $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
@@ -419,7 +406,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($searchW)) {
             return false;
         }
-        $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where zhuyan like '{$searchW}%'";
+        $sql = "select * from `tbl_detailInfo` where zhuyan like '{$searchW}%'";
         if ($other) {
             $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
@@ -434,7 +421,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($searchW)) {
             return false;
         }
-        $sql = "select " . $this->_getFiledStr() . " from `tbl_detailInfo` where daoyan like '{$searchW}%'";
+        $sql = "select * from `tbl_detailInfo` where daoyan like '{$searchW}%'";
         if ($other) {
             $sql .= " and del = 0 {$other} limit {$limit}";
         } else {
@@ -466,7 +453,7 @@ class Backgroundadmin extends CI_Model {
         if (!isset($offset) || empty($limit)) {
             return false;
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where topType = 1 and del = 0 limit {$offset},{$limit};";
+        $sql = "select * from `tbl_detailInfo` where topType = 1 and del = 0 limit {$offset},{$limit};";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -479,6 +466,14 @@ class Backgroundadmin extends CI_Model {
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
 
+    /**
+     * 根据条件，获取最新更新电影信息
+     * @param string $condition
+     * @param $offset
+     * @param $limit
+     * @param int $del
+     * @return bool
+     */
     public function getDetailInfoByCondition($condition = "",$offset,$limit,$del = 0)
     {
         $offset = intval($offset);
@@ -489,9 +484,9 @@ class Backgroundadmin extends CI_Model {
         if (empty($condition)) {
             $where = "del = {$del}";
         } else {
-            $where = "{$condition} and del = 0";
+            $where = "{$condition}";
         }
-        $sql = "select {$this->_getFiledStr()} from `tbl_detailInfo` where {$where} order by createtime desc limit {$offset},$limit";
+        $sql = "select * from `tbl_detailInfo` where {$where} limit {$offset},$limit";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -507,7 +502,7 @@ class Backgroundadmin extends CI_Model {
         if (empty($condition)) {
             $where = "del = {$del}";
         } else {
-            $where = "{$condition} and del = 0";
+            $where = "{$condition}";
         }
         $sql = "select count(1) as cn from `tbl_detailInfo` where {$where};";
         $query = $this->db->query($sql);
@@ -571,8 +566,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $fildStr = implode(",",$this->_downLinkFild);
-        $sql = "select {$fildStr} from `tbl_downLoad` where id in ({$idStr});";
+        $sql = "select * from `tbl_downLoad` where id in ({$idStr});";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;

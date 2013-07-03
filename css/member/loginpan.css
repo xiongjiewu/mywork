@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     border: 6px solid #7c7c7c;
-    width: 460px;
+    width: 600px;
     /*opacity: 0.5;*/
     background-color: #dedede;
     z-index: 1000100000;
@@ -38,7 +38,14 @@
 
 .login_ui .login_ui_table {
     width: 300px;
-    margin: auto;
+    margin-left:20px;
+    float: left;
+}
+.login_ui .other_login {
+    width: 250px;
+}
+.login_ui .other_login tr td.app_login {
+    margin-bottom: 20px;
 }
 .login_ui .login_ui_table tr td.ui_error{
     text-align: center;
@@ -49,6 +56,9 @@
 .login_ui .login_ui_table tr td{
     position: relative;
     float: left;
+}
+.login_ui .login_ui_table tr td.haoba_account {
+    color: #666;
 }
 .login_ui .login_ui_table tr td label{
     color: #6F6F6F;
@@ -139,13 +149,23 @@
 }
 .login_ui .login_ui_table tr td.ui_remember a{
     margin-left: 60px;
-    color: #377CA2;
+    color: #0088cc;
 }
 .login_ui .login_ui_other{
-    width: 350px;
-    margin: auto;
-    padding:0 10px;
-    border-top: 1px dashed #bbb;
+    float: left;
+    margin: auto auto auto 27px;
+    padding: 0 10px;
+    width: 252px;
+}
+tr td a:hover {
+    text-decoration: underline;
+}
+div.login_middel_line {
+    background: none repeat scroll 0 0 #DADADA;
+    border-right: 1px solid #EEEEEE;
+    float: left;
+    height: 260px;
+    width: 1px;
 }
 .login_ui .login_ui_other table tr.login_ui_border{
     text-align: center;
@@ -164,3 +184,44 @@
     width: 100%;
     z-index: 10000;
 }
+/* 第三方登录接口 start */
+a.qq_login {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -438px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.qq_login:hover {
+    background-position: -213px -438px;
+}
+a.weibo_login {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -375px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.weibo_login:hover {
+    background-position: -213px -375px;
+}
+a.renren_login {
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -564px transparent;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 60px;
+    padding: 36px 120px 26px 90px;
+    position: relative;
+    float: left;
+}
+a.renren_login:hover {
+    background-position: -213px -564px;
+}
+/* 第三方登录接口 end */

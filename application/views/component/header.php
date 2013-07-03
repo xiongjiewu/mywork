@@ -25,7 +25,7 @@
     <div class="login_register_pan">
         <?php if (empty($userName) && empty($userId)):?>
         <div class="login_pan">
-            <a class="login_total_page" href="javascript:void(0);">
+            <a class="login_total_page" href="/login/">
                 <i></i>
                 登录
             </a>
@@ -99,40 +99,13 @@
             <?php $menusI++;?>
         <?php endforeach;?>
     </ul>
-    <?php foreach ($menus as $menuKey => $menuVal): ?>
-        <?php if (!empty($menuVal['type_info']) && $menuVal['index'] == "movie_last"):?>
-            <div type="<?php echo $menuVal['class'];?>" class="small_menus_list last_small_menus <?php echo $menuVal['class'];?>">
-                <div class="small_menus_main">
-                    <?php $valCount = count($menuVal['type_info']);?>
-                    <?php $valI = 1;?>
-                    <?php foreach($menuVal['type_info'] as $typeKey => $typeVal):?>
-                        <span <?php if ($valI == $valCount):?>class="last_one_span" <?php endif;?>>
-                            <a href="/latestmovie#<?php echo $typeVal;?>"><?php echo $typeKey;?></a>
-                        </span>
-                        <?php $valI++;?>
-                    <?php endforeach;?>
-                </div>
-            </div>
-        <?php endif;?>
-        <?php if (!empty($menuVal['type_info']) && $menuVal['index'] == "list"):?>
-            <div type="<?php echo $menuVal['class'];?>" class="small_menus_list last_small_menus <?php echo $menuVal['class'];?>">
-                <div class="small_menus_main">
-                    <?php $keyCount = count($menuVal['type_info']);?>
-                    <?php $keyI = 1;?>
-                    <?php foreach($menuVal['type_info'] as $typeKey => $typeVal):?>
-                        <span class="type_title"><?php echo $typeVal['type'];?>:</span>
-                        <?php $valCount = count($typeVal['info']);?>
-                        <?php $valI = 1;?>
-                        <?php foreach($typeVal['info'] as $tKey => $tVal):?>
-                            <span <?php if ($keyI == $keyCount && $valI == $valCount):?>class="last_one_span" <?php endif;?>>
-                                <a href="<?php echo $typeVal['base_url'] . $tKey . "/";?>"><?php echo $tVal;?></a>
-                            </span>
-                            <?php $valI++;?>
-                        <?php endforeach;?>
-                        <?php $keyI++;?>
-                    <?php endforeach;?>
-                </div>
-            </div>
-        <?php endif;?>
-    <?php endforeach;?>
+    <?php $rightMenus = APF::get_instance()->get_config_value("right_menus");?>
+    <div class="menus_right">
+        <?php $rmI = 1;?>
+        <?php $rmCount = count($rightMenus);?>
+        <?php foreach($rightMenus as $rMVal):?>
+            <span <?php if($rmI == $rmCount):?>class="last_one"<?php endif;?>><a href="<?php echo $rMVal['link'];?>"><?php echo $rMVal['title'];?></a></span>
+            <?php $rmI++;?>
+        <?php endforeach;?>
+    </div>
 </div>

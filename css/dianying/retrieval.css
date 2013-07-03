@@ -1,0 +1,146 @@
+div.retrieval_main {
+    width: 1164px;
+    margin: 0 auto;
+}
+/* 检索类型展示：电影+人物 start */
+div.retrieval_type {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+div.retrieval_type ul {
+    float: left;
+    width: 100%;
+}
+div.retrieval_type ul li {
+    float: left;
+}
+div.retrieval_type ul li.line {
+    margin: 4px 15px;
+    color: #BBB;
+}
+div.retrieval_type ul li a {
+    float: left;
+    color: #777;
+    font-size: 24px;
+}
+div.retrieval_type ul li a i {
+    float: left;
+    height: 30px;
+    width: 28px;
+}
+div.retrieval_type ul li a.current,div.retrieval_type ul li a:hover {
+    color: #08A6BC;
+}
+div.retrieval_type ul li a.movie_retrieval i {
+    background: url("/images/common/jiansuo_sucai.png") no-repeat scroll -5px -7px transparent;
+}
+div.retrieval_type ul li a.people_retrieval i {
+    background: url("/images/common/jiansuo_sucai.png") no-repeat scroll -33px -9px transparent;
+}
+/* 检索类型展示：电影+人物 end */
+
+/* 字母检索条展示 start */
+div.retrieval_list {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    border-left: 1px solid #ddd;
+}
+div.retrieval_list ul {
+    float: left;
+    width: 100%;
+}
+div.retrieval_list ul.top {
+    border-left: 1px solid #ddd;
+    position: fixed;
+    top: 35px;
+    z-index: 10;
+}
+div.retrieval_list ul li {
+    float: left;
+}
+div.retrieval_list ul li a {
+    float: left;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-left: none;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    color: #333;
+}
+div.retrieval_list ul li a.new {
+    color: #ff0000;
+}
+div.retrieval_list ul li a:hover {
+    background-color: #eaeaea;
+}
+/* 字母检索条展示 end */
+
+/* 内容展示 start */
+div.retrieval_title {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+div.retrieval_title h1 {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 36px;
+    color: #08A6BC;
+    font-family: "微软雅黑";
+}
+div.retrieval_movie_list {
+    float: left;
+    width: 1120px;
+    margin-left: 1px;
+    padding: 20px 20px 15px 20px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background-color: #fff;
+}
+div.retrieval_movie_list ul {
+    float: left;
+    width: 100%;
+}
+div.retrieval_movie_list ul li {
+    float: left;
+    width: 224px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+div.retrieval_movie_list ul.no_result {
+    width: 900px;
+    padding-bottom: 20px;
+    color: #666666;
+    font-size: 14px;
+}
+div.retrieval_movie_list ul li a {
+    float: left;
+    color: #666;
+    font-family: "宋体";
+}
+div.retrieval_movie_list ul li a:hover {
+    text-decoration: underline;
+}
+div.retrieval_movie_list ul li a i {
+    background: url("/images/common/jiansuo_sucai.png") no-repeat scroll -62px -17px transparent;
+    float: left;
+    height: 20px;
+    width: 15px;
+}
+div.retrieval_movie_list ul li a i.p {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -292px -10px transparent;
+    filter:alpha(Opacity=20);
+    -moz-opacity:0.2;
+    opacity: 0.2;
+}
+/* 内容展示 end */

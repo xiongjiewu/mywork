@@ -1,5 +1,9 @@
-<a class="go_to_top" title="回到顶部"></a>
+<?php $this->load->view("component/ideapan");//返回顶部与提出意见标签?>
 <div class="search_main">
+    <div class="guide">
+        <a href="/">首页 </a>>
+        <span> 搜'<?php echo $searchW;?>'相关的影片</span>
+    </div>
     <div class="search_left">
         <?php $typeCount = count($movieSortType);?>
         <?php $typeI = 1;?>
@@ -109,4 +113,5 @@
             <?php endif;?>
         </ul>
     </div>
+    <div class="clear"></div>
 </div>

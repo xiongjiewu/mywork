@@ -1,0 +1,409 @@
+div.dy_ku_main {
+    width: 1200px;
+    margin: 0 auto;
+}
+div.dy_ku_list {
+    float: left;
+    width: 925px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+}
+div.weizhi {
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f8f8f8;
+}
+div.weizhi span a {
+    color: #08a6bc;
+}
+div.weizhi span.left {
+    float: left;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #08a6bc;
+}
+div.weizhi span.right {
+    float: right;
+    margin-right: 20px;
+}
+div.type_info_list {
+    float: left;
+    padding: 20px 0 0 0;
+}
+div.type_info_list div {
+    float: left;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    width: 845px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+    padding: 8px 0;
+    font-size: 14px;
+}
+div.type_info_list div.last_list {
+    border: none;
+}
+div.type_info_list div a.more {
+    background: url("/images/newhead/more.png") no-repeat scroll 0 -18px transparent;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 37px;
+    z-index: 101;
+    cursor: pointer;
+    font-size: 12px;
+    color: #999;
+}
+div.type_info_list div a.more:hover {
+    background-position: 0 -54px;
+    color: #08a6bc;
+}
+div.type_info_list div a.less {
+    background-position: 0 0;
+}
+div.type_info_list div a.less:hover {
+    background-position: 0 -36px;
+}
+div.type_info_list label {
+    color: #808080;
+    float: left;
+    padding: 2px 0;
+}
+div.type_info_list ul {
+    float: left;
+    width: 750px;
+}
+div.type_info_list li {
+    float: left;
+}
+div.type_info_list li.none_li {
+    display: none;
+}
+div.type_info_list li.more_li a {
+    margin-bottom: 0;
+}
+div.type_info_list li.line span {
+    float: left;
+    height: 20px;
+    color: #DDDDDD;
+    line-height: 20px;
+}
+div.type_info_list li a {
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+    color: #000;
+    font-family: "宋体";
+    padding: 2px 8px;
+    margin-bottom: 5px;
+}
+div.type_info_list li a:hover,div.type_info_list li a.active {
+    color: #fff;
+    background-color: #08a6bc;
+}
+div.movie_sort_tab {
+    float: left;
+    position: relative;
+    width: 845px;
+    height: 32px;
+    background: url("/images/newhead/dianyingku_tab.png") repeat 0 0 transparent;
+    margin-left: 40px;
+    border-right: 1px solid #ddd;
+}
+div.movie_sort_tab ul {
+    float: left;
+}
+div.movie_sort_tab ul li {
+    float: left;
+}
+div.movie_sort_tab ul li a {
+    float: left;
+    height: 31px;
+    width: 100px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 32px;
+    border-left: 1px solid #ddd;
+    font-size: 14px;
+    font-family: "宋体";
+    color: #000;
+}
+div.movie_sort_tab ul li a.last_a {
+    border-right: 1px solid #ddd;
+}
+div.movie_sort_tab ul li a.current_a,div.movie_sort_tab ul li a:hover {
+    background-color: #fff;
+}
+div.movie_sort_tab ul li a:hover {
+    text-decoration: underline;
+}
+div.movie_count {
+    float: left;
+    width: 836px;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+div.movie_count span {
+    color: #ff0000;
+}
+div.movie_display {
+    float: left;
+    width: 845px;
+    padding: 10px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+div.movie_display ul {
+    float: left;
+    width: 100%;
+}
+div.movie_display ul.no_result {
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+    height: 1470px;
+}
+div.movie_display ul li {
+    position: relative;
+    float: left;
+    width: 131px;
+    height: 225px;
+    padding: 2px;
+    margin-bottom: 20px;
+    margin-right: 38px;
+}
+/*div.movie_display ul li:hover {*/
+    /*width: 129px;*/
+    /*height: 223px;*/
+    /*border: 1px solid #08A6BC;*/
+/*}*/
+div.movie_display ul li.last_m {
+    margin-right: 0;
+}
+div.movie_display ul li div.dy_info {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 47px;
+    background-color: #000;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+    font-size: 13px;
+}
+div.movie_display ul li div.dy_info div {
+    float: left;
+    margin-top: 2px;
+    margin-left: 5px;
+    color: #fff;
+}
+div.movie_display ul li div.dy_info em {
+    margin-top: 2px;
+    float: left;
+    color: red;
+}
+div.movie_display ul li a.tupian {
+    float: left;
+    width: 100%;
+    height: 180px;
+    background-color: #eee;
+}
+div.movie_display ul li a.tupian img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.movie_display ul li span {
+    float: left;
+    width: 126px;
+    margin-left: 5px;
+    font-size: 13px;
+    height: 18px;
+    overflow: hidden;
+    margin-top: 5px;
+    color: #999;
+}
+div.movie_display ul li span.name {
+    font-size: 15px;
+}
+div.movie_display ul li span.name a {
+    color: #08a6bc;
+}
+div.movie_display ul li span.zhuyan a {
+    color: #999;
+}
+div.movie_display ul li span a:hover {
+    text-decoration: underline;
+}
+div.guide_right {
+    float: left;
+    width: 260px;
+    height: 1000px;
+    margin-left: 10px;
+}
+div.tuijian {
+    float: left;
+    width: 240px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    background-color: #fcfcfc;
+}
+span.tuijian_title {
+    float: left;
+    padding: 5px 0 10px 0;
+    color: #08A6BC;
+    width: 100%;
+    font-size: 16px;
+}
+div.tuijian ul {
+    float: left;
+    width: 100%;
+}
+div.tuijian ul li {
+    float: left;
+    width: 115px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+div.tuijian ul li.two {
+    margin-right: 0;
+}
+div.tuijian ul li a {
+    float: left;
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+}
+div.tuijian ul li a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.tuijian ul li span {
+    float: left;
+    margin-left: 5px;
+    padding: 0;
+    height: 20px;
+    width: 110px;
+    margin-bottom: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #999;
+}
+div.tuijian ul li span.tuijian_name a {
+    color: #010101;
+    float: left;
+    height: 100%;
+    background: none;
+}
+div.mingxingzhuanti {
+    margin-top: 20px;
+}
+div.mingxingzhuanti dl {
+    padding: 0 0 15px 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 100px;
+    float: left;
+    border-bottom: 1px solid #eee;
+}
+div.mingxingzhuanti dl.last_dl {
+    border-bottom: none;
+}
+div.mingxingzhuanti dl dt {
+    float: left;
+    height: 100%;
+    width: 150px;
+}
+div.mingxingzhuanti dl dt a.zhuanti_img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+div.mingxingzhuanti dl dt a.zhuanti_img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.mingxingzhuanti dl dd {
+    float: left;
+    margin-left: 10px;
+    width: 75px;
+    margin-top: 10px;
+}
+div.mingxingzhuanti dl dd.icon {
+    background-color: #EEEEEE;
+    height: 25px;
+    width: 75px;
+    margin-top: 40px;
+}
+/* 排序 start */
+div.movie_sort {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+div.movie_count span.title {
+    float: right;
+    padding: 5px 10px 5px 0;
+    width: 70px;
+    text-align: right;
+    color: #010101;
+}
+div.movie_sort span.sort {
+    float: left;
+    padding: 5px 10px 5px 0;
+    width: 70px;
+    text-align: center;
+    color: #010101;
+    background-color: #fbfbfb;
+}
+div.movie_sort span.current_sort {
+    border: 1px solid #bbb;
+    position: relative;
+}
+div.movie_sort span.current_sort a {
+    color: #010101;
+}
+div.movie_sort span.current_sort i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -201px -33px transparent;
+    height: 15px;
+    position: absolute;
+    right: 7px;
+    top: 3px;
+    width: 15px;
+    z-index: 99;
+}
+div.movie_sort .sort_list {
+    display: none;
+    position: absolute;
+    border: 1px solid #bbb;
+    border-top: none;
+    padding: 5px 10px 0 0;
+    width: 70px;
+    right: 0;
+    top: 22px;
+    z-index: 101;
+    background-color: #fbfbfb;
+    cursor: pointer;
+}
+div.movie_sort:hover .sort_list {
+    display: block;
+}
+div.movie_sort .sort_list span:hover {
+    color: #fff;
+    background-color: #08A6BC;
+}
+div.movie_sort .sort_list span {
+    float: left;
+}
+/* 排序 end */

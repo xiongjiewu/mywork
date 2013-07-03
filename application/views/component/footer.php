@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" id="footer_main_total">
     <div class="footer_main">
         <div class="footer_left">
             <div class="footer_title">

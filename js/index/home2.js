@@ -1,5 +1,5 @@
 (function ($) {
-    var aa;
+    var aa,cishuC = 30,time = 5;
     var init = {
         initLiHtml: function (obj, name, jieshao, type, typeText, img, zhuyan, idStr) {
             var htmlStr = '<a class="first_img" href="/detail/index/' + idStr + '/">' +
@@ -32,6 +32,7 @@
                 '<span class="">简介：</span>' + result.jieshao +
                 '</td></tr><tr><td><a class="play_now" href="' + url + '"></a><span class="yaoyao_again">好吧，不给力，重新摇！</span></td></tr></table>';
             moviceInfoList.html(htmlStr);
+            return result;
         },
         ajaxGetYaoYaoMoice: function (callback) {
             $.ajax({
@@ -56,31 +57,26 @@
         yaoyaoAction: function (topObj) {
             $("div.home_yaoyao_main").hide();
             $("div.yaoyao_movice_info").css("top", "-330px");
-            var cishu = 1;
+            var cishu = 1,yaoyaoRessult;
             $(window).scrollTop(0);
             init.ajaxGetYaoYaoMoice(function (result) {
-                init.initYaoyaoInfo(result);
+                yaoyaoRessult = init.initYaoyaoInfo(result);
             });
             clearInterval(aa);
             aa = setInterval(function () {
-                init.yaoyao(topObj, cishu);
+                init.yaoyao(topObj, cishu,yaoyaoRessult);
                 cishu++;
-            }, cishu * 200);
+            }, cishu * time);
         },
         //随机打乱
-        yaoyao: function (topObj, cishu) {
+        yaoyao: function (topObj, cishu,yaoyaoRessult) {
             var liObj = topObj.find("li");
-            liObj.each(function() {
-                $(this).find("div.home_top_dy_detail").removeClass("home_top_dy_detail_left");
-                $(this).find("div.home_top_dy_detail").hide();
-                $(this).unbind("mouseover");
-            });
-            var liLen = liObj.length - 1;
+            var liLen = liObj.length - 3;
             var arr = new Array(liLen);
             var i = 0;
             liObj.each(function () {
                 var that = $(this);
-                if (!that.hasClass("web_count_main")) {
+                if (!that.hasClass("top_last_li")) {
                     arr[i] = $(this).html();
                     i++;
                 }
@@ -93,12 +89,12 @@
             var j = 0;
             liObj.each(function () {
                 var that = $(this);
-                if (!that.hasClass("web_count_main")) {
+                if (!that.hasClass("top_last_li")) {
                     $(this).html(outputArr[j]);
                     j++;
                 }
             });
-            if (cishu > 10) {
+            if (yaoyaoRessult && cishu > cishuC) {
                 $("div.home_yaoyao_main").show();
                 this.showYaoYaoMovice();
                 //运行完毕则清除
@@ -147,7 +143,7 @@
                 });
             }
         });
-        var yaoyaoObj = $("div.tab_list ul li.tab_list_li_1 a");
+        var yaoyaoObj = $("li.yaoyao_action");
         yaoyaoObj.bind("click", function () {
             init.yaoyaoAction(topObj);
         });
@@ -166,14 +162,9 @@
         var oneHeigth = Math.ceil(totalHeigth / 3);
         topObj.find("li").each(function() {
             var that = $(this);
-            if (that.hasClass("web_count_main")) {
-                var currentW = totalWitch - oneWidth * 10 - 2;
-                var currentH = totalHeigth - oneHeigth - 1;
-                that.width(currentW);
-                that.height(currentH);
-            } else if (that.hasClass("top_last_li")) {
+            if (that.hasClass("top_last_li")) {
                 that.width(totalWitch - oneWidth * 13 - 2);
-                that.height(currentH);
+                that.height(totalHeigth - oneHeigth * 3 - 2);
             } else {
                 that.width(oneWidth - 2);
                 that.height(oneHeigth - 2 );

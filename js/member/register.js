@@ -64,7 +64,6 @@
                 } else if (name == "pass2") {
                     var v = $.trim($("input[name='pass1']").val());
                     if (v != value) {
-                        ;
                         return this.error_common(e, title + "和登录密码不一致");
                     } else {
                         e.find("div.register_error1").addClass("error1");

@@ -1,19 +1,10 @@
 <?php
 class User extends CI_Model {
-
-    private $_filedArr = array("id","userName","password","time","ip","photo","email","status");
-
     function __construct()
     {
         parent::__construct();
         $this->load->database();
     }
-
-    private function _getFiledStr()
-    {
-        return implode(",",$this->_filedArr);
-    }
-
     public function getUserInfoByFiled($queryInfo = array())
     {
         if (empty($queryInfo) || !is_array($queryInfo)) {
@@ -25,7 +16,7 @@ class User extends CI_Model {
             $valArr[] = $infoVal;
         }
         $keyStr = implode(" and ",$keyArr);
-        $sql = "select {$this->_getFiledStr()} from `tbl_user` where {$keyStr} limit 1;";
+        $sql = "select * from `tbl_user` where {$keyStr} limit 1;";
         $query = $this->db->query($sql,$valArr);
         $result = $query->result_array();
         return empty($result[0]) ? array() : $result[0];
@@ -62,7 +53,7 @@ class User extends CI_Model {
         }
         $userIds = array_unique($userIds);
         $userIdStr = implode(",",$userIds);
-        $sql = "select {$this->_getFiledStr()} from `tbl_user` where id in ({$userIdStr}) and status = 0;";
+        $sql = "select * from `tbl_user` where id in ({$userIdStr}) and status = 0;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return empty($result) ? array() : $result;

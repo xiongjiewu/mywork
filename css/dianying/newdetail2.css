@@ -1,0 +1,691 @@
+div.new_detail {
+    width: 1200px;
+    margin: 0 auto;
+}
+div.dy_detail {
+    float: left;
+    padding: 20px;
+    width: 1160px;
+    min-height: 250px;
+    margin-top: 50px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+div.total_image {
+    height: 300px;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    width: 230px;
+    z-index: 10020;
+}
+div.dy_detail div.dy_image {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -250px -30px transparent;
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0 6px;
+    margin-top: -3px;
+}
+div.dy_detail div.dy_image img {
+    height: 100%;
+    left: 7px;
+    position: absolute;
+    top: -32px;
+    width: 225px;
+}
+div.dy_detail div.dy_right {
+    float: right;
+    width: 870px;
+    position: relative;
+}
+div.dy_detail div.dy_right dl {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+div.dy_detail div.dy_right dl dd,div.dy_detail div.dy_right dl dt {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #222;
+}
+div.dy_detail div.dy_right dl dt.shichang {
+    font-size: 14px;
+}
+div.dy_detail div.dy_right dl dd h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+div.dy_detail div.dy_right dl span {
+    color: #666;
+    font-size: 14px;
+}
+div.dy_detail div.dy_right dl a {
+    color: #222;
+    font-size: 14px;
+}
+div.dy_detail div.dy_right dl span.jieshao_list {
+    color: #222;
+}
+div.dy_detail div.dy_right dl a.jieshao_more {
+    color: #aaa;
+    font-size: 14px;
+}
+div.dy_detail div.dy_right dl a:hover {
+    color: #08A6CD;
+}
+div.dy_hot_info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    z-index: 100;
+}
+div.dy_hot_info div.dafen {
+    float: left;
+    width: 100%;
+    color: #999;
+    line-height: 25px;
+    cursor: pointer;
+}
+div.dy_hot_info div.dafen a {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -28px -45px transparent;
+    float: left;
+    height: 25px;
+    margin-right: 10px;
+    width: 20px;
+}
+div.dy_hot_info div.dafen a.current {
+    cursor: pointer;
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -7px -45px transparent;
+}
+div.dy_hot_info div.dafen span {
+    float: left;
+    font-size: 18px;
+    font-family: "华文行楷";
+    color: #ff0000;
+    margin-right: 5px;
+    text-align: right;
+    margin-left: 0;
+    width: 30px;
+}
+div.dy_hot_info div.dafen span.df {
+    margin-left: 0;
+    margin-right: 20px;
+    color: #333;
+    font-size: 13px;
+}
+div.dy_hot_info div.dafen div.df_count {
+    float: right;
+    font-size: 13px;
+}
+div.dy_count {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    z-index: 100;
+}
+div.count_list {
+    float: right;
+    font-size: 13px;
+    color: #999;
+}
+div.count_list ul {
+    float: left;
+    width: 100%;
+}
+div.count_list ul li {
+    float: left;
+    padding: 0 5px;
+    border-right: 1px solid #AAA;
+}
+div.count_list ul li.last {
+    border-right: none;
+}
+div.dy_button {
+    float: right;
+    margin-right: 320px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+}
+div.dy_button ul {
+    float: left;
+    width: 100%;
+}
+div.dy_button ul li {
+    float: left;
+    padding: 25px 50px 15px 50px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+div.dy_button ul li a {
+    float: left;
+    text-align: center;
+    color: #999;
+}
+div.dy_button ul li i {
+    float: left;
+    height: 37px;
+    width: 36px;
+}
+div.dy_button ul li em {
+    font-style: normal;
+    text-align: center;
+    float: left;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+div.dy_button ul li.yingping i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -89px -125px transparent;
+}
+div.dy_button ul li.dingyue i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -9px -125px transparent;
+}
+div.dy_button ul li.shoucang i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -48px -162px transparent;
+}
+div.dy_button ul li.shoucang a.shoucang_do i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -168px -164px transparent;
+    cursor: default;
+}
+div.dy_button ul li.shoucang a.shoucang_do em {
+    font-size: 12px;
+    margin-top: 6px;
+}
+div.dy_button ul li.fenxiang {
+    position: relative;
+    border-right: none;
+}
+div.dy_button ul li.fenxiang i {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -9px -162px transparent;
+}
+div.detail_bottom {
+    background: url("/images/newhead/movie_info_down.png") no-repeat scroll 1px 1px transparent;
+    bottom: -18px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+div.detail_about {
+    float: left;
+    margin-top: 40px;
+    width: 880px;
+}
+div.watch_down_link {
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+div.movie_tuijian {
+    margin-top: 20px;
+}
+div.movie_tuijian div.movie_list {
+    display: none;
+}
+div.movie_tuijian div.current_movie_list {
+    display: block;
+}
+div.watch_down_link div.tab {
+    background: url("/images/newhead/tab_bg.png") repeat scroll 0 -1px transparent;
+    float: left;
+    height: 35px;
+    width: 100%;
+}
+div.watch_down_link div.tab span {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #999;
+    cursor: pointer;
+}
+div.watch_down_link div.tab i.fenge_line {
+    background: none repeat scroll 0 0 #DADADA;
+    border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 15px;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 1px;
+}
+div.watch_down_link div.tab span.current_tab {
+    color: #d54e35;
+}
+div.movie_list {
+    float: left;
+    width: 840px;
+    padding: 20px 20px 0 20px;
+}
+div.movie_list li {
+    float: left;
+    width: 95px;
+    padding: 3px;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    margin-right: 19px;
+}
+div.movie_list li.last_movie {
+    margin-right: 0;
+}
+div.movie_list li:hover {
+    border: 1px solid #08A6CD;
+}
+div.movie_list li:hover a {
+    color: #08A6CD;
+}
+div.movie_list li a.image {
+    width: 100%;
+    float: left;
+    height: 125px;
+    background-color: #eee;
+}
+div.movie_list li a.image img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.movie_list li span.name {
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+}
+a {
+    color: #666;
+    font-size: 14px;
+}
+a:hover {
+    color: #08A6CD;
+}
+
+div.detail_left {
+    float: left;
+    margin-top: 40px;
+    width: 320px;
+}
+div.leixing {
+    float: left;
+    padding: 10px 20px 20px 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-left: 30px;
+}
+div.leixing_title {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+div.leixing_list {
+    float: left;
+    width: 100%;
+}
+div.leixing_list ul li {
+    float: left;
+    margin-top: 5px;
+    margin-right: 17px;
+}
+div.leixing_list ul li.diqu {
+    margin-right: 11px;
+}
+div.leixing_list ul li.small_title {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #666;
+}
+div.leixing_list ul li.last_li {
+    margin-right: 0;
+}
+div.leixing_list ul li a {
+    color: #666;
+    font-size: 13px;
+}
+div.leixing_list ul li a:hover {
+    color: #08A6CD;
+}
+div.today_new {
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: #FAFAFA;
+}
+div.paihang {
+    background: url("/images/common/jianbian.png") repeat-x 0 0 #FAFAFA;
+    border: 1px solid #CCCCCC;
+    float: left;
+    padding: 10px 20px 0 20px;
+}
+div.paihang ul li {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+div.paihang ul li.last_td {
+    border: none;
+}
+div.paihang ul li.info:hover {
+    cursor: pointer;
+}
+div.paihang ul li i {
+    background: url("/images/common/shouye_new_sucai.png") no-repeat scroll -237px -9px transparent;
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    width: 20px;
+    font-style: normal;
+}
+div.paihang ul li i.more {
+    background: none;
+    border: 1px solid #999999;
+    color: #666666;
+}
+div.paihang ul li.info:hover a {
+    color: #08A6CD;
+}
+div.paihang ul li.paihang_title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    border: none;
+}
+div.paihang ul li a {
+    float: left;
+    font-size: 15px;
+    color: #414141;
+    margin-left: 5px;
+    width: 130px;
+    height: 20px;
+    overflow: hidden;
+}
+div.paihang ul li span {
+    float: right;
+    font-size: 13px;
+    color: #aaa;
+}
+/* 评论框start */
+div.pinglun_kuang {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+    height: 160px;
+    position: relative;
+}
+div.pinglun_kuang div.pinglun_photo {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+}
+div.pinglun_kuang div.pinglun_photo img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.pinglun_kuang div.jiantou {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -77px -40px transparent;
+    position: absolute;
+    left: 55px;
+    top: 0;
+    height: 28px;
+    margin-left: 5px;
+    width: 15px;
+    z-index: 99;
+}
+div.pinglun_kuang div.text {
+    float: left;
+    height: 90px;
+    width: 765px;
+    padding: 5px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+div.pinglun_kuang div.text textarea {
+    border: none;
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+div.submit_post {
+    float: right;
+    margin-top: 10px;
+}
+div.submit_post input {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -99px -43px transparent;
+    border: medium none;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    width: 65px;
+    margin-right: 33px;
+    cursor: pointer;
+}
+/* 评论框end */
+
+/* 评论start*/
+.pllist {
+    border-top: 1px solid #EEEEEE;
+    float: left;
+    height: auto;
+    margin: 20px;
+    width: 94%;
+    padding-top: 20px;
+    margin-top: 0;
+}
+
+
+.pllist * {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.pllist table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td.userPro {
+    vertical-align: top;
+    width: 75px;
+    height: 67px;
+}
+
+.pllist table th, td, caption {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+}
+
+.pllist table .left {
+    float: left;
+    width: 70%;
+    height: 40%;
+}
+
+.pllist table  .userPro img {
+    float: left;
+    display: inline;
+    color: transparent;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 2px;
+    width: 70%;
+    height: 40%;
+    min-width: 50px;
+    min-height: 40px;
+}
+.commentTextList {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+.pllist .comment {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 0 0 11px;
+}
+
+
+.pllist .info {
+    clear: both;
+    color: #BBBBBB;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pllist .right {
+    float: right;
+}
+
+.info .right .reply {
+    font-size: 14px !important;
+    letter-spacing: 0 !important;
+}
+
+.info .right .reply {
+    font-size: 14px !important;
+    letter-spacing: 0 !important;
+}
+
+.word {
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: 0;
+    word-break: break-all;
+}
+
+div.read_more {
+    margin: 5px;
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #CEE1EE;
+    text-align: center;
+    cursor: pointer;
+    color: #336699;
+    font-weight: bold;
+    background-color: #F0F5F8;
+}
+div.read_more_load {
+    color: #fff;
+    background: url("/images/icon/move.gif") no-repeat scroll 50% 50% #FFFFFF;
+}
+
+.pllist .lastOne {
+    border-bottom: none;
+}
+.pllist .notFirst {
+    margin-top: 10px;
+}
+/* 评论end */
+a.createpost {
+    float: left;
+}
+/* 百度分享 start*/
+div.baidufengxiang {
+    display: none;
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    width: 250px;
+    z-index: 102;
+}
+div.baidu_share {
+    position: relative;
+    float: left;
+    width: 240px;
+    padding: 5px;
+    border: 1px solid #aaa;
+}
+div.baidu_share div.fenxiang_t {
+    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -77px -40px transparent;
+    height: 28px;
+    left: -16px;
+    margin-left: 5px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+    z-index: 103;
+}
+/* 百度分享 end*/
+div.p_c_t {
+    float: left;
+    width: 100%;
+    color: #0088cc;
+    font-size: 18px;
+}
+div.p_c_t span {
+    font-size: 15px;
+    color: #999;
+}
+div.watchLink_list {
+    float: left;
+    padding: 20px 20px 0;
+    width: 840px;
+}
+div.watchLink_list span.watchlink_list {
+    box-shadow: 2px 2px 2px #DDDDDD;
+}
+div.watchLink_list span {
+    cursor: pointer;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+div.watchLink_list a {
+    float: left;
+    height: 20px;
+}
+
+div.watchLink_list b {
+    border: 1px solid #DDDDDD;
+    color: #999999;
+    float: left;
+    font-size: 13px;
+    font-weight: 100;
+    height: 20px !important;
+    letter-spacing: 3px;
+    line-height: 20px !important;
+    margin-left: -1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+div.watchLink_list span.watchlink_list:hover {
+    box-shadow: 2px 2px 3px #08A6CD;
+    background-color: #e0eeee;
+}
+div.watchLink_list span.downlink_list {
+    color: #08A6CD;
+}
+div.watchLink_list span.downlink_list:hover {
+    text-decoration: underline;
+}

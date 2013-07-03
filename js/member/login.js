@@ -28,8 +28,13 @@
             var username = $.trim($("input[name='username']").val());
             var password = $.trim($("input[name='password']").val());
             if (!username || !password) {
-                $("td.loginpan_error").html("账号或密码不能为空！");
+                $("td.loginpan_error").html("登录邮箱或密码不能为空！");
             } else {
+                var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                if (!reg.test(username)) {
+                    $("td.loginpan_error").html("登录邮箱格式不正确");
+                    return false;
+                }
                 $("input[name='login_submit']").attr("disabled",true);
                 $("div.doing").show();
                 var remember = 0;

@@ -6,43 +6,132 @@
             <?php $zhuyan = str_replace("、","/",$topVal['zhuyan'])?>
             <?php $daoyan = str_replace("、","/",$topVal['daoyan'])?>
             <?php $nianfen = $topVal['nianfen'];?>
-            <?php if ($topMovieInfosI == 10):?>
-                <li class="web_count_main">
-                    <div class="home_web">
-                        <div class="home_web_count">
-                            <span class="dy_count">
-                                <?php echo $dyCount;?>
-                            </span>
-                        </div>
-                    </div>
+            <?php if ($topMovieInfosI == 13):?>
+                <li class="top_last_li yaoyao_action" title="摇一摇有惊喜">
+                    <a class="first_img" href="javascript:void(0);">
+                        <img alt="摇一摇有惊喜" src="/images/home/yaoyao.png">
+                    </a>
                 </li>
-            <?php endif;?>
-            <li title="<?php echo $topVal['name'];?>" <?php if ($topMovieInfosI == 0):?>class="top_first_li"<?php elseif ($topMovieInfosI == (count($topMovieInfos) - 1)):?>class="top_last_li"<?php endif;?>>
-                <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
-                    <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
+            <?php elseif ($topMovieInfosI == 27):?>
+                <li class="top_last_li" title="意见反馈">
+                    <a class="first_img" href="/research" target="_blank">
+                        <img alt="意见反馈" src="/images/home/fankui3.png">
+                    </a>
+                </li>
+            <?php elseif ($topMovieInfosI == 41):?>
+            <li class="top_last_li head_action" title="求片留言">
+                <a class="first_img" href="/usercenter/feedback/">
+                    <img alt="求片留言" src="/images/home/qiupian.png">
                 </a>
             </li>
+            <?php else:?>
+                <li <?php if ($topMovieInfosI == 0):?>class="top_first_li"<?php endif;?>>
+                    <a title="<?php echo $topVal['name'];?>" class="first_img" href="/detail/index/<?php echo $idStr;?>/">
+                        <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
+                    </a>
+                </li>
+            <?php endif;?>
             <?php $topMovieInfosI++;?>
         <?php endforeach;?>
     </ul>
 </div>
+<!-- 电影总数展示 start -->
+<div class="movie_count_main">
+    <div class="count_real">已收录<em><?php echo $dyCount;?></em>部电影</div>
+</div>
+<!-- 电影总数展示 end -->
+
 <div class="home_middel_main">
-    <div class="tab_list">
-        <ul>
-            <li class="tab_list_li_1" title="摇一摇有惊喜">
-                <a href="javascript:void(0);"></a>
-            </li>
-            <li class="tab_list_li_2">
-                <a href="/usercenter/feedback/"></a>
-            </li>
-            <li class="tab_list_li_3">
-                <a href="/upcomingmovie/"></a>
-            </li>
-            <li class="tab_list_li_4">
-                <a href="/upcomingmovie/"></a>
-            </li>
-        </ul>
+    <!-- 中间索引条 start -->
+    <div class="type_main">
+        <div class="tab_type_list">
+            <!-- 类型 start-->
+            <div class="list_type type_info">
+                <span class="type_type">按类型</span>
+                <ul>
+                    <?php $moviceTypeInfo = array_slice($moviceType,0,20);?>
+                    <?php foreach($moviceTypeInfo as $typeKey => $typeVal):?>
+                        <li class="list_type_li">
+                            <a title="<?php echo $typeVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("type" => $typeKey));?>"><?php echo $typeVal;?></a>
+                        </li>
+                    <?php endforeach;?>
+                    <li class="list_type_li">
+                        <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 类型 end-->
+            <div class="middel_line"></div>
+            <!-- 年份 start-->
+            <div class="list_type list_place">
+                <span class="type_type">按年份</span>
+                <ul>
+                    <?php $moviceNianfenInfo = array_slice($movieNianFen,0,8);?>
+                    <?php foreach($moviceNianfenInfo as $nianfenKey => $nianfenVal):?>
+                        <li class="list_type_li">
+                            <a title="<?php echo $nianfenVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("year" => $nianfenVal));?>"><?php echo $nianfenVal;?></a>
+                        </li>
+                    <?php endforeach;?>
+                    <li class="list_type_li">
+                        <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 年份 end-->
+            <div class="middel_line"></div>
+            <!-- 地区 start-->
+            <div class="list_type list_place">
+                <span class="type_type">按地区</span>
+                <ul>
+                <?php $moviePlaceI = 1;?>
+                <?php foreach($moviePlace as $placeKey => $placeVal):?>
+                    <?php if ($moviePlaceI > 8){break;}?>
+                    <li class="list_type_li">
+                        <a title="<?php echo $placeVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("place" => $placeKey));?>"><?php echo $placeVal;?></a>
+                    </li>
+                    <?php $moviePlaceI++;?>
+                <?php endforeach;?>
+                <li class="list_type_li">
+                    <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
+                </li>
+                </ul>
+            </div>
+            <!-- 地区 end-->
+            <div class="middel_line"></div>
+            <!-- 演员 start-->
+            <div class="list_type list_place">
+                <span class="type_type">按演员</span>
+                <ul>
+                    <?php foreach($yanYuan as $yanYuanKey => $yanYuanVal):?>
+                        <li class="list_type_li">
+                            <a title="<?php echo $yanYuanVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("y" => $yanYuanVal));?>"><?php echo $yanYuanVal;?></a>
+                        </li>
+                    <?php endforeach;?>
+                    <li class="list_type_li">
+                        <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 演员 end-->
+            <div class="middel_line"></div>
+            <!-- 演员 start-->
+            <div class="list_type list_place">
+                <span class="type_type">按导演</span>
+                <ul>
+                    <?php foreach($daoYan as $daoYanKey => $daoYanVal):?>
+                        <li class="list_type_li">
+                            <a title="<?php echo $daoYanVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("d" => $daoYanVal));?>"><?php echo $daoYanVal;?></a>
+                        </li>
+                    <?php endforeach;?>
+                    <li class="list_type_li">
+                        <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 演员 end-->
+        </div>
     </div>
+    <!-- 中间索引条 start -->
     <!-- 最新上映 start   -->
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
@@ -166,28 +255,6 @@
         </div>
         <div class="info_list">
             <ul>
-                <li class="first_one_li">
-                    <?php foreach($movieSortType as $sortVal):?>
-                        <div>
-                            <div class="sort_type">
-                                <span class="type_text"><?php echo $sortVal['type'];?></span>
-                            </div>
-                            <div class="sort_list">
-                            <?php $sortI = 1;?>
-                            <?php foreach($sortVal['info'] as $typeInfoKey => $typeInfoVal):?>
-                                <span class="type_info">
-                                    <a href="<?php echo $sortVal['base_url'] . $typeInfoKey;?>"><?php echo $typeInfoVal;?></a>
-                                </span>
-                                <?php if ($sortI % 3 == 0):?>
-                                </div>
-                                <div class="sort_list">
-                                <?php endif;?>
-                                <?php $sortI++;?>
-                            <?php endforeach;?>
-                            </div>
-                        </div>
-                    <?php endforeach;?>
-                </li>
                 <?php foreach($classDyInfo as $dyInfoVal):?>
                     <?php $zhuyan = str_replace("、","/",$dyInfoVal['zhuyan']);?>
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
@@ -363,6 +430,106 @@
     </div>
     <!-- 重温经典 end   -->
 
+    <!-- 系列专题 这一版先隐藏 start   -->
+    <div class="movice_info_list movice_info_list_list" style="display: none;">
+        <div class="title">
+            <h2>
+                <a class="" href="/latestmovie/">
+                    专题系列
+                </a>
+            </h2>
+        </div>
+        <div class="movie_serial">
+            <div class="title_list">
+                <div class="s_title"><h1>大片连连看</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middel_line"></div>
+
+            <div class="title_list">
+                <div class="s_title"><h1>人物系列</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middel_line"></div>
+
+            <div class="title_list jiangxiang">
+                <div class="s_title"><h1>获奖专题</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">暮光之城</a></li>
+                        <li><a href="">死神来了</a></li>
+                        <li><a href="">钢铁侠</a></li>
+                        <li><a href="">007</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">战争之王</a></li>
+                        <li><a href="">哈利波特</a></li>
+                        <li><a href="">蝙蝠侠</a></li>
+                        <li><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 系列专题 end   -->
+
     <!-- 即将上映 start   -->
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
@@ -430,7 +597,7 @@
         </div>
     </div>
     <!-- 即将上映 end   -->
-
+    <div class="clear"></div>
 </div>
 <!-- 朦胧效果 整个页面覆盖 start -->
 <div class="home_yaoyao_main"></div>
@@ -447,6 +614,3 @@
     </div>
 </div>
 <!-- 朦胧效果 电影信息展示 end -->
-<!-- 分享start -->
-<?php //$this->load->view("component/fenxiangpan");//顶部?>
-<!-- 分享end -->

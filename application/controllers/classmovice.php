@@ -14,6 +14,7 @@ class Classmovice extends CI_Controller {
         $this->load->model('Moviesearch');
         $this->_paiHangInfo = APF::get_instance()->get_config_value("pai_hang");
         $this->set_attr("paiHangInfo",$this->_paiHangInfo);
+        $this->set_attr("tabIndex",3);
     }
 
     /**
@@ -106,6 +107,6 @@ class Classmovice extends CI_Controller {
         $this->load->set_head_img(false);
         $this->load->set_css(array("/css/dianying/newclassmovie.css"));
         $this->load->set_js(array("/js/dianying/newclassmovie.js"));
-        $this->set_view('dianying/newclassmovie');
+        $this->set_view('dianying/newclassmovie','base3');
     }
 }

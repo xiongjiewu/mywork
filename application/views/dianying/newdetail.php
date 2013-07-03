@@ -157,8 +157,9 @@
                             <tr>
                                 <td class="userPro" valign="top">
                                     <div class="left">
+                                        <?php $userImage = APF::get_instance()->get_image_url($userInfos[$infoVal['userId']]['photo']);?>
                                         <img class="lazy" style="display: inline;"
-                                             src="<?php echo $userInfos[$infoVal['userId']]['photo'] ? trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $userInfos[$infoVal['userId']]['photo'] : trim(APF::get_instance()->get_config_value("img_base_url"), "/") . APF::get_instance()->get_config_value("user_photo"); ?>"
+                                             src="<?php echo $userImage;?>"
                                              width="50" height="50">
                                     </div>
                                 </td>
