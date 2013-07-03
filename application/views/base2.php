@@ -23,6 +23,7 @@
 <?php if ($this->load->get_login_pan()):?>
     <?php $this->load->view("component/loginpan");//登录框?>
 <?php endif;?>
+<?php $this->load->view("component/pageindex");//用户访问页面记录js?>
 <?php $this->load->view("component/footerhtml");//底部相关?>
 </body>
 </html>

@@ -26,7 +26,7 @@
                 <li>
                     <?php $idStr = APF::get_instance()->encodeId($moviceVal['id']);?>
                     <div class="dy_img">
-                        <a href="/detail/index/<?php echo $idStr;?>/">
+                        <a href="/detail/index/<?php echo $idStr;?>?from=movieguide_movie_list">
                             <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
                         </a>
                         <?php if (empty($shouCangInfo[$moviceVal['id']])):?>
@@ -36,7 +36,7 @@
                         <?php endif;?>
                     </div>
                     <div class="title">
-                        <a href="/detail/index/<?php echo $idStr;?>/" title="<?php echo $moviceVal['name'];?>">
+                        <a href="/detail/index/<?php echo $idStr;?>?from=movieguide_movie_list" title="<?php echo $moviceVal['name'];?>">
                             <?php echo $moviceVal['name'];?>
                         </a>
                     </div>

@@ -155,11 +155,11 @@
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
                     <?php if ($newestDyInfoI == 0):?>
                         <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
-                            <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
+                            <a class="first_img" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
                             <p class="first_name">
-                                <a class="name" href="/detail/index/<?php echo $idStr;?>/">
+                                <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
                                     <?php echo $name;?>
                                 </a>
                                 <a class="dy_type" href="/moviceguide/type/<?php echo $type;?>/">
@@ -176,11 +176,11 @@
                         </li>
                     <?php else:?>
                         <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
-                            <a class="img" href="/detail/index/<?php echo $idStr;?>/">
+                            <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
                             <p class="name">
-                                <a href="">
+                                <a href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
                                     <?php echo $name;?>
                                 </a>
                             </p>
@@ -189,7 +189,7 @@
                                     暂无
                                 <?php else:?>
                                     <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                        <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
+                                        <a href="/search?key=<?php echo $zhuyanVal;?>"><?php echo $zhuyanVal;?></a>
                                     <?php endforeach;?>
                                 <?php endif;?>
                             </p>
@@ -260,11 +260,11 @@
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
                     <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
                     <li class="other_li">
-                        <a class="img" href="/detail/index/<?php echo $idStr;?>/">
+                        <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_class_movie">
                             <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>">
                         </a>
                         <p class="name">
-                            <a href="">
+                            <a href="/detail/index/<?php echo $idStr;?>?from=home_class_movie">
                                 <?php echo $dyInfoVal['name'];?>
                             </a>
                         </p>
@@ -308,11 +308,11 @@
                     <?php if ($baiduValI == 1):?>
                         <span class="top_name_list top_first_list">
                         <b>01</b>
-                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu">
                             <img alt="<?php echo $baiduVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $baiduVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $baiduVal['name'];?></a>
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu"><?php echo $baiduVal['name'];?></a>
                         </i>
                         <span class="fisrt_s">
                             <em>被搜</em><?php echo $baiduVal['search'];?>次
@@ -322,7 +322,7 @@
                     <?php else:?>
                         <span class="top_name_list <?php if ($baiduValI == $baiduValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($baiduValI > 3):?>last<?php endif;?>"><?php echo ($baiduValI < 10) ? "0" . $baiduValI : $baiduValI;?></b>
-                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $baiduVal['name'];?></a>
+                        <a href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu"><?php echo $baiduVal['name'];?></a>
                         <i class="score"><em>被搜</em><?php echo $baiduVal['search'];?>次</i>
                     </span>
                     <?php endif;?>
@@ -340,11 +340,11 @@
                     <?php if ($doubanValI == 1):?>
                         <span class="top_name_list top_first_list">
                         <b>01</b>
-                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_douban">
                             <img alt="<?php echo $doubanVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $doubanVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_douban"><?php echo $doubanVal['name'];?></a>
                         </i>
                         <span class="fisrt_s">
                             <?php echo $doubanVal['score'];?>分
@@ -354,7 +354,7 @@
                     <?php else:?>
                         <span class="top_name_list <?php if ($doubanValI == $doubanValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($doubanValI > 3):?>last<?php endif;?>"><?php echo ($doubanValI < 10) ? "0" . $doubanValI : $doubanValI;?></b>
-                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $doubanVal['name'];?></a>
+                        <a href="/detail/index/<?php echo $idStr;?>?from=home_top_douban"><?php echo $doubanVal['name'];?></a>
                         <i class="score"><?php echo $doubanVal['score'];?>分</i>
                     </span>
                     <?php endif;?>
@@ -372,11 +372,11 @@
                     <?php if ($imdbValI == 1):?>
                         <span class="top_name_list top_first_list">
                         <b>01</b>
-                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_imdb">
                             <img alt="<?php echo $imdbVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $imdbVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $imdbVal['name'];?></a>
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_imdb"><?php echo $imdbVal['name'];?></a>
                         </i>
                         <span class="fisrt_s">
                             <?php echo $imdbVal['score'];?>分
@@ -386,7 +386,7 @@
                     <?php else:?>
                         <span class="top_name_list <?php if ($imdbValI == $imdbValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($imdbValI > 3):?>last<?php endif;?>"><?php echo ($imdbValI < 10) ? "0" . $imdbValI : $imdbValI;?></b>
-                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $imdbVal['name'];?></a>
+                        <a href="/detail/index/<?php echo $idStr;?>?from=home_top_imdb"><?php echo $imdbVal['name'];?></a>
                         <i class="score"><?php echo $imdbVal['score'];?>分</i>
                     </span>
                     <?php endif;?>
@@ -404,11 +404,11 @@
                     <?php if ($mtimeValI == 1):?>
                         <span class="top_name_list top_first_list">
                         <b>01</b>
-                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
+                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_itime">
                             <img alt="<?php echo $mtimeVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $mtimeVal['image'];?>">
                         </a>
                         <i class="top_name_info">
-                            <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $mtimeVal['name'];?></a>
+                            <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_itime"><?php echo $mtimeVal['name'];?></a>
                         </i>
                         <span class="fisrt_s">
                             <?php echo $mtimeVal['score'];?>分
@@ -418,7 +418,7 @@
                     <?php else:?>
                         <span class="top_name_list <?php if ($mtimeValI == $mtimeValCount):?>last_one<?php endif;?>">
                         <b class="<?php if ($mtimeValI > 3):?>last<?php endif;?>"><?php echo ($mtimeValI < 10) ? "0" . $mtimeValI : $mtimeValI;?></b>
-                        <a href="/detail/index/<?php echo $idStr;?>/"><?php echo $mtimeVal['name'];?></a>
+                        <a href="/detail/index/<?php echo $idStr;?>?from=home_top_itime"><?php echo $mtimeVal['name'];?></a>
                         <i class="score"><?php echo $mtimeVal['score'];?>分</i>
                     </span>
                     <?php endif;?>
@@ -573,11 +573,11 @@
                         </li>
                     <?php else:?>
                         <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
-                            <a class="img" href="/detail/index/<?php echo $idStr;?>/">
+                            <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_comming_movie">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
                             <p class="name">
-                                <a href="">
+                                <a href="/detail/index/<?php echo $idStr;?>?from=home_comming_movie">
                                     <?php echo $name;?>
                                 </a>
                             </p>
