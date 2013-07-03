@@ -164,9 +164,9 @@
                 <div class="tab">
                     <?php if (!empty($watchLinkInfo)):?>
                         <span class="watch_link current_tab" type="watch">观看地址</span>
-                        <i class="fenge_line"></i>
                     <?php endif;?>
                     <?php if (!empty($downLoadLinkInfo)):?>
+                        <i class="fenge_line"></i>
                         <span class="down_link<?php if (empty($watchLinkInfo)):?> current_tab<?php endif;?>" type="down">下载地址</span>
                     <?php endif;?>
                 </div>
