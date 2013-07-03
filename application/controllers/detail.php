@@ -15,6 +15,7 @@ class Detail extends CI_Controller {
         $this->load->model('Actinfo');
         $this->load->model('Directorinfo');
         $this->load->model('User');
+        $this->load->model('Userscoringrecords');
         $this->load->set_top_index(-1);
     }
     public function index($id = null)
@@ -120,6 +121,11 @@ class Detail extends CI_Controller {
             $this->load->model('Notice');
             $moticeInfo = $this->Notice->getNoticeInfoByFiled(array("userId"=>$this->userId,"infoId"=>$id,"del"=>0));
             $this->set_attr("moticeInfo",$moticeInfo);
+
+            //查询用户是否打过分
+            $scoreStr = "infoId = " . $dyInfo['id'] . " and userId = " . $this->userId . " and del = 0 limit 1";
+            $scoreInfo = $this->Userscoringrecords->getUserscoringrecordsInfoByCon($scoreStr);
+            $this->set_attr("hasDafen",empty($scoreInfo[0]) ? false : true);
         }
         //用户头像
         $userPhoto = APF::get_instance()->get_image_url($userPhoto);
@@ -235,7 +241,7 @@ class Detail extends CI_Controller {
     private function _initStartInfo($score) {
         $currentKey = 0;
         foreach($this->_startInfo as $startKey => $startVal) {
-            if ($score > 0 && $score <= $startVal['score']) {
+            if ($score > 0 && $score >= $startVal['score']) {
                 $this->_startInfo[$startKey]['active'] = true;
                 $currentKey = $startKey;
             } else {

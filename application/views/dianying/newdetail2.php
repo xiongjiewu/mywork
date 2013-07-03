@@ -76,10 +76,14 @@
             </dl>
             <div class="dy_hot_info">
                 <input type="hidden" name="current_start" id="current_start" value="<?php echo $currentKey;?>">
-                <div class="dafen">
-                    <span class="df">打分:</span>
+                <div class="dafen<?php if (!empty($hasDafen)):?> hasDafen<?php endif;?>">
+                    <?php if (empty($hasDafen)):?>
+                        <span class="df">打分:</span>
+                    <?php else:?>
+                        <span class="df hasDafen">已打分:</span>
+                    <?php endif;?>
                     <?php foreach($startInfo as $startKey => $startVal):?>
-                        <a class="<?php echo $startKey;?>_start<?php if ($startVal['active']):?> current<?php endif;?>" type="<?php echo $startKey;?>" title="<?php echo $startVal['title'];?>"></a>
+                        <a class="<?php echo $startKey;?>_start<?php if ($startVal['active']):?> current<?php endif;?><?php if (!empty($hasDafen)):?> hasDafen<?php endif;?>" type="<?php echo $startKey;?>" title="<?php echo $startVal['title'];?>"></a>
                     <?php endforeach;?>
                     <span><?php echo round($dyInfo['score'],1);?></span>分
                     <div class="df_count">(<?php echo $dyInfo['totalStartNum'];?>人)</div>
@@ -435,6 +439,7 @@
 <input type="hidden" name="action" id="action" value="">
 <input type="hidden" id="ding_url" name="ding_url" value="<?php echo get_url("/useraction/ding/"); ?>">
 <input type="hidden" id="user_id" name="user_id" value="<?php echo $userId; ?>">
+<input type="hidden" id="userStart" name="userStart" value="">
 <input type="hidden" name="dy_id" id="dy_id" value="<?php echo $dyInfo['id'];?>">
 <input type="hidden" name="pinglun_count" id="pinglun_count" value="<?php echo !empty($YingpingInfoICount) ? $YingpingInfoICount : 0;?>">
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>

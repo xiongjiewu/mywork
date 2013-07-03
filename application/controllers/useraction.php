@@ -448,4 +448,60 @@ class Useraction extends CI_Controller
         echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link'],"type" => $downLoadLinkInfo[0]['type']));
         exit;
     }
+
+    /**
+     * 给电影打分函数
+     */
+    public function dafen() {
+        $dyId =  $this->input->post("dyId");
+        $scoreStar =  $this->input->post("scoreStar");
+        $dyId = intval($dyId);
+        $scoreStar = intval($scoreStar);
+        if (empty($dyId) || empty($scoreStar)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+
+        //是否登录
+        if (empty($this->userId)) {
+            echo json_encode(array("code" => "error","info" => "请先登录"));
+            exit;
+        }
+
+        //查询电影信息是否存在
+        $this->load->model('Backgroundadmin');
+        $dyInfo = $this->Backgroundadmin->getDetailInfo($dyId,0);
+        if (empty($dyInfo)) {
+            echo json_encode(array("code" => "error","info" => "参数错误"));
+            exit;
+        }
+
+        //查询是否打过分
+        $this->load->model('Userscoringrecords');
+        $scoreStr = "infoId = " . $dyId . " and userId = " . $this->userId . " and del = 0 limit 1";
+        $scoreInfo = $this->Userscoringrecords->getUserscoringrecordsInfoByCon($scoreStr);
+        if (!empty($scoreInfo)) {
+            echo json_encode(array("code" => "error","info" => "已打过分数"));
+            exit;
+        } else {
+            //不存在则插入
+            $data['infoId'] = $dyId;
+            $data['userId'] = $this->userId;
+            $data['score'] = $scoreStar * 2;
+            $data['start'] = $scoreStar;
+            $data['createTime'] = time();
+            $lastId = $this->Userscoringrecords->insertUserscoringrecordsInfo($data);
+            if (!empty($lastId)) {//更新电影分数
+                $starFiledStr = "start{$scoreStar}Num";//对应星字段
+                $upData[$starFiledStr] = $dyInfo[$starFiledStr] + 1;//对应星个数+1
+                //当前分数
+                $upData["score"] = ($dyInfo["score"] * $dyInfo["totalStartNum"] + $scoreStar * 2) / ($dyInfo["totalStartNum"] + 1);
+                $upData["totalStartNum"] = $dyInfo["totalStartNum"] + 1;//打分总数+1
+                $this->Backgroundadmin->updateDetailInfo($dyId,$upData);
+
+            }
+            echo json_encode(array("code" => "error","info" => "打分成功"));
+            exit;
+        }
+    }
 }

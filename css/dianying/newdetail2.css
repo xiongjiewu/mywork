@@ -98,6 +98,9 @@ div.dy_hot_info div.dafen {
     line-height: 25px;
     cursor: pointer;
 }
+div.dy_hot_info div.hasDafen {
+    cursor: default;
+}
 div.dy_hot_info div.dafen a {
     background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -28px -45px transparent;
     float: left;
@@ -124,6 +127,12 @@ div.dy_hot_info div.dafen span.df {
     margin-right: 20px;
     color: #333;
     font-size: 13px;
+}
+div.dy_hot_info div.dafen a.hasDafen {
+    cursor: default;
+}
+div.dy_hot_info div.dafen span.hasDafen {
+    width: 50px;
 }
 div.dy_hot_info div.dafen div.df_count {
     float: right;

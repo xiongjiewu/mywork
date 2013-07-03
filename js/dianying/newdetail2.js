@@ -38,33 +38,53 @@ var init = {
         }
         return true;
     },
+    ajaxDoScore:function(dyId,scoreStar,callBack) {
+        if (dyId && scoreStar) {
+            $.ajax({
+                url: "/useraction/dafen/",
+                type: "post",
+                data: {dyId: dyId,scoreStar:scoreStar},
+                dataType: "json",
+                success: function (result) {
+                    if (callBack) {
+                        callBack(result);
+                    }
+                }
+            })
+        }
+    },
     loginCallBack: function () {
         var id = $("#current_id").val();
         var action = $("#action").val();
-        if (id && action) {
-            switch (action) {
-                case  "notice" :
-                    this.ajaxInertNotice(id, function (result) {
-                        if (result.code && result.code == "error") {
-                            alert(result.info);
-                        }
-                        window.location.reload();
-                    });
-                    break;
-                case "shoucang" :
-                    this.ajaxShouCang(id, function (result) {
-                        if (result.code && result.code == "error") {
-                            alert(result.info);
-                        }
-                        window.location.reload();
-                    });
-                    break;
-                case "post" :
-                    post();
-                    break;
-                default :
-                    break;
-            }
+        var scoreStart = $("#userStart").val();
+        var dyId = $("#dy_id").val();
+        switch (action) {
+            case  "notice" :
+                this.ajaxInertNotice(id, function (result) {
+                    if (result.code && result.code == "error") {
+                        alert(result.info);
+                    }
+                    window.location.reload();
+                });
+                break;
+            case "shoucang" :
+                this.ajaxShouCang(id, function (result) {
+                    if (result.code && result.code == "error") {
+                        alert(result.info);
+                    }
+                    window.location.reload();
+                });
+                break;
+            case "post" :
+                post();
+                break;
+            case "score" ://打分
+                this.ajaxDoScore(dyId,scoreStart,function(result) {
+                    window.location.reload();
+                });
+                break;
+            default :
+                break;
         }
     },
     ajaxShouCang: function (id, callBack) {
@@ -402,26 +422,41 @@ var init = {
         var scoreObj = $($("div.dafen").find("span").get(1));
         var currentCount = scObj.val();
         var currentScore = scoreObj.html();
+        var userId = $("#user_id").val();
         dfAObj.each(function() {
             var that = $(this);
-            var startCount = that.attr("type");
-            that.bind("mouseover",function() {
-                init.startMouseOverAndLeave(startCount,scoreObj,true);
-                currentA = true;
-                if (tOut) {
-                    clearTimeout(tOut);
-                    tOut = null;
-                }
-            });
-            that.bind("mouseleave",function() {
-                currentA = false;
-                if (!currentA) {
-                    tOut = setTimeout(function() {
-                        init.startMouseOverAndLeave(currentCount,scoreObj,false);
-                        scoreObj.html(currentScore);
-                    },1000);
-                }
-            });
+            if (!that.hasClass("hasDafen")) {
+                var startCount = that.attr("type");
+                that.bind("mouseover",function() {
+                    init.startMouseOverAndLeave(startCount,scoreObj,true);
+                    currentA = true;
+                    if (tOut) {
+                        clearTimeout(tOut);
+                        tOut = null;
+                    }
+                });
+                that.bind("mouseleave",function() {
+                    currentA = false;
+                    if (!currentA) {
+                        tOut = setTimeout(function() {
+                            init.startMouseOverAndLeave(currentCount,scoreObj,false);
+                            scoreObj.html(currentScore);
+                        },1000);
+                    }
+                });
+                that.bind("click",function() {
+                    if (!userId) {
+                        $("#userStart").val(startCount);
+                        $("#action").val("score");
+                        logPanInit.showLoginPan("init.loginCallBack");
+                    } else {
+                        var dyId = $("#dy_id").val();
+                        init.ajaxDoScore(dyId,startCount,function() {
+                            window.location.reload();
+                        });
+                    }
+                });
+            }
         });
         //观看链接
         var watchSpan = $("div.watchLink_list span.watchlink_list");
