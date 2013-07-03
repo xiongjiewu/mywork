@@ -9,4 +9,5 @@
     <?php endif;?>
     <a href="http://webscan.360.cn/index/checkwebsite/url/dianying8.tv"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/d1bf605d9bdec73cb115ad967bac7918"/></a>
 </div>
+<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
 <!-- 百度流量统计js end-->
