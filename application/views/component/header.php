@@ -24,18 +24,27 @@
     <!-- 登录，注册、浏览记录 start   -->
     <div class="login_register_pan">
         <?php if (empty($userName) && empty($userId)):?>
-        <div class="login_pan">
-            <a class="login_total_page" href="/login/">
-                <i></i>
-                登录
-            </a>
-        </div>
-        <div class="resgister_pan">
-            <a class="" href="/register/">
-                <i></i>
-                注册
-            </a>
-        </div>
+            <div class="weibo_login">
+                <a href="/weblogin/weibo/" title="微博帐号登录"></a>
+            </div>
+            <div class="QQ_login">
+                <a href="/weblogin/qq/" title="QQ帐号登录"></a>
+            </div>
+            <div class="renren_login">
+                <a href="/weblogin/renren/" title="人人帐号登录"></a>
+            </div>
+            <div class="login_pan">
+                <a class="login_total_page" href="/login/">
+                    <i></i>
+                    登录
+                </a>
+            </div>
+            <div class="resgister_pan">
+                <a class="" href="/register/">
+                    <i></i>
+                    注册
+                </a>
+            </div>
         <?php else:?>
             <div class="login">
                 <a class="" href="/usercenter/">

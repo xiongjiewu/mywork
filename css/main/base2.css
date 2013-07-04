@@ -355,7 +355,7 @@ a.go_to_top:hover {
 div.login_register_pan {
     float: right;
     margin-top: -70px;
-    margin-right: 7%;
+    margin-right: 3%;
 }
 div.login_register_pan div {
     float: left;
@@ -646,4 +646,28 @@ div.menus_right span a:hover {
 }
 div.menus_right span.last_one a {
     border-right: none;
+}
+div.login_register_pan .weibo_login a {
+    background: url("/images/head/login_icon.png") repeat scroll -4px -24px transparent;
+    height: 15px;
+    width: 3px;
+}
+div.login_register_pan .weibo_login a:hover {
+    background-position: -4px 1px;
+}
+div.login_register_pan .QQ_login a {
+    background: url("/images/head/login_icon.png") repeat scroll -33px -24px transparent;
+    height: 15px;
+    width: 3px;
+}
+div.login_register_pan .QQ_login a:hover {
+    background-position: -33px 1px;
+}
+div.login_register_pan .renren_login a {
+    background: url("/images/head/login_icon.png") repeat scroll -59px -24px transparent;
+    height: 15px;
+    width: 5px;
+}
+div.login_register_pan .renren_login a:hover {
+    background-position: -59px 1px;
 }
