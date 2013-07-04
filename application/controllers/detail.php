@@ -64,6 +64,7 @@ class Detail extends CI_Controller {
         $this->set_attr("userId",$this->userId);
 
         //电影介绍
+        $dyInfo['jieshao'] = strip_tags($dyInfo['jieshao']);
         $dyInfo['jieshao'] = str_replace("　　","",$dyInfo['jieshao']);
         $dyInfo['jieshao'] = str_replace("　　","",trim($dyInfo['jieshao']));
         $dyInfo['s_jieshao'] = $this->splitStr($dyInfo['jieshao'],180);

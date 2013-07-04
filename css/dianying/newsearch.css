@@ -124,6 +124,9 @@ div.search_dy_detail p a {
     text-decoration: none;
     color: #757575;
 }
+div.search_dy_detail p a:hover {
+    text-decoration: underline;
+}
 div.search_dy_detail p.title {
     font-size: 24px;
     margin-bottom: 10px;

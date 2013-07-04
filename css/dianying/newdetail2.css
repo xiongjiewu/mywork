@@ -83,6 +83,7 @@ div.dy_detail div.dy_right dl a.jieshao_more {
 }
 div.dy_detail div.dy_right dl a:hover {
     color: #08A6CD;
+    text-decoration: underline;
 }
 div.dy_hot_info {
     position: absolute;

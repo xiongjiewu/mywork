@@ -48,6 +48,8 @@
                 <?php $i = 0;?>
                 <?php foreach($searchMovieInfo as $movieVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
+                    <?php $zhuyaoArr = explode("、",$movieVal['zhuyan']);?>
+                    <?php $daoyanArr = explode("、",$movieVal['daoyan']);?>
                     <li <?php if ($i == 0):?>class="first_one"<?php endif;?> title="点击查看详情">
                         <div class="search_dy_img">
                             <a href="<?php echo get_url("/detail/index/{$idStr}?from=search");?>">
@@ -69,16 +71,30 @@
                                 <?php endif;?>
                             </p>
                             <p class="zhuyan">
-                                <span>主演：</span><?php echo $movieVal['zhuyan'];?>
+                                <span>主演：</span>
+                                <?php if (empty($zhuyaoArr)):?>
+                                    暂无
+                                <?php else:?>
+                                    <?php foreach($zhuyaoArr as $zhuyanVal):?>
+                                        <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => strip_tags($zhuyanVal)));?>"><?php echo $zhuyanVal?></a>&nbsp;&nbsp;
+                                    <?php endforeach;?>
+                                <?php endif;?>
                             </p>
                             <p class="other">
-                                <span>导演：</span><?php echo $movieVal['daoyan'] ? $movieVal['daoyan'] : "暂无";?>
+                                <span>导演：</span>
+                                <?php if (empty($daoyanArr)):?>
+                                    暂无
+                                <?php else:?>
+                                    <?php foreach($daoyanArr as $daoyanVal):?>
+                                        <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => strip_tags($daoyanVal)));?>"><?php echo $daoyanVal;?></a>&nbsp;&nbsp;
+                                    <?php endforeach;?>
+                                <?php endif;?>
                             </p>
                             <p class="other">
                                 <span>类型：</span><?php echo $movieType[$movieVal['type']];?>
                             </p>
                             <p class="jianjie">
-                                <span>简介：</span><?php echo $movieVal['jieshao'];?>
+                                <span>简介：</span><?php echo strip_tags($movieVal['jieshao']);?>
                             </p>
                             <?php if (!empty($watchLinkInfo[$movieVal['id']])):?>
                             <p class="watch_link">

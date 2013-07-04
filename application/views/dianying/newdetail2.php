@@ -24,7 +24,7 @@
                         暂无
                     <?php else:?>
                         <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                            <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>&nbsp;&nbsp;
+                            <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>&nbsp;&nbsp;
                         <?php endforeach;?>
                     <?php endif;?>
                 </dt>
@@ -36,7 +36,7 @@
                         暂无
                     <?php else:?>
                         <?php foreach($daoyanArr as $daoyanVal):?>
-                            <a href="/search?key=<?php echo $daoyanVal;?>"><?php echo $daoyanVal;?></a>&nbsp;&nbsp;
+                            <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $daoyanVal));?>"><?php echo $daoyanVal;?></a>&nbsp;&nbsp;
                         <?php endforeach;?>
                     <?php endif;?>
                 </dt>

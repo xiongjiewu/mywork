@@ -189,7 +189,7 @@
                                     暂无
                                 <?php else:?>
                                     <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                        <a href="/search?key=<?php echo $zhuyanVal;?>"><?php echo $zhuyanVal;?></a>
+                                        <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal;?></a>
                                     <?php endforeach;?>
                                 <?php endif;?>
                             </p>
@@ -232,7 +232,7 @@
                                 暂无
                             <?php else:?>
                                 <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                    <a class="t_zhuyan" href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
+                                    <a class="t_zhuyan" href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>
                                 <?php endforeach;?>
                             <?php endif;?>
                         </p>
@@ -273,7 +273,7 @@
                                 暂无
                             <?php else:?>
                                 <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                    <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
+                                    <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>
                                 <?php endforeach;?>
                             <?php endif;?>
                         </p>
@@ -586,7 +586,7 @@
                                     暂无
                                 <?php else:?>
                                     <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                        <a href="/search?key=<?php echo $zhuyanVal?>"><?php echo $zhuyanVal?></a>
+                                        <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>
                                     <?php endforeach;?>
                                 <?php endif;?>
                         </li>

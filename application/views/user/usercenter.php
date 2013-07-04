@@ -29,7 +29,17 @@
                                     <tr>
                                         <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
                                         <td class="name"><a href="<?php echo get_url("/detail/index/{$idStr}/")?>"><?php echo $movieVal['name'];?></a></td>
-                                        <td><?php echo $movieVal['zhuyan'];?></td>
+                                        <?php $zhuyan = str_replace("、","/",$movieVal['zhuyan']);?>
+                                        <?php $zhuyaoArr = explode("/",$zhuyan);?>
+                                        <td>
+                                            <?php if (empty($zhuyaoArr)):?>
+                                                暂无
+                                            <?php else:?>
+                                                <?php foreach($zhuyaoArr as $zhuyanVal):?>
+                                                    <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>&nbsp;&nbsp;
+                                                <?php endforeach;?>
+                                            <?php endif;?>
+                                        </td>
                                         <td class="daoyan"><?php echo $movieVal['daoyan'];?></td>
                                         <td class="nianfen"><?php echo date("Y",strtotime($movieVal['nianfen']));?>年</td>
                                         <td class="diqu"><?php echo $moviePlace[$movieVal['diqu']];?></td>
