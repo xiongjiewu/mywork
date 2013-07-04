@@ -126,10 +126,10 @@ class Retrieval extends CI_Controller {
         $letter = empty($letter) || !in_array($letter,$this->_letterList) ? "A" : $letter;
         if ($letter == "@") {
             $conditionCountStr = "firstLetter in ('0','1','2','3','4','5','6','7','8','9','') and del = 0";
-            $conditionStr = $conditionCountStr . " limit {$offset},{$limit}";
+            $conditionStr = $conditionCountStr . " order by id desc limit {$offset},{$limit}";
         } else {
             $conditionCountStr = "firstLetter = '{$letter}' and del = 0";
-            $conditionStr = $conditionCountStr . " limit {$offset},{$limit}";
+            $conditionStr = $conditionCountStr . " order by id desc limit {$offset},{$limit}";
         }
         if ($count) {
             $peopleInfoCount = $this->Character->getCharacterCountByCon($conditionCountStr);
