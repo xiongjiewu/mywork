@@ -171,6 +171,7 @@ div.new_head_mian ul li.search_k input.search_n {
     float: left;
     width: 150px;
     height: 21px;
+    line-height: 21px;
     padding: 2px;
     border: none;
     color: #aaa;

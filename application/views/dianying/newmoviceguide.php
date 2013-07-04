@@ -138,7 +138,7 @@
                                     暂无
                                 <?php else:?>
                                     <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                        <a href="<?php echo APF::get_instance()->get_real_url("/search",'',array("key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>&nbsp;
+                                        <a href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>&nbsp;
                                     <?php endforeach;?>
                                 <?php endif;?>
                             </span>
