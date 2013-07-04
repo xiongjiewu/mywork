@@ -46,7 +46,7 @@ class Moviceguide extends CI_Controller {
         $movieTabInfo = APF::get_instance()->get_config_value("movie_tab_info");
         $movieTabInfo = $this->_setMovieTabInfo($params,$movieTabInfo);
         $this->set_attr("movieTabInfo",$movieTabInfo);
-        $this->set_attr("sort",empty($params['sort']) ? "new" : $params['sort']);
+        $this->set_attr("sort",empty($params['sort']) ? "like" : $params['sort']);
 
         //拼接查询条件
         $conStr = $this->_initConditionStr($params,$movieTabInfo);
@@ -158,7 +158,7 @@ class Moviceguide extends CI_Controller {
                 }
             }
             $conditionStr = implode(" and ",$strArr);
-            $params['sort'] = (!empty($params['sort']) && !empty($movieTabInfo[$params['sort']])) ? $params['sort'] : 'new';//默认显示最新更新
+            $params['sort'] = (!empty($params['sort']) && !empty($movieTabInfo[$params['sort']])) ? $params['sort'] : 'like';//默认显示最新更新
             //排序字段
             if (!empty($movieTabInfo[$params['sort']]['desc'])) {
                 $conditionStr .= " {$movieTabInfo[$params['sort']]['desc']}";
@@ -272,7 +272,7 @@ class Moviceguide extends CI_Controller {
      */
     private function _setMovieTabInfo($params,$movieTabInfo) {
         unset($params['p']);
-        $params['sort'] = (!empty($params['sort']) && !empty($movieTabInfo[$params['sort']])) ? $params['sort'] : 'new';//默认显示最新更新
+        $params['sort'] = (!empty($params['sort']) && !empty($movieTabInfo[$params['sort']])) ? $params['sort'] : 'like';//默认显示最新更新
         $movieTabInfo[$params['sort']]['active'] = true;
         foreach($movieTabInfo as $tabKey => $tabVal) {
             if (in_array($tabVal['sort'],array("show","comming"))) {
