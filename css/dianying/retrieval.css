@@ -96,6 +96,30 @@ div.retrieval_title h1 {
     color: #08A6BC;
     font-family: "微软雅黑";
 }
+div.retrieval_title h1 span {
+    float: right;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: normal;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+div.retrieval_title h1 span a {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #bbb;
+    color: #666;
+}
+div.retrieval_title h1 span a.current {
+    background-color: #08A6BC;
+    color: #fff;
+}
+div.retrieval_title h1 span a.w {
+    border-right: none;
+}
 div.retrieval_movie_list {
     float: left;
     width: 1120px;
@@ -116,6 +140,35 @@ div.retrieval_movie_list ul li {
     margin-bottom: 5px;
     overflow: hidden;
     height: 20px;
+}
+div.retrieval_movie_list ul li.list_by_img {
+    width: 120px;
+    height: 185px;
+    margin-right: 10px;
+    padding: 5px;
+}
+div.retrieval_movie_list ul li.list_by_img a.img_info {
+    float: left;
+    width: 100%;
+    height: 160px;
+    background-color: #eee;
+}
+div.retrieval_movie_list ul li.list_by_img a img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.retrieval_movie_list ul li.list_by_img span {
+    float: left;
+    margin-left: 5px;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+div.retrieval_movie_list ul li.list_by_img:hover a {
+    color:#08A6BC;
+    text-decoration: underline;
 }
 div.retrieval_movie_list ul.no_result {
     width: 900px;

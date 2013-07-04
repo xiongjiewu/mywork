@@ -1,16 +1,26 @@
 (function($) {
     var firstI = 1;
     var init = {
-        appendInfo:function(jsonResult,b) {//将内容追加到页面中
+        appendInfo:function(jsonResult,b,t) {//将内容追加到页面中
             var appendObj = $("div.retrieval_movie_list ul"),sHtml = "";
             $(jsonResult).each(function (index, val) {
-                sHtml += '<li><a class="" href="' + val.url + '" title="' + val.name + '">' +
-                    '<i class="' + b + '"></i>' + val.name + '</a></li>';
+                if (t == "p") {
+                    sHtml += '<li class="list_by_img">' +
+                        '<a href="' + val.url + '" class="img_info">' +
+                        '<img src="' + val.imageUrl + '">' +
+                        '</a><span>' +
+                        '<a class="" href="' + val.url + '" title="' + val.name + '">' + val.name  +
+                        '</a></span></li>';
+                } else {
+                    sHtml += '<li><a class="" href="' + val.url + '" title="' + val.name + '">' +
+                        '<i class="' + b + '"></i>' + val.name + '</a></li>';
+                }
             });
             appendObj.append(sHtml);
         },
         ajaxGetInfo:function() {
             var b = $("#bType").val();
+            var t = $("#tType").val();
             var s = $("#sType").val();
             var nextOffset = $("#nextOffset").val();
             var infoCount = $("#infoCount").val();
@@ -18,11 +28,11 @@
                 $.ajax({
                     type : "post",
                     url : "/retrieval/ajaxgetInfo/",
-                    data : {b:b,s:s,nextOffset:nextOffset},
+                    data : {b:b,t:t,s:s,nextOffset:nextOffset},
                     dataType:"json",
                     success:function(result) {
                         if (result.code == "success") {
-                            init.appendInfo(result.info,b);
+                            init.appendInfo(result.info,b,t);
                             //重设下一次读取的位移量
                             $("#nextOffset").val(result.nextOffset);
                         }

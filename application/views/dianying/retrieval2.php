@@ -15,7 +15,7 @@
             <?php foreach($bR as $bRVal):?>
                 <li>
                     <a class="<?php echo $bRVal['type'];?>_retrieval<?php echo $bRVal['active'] ? " current" : "";?>" href="<?php echo $bRVal['url'];?>">
-<!--                        <i></i>-->
+                        <!--                        <i></i>-->
                         <?php echo $bRVal['title'];?>
                     </a>
                 </li>
@@ -45,41 +45,34 @@
         </h1>
     </div>
     <div class="retrieval_movie_list">
-            <?php if (!empty($infoList)):?>
-                <ul>
-                    <?php foreach($infoList as $infoVal):?>
-                        <?php
-                            if ($b == "d") {
-                                $imgUrl = APF::get_instance()->get_image_url($infoVal['image']);
-                                $url = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
-                            } else {
-                                $imgUrl = APF::get_instance()->get_image_url($infoVal['photo']);
-                                $url = APF::get_instance()->get_real_url("/people",$infoVal['id']);
-                            };
-                        ?>
-                        <li class="list_by_img">
-                            <a href="<?php echo $url;?>" class="img_info">
-                                <img src="<?php echo $imgUrl;?>">
-                            </a>
-                            <span>
-                                <a class="" href="<?php echo $url;?>" title="<?php echo $infoVal['name'];?>">
-                                    <?php echo $infoVal['name'];?>
-                                </a>
-                            </span>
-                        </li>
-                    <?php endforeach;?>
-                </ul>
+        <?php if (!empty($infoList)):?>
+            <ul>
+                <?php foreach($infoList as $infoVal):?>
+                    <?php
+                    if ($b == "d"){
+                        $url = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
+                    } else {
+                        $url = APF::get_instance()->get_real_url("/people",$infoVal['id']);
+                    };?>
+                    <li>
+                        <a class="" href="<?php echo $url;?>" title="<?php echo $infoVal['name'];?>">
+                            <i class="<?php echo $b;?>"></i>
+                            <?php echo $infoVal['name'];?>
+                        </a>
+                    </li>
+                <?php endforeach;?>
+            </ul>
+        <?php else:?>
+            <ul class="no_result">
+                悲剧了，暂无搜索结果。请尝试其他检索方式或使用搜索找您喜欢的内容。<br><br>
+                或
+                <?php if (empty($userId)):?>
+                    <a target="_blank" href="<?php echo APF::get_instance()->get_real_url("/login",'',array("bgurl" => base64_encode("/usercenter/feedback/")));?>">反馈你想看</a>
                 <?php else:?>
-                    <ul class="no_result">
-                       悲剧了，暂无搜索结果。请尝试其他检索方式或使用搜索找您喜欢的内容。<br><br>
-                        或
-                        <?php if (empty($userId)):?>
-                            <a target="_blank" href="<?php echo APF::get_instance()->get_real_url("/login",'',array("bgurl" => base64_encode("/usercenter/feedback/")));?>">反馈你想看</a>
-                        <?php else:?>
-                            <a target="_blank" href="<?php echo APF::get_instance()->get_real_url("/usercenter/feedback/");?>">反馈你想看</a>
-                        <?php endif;?>。
-                    </ul>
-            <?php endif;?>
+                    <a target="_blank" href="<?php echo APF::get_instance()->get_real_url("/usercenter/feedback/");?>">反馈你想看</a>
+                <?php endif;?>。
+            </ul>
+        <?php endif;?>
     </div>
     <div class="clear"></div>
 </div>
