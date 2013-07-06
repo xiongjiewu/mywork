@@ -10,6 +10,7 @@ class Search extends CI_Controller {
         $this->load->model('Backgroundadmin');
         $this->load->model('Actinfo');
         $this->load->model('Directorinfo');
+        $this->load->model('Character');
         $this->load->set_top_index(-1);
     }
 
@@ -306,6 +307,15 @@ class Search extends CI_Controller {
         $this->set_attr("year",$year);
         $this->set_attr("diqu",$diqu);
 
+        //开始搜索人物信息
+        $peopleConditionStr = "name = '" . $searchW . "' and del = 0 limit 1";
+        $peopleInfo = $this->Character->getCharacterInfoByCon($peopleConditionStr);
+        if (!empty($peopleInfo[0])) {
+            $this->set_attr("peopleInfo",$peopleInfo[0]);
+            //星座信息
+            $xingzuoInfo = APF::get_instance()->get_config_value("constellatoryInfo");
+            $this->set_attr("xingzuoInfo",$xingzuoInfo);
+        }
 
         //搜索处理
         list($searchMovieInfo,$ids) = $this->_searchMian($searchW,$type,$year,$diqu,50);

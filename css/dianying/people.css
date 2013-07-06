@@ -37,7 +37,7 @@ div.people_info ul li {
     padding: 5px 10px;
     border-bottom: 2px solid #ddd;
     background-color: #f0f1f2;
-    font-family: "宋体";
+    font-family: "微软雅黑";
     font-size: 13px;
 }
 div.people_info ul li.name {
@@ -92,7 +92,7 @@ div.jieshao dl dd {
     margin-left: 5px;
     font-size: 13px;
     color: #414141;
-    font-family: "宋体";
+    font-family: "微软雅黑";
     line-height: 25px;
 }
 div.jieshao dl dd a {
@@ -131,7 +131,7 @@ div.peopel_ph ul li.title a {
     font-size: 13px;
     float: right;
     color: #333;
-    font-family: "宋体";
+    font-family: "微软雅黑";
 }
 div.peopel_ph ul li.photo_info {
     background: url("/images/common/renwu_sucai.png") repeat scroll 0 0 transparent;

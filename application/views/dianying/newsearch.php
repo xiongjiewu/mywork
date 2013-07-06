@@ -4,6 +4,50 @@
         <a href="/">首页 </a>>
         <span> 搜'<?php echo $searchW;?>'相关的影片</span>
     </div>
+    <!-- 人物信息展示 start -->
+    <?php if (!empty($peopleInfo)):?>
+        <div class="peopel_info_list" title="点击了解详情">
+            <div class="peopel_img">
+                <a class="" href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>">
+                    <img src="<?php echo APF::get_instance()->get_image_url($peopleInfo['photo']);?>">
+                </a>
+            </div>
+            <div class="people_detail_info">
+                <dl>
+                    <dt><a href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>"><?php echo $peopleInfo['name'];?></a></dt>
+                    <dd>生日：<?php echo empty($peopleInfo['birthday']) ? "暂无" : date("Y年m月d日",strtotime($peopleInfo['birthday']));?></dd>
+                    <dd>星座：<?php echo empty($peopleInfo['constellatory']) ? "暂无" : $xingzuoInfo[$peopleInfo['constellatory']];?></dd>
+                    <dd>身高：<?php echo (!empty($peopleInfo['height']) && $peopleInfo['height'] > 0) ? round($peopleInfo['height']) . "cm" : "暂无";?></dd>
+                    <dd><?php $peopleInfo['birthplace'] = trim($peopleInfo['birthplace']);?>
+                        出生地：<?php echo empty($peopleInfo['birthplace']) ? "暂无" : $peopleInfo['birthplace'];?></dd>
+                    <dd>
+                        简介：<?php echo empty($peopleInfo['jieshao']) ? "暂无" : APF::get_instance()->splitStr($peopleInfo['jieshao'],120,"...");?>
+                        <a class="" href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>">[了解详情]</a>
+                    </dd>
+                    <?php if (!empty($searchMovieInfo)):?>
+                        <dd>
+                            <div class="dy_list">
+                                <ul>
+                                    <?php $sMovieInfo = array_slice($searchMovieInfo,0,7);?>
+                                    <?php foreach($sMovieInfo as $searchInfo):?>
+                                        <?php $url = APF::get_instance()->get_real_url("/detail",$searchInfo['id']);?>
+                                        <li>
+                                            <a href="<?php echo $url;?>">
+                                                <img src="<?php echo APF::get_instance()->get_image_url($searchInfo['image']);?>">
+                                            </a>
+                                            <span class="name"><?php echo $searchInfo['name'];?></span>
+                                        </li>
+                                    <?php endforeach;?>
+                                </ul>
+                            </div>
+                        </dd>
+                    <?php endif;?>
+                </dl>
+            </div>
+        </div>
+    <?php endif;?>
+    <!-- 人物信息展示 end -->
+    <?php if (empty($peopleInfo) || (!empty($searchMovieInfo) && !empty($peopleInfo))):?>
     <div class="search_left">
         <?php $typeCount = count($movieSortType);?>
         <?php $typeI = 1;?>
@@ -42,6 +86,7 @@
             <?php $typeI++;?>
        <?php endforeach;?>
     </div>
+    <?php endif;?>
     <div class="search_dy_info">
         <ul>
             <?php if (!empty($searchMovieInfo)):?>
@@ -117,7 +162,7 @@
                     </li>
                     <?php $i++;?>
                 <?php endforeach;?>
-                <?php else:?>
+                <?php elseif (empty($peopleInfo)):?>
                     <li class="no_data">
                         <div class="error_imga">
                             <img src="/images/error.png">

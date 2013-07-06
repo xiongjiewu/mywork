@@ -97,7 +97,7 @@ div.type_info_list li a {
     text-align: center;
     white-space: nowrap;
     color: #000;
-    font-family: "宋体";
+    font-family: "微软雅黑";
     padding: 2px 8px;
     margin-bottom: 5px;
 }
@@ -129,7 +129,7 @@ div.movie_sort_tab ul li a {
     line-height: 32px;
     border-left: 1px solid #ddd;
     font-size: 14px;
-    font-family: "宋体";
+    font-family: "微软雅黑";
     color: #000;
 }
 div.movie_sort_tab ul li a.last_a {
