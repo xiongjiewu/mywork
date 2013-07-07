@@ -445,6 +445,7 @@ class Useraction extends CI_Controller
         //更新影片下载次数
         $this->Backgroundadmin->updateDetailInfo($downLoadLinkInfo[0]['infoId'],array("downNum" => $dyInfo['downNum'] + 1));
 
+        $downLoadLinkInfo[0]['link'] = strip_tags($downLoadLinkInfo[0]['link']);
         echo json_encode(array("code" => "success","info" => $downLoadLinkInfo[0]['link'],"type" => $downLoadLinkInfo[0]['type']));
         exit;
     }

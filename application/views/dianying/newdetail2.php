@@ -203,6 +203,7 @@
                 <div class="watchLink_list down" style="display: none;">
                     <?php $downI = 1;?>
                     <?php foreach ($downLoadLinkInfo as $downLinkInfoKey => $downLinkInfoVal): ?>
+                        <?php $downLinkInfoVal['link'] = strip_tags($downLinkInfoVal['link']);?>
                         <span title="点击下载" class="downlink_list" val="<?php echo APF::get_instance()->encodeId($downLinkInfoVal['id']);?>">
                         下载<?php echo (count($downLoadLinkInfo) == 1)? "" : $downI;?>:
                             <?php if ($downLinkInfoVal['type'] == 5)://BT种子?>
@@ -245,8 +246,6 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($caiNiXiHuanInfo as $dyMovieVal):?>
-                            <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
-                            <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
@@ -265,8 +264,6 @@
                 <ul>
                     <?php $movieI = 1;?>
                     <?php foreach($daoyanMovieInfo as $dyMovieVal):?>
-                        <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
-                        <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                         <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                             <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                 <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
@@ -285,8 +282,6 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($zhuyanMovieInfo as $dyMovieVal):?>
-                            <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
-                            <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
