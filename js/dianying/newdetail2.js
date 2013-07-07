@@ -7,14 +7,15 @@ var init = {
         }
         return true;
     },
-    reply: function (t, editor) {
+    reply: function (t) {
         var p = $(t).parent();
         var pF = p.prev();
         var userName = pF.find("a.user_name").html();
         var lou = $(t).next().html();
-        editor.setSource("回复" + lou + "的" + userName + ":");
-        editor.focus();
+        var con = $("#content");
+        con.val("回复" + lou + "的" + userName + ":");
         window.location.href = "#createpost";
+        con.focus();
     },
     ding: function (t) {
         var pid = $(t).attr("pid");
@@ -76,7 +77,7 @@ var init = {
                 });
                 break;
             case "post" :
-                post();
+                window.location.reload();
                 break;
             case "score" ://打分
                 this.ajaxDoScore(dyId,scoreStart,function(result) {
@@ -84,6 +85,7 @@ var init = {
                 });
                 break;
             default :
+                window.location.reload();
                 break;
         }
     },
@@ -327,12 +329,12 @@ var init = {
             });
         } else {
             cententObj.bind("focus",function() {
-                logPanInit.showLoginPan();
+                logPanInit.showLoginPan("init.loginCallBack");
                 return false;
             });
             //顶
             dingObj.live("click",function () {
-                logPanInit.showLoginPan();
+                logPanInit.showLoginPan("init.loginCallBack");
             });
             //收藏
             $("a.shoucang").bind("click", function () {
@@ -471,6 +473,10 @@ var init = {
                     evant.stopPropagation();
                 });
             });
+        });
+        //回复按钮
+        $(".info .right a.reply").live("click",function () {
+            init.reply(this);
         });
     })
 })(jQuery);
