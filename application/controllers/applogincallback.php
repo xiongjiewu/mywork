@@ -191,7 +191,7 @@ class Applogincallback extends CI_Controller
             $state = APF::get_instance()->decodeId($stateArr[0]);
             $state = intval($state);
             //判断页面是否失效
-            if (empty($state) || ($this->_nowTime - $state) > $this->_webLoginInfo['weibo']['codeTime']) {
+            if (empty($state) || ($this->_nowTime - $state) > $this->_webLoginInfo['renren']['codeTime']) {
                 $this->jump_to("/error/index/4?bgurl=" . $this->_loginBase64);//页面已过期
                 exit;
             }
