@@ -208,7 +208,7 @@ class Search extends CI_Controller {
         //开始查询信息
         $moviceI = 0;
         foreach($wordArr[0] as $wordVal) {
-	        $wordVal = htmlspecialchars($wordVal);
+	        $wordVal =  $wordValKey = htmlspecialchars($wordVal);
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
@@ -221,19 +221,19 @@ class Search extends CI_Controller {
                     //替换名称中的搜索关键字，如果是拼音搜索则名称直接替换
                     if ($pinyin) {
                         $str = "<em>{$sInfo['name']}</em>";
-                        $wordVal = $sInfo['name'];
+                        $wordValKey = $sInfo['name'];
                     }
-                    $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
+                    $sInfo['s_name'] = str_replace($wordValKey,$str,$sInfo['name']);
 
                     //替换主演中的搜索关键字
                     if (!empty($sInfo['zhuyan'])) {
                         $sInfo['zhuyan'] = str_replace("/","、",$sInfo['zhuyan']);
-                        $sInfo['zhuyan'] = str_replace($wordVal,$str,$sInfo['zhuyan']);
+                        $sInfo['zhuyan'] = str_replace($wordValKey,$str,$sInfo['zhuyan']);
                     }
                     //替换导演中的搜索关键字
                     if (!empty($sInfo['daoyan'])) {
                         $sInfo['daoyan'] = str_replace("/","、",$sInfo['daoyan']);
-                        $sInfo['daoyan'] = str_replace($wordVal,$str,$sInfo['daoyan']);
+                        $sInfo['daoyan'] = str_replace($wordValKey,$str,$sInfo['daoyan']);
                     }
                     $sInfo['jieshao'] = str_replace("&nbsp;","",$sInfo['jieshao']);
                     $sInfo['jieshao'] = str_replace("\t","",$sInfo['jieshao']);
@@ -251,18 +251,19 @@ class Search extends CI_Controller {
             if (!empty($searchInfo1)) {
                 if ($pinyin) {
                     $str = "<em>{$zhongwenName}</em>";
+                    $wordValKey = $zhongwenName;
                 }
 
                 foreach($searchInfo1 as $sKey1 => $sInfo1) {
                     //替换名称中的搜索关键字
-                    $sInfo1['s_name'] = str_replace($wordVal,$str,$sInfo1['name']);
+                    $sInfo1['s_name'] = str_replace($wordValKey,$str,$sInfo1['name']);
                     //替换主演中的搜索关键字
                     $sInfo1['zhuyan'] = str_replace("/","、",$sInfo1['zhuyan']);
-                    $sInfo1['zhuyan'] = str_replace($wordVal,$str,$sInfo1['zhuyan']);
+                    $sInfo1['zhuyan'] = str_replace($wordValKey,$str,$sInfo1['zhuyan']);
                     //替换导演中的搜索关键字
                     if (!empty($sInfo1['daoyan'])) {
                         $sInfo1['daoyan'] = str_replace("/","、",$sInfo1['daoyan']);
-                        $sInfo1['daoyan'] = str_replace($wordVal,$str,$sInfo1['daoyan']);
+                        $sInfo1['daoyan'] = str_replace($wordValKey,$str,$sInfo1['daoyan']);
                     }
                     $sInfo1['jieshao'] = str_replace("&nbsp;","",$sInfo1['jieshao']);
                     $sInfo1['jieshao'] = str_replace("\t","",$sInfo1['jieshao']);
@@ -276,18 +277,19 @@ class Search extends CI_Controller {
             if (!empty($searchInfo2)) {
                 if ($pinyin) {
                     $str = "<em>{$zhongwenName}</em>";
+                    $wordValKey = $zhongwenName;
                 }
 
                 foreach($searchInfo2 as $sKey2 => $sInfo2) {
                     //替换名称中的搜索关键字
-                    $sInfo2['s_name'] = str_replace($wordVal,$str,$sInfo2['name']);
+                    $sInfo2['s_name'] = str_replace($wordValKey,$str,$sInfo2['name']);
                     //替换名称中的搜索关键字
                     if (!empty($sInfo2['zhuyan'])) {
                         $sInfo2['zhuyan'] = str_replace("/","、",$sInfo2['zhuyan']);
-                        $sInfo2['zhuyan'] = str_replace($wordVal,$str,$sInfo2['zhuyan']);
+                        $sInfo2['zhuyan'] = str_replace($wordValKey,$str,$sInfo2['zhuyan']);
                     }
                     $sInfo2['daoyan'] = str_replace("/","、",$sInfo2['daoyan']);
-                    $sInfo2['daoyan'] = str_replace($wordVal,$str,$sInfo2['daoyan']);
+                    $sInfo2['daoyan'] = str_replace($wordValKey,$str,$sInfo2['daoyan']);
                     $sInfo2['jieshao'] = str_replace("&nbsp;","",$sInfo2['jieshao']);
                     $sInfo2['jieshao'] = str_replace("\t","",$sInfo2['jieshao']);
                     $searchInfo2[$sKey2] = $sInfo2;
