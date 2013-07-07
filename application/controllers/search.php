@@ -96,11 +96,20 @@ class Search extends CI_Controller {
      * @param string $year
      * @param string $diqu
      */
-    private function _getMovieInfoBYYanYuan($searchW,$type = '',$year = '',$diqu = '') {
+    private function _getMovieInfoBYYanYuan($searchW,$type = '',$year = '',$diqu = '',$pinyin = false) {
         $searchW = $this->_repeatSpeStr($searchW);
-        $movieIdInfo = $this->Actinfo->getActinfoByActinName($searchW);
+        if ($pinyin) {//拼音搜索
+            $movieIdInfo = $this->Actinfo->getActinfoByActinPinYin($searchW);
+        } else {
+            $movieIdInfo = $this->Actinfo->getActinfoByActinName($searchW);
+        }
+
         $movieInfos = $ids = array();
+        $zhongwenName = "";
         if (!empty($movieIdInfo)) {
+            //中文名
+            $zhongwenName = $movieIdInfo[0]['name'];
+
             foreach($movieIdInfo as $movieIdVal) {
                 $ids[] = $movieIdVal['infoId'];
             }
@@ -113,7 +122,7 @@ class Search extends CI_Controller {
             }
             $movieInfos = $this->Backgroundadmin->getMovieInfoByCon($conditionStr);
         }
-        return $movieInfos;
+        return array($movieInfos,$zhongwenName);
     }
 
     /**
@@ -123,11 +132,20 @@ class Search extends CI_Controller {
      * @param string $year
      * @param string $diqu
      */
-    private function _getMovieInfoBYDaoYuan($searchW,$type = '',$year = '',$diqu = '') {
+    private function _getMovieInfoBYDaoYuan($searchW,$type = '',$year = '',$diqu = '',$pinyin = false) {
         $searchW = $this->_repeatSpeStr($searchW);
-        $movieIdInfo = $this->Directorinfo->getDirectorinfoByDirectorName($searchW);
+        if ($pinyin) {
+            $movieIdInfo = $this->Directorinfo->getDirectorinfoByDirectorPinYin($searchW);
+        } else {
+            $movieIdInfo = $this->Directorinfo->getDirectorinfoByDirectorName($searchW);
+        }
+
         $movieInfos = $ids = array();
+        $zhongwenName = "";
         if (!empty($movieIdInfo)) {
+            //中文名
+            $zhongwenName = $movieIdInfo[0]['name'];
+
             foreach($movieIdInfo as $movieIdVal) {
                 $ids[] = $movieIdVal['infoId'];
             }
@@ -140,7 +158,7 @@ class Search extends CI_Controller {
             }
             $movieInfos = $this->Backgroundadmin->getMovieInfoByCon($conditionStr);
         }
-        return $movieInfos;
+        return array($movieInfos,$zhongwenName);
     }
 
     /** 根据类型、年份、地区拼接筛选条件
@@ -202,10 +220,10 @@ class Search extends CI_Controller {
                 foreach($searchInfo as $sKey => $sInfo) {
                     //替换名称中的搜索关键字，如果是拼音搜索则名称直接替换
                     if ($pinyin) {
-                        $sInfo['s_name'] = str_replace($sInfo['name'],"<em>{$sInfo['name']}</em>",$sInfo['name']);
-                    } else {
-                        $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
+                        $str = "<em>{$sInfo['name']}</em>";
+                        $wordVal = $sInfo['name'];
                     }
+                    $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
 
                     //替换主演中的搜索关键字
                     if (!empty($sInfo['zhuyan'])) {
@@ -229,8 +247,12 @@ class Search extends CI_Controller {
             }
 
             //电影主演搜索
-            $searchInfo1 = $this->_getMovieInfoBYYanYuan($wordVal,$type,$year,$diqu);
+            list($searchInfo1,$zhongwenName) = $this->_getMovieInfoBYYanYuan($wordVal,$type,$year,$diqu,$pinyin);
             if (!empty($searchInfo1)) {
+                if ($pinyin) {
+                    $str = "<em>{$zhongwenName}</em>";
+                }
+
                 foreach($searchInfo1 as $sKey1 => $sInfo1) {
                     //替换名称中的搜索关键字
                     $sInfo1['s_name'] = str_replace($wordVal,$str,$sInfo1['name']);
@@ -250,8 +272,12 @@ class Search extends CI_Controller {
             }
 
             //电影导演搜索
-            $searchInfo2 = $this->_getMovieInfoBYDaoYuan($wordVal,$type,$year,$diqu,$limit);
+            list($searchInfo2,$zhongwenName) = $this->_getMovieInfoBYDaoYuan($wordVal,$type,$year,$diqu,$limit,$pinyin);
             if (!empty($searchInfo2)) {
+                if ($pinyin) {
+                    $str = "<em>{$zhongwenName}</em>";
+                }
+
                 foreach($searchInfo2 as $sKey2 => $sInfo2) {
                     //替换名称中的搜索关键字
                     $sInfo2['s_name'] = str_replace($wordVal,$str,$sInfo2['name']);
