@@ -28,8 +28,9 @@ class Applogincallback extends CI_Controller
         $code = $this->input->get("code");
         if (!empty($code)) {//code验证
             $this->_echoLogin();
-            $state = $this->input->get("state");
-            $state = APF::get_instance()->decodeId($state);
+            $stateStr = $this->input->get("state");
+            $stateArr = explode("[A]",$stateStr);
+            $state = APF::get_instance()->decodeId($stateArr[0]);
             $state = intval($state);
             //判断页面是否失效
             if (empty($state) || ($this->_nowTime - $state) > $this->_webLoginInfo['qq']['codeTime']) {
@@ -99,7 +100,8 @@ class Applogincallback extends CI_Controller
                 }
             }
             $this->setLoginCookie($userInfo['nickname'],$userId,86400);
-            $this->jump_to("/");//登录成功跳转致首页
+            $refererUrl = empty($stateArr[1]) ? "/" : base64_decode($stateArr[1]);
+            $this->jump_to($refererUrl);//登录成功跳转致来源链接
             exit;
         }
         $this->jump_to("/");//失败跳转致首页
@@ -113,6 +115,15 @@ class Applogincallback extends CI_Controller
         $code = $this->input->get("code");
         if (!empty($code)) {//code验证
             $this->_echoLogin();
+            $stateStr = $this->input->get("state");
+            $stateArr = explode("[A]",$stateStr);
+            $state = APF::get_instance()->decodeId($stateArr[0]);
+            $state = intval($state);
+            //判断页面是否失效
+            if (empty($state) || ($this->_nowTime - $state) > $this->_webLoginInfo['weibo']['codeTime']) {
+                $this->jump_to("/error/index/4?bgurl=" . $this->_loginBase64);//页面已过期
+                exit;
+            }
             $this->_webLoginInfo['weibo']['getToken']['params']['code'] = $code;
             $tokenInfo = APF::get_instance()->myCurl($this->_webLoginInfo['weibo']['getToken']['baseUrl'],$this->_webLoginInfo['weibo']['getToken']['params'],true,false);
             //信息不存在
@@ -160,7 +171,8 @@ class Applogincallback extends CI_Controller
                 }
             }
             $this->setLoginCookie($userInfo['name'],$userId,86400);
-            $this->jump_to("/");//登录成功跳转致首页
+            $refererUrl = empty($stateArr[1]) ? "/" : base64_decode($stateArr[1]);
+            $this->jump_to($refererUrl);//登录成功跳转致来源链接
             exit;
         }
         $this->jump_to("/");//失败跳转致首页
@@ -174,6 +186,15 @@ class Applogincallback extends CI_Controller
         $code = $this->input->get("code");
         if (!empty($code)) {//code验证
             $this->_echoLogin();
+            $stateStr = $this->input->get("state");
+            $stateArr = explode("[A]",$stateStr);
+            $state = APF::get_instance()->decodeId($stateArr[0]);
+            $state = intval($state);
+            //判断页面是否失效
+            if (empty($state) || ($this->_nowTime - $state) > $this->_webLoginInfo['weibo']['codeTime']) {
+                $this->jump_to("/error/index/4?bgurl=" . $this->_loginBase64);//页面已过期
+                exit;
+            }
             $this->_webLoginInfo['renren']['getToken']['params']['code'] = $code;
             $tokenInfo = APF::get_instance()->myCurl($this->_webLoginInfo['renren']['getToken']['baseUrl'],$this->_webLoginInfo['renren']['getToken']['params'],true,false);
             //信息不存在
@@ -212,7 +233,8 @@ class Applogincallback extends CI_Controller
                 }
             }
             $this->setLoginCookie($tokenInfo['user']['name'],$userId,86400);
-            $this->jump_to("/");//登录成功跳转致首页
+            $refererUrl = empty($stateArr[1]) ? "/" : base64_decode($stateArr[1]);
+            $this->jump_to($refererUrl);//登录成功跳转致来源链接
             exit;
         }
         $this->jump_to("/");//失败跳转致首页

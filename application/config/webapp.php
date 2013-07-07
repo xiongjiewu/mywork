@@ -14,7 +14,7 @@ $config['web_app_info'] = array(
                 "response_type" => "code",
                 "client_id" => "100461606",
                 "redirect_uri" => APF::get_instance()->get_config_value("base_url") . "/applogincallback/qq/",
-                "state" => APF::get_instance()->encodeId(time()),//加密字符串，防止第三方网站攻击
+                "state" => APF::get_instance()->encodeId(time()) . "[A]" . base64_encode($_SERVER['HTTP_REFERER']),//加密字符串+来源地址，防止第三方网站攻击，以及登录返回来源地址
             ),
         ),
         "getToken" => array(
@@ -58,6 +58,7 @@ $config['web_app_info'] = array(
                 "response_type" => "code",
                 "client_id" => "3388334580",
                 "redirect_uri" => APF::get_instance()->get_config_value("base_url") . "/applogincallback/weibo/",
+                "state" => APF::get_instance()->encodeId(time()) . "[A]" . base64_encode($_SERVER['HTTP_REFERER']),//加密字符串+来源地址，防止第三方网站攻击，以及登录返回来源地址
             ),
         ),
         "getToken" => array(
@@ -80,6 +81,7 @@ $config['web_app_info'] = array(
                 "uid" => "",//此toker基于getToken返回的值
             ),
         ),
+        "codeTime" => 10 * 60,//code生效时间，10分钟
     ),
 
     'renren' => array(
@@ -95,6 +97,7 @@ $config['web_app_info'] = array(
                 "client_id" => "a8da7cecf2a84c5d8ad506e922ea243c",
                 "display" => "page",
                 "redirect_uri" => APF::get_instance()->get_config_value("base_url") . "/applogincallback/renren/",
+                "state" => APF::get_instance()->encodeId(time()) . "[A]" . base64_encode($_SERVER['HTTP_REFERER']),//加密字符串+来源地址，防止第三方网站攻击，以及登录返回来源地址
             ),
         ),
         "getToken" => array(
@@ -117,5 +120,6 @@ $config['web_app_info'] = array(
                 "uid" => "",//此toker基于getToken返回的值
             ),
         ),
+        "codeTime" => 10 * 60,//code生效时间，10分钟
     ),
 );
