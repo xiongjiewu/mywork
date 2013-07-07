@@ -245,6 +245,8 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($caiNiXiHuanInfo as $dyMovieVal):?>
+                            <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
+                            <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
@@ -263,6 +265,8 @@
                 <ul>
                     <?php $movieI = 1;?>
                     <?php foreach($daoyanMovieInfo as $dyMovieVal):?>
+                        <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
+                        <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                         <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                             <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                 <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
@@ -281,6 +285,8 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($zhuyanMovieInfo as $dyMovieVal):?>
+                            <?php $dyMovieVal['name'] = strip_tags($dyMovieVal['name']);?>
+                            <?php $dyMovieVal['name'] = htmlspecialchars($dyMovieVal['name']);?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
