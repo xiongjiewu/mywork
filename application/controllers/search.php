@@ -246,6 +246,10 @@ class Search extends CI_Controller {
                 }
             }
 
+            if ($moviceI > 0 && ($wordVal == $searchW)) {//演员、导演整词匹配只需要查询一次
+                continue;
+            }
+
             //电影主演搜索
             list($searchInfo1,$zhongwenName) = $this->_getMovieInfoBYYanYuan($wordVal,$type,$year,$diqu,$pinyin);
             if (!empty($searchInfo1)) {
@@ -273,7 +277,7 @@ class Search extends CI_Controller {
             }
 
             //电影导演搜索
-            list($searchInfo2,$zhongwenName) = $this->_getMovieInfoBYDaoYuan($wordVal,$type,$year,$diqu,$limit,$pinyin);
+            list($searchInfo2,$zhongwenName) = $this->_getMovieInfoBYDaoYuan($wordVal,$type,$year,$diqu,$pinyin);
             if (!empty($searchInfo2)) {
                 if ($pinyin) {
                     $str = "<em>{$zhongwenName}</em>";
