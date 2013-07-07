@@ -476,7 +476,12 @@ var init = {
         });
         //回复按钮
         $(".info .right a.reply").live("click",function () {
-            init.reply(this);
+            var user_id = $("#user_id").val();
+            if (!user_id) {
+                logPanInit.showLoginPan();
+            } else {
+                init.reply(this);
+            }
         });
     })
 })(jQuery);
