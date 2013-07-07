@@ -60,11 +60,15 @@ class Search extends CI_Controller {
      * @param int $limit
      * @return mixed
      */
-    private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
+    private function _getDetailInfoBySearchW($searchW,$type = '',$year = '',$diqu = '',$limit  = 50,$pinyin = false) {
         $searchW = $this->_repeatSpeStr($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
-        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,$conStr);
+        if ($pinyin) {//拼音搜索
+            $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchPinYin(trim($searchW),$limit,$conStr);
+        } else {
+            $searchMovieInfo = $this->Backgroundadmin->getDetailInfoBySearchW(trim($searchW),$limit,$conStr);
+        }
         return $searchMovieInfo;
     }
 
@@ -73,11 +77,15 @@ class Search extends CI_Controller {
      * @param int $limit
      * @return mixed
      */
-    private function _getDetailInfoByDyName($searchW,$type = '',$year = '',$diqu = '',$limit  = 50) {
+    private function _getDetailInfoByDyName($searchW,$type = '',$year = '',$diqu = '',$limit  = 50,$pinyin = false) {
         $searchW = $this->_repeatSpeStr($searchW);
         $conStr = $this->_getMoviceCon($type,$year,$diqu);
         $conStr .= " order by nianfen desc";
-        $searchMovieInfo = $this->Backgroundadmin->getDetailInfoByDyName(trim($searchW),$limit,$conStr);
+        if ($pinyin) {
+            $searchMovieInfo = $this->Backgroundadmin->getDetailInfoByDyPinYin(trim($searchW),$limit,$conStr);
+        } else {
+            $searchMovieInfo = $this->Backgroundadmin->getDetailInfoByDyName(trim($searchW),$limit,$conStr);
+        }
         return $searchMovieInfo;
     }
 
@@ -162,15 +170,22 @@ class Search extends CI_Controller {
      * 搜索主函数
      */
     private function _searchMian($searchW,$type,$year,$diqu,$limit = 50) {
-        //分词数组
-        $wordArr = array();
-        $this->load->model("Wordsplit");
-        $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
-
         //开始匹配搜索关键字的电影
         $searchMovieInfo = $firstMoviceInfo = array();
-        $wordArr[0] = array_unique($wordArr[0]);
-        $wordArr[0] = array_merge(array($searchW),$wordArr[0]);
+
+        if (ctype_alnum($searchW)) {//如果是字母和数字组合，不分词并采用拼音搜索
+            $wordArr[0] = array_merge(array($searchW),array($searchW));
+            $pinyin = true;
+        } else {
+            //分词数组
+            $wordArr = array();
+            $this->load->model("Wordsplit");
+            $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
+
+            $wordArr[0] = array_unique($wordArr[0]);
+            $wordArr[0] = array_merge(array($searchW),$wordArr[0]);
+            $pinyin = false;
+        }
 
         //开始查询信息
         $moviceI = 0;
@@ -179,14 +194,19 @@ class Search extends CI_Controller {
             $str = "<em>" . $wordVal . "</em>";
             //电影名搜索
             if ($moviceI == 0) {//全匹配信息数组,第一次名称全匹配整个词
-                $searchInfo = $this->_getDetailInfoByDyName($wordVal,$type,$year,$diqu,$limit);
+                $searchInfo = $this->_getDetailInfoByDyName($wordVal,$type,$year,$diqu,$limit,$pinyin);
             } else {
-                $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu,$limit);
+                $searchInfo = $this->_getDetailInfoBySearchW($wordVal,$type,$year,$diqu,$limit,$pinyin);
             }
             if (!empty($searchInfo)) {
                 foreach($searchInfo as $sKey => $sInfo) {
-                    //替换名称中的搜索关键字
-                    $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
+                    //替换名称中的搜索关键字，如果是拼音搜索则名称直接替换
+                    if ($pinyin) {
+                        $sInfo['s_name'] = str_replace($sInfo['name'],"<em>{$sInfo['name']}</em>",$sInfo['name']);
+                    } else {
+                        $sInfo['s_name'] = str_replace($wordVal,$str,$sInfo['name']);
+                    }
+
                     //替换主演中的搜索关键字
                     if (!empty($sInfo['zhuyan'])) {
                         $sInfo['zhuyan'] = str_replace("/","、",$sInfo['zhuyan']);

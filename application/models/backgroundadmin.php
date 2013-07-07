@@ -371,6 +371,13 @@ class Backgroundadmin extends CI_Model {
         return empty($result[0]) ? 0 : $result[0]['cn'];
     }
 
+    /**
+     * 根据名称右匹配电影信息
+     * @param $searchW
+     * @param int $limit
+     * @param bool $other
+     * @return bool
+     */
     public function getDetailInfoBySearchW($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {
@@ -386,12 +393,63 @@ class Backgroundadmin extends CI_Model {
         return $query->result_array();
     }
 
+    /**
+     * 根据名称拼音右匹配电影信息
+     * @param $searchW
+     * @param int $limit
+     * @param bool $other
+     * @return bool
+     */
+    public function getDetailInfoBySearchPinYin($searchW,$limit=10,$other = false)
+    {
+        if (!isset($searchW)) {
+            return false;
+        }
+        $sql = "select * from `tbl_detailInfo` where pinyin like '{$searchW}%'";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
+        } else {
+            $sql .= " and del = 0 limit {$limit}";
+        }
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    /**
+     * 根据电影名称搜索信息
+     * @param $searchW
+     * @param int $limit
+     * @param bool $other
+     * @return bool
+     */
     public function getDetailInfoByDyName($searchW,$limit=10,$other = false)
     {
         if (!isset($searchW)) {
             return false;
         }
         $sql = "select * from `tbl_detailInfo` where name = '{$searchW}'";
+        if ($other) {
+            $sql .= " and del = 0 {$other} limit {$limit}";
+        } else {
+            $sql .= " and del = 0 limit {$limit}";
+        }
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    /**
+     * 根据电影名称拼音搜索信息
+     * @param $searchW
+     * @param int $limit
+     * @param bool $other
+     * @return bool
+     */
+    public function getDetailInfoByDyPinYin($searchW,$limit=10,$other = false)
+    {
+        if (!isset($searchW)) {
+            return false;
+        }
+        $sql = "select * from `tbl_detailInfo` where pinyin = '{$searchW}'";
         if ($other) {
             $sql .= " and del = 0 {$other} limit {$limit}";
         } else {

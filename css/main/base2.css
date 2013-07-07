@@ -4,7 +4,7 @@ body {
     background-color: #f3f3f3;
     width: 100%;
     min-width: 1024px;
-    font-family: "微软雅黑";
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
 }
 div.main {
     float: left;
