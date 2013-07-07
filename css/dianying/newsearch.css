@@ -6,31 +6,32 @@ div.search_main  {
 /*左边检索框 start*/
 div.search_left {
     float: left;
-    width: 173px;
-    height: 1080px;
+    width: 206px;
+    /*height: 1080px;*/
     margin-left: 20px;
-    border: 2px solid #ccc;
     background-color: #fff;
 }
 div.search_left ul {
     float: left;
     margin: 0;
-    padding: 20px;
-    background: url("/images/common/fenge.png") no-repeat transparent;
-    background-position:bottom;
+    padding: 5px;
+    /*background: url("/images/common/fenge.png") no-repeat transparent;*/
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: 1px solid #eee;
 }
 div.search_left ul.last_one {
-    background: none;
+    border-bottom: none;
 }
 div.search_left ul li {
     list-style: none;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 8px;
     float: left;
     font-size: 14px;
 }
 div.search_left ul li.title_text {
-    width: 110px;
+    width: 180px;
     float: left;
     color: #bbb;
     margin-left: 10px;
@@ -38,7 +39,7 @@ div.search_left ul li.title_text {
 div.search_left ul li a {
     padding: 5px;
     color: #757575;
-    width: 42px;
+    /*width: 42px;*/
     text-align: center;
     float: left;
     font-family: times new roman, Arial, Helv, Helvetica, sans-serif;
@@ -53,7 +54,7 @@ div.search_left ul li a:hover,div.search_left ul li.current a {
 /*右边电影信息 start*/
 div.search_dy_info {
     float: left;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 div.search_dy_info ul {
     float: left;
@@ -61,23 +62,33 @@ div.search_dy_info ul {
 }
 div.search_dy_info ul li {
     list-style: none;
-    width: 880px;
+    width: 870px;
     height: 180px;
     padding: 15px 20px 25px 20px;
-    background: url("/images/common/search_bg1.png") no-repeat transparent;
+    /*background: url("/images/common/search_bg1.png") no-repeat transparent;*/
     margin-top: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #ccc;
 }
 div.search_dy_info ul li:hover {
     cursor: pointer;
-    width: 878px;
+    width: 868px;
     height: 178px;
     border: 1px solid #F3F3F3;
+    background-color: #e0eeee;
+}
+div.search_dy_info ul li:hover p.title a {
+    text-decoration: underline;
 }
 div.search_dy_info ul li.first_one,div.search_dy_info ul li.no_data {
     margin-top: 0;
 }
 div.search_dy_info ul li.no_data {
     cursor: default;
+}
+div.search_dy_info ul li.no_data:hover {
+    background-color: #fff;
 }
 div.search_dy_info ul li.no_data div.error_imga {
     float: left;
@@ -259,3 +270,34 @@ div.people_detail_info dl dd div.dy_list ul li span {
     opacity: 0.8;
 }
 /* 顶部人物信息展示 end */
+
+div.search_left_top {
+    float: left;
+    width: 100%;
+    height: 52px;
+    background: url("/images/common/search_sucai.png") -5px -58px transparent;
+}
+div.search_left_top h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    float: left;
+    line-height: 52px;
+    margin-left: 15px;
+    color: #000;
+    font-weight: 100;
+}
+div.search_left_bottom {
+    background: url("/images/common/search_sucai.png") repeat scroll -5px -127px transparent;
+    float: left;
+    height: 9px;
+    margin-left: -1px;
+    width: 207px;
+}
+div.type_list {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
