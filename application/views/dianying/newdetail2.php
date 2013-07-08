@@ -42,13 +42,13 @@
                 </dt>
                 <dt>
                     <span>类型:</span>
-                    <a href="/moviceguide?type=<?php echo $dyInfo['type'];?>/">
+                    <a href="/moviceguide?type=<?php echo $dyInfo['type'];?>">
                         <?php echo $movieType[$dyInfo['type']];?>
                     </a>
                 </dt>
                 <dt>
                     <span>地区:</span>
-                    <a href="/moviceguide?place=<?php echo $dyInfo['diqu'];?>/">
+                    <a href="/moviceguide?place=<?php echo $dyInfo['diqu'];?>">
                         <?php echo $moviePlace[$dyInfo['diqu']];?>
                     </a>
                 </dt>
