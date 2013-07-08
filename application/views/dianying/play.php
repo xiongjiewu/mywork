@@ -86,7 +86,7 @@
 <div class="play_main">
     <iframe id="iframepage"  scrolling="yes" frameborder="0" src="<?php echo $watchInfo['link'];?>"></iframe>
 </div>
-<div class="play_bottom" >
+<div class="play_bottom" style="display: none;">
     <ul>
         <li>
             <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyInfo['id']);?>#createpost" target="_blank">点评</a>
