@@ -159,6 +159,8 @@
                                     <div>被摇到:</div><em>&nbsp<?php echo $mVal['yaoyaoNum'];?>次</em>
                                 <?php elseif($sort == "down"):?>
                                     <div>被下载:</div><em>&nbsp<?php echo $mVal['downNum'];?>次</em>
+                                <?php elseif($sort == "new"):?>
+                                    <div>更新于:</div><em>&nbsp<?php echo date("Y-m-d",$mVal['createtime']);?></em>
                                 <?php else:?>
                                     <div>评&nbsp;分:</div><em>&nbsp<?php echo round($mVal['score'],1);?>分</em>
                                 <?php endif;?>
