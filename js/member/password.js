@@ -1,11 +1,11 @@
 (function($){
     var init = {
-        ajaxcheckUserNameAndEmail:function(username,email){
-            if (username && (username != undefined) && email && (email != undefined)) {
+        ajaxcheckUserNameAndEmail:function(email){
+            if (email && (email != undefined)) {
                 $.ajax({
                     url:"/useraction/changepassword/",
                     type:"post",
-                    data:{username:username,email:email},
+                    data:{email:email},
                     dataType:"json",
                     success:function(result){
                         if (result.code == "error") {
@@ -19,16 +19,15 @@
         },
         changePassword:function()
         {
-            var username = $.trim($("#username").val());
             var email = $.trim($("#email").val());
-            if (!username || (username == undefined) || !email || (email == undefined)) {
-                alert("登录帐号或安全邮箱不能为空！");
+            if (!email || (email == undefined)) {
+                alert("安全邮箱不能为空！");
             } else {
                 var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
                 if (!reg.test(email)) {
                     alert("邮箱格式不正确");
                 } else {
-                    this.ajaxcheckUserNameAndEmail(username,email);
+                    this.ajaxcheckUserNameAndEmail(email);
                 }
             }
             return false;

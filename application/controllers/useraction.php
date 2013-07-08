@@ -162,9 +162,8 @@ class Useraction extends CI_Controller
             echo json_encode($result);
             exit;
         }
-        $username = $this->input->post("username");
         $email = $this->input->post("email");
-        if (empty($username) || empty($email)) {
+        if (empty($email)) {
             $result['info'] = "参数错误";
             echo json_encode($result);
             exit;
@@ -174,14 +173,14 @@ class Useraction extends CI_Controller
             exit;
         } else {
             $this->load->model('User');
-            $userInfo = $this->User->getUserInfoByFiled(array("userName"=>$username,"email"=>$email));
+            $userInfo = $this->User->getUserInfoByFiled(array("email" => $email));
             if (empty($userInfo)) {
                 $result['info'] = '登录帐号或安全邮箱不正确';
                 echo json_encode($result);
                 exit;
             } else {
                 $time = time();
-                $key = md5($username . $email . $time);
+                $key = md5(base64_encode(substr($time,0,8)) . $email . substr($time,0,8));
                 $data = array(
                     "userId" => $userInfo['id'],
                     "hash_key" => $key,
@@ -192,7 +191,7 @@ class Useraction extends CI_Controller
                 $this->Changepassword->insertInfo($data);
                 $this->load->model('Email');
                 $emailData['email'] = $email;
-                $emailData['userName'] = $username;
+                $emailData['userName'] = $userInfo['userName'];
                 $emailData['time'] = time();
                 $emailData['title'] = "密码更改-" . APF::get_instance()->get_config_value("base_name");
                 $time = date("Y-m-d H:i:s");
