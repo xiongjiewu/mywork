@@ -15,7 +15,9 @@
             <div class="people_detail_info">
                 <dl>
                     <dt><a href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>"><?php echo $peopleInfo['name'];?></a></dt>
-                    <dd>生日：<?php echo empty($peopleInfo['birthday']) ? "暂无" : date("Y年m月d日",strtotime($peopleInfo['birthday']));?></dd>
+                    <dd>生日：<?php if (empty($peopleInfo['birthday'])):?>暂无<?php else:?><?php if (strlen($peopleInfo['birthday']) == 6):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,1) . "日"?><?php else:?><?php echo date("Y年m月d日",strtotime($peopleInfo['birthday']));?><?php endif;?>
+                        <?php endif;?>
+                    </dd>
                     <dd>星座：<?php echo empty($peopleInfo['constellatory']) ? "暂无" : $xingzuoInfo[$peopleInfo['constellatory']];?></dd>
                     <dd>身高：<?php echo (!empty($peopleInfo['height']) && $peopleInfo['height'] > 0) ? round($peopleInfo['height']) . "cm" : "暂无";?></dd>
                     <dd><?php $peopleInfo['birthplace'] = trim($peopleInfo['birthplace']);?>

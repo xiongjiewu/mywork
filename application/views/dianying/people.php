@@ -11,7 +11,16 @@
                     <?php echo $characterInfo['name'];?>&nbsp;&nbsp;<?php echo $characterInfo['EnglishName'];?>
                 </li>
                 <li class="">
-                    生日：<?php echo empty($characterInfo['birthday']) ? "暂无" : date("Y年m月d日",strtotime($characterInfo['birthday']));?>
+                    生日：
+                    <?php if (empty($characterInfo['birthday'])):?>
+                        暂无
+                    <?php else:?>
+                        <?php if (strlen($characterInfo['birthday']) == 6):?>
+                            <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,1) . "日"?>
+                        <?php else:?>
+                            <?php echo date("Y年m月d日",strtotime($characterInfo['birthday']));?>
+                        <?php endif;?>
+                    <?php endif;?>
                 </li>
                 <li class="">
                     星座：<?php echo empty($characterInfo['constellatory']) ? "暂无" : $xingzuoInfo[$characterInfo['constellatory']];?>
