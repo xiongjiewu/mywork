@@ -64,7 +64,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>简介：</strong><?php echo trim($movieVal['jieshao']);?></td>
+                    <td><strong>简介：</strong><?php echo trim(strip_tags($movieVal['jieshao']));?></td>
                 </tr>
             </table>
             <?php $movieListI++; ?>
