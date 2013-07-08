@@ -22,7 +22,7 @@
                         <a class="more <?php echo $typeVal['moreClass'];?>"><?php echo $typeVal['moreText'];?></a>
                     <?php endif;?>
                     <ul>
-                        <li><a class="<?php if (!empty($typeVal['active'])):?>active<?php endif;?>" href="<?php echo $typeVal['base_url'];?>">全部</a></li>
+                        <li><a class="total <?php if (!empty($typeVal['active'])):?>active<?php endif;?>" href="<?php echo $typeVal['base_url'];?>">全部</a></li>
                         <li class="line"><span>|</span></li>
                         <?php foreach ($typeVal['info'] as $typeValKey => $typeInfoVal):?>
                             <li class="<?php if ($typeI > $typeLimit):?>more_li <?php echo $typeVal['moreTextClass'];?><?php endif;?>">
@@ -41,9 +41,11 @@
                     <label>按导演:</label>
                     <a class="more" href="<?php echo APF::get_instance()->get_real_url("/retrieval","",array("b" => "p","s"=> "A"))?>">更多</a>
                     <ul>
+                        <?php $daoYanI = 1;?>
                         <?php foreach($daoyanInfo as $daoyanVal):?>
-                            <li><a href="<?php echo $daoyanVal['url'];?>" class="<?php if (!empty($daoyanVal['active'])):?>active<?php endif;?>"><?php echo $daoyanVal['title'];?></a></li>
+                            <li><a href="<?php echo $daoyanVal['url'];?>" class="<?php if ($daoYanI == 1):?>total <?php endif;?><?php if (!empty($daoyanVal['active'])):?>active<?php endif;?>"><?php echo $daoyanVal['title'];?></a></li>
                             <li class="line"><span>|</span></li>
+                            <?php $daoYanI++;?>
                         <?php endforeach;?>
                     </ul>
                 </div>
@@ -52,9 +54,11 @@
                     <label>按演员:</label>
                     <a class="more" href="<?php echo APF::get_instance()->get_real_url("/retrieval","",array("b" => "p","s"=> "A"))?>">更多</a>
                     <ul>
+                        <?php $yanYuanI = 1;?>
                         <?php foreach($yanyuanInfo as $yanyuanVal):?>
-                            <li><a href="<?php echo $yanyuanVal['url'];?>" class="<?php if (!empty($yanyuanVal['active'])):?>active<?php endif;?>"><?php echo $yanyuanVal['title'];?></a></li>
+                            <li><a href="<?php echo $yanyuanVal['url'];?>" class="<?php if ($yanYuanI == 1):?>total <?php endif;?><?php if (!empty($yanyuanVal['active'])):?>active<?php endif;?>"><?php echo $yanyuanVal['title'];?></a></li>
                             <li class="line"><span>|</span></li>
+                            <?php $yanYuanI++;?>
                         <?php endforeach;?>
                     </ul>
                 </div>

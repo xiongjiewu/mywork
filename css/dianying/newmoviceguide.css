@@ -135,6 +135,9 @@ div.movie_sort_tab ul li a {
 div.movie_sort_tab ul li a.last_a {
     width: 105px;
 }
+div.type_info_list li a.total {
+    margin-left: 10px;
+}
 div.movie_sort_tab ul li a.current_a,div.movie_sort_tab ul li a:hover {
     background-color: #fff;
 }
