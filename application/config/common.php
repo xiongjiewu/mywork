@@ -358,12 +358,12 @@ $config['movie_tab_info'] = array(
         "sort" => "comming",
         "desc" => "and time1 > " . time() . " order by time1 asc"
     ),
-//    "rank" => array(
-//        "title" => "排行榜",
-//        "active" => false,
-//        "sort" => "rank",
-//        "desc" => false,
-//    ),
+    "down" => array(
+        "title" => "下载专区",
+        "active" => false,
+        "sort" => "down",
+        "desc" => "and exist_down = 1 order by downnum desc",
+    ),
 );
 
 //星座对应信息

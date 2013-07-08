@@ -123,7 +123,7 @@ div.movie_sort_tab ul li {
 div.movie_sort_tab ul li a {
     float: left;
     height: 31px;
-    width: 100px;
+    width: 104.5px;
     margin-top: 1px;
     text-align: center;
     line-height: 32px;
@@ -133,7 +133,7 @@ div.movie_sort_tab ul li a {
     color: #000;
 }
 div.movie_sort_tab ul li a.last_a {
-    border-right: 1px solid #ddd;
+    width: 105px;
 }
 div.movie_sort_tab ul li a.current_a,div.movie_sort_tab ul li a:hover {
     background-color: #fff;

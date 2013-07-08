@@ -153,6 +153,8 @@
                                     <div>上&nbsp;映:</div><em>&nbsp<?php echo date("Y-m-d",$mVal['time1']);?></em>
                                 <?php elseif($sort == "like"):?>
                                     <div>被摇到:</div><em>&nbsp<?php echo $mVal['yaoyaoNum'];?>次</em>
+                                <?php elseif($sort == "down"):?>
+                                    <div>被下载:</div><em>&nbsp<?php echo $mVal['downNum'];?>次</em>
                                 <?php else:?>
                                     <div>评&nbsp;分:</div><em>&nbsp<?php echo round($mVal['score'],1);?>分</em>
                                 <?php endif;?>
