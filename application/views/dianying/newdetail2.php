@@ -42,19 +42,19 @@
                 </dt>
                 <dt>
                     <span>类型:</span>
-                    <a href="/moviceguide/type/<?php echo $dyInfo['type'];?>/">
+                    <a href="/moviceguide?type=<?php echo $dyInfo['type'];?>/">
                         <?php echo $movieType[$dyInfo['type']];?>
                     </a>
                 </dt>
                 <dt>
                     <span>地区:</span>
-                    <a href="/moviceguide/place/<?php echo $dyInfo['diqu'];?>/">
+                    <a href="/moviceguide?place=<?php echo $dyInfo['diqu'];?>/">
                         <?php echo $moviePlace[$dyInfo['diqu']];?>
                     </a>
                 </dt>
                 <dt>
                     <span>年份:</span>
-                    <?php echo !empty($dyInfo['nianfen']) ? '<a href="/moviceguide/year/' . $dyInfo['nianfen'] . '">' . $dyInfo['nianfen'] . '</a>':"暂无";?>
+                    <?php echo !empty($dyInfo['nianfen']) ? '<a href="/moviceguide?year=' . $dyInfo['nianfen'] . '">' . $dyInfo['nianfen'] . '</a>':"暂无";?>
                 </dt>
                 <dt class="shichang">
                     <span>时长:</span>
