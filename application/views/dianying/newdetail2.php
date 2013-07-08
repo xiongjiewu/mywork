@@ -200,7 +200,7 @@
 
                 <?php if (!empty($downLoadLinkInfo)):?>
                 <a name="downlink_list"></a>
-                <div class="watchLink_list down" style="display: none;">
+                <div class="watchLink_list down" <?php if (!empty($watchLinkInfo)):?>style="display: none;"<?php endif;?>>
                     <?php $downI = 1;?>
                     <?php foreach ($downLoadLinkInfo as $downLinkInfoKey => $downLinkInfoVal): ?>
                         <?php $downLinkInfoVal['link'] = strip_tags($downLinkInfoVal['link']);?>
