@@ -72,6 +72,13 @@ class Detail extends CI_Controller {
         $dyInfo['jieshao'] = str_replace("　　","",trim($dyInfo['jieshao']));
         $dyInfo['s_jieshao'] = $this->splitStr($dyInfo['jieshao'],180);
 
+        //电影年份
+        if (!empty($dyInfo['time1'])) {
+            $dyInfo['nianfen'] = date("Y",$dyInfo['time1']);
+        } elseif (!empty($dyInfo['time2'])) {
+            $dyInfo['nianfen'] = date("Y",$dyInfo['time2']);
+        }
+
         //观看链接
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
         //下载链接
