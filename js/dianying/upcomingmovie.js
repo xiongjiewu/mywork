@@ -33,9 +33,12 @@ var init = {
     },
     insertNoticeDo:function(obj,event) {
         var id = obj.attr("val");
-        this.ajaxInertNotice(id,function(result){
+        this.ajaxInertNotice(id,function(result) {
             if (result.code && result.code == "error") {
                 alert(result.info);
+                if (result.jump_url) {//没有设置通知邮箱，直接跳转致用户中心
+                    window.location.href = result.jump_url;
+                }
             } else {
                 init.changeNoticeBtn(obj);
             }
