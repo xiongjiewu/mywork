@@ -266,7 +266,7 @@ class Applogincallback extends CI_Controller
         $userInfo['time'] = $this->_nowTime;
         $userInfo['ip'] = $this->getUserIP();
         $userInfo['photo'] = empty($photo) ? "" : $photo;
-        $userInfo['email'] = empty($email) ? " " : $email;
+        $userInfo['email'] = empty($email) ? "" : $email;
         $userInfo['type'] = $appUserInfo['type'];
         $userId = $this->User->insertUserInfo($userInfo);
         if (!empty($userId)) {
