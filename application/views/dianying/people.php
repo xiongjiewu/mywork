@@ -69,7 +69,7 @@
                         <dt>获奖经历</dt>
                         <?php $awardRecording = json_decode($characterInfo['awardRecording'],true);?>
                         <?php foreach($awardRecording as $awardVal):?>
-                            <dd><?php echo preg_replace("/\[DY\](.*?)\[DY\]/","<a href='/search?key=$1'>$1</a>",$awardVal);?></dd>
+                            <dd><?php echo preg_replace("/\[DY\](.*?)\[DY\]/","<a href='/jump?key=$1&type=2'>$1</a>",$awardVal);?></dd>
                         <?php endforeach;?>
                     </dl>
                 </div>
