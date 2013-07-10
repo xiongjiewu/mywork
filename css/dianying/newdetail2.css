@@ -91,6 +91,7 @@ div.dy_hot_info {
     top: 0;
     height: 50px;
     z-index: 100;
+    width: 300px;
 }
 div.dy_hot_info div.dafen {
     float: left;

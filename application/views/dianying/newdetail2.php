@@ -85,8 +85,10 @@
                     <?php foreach($startInfo as $startKey => $startVal):?>
                         <a class="<?php echo $startKey;?>_start<?php if ($startVal['active']):?> current<?php endif;?><?php if (!empty($hasDafen)):?> hasDafen<?php endif;?>" type="<?php echo $startKey;?>" title="<?php echo $startVal['title'];?>"></a>
                     <?php endforeach;?>
-                    <span><?php echo round($dyInfo['score'],1);?></span>分
-                    <div class="df_count">(<?php echo $dyInfo['totalStartNum'];?>人)</div>
+                    <div class="df_count">
+                        <span><?php echo round($dyInfo['score'],1);?></span>分
+                        (<?php echo $dyInfo['totalStartNum'];?>人)
+                    </div>
                 </div>
             </div>
             <div class="dy_count">
