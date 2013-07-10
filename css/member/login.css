@@ -188,7 +188,7 @@ div.doing {
 }
 /* 第三方登录接口 start */
 a.qq_login {
-    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -438px transparent;
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -245px transparent;
     font-size: 16px;
     font-weight: bold;
     height: auto;
@@ -198,10 +198,10 @@ a.qq_login {
     float: left;
 }
 a.qq_login:hover {
-    background-position: -213px -438px;
+    background-position: -213px -245px;
 }
 a.weibo_login {
-    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -375px transparent;
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -183px transparent;
     font-size: 16px;
     font-weight: bold;
     height: auto;
@@ -211,10 +211,10 @@ a.weibo_login {
     float: left;
 }
 a.weibo_login:hover {
-    background-position: -213px -375px;
+    background-position: -213px -183px;
 }
 a.renren_login {
-    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -564px transparent;
+    background: url("/images/appicon/app_login_icon.png") no-repeat scroll -2px -306px transparent;
     font-size: 16px;
     font-weight: bold;
     height: auto;
@@ -224,7 +224,7 @@ a.renren_login {
     float: left;
 }
 a.renren_login:hover {
-    background-position: -213px -564px;
+    background-position: -213px -306px;
 }
 div.login_middel_line {
     background: none repeat scroll 0 0 #DADADA;
