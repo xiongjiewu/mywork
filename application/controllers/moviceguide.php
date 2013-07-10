@@ -96,7 +96,7 @@ class Moviceguide extends CI_Controller {
         $this->set_attr("weekPiaofangMovieInfo",$weekPiaofangMovieInfo);
 
         //历史票房榜信息
-        $piaofangConditionStr = "type = 0 and diqu = 0 and del = 0 order by piaofang desc limit 50";
+        $piaofangConditionStr = "type = 0 and diqu = 0 and del = 0 order by piaofang desc limit 100";
         $piaofangInfo = $this->Boxofficeinfo->getBoxofficeInfoByCondition($piaofangConditionStr);
         $piaofangInfo = $this->initArrById($piaofangInfo,"infoId",$piaofangIds);
         //票房电影详细信息
