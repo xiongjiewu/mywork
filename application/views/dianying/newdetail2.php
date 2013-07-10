@@ -181,7 +181,17 @@
                     <?php foreach ($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal): ?>
                         <span title="点击观看" class="watchlink_list">
                         <a class="" href="<?php echo APF::get_instance()->get_real_url("play",$dyInfo['id'],array("id"=>$watchLinkInfoVal['id']));?>" target="_blank">
-                            <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
+                            <?php if ($watchLinkInfoVal['player'] == 2)://百度影音，加以区分?>
+                                <?php if (strpos($watchLinkInfoVal['link'],"www.2tu.cc") !== false)://迅播?>
+                                    <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/xunbo.png">
+                                <?php elseif (strpos($watchLinkInfoVal['link'],"http://www.qire123.com/") !== false)://奇热?>
+                                    <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/qire.png">
+                                <?php else:?>
+                                    <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
+                                <?php endif;?>
+                            <?php else:?>
+                                <img alt="<?php echo $dyInfo['name'];?>" src="/images/webcon/icon<?php echo $watchLinkInfoVal['player'];?>.png">
+                            <?php endif;?>
                         </a>
                         <b>
                             <?php if (!empty($watchLinkInfoVal['beizhu'])):?>
