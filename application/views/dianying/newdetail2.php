@@ -78,9 +78,9 @@
                 <input type="hidden" name="current_start" id="current_start" value="<?php echo $currentKey;?>">
                 <div class="dafen<?php if (!empty($hasDafen)):?> hasDafen<?php endif;?>">
                     <?php if (empty($hasDafen)):?>
-                        <span class="df">打分:</span>
+                        <span class="df">评分:</span>
                     <?php else:?>
-                        <span class="df hasDafen">已打分:</span>
+                        <span class="df hasDafen">已评分:</span>
                     <?php endif;?>
                     <?php foreach($startInfo as $startKey => $startVal):?>
                         <a class="<?php echo $startKey;?>_start<?php if ($startVal['active']):?> current<?php endif;?><?php if (!empty($hasDafen)):?> hasDafen<?php endif;?>" type="<?php echo $startKey;?>" title="<?php echo $startVal['title'];?>"></a>

@@ -179,7 +179,6 @@ div.retrieval_movie_list ul.no_result {
 div.retrieval_movie_list ul li a {
     float: left;
     color: #666;
-    font-family: "宋体";
 }
 div.retrieval_movie_list ul li a:hover {
     text-decoration: underline;
