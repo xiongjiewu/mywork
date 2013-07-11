@@ -469,9 +469,9 @@
                 that.bind("click",function() {
                     var id = that.attr("val");
                     <?php if (empty($userId)):?>
-                    window.location.href = "/login?bgurl=<?php echo base64_encode("/detail/index/{$endcodeId}#downlink_list");?>";
+                        logPanInit.showLoginPan("init.loginCallBack");
                     <?php else:?>
-                    init.ajaxGetDownLink(id);
+                        init.ajaxGetDownLink(id);
                     <?php endif;?>
                 });
             });

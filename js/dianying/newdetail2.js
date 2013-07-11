@@ -255,8 +255,8 @@ var init = {
         }
     },
     //容错函数，打开默认浏览器下载
-    DownloadDefault: function () {
-        alert('迅雷打开失败，请先按装迅雷或使用IE内核浏览器下载！');
+    DownloadDefault: function (url) {
+        alert('迅雷打开失败，请先按装迅雷或使用IE内核浏览器下载或直接复制下载：<' + url + '>！');
     },
     ajaxGetDownLink: function (id) {
         if (id) {
@@ -270,7 +270,7 @@ var init = {
                         alert(result.info);
                     } else {
                         if (result.type == 5) {//BT下载
-                            alert("BT下载地址为：" + result.info + ",请自行复制地址至浏览器中打开");
+                            alert("BT下载地址为：<" + result.info + ">,请自行复制地址至浏览器中下载");
                         } else {
                             init.Download(result.info);//迅雷下载
                         }
