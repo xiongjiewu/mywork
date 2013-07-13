@@ -16,7 +16,9 @@
                         暂无
                     <?php else:?>
                         <?php if (strlen($characterInfo['birthday']) == 6):?>
-                            <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,1) . "日"?>
+                            <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,1) . "日";?>
+                        <?php elseif (strlen($characterInfo['birthday']) == 7):?>
+                            <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,2) . "日";?>
                         <?php else:?>
                             <?php echo date("Y年m月d日",strtotime($characterInfo['birthday']));?>
                         <?php endif;?>
