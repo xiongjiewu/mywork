@@ -16,7 +16,7 @@
             <div class="people_detail_info">
                 <dl>
                     <dt><a href="<?php echo $url;?>"><?php echo $peopleInfo['name'];?></a></dt>
-                    <dd>生日：<?php if (empty($peopleInfo['birthday'])):?>暂无<?php else:?><?php if (strlen($peopleInfo['birthday']) == 6):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,1) . "日"?><?php if (strlen($peopleInfo['birthday']) == 7):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,2) . "日"?><?php else:?><?php echo date("Y年m月d日",strtotime($peopleInfo['birthday']));?><?php endif;?>
+                    <dd>生日：<?php if (empty($peopleInfo['birthday'])):?>暂无<?php else:?><?php if (strlen($peopleInfo['birthday']) == 6):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,1) . "日"?><?php elseif (strlen($peopleInfo['birthday']) == 7):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,2) . "日"?><?php else:?><?php echo date("Y年m月d日",strtotime($peopleInfo['birthday']));?><?php endif;?>
                         <?php endif;?>
                     </dd>
                     <dd>星座：<?php echo empty($peopleInfo['constellatory']) ? "暂无" : $xingzuoInfo[$peopleInfo['constellatory']];?></dd>
