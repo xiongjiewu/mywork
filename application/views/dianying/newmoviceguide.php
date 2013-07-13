@@ -127,7 +127,7 @@
                     <ul>
                     <?php $dyI = 1;?>
                     <?php foreach($movieInfos as $mVal):?>
-                        <?php $url = APF::get_instance()->get_real_url("detail",$mVal['id']);?>
+                        <?php $url = APF::get_instance()->get_real_url("detail",$mVal['id'],array("from" => "moviceguide_" . $sort));?>
                         <li class="<?php if ($dyI % 5 == 0):?>last_m<?php endif;?>" title="<?php echo $mVal['name'];?>">
                             <a href="<?php echo $url;?>" class="tupian">
                                 <img src="<?php echo APF::get_instance()->get_image_url($mVal['image']);?>" alt="<?php echo $mVal['name'];?>">

@@ -51,10 +51,10 @@
                         <?php
                             if ($b == "d") {
                                 $imgUrl = APF::get_instance()->get_image_url($infoVal['image']);
-                                $url = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
+                                $url = APF::get_instance()->get_real_url("/detail",$infoVal['id'],array("from" => "retrieval_dy"));
                             } else {
                                 $imgUrl = APF::get_instance()->get_image_url($infoVal['photo']);
-                                $url = APF::get_instance()->get_real_url("/people",$infoVal['id']);
+                                $url = APF::get_instance()->get_real_url("/people",$infoVal['id'],array("from" => "retrieval_people"));
                             };
                         ?>
                         <li class="list_by_img">

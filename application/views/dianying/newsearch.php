@@ -7,14 +7,15 @@
     <!-- 人物信息展示 start -->
     <?php if (!empty($peopleInfo)):?>
         <div class="peopel_info_list" title="点击了解详情">
+            <?php $url = APF::get_instance()->get_real_url("/people",$peopleInfo['id'],array("from" => "search_people"));?>
             <div class="peopel_img">
-                <a class="" href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>">
+                <a class="" href="<?php echo $url;?>">
                     <img src="<?php echo APF::get_instance()->get_image_url($peopleInfo['photo']);?>">
                 </a>
             </div>
             <div class="people_detail_info">
                 <dl>
-                    <dt><a href="<?php echo APF::get_instance()->get_real_url("/people",$peopleInfo['id']);?>"><?php echo $peopleInfo['name'];?></a></dt>
+                    <dt><a href="<?php echo $url;?>"><?php echo $peopleInfo['name'];?></a></dt>
                     <dd>生日：<?php if (empty($peopleInfo['birthday'])):?>暂无<?php else:?><?php if (strlen($peopleInfo['birthday']) == 6):?><?php echo substr($peopleInfo['birthday'],0,4) . "年" . substr($peopleInfo['birthday'],4,1) . "月" . substr($peopleInfo['birthday'],5,1) . "日"?><?php else:?><?php echo date("Y年m月d日",strtotime($peopleInfo['birthday']));?><?php endif;?>
                         <?php endif;?>
                     </dd>

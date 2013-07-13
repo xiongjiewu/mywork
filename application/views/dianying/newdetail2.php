@@ -260,12 +260,13 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($caiNiXiHuanInfo as $dyMovieVal):?>
+                            <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_like"));?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
-                                <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
+                                <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
                                 </a>
                             <span class="name">
-                                <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>"><?php echo $dyMovieVal['name'];?></a>
+                                <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
                             </span>
                             </li>
                             <?php $movieI++;?>
@@ -278,12 +279,13 @@
                 <ul>
                     <?php $movieI = 1;?>
                     <?php foreach($daoyanMovieInfo as $dyMovieVal):?>
+                        <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_daoyan"));?>
                         <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
-                            <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
+                            <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
                                 <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
                             </a>
                             <span class="name">
-                                <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>"><?php echo $dyMovieVal['name'];?></a>
+                                <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
                             </span>
                         </li>
                         <?php $movieI++;?>
@@ -296,12 +298,13 @@
                     <ul>
                         <?php $movieI = 1;?>
                         <?php foreach($zhuyanMovieInfo as $dyMovieVal):?>
+                            <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_zhuyan"));?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
-                                <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>" class="image">
+                                <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
                                     <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
                                 </a>
                             <span class="name">
-                                <a href="<?php echo APF::get_instance()->get_real_url("detail",$dyMovieVal['id']);?>"><?php echo $dyMovieVal['name'];?></a>
+                                <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
                             </span>
                             </li>
                             <?php $movieI++;?>
@@ -425,13 +428,14 @@
                         </li>
                         <?php $tdI = 1;?>
                         <?php foreach($todayInfo as $tyMovieVal):?>
+                            <?php $url = APF::get_instance()->get_real_url("detail",$tyMovieVal['id'],array("from" => "dy_new"));?>
                             <li class="info<?php if ($tdI == count($todayInfo)):?> last_td<?php endif;?>">
                                 <?php if ($tdI <= 3):?>
                                     <i><?php echo "0" . $tdI;?></i>
                                 <?php else:?>
                                     <i class="more" ><?php echo ($tdI < 10)?"0" . $tdI:$tdI;?></i>
                                 <?php endif;?>
-                                <a class="dy_title" href="<?php echo APF::get_instance()->get_real_url("detail",$tyMovieVal['id']);?>" title="<?php echo $tyMovieVal['name'];?>">
+                                <a class="dy_title" href="<?php echo $url;?>" title="<?php echo $tyMovieVal['name'];?>">
                                     <?php echo $tyMovieVal['name'];?>
                                 </a>
                                 <span>更新于<?php echo date("H:i",$tyMovieVal['createtime']);?></span>

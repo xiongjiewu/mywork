@@ -50,9 +50,9 @@
                 <?php foreach($infoList as $infoVal):?>
                     <?php
                     if ($b == "d"){
-                        $url = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
+                        $url = APF::get_instance()->get_real_url("/detail",$infoVal['id'],array("from" => "retrieval_dy"));
                     } else {
-                        $url = APF::get_instance()->get_real_url("/people",$infoVal['id']);
+                        $url = APF::get_instance()->get_real_url("/people",$infoVal['id'],array("from" => "retrieval_people"));
                     };?>
                     <li>
                         <a class="" href="<?php echo $url;?>" title="<?php echo $infoVal['name'];?>">

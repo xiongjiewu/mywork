@@ -84,7 +84,7 @@
                     <li class="movie_title">TA的电影</li>
                     <?php $movieI = 1;?>
                     <?php foreach($movieTotalInfos as $movieVal):?>
-                        <?php $url = APF::get_instance()->get_real_url("/detail",$movieVal['id']);?>
+                        <?php $url = APF::get_instance()->get_real_url("/detail",$movieVal['id'],array("from" => "people_dy"));?>
                         <li class="<?php if ($movieI % 6 ==0):?>last<?php endif;?>">
                             <a href="<?php echo $url;?>" class="img">
                                 <img title="<?php echo $movieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($movieVal['image']);?>">
