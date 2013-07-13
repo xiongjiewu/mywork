@@ -104,6 +104,7 @@
                     <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
                     <?php $zhuyaoArr = explode("、",$movieVal['zhuyan']);?>
                     <?php $daoyanArr = explode("、",$movieVal['daoyan']);?>
+                    <?php if (!empty($movieVal['time1'])){$movieVal['nianfen'] = date("Y",$movieVal['time1']);}?>
                     <li <?php if ($i == 0):?>class="first_one"<?php endif;?> title="点击查看详情">
                         <div class="search_dy_img">
                             <a href="<?php echo get_url("/detail/index/{$idStr}?from=search");?>">
