@@ -267,6 +267,7 @@ div.new_head_mian ul li.look div.look_info ul li {
     width: 100%;
     font-size: 12px;
     margin-bottom: 5px;
+    line-height: 25px;
 }
 div.new_head_mian ul li.look div.look_info ul li a {
     color: #999;
