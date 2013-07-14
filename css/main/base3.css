@@ -125,7 +125,7 @@ div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_in
 }
 div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list {
     display: none;
-    background-color: #FFFFFF;
+    background-color: #F1F4FB;
     border: 1px solid #ddd;
     height: 210px;
     left: 217px;
@@ -143,7 +143,7 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.
     float: left;
     width: 100px;
     height: 150px;
-    background-color: #eee;
+    background-color: #F1F4FB;
 }
 div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_img a,
 div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_img a img {
@@ -158,7 +158,7 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.
 }
 div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table {
     float: left;
-    background-color: #fff;
+    background-color: #F1F4FB;
 }
 div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.about_info_list_detail table a {
     color: #555;
