@@ -42,7 +42,7 @@ div.search_left ul li a {
     /*width: 42px;*/
     text-align: center;
     float: left;
-    font-family: times new roman, Arial, Helv, Helvetica, sans-serif;
+    /*font-family: times new roman, Arial, Helv, Helvetica, sans-serif;*/
 }
 div.search_left ul li a:hover,div.search_left ul li.current a {
     background-color: #2fa1ae;
