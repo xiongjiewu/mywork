@@ -15,7 +15,11 @@
                     <?php if (empty($characterInfo['birthday'])):?>
                         暂无
                     <?php else:?>
-                        <?php if (strlen($characterInfo['birthday']) == 6):?>
+                        <?php if (strlen($characterInfo['birthday']) == 4):?>
+                            <?php echo $characterInfo['birthday'] . "年";?>
+                        <?php elseif (strlen($characterInfo['birthday']) == 5):?>
+                            <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月";?>
+                        <?php elseif (strlen($characterInfo['birthday']) == 6):?>
                             <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,1) . "日";?>
                         <?php elseif (strlen($characterInfo['birthday']) == 7):?>
                             <?php echo substr($characterInfo['birthday'],0,4) . "年" . substr($characterInfo['birthday'],4,1) . "月" . substr($characterInfo['birthday'],5,2) . "日";?>
