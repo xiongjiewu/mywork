@@ -671,6 +671,7 @@ div.watchLink_list {
     float: left;
     padding: 20px 20px 0;
     width: 840px;
+    min-height: 50px;
 }
 div.watchLink_list span.watchlink_list {
     box-shadow: 2px 2px 2px #DDDDDD;
