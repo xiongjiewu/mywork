@@ -49,7 +49,7 @@
             <div class="jieshao">
                 <dl>
                     <dt><?php echo $characterInfo['name'];?>&nbsp;简介</dt>
-                    <dd><?php echo empty($characterInfo['jieshao']) ? "暂无" : $characterInfo['jieshao'];?></dd>
+                    <dd><?php echo empty($characterInfo['jieshao']) ? "暂无" : preg_replace("/《(.*?)》/","《<a href='/jump?key=$1&type=2'>$1</a>》",$characterInfo['jieshao']);?></dd>
                 </dl>
             </div>
             <!-- 右侧图片start -->
@@ -67,6 +67,7 @@
                 </div>
             <?php endif;?>
             <!-- 右侧图片end -->
+
             <?php if (!empty($characterInfo['awardRecording'])):?>
                 <?php $awardRecording = json_decode($characterInfo['awardRecording'],true);?>
                 <?php if (!empty($awardRecording)):?>
