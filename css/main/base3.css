@@ -83,7 +83,7 @@ div.new_head_mian ul li.search_k .search_r {
 }
 /*搜索框匹配填充 start*/
 div.new_head_mian ul li.search_k div.about_search {
-    background: none repeat scroll 0 0 #eee;
+    background: none repeat scroll 0 0 #F1F4FB;
     border: none;
     display: none;
     left: 0;
