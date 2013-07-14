@@ -251,30 +251,38 @@ div.movie_tuijian div.current_movie_list {
     display: block;
 }
 div.watch_down_link div.tab {
-    background: url("/images/newhead/tab_bg.png") repeat scroll 0 -1px transparent;
+    /*background: url("/images/newhead/tab_bg.png") repeat scroll 0 -1px transparent;*/
     float: left;
-    height: 35px;
+    background-color: #eee;
+    height: 40px;
     width: 100%;
+    border-bottom: 1px solid #dadada;
+    border-top: 1px solid #dadada;
 }
 div.watch_down_link div.tab span {
     float: left;
-    margin-top: 10px;
-    margin-left: 20px;
+    /*margin-top: 10px;*/
+    line-height: 40px;
+    height: 100%;
+    padding: 0 20px 0 20px;
     font-size: 15px;
     color: #999;
     cursor: pointer;
 }
 div.watch_down_link div.tab i.fenge_line {
     background: none repeat scroll 0 0 #DADADA;
-    border-right: 1px solid #FFFFFF;
+    /*border-right: 1px solid #FFFFFF;*/
+    /*border-left: 1px solid #FFFFFF;*/
     float: left;
-    height: 15px;
-    margin-top: 12px;
-    margin-left: 20px;
+    height: 100%;
+    /*margin-top: 12px;*/
+    /*margin-left: 20px;*/
     width: 1px;
 }
 div.watch_down_link div.tab span.current_tab {
-    color: #d54e35;
+    /*color: #d54e35;*/
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
 }
 div.movie_list {
     float: left;

@@ -54,7 +54,7 @@ div.retrieval_list ul {
 div.retrieval_list ul.top {
     border-left: 1px solid #ddd;
     position: fixed;
-    top: 35px;
+    top: 50px;
     z-index: 10;
 }
 div.retrieval_list ul li {

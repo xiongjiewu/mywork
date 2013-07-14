@@ -2,11 +2,11 @@
     <div class="new_head_mian">
         <ul>
             <li class="new_logo">
-               <a href="/" title="返回首页">hao8.tv</a>
+               <a href="/" title="返回首页"></a>
             </li>
-            <li>
-                <span class="fenge_line"></span>
-            </li>
+<!--            <li>-->
+<!--                <span class="fenge_line"></span>-->
+<!--            </li>-->
             <?php $menus = APF::get_instance()->get_config_value("menus");?>
             <?php $index = empty($tabIndex) ? -1 : $tabIndex;?>
             <?php foreach ($menus as $menuKey => $menuVal): ?>
@@ -14,9 +14,9 @@
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>
                 </li>
             <?php endforeach;?>
-            <li>
-                <span class="fenge_line"></span>
-            </li>
+<!--            <li>-->
+<!--                <span class="fenge_line"></span>-->
+<!--            </li>-->
             <?php $rightMenus = APF::get_instance()->get_config_value("right_menus");?>
             <?php $index = $this->load->get_top_index();?>
             <?php foreach($rightMenus as $rKey => $rMVal):?>
@@ -24,14 +24,18 @@
                     <a class="<?php if($index == $rKey):?>current<?php endif;?>" href="<?php echo $rMVal['link']; ?>"><?php echo $rMVal['title'];?></a>
                 </li>
             <?php endforeach;?>
-            <li>
-                <span class="fenge_line"></span>
-            </li>
+<!--            <li>-->
+<!--                <span class="fenge_line"></span>-->
+<!--            </li>-->
             <li class="search_k">
+                <div class="search_l"></div>
                 <form name="search_dy" id="search_dy" onsubmit="return false;" autocomplete="off" method="get">
-                    <input type="text" class="search_n" name="search" id="search" value="<?php if (empty($searchW)):?>搜影片、下载资源<?php else:?><?php echo $searchW;?><?php endif;?>">
-                    <input type="submit" class="su_button" value="">
+                    <input type="text" class="search_n" name="search" id="search" value="<?php if (empty($searchW)):?>搜影片、人物或下载资源<?php else:?><?php echo $searchW;?><?php endif;?>">
+                    <div class="submit_do">
+                        <input type="submit" class="su_button" value="">
+                    </div>
                 </form>
+                <div class="search_r"></div>
                 <div class="about_search">
                 </div>
             </li>

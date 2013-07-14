@@ -170,12 +170,11 @@
                 <div class="tab">
                     <?php if (!empty($watchLinkInfo)):?>
                         <span class="watch_link current_tab" type="watch">观看地址</span>
-                    <?php endif;?>
-                    <?php if (!empty($watchLinkInfo) && !empty($downLoadLinkInfo)):?>
                         <i class="fenge_line"></i>
                     <?php endif;?>
                     <?php if (!empty($downLoadLinkInfo)):?>
                         <span class="down_link<?php if (empty($watchLinkInfo)):?> current_tab<?php endif;?>" type="down">下载地址</span>
+                        <i class="fenge_line"></i>
                     <?php endif;?>
                 </div>
                 <?php if (!empty($watchLinkInfo)):?>
@@ -248,11 +247,12 @@
                     <i class="fenge_line"></i>
                 <?php endif;?>
                 <?php if (!empty($daoyanMovieInfo)):?>
-                <span class="down_link" type="daoyan">导演其他作品</span>
-                <i class="fenge_line"></i>
+                    <span class="down_link" type="daoyan">导演其他作品</span>
+                    <i class="fenge_line"></i>
                 <?php endif;?>
                 <?php if (!empty($zhuyanMovieInfo)):?>
-                <span class="down_link" type="zhuyan">主演其他作品</span>
+                    <span class="down_link" type="zhuyan">主演其他作品</span>
+                    <i class="fenge_line"></i>
                 <?php endif;?>
             </div>
             <?php if (!empty($caiNiXiHuanInfo)):?>

@@ -1,10 +1,11 @@
 div.new_head {
     padding: 0;
     margin: 0;
-    height: 35px;
+    height: 50px;
     width: 100%;
     position: fixed;
-    background: url("/images/newhead/daohang_bg.png") repeat 0 0 transparent;
+    background-color: #2a2931;
+    /*background: url("/images/newhead/daohang_bg.png") repeat 0 0 transparent;*/
     z-index: 100102;
 }
 div.new_head_mian {
@@ -15,16 +16,18 @@ div.new_head_mian {
 div.new_head_mian ul {
     float: left;
     width: 100%;
+    height: 100%;
 }
 div.new_head_mian ul li {
     float: left;
+    height: 100%;
+    line-height: 50px;
     padding: 0 10px;
-    margin-top: 8px;
 }
 div.new_head_mian ul li a {
     float: left;
-    color: #2b2b2b;
-    font-size: 15px;
+    color: #eee;
+    font-size: 14px;
 }
 div.new_head_mian ul li a:hover {
     text-decoration: underline;
@@ -37,11 +40,12 @@ div.new_head_mian ul li.new_logo {
     padding: 0;
 }
 div.new_head_mian ul li.new_logo a {
-    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll 1px -203px transparent;
+    /*background: url("/images/newhead/detail_sucai3.png") no-repeat scroll 1px -203px transparent;*/
+    background: url("/images/newhead/hao8daohang.png") no-repeat scroll -26px 0 transparent;
     color: #A4A4A4;
     font-family: "time new roma";
     font-size: 18px;
-    height: 35px;
+    height: 50px;
     line-height: 35px;
     padding-left: 65px;
     text-decoration: none;
@@ -54,27 +58,40 @@ div.new_head_mian ul li span.fenge_line {
     float: left;
     height: 15px;
     width: 1px;
-    margin-top: 2px;
+    margin-top: 18px;
 }
 div.new_head_mian ul li.search_k {
-    border: 1px solid #bbb;
-    height: 25px;
-    margin-top: 4px;
-    padding-left:1px;
-    padding-right: 1px;
-    background-color: #fff;
+    /*border: 1px solid #BBBBBB;*/
+    height: 32px;
+    margin-top: 8px;
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
+    width: 235px;
+}
+div.new_head_mian ul li.search_k .search_l {
+    float: left;
+    height: 100%;
+    width: 5px;
+    background: url("/images/newhead/hao8daohang.png") no-repeat scroll -1px -2px
+}
+div.new_head_mian ul li.search_k .search_r {
+    float: left;
+    height: 100%;
+    width: 5px;
+    background: url("/images/newhead/hao8daohang.png") no-repeat scroll -18px -2px
 }
 /*搜索框匹配填充 start*/
 div.new_head_mian ul li.search_k div.about_search {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #bbb;
+    background: none repeat scroll 0 0 #eee;
+    border: none;
     display: none;
-    left: -1px;
+    left: 0;
     position: absolute;
-    top: 25px;
-    width: 181px;
+    top: 30px;
+    width: 217px;
     z-index: 99999;
+    border-radius: 0 0 5px 5px;
 }
 div.new_head_mian ul li.search_k div.about_search ul {
     float: left;
@@ -88,12 +105,17 @@ div.new_head_mian ul li.search_k div.about_search ul li {
     list-style: none outside none;
     margin-top: 0;
     padding: 10px;
+    height: 17px;
+    line-height: 17px;
     position: relative;
-    width: 161px;
+    width: 197px;
 }
 div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover {
     background-color: #08A6CD;
     color: #fff;
+}
+div.new_head_mian ul li.search_k div.about_search ul li span.word {
+    float: left;
 }
 div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list table,
 div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover div.about_info_list table tr th,
@@ -106,7 +128,7 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list {
     background-color: #FFFFFF;
     border: 1px solid #ddd;
     height: 210px;
-    left: 181px;
+    left: 217px;
     padding: 10px;
     position: absolute;
     top: -1px;
@@ -169,25 +191,37 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.
 /*搜索框匹配填充 end*/
 div.new_head_mian ul li.search_k input.search_n {
     float: left;
-    width: 150px;
-    height: 21px;
-    line-height: 21px;
-    padding: 2px;
+    width: 180px;
+    height: 29px;
+    line-height: 29px;
+    margin-top: 1px;
+    padding-right: 2px;
     border: none;
     color: #aaa;
+    background-color: #f1f4fb;
 }
-div.new_head_mian ul li.search_k input.su_button {
-    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -172px -37px transparent;
+div.new_head_mian ul li.search_k div.submit_do {
     float: left;
-    height: 25px;
+    height: 31px;
     width: 25px;
     border: none;
-    border-left:1px solid #bbb;
+    margin-top: 1px;
+    background-color: #f1f4fb;
+    /*border-left:1px solid #bbb;*/
+    cursor: pointer;
+}
+div.new_head_mian ul li.search_k div.submit_do input.su_button {
+    background: url("/images/newhead/hao8daohang.png") no-repeat scroll -1px -35px #EEEEEE;
+    border: medium none;
+    float: left;
+    height: 20px;
+    margin-top: 6px;
+    width: 100%;
     cursor: pointer;
 }
 div.new_head_mian ul li.look {
     margin-top: 0;
-    padding-top: 8px;
+    /*padding-top: 8px;*/
     padding-right: 4px;
     position: relative;
     width: 80px;
@@ -197,23 +231,26 @@ div.new_head_mian ul li.look:hover {
     width: 78px;
     border-left: 1px solid #bbb;
     border-right: 1px solid #bbb;
-    background-color: #fff;
+    background-color: #eee;
 }
 div.new_head_mian ul li.look a {
     margin-left: 1px;
 }
 div.new_head_mian ul li.look i {
-    background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -201px -33px transparent;
+    /*background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -201px -33px transparent;*/
+    background: url("/images/newhead/hao8daohang.png") no-repeat scroll -1px -55px transparent;
     float: left;
-    height: 25px;
+    height: 9px;
+    margin-left: 5px;
+    margin-top: 21px;
     width: 17px;
 }
 div.new_head_mian ul li.look div.look_info {
     position: absolute;
     width: 250px;
     right: -1px;
-    top: 33px;
-    background-color: #fff;
+    top: 50px;
+    background-color: #eee;
     z-index: 10019;
     border: 1px solid #bbb;
     border-top: none;
@@ -248,15 +285,15 @@ div.new_head_mian ul li.login {
 div.new_head_mian ul li.username {
     margin-left: 5px;
     /*width: 80px;*/
-    height: 26px;
+    /*height: 42px;*/
     overflow: hidden;
-    padding-top: 8px;
+    /*padding-top: 8px;*/
     margin-top: 0;
     position: relative;
 }
 div.new_head_mian ul li.username i {
-    background: url("/images/common/shouye_new_sucai.png") repeat scroll -292px -9px transparent;
-    float: left;
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -292px -2px transparent;
+    /*float: left;*/
     padding: 10px;
 }
 div.new_head_mian ul li.username:hover {
@@ -277,6 +314,7 @@ div.new_head_mian ul li.username div.user_account {
 }
 div.new_head_mian ul li.look:hover a {
     margin-left: 0;
+    color: #999;
 }
 div.new_head_mian ul li.look:hover div.look_info {
     display: block;
