@@ -14,9 +14,9 @@
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>
                 </li>
             <?php endforeach;?>
-<!--            <li>-->
-<!--                <span class="fenge_line"></span>-->
-<!--            </li>-->
+            <li>
+                <span class="fenge_line"></span>
+            </li>
             <?php $rightMenus = APF::get_instance()->get_config_value("right_menus");?>
             <?php $index = $this->load->get_top_index();?>
             <?php foreach($rightMenus as $rKey => $rMVal):?>
