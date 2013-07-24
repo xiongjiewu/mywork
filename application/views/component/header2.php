@@ -8,7 +8,7 @@
 <!--                <span class="fenge_line"></span>-->
 <!--            </li>-->
             <?php $menus = APF::get_instance()->get_config_value("menus");?>
-            <?php $index = empty($tabIndex) ? -1 : $tabIndex;?>
+            <?php $index = !isset($tabIndex) ? -1 : $tabIndex;?>
             <?php foreach ($menus as $menuKey => $menuVal): ?>
                 <li>
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>

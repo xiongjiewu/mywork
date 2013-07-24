@@ -1,3 +1,6 @@
+div.container {
+    margin-top: 50px;
+}
 div.home_top {
     position: relative;
     float: left;

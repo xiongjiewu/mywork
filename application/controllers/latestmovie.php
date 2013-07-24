@@ -120,8 +120,9 @@ class Latestmovie extends CI_Controller {
         $this->load->set_title("最新上映列表 - " . APF::get_instance()->get_config_value("base_title") . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/newlatestmovie2.css"));
         $this->load->set_js(array("js/dianying/newlatestmovie2.js"));
-        $this->load->set_top_index(1);
-        $this->set_view('dianying/newlatestmovie2');
+        $this->load->set_top_index(-1);
+        $this->set_attr("tabIndex",1);
+        $this->set_view('dianying/newlatestmovie2','base3');
     }
 
     private function _initArr($nfo)

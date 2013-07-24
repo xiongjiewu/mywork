@@ -1,0 +1,197 @@
+div.series_main {
+    margin: 0 auto;
+    width: 1200px;
+}
+div.series_top {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+div.series_top_left {
+    float: left;
+    width: 850px;
+    height: 270px;
+    position: relative;
+    border: 1px solid #aaa;
+    overflow: hidden;
+}
+div.series_top_left ul {
+    position: absolute;
+    height: 270px;
+    width: 4250px;
+    left: 0;
+    top: 0;
+    z-index: 105;
+}
+div.series_top_left ul li {
+    float: left;
+    width: 850px;
+    height: 100%;
+}
+div.series_top_left ul li img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.series_top_left div.img_change {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 200;
+}
+div.series_top_left div.img_change span {
+    float: left;
+    border-radius: 15px 15px 15px 15px;
+    padding: 5px;
+    background-color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+}
+div.series_top_left div.img_change span.current {
+    background-color: #444;
+}
+
+div.series_top_right {
+    float: left;
+    margin-left: 20px;
+    width: 305px;
+    padding: 10px;
+    height: 250px;
+    border: 1px solid #ccc;
+}
+div.series_top_right h2 {
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: #4c4c4c;
+}
+div.series_top_right ul {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+}
+div.series_top_right ul li {
+    float: left;
+    height: 70px;
+    padding: 3px;
+    width: 70px;
+}
+div.series_top_right ul li img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+div.series_tab {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+div.series_tab ul {
+    float: left;
+    width: 100%;
+}
+div.series_tab ul li {
+    float: left;
+    margin-right: 20px;
+}
+div.series_tab ul li a {
+    float: left;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 15px;
+    background-color: #666;
+    color: #fff;
+    font-size: 14px;
+}
+div.series_tab ul li a:hover,div.series_tab ul li a.current {
+    background-color: #08A6BC;
+}
+
+div.series_list {
+    float: left;
+    width: 1200px;
+    margin-top: 30px;
+}
+div.series_list ul {
+    float: left;
+    width: 285px;
+    margin-right: 20px;
+}
+div.series_list ul.last_series {
+    margin-right: 0;
+}
+div.series_list ul li {
+    position: relative;
+    float: left;
+    width: 263px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.2s;
+    transition-property: padding, margin;
+    transition-timing-function: ease;
+    -webkit-transition-property: padding,margin;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+}
+div.series_list ul li:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+    padding: 15px;
+    margin-left: -5px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+div.series_list ul li a.img,div.series_list ul li a img {
+    float: left;
+    width: 100%;
+}
+div.series_list ul li div.title {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+div.series_list ul li div.title a {
+    max-width: 200px;
+    max-height: 20px;
+    line-height: 30px;
+    float: left;
+}
+div.series_list ul li div.title span.count {
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #929090;
+    font-family: "微软雅黑";
+}
+div.series_list ul li div.title span.count em {
+    font-size: 24px;
+    font-family: "Times New Roman";
+    color: #ff0000;
+}
+div.series_list ul li span.miaoshu {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #929090;
+    overflow: hidden;
+    height: 16px;
+}
+div.series_list ul li span.bg {
+    background: url("/images/common/corner-shadow.png") no-repeat scroll 113px -33px transparent;
+    bottom: -14px;
+    height: 70px;
+    position: absolute;
+    right: -6px;
+    width: 100%;
+    z-index: -1;
+}
+div.series_list ul li:hover span.bg {
+    background: none;
+}

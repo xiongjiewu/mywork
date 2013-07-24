@@ -204,11 +204,13 @@ class Welcome extends CI_Controller {
         $daoYan = APF::get_instance()->get_config_value("dianyingku_daoyan");
         $this->set_attr("daoYan",array_slice($daoYan,0,8));
 
+        $this->load->set_top_index(-1);
+        $this->set_attr("tabIndex",0);
         $this->set_attr("baseNum",6);
         $this->load->set_css(array("/css/index/home2.css"));
         $this->load->set_js(array("/js/index/home2.js"));
         $this->load->set_title("首页 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->set_view('index/home2','base2');
+        $this->set_view('index/home2','base3');
 
 	}
 }

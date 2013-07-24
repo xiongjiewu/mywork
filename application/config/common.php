@@ -204,15 +204,23 @@ $config['menus'] = array(
         "title" => "排行榜",
         "link" => get_url("/classmovice/"),
         "class" => "",
-        "new" => true,
+        "new" => false,
     ),
-    //第二版暂时隐藏专题系列
 //    array(
 //        "index" => "list",
-//        "title" => "专题系列",
-//        "link" => get_url("/moviceguide/"),
+//        "title" => "系列大片",
+//        "link" => get_url("/series/"),
 //        "class" => "dy_sort",
-//        "type_info" => $config['movie_type'],
+//        "type_info" => "",
+//        "new" => true,
+//    ),
+//    array(
+//        "index" => "list",
+//        "title" => "本周专题",
+//        "link" => get_url("/series/"),
+//        "class" => "dy_sort",
+//        "type_info" => "",
+//        "new" => false,
 //    ),
 );
 $config['right_menus'] = array(
