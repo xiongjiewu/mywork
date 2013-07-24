@@ -292,8 +292,14 @@ div.new_head_mian ul li.username {
     margin-top: 0;
     position: relative;
 }
-div.new_head_mian ul li.username i {
+div.new_head_mian ul li.username i,
+div.new_head_mian ul li.login i {
     background: url("/images/common/shouye_new_sucai.png") repeat scroll -292px -2px transparent;
+    /*float: left;*/
+    padding: 10px;
+}
+div.new_head_mian ul li.register i {
+    background: url("/images/common/shouye_new_sucai.png") repeat scroll -267px -2px transparent;
     /*float: left;*/
     padding: 10px;
 }

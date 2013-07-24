@@ -41,10 +41,10 @@
             </li>
             <?php if (empty($userName) && empty($userId)):?>
                 <li class="login">
-                    <a href="/login/" class="login_total_page">登录</a>
+                    <a href="/login/" class="login_total_page"><i></i>登录</a>
                 </li>
-                <li>
-                    <a href="/register/">注册</a>
+                <li class="register">
+                    <a href="/register/"><i></i>注册</a>
                 </li>
             <?php else:?>
                 <li class="username">
@@ -54,7 +54,6 @@
                     </a>
                     <a class="logout" href="/logout/">[退出]</a>
                     <div class="user_account">
-
                     </div>
                 </li>
             <?php endif;?>
