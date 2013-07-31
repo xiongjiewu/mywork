@@ -2,106 +2,37 @@
     <div class="series_top">
         <div class="series_top_left">
             <ul>
-                <li>
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
+                <?php foreach($topTopicList as $tTopicVal):?>
+                    <li>
+                        <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
+                            <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['bImg']);?>">
+                        </a>
+                        <div class="info" style="display: none;">
+                            <h3>钢铁下1</h3>
+                            <span>
+                                钢铁下1钢铁下1钢铁下1
+                            </span>
+                        </div>
+                    </li>
+                <?php endforeach;?>
             </ul>
             <div class="img_change">
-                <span class="current" index="0"></span>
-                <span index="1"></span>
-                <span index="2"></span>
-                <span index="3"></span>
-                <span index="4"></span>
+                <?php for($i = 0;$i < count($topTopicList);$i++):?>
+                    <span class="<?php if ($i == 0):?>current<?php endif;?>" index="<?php echo $i;?>"></span>
+                <?php endfor;?>
             </div>
         </div>
 
         <div class="series_top_right">
             <h2>热门系列推荐</h2>
             <ul>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                </li>
-
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
-                <li class="">
-                    <a href="">
-                        <img src="http://imgstatic.baidu.com/img/image/shouye/meinvbizhi0708.jpg">
-                    </a>
-                </li>
+                <?php foreach($rightTopicList as $rTopicVal):?>
+                    <li class="">
+                        <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$rTopicVal['id'],array(),true);?>">
+                            <img src="<?php echo APF::get_instance()->get_image_url($rTopicVal['sImg']);?>">
+                        </a>
+                    </li>
+                <?php endforeach;?>
             </ul>
         </div>
     </div>
@@ -109,257 +40,45 @@
     <div class="series_tab">
         <ul>
             <li>
-                <a href="" class="current">#全部</a>
+                <a href="<?php echo APF::get_instance()->get_real_url("/series")?>" class="<?php if (empty($diqu)):?>current<?php endif;?>">#全部</a>
             </li>
             <li>
-                <a href="">#中国</a>
-            </li>
-            <li>
-                <a href="">#美国</a>
-            </li>
-            <li>
-                <a href="">#德国</a>
-            </li>
-            <li>
-                <a href="">#俄罗斯</a>
+                <a class="<?php if (!empty($diqu) && ($diqu == 3)):?>current<?php endif;?>" href="<?php echo APF::get_instance()->get_real_url("/series","",array("place" => 3))?>">#美国</a>
             </li>
         </ul>
     </div>
 
     <div class="series_list">
-        <ul>
-            <li>
-                <a href="" class="img">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/erping3.jpg">
+        <?php $ulStr0 = $ulStr1 = $ulStr2 = $ulStr3 = "<ul>";?>
+        <?php $topicI = 0;?>
+        <?php foreach($topicList as $topicVal):?>
+            <?php $valStr = '<li><a href="' . APF::get_instance()->get_real_url("/series/info/",$topicVal['id'],array(),true) . '" class="img">
+                    <img src="' . APF::get_instance()->get_image_url($topicVal['mImg']) . '">
                 </a>
                 <div class="title">
-                    <a href="">钢铁侠</a>
+                    <a href="' . APF::get_instance()->get_real_url("/series/info/",$topicVal['id'],array(),true) . '">' . $topicVal['name'] . '</a>
                     <span class="count">
-                        <em>3</em>&nbsp;部
+                        <em>' . (empty($topicVal['movieCount']) ? 0 : $topicVal['movieCount']) . '</em>&nbsp;部
                     </span>
                 </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
+                <span class="miaoshu">' . $topicVal['bTitle'] . '</span>
                 <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/liuyan0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/langmanaiqing0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li class="last_series">
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/zhongkouwei0715.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-        </ul>
-
-        <ul>
-            <li class="last_series">
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/zhaoliangdian0715.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="" class="img">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/erping3.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/liuyan0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/langmanaiqing0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-        </ul>
-
-        <ul>
-            <li class="last_series">
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/shishangzuigaoxiao0702.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="" class="img">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/erping3.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/liuyan0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/langmanaiqing0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-        </ul>
-
-        <ul class="last_series">
-            <li class="last_series">
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/xiaoqingxing0702.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/liuyan0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="" class="img">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/erping3.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-
-            <li>
-                <a href="">
-                    <img src="http://imgstatic.baidu.com/img/image/shouye/langmanaiqing0708.jpg">
-                </a>
-                <div class="title">
-                    <a href="">钢铁侠</a>
-                    <span class="count">
-                        <em>3</em>部
-                    </span>
-                </div>
-                <span class="miaoshu">一部冲击视觉的经典之作</span>
-                <span class="bg"></span>
-            </li>
-        </ul>
-
+            </li>';?>
+            <?php if ($topicI % 4 == 0):?>
+                <?php $ulStr0 .= $valStr;?>
+            <?php elseif ($topicI % 4 == 1):?>
+                <?php $ulStr1 .= $valStr;?>
+            <?php elseif ($topicI % 4 == 2):?>
+                <?php $ulStr2 .= $valStr;?>
+            <?php else:?>
+                <?php $ulStr3 .= $valStr;?>
+            <?php endif;?>
+            <?php $topicI++;?>
+        <?php endforeach;?>
+        <?php echo $ulStr0 . "</ul>"?>
+        <?php echo $ulStr1 . "</ul>"?>
+        <?php echo $ulStr2 . "</ul>"?>
+        <?php echo $ulStr3 . "</ul>"?>
     </div>
-
     <div class="clear"></div>
 </div>

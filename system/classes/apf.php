@@ -90,14 +90,14 @@ class APF
      * @param array $params
      * @return bool|string
      */
-    public function get_real_url($page, $id = '', $params = array())
+    public function get_real_url($page, $id = '', $params = array(),$encodeId = false)
     {
         if (empty($page)) {
             return false;
         }
 
         $id = intval($id);
-        $page = ltrim($page,"/");
+        $page = trim($page,"/");
         switch (strtolower($page)) {
             case "detail" :
                 $pri_url = "/detail/index/" . $this->encodeId($id);
@@ -109,7 +109,10 @@ class APF
                 $pri_url = "/people/index/" . $this->encodeId($id);
                 break;
             default : //待新增
-                $pri_url = "/" . $page;
+                $pri_url = "/" . $page . "/";
+                if ($encodeId) {
+                    $pri_url .= $this->encodeId($id);
+                }
                 break;
         }
         if (!empty($params) && is_array($params)) {

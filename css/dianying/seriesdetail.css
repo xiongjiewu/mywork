@@ -1,0 +1,158 @@
+div.container {
+    margin-top: 50px;
+}
+div.seriesdetail_top {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+div.seriesdetail_top img {
+    float: left;
+    width: 100%;
+}
+div.series_name {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    z-index: 10;
+    color: #fff;
+    width: 500px;
+}
+div.series_name h1 {
+    font-size: 50px;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-shadow: 1px 1px 0 #444444;
+}
+div.series_name p.jieshao {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    text-shadow: 1px 1px 0 #444444;
+}
+div.series_tag {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    z-index: 11;
+    width: 200px;
+}
+div.series_tag ul {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 #444444;
+}
+div.series_tag ul li {
+    float: left;
+    margin-right: 10px;
+}
+div.series_tag ul li a,div.series_tag ul li a:active,div.series_tag ul li a:link {
+    color: #fff;
+}
+div.seriesdetail_main {
+    float: left;
+    width: 100%;
+}
+div.seriesdetail_movie {
+    margin: 0 auto;
+    width: 1200px;
+}
+div.movie_list {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+div.movie_list h1 {
+    float: left;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #08A6BC;
+    font-size: 30px;
+}
+div.movie_list ul {
+    float: left;
+    width: 100%;
+}
+div.movie_list ul li {
+    float: left;
+}
+div.movie_list ul li.movie_m {
+    width: 100%;
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #ccc;
+    position: relative;
+}
+div.movie_list ul li.movie_m a.movie_img {
+    float: left;
+    width: 100%;
+}
+div.movie_list ul li.movie_m a.movie_img img {
+    float: left;
+    width: 100%;
+}
+div.movie_list ul li.movie_m div.movie_j {
+    position: absolute;
+    width: 1160px;
+    padding: 20px;
+    left: 0;
+    bottom: 20px;
+    z-index: 22;
+    color: #fff;
+    text-shadow: 1px 1px 0 #444444;
+}
+div.movie_list ul li.movie_m div.movie_j h2 {
+    font-size: 20px;
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+div.movie_list ul li.movie_m div.movie_j .p {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    line-height: 25px;
+    overflow: hidden;
+    height: 100%;
+}
+div.movie_list ul li.movie_o {
+    width: 250px;
+    height: 130px;
+    margin-right: 65px;
+    margin-top: 20px;
+    position: relative;
+}
+div.movie_list ul li.movie_last {
+    margin-right: 0;
+}
+div.movie_list ul li.movie_o a.movie_o_img,div.movie_list ul li.movie_o a.movie_o_img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.movie_list ul li.movie_o .movie_o_name {
+    position: absolute;
+    z-index: 21;
+    left: 0;
+    width: 230px;
+    background-color: #000;
+    height: 20px;
+    padding: 10px;
+    bottom: 0;
+    font-size: 16px;
+    color: #fff;
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    overflow: hidden;
+}

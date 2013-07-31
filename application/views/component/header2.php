@@ -4,14 +4,14 @@
             <li class="new_logo">
                <a href="/" title="返回首页"></a>
             </li>
-<!--            <li>-->
-<!--                <span class="fenge_line"></span>-->
-<!--            </li>-->
             <?php $menus = APF::get_instance()->get_config_value("menus");?>
             <?php $index = !isset($tabIndex) ? -1 : $tabIndex;?>
             <?php foreach ($menus as $menuKey => $menuVal): ?>
                 <li>
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>
+                    <?php if (!empty($menuVal['new'])):?>
+                        <i class="new"></i>
+                    <?php endif;?>
                 </li>
             <?php endforeach;?>
             <li>
@@ -24,9 +24,6 @@
                     <a class="<?php if($index == $rKey):?>current<?php endif;?>" href="<?php echo $rMVal['link']; ?>"><?php echo $rMVal['title'];?></a>
                 </li>
             <?php endforeach;?>
-<!--            <li>-->
-<!--                <span class="fenge_line"></span>-->
-<!--            </li>-->
             <li class="search_k">
                 <div class="search_l"></div>
                 <form name="search_dy" id="search_dy" onsubmit="return false;" autocomplete="off" method="get">

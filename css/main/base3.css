@@ -23,6 +23,7 @@ div.new_head_mian ul li {
     height: 100%;
     line-height: 50px;
     padding: 0 10px;
+    position: relative;
 }
 div.new_head_mian ul li a {
     float: left;
@@ -35,6 +36,16 @@ div.new_head_mian ul li a:hover {
 div.new_head_mian ul li a.current {
     color: #08A6BC;
 }
+div.new_head_mian ul li i.new {
+    background: url("/images/common/header_icon_li.png") no-repeat scroll 0 -390px transparent;
+    color: red;
+    height: 17px;
+    left: 50px;
+    position: absolute;
+    top: 3px;
+    width: 29px;
+}
+
 div.new_head_mian ul li.new_logo {
     margin: 0;
     padding: 0;
