@@ -206,14 +206,14 @@ $config['menus'] = array(
         "class" => "",
         "new" => false,
     ),
-//    array(
-//        "index" => "list",
-//        "title" => "系列大片",
-//        "link" => get_url("/series/"),
-//        "class" => "dy_sort",
-//        "type_info" => "",
-//        "new" => true,
-//    ),
+    array(
+        "index" => "list",
+        "title" => "系列大片",
+        "link" => get_url("/series/"),
+        "class" => "dy_sort",
+        "type_info" => "",
+        "new" => true,
+    ),
 //    array(
 //        "index" => "list",
 //        "title" => "本周专题",
