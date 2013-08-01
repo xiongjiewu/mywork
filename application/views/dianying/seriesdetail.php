@@ -28,7 +28,7 @@
                     <h1><?php echo $topicMv['name'];?></h1>
                     <ul>
                         <li class="movie_m">
-                            <a href="<?php echo APF::get_instance()->get_real_url("/detail",$topicMv['infoId']);?>" class="movie_img">
+                            <a title="点击观看" href="<?php echo APF::get_instance()->get_real_url("/detail",$topicMv['infoId']);?>" class="movie_img">
                                 <img src="<?php echo APF::get_instance()->get_image_url($topicMv['image']);?>">
                             </a>
                             <div class="movie_j">
@@ -44,7 +44,7 @@
                             <?php foreach($topicMv['img'] as $imgVal):?>
                                 <?php if ($imgI > 4){break;}?>
                                 <li class="movie_o<?php if ($imgI == $imgCount || $imgI == 4):?> movie_last<?php endif;?>">
-                                    <a class="movie_o_img" href="<?php echo APF::get_instance()->get_real_url("/detail",$topicMv['infoId']);?>">
+                                    <a title="点击观看" class="movie_o_img" href="<?php echo APF::get_instance()->get_real_url("/detail",$topicMv['infoId']);?>">
                                         <img src="<?php echo APF::get_instance()->get_image_url($imgVal['image']);?>">
                                     </a>
                                     <?php if (!empty($imgVal['title'])):?>
