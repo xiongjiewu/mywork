@@ -28,7 +28,7 @@ class Movietopic extends CI_Model {
      */
     public function getTopicInfoList($topicType = 1,$offset = 0,$limit = 20)
     {
-        $sql = "select * from `tbl_movieTopic` where topicType = {$topicType} and del = 0 limit {$offset},{$limit};";
+        $sql = "select * from `tbl_movieTopic` where topicType = {$topicType} and del = 0 and status = 1 limit {$offset},{$limit};";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
