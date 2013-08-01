@@ -49,7 +49,8 @@
     </div>
 
     <div class="series_list">
-        <?php $ulStr0 = $ulStr1 = $ulStr2 = $ulStr3 = "<ul>";?>
+        <?php $ulStr0 = $ulStr1 = $ulStr2 = "<ul>";?>
+        <?php $ulStr3 = "<ul class='last_series'>"?>
         <?php $topicI = 0;?>
         <?php foreach($topicList as $topicVal):?>
             <?php $valStr = '<li><a href="' . APF::get_instance()->get_real_url("/series/info/",$topicVal['id'],array(),true) . '" class="img">
