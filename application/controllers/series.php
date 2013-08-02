@@ -114,7 +114,6 @@ class Series extends CI_Controller {
         $topicMovieList = $this->_initImgToMovie($topicMovieList,$tMovieImg);
         $this->set_attr("topicMovieList",$topicMovieList);
 
-        $this->set_attr("tabIndex",4);
         $this->load->set_top_index(-1);
         $this->load->set_title($topicInfo['name'] . "系列 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/seriesdetail.css"));
