@@ -105,6 +105,8 @@ class Series extends CI_Controller {
             exit;
         }
         $this->set_attr("topicInfo",$topicInfo);
+        //更新系列点击次数
+        $this->Movietopic->updateTopicInfo($id,array("clickNum" => $topicInfo['clickNum'] + 1));
         //系列电影信息
         $topicIdArr = array($id);
         $topicMovieList = $this->Movietopicmovie->getTopicMovieListByTopicId($topicIdArr);
