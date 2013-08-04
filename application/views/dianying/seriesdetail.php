@@ -42,8 +42,7 @@
                             <?php $imgCount = count($topicMv['img']);?>
                             <?php $imgI = 1;?>
                             <?php foreach($topicMv['img'] as $imgVal):?>
-                                <?php if ($imgI > 4){break;}?>
-                                <li class="movie_o<?php if ($imgI == $imgCount || $imgI == 4):?> movie_last<?php endif;?>">
+                                <li class="movie_o<?php if ($imgI == $imgCount || ($imgI > 0 && $imgI % 4 == 0)):?> movie_last<?php endif;?>">
                                     <a title="点击观看" class="movie_o_img" href="<?php echo APF::get_instance()->get_real_url("/detail",$topicMv['infoId']);?>">
                                         <img src="<?php echo APF::get_instance()->get_image_url($imgVal['image']);?>">
                                     </a>
