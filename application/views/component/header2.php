@@ -7,10 +7,22 @@
             <?php $menus = APF::get_instance()->get_config_value("menus");?>
             <?php $index = !isset($tabIndex) ? -1 : $tabIndex;?>
             <?php foreach ($menus as $menuKey => $menuVal): ?>
-                <li>
+                <li class="<?php echo $menuVal['class'];?>">
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>
                     <?php if (!empty($menuVal['new'])):?>
                         <i class="new"></i>
+                    <?php endif;?>
+                    <?php if (!empty($menuVal['list'])):?>
+                        <i class="list"></i>
+                        <div class="menu_list">
+                            <?php foreach($menuVal['list'] as $listKey => $listVal):?>
+                                <span class="<?php if (isset($sTabIndex) && ($listKey == $sTabIndex) && ($index == $menuKey)):?>current_list<?php endif;?>">
+                                    <a href="<?php echo $listVal['url'];?>">
+                                        <?php echo $listVal['title'];?>
+                                    </a>
+                                </span>
+                            <?php endforeach;?>
+                        </div>
                     <?php endif;?>
                 </li>
             <?php endforeach;?>
@@ -66,11 +78,6 @@
                                 <li>
                                     <?php $idStr = APF::get_instance()->encodeId($lookVal['id']);?>
                                     <a href="/detail/index/<?php echo $idStr;?>"> <?php echo $lookVal['name'];?></a>
-                                    <span <?php if ($lookI == $lookCount):?>class="last_span"<?php endif;?>>
-                                        <a href="/detail/index/<?php echo $idStr;?>/">
-                                            继续浏览
-                                        </a>
-                                    </span>
                                 </li>
                                 <?php $lookI++;?>
                             <?php endforeach;?>

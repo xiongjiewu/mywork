@@ -32,6 +32,7 @@ class Series extends CI_Controller {
 
         $this->load->set_top_index(-1);
         $this->set_attr("tabIndex",4);
+        $this->set_attr("sTabIndex",$diqu);
         $this->load->set_title("系列大片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("/css/dianying/series.css"));
         $this->load->set_js(array("/js/dianying/series.js"));

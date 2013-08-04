@@ -45,6 +45,44 @@ div.new_head_mian ul li i.new {
     top: 3px;
     width: 29px;
 }
+div.new_head_mian ul li .menu_list {
+    position: absolute;
+    display: none;
+    top: 50px;
+    left: 0;
+    z-index: 101;
+    background-color: #000;
+    width: 88px;
+}
+div.new_head_mian ul li .menu_list span a {
+    float: left;
+    width: 74px;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    padding-right: 4px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+div.new_head_mian ul li .menu_list span a:hover {
+    background-color: #08A6BC;
+    color: #fff;
+}
+div.new_head_mian ul li.list {
+    padding-right: 7px;
+}
+div.new_head_mian ul li.list:hover {
+    background-color: #000;
+}
+div.new_head_mian ul li.list:hover i.list,div.new_head_mian ul li.look:hover i {
+    background-position: -11px -55px;
+}
+div.new_head_mian ul li.list:hover .menu_list {
+    display: block;
+}
+div.new_head_mian ul li span.current_list a {
+    color: #08A6BC;
+}
 
 div.new_head_mian ul li.new_logo {
     margin: 0;
@@ -240,34 +278,36 @@ div.new_head_mian ul li.look {
 }
 div.new_head_mian ul li.look:hover {
     width: 78px;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-    background-color: #eee;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: #000;
 }
 div.new_head_mian ul li.look a {
     margin-left: 1px;
 }
-div.new_head_mian ul li.look i {
+div.new_head_mian ul li.look i,
+div.new_head_mian ul li i.list {
     /*background: url("/images/newhead/detail_sucai3.png") no-repeat scroll -201px -33px transparent;*/
     background: url("/images/newhead/hao8daohang.png") no-repeat scroll -1px -55px transparent;
     float: left;
     height: 9px;
     margin-left: 5px;
     margin-top: 21px;
-    width: 17px;
+    width: 10px;
 }
 div.new_head_mian ul li.look div.look_info {
     position: absolute;
-    width: 250px;
+    width: 120px;
     right: -1px;
     top: 50px;
-    background-color: #eee;
+    background-color: #000;
     z-index: 10019;
-    border: 1px solid #bbb;
+    border: 1px solid #000;
     border-top: none;
     display: none;
     cursor: default;
     padding: 10px;
+    color: #fff;
 }
 div.new_head_mian ul li.look div.look_info ul {
     float: left;
@@ -281,7 +321,7 @@ div.new_head_mian ul li.look div.look_info ul li {
     line-height: 25px;
 }
 div.new_head_mian ul li.look div.look_info ul li a {
-    color: #999;
+    color: #fff;
 }
 div.new_head_mian ul li.look div.look_info ul li span {
     float: right;
@@ -332,7 +372,7 @@ div.new_head_mian ul li.username div.user_account {
 }
 div.new_head_mian ul li.look:hover a {
     margin-left: 0;
-    color: #999;
+    color: #fff;
 }
 div.new_head_mian ul li.look:hover div.look_info {
     display: block;

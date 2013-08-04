@@ -43,6 +43,9 @@
                 <a href="<?php echo APF::get_instance()->get_real_url("/series")?>" class="<?php if (empty($diqu)):?>current<?php endif;?>">#全部</a>
             </li>
             <li>
+                <a class="<?php if (!empty($diqu) && ($diqu == 1)):?>current<?php endif;?>" href="<?php echo APF::get_instance()->get_real_url("/series","",array("place" => 1))?>">#中国</a>
+            </li>
+            <li>
                 <a class="<?php if (!empty($diqu) && ($diqu == 3)):?>current<?php endif;?>" href="<?php echo APF::get_instance()->get_real_url("/series","",array("place" => 3))?>">#美国</a>
             </li>
         </ul>
