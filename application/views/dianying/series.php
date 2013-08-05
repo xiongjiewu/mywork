@@ -4,7 +4,7 @@
             <?php foreach($topTopicList as $tTopicVal):?>
                 <li>
                     <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
-                        <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['sImg']);?>" alt="<?php echo $tTopicVal['name'];?>" alt="<?php echo $tTopicVal['name'];?>"/>
+                        <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['bImg']);?>" alt="<?php echo $tTopicVal['name'];?>" alt="<?php echo $tTopicVal['name'];?>"/>
                     </a>
                     <div class="ei-title">
                         <h2><?php echo $tTopicVal['name'];?></h2>
