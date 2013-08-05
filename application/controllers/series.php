@@ -26,7 +26,7 @@ class Series extends CI_Controller {
 
         //顶部和热门推荐系列
         shuffle($fTopicList);
-        $this->set_attr("topTopicList",array_slice($fTopicList,0,5));
+        $this->set_attr("topTopicList",array_slice($fTopicList,0,7));
         shuffle($fTopicList);
         $this->set_attr("rightTopicList",array_slice($fTopicList,0,12));
 
@@ -34,7 +34,7 @@ class Series extends CI_Controller {
         $this->set_attr("tabIndex",4);
         $this->set_attr("sTabIndex",$diqu);
         $this->load->set_title("系列大片 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
-        $this->load->set_css(array("/css/dianying/series.css"));
+        $this->load->set_css(array("/css/main/style.css","/css/dianying/series.css"));
         $this->load->set_js(array("/js/dianying/series.js"));
         $this->set_attr("moviePlace",$this->_moviePlace);
         $this->set_attr("movieType",$this->_movieType);

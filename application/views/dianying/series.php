@@ -1,42 +1,32 @@
+<div class="wrapper">
+    <div id="ei-slider" class="ei-slider">
+        <ul class="ei-slider-large">
+            <?php foreach($topTopicList as $tTopicVal):?>
+                <li>
+                    <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
+                        <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['sImg']);?>" alt="<?php echo $tTopicVal['name'];?>" alt="<?php echo $tTopicVal['name'];?>"/>
+                    </a>
+                    <div class="ei-title">
+                        <h2><?php echo $tTopicVal['name'];?></h2>
+                        <h3><?php echo APF::get_instance()->splitStr($tTopicVal['bTitle'],50);?></h3>
+                    </div>
+                </li>
+            <?php endforeach;?>
+        </ul><!-- ei-slider-large -->
+        <ul class="ei-slider-thumbs">
+            <li class="ei-slider-element">Current</li>
+            <?php foreach($topTopicList as $tTopicVal):?>
+                <li>
+                    <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
+                        <?php echo $tTopicVal['name'];?>
+                    </a>
+                    <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['sImg']);?>" alt="<?php echo $tTopicVal['name'];?>" />
+                </li>
+            <?php endforeach;?>
+        </ul><!-- ei-slider-thumbs -->
+    </div><!-- ei-slider -->
+</div><!-- wrapper -->
 <div class="series_main">
-    <div class="series_top">
-        <div class="series_top_left">
-            <ul>
-                <?php foreach($topTopicList as $tTopicVal):?>
-                    <li>
-                        <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
-                            <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['bImg']);?>">
-                        </a>
-                        <div class="info" style="display: none;">
-                            <h3>钢铁下1</h3>
-                            <span>
-                                钢铁下1钢铁下1钢铁下1
-                            </span>
-                        </div>
-                    </li>
-                <?php endforeach;?>
-            </ul>
-            <div class="img_change">
-                <?php for($i = 0;$i < count($topTopicList);$i++):?>
-                    <span class="<?php if ($i == 0):?>current<?php endif;?>" index="<?php echo $i;?>"></span>
-                <?php endfor;?>
-            </div>
-        </div>
-
-        <div class="series_top_right">
-            <h2>热门系列推荐</h2>
-            <ul>
-                <?php foreach($rightTopicList as $rTopicVal):?>
-                    <li class="">
-                        <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$rTopicVal['id'],array(),true);?>">
-                            <img src="<?php echo APF::get_instance()->get_image_url($rTopicVal['sImg']);?>">
-                        </a>
-                    </li>
-                <?php endforeach;?>
-            </ul>
-        </div>
-    </div>
-
     <div class="series_tab">
         <ul>
             <li>
@@ -86,3 +76,19 @@
     </div>
     <div class="clear"></div>
 </div>
+
+<script type="text/javascript" src="/js/main/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="/js/main/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#ei-slider').eislideshow({
+            animation			: 'center',
+            autoplay			: true,
+            slideshow_interval	: 3000,
+            titlesFactor		: 0
+        });
+        $(".ei-slider-large li img").each(function() {
+           $(this).css("height","500px");
+        });
+    });
+</script>
