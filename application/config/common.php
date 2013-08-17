@@ -6,7 +6,7 @@ $config["image_upload_url"] = "/uploadimage";//图片上传回调URL
 $config["image_upload_return"] = "/uploadfilereturn";//图片上传回调URL
 $config['user_photo'] = "/images/re_su.png";
 
-$config['img_base_url'] = "http://www.img.local.dianying8.tv";
+$config['img_base_url'] = "http://hao8static.b0.upaiyun.com";
 $config['base_url'] = "http://www.local.dianying8.tv";
 
 $config['max_post_time'] = 5;//允许5秒之内不能重复发表评论

@@ -66,6 +66,7 @@ if (file_exists("/home/www/config/GA_VERSION")) {
 }
 
 include(SYSDIR . "/classes/apf.php");
+include(SYSDIR . "/classes/upyun.class.php");
 
 // The path to the "application" folder
 if (is_dir($application_folder)) {

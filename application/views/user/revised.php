@@ -48,7 +48,7 @@
 				                <iframe name="upload_frame" id="upload_frame" style="width:0;height:0;display:none;" ></iframe>
                             </div>
                             <div class="zhushi">
-                                (双击上传头像按钮)只能传格式为png、gif、jpg的图片,最大不能超过2M!
+                                (双击上传头像按钮)只能传格式为png、gif、jpg的图片,最大不能超过10M!
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,9 @@ var init = {
         $("div.user_image").find("div.doing").show();
         var imageVal = $(t).val();
         var image = imageVal.split(".");
-        if (!image[1] || (image[1].toLowerCase() != 'png') && (image[1].toLowerCase() != 'gif') && (image[1].toLowerCase() != 'jpg')) {
-            alert("只能传格式为png\|gif\|jpg的图片!");
+        var type = image[image.length - 1];
+        if (!type || (type.toLowerCase() != 'png') && (type.toLowerCase() != 'gif') && (type.toLowerCase() != 'jpg') && (type.toLowerCase() != 'bmp') && (type.toLowerCase() != 'jpeg') && (type.toLowerCase() != 'pjpeg') && (type.toLowerCase() != 'x-png')) {
+            alert("只能传格式为png\|gif\|jpg\|pjpeg\|jpeg\|bmp\|x-png的图片!");
             t.val("");
             $("div.user_image").find("div.doing").hide();
             return true;
