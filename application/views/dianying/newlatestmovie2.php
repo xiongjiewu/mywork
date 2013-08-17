@@ -6,7 +6,7 @@
             <dt>
                 <?php $idStr = APF::get_instance()->encodeId($totalMovieInfo[0]['id']);?>
                 <a class="top_img" href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
-                    <img alt="<?php echo $totalMovieInfo[0]['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $totalMovieInfo[0]['image'];?>">
+                    <img alt="<?php echo $totalMovieInfo[0]['name'];?>" src="<?php echo APF::get_instance()->get_image_url($totalMovieInfo[0]['image'],"dy",300);?>">
                 </a>
             </dt>
             <dd><h1><a class="top_title" href="<?php echo get_url("/detail/index/{$idStr}"); ?>/"><?php echo $totalMovieInfo[0]['name'];?></a></h1></dd>
@@ -41,7 +41,7 @@
                 <?php $daoyan = empty($totalMovieInfo[$i]['daoyan']) ? "暂无" : $totalMovieInfo[$i]['daoyan'];?>
                 <li class="<?php if ($i == 0):?>current<?php endif;?>">
                     <a title="<?php echo $totalMovieInfo[$i]['name'];?>" name="<?php echo $totalMovieInfo[$i]['name'];?>" daoyan="<?php echo $daoyan;?>" nianfen="<?php echo $nianfen;?>" zhuyan="<?php echo implode("、",array_slice($zhuYanArr,0,APF::get_instance()->get_config_value("yaoyao_zhuyan_count")));?>" type="<?php echo $movieType[$totalMovieInfo[$i]['type']];?>" jieshao="<?php echo APF::get_instance()->splitStr($totalMovieInfo[$i]['jieshao'],APF::get_instance()->get_config_value("yaoyao_jieshao_len"));?>" class="image_a" href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
-                        <img alt="<?php echo $totalMovieInfo[$i]['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $totalMovieInfo[$i]['image'];?>">
+                        <img alt="<?php echo $totalMovieInfo[$i]['name'];?>" src="<?php echo APF::get_instance()->get_image_url($totalMovieInfo[$i]['image'],"dy",100);?>">
                     </a>
                 </li>
             <?php endfor;?>
@@ -57,7 +57,7 @@
                 <?php $daoyan = empty($totalMovieInfo[$i]['daoyan']) ? "暂无" : $totalMovieInfo[$i]['daoyan'];?>
                 <li class="<?php if ($i == 0):?>current<?php endif;?>">
                     <a title="<?php echo $totalMovieInfo[$i]['name'];?>" name="<?php echo $totalMovieInfo[$i]['name'];?>" daoyan="<?php echo $daoyan;?>" nianfen="<?php echo $nianfen;?>" zhuyan="<?php echo implode("、",array_slice($zhuYanArr,0,APF::get_instance()->get_config_value("yaoyao_zhuyan_count")));?>" type="<?php echo $movieType[$totalMovieInfo[$i]['type']];?>" jieshao="<?php echo APF::get_instance()->splitStr($totalMovieInfo[$i]['jieshao'],APF::get_instance()->get_config_value("yaoyao_jieshao_len"));?>" class="image_a" href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
-                        <img alt="<?php echo $totalMovieInfo[$i]['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $totalMovieInfo[$i]['image'];?>">
+                        <img alt="<?php echo $totalMovieInfo[$i]['name'];?>" src="<?php echo APF::get_instance()->get_image_url($totalMovieInfo[$i]['image'],"dy",300);?>">
                     </a>
                 </li>
             <?php endfor;?>
@@ -104,7 +104,7 @@
                         <?php $idStr = APF::get_instance()->encodeId($mVal['id']);?>
                         <li class="info<?php if ($valI <= 6):?> first<?php endif;?><?php if ($valI % 6 == 0):?> last<?php endif;?>">
                             <a class="image_a" href="<?php echo get_url("/detail/index/{$idStr}"); ?>/">
-                                <img alt="<?php echo $mVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $mVal['image'];?>">
+                                <img alt="<?php echo $mVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($mVal['image'],"dy",300);?>">
                             </a>
                             <p class="name"><a href="<?php echo get_url("/detail/index/{$idStr}"); ?>/"><?php echo $mVal['name'];?></a></p>
                             <p class="jieshao">
@@ -182,7 +182,7 @@
                             <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
-                            <img alt="<?php echo $searchVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $searchVal['image'];?>">
+                            <img alt="<?php echo $searchVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($searchVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $searchVal['name'];?></a>
@@ -221,7 +221,7 @@
                             <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>/">
-                            <img alt="<?php echo $downVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $downVal['image'];?>">
+                            <img alt="<?php echo $downVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($downVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>/"><?php echo $downVal['name'];?></a>

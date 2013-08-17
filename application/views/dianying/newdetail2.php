@@ -10,7 +10,7 @@
     <div class="dy_detail">
         <div class="total_image">
             <div class="dy_image">
-                <img class="info_image" alt="<?php echo $dyInfo['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyInfo['image']);?>">
+                <img class="info_image" alt="<?php echo $dyInfo['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyInfo['image'],"dy",300);?>">
             </div>
         </div>
         <div class="dy_right">
@@ -263,7 +263,7 @@
                             <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_like"));?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
-                                    <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
+                                    <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image'],"dy",100);?>">
                                 </a>
                             <span class="name">
                                 <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
@@ -282,7 +282,7 @@
                         <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_daoyan"));?>
                         <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                             <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
-                                <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
+                                <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image'],"dy",100);?>">
                             </a>
                             <span class="name">
                                 <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
@@ -301,7 +301,7 @@
                             <?php $url = APF::get_instance()->get_real_url("detail",$dyMovieVal['id'],array("from" => "dy_zhuyan"));?>
                             <li <?php if ($movieI % 7 == 0):?>class="last_movie"<?php endif;?>>
                                 <a title="<?php echo $dyMovieVal['name'];?>" href="<?php echo $url;?>" class="image">
-                                    <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image']);?>">
+                                    <img class="info_image" alt="<?php echo $dyMovieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyMovieVal['image'],"dy",100);?>">
                                 </a>
                             <span class="name">
                                 <a href="<?php echo $url;?>"><?php echo $dyMovieVal['name'];?></a>
@@ -347,7 +347,7 @@
                         <tr>
                             <td class="userPro" valign="top">
                                 <div class="left">
-                                    <?php $userImage = APF::get_instance()->get_image_url($userInfos[$infoVal['userId']]['photo']);?>
+                                    <?php $userImage = APF::get_instance()->get_image_url($userInfos[$infoVal['userId']]['photo'],"user",100);?>
                                     <img class="lazy" style="display: inline;"
                                          src="<?php echo $userImage;?>"
                                          width="50" height="50">

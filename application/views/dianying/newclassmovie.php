@@ -28,7 +28,7 @@
                     <b><?php echo ($mI < 10)? "0" . $mI : $mI?></b>
                     <?php $mI++;?>
                     <a href="/detail/index/<?php echo $idStr;?>?from=class_movie_list" class="class_img">
-                        <img alt="<?php echo $moviceVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
+                        <img alt="<?php echo $moviceVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($moviceVal['image'],"dy",200); ?>">
                     </a>
                     <div class="class_dy_info">
                         <div class="class_dy_top">

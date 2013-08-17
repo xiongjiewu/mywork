@@ -5,7 +5,7 @@
                 <li>
                     <?php $idStr = APF::get_instance()->encodeId($moviceVal['id']);?>
                     <a href="/detail/index/<?php echo $idStr;?>/">
-                        <img src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $moviceVal['image']; ?>">
+                        <img src="<?php echo APF::get_instance()->get_image_url($moviceVal['image'],"dy",200); ?>">
                     </a>
                     <div class="title">
                         <a href="/detail/index/<?php echo $idStr;?>/" title="<?php echo $moviceVal['name'];?>">

@@ -50,10 +50,10 @@
                     <?php foreach($infoList as $infoVal):?>
                         <?php
                             if ($b == "d") {
-                                $imgUrl = APF::get_instance()->get_image_url($infoVal['image']);
+                                $imgUrl = APF::get_instance()->get_image_url($infoVal['image'],"dy",200);
                                 $url = APF::get_instance()->get_real_url("/detail",$infoVal['id'],array("from" => "retrieval_dy"));
                             } else {
-                                $imgUrl = APF::get_instance()->get_image_url($infoVal['photo']);
+                                $imgUrl = APF::get_instance()->get_image_url($infoVal['photo'],"user",200);
                                 $url = APF::get_instance()->get_real_url("/people",$infoVal['id'],array("from" => "retrieval_people"));
                             };
                         ?>

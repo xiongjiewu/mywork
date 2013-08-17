@@ -130,7 +130,7 @@
                         <?php $url = APF::get_instance()->get_real_url("detail",$mVal['id'],array("from" => "moviceguide_" . $sort));?>
                         <li class="<?php if ($dyI % 5 == 0):?>last_m<?php endif;?>" title="<?php echo $mVal['name'];?>">
                             <a href="<?php echo $url;?>" class="tupian">
-                                <img src="<?php echo APF::get_instance()->get_image_url($mVal['image']);?>" alt="<?php echo $mVal['name'];?>">
+                                <img src="<?php echo APF::get_instance()->get_image_url($mVal['image'],"dy",200);?>" alt="<?php echo $mVal['name'];?>">
                             </a>
                             <span class="name">
                                 <a href="<?php echo $url;?>"><?php echo $mVal['name'];?></a>
@@ -311,7 +311,7 @@
                     <?php $url = APF::get_instance()->get_real_url("detail",$weekPiaofangVal['id']);?>
                     <li class="<?php if ($weekPiaofangI % 2 == 0):?>two<?php endif;?>" title="<?php echo $weekPiaofangVal['name'];?>">
                         <a class="tuijian_img" href="<?php echo $url;?>">
-                            <img src="<?php echo APF::get_instance()->get_image_url($weekPiaofangVal['image']);?>" alt="<?php echo $weekPiaofangVal['name'];?>">
+                            <img src="<?php echo APF::get_instance()->get_image_url($weekPiaofangVal['image'],"dy",200);?>" alt="<?php echo $weekPiaofangVal['name'];?>">
                         </a>
                     <span class="tuijian_name">
                         <a class="" href="<?php echo $url;?>"><?php echo $weekPiaofangVal['name'];?></a>
@@ -333,7 +333,7 @@
                     <?php $url = APF::get_instance()->get_real_url("detail",$piaofangVal['id']);?>
                     <li class="<?php if ($piaofangI % 2 == 0):?>two<?php endif;?>" title="<?php echo $piaofangVal['name'];?>">
                         <a class="tuijian_img" href="<?php echo $url;?>">
-                            <img src="<?php echo APF::get_instance()->get_image_url($piaofangVal['image']);?>" alt="<?php echo $piaofangVal['name'];?>">
+                            <img src="<?php echo APF::get_instance()->get_image_url($piaofangVal['image'],"dy",200);?>" alt="<?php echo $piaofangVal['name'];?>">
                         </a>
                     <span class="tuijian_name">
                         <a class="" href="<?php echo $url;?>"><?php echo $piaofangVal['name'];?></a>

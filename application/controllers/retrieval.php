@@ -166,10 +166,10 @@ class Retrieval extends CI_Controller {
             foreach($infoList as $infoKey => $infoVal) {
                 if ($b == "d") {
                     $infoList[$infoKey]['url'] = APF::get_instance()->get_real_url("/detail",$infoVal['id']);
-                    $infoList[$infoKey]['imageUrl'] = APF::get_instance()->get_image_url($infoVal['image']);
+                    $infoList[$infoKey]['imageUrl'] = APF::get_instance()->get_image_url($infoVal['image'],"dy",200);
                 } else {
                     $infoList[$infoKey]['url'] = APF::get_instance()->get_real_url("/people",$infoVal['id']);
-                    $infoList[$infoKey]['imageUrl'] = APF::get_instance()->get_image_url($infoVal['photo']);
+                    $infoList[$infoKey]['imageUrl'] = APF::get_instance()->get_image_url($infoVal['photo'],"dy",200);
                 }
 
             }

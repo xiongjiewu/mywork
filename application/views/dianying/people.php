@@ -3,7 +3,7 @@
     <!--  左侧信息展示 start -->
     <div class="people_left">
         <div class="people_photo">
-            <img src="<?php echo APF::get_instance()->get_image_url($characterInfo['photo']);?>">
+            <img src="<?php echo APF::get_instance()->get_image_url($characterInfo['photo'],"dy",300);?>">
         </div>
         <div class="people_info">
             <ul>
@@ -59,7 +59,7 @@
                         <li class="title"><?php echo $characterInfo['name'];?>图片集 <a class="" href="<?php echo APF::get_instance()->get_real_url("/people",$characterInfo['id'],array("type" => "img"));?>">了解详情</a></li>
                         <li class="photo_info">
                             <a title="<?php echo $characterInfo['name'];?>" class="" href="<?php echo APF::get_instance()->get_real_url("/people",$characterInfo['id'],array("type" => "img"));?>">
-                                <img src="<?php echo APF::get_instance()->get_image_url($peopleImgInfo[0]['photo']);?>">
+                                <img src="<?php echo APF::get_instance()->get_image_url($peopleImgInfo[0]['photo'],"dy",300);?>">
                             </a>
                         </li>
                         <li class="img_count">目前共有<span><?php echo count($peopleImgInfo);?></span>张图片</li>
@@ -94,7 +94,7 @@
                         <?php $url = APF::get_instance()->get_real_url("/detail",$movieVal['id'],array("from" => "people_dy"));?>
                         <li class="<?php if ($movieI % 6 ==0):?>last<?php endif;?>">
                             <a href="<?php echo $url;?>" class="img">
-                                <img title="<?php echo $movieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($movieVal['image']);?>">
+                                <img title="<?php echo $movieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($movieVal['image'],"dy",200);?>">
                             </a>
                             <span><a href="<?php echo $url;?>"><?php echo $movieVal['name'];?></a></span>
                         </li>
@@ -111,7 +111,7 @@
                     <?php $imgI = 1;?>
                     <?php foreach($peopleImgInfo as $imgIVal):?>
                         <li class="info <?php if ($imgI % 6 ==0):?>last<?php endif;?>">
-                            <img title="<?php echo $characterInfo['name'];?>" src="<?php echo APF::get_instance()->get_image_url($imgIVal['photo']);?>">
+                            <img title="<?php echo $characterInfo['name'];?>" src="<?php echo APF::get_instance()->get_image_url($imgIVal['photo'],"dy",300);?>">
                         </li>
                         <?php $imgI++;?>
                     <?php endforeach;?>

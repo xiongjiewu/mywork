@@ -14,7 +14,7 @@
                         <div class="dy_name_detail">
                             <?php $idStr = APF::get_instance()->encodeId($movieVal['id']);?>
                             <a href="<?php echo get_url("/detail/index/{$idStr}"); ?>?from=comming_movie_list">
-                                <img alt="<?php echo $movieVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                                <img alt="<?php echo $movieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($movieVal['image'],"dy",100);?>">
                             </a>
                         <span class="">
                             <?php echo $movieVal['name'];?>
