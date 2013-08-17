@@ -4,7 +4,7 @@
             <?php foreach($topTopicList as $tTopicVal):?>
                 <li>
                     <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
-                        <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['bImg']);?>" alt="<?php echo $tTopicVal['name'];?>" alt="<?php echo $tTopicVal['name'];?>"/>
+                        <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['bImg'],"dy",1000);?>" alt="<?php echo $tTopicVal['name'];?>" alt="<?php echo $tTopicVal['name'];?>"/>
                     </a>
                     <div class="ei-title">
                         <h2><?php echo $tTopicVal['name'];?></h2>
@@ -20,7 +20,7 @@
                     <a href="<?php echo APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array(),true);?>">
                         <?php echo $tTopicVal['name'];?>
                     </a>
-                    <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['sImg']);?>" alt="<?php echo $tTopicVal['name'];?>" />
+                    <img src="<?php echo APF::get_instance()->get_image_url($tTopicVal['sImg'],"dy",200);?>" alt="<?php echo $tTopicVal['name'];?>" />
                 </li>
             <?php endforeach;?>
         </ul><!-- ei-slider-thumbs -->
@@ -47,7 +47,7 @@
         <?php $topicI = 0;?>
         <?php foreach($topicList as $topicVal):?>
             <?php $valStr = '<li><a href="' . APF::get_instance()->get_real_url("/series/info/",$topicVal['id'],array(),true) . '" class="img">
-                    <img src="' . APF::get_instance()->get_image_url($topicVal['mImg']) . '">
+                    <img src="' . APF::get_instance()->get_image_url($topicVal['mImg'],"dy",300) . '">
                 </a>
                 <div class="title">
                     <a href="' . APF::get_instance()->get_real_url("/series/info/",$topicVal['id'],array(),true) . '">' . $topicVal['name'] . '</a>

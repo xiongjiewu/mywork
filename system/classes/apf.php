@@ -126,13 +126,18 @@ class APF
      * @param $image
      * @return string
      */
-    public function get_image_url($image)
+    public function get_image_url($image,$type = "",$size = "")
     {
         if (empty($image)) {
             $image = $this->get_config_value("user_photo");
         }
         if (strpos($image,"http") !== false) {
             return $image;
+        } elseif (!empty($type) && !empty($size)) {
+            $imgInfo = APF::get_instance()->get_config_value($type,"imgcollocation");
+            if (!empty($imgInfo["size"][$size])) {
+                $image .= $imgInfo["size"][$size];
+            }
         }
         return trim($this->get_config_value("img_base_url"), "/") . $image;
     }

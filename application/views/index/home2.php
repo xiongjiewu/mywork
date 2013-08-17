@@ -27,7 +27,7 @@
             <?php else:?>
                 <li <?php if ($topMovieInfosI == 0):?>class="top_first_li"<?php endif;?>>
                     <a title="<?php echo $topVal['name'];?>" class="first_img" href="/detail/index/<?php echo $idStr;?>/">
-                        <img alt="<?php echo $topVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $topVal['image'];?>">
+                        <img alt="<?php echo $topVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($topVal['image'],"dy",100);?>">
                     </a>
                 </li>
             <?php endif;?>
@@ -146,7 +146,8 @@
                 <?php $newestDyInfoI = 0;?>
                 <?php foreach($newestDyInfo as $dyInfoVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
-                    <?php $image = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>
+                    <?php $image = APF::get_instance()->get_image_url($dyInfoVal['image'],"dy",200);?>
+                    <?php $image2 = APF::get_instance()->get_image_url($dyInfoVal['image'],"dy",300);?>
                     <?php $name = $dyInfoVal['name'];?>
                     <?php $jieshao = str_replace("　　","",trim($dyInfoVal['jieshao']));?>
                     <?php $type = $dyInfoVal['type'];?>
@@ -154,9 +155,9 @@
                     <?php $zhuyan = str_replace("、","/",$dyInfoVal['zhuyan']);?>
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
                     <?php if ($newestDyInfoI == 0):?>
-                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image2;?>" jieshao="<?php echo $jieshao;?>">
                             <a class="first_img" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
-                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image2;?>">
                             </a>
                             <p class="first_name">
                                 <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
@@ -175,7 +176,7 @@
                             </p>
                         </li>
                     <?php else:?>
-                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image2;?>" jieshao="<?php echo $jieshao;?>">
                             <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_last_movie">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
@@ -217,7 +218,7 @@
             <?php foreach($todayMovieList as $todayVal):?>
                     <?php $name = $todayVal['name'];?>
                     <?php $idStr = APF::get_instance()->encodeId($todayVal['id']);?>
-                    <?php $image = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $todayVal['image'];?>
+                    <?php $image = APF::get_instance()->get_image_url($todayVal['image'],"dy",200);?>
                     <?php $zhuyan = str_replace("、","/",$todayVal['zhuyan']);?>
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
                     <li class="today_info_li">
@@ -261,7 +262,7 @@
                     <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
                     <li class="other_li">
                         <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_class_movie">
-                            <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>">
+                            <img alt="<?php echo $dyInfoVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($dyInfoVal['image'],"dy",200);?>">
                         </a>
                         <p class="name">
                             <a href="/detail/index/<?php echo $idStr;?>?from=home_class_movie">
@@ -309,7 +310,7 @@
                         <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu">
-                            <img alt="<?php echo $baiduVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $baiduVal['image'];?>">
+                            <img alt="<?php echo $baiduVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($baiduVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu"><?php echo $baiduVal['name'];?></a>
@@ -341,7 +342,7 @@
                         <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_douban">
-                            <img alt="<?php echo $doubanVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $doubanVal['image'];?>">
+                            <img alt="<?php echo $doubanVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($doubanVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_douban"><?php echo $doubanVal['name'];?></a>
@@ -373,7 +374,7 @@
                         <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_imdb">
-                            <img alt="<?php echo $imdbVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $imdbVal['image'];?>">
+                            <img alt="<?php echo $imdbVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($imdbVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_imdb"><?php echo $imdbVal['name'];?></a>
@@ -405,7 +406,7 @@
                         <span class="top_name_list top_first_list">
                         <b>01</b>
                         <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_itime">
-                            <img alt="<?php echo $mtimeVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $mtimeVal['image'];?>">
+                            <img alt="<?php echo $mtimeVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($mtimeVal['image'],"dy",100);?>">
                         </a>
                         <i class="top_name_info">
                             <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_itime"><?php echo $mtimeVal['name'];?></a>

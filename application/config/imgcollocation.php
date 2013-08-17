@@ -12,6 +12,7 @@ $config['dy'] = array(//电影图片配置
         "100" => "!hao8img",
         "200" => "!hao8img200",
         "300" => "!hao8img300",
+        "1000" => "!hao8img1000",
     ),
 );
 $config['user'] = array(//用户图片配置
@@ -23,6 +24,7 @@ $config['user'] = array(//用户图片配置
         "100" => "!hao8img",
         "200" => "!hao8img200",
         "300" => "!hao8img300",
+        "1000" => "!hao8img1000",
     ),
 );
 //图片类型
