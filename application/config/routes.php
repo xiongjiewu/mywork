@@ -40,6 +40,10 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+//样式压缩有路定位，added by xiongjiewu at 2013-08-18
+$route['(:any)/(:any).css'] = '$1/$2';
+//JS压缩有路定位，added by xiongjiewu at 2013-08-18
+$route['(:any)/(:any).js'] = '$1/$2';
 
 
 /* End of file routes.php */
