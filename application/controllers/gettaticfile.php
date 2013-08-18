@@ -88,7 +88,7 @@ class Gettaticfile extends CI_Controller {
         }
 
         //压缩开始
-        $fileText = JSMin::minify($fileText);
+        //$fileText = JSMin::minify($fileText);
         echo $fileText;
     }
 }
