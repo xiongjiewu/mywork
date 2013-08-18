@@ -30,11 +30,11 @@ class Gettaticfile extends CI_Controller {
             exit;
         }
 
-        ob_start();
+        $cssText = "";
         foreach($pathArr as $cssPath) {
-            include("." . $cssPath);
+            $cssText .= file_get_contents("." . $cssPath);
         }
-        $cssText = ob_get_contents();
+        $cssText = str_replace("\n","",$cssText);
 
         //输出CSS
         header('Content-type: text/css');
@@ -58,11 +58,10 @@ class Gettaticfile extends CI_Controller {
             exit;
         }
 
-        ob_start();
+        $jsText = "";
         foreach($pathArr as $jsPath) {
-            include("." . $jsPath);
+            $jsText .= file_get_contents("." . $jsPath);
         }
-        $jsText = ob_get_contents();
 
         //输出Javascript
         header('Content-type: text/javascript');
