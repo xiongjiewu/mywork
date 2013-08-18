@@ -545,7 +545,8 @@
                 <?php $willDyInfoI = 0;?>
                 <?php foreach($willDyInfo as $dyInfoVal):?>
                     <?php $idStr = APF::get_instance()->encodeId($dyInfoVal['id']);?>
-                    <?php $image = trim(APF::get_instance()->get_config_value("img_base_url"), "/") . $dyInfoVal['image'];?>
+                    <?php $image = APF::get_instance()->get_image_url($dyInfoVal['image'],"dy",200);?>
+                    <?php $image2 = APF::get_instance()->get_image_url($dyInfoVal['image'],"dy",300);?>
                     <?php $name = $dyInfoVal['name'];?>
                     <?php $jieshao = str_replace("　　","",trim($dyInfoVal['jieshao']));?>
                     <?php $type = $dyInfoVal['type'];?>
@@ -553,9 +554,9 @@
                     <?php $zhuyan = str_replace("、","/",$dyInfoVal['zhuyan']);?>
                     <?php $zhuyaoArr = explode("/",$zhuyan);?>
                     <?php if ($willDyInfoI == 0):?>
-                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                        <li class="first_one_li" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" type="<?php echo $type;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image2;?>" jieshao="<?php echo $jieshao;?>">
                             <a class="first_img" href="/detail/index/<?php echo $idStr;?>/">
-                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image2;?>">
                             </a>
                             <p class="first_name">
                                 <a class="name" href="/detail/index/<?php echo $idStr;?>/">
@@ -573,7 +574,7 @@
                             </p>
                         </li>
                     <?php else:?>
-                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image;?>" jieshao="<?php echo $jieshao;?>">
+                        <li class="other_li" type="<?php echo $type;?>" idStr="<?php echo $idStr;?>" zhuyan="<?php echo $zhuyan;?>" typeText="<?php echo $typeText;?>" name="<?php echo $name;?>" img="<?php echo $image2;?>" jieshao="<?php echo $jieshao;?>">
                             <a class="img" href="/detail/index/<?php echo $idStr;?>?from=home_comming_movie">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
