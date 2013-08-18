@@ -218,6 +218,9 @@ div.movie_display ul li a.tupian {
     height: 180px;
     background-color: #eee;
 }
+div.movie_display ul li a.tupian:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
 div.movie_display ul li a.tupian img {
     float: left;
     width: 100%;
@@ -283,6 +286,9 @@ div.tuijian ul li a {
     height: 150px;
     background-color: #eee;
 }
+div.tuijian ul li a:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
 div.tuijian ul li a img {
     float: left;
     width: 100%;
@@ -305,6 +311,9 @@ div.tuijian ul li span.tuijian_name a {
     float: left;
     height: 100%;
     background: none;
+}
+div.tuijian ul li:hover span.tuijian_name a {
+    color: #08a6cd;
 }
 div.mingxingzhuanti {
     margin-top: 20px;

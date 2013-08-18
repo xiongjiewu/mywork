@@ -301,7 +301,7 @@ div.movie_list li.last_movie {
     margin-right: 0;
 }
 div.movie_list li:hover {
-    border: 1px solid #08A6CD;
+    /*border: 1px solid #08A6CD;*/
 }
 div.movie_list li:hover a {
     color: #08A6CD;
@@ -311,6 +311,9 @@ div.movie_list li a.image {
     float: left;
     height: 125px;
     background-color: #eee;
+}
+div.movie_list li a.image:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
 }
 div.movie_list li a.image img {
     float: left;

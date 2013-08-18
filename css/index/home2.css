@@ -45,6 +45,9 @@ div.home_top ul li a {
     width: 100%;
     height: 100%;
 }
+div.home_top ul li a:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
 div.home_top ul li.li_over {
     filter:alpha(Opacity=50);
     -moz-opacity:0.5;
@@ -114,6 +117,27 @@ div.movice_info_list div.info_list ul li {
     padding: 10px;
     margin: 5px;
     border: 1px solid #ccc;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.2s;
+    transition-property: padding, margin;
+    transition-timing-function: ease;
+    -webkit-transition-property: padding,margin;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+}
+div.movice_info_list div.info_list ul li.other_li {
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.2s;
+    transition-property: padding, margin;
+    transition-timing-function: ease;
+    -webkit-transition-property: padding,margin;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+}
+div.movice_info_list div.info_list ul li.other_li:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+    padding: 12px;
+    margin: 3px;
 }
 div.movice_info_list div.info_list ul li.first_one_li {
     width: 305px;
@@ -121,8 +145,10 @@ div.movice_info_list div.info_list ul li.first_one_li {
     margin-right: 6px;
 }
 div.movice_info_list_list div.info_list ul li.first_one_li:hover {
-    border: 1px solid #08A6CD;
-    cursor: pointer;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+    padding: 12px;
+    margin: 3px;
+    margin-right: 4px;
 }
 div.movice_info_list div.info_list ul li.first_one_li p {
     width: 302px;
@@ -230,11 +256,18 @@ div.today_list ul li {
 div.movice_info_list div.info_list ul li.today_info_li {
     position: relative;
     overflow: hidden;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.2s;
+    transition-property: padding, margin;
+    transition-timing-function: ease;
+    -webkit-transition-property: padding,margin;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
 }
 div.movice_info_list div.info_list ul li.today_info_li:hover {
-    height: 178px;
-    width: 136px;
-    border: 2px solid #08A6CD;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+    padding: 12px;
+    margin: 3px;
 }
 div.movice_info_list div.info_list ul li.today_info_li p.today_name {
     height: 40px;
@@ -277,12 +310,7 @@ div.movice_info_list div.info_list ul li:hover p.today_name a.t_name {
 div.movice_class_info_list div.info_list {
     width: 860px;
 }
-div.movice_info_list div.info_list ul li.other_li:hover {
-    cursor: pointer;
-    border: 2px solid #08A6CD;
-    width: 136px;
-    height: 178px;
-}
+
 div.movice_info_list div.info_list ul li.first_one_li:hover p.first_name a.name,
 div.movice_info_list div.info_list ul li.other_li:hover p.name a,
 div.movice_info_list_list div.info_list ul li.first_one_li p.first_name a:hover,

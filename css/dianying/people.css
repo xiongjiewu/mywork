@@ -188,6 +188,12 @@ div.movie_list ul li a.img {
     height: 160px;
     background-color: #fff;
 }
+div.movie_list ul li a.img:hover {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
+div.movie_list ul li:hover span a {
+    color: #08A6CD;
+}
 div.movie_list ul li a.img img {
     float: left;
     width: 100%;
