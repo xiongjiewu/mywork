@@ -10,7 +10,7 @@
             <?php $url = APF::get_instance()->get_real_url("/people",$peopleInfo['id'],array("from" => "search_people"));?>
             <div class="peopel_img">
                 <a class="" href="<?php echo $url;?>">
-                    <img src="<?php echo APF::get_instance()->get_image_url($peopleInfo['photo']);?>">
+                    <img src="<?php echo APF::get_instance()->get_image_url($peopleInfo['photo'],"dy",300);?>">
                 </a>
             </div>
             <div class="people_detail_info">
@@ -47,7 +47,7 @@
                                         <?php $url = APF::get_instance()->get_real_url("/detail",$searchInfo['id']);?>
                                         <li>
                                             <a href="<?php echo $url;?>">
-                                                <img src="<?php echo APF::get_instance()->get_image_url($searchInfo['image']);?>">
+                                                <img src="<?php echo APF::get_instance()->get_image_url($searchInfo['image'],"dy",100);?>">
                                             </a>
                                             <span class="name"><?php echo $searchInfo['name'];?></span>
                                         </li>
@@ -119,7 +119,7 @@
                     <li <?php if ($i == 0):?>class="first_one"<?php endif;?> title="点击查看详情">
                         <div class="search_dy_img">
                             <a href="<?php echo get_url("/detail/index/{$idStr}?from=search");?>">
-                                <img alt="<?php echo $movieVal['name'];?>" src="<?php echo trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $movieVal['image'];?>">
+                                <img alt="<?php echo $movieVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($movieVal['image'],"dy",200);?>">
                             </a>
                         </div>
                         <div class="search_dy_detail">
