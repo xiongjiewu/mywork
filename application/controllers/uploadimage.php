@@ -54,7 +54,7 @@ class Uploadimage extends CI_Controller {
             if (!empty($imgUpInfo["size"][$width])) {
                 $upRes .= $imgUpInfo["size"][$width];
             }
-            $result["path"] = $upRes;
+            $result["path"] = $file_name;
             $result["fullPath"] = trim(APF::get_instance()->get_config_value("img_base_url"),"/") . $upRes;
             unset($result["error"]);
             return $this->load->view('uploadfile/uploadfilereturn',array("data" => $result));

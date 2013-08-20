@@ -133,7 +133,10 @@ class APF
         }
         if (strpos($image,"http") !== false) {
             return $image;
-        } elseif (!empty($type) && !empty($size)) {
+        }
+        $imageArr = explode("!",$image);
+        $image = $imageArr[0];
+        if (!empty($type) && !empty($size)) {
             $imgInfo = APF::get_instance()->get_config_value($type,"imgcollocation");
             if (!empty($imgInfo["size"][$size])) {
                 $image .= $imgInfo["size"][$size];
