@@ -35,6 +35,8 @@ class People extends CI_Controller {
         //人物信息
         $characterInfo = $characterInfo[0];
         $this->set_attr("characterInfo",$characterInfo);
+        //更新人物查看次数
+        $this->Character->updateInfoByFiled(array("clickNum" => $characterInfo['clickNum'] + 1),array("id" => $characterInfo['id']));
 
         //星座信息
         $xingzuoInfo = APF::get_instance()->get_config_value("constellatoryInfo");

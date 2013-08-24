@@ -11,12 +11,17 @@ class Welcome extends CI_Controller {
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
     private $_topLimit = 15;
+    private $_topicLimit = 23;
+    private $_peopelLimit = 12;
+    private $_hotMovieLimit = 11;
 
     public function __construct() {
         parent::__construct();
         $this->load->model('Backgroundadmin');
         $this->load->model('Moviesearch');
         $this->load->model('Moviescore');
+        $this->load->model('Movietopic');
+        $this->load->model('Character');
         $this->load->driver("cache");
     }
 
@@ -53,6 +58,23 @@ class Welcome extends CI_Controller {
                     $homeTotalDyInfo['newestDyInfo'] = $newestDyInfo;
                 }
             }
+
+            //系列片
+            $topicConStr = "topicType = 2 and status = 1 and del = 0 order by clickNum desc";
+            $topicInfo = $this->Movietopic->getTopicInfoByCondition($topicConStr,0,$this->_topicLimit);
+            $homeTotalDyInfo['topicInfo'] = $topicInfo;
+
+            //人物信息
+            $peopleConStr = "del = 0 order by clickNum desc";
+            $peopleInfo = $this->Character->getCharacterInfoByCondition($peopleConStr,0,$this->_peopelLimit);
+            $homeTotalDyInfo['peopleInfo'] = $peopleInfo;
+
+            //人气电影
+            $hotMovieConStr = "del = 0 order by score desc,playNum desc";
+            $hotMovieInfo = $this->Backgroundadmin->getDetailInfoByCondition($hotMovieConStr,0,$this->_hotMovieLimit);
+            $homeTotalDyInfo['hotMovieInfo'] = $hotMovieInfo;
+
+            //即将上映
             $willInfo = $this->Backgroundadmin->getNewestInfo(2);
             if (!empty($willInfo[0])) {
                 $idStr = trim($willInfo[0]['infoIdStr'],";");
@@ -62,6 +84,8 @@ class Welcome extends CI_Controller {
                     $homeTotalDyInfo['willDyInfo'] = $willDyInfo;
                 }
             }
+
+            //经典电影
             $classInfo = $this->Backgroundadmin->getNewestInfo(3);
             if (!empty($classInfo[0])) {
                 $idStr = trim($classInfo[0]['infoIdStr'],";");
@@ -148,6 +172,9 @@ class Welcome extends CI_Controller {
             $mtimeDetailInfo = $homeTotalDyInfo['mtimeDetailInfo'];
             $doubanDetailInfo = $homeTotalDyInfo['doubanDetailInfo'];
             $todayMovieList = $homeTotalDyInfo['todayMovieList'];
+            $topicInfo = $homeTotalDyInfo['topicInfo'];
+            $peopleInfo = $homeTotalDyInfo['peopleInfo'];
+            $hotMovieInfo = $homeTotalDyInfo['hotMovieInfo'];
         }
 
         //电影墙
@@ -161,6 +188,14 @@ class Welcome extends CI_Controller {
             $newestDyInfo[$newestDyKey]['jieshao'] = $this->splitStr($newestDyVal['jieshao'],$this->_jieshaoLen);
         }
         $this->set_attr("newestDyInfo",$newestDyInfo);
+
+        //系列大片
+        $this->set_attr("topicInfo",$topicInfo);
+        //人物系列
+        $this->set_attr("peopleInfo",$peopleInfo);
+        //人气电影
+        $this->set_attr("hotMovieInfo",$hotMovieInfo);
+
         //即将上映
         $willDyInfo = array_slice($willDyInfo,0,$this->_limit);
         shuffle($willDyInfo);

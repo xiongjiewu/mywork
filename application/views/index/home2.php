@@ -203,47 +203,56 @@
     </div>
     <!-- 最新上映 end   -->
 
-    <!-- 今日推荐  start -->
-    <?php if (!empty($todayMovieList)):?>
-    <div class="movice_info_list">
+    <!-- 系列专题 这一版先隐藏 start   -->
+    <div class="movice_info_list movice_info_list_list">
         <div class="title">
             <h2>
                 <a class="" href="/latestmovie/">
-                    今日推荐
+                    专题系列
                 </a>
             </h2>
         </div>
-        <div class="info_list">
-            <ul>
-            <?php foreach($todayMovieList as $todayVal):?>
-                    <?php $name = $todayVal['name'];?>
-                    <?php $idStr = APF::get_instance()->encodeId($todayVal['id']);?>
-                    <?php $image = APF::get_instance()->get_image_url($todayVal['image'],"dy",200);?>
-                    <?php $zhuyan = str_replace("、","/",$todayVal['zhuyan']);?>
-                    <?php $zhuyaoArr = explode("/",$zhuyan);?>
-                    <li class="today_info_li">
-                        <a href="/detail/index/<?php echo $idStr;?>" class="img img_today">
-                            <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
-                        </a>
-                        <p class="today_name">
-                            <a class="t_name" href="/detail/index/<?php echo $idStr;?>">
-                                <?php echo $name;?>
-                            </a>
-                            <?php if (empty($zhuyan)):?>
-                                暂无
-                            <?php else:?>
-                                <?php foreach($zhuyaoArr as $zhuyanVal):?>
-                                    <a class="t_zhuyan" href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>
-                                <?php endforeach;?>
-                            <?php endif;?>
-                        </p>
-                    </li>
-            <?php endforeach;?>
-            </ul>
+        <div class="movie_serial">
+            <div class="title_list">
+                <div class="s_title"><h1>大片连连看</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <?php foreach($topicInfo as $topic):?>
+                            <li><a href="/series/info/<?php echo APF::get_instance()->encodeId($topic['id']);?>"><?php echo $topic['name'];?></a></li>
+                        <?php endforeach;?>
+                        <li><a href="/series/">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middel_line"></div>
+
+            <div class="title_list">
+                <div class="s_title"><h1>人物系列</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <?php foreach($peopleInfo as $peopel):?>
+                            <li><a href="/people/index/<?php echo APF::get_instance()->encodeId($peopel['id']);?>"><?php echo $peopel['name'];?></a></li>
+                        <?php endforeach;?>
+                        <li><a href="/retrieval/?b=p&t=p&s=A">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middel_line"></div>
+
+            <div class="title_list jiangxiang">
+                <div class="s_title"><h1>人气电影</h1></div>
+                <div class="s_movie_list">
+                    <ul>
+                        <?php foreach($hotMovieInfo as $hotMovie):?>
+                            <li><a href="/detail/index/<?php echo APF::get_instance()->encodeId($hotMovie['id']);?>"><?php echo $hotMovie['name'];?></a></li>
+                        <?php endforeach;?>
+                        <li><a href="/moviceguide/">更多</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <?php endif;?>
-    <!-- 今日推荐  end -->
+    <!-- 系列专题 end   -->
 
     <!-- 重温经典 start   -->
     <div class="movice_info_list movice_class_info_list">
@@ -431,105 +440,47 @@
     </div>
     <!-- 重温经典 end   -->
 
-    <!-- 系列专题 这一版先隐藏 start   -->
-    <div class="movice_info_list movice_info_list_list" style="display: none;">
-        <div class="title">
-            <h2>
-                <a class="" href="/latestmovie/">
-                    专题系列
-                </a>
-            </h2>
-        </div>
-        <div class="movie_serial">
-            <div class="title_list">
-                <div class="s_title"><h1>大片连连看</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">更多</a></li>
-                    </ul>
-                </div>
+    <!-- 今日推荐  start -->
+    <?php if (!empty($todayMovieList)):?>
+        <div class="movice_info_list">
+            <div class="title">
+                <h2>
+                    <a class="" href="/latestmovie/">
+                        今日推荐
+                    </a>
+                </h2>
             </div>
-            <div class="middel_line"></div>
-
-            <div class="title_list">
-                <div class="s_title"><h1>人物系列</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">更多</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="middel_line"></div>
-
-            <div class="title_list jiangxiang">
-                <div class="s_title"><h1>获奖专题</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">暮光之城</a></li>
-                        <li><a href="">死神来了</a></li>
-                        <li><a href="">钢铁侠</a></li>
-                        <li><a href="">007</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">战争之王</a></li>
-                        <li><a href="">哈利波特</a></li>
-                        <li><a href="">蝙蝠侠</a></li>
-                        <li><a href="">更多</a></li>
-                    </ul>
-                </div>
+            <div class="info_list">
+                <ul>
+                    <?php foreach($todayMovieList as $todayVal):?>
+                        <?php $name = $todayVal['name'];?>
+                        <?php $idStr = APF::get_instance()->encodeId($todayVal['id']);?>
+                        <?php $image = APF::get_instance()->get_image_url($todayVal['image'],"dy",200);?>
+                        <?php $zhuyan = str_replace("、","/",$todayVal['zhuyan']);?>
+                        <?php $zhuyaoArr = explode("/",$zhuyan);?>
+                        <li class="today_info_li">
+                            <a href="/detail/index/<?php echo $idStr;?>" class="img img_today">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                            </a>
+                            <p class="today_name">
+                                <a class="t_name" href="/detail/index/<?php echo $idStr;?>">
+                                    <?php echo $name;?>
+                                </a>
+                                <?php if (empty($zhuyan)):?>
+                                    暂无
+                                <?php else:?>
+                                    <?php foreach($zhuyaoArr as $zhuyanVal):?>
+                                        <a class="t_zhuyan" href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal?></a>
+                                    <?php endforeach;?>
+                                <?php endif;?>
+                            </p>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
             </div>
         </div>
-    </div>
-    <!-- 系列专题 end   -->
+    <?php endif;?>
+    <!-- 今日推荐  end -->
 
     <!-- 即将上映 start   -->
     <div class="movice_info_list movice_info_list_list">
