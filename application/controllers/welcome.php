@@ -11,8 +11,8 @@ class Welcome extends CI_Controller {
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
     private $_topLimit = 15;
-    private $_topicLimit = 23;
-    private $_peopelLimit = 12;
+    private $_topicLimit = 21;
+    private $_peopelLimit = 21;
     private $_hotMovieLimit = 11;
 
     public function __construct() {
