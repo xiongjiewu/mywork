@@ -49,11 +49,13 @@
             <div class="list_type type_info">
                 <span class="type_type">按类型</span>
                 <ul>
-                    <?php $moviceTypeInfo = array_slice($moviceType,0,20);?>
-                    <?php foreach($moviceTypeInfo as $typeKey => $typeVal):?>
+                    <?php $moviceTypeI = 1;?>
+                    <?php foreach($moviceType as $typeKey => $typeVal):?>
+                        <?php if ($moviceTypeI > 20){break;}?>
                         <li class="list_type_li">
                             <a title="<?php echo $typeVal;?>" href="<?php echo APF::get_instance()->get_real_url('/moviceguide','',array("type" => $typeKey));?>"><?php echo $typeVal;?></a>
                         </li>
+                        <?php $moviceTypeI++;?>
                     <?php endforeach;?>
                     <li class="list_type_li">
                         <a href="<?php echo APF::get_instance()->get_real_url("moviceguide");?>">更多</a>
