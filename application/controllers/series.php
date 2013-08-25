@@ -51,7 +51,8 @@ class Series extends CI_Controller {
         $diqu = intval($diqu);
         $type = intval($type);
         if ((empty($diqu) && empty($type) ) || (empty($this->_moviePlace[$diqu]) && empty($this->_movieType[$type]))) {
-            $topicList = $this->Movietopic->getTopicInfoList(2,0,$this->_limit);
+            $conStr = "topicType = 2 and status = 1 and del = 0 order by clickNum desc";
+            $topicList = $this->Movietopic->getTopicInfoByCondition($conStr,0,$this->_limit);
         } elseif (!empty($this->_moviePlace[$diqu])) {
             $topicList = $this->Movietopic->getTopicInfoListByDiQu($diqu,2,0,$this->_limit);
         } elseif (!empty($this->_movieType[$type])) {
