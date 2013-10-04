@@ -183,7 +183,6 @@ class Welcome extends CI_Controller {
         $this->set_attr("topMovieInfos",$topMovieInfos);
         //最新上映
         $newestDyInfo = array_slice($newestDyInfo,0,$this->_limit);
-        shuffle($newestDyInfo);
         foreach($newestDyInfo as $newestDyKey => $newestDyVal) {
             $newestDyInfo[$newestDyKey]['jieshao'] = $this->splitStr($newestDyVal['jieshao'],$this->_jieshaoLen);
         }
@@ -198,11 +197,11 @@ class Welcome extends CI_Controller {
 
         //即将上映
         $willDyInfo = array_slice($willDyInfo,0,$this->_limit);
-        shuffle($willDyInfo);
         foreach($willDyInfo as $willDyKey => $willDyVal) {
             $willDyInfo[$willDyKey]['jieshao'] = $this->splitStr($willDyVal['jieshao'],$this->_jieshaoLen);
         }
         $this->set_attr("willDyInfo",$willDyInfo);
+
         //经典电影
         $classDyInfo = array_slice($classDyInfo,0,$this->_limit - 3);
         shuffle($classDyInfo);

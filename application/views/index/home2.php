@@ -138,7 +138,7 @@
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
             <h2>
-                <a class="" href="/latestmovie/">
+                <a class="" href="/latestmovie/" title="点击查看更多">
                     最新上映
                 </a>
             </h2>
@@ -209,7 +209,7 @@
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
             <h2>
-                <a class="" href="/latestmovie/">
+                <a class="" href="/latestmovie/" title="点击查看更多">
                     专题系列
                 </a>
             </h2>
@@ -260,7 +260,7 @@
     <div class="movice_info_list movice_class_info_list">
         <div class="title">
             <h2>
-                <a class="" href="/classmovie/">
+                <a class="" href="/classmovie/" title="点击查看更多">
                     经典电影
                 </a>
             </h2>
@@ -447,8 +447,8 @@
         <div class="movice_info_list">
             <div class="title">
                 <h2>
-                    <a class="" href="/latestmovie/">
-                        今日推荐
+                    <a class="" href="/moviceguide/?sort=new" title="点击查看更多">
+                        今日更新
                     </a>
                 </h2>
             </div>
@@ -488,7 +488,7 @@
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
             <h2>
-                <a class="" href="/latestmovie/">
+                <a class="" href="/latestmovie/" title="点击查看更多">
                     即将上映
                 </a>
             </h2>

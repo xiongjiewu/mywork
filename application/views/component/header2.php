@@ -7,6 +7,7 @@
             <?php $menus = APF::get_instance()->get_config_value("menus");?>
             <?php $index = !isset($tabIndex) ? -1 : $tabIndex;?>
             <?php foreach ($menus as $menuKey => $menuVal): ?>
+                <?php if (!$menuVal['display']){continue;}?>
                 <li class="<?php echo $menuVal['class'];?>">
                     <a href="<?php echo $menuVal['link']; ?>" class="<?php if($index == $menuKey):?>current<?php endif;?>"><?php echo $menuVal['title'];?></a>
                     <?php if (!empty($menuVal['new'])):?>
@@ -32,6 +33,7 @@
             <?php $rightMenus = APF::get_instance()->get_config_value("right_menus");?>
             <?php $index = $this->load->get_top_index();?>
             <?php foreach($rightMenus as $rKey => $rMVal):?>
+                <?php if (!$rMVal['display']){continue;}?>
                 <li>
                     <a class="<?php if($index == $rKey):?>current<?php endif;?>" href="<?php echo $rMVal['link']; ?>"><?php echo $rMVal['title'];?></a>
                 </li>
@@ -39,7 +41,7 @@
             <li class="search_k">
                 <div class="search_l"></div>
                 <form name="search_dy" id="search_dy" onsubmit="return false;" autocomplete="off" method="get">
-                    <input type="text" class="search_n" name="search" id="search" value="<?php if (empty($searchW)):?>搜影片、人物或下载资源<?php else:?><?php echo $searchW;?><?php endif;?>">
+                    <input type="text" class="search_n" name="search" id="search" value="<?php if (!empty($searchW)):?><?php echo $searchW;?><?php endif;?>" placeholder="搜影片、演员、导演或下载资源">
                     <div class="submit_do">
                         <input type="submit" class="su_button" value="">
                     </div>

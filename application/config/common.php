@@ -184,6 +184,7 @@ $config['menus'] = array(
         "title" => "首&nbsp;&nbsp;&nbsp;页",
         "link" => "/",
         "class" => "",
+        "display" => true,//是否展示
     ),
     array(
         "index" => "movie_last",
@@ -191,6 +192,7 @@ $config['menus'] = array(
         "link" => "/latestmovie/",
         "class" => "movie_last",
         "type_info" => $monthArr,
+        "display" => false,//是否展示
     ),
     array(
         "index" => "upcoming_movie",
@@ -198,13 +200,15 @@ $config['menus'] = array(
         "link" => "/upcomingmovie/",
         "class" => "",
         "type_info" => "",
+        "display" => true,//是否展示
     ),
     array(
         "index" => "top_movie",
-        "title" => "排行榜",
+        "title" => "经典排行",
         "link" => "/classmovice/",
         "class" => "",
         "new" => false,
+        "display" => true,//是否展示
     ),
     array(
         "index" => "list",
@@ -218,15 +222,17 @@ $config['menus'] = array(
             3 => array("title" => "美国系列","url" => "/series/?place=3"),
         ),
         "new" => true,
+        "display" => true,//是否展示
     ),
-//    array(
-//        "index" => "list",
-//        "title" => "本周专题",
-//        "link" => get_url("/series/"),
-//        "class" => "dy_sort",
-//        "type_info" => "",
-//        "new" => false,
-//    ),
+    array(
+        "index" => "list",
+        "title" => "本周专题",
+        "link" => get_url("/series/"),
+        "class" => "dy_sort",
+        "type_info" => "",
+        "new" => false,
+        "display" => false,//是否展示
+    ),
 );
 $config['right_menus'] = array(
     array(
@@ -234,6 +240,7 @@ $config['right_menus'] = array(
         "title" => "电影库",
         "link" => "/moviceguide/",
         "class" => "",
+        "display" => true,//是否展示
     ),
     //第二版暂时把检索分割位人物检索+电影检索充内容
     array(
@@ -241,25 +248,29 @@ $config['right_menus'] = array(
         "title" => "电影检索",
         "link" => "/retrieval?b=d&s=A",
         "class" => "",
+        "display" => true,//是否展示
     ),
     array(
         "index" => "people",
         "title" => "人物检索",
         "link" => "/retrieval?b=p&s=A",
         "class" => "",
+        "display" => true,//是否展示
     ),
-//    array(
-//        "index" => "character",
-//        "title" => "检索",
-//        "link" => "/retrieval/",
-//        "class" => "",
-//    ),
-//    array(
-//        "index" => "prefecture",
-//        "title" => "互动专区",
-//        "link" => "/prefecture/",
-//        "class" => "",
-//    ),
+    array(
+        "index" => "character",
+        "title" => "检索",
+        "link" => "/retrieval/",
+        "class" => "",
+        "display" => false,//是否展示
+    ),
+    array(
+        "index" => "prefecture",
+        "title" => "互动专区",
+        "link" => "/prefecture/",
+        "class" => "",
+        "display" => false,//是否展示
+    ),
 );
 $config['cookie_domain'] = ".local.dianying8.tv";//cookie域名
 $config['cookie_path'] = '/';//cookie路径

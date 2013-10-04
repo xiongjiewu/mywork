@@ -116,7 +116,7 @@ div.new_head_mian ul li.search_k {
     padding-left: 0;
     padding-right: 0;
     position: relative;
-    width: 235px;
+    width: 320px;
 }
 div.new_head_mian ul li.search_k .search_l {
     float: left;
@@ -138,7 +138,7 @@ div.new_head_mian ul li.search_k div.about_search {
     left: 0;
     position: absolute;
     top: 30px;
-    width: 217px;
+    width: 319px;
     z-index: 99999;
     border-radius: 0 0 5px 5px;
 }
@@ -157,7 +157,7 @@ div.new_head_mian ul li.search_k div.about_search ul li {
     height: 17px;
     line-height: 17px;
     position: relative;
-    width: 197px;
+    width: 299px;
 }
 div.new_head_mian ul li.search_k div.about_search ul li.mouse_hover {
     background-color: #08A6CD;
@@ -177,7 +177,7 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list {
     background-color: #F1F4FB;
     border: 1px solid #ddd;
     height: 210px;
-    left: 217px;
+    left: 318px;
     padding: 10px;
     position: absolute;
     top: -1px;
@@ -240,7 +240,7 @@ div.new_head_mian ul li.search_k div.about_search ul li div.about_info_list div.
 /*搜索框匹配填充 end*/
 div.new_head_mian ul li.search_k input.search_n {
     float: left;
-    width: 180px;
+    width: 282px;
     height: 29px;
     line-height: 29px;
     margin-top: 1px;

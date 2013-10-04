@@ -142,4 +142,22 @@ class Movietopicmovie extends CI_Model {
         $sql = $this->db->update_string('tbl_movieTopicMovie', $data, $where);
         return $this->db->query($sql);
     }
+
+    /**
+     * 获取全部专题电影总数
+     * @return mixed
+     */
+    public function getTopicMovieCountByTopicId($topicIdArr)
+    {
+        $topicIdArr = array_unique($topicIdArr);
+        if (empty($topicIdArr) || !is_array($topicIdArr)) {
+            return array();
+        }
+
+        $topicIdStr = implode(",",$topicIdArr);
+        $sql = "select count(topicId) as cn,topicId from `tbl_movieTopicMovie` where topicId in (" . $topicIdStr . ") and del = 0 and status = 1 group by topicId";
+        $query = $this->db->query($sql);
+        $result = $query->result_array();
+        return empty($result) ? array() : $result;
+    }
 }

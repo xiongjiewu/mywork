@@ -61,8 +61,8 @@ class Series extends CI_Controller {
         //将id作为数组key
         $topicList = $this->initArrById($topicList,"id",$topicIdArr);
         //电影信息，用作计算电影总部数
-        $topicMovieList = $this->Movietopicmovie->getTopicMovieListByTopicId($topicIdArr);
-        $topicList = $this->_initMovieCount($topicList,$topicMovieList);
+        $topicMovieCountList = $this->Movietopicmovie->getTopicMovieCountByTopicId($topicIdArr);
+        $topicList = $this->_initMovieCount($topicList,$topicMovieCountList);
         return $topicList;
     }
 
@@ -77,10 +77,7 @@ class Series extends CI_Controller {
             return $topicList;
         }
         foreach($topicMovieList as $topicVal) {
-            if (!isset($topicList[$topicVal['topicId']]['movieCount'])) {
-                $topicList[$topicVal['topicId']]['movieCount'] = 0;
-            }
-            $topicList[$topicVal['topicId']]['movieCount']++;
+            $topicList[$topicVal['topicId']]['movieCount'] = $topicVal['cn'];
         }
         return $topicList;
     }
