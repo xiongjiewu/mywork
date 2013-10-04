@@ -138,7 +138,7 @@
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
             <h2>
-                <a class="" href="/latestmovie/" title="点击查看更多">
+                <a class="" href="/moviceguide/?sort=show" title="点击查看更多">
                     最新上映
                 </a>
             </h2>
