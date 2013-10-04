@@ -11,7 +11,7 @@ class Welcome extends CI_Controller {
     private $_jieshaoLen = 45;
     private $_todayLimit = 20;//今日推荐
     private $_topLimit = 15;
-    private $_topicLimit = 18;
+    private $_topicLimit = 14;
     private $_peopelLimit = 16;
     private $_hotMovieLimit = 11;
 
@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
         $this->load->model('Moviesearch');
         $this->load->model('Moviescore');
         $this->load->model('Movietopic');
+        $this->load->model('Movietopicmovie');
         $this->load->model('Character');
         $this->load->driver("cache");
     }
@@ -62,6 +63,7 @@ class Welcome extends CI_Controller {
             //系列片
             $topicConStr = "topicType = 2 and status = 1 and del = 0 order by clickNum desc";
             $topicInfo = $this->Movietopic->getTopicInfoByCondition($topicConStr,0,$this->_topicLimit);
+            $topicInfo = $this->_initTopicInfo($topicInfo);
             $homeTotalDyInfo['topicInfo'] = $topicInfo;
 
             //人物信息
@@ -247,4 +249,20 @@ class Welcome extends CI_Controller {
         $this->set_view('index/home2','base3');
 
 	}
+
+    /**
+     * 拼接系列大片电影总数
+     * @param $topicInfo
+     * @return array
+     */
+    private function _initTopicInfo($topicInfo) {
+        //将id作为数组key
+        $topicList = $this->initArrById($topicInfo,"id",$topicIdArr);
+        //电影信息，用作计算电影总部数
+        $topicMovieCountList = $this->Movietopicmovie->getTopicMovieCountByTopicId($topicIdArr);
+        foreach($topicMovieCountList as $topicVal) {
+            $topicList[$topicVal['topicId']]['movieCount'] = $topicVal['cn'];
+        }
+        return $topicList;
+    }
 }

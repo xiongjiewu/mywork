@@ -180,6 +180,43 @@
     <?php endif;?>
     <!-- 百度今日最热  end -->
 
+    <!-- 系列专题 start   -->
+    <div class="movice_info_list movice_info_list_list">
+        <div class="title">
+            <h2>
+                <a class="" href="/series/" title="点击查看更多">
+                    系列大片
+                </a>
+            </h2>
+        </div>
+        <div class="info_list">
+            <ul>
+                <?php foreach($topicInfo as $tTopicVal):?>
+                    <?php $url = APF::get_instance()->get_real_url("/series/info/",$tTopicVal['id'],array("from" => "home_series_info"),true);?>
+                    <?php $idStr = APF::get_instance()->encodeId($tTopicVal['id']);?>
+                    <?php $image = APF::get_instance()->get_image_url($tTopicVal['mImg'],"dy",200);?>
+                    <?php $name = $tTopicVal['name'];?>
+                    <?php $jieshao = str_replace("　　","",trim($tTopicVal['bTitle']));?>
+                    <li class="other_li">
+                        <a class="img" href="<?php echo $url;?>">
+                            <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                        </a>
+                        <p class="name">
+                            <a href="<?php echo $url;?>">
+                                <?php echo $name;?>
+                            </a>
+                            <span class="topic_count"><em><?php echo empty($tTopicVal['movieCount']) ? 0 : $tTopicVal['movieCount'];?></em>部</span>
+                        </p>
+                        <p class="s_j">
+                            <?php echo $jieshao;?>
+                        </p>
+                    </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+    </div>
+    <!-- 系列专题 end   -->
+
     <!-- 最新上映 start   -->
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
@@ -250,57 +287,6 @@
         </div>
     </div>
     <!-- 最新上映 end   -->
-
-    <!-- 系列专题 这一版先隐藏 start   -->
-    <div class="movice_info_list movice_info_list_list">
-        <div class="title">
-            <h2>
-                <a class="" href="/latestmovie/" title="点击查看更多">
-                    专题系列
-                </a>
-            </h2>
-        </div>
-        <div class="movie_serial">
-            <div class="title_list">
-                <div class="s_title"><h1>大片连连看</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <?php foreach($topicInfo as $topic):?>
-                            <li><a href="/series/info/<?php echo APF::get_instance()->encodeId($topic['id']);?>"><?php echo $topic['name'];?></a></li>
-                        <?php endforeach;?>
-                        <li><a href="/series/">更多</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="middel_line"></div>
-
-            <div class="title_list">
-                <div class="s_title"><h1>人物系列</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <?php foreach($peopleInfo as $peopel):?>
-                            <li><a href="/people/index/<?php echo APF::get_instance()->encodeId($peopel['id']);?>"><?php echo $peopel['name'];?></a></li>
-                        <?php endforeach;?>
-                        <li><a href="/retrieval/?b=p&t=p&s=A">更多</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="middel_line"></div>
-
-            <div class="title_list jiangxiang">
-                <div class="s_title"><h1>人气电影</h1></div>
-                <div class="s_movie_list">
-                    <ul>
-                        <?php foreach($hotMovieInfo as $hotMovie):?>
-                            <li><a href="/detail/index/<?php echo APF::get_instance()->encodeId($hotMovie['id']);?>"><?php echo $hotMovie['name'];?></a></li>
-                        <?php endforeach;?>
-                        <li><a href="/moviceguide/">更多</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 系列专题 end   -->
 
     <!-- 重温经典 start   -->
     <div class="movice_info_list movice_class_info_list">

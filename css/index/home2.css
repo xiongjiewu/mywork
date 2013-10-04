@@ -232,11 +232,18 @@ div.movice_info_list div.info_list ul li p.zhuyan {
 div.movice_info_list div.info_list ul li p a {
     text-decoration: none;
 }
+div.movice_info_list div.info_list ul li p span.topic_count {
+    color: #999;
+}
+div.movice_info_list div.info_list ul li p span.topic_count em {
+    font-style: normal;
+    color: #FF5C38;
+}
 div.movice_info_list div.info_list ul li p.name a {
     font-size: 14px;
     color: #595959;
 }
-div.movice_info_list div.info_list ul li p.zhuyan a {
+div.movice_info_list div.info_list ul li p.zhuyan a,div.movice_info_list div.info_list ul li p.s_j {
     font-size: 13px;
     color: #969595;
 }
