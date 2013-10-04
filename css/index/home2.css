@@ -209,11 +209,11 @@ div.movice_info_list div.info_list ul li a.img {
 }
 div.movice_info_list div.info_list ul li a.img img {
     width: 100%;
-    /*height: 100%;*/
+    height: 100%;
     float: left;
 }
 div.movice_info_list div.info_list ul li a.img_today {
-    height: 180px;
+    height: 220px;
 }
 div.movice_info_list div.info_list ul li p {
     float: left;
@@ -263,6 +263,7 @@ div.movice_info_list div.info_list ul li.today_info_li {
     -webkit-transition-property: padding,margin;
     -webkit-transition-duration: 0.2s;
     -webkit-transition-timing-function: ease;
+    height: 220px;
 }
 div.movice_info_list div.info_list ul li.today_info_li:hover {
     box-shadow: 1px 1px 8px rgba(0,0,0,0.4);
@@ -270,11 +271,11 @@ div.movice_info_list div.info_list ul li.today_info_li:hover {
     margin: 3px;
 }
 div.movice_info_list div.info_list ul li.today_info_li p.today_name {
-    height: 40px;
+    height: 50px;
     left: 10px;
     padding: 6px;
     position: absolute;
-    top: 140px;
+    top: 170px;
     width: 130px;
     z-index: 100;
     filter:alpha(Opacity=60);
@@ -285,8 +286,13 @@ div.movice_info_list div.info_list ul li.today_info_li p.today_name {
 }
 div.movice_info_list div.info_list ul li p.today_name a {
     float: left;
-    font-size: 14px;
-    margin-bottom: 3px;
+    font-size: 13px;
+    margin-bottom: -3px;
+    color: #fff;
+}
+div.movice_info_list div.info_list ul li p.today_name a.t_search {
+    margin-top: 2px;
+    width: 100%;
     color: #fff;
 }
 div.movice_info_list div.info_list ul li p.today_name a.t_zhuyan {

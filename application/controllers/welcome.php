@@ -97,7 +97,7 @@ class Welcome extends CI_Controller {
             }
 
             //百度搜索排行榜
-            $moviceIds = $this->Moviesearch->getSearchMoviceInfoByType(4,0,$this->_topLimit);
+            $moviceIds = $this->Moviesearch->getSearchMoviceInfoByType(4,0,$this->_topLimit - 1);
             $moviceIds = $this->initArrById($moviceIds,"infoId",$baiduIdsArr);
             //电影详细信息
             $baiduDetailInfo = $this->Backgroundadmin->getDetailInfo($baiduIdsArr,0,true);

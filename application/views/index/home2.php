@@ -134,6 +134,52 @@
         </div>
     </div>
     <!-- 中间索引条 start -->
+
+    <!-- 百度今日最热  start -->
+    <?php if (!empty($todayMovieList)):?>
+        <div class="movice_info_list">
+            <div class="title">
+                <h2>
+                    <a class="" href="/classmovice/" title="点击查看更多">
+                        百度今日最热
+                    </a>
+                </h2>
+            </div>
+            <div class="info_list">
+                <ul>
+                    <?php foreach($baiduDetailInfo as $baiduVal):?>
+                        <?php $name = $baiduVal['name'];?>
+                        <?php $idStr = APF::get_instance()->encodeId($baiduVal['id']);?>
+                        <?php $image = APF::get_instance()->get_image_url($baiduVal['image'],"dy",200);?>
+                        <?php $zhuyan = str_replace("、","/",$baiduVal['zhuyan']);?>
+                        <?php $zhuyaoArr = explode("/",$zhuyan);?>
+                        <li class="today_info_li">
+                            <a href="/detail/index/<?php echo $idStr;?>" class="img img_today">
+                                <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
+                            </a>
+                            <p class="today_name">
+                                <a class="t_name" href="/detail/index/<?php echo $idStr;?>">
+                                    <?php echo $name;?>
+                                </a>
+                                <a class="t_search" href="/detail/index/<?php echo $idStr;?>">
+                                    被搜:<?php echo $baiduVal['search'];?>次
+                                </a>
+                                <?php if (empty($zhuyan)):?>
+                                    暂无
+                                <?php else:?>
+                                    <?php foreach($zhuyaoArr as $zhuyanVal):?>
+                                        <a class="t_zhuyan" href="<?php echo APF::get_instance()->get_real_url("/jump","",array("type" => 1,"key" => $zhuyanVal));?>"><?php echo $zhuyanVal;?></a>
+                                    <?php endforeach;?>
+                                <?php endif;?>
+                            </p>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+        </div>
+    <?php endif;?>
+    <!-- 百度今日最热  end -->
+
     <!-- 最新上映 start   -->
     <div class="movice_info_list movice_info_list_list">
         <div class="title">
@@ -298,10 +344,7 @@
                 <h1>经典风云榜</h1>
                 <div class="top_tab">
                     <em>
-                        <a title="点击查看更多" class="current" type="baidu" href="/classmovice/index/top/4/">百度</a>
-                    </em>
-                    <em>
-                        <a title="点击查看更多" type="douban" href="/classmovice/index/top/1/">豆瓣</a>
+                        <a title="点击查看更多" class="current" type="douban" href="/classmovice/index/top/1/">豆瓣</a>
                     </em>
                     <em>
                         <a title="点击查看更多" type="imdb" href="/classmovice/index/top/2/">IMDB</a>
@@ -311,40 +354,9 @@
                     </em>
                 </div>
             </div>
-            <!--     百度top start     -->
-            <div class="top_get baidu">
-                <?php $baiduValI = 1;?>
-                <?php $baiduValCount = count($baiduDetailInfo);?>
-                <?php foreach($baiduDetailInfo as $baiduVal):?>
-                    <?php $idStr = APF::get_instance()->encodeId($baiduVal['id']);?>
-                    <?php if ($baiduValI == 1):?>
-                        <span class="top_name_list top_first_list">
-                        <b>01</b>
-                        <a class="first_top" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu">
-                            <img alt="<?php echo $baiduVal['name'];?>" src="<?php echo APF::get_instance()->get_image_url($baiduVal['image'],"dy",100);?>">
-                        </a>
-                        <i class="top_name_info">
-                            <a class="name" href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu"><?php echo $baiduVal['name'];?></a>
-                        </i>
-                        <span class="fisrt_s">
-                            <em>被搜</em><?php echo $baiduVal['search'];?>次
-                        </span>
-                        <span class="top_jieshao">简介：<?php echo APF::get_instance()->splitStr($baiduVal['jieshao'],60);?></span>
-                    </span>
-                    <?php else:?>
-                        <span class="top_name_list <?php if ($baiduValI == $baiduValCount):?>last_one<?php endif;?>">
-                        <b class="<?php if ($baiduValI > 3):?>last<?php endif;?>"><?php echo ($baiduValI < 10) ? "0" . $baiduValI : $baiduValI;?></b>
-                        <a href="/detail/index/<?php echo $idStr;?>?from=home_top_baidu"><?php echo $baiduVal['name'];?></a>
-                        <i class="score"><em>被搜</em><?php echo $baiduVal['search'];?>次</i>
-                    </span>
-                    <?php endif;?>
-                    <?php $baiduValI++;?>
-                <?php endforeach;?>
-            </div>
-            <!--     百度top end     -->
 
             <!--     豆瓣top start     -->
-            <div class="top_get douban" style="display: none;">
+            <div class="top_get douban" style="">
                 <?php $doubanValI = 1;?>
                 <?php $doubanValCount = count($doubanDetailInfo);?>
                 <?php foreach($doubanDetailInfo as $doubanVal):?>
