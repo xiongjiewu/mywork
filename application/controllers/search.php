@@ -11,6 +11,7 @@ class Search extends CI_Controller {
         $this->load->model('Actinfo');
         $this->load->model('Directorinfo');
         $this->load->model('Character');
+        $this->load->model("Wordsplit");
         $this->load->set_top_index(-1);
     }
 
@@ -197,8 +198,13 @@ class Search extends CI_Controller {
         } else {
             //分词数组
             $wordArr = array();
-            $this->load->model("Wordsplit");
-            $wordArr[] = array_merge(array($searchW),$this->Wordsplit->get_tags_arr($searchW));
+
+            //空格分割数组
+            $sK = explode(" ",$searchW);
+            $sK = array_merge(array($searchW),$sK);
+
+            //分词
+            $wordArr[] = array_merge($sK,$this->Wordsplit->get_tags_arr($searchW));
 
             $wordArr[0] = array_unique($wordArr[0]);
             $wordArr[0] = array_merge(array($searchW),$wordArr[0]);
@@ -337,6 +343,7 @@ class Search extends CI_Controller {
      */
     public function index($type = "all",$year = "all",$diqu = "all") {
         $searchW = trim($this->input->get("key"));
+        $searchW = urldecode($searchW);
         //过滤特殊字符
         $searchW = htmlspecialchars($searchW);
         $searchW = $this->_pregReplacespeaStr($searchW);
@@ -423,9 +430,12 @@ class Search extends CI_Controller {
         }
         $resultArr = array();
         foreach($searchMovieInfo as $sVal) {
-            $sVal['name'] = trim($sVal['name']);
-            $resultArr[$sVal['name']] = $sVal;
+            if (empty($resultArr[$sVal['name']])) {
+                $sVal['name'] = trim($sVal['name']);
+                $resultArr[$sVal['name']] = $sVal;
+            }
         }
+
         $newResArr = array();
         $i = 0;
         foreach($resultArr as $resultVal) {

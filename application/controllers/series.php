@@ -4,7 +4,7 @@
  * added by xiongjiewu at 2013-07-21
  */
 class Series extends CI_Controller {
-    private $_limit = 50;
+    private $_limit = 100;
     function __construct() {
         parent::__construct();
         $this->load->model('Movietopic');

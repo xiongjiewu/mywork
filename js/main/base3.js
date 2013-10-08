@@ -139,18 +139,6 @@ var initOjb = {
                 initOjb.getSearchInfoDo(searchObj,searchAbount);
             }
         });
-        searchObj.bind("focus", function () {
-            var search_val = $.trim($(this).val());
-//            if (search_val == "搜影片、人物或下载资源") {
-//                $("#search").val("");
-//            }
-        });
-        searchObj.bind("blur", function () {
-            var search_val = $.trim($(this).val());
-            if (!search_val || search_val == undefined) {
-//                $("#search").val("搜影片、人物或下载资源");
-            }
-        });
         $(document).bind("click",function(e){
             var target = $(e.target);
             if (target.attr("id") && target.attr("id") == "search") {
