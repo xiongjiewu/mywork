@@ -134,6 +134,10 @@
                                     <span class="nianfen down_link">
                                         [有下载链接]
                                     </span>
+                                <?php elseif ($movieVal['exist_watch'] == 1):?>
+                                    <span class="nianfen down_link">
+                                        [有观看链接]
+                                    </span>
                                 <?php endif;?>
                             </p>
                             <p class="zhuyan">
