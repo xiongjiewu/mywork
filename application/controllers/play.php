@@ -41,7 +41,8 @@ class Play extends CI_Controller {
             $this->jump_to("/error/index/1/");
             exit;
         }
-        $this->set_attr("watchInfo",$watchLinkInfo[$watchId]);
+        $watchInfo = $watchLinkInfo[$watchId];
+        $this->set_attr("watchInfo",$watchInfo);
         unset($watchLinkInfo[$watchId]);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
 
@@ -64,8 +65,7 @@ class Play extends CI_Controller {
 
         //更新影片播放次数
         $this->Backgroundadmin->updateDetailInfo($id,array("playNum" => $dyInfo['playNum'] + 1));
-
-        $this->load->set_title("{$dyInfo['name']}{$watchLinkInfo[$watchId]['beizhu']} 在线观看 - "  . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
+        $this->load->set_title("{$dyInfo['name']}{$watchInfo['beizhu']} 在线观看 - "  . $this->base_title .  " - " . APF::get_instance()->get_config_value("base_name"));
         $this->load->set_css(array("css/dianying/play.css"));
         $this->load->set_js(array("js/dianying/play.js"));
         $this->set_attr("qingxiType",$this->_qingxiType);
