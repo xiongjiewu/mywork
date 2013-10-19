@@ -37,7 +37,7 @@ class Play extends CI_Controller {
         $watchLinkInfo = $this->initArrById($watchLinkInfo,"id");
         $watchId = $this->input->get("id");
         //观看链接不存在或者不是电影观看链接
-        if (empty($watchLinkInfo[$watchId]) || $watchLinkInfo[$watchId]['infoId'] != $id) {
+        if (empty($watchLinkInfo[$watchId]['link']) || $watchLinkInfo[$watchId]['infoId'] != $id) {
             $this->jump_to("/error/index/1/");
             exit;
         }
