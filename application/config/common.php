@@ -206,7 +206,13 @@ $config['menus'] = array(
         "index" => "top_movie",
         "title" => "经典排行",
         "link" => "/classmovice/",
-        "class" => "",
+        "class" => "list",//如果有子菜单，样式为list
+        "list" => array(
+            4 => array("title" => "百度排行","url" => "/classmovice/index/top/4/"),
+            1 => array("title" => "豆瓣排行","url" => "/classmovice/index/top/1/"),
+            2 => array("title" => "IBM排行","url" => "/classmovice/index/top/2/"),
+            3 => array("title" => "时光网排行","url" => "/classmovice/index/top/3/"),
+        ),
         "new" => false,
         "display" => true,//是否展示
     ),
@@ -214,7 +220,7 @@ $config['menus'] = array(
         "index" => "list",
         "title" => "系列大片",
         "link" => "/series/",
-        "class" => "list",
+        "class" => "list",//如果有子菜单，样式为list
         "type_info" => "",
         "list" => array(
             0 => array("title" => "全部系列","url" => "/series/"),

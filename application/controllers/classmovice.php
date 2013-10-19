@@ -29,6 +29,7 @@ class Classmovice extends CI_Controller {
 
         $type = empty($this->_paiHangInfo[$listType][$type]) ? 1 : $type;//默认显示豆瓣top排行
         $this->set_attr("type",$type);
+        $this->set_attr("sTabIndex",$type);
 
         $page = intval($page);
         $page = empty($page) ? 1 : $page;
