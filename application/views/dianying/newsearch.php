@@ -170,7 +170,7 @@
                             <p class="watch_link">
                                 <?php $wRes = array();?>
                                 <?php foreach ($watchLinkInfo[$movieVal['id']] as $watchKey => $watchVal): ?>
-                                    <?php if (empty($wRes[$watchVal['player']])){$wRes[$watchVal['player']] = $watchVal;}?>
+                                    <?php if (empty($wRes[$watchVal['player']]) && !empty($watchVal['link'])){$wRes[$watchVal['player']] = $watchVal;}?>
                                 <?php endforeach;?>
                                 <?php $countI = 1;?>
                                 <?php foreach($wRes as $wInfo):?>
