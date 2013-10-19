@@ -81,8 +81,19 @@ class Detail extends CI_Controller {
 
         //观看链接
         $watchLinkInfo = $this->Backgroundadmin->getWatchLinkInfoByInfoId($id);
+        foreach($watchLinkInfo as $watchLinkInfoKey => $watchLinkInfoVal) {
+            if (empty($watchLinkInfoVal['link'])) {
+                unset($watchLinkInfo[$watchLinkInfoKey]);
+            }
+        }
+        
         //下载链接
         $downLoadLinkInfo = $this->Backgroundadmin->getDownLoadLinkInfoByInfoId($id);
+        foreach($downLoadLinkInfo as $downLoadLinkKey => $downLoadLinkVal) {
+            if (empty($downLoadLinkVal['link'])) {
+                unset($downLoadLinkInfo[$downLoadLinkKey]);
+            }
+        }
         $this->load->model('Yingping');
         $limit = APF::get_instance()->get_config_value("post_show_count");
         $YingpingInfo = $this->Yingping->getYingPingInfoByDyId($id,0,$limit);
@@ -148,11 +159,6 @@ class Detail extends CI_Controller {
         
         $this->set_attr("dyInfo",$dyInfo);
         $this->set_attr("watchLinkInfo",$watchLinkInfo);
-        foreach($downLoadLinkInfo as $downLoadLinkKey => $downLoadLinkVal) {
-            if (empty($downLoadLinkVal['link'])) {
-                unset($downLoadLinkInfo[$downLoadLinkKey]);
-            }
-        }
 
         //猜你喜欢，获取同类型电影
         $caiNiXiHuanConStr = "type = " . $dyInfo['type'] . " and del = 0 order by nianfen desc limit " . ($this->_caiLimit + 50);
