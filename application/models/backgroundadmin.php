@@ -176,7 +176,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $sql = "select * from `tbl_watchLink` where id in ({$idStr});";
+        $sql = "select * from `tbl_watchLink` where id in ({$idStr}) AND del = 0 ;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -629,7 +629,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $sql = "select * from `tbl_downLoad` where id in ({$idStr});";
+        $sql = "select * from `tbl_downLoad` where id in ({$idStr}) AND del = 0;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
