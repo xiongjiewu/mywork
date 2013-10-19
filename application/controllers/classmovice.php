@@ -72,7 +72,7 @@ class Classmovice extends CI_Controller {
             foreach($moviceList as $topKey => $topVal) {
                 $serchArr[] = $moviceIds[$topVal['id']]['search'];
                 $moviceList[$topKey]['search'] = $moviceIds[$topVal['id']]['search'];
-                $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
+                $moviceList[$topKey]['jieshao'] = str_replace("&#12288;","",htmlspecialchars($this->splitStr($topVal['jieshao'],100)));
             }
             array_multisort($serchArr,SORT_DESC,$moviceList);
             $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . " - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
@@ -92,7 +92,7 @@ class Classmovice extends CI_Controller {
             foreach($moviceList as $topKey => $topVal) {
                 $scoreArr[] = $moviceIds[$topVal['id']]['score'];
                 $moviceList[$topKey]['score'] = $moviceIds[$topVal['id']]['score'];
-                $moviceList[$topKey]['jieshao'] = $this->splitStr($topVal['jieshao'],100);
+                $moviceList[$topKey]['jieshao'] = str_replace("&#12288;","",htmlspecialchars($this->splitStr($topVal['jieshao'],100)));
             }
             array_multisort($scoreArr,SORT_DESC,$moviceList);
             $this->load->set_title($this->_paiHangInfo[$listType][$type]['title'] . "排行榜 - 重温经典 - " . $this->base_title . " - " . APF::get_instance()->get_config_value("base_name"));
