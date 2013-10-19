@@ -140,6 +140,11 @@ class Backgroundadmin extends CI_Model {
         }
     }
 
+    /**
+     * 批量获取电影观看链接
+     * @param array $id
+     * @return bool
+     */
     public function getWatchLinkInfoByInfoId($id = array())
     {
         if (empty($id)) {
@@ -150,7 +155,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $sql = "select * from `tbl_watchLink` where infoId in ({$idStr});";
+        $sql = "select * from `tbl_watchLink` where infoId in ({$idStr}) AND del = 0 ;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
@@ -187,7 +192,7 @@ class Backgroundadmin extends CI_Model {
         }
         $id = array_unique($id);
         $idStr = implode(",",$id);
-        $sql = "select * from `tbl_downLoad` where infoId in ({$idStr});";
+        $sql = "select * from `tbl_downLoad` where infoId in ({$idStr}) AND del = 0 ;";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
