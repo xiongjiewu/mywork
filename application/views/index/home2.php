@@ -136,7 +136,7 @@
     <!-- 中间索引条 start -->
 
     <!-- 百度今日最热  start -->
-    <?php if (!empty($todayMovieList)):?>
+    <?php if (!empty($baiduDetailInfo)):?>
         <div class="movice_info_list">
             <div class="title">
                 <h2>
