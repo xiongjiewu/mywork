@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title><?php if ($this->load->get_title()):?><?php echo $this->load->get_title();?><?php else:?>电影吧<?php endif;?></title>
-    <link rel="stylesheet" rev="stylesheet" href="/css/main/main.css" type="text/css" />
+    <link rel="stylesheet" rev="stylesheet" href="/application/css/main/main.css" type="text/css" />
     <?php $css = $this->load->get_css();?>
     <?php if (!empty($css)):?>
         <?php foreach($css as $cssKey => $cssVal):?>
         <link rel="stylesheet" rev="stylesheet" href="/<?php echo $cssVal;?>" type="text/css" />
         <?php endforeach;?>
     <?php endif;?>
-    <script type="text/javascript" src="/js/main/jquery-1.7.2.js"></script>
-    <script type="text/javascript" src="/js/main/base.js"></script>
+    <script type="text/javascript" src="/application/js/main/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/application/js/main/base.js"></script>
     <?php $js = $this->load->get_js();?>
     <?php if (!empty($js)):?>
     <?php foreach($js as $jsKey => $jsVal):?>

@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="/css/main/bootstrap.css" rel="stylesheet">
-    <link href="/css/main/base.css" rel="stylesheet">
-    <link href="/css/main/base-res.css" rel="stylesheet">
-    <link href="/css/main/docs.css" rel="stylesheet">
-    <link href="/css/main/code.css" rel="stylesheet">
-    <link href="/css/main/main.css" rel="stylesheet">
+    <link href="/application/css/main/bootstrap.css" rel="stylesheet">
+    <link href="/application/css/main/base.css" rel="stylesheet">
+    <link href="/application/css/main/base-res.css" rel="stylesheet">
+    <link href="/application/css/main/docs.css" rel="stylesheet">
+    <link href="/application/css/main/code.css" rel="stylesheet">
+    <link href="/application/css/main/main.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="/js/main/html5shiv.js"></script>
+    <script src="/application/js/main/html5shiv.js"></script>
     <![endif]-->
     <!--[if IE 6]>
-    <link href="/css/main/ie6.min.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/main/ie6.js"></script>
+    <link href="/application/css/main/ie6.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/application/js/main/ie6.js"></script>
     <![endif]-->
     <?php $css = $this->load->get_css();?>
     <?php if (!empty($css)): ?>
@@ -28,11 +28,11 @@
             <link rel="stylesheet" rev="stylesheet" href="/<?php echo trim($cssVal, "/"); ?>" type="text/css"/>
         <?php endforeach; ?>
     <?php endif;?>
-    <script type="text/javascript" src="/js/main/jquery-1.7.2.js"></script>
-    <script type="text/javascript" src="/js/main/base.js"></script>
+    <script type="text/javascript" src="/application/js/main/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/application/js/main/base.js"></script>
     <?php if ($this->load->get_login_pan()):?>
-        <link href="/css/member/loginpan.css" rel="stylesheet">
-        <script type="text/javascript" src="/js/member/loginpan.js"></script>
+        <link href="/application/css/member/loginpan.css" rel="stylesheet">
+        <script type="text/javascript" src="/application/js/member/loginpan.js"></script>
     <?php endif;?>
     <?php $js = $this->load->get_js();?>
     <?php if (!empty($js)): ?>

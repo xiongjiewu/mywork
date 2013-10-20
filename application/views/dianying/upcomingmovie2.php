@@ -63,8 +63,8 @@
         </ul><!-- ei-slider-thumbs -->
     </div><!-- ei-slider -->
 </div><!-- wrapper -->
-<script type="text/javascript" src="/js/main/jquery.eislideshow.js"></script>
-<script type="text/javascript" src="/js/main/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/application/js/main/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="/application/js/main/jquery.easing.1.3.js"></script>
 <script type="text/javascript">
     $(function() {
         $('#ei-slider').eislideshow({

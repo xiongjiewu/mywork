@@ -7,18 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php if ($this->load->get_title()):?><?php echo $this->load->get_title();?><?php else:?>好吧<?php endif;?></title>
 <link rel="Shortcut Icon" href="/images/common/logohao.png" />
-<link href="/css/main/base2.css" rel="stylesheet">
+<link href="/application/css/main/base2.css" rel="stylesheet">
 <?php $css = $this->load->get_css();?>
 <?php if (!empty($css)):?>
     <?php foreach($css as $cssKey => $cssVal):?>
         <link rel="stylesheet" rev="stylesheet" href="/<?php echo trim($cssVal,"/");?>" type="text/css" />
     <?php endforeach;?>
 <?php endif;?>
-<script type="text/javascript" src="/js/main/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="/js/main/base2.js"></script>
+<script type="text/javascript" src="/application/js/main/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/application/js/main/base2.js"></script>
 <?php if ($this->load->get_login_pan()):?>
-    <link href="/css/member/loginpan.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/member/loginpan.js"></script>
+    <link href="/application/css/member/loginpan.css" rel="stylesheet">
+    <script type="text/javascript" src="/application/js/member/loginpan.js"></script>
 <?php endif;?>
 <?php $js = $this->load->get_js();?>
 <?php if (!empty($js)):?>

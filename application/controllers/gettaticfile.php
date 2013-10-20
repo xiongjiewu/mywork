@@ -64,7 +64,8 @@ class Gettaticfile extends CI_Controller {
         header($header);
         $fileText = "";
         foreach($pathArr as $path) {
-            $fileText .= file_get_contents("." . $path);
+            $path = BASEPATH . "../" . APPPATH . ltrim($path,"/");
+            $fileText .= file_get_contents($path);
         }
 
         //压缩开始
@@ -84,7 +85,8 @@ class Gettaticfile extends CI_Controller {
         header($header);
         $fileText = "";
         foreach($pathArr as $path) {
-            $fileText .= file_get_contents("." . $path);
+            $path = BASEPATH . "../" . APPPATH . ltrim($path,"/");
+            $fileText .= file_get_contents($path);
         }
 
         //压缩开始
