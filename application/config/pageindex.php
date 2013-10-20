@@ -1,7 +1,8 @@
 <?php
-//页面索引开关配置
+//页面索引开关配置，统计各个模块访问量开关
 $config['page_index_open'] = array(
     //首页
+    "home_baidu_hot" => true,//百度今日最热
     "home_last_movie" => true,//首页最新上映
     "home_class_movie" => true,//首页经典电影
     "home_comming_movie" => true,//首页即将上映

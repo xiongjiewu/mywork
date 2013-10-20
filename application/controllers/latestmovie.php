@@ -13,6 +13,9 @@ class Latestmovie extends CI_Controller {
     }
     public function index()
     {
+        //老版最新上映已经废弃，直接跳转致电影库中的最新上映
+        $this->jump_to("/moviceguide/?sort=show");
+        exit;
         //今天
         $today = date("Ymd");
         //昨天

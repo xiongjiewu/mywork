@@ -148,17 +148,18 @@
             <div class="info_list">
                 <ul>
                     <?php foreach($baiduDetailInfo as $baiduVal):?>
+                        <?php $url = APF::get_instance()->get_real_url("detail",$baiduVal['id'],array("from" => "home_baidu_hot"));?>
                         <?php $name = $baiduVal['name'];?>
                         <?php $idStr = APF::get_instance()->encodeId($baiduVal['id']);?>
                         <?php $image = APF::get_instance()->get_image_url($baiduVal['image'],"dy",200);?>
                         <?php $zhuyan = str_replace("、","/",$baiduVal['zhuyan']);?>
                         <?php $zhuyaoArr = explode("/",$zhuyan);?>
                         <li class="today_info_li">
-                            <a href="/detail/index/<?php echo $idStr;?>" class="img img_today">
+                            <a href="<?php echo $url;?>" class="img img_today">
                                 <img alt="<?php echo $name;?>" src="<?php echo $image;?>">
                             </a>
                             <p class="today_name">
-                                <a class="t_name" href="/detail/index/<?php echo $idStr;?>">
+                                <a class="t_name" href="<?php echo $url;?>">
                                     <?php echo $name;?>
                                 </a>
                                 <a class="t_search" href="/detail/index/<?php echo $idStr;?>">
