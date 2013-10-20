@@ -25,10 +25,17 @@ class APF
             }
         }
         if ($value == null) {
-            $file_path = APPPATH . 'config/' . $file . '.php';
-            if (file_exists($file_path)) {
-                require($file_path);
-                $value = isset($config[$name]) ? $config[$name] : null;
+            global $COF_FILE_PATH;
+            foreach($COF_FILE_PATH as $cof_val) {
+                $app_path = trim(file_get_contents($cof_val));
+                $file_path = BASEPATH . "../" . $app_path . '/config/' . $file . '.php';
+                if (file_exists($file_path)) {
+                    require($file_path);
+                    if (isset($config[$name])) {
+                        $value = $config[$name];
+                        break;
+                    }
+                }
             }
         }
         return $value;

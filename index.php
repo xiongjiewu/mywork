@@ -18,7 +18,13 @@ if (defined('ENVIRONMENT')) {
 
 $system_path = 'system';
 
-$application_folder = 'application';
+//控制版本号
+$version_path = "/home/www/config/RELEASE_VERSION";
+//配置文件
+$COF_FILE_PATH = array(
+    $version_path,
+);
+$application_folder = trim(file_get_contents($version_path));
 
 // Set the current directory correctly for CLI requests
 if (defined('STDIN')) {
