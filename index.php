@@ -83,6 +83,7 @@ if (is_dir($application_folder)) {
  *
  */
 //配置文件
+define('ONINE_CON_PATH','/home/www/config');
 $COF_FILE_PATH = array(
     '/home/www/config',
     BASEPATH . "../" . APPPATH . 'config',

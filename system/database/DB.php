@@ -30,8 +30,8 @@ function &DB($params = '', $active_record_override = NULL)
     if (is_string($params) AND strpos($params, '://') === FALSE) {
         // Is the config file in the environment folder?
         if (!defined('ENVIRONMENT') OR !file_exists($file_path = APPPATH . 'config/' . ENVIRONMENT . '/database.php')) {
-            if (defined('GACONFIGPATH')) {
-                $file_path = GACONFIGPATH . '/database.php';
+            if (defined('ONINE_CON_PATH') && file_exists(ONINE_CON_PATH . '/database.php')) {
+                $file_path = ONINE_CON_PATH . '/database.php';
             } elseif (!file_exists($file_path = APPPATH . 'config/database.php')) {
                 $file_path = APPPATH . 'config/database.php';
 
