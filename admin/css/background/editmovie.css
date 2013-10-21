@@ -1,0 +1,117 @@
+div.upmovie {
+    float: left;
+    width: 100%;
+}
+div.upmovie  table tr td input {
+    padding: 2px;
+}
+div.upmovie  table {
+    float: left;
+    margin-left: 50px;
+    width: 85%;
+}
+
+div.upmovie  table tr {
+    float: left;
+    width: 100%;
+}
+
+div.upmovie  table.table tr td {
+    border: none;
+    padding: 0 5px;
+}
+
+div.upmovie  table tr.movie_nianfen input {
+    width: 150px;
+}
+
+div.upmovie  table tr.movie_shichang input  {
+    width: 100px;
+}
+div.upmovie  table tr.movie_jianjie textarea {
+    width: 500px;
+    height: 100px;
+}
+
+div.upmovie  table tr td.up {
+    width: 100px;
+}
+
+div.upmovie  table tr.movie_tupian td div.image {
+    float: left;
+    width: 150px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+div.upmovie  table tr.movie_tupian td div.image img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #aaa;
+}
+div.upmovie div.error{
+    float: left;
+    width: 500px;
+    margin: 0 auto;
+    height: 30px;
+    padding: 5px;
+    color: red;
+}
+
+div.upmovie div.success{
+    float: left;
+    width: 500px;
+    margin: 0 auto;
+    height: 30px;
+    padding: 5px;
+    color: #444;
+}
+
+div.upmovie  table tr.movie_zhuyan td input {
+    width: 380px;
+}
+
+div.upmovie  table tr.movie_link td em {
+    float: left;
+}
+div.upmovie  table tr.movie_link td input {
+    width: 400px;
+    margin-bottom: 10px;
+}
+div.upmovie  table tr.movie_link td select {
+    width: 80px;
+}
+div.upmovie  table tr.movie_link td label {
+    width: 60px;
+    float: left;
+}
+
+div.upmovie  table tr.movie_link td select {
+    margin-left: 5px;
+}
+
+div.upmovie  table tr.movie_link td span {
+    float: left;
+    margin-right: 200px;
+}
+
+div.upmovie  table tr.movie_link td label {
+    margin-left: 5px;
+    padding: 5px;
+}
+div.upmovie  table tr.movie_link td label,div.upmovie  table tr.movie_link td span {
+    color: #0054AF;
+    cursor: pointer;
+}
+tr.movie_tupian {
+    margin-bottom: 20px;
+}
+tr.movie_tupian div.image span {
+    color: #0054AF;
+    cursor: pointer;
+    margin: 8px 35px;
+    float: left;
+}
+input.Wdate {
+    cursor: pointer;
+}

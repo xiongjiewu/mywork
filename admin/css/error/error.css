@@ -1,0 +1,28 @@
+div.main{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+div.content {
+    background-color: #fff;
+    width: 600px;
+    padding: 150px;
+    margin: 0 auto;
+}
+div.error_img {
+    width: 500px;
+}
+img {
+    float: left;
+    border: none;
+    margin-top: -85px;
+}
+
+div.error_mes {
+    float: left;
+}
+a {
+    color: #0054AF;
+    text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.bs-docs-example {
+    width: 1130px;
+    float: left;
+}
+table.new_dy {
+    width: 100%;
+}
+table tr td.new_title {
+    width: 50px;
+    padding-left:10px;
+}
+div.bs-docs-example table tr td table {
+    width: 100%;
+    float: left;
+    margin-left: 10px;
+}
+div.bs-docs-example table tr td table.table tr td {
+    border-top: none;
+    border-bottom: 1px solid #DDDDDD;
+}
+div.bs-docs-example table tr td table.table tr.lastOne td {
+    border-bottom: none;
+}

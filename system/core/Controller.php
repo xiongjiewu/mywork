@@ -80,6 +80,21 @@ class CI_Controller
             $this->_attr['userName'] = $this->userName;
         }
 
+        if (!empty($this->adminId)) {
+            $this->_attr['adminId'] = $this->adminId;
+        } else {
+            if (!empty($this->userId) && isset($this->userName)) {
+                $this->load->model("Admin");
+                $adminInfo = $this->Admin->getAdminInfoByUserId($this->userId);
+                if (!empty($adminInfo)) {
+                    $this->remove_login_cookie();
+                    $this->setAdminLoginCookie($this->userName,$this->userId,$adminInfo['id'],86400,0);
+                    $this->adminId = $adminInfo['id'];
+                    $this->_attr['adminId'] = $this->adminId;
+                }
+            }
+        }
+
         //热门搜索关键词
         $searchCacheInfo = APF::get_instance()->get_config_value("search_hot_word","word");
         //按搜索个数降序排序
@@ -339,6 +354,21 @@ class CI_Controller
         }
     }
 
+    public function setAdminLoginCookie($username, $userid,$adminId, $time = 0, $remember = 0)
+    {
+        if (empty($username) || empty($userid) || empty($adminId)) {
+            return false;
+        }
+        $cookiename = APF::get_instance()->get_config_value("AuthCookieName");
+        $jiaSecques = APF::get_instance()->get_config_value("dianying8Secques");
+        $enStr = $this->encrypt("$userid\t$username\t$adminId\t$jiaSecques\t$time", null);
+        if ($time > 0 && $remember > 0) {
+            $this->set_cookie($cookiename, $enStr, $time);
+        } else {
+            $this->set_cookie($cookiename, $enStr);
+        }
+    }
+
     public static function encrypt($string, $key)
     {
         return self::authorCode($string, "ENCODE", $key);
@@ -392,6 +422,7 @@ class CI_Controller
 
     protected $userId;
     protected $userName;
+    protected $adminId;
 
     protected function decryptCookie()
     {
@@ -401,9 +432,10 @@ class CI_Controller
             $cookiestr = self::decrypt($cookie, md5($_SERVER['HTTP_USER_AGENT']));
             $cookieArr = explode("\t", $cookiestr);
 
-            @list($userid, $username, $secques, $cookietime) = $cookieArr;
+            @list($userid, $username, $adminId,$secques, $cookietime) = $cookieArr;
             $this->userId = $userid;
             $this->userName = $username;
+            $this->adminId = $adminId;
         }
     }
 

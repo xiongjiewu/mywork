@@ -16,25 +16,15 @@ class APF
         if (!isset($name)) {
             return null;
         }
+        global $COF_FILE_PATH;
         $value = null;
-        if (defined('GACONFIGPATH')) {
-            $file_path = GACONFIGPATH . "/" . $file . '.php';
+        foreach($COF_FILE_PATH as $cof_val) {
+            $file_path = $cof_val . '/' . $file . '.php';
             if (file_exists($file_path)) {
                 require($file_path);
-                $value = isset($config[$name]) ? $config[$name] : null;
-            }
-        }
-        if ($value == null) {
-            global $COF_FILE_PATH;
-            foreach($COF_FILE_PATH as $cof_val) {
-                $app_path = trim(file_get_contents($cof_val));
-                $file_path = BASEPATH . "../" . $app_path . '/config/' . $file . '.php';
-                if (file_exists($file_path)) {
-                    require($file_path);
-                    if (isset($config[$name])) {
-                        $value = $config[$name];
-                        break;
-                    }
+                if (isset($config[$name])) {
+                    $value = $config[$name];
+                    break;
                 }
             }
         }

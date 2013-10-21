@@ -20,10 +20,6 @@ $system_path = 'system';
 
 //控制版本号
 $version_path = "/home/www/config/RELEASE_VERSION";
-//配置文件
-$COF_FILE_PATH = array(
-    $version_path,
-);
 $application_folder = trim(file_get_contents($version_path));
 
 // Set the current directory correctly for CLI requests
@@ -64,13 +60,6 @@ define('FCPATH', str_replace(SELF, '', __FILE__));
 // Name of the "system folder"
 define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 
-if (file_exists("/home/www/config/GA_VERSION")) {
-    $GA_VERSION = file_get_contents("/home/www/config/GA_VERSION");
-    if ($GA_VERSION == 1) {
-        define('GACONFIGPATH', "/home/www/config");
-    }
-}
-
 include(SYSDIR . "/classes/apf.php");
 include(SYSDIR . "/classes/upyun.class.php");
 
@@ -93,7 +82,12 @@ if (is_dir($application_folder)) {
  * And away we go...
  *
  */
-
+//配置文件
+$COF_FILE_PATH = array(
+    '/home/www/config',
+    BASEPATH . "../" . APPPATH . 'config',
+    BASEPATH . "../" . trim(file_get_contents('/home/www/config/ADMIN_VERSION')) . '/config',
+);
 require_once BASEPATH . 'core/CodeIgniter.php';
 
 /* End of file welcome.php */
