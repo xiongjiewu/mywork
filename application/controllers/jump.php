@@ -3,7 +3,7 @@
  * 网站跳转中间页面页面
  * added by xiongjiewu at 2013-07-04
  */
-class Jump extends CI_Controller {
+class Jump extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

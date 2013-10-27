@@ -14,38 +14,3 @@
         <br>
     </form>
 </div>
-<script type="text/javascript">
-    var editor = $('.xheditor').xheditor(
-        {
-            tools: 'Cut,Copy,Paste,Pastetext,|,Fontface,FontSize,Bold,Italic,Underline',
-            skin: 'vista',
-            showBlocktag: true,
-            internalScript: true,
-            internalStyle: true,
-            width: 780,
-            height: 200,
-            fullscreen: false,
-            sourceMode: false,
-            forcePtag: true,
-            emotMark: false,
-            shortcuts: {'ctrl+enter': function () {
-                return $("#create_post_button").trigger("click");
-            }}
-        }
-    );
-    (function ($) {
-        $(document).ready(function () {
-            editor.addShortcuts("ctrl+enter");
-            $("#create_post").submit(function () {
-                return init.post_submit(editor);
-            });
-            $(document).keydown(function (event) {
-                event = event || window.event;
-                var e = event.keyCode || event.which;
-                if (e == 13 && event.ctrlKey == true) {
-                    return $("#create_post_button").trigger("click");
-                }
-            });
-        })
-    })(jQuery);
-</script>

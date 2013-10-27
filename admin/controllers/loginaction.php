@@ -3,7 +3,7 @@
      * 网站注册行为页面
      * added by xiongjiewu at 2013-3-4
      */
-class Loginaction extends CI_Controller {
+class Loginaction extends MY_Controller {
 
     private function _checkCommon($username,$password,$remember)
     {

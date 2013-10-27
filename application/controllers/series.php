@@ -3,7 +3,7 @@
  * 网站系列大片页面
  * added by xiongjiewu at 2013-07-21
  */
-class Series extends CI_Controller {
+class Series extends MY_Controller {
     private $_limit = 100;
     function __construct() {
         parent::__construct();

@@ -3,7 +3,7 @@
  * 网站注册页面
  * added by xiongjiewu at 2013-3-4
  */
-class Register extends CI_Controller {
+class Register extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

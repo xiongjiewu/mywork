@@ -3,7 +3,7 @@
  * 网站电影详细信息页面
  * added by xiongjiewu at 2013-3-4
  */
-class Detail extends CI_Controller {
+class Detail extends MY_Controller {
 
     private $_caiLimit = 21;
     private $_todayLimit = 20;

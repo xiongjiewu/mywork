@@ -3,7 +3,7 @@
  * 信息错误提示页面
  * added by xiongjiewu at 2013-3-4
  */
-class Topic extends CI_Controller {
+class Topic extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->set_top_index(-1);

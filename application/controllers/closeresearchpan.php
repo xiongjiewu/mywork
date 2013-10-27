@@ -3,7 +3,7 @@
  * 关闭问卷调查窗口
  * added by xiongjiewu at 2013-5-1
  */
-class Closeresearchpan extends CI_Controller {
+class Closeresearchpan extends MY_Controller {
     public function index() {
         $ip = $this->getUserIP();
         if (empty($this->Researchguide)) {

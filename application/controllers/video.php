@@ -3,7 +3,7 @@
  * 网站播放页面，自己的播放页面，而不是通过iframe嵌入
  * added by xiongjiewu at 2013-08-10
  */
-class Video extends CI_Controller
+class Video extends MY_Controller
 {
 
     public function __construct() {

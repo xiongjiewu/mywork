@@ -3,7 +3,7 @@
      * 网站后台页面
      * added by xiongjiewu at 2013-3-4
      */
-class Login extends CI_Controller {
+class Login extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

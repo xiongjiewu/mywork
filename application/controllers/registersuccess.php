@@ -3,7 +3,7 @@
  * 网站注册成功提示页面
  * added by xiongjiewu at 2013-3-4
  */
-class Registersuccess extends CI_Controller {
+class Registersuccess extends MY_Controller {
 
     public function index()
     {

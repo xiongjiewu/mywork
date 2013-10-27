@@ -84,10 +84,11 @@ if (is_dir($application_folder)) {
  */
 //配置文件
 define('ONINE_CON_PATH','/home/www/config');
+define("ADMIN_VERSION",trim(file_get_contents('/home/www/config/ADMIN_VERSION')));
 $COF_FILE_PATH = array(
-    '/home/www/config',
+    ONINE_CON_PATH,
     BASEPATH . "../" . APPPATH . 'config',
-    BASEPATH . "../" . trim(file_get_contents('/home/www/config/ADMIN_VERSION')) . '/config',
+    BASEPATH . "../" . ADMIN_VERSION . '/config',
 );
 require_once BASEPATH . 'core/CodeIgniter.php';
 

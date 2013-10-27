@@ -3,7 +3,7 @@
  * 网站用户行为controller,需登录
  * added by xiongjiewu at 2013-3-3
  */
-class Useraction extends CI_Controller
+class Useraction extends MY_Controller
 {
     public function index()
     {

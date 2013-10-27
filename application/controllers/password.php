@@ -3,7 +3,7 @@
  * 网站更改密码页
  * added by xiongjiewu at 2013-3-4
  */
-class Password extends CI_Controller {
+class Password extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

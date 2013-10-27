@@ -3,7 +3,7 @@
  * 网站后台页面
  * added by xiongjiewu at 2013-3-4
  */
-class Search extends CI_Controller {
+class Search extends MY_Controller {
     private $_maxLen = 25;
     public function __construct() {
         parent::__construct();

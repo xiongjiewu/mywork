@@ -3,7 +3,7 @@
  * 检索页面
  * added by xiongjiewu at 2013-06-30
  */
-class Retrieval extends CI_Controller {
+class Retrieval extends MY_Controller {
 
     private $_movieCount = 300;//按列表一次展示的电影个数
     private $_moviePCount = 100;//按图文一次展示的电影个数

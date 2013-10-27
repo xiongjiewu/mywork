@@ -3,7 +3,7 @@
  * 生成验证码
  * added by xiongjiewu at 2013-3-10
  */
-class Codeimg extends CI_Controller {
+class Codeimg extends MY_Controller {
 
     private $height; //@定义验证码图片高度
     private $width; //@定义验证码图片宽度

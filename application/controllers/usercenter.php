@@ -3,7 +3,7 @@
  * 网站后台页面
  * added by xiongjiewu at 2013-3-4
  */
-class Usercenter extends CI_Controller
+class Usercenter extends MY_Controller
 {
 
     private $_feedBackLimit = 10;

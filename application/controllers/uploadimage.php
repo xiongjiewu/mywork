@@ -3,7 +3,7 @@
  * 图片上传类
  * added by xiongjiewu at 2013-3-7
  */
-class Uploadimage extends CI_Controller {
+class Uploadimage extends MY_Controller {
 
     public function index($data = null,$path = "dy",$fileName = "image",$width = 100,$height = 100)
     {

@@ -3,7 +3,7 @@
  * 网站最新上映电影列表页
  * added by xiongjiewu at 2013-3-4
  */
-class Latestmovie extends CI_Controller {
+class Latestmovie extends MY_Controller {
 
     private $_cacheP = "last_total_dy_info_";//缓存前缀
     function __construct() {

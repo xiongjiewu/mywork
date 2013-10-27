@@ -3,7 +3,7 @@
  * 问卷调查页面
  * added by xiongjiewu at 2013-5-1
  */
-class Research extends CI_Controller {
+class Research extends MY_Controller {
 
     public function index() {
         $params = $this->input->post();

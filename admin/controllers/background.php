@@ -3,7 +3,7 @@
  * 网站后台页面
  * added by xiongjiewu at 2013-3-4
  */
-class Background extends CI_Controller
+class Background extends MY_Controller
 {
 
     public function __construct()

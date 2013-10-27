@@ -3,7 +3,7 @@
  * 网站即将上映列表页
  * added by xiongjiewu at 2013-3-4
  */
-class Upcomingmovie extends CI_Controller {
+class Upcomingmovie extends MY_Controller {
 
     public function index()
     {

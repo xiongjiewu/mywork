@@ -3,7 +3,7 @@
  * 网站电影导航页
  * added by xiongjiewu at 2013-3-4
  */
-class Moviceguide extends CI_Controller {
+class Moviceguide extends MY_Controller {
 
     private $_maxCount = 1200;//最大允许显示电影个数
     private $_limit = 30;

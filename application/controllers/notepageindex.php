@@ -4,7 +4,7 @@
  * 用于后期网站功能分析
  * added by xiongjiewu at 2013-06-19
  */
-class Notepageindex extends CI_Controller {
+class Notepageindex extends MY_Controller {
     private $_pageIndexInfo;
     public function __construct() {
         parent::__construct();

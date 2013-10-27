@@ -3,7 +3,7 @@
  * 网站人物详细信息页面
  * added by xiongjiewu at 2013-07-03
  */
-class People extends CI_Controller {
+class People extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

@@ -3,7 +3,7 @@
  * 网站首页
  * added by xiongjiewu at 2013-3-3
  */
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
     private $_limit = 18;//最新上映和即将上映电影个数
     private $_topMovieLimit = 42;//电影墙电影个数

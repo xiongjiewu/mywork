@@ -3,7 +3,7 @@
  * 视频播放页面
  * added by xiongjiewu at 2013-06-09
  */
-class Play extends CI_Controller {
+class Play extends MY_Controller {
 
     private $_userWatchHistoryKey;//历史观看记录cookie名
 

@@ -3,7 +3,7 @@
      * 信息错误提示页面
      * added by xiongjiewu at 2013-3-4
      */
-class Error extends CI_Controller {
+class Error extends MY_Controller {
 
         public function index($index = null)
         {

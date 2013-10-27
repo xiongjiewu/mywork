@@ -3,7 +3,7 @@
  * 网站编辑评论页面
  * added by xiongjiewu at 2013-3-4
  */
-class Editpost extends CI_Controller {
+class Editpost extends MY_Controller {
     public function index($id = null) {
         if (empty($id) || empty($this->userId)) {
             $this->jump_to("/");
@@ -36,6 +36,6 @@ class Editpost extends CI_Controller {
         $this->load->set_head_img(false);
         
         $this->set_attr("YingpingInfo",$YingpingInfo);
-        $this->set_view('dianying/editpost');
+        $this->set_view('dianying/editpost','base3');
     }
 }

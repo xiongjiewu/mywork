@@ -3,7 +3,7 @@
  * 网站首页
  * added by xiongjiewu at 2013-3-3
  */
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

@@ -82,11 +82,13 @@ if (is_dir($application_folder)) {
  * And away we go...
  *
  */
+define('ONINE_CON_PATH','/home/www/config');
+define('RELEASE_VERSION',trim(file_get_contents('/home/www/config/RELEASE_VERSION')));
 //配置文件
 $COF_FILE_PATH = array(
-    '/home/www/config',
+    ONINE_CON_PATH,
     BASEPATH . "../" . APPPATH . 'config',
-    BASEPATH . "../" . trim(file_get_contents('/home/www/config/RELEASE_VERSION')) . '/config',
+    BASEPATH . "../" . RELEASE_VERSION . '/config',
 );
 require_once BASEPATH . 'core/CodeIgniter.php';
 

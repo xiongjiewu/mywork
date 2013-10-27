@@ -3,7 +3,7 @@
  * 网站后台专题页面
  * added by xiongjiewu at 2013-07-14
  */
-class Topic extends CI_Controller
+class Topic extends MY_Controller
 {
 
     public function __construct()

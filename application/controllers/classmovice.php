@@ -3,7 +3,7 @@
  * 重温经典页面
  * added by xiongjiewu at 2013-5-1
  */
-class Classmovice extends CI_Controller {
+class Classmovice extends MY_Controller {
     private $_limit = 20;
     private $_paiHangInfo;
 

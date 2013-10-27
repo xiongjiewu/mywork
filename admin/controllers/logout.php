@@ -3,7 +3,7 @@
  * 网站退出
  * added by xiongjiewu at 2013-3-4
  */
-class Logout extends CI_Controller {
+class Logout extends MY_Controller {
 
     public function index()
     {

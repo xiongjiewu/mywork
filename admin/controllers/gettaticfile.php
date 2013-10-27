@@ -3,7 +3,7 @@
  * 网站css/js压缩控制class
  * added by xiongjiewu at 2013-3-4
  */
-class Gettaticfile extends CI_Controller {
+class Gettaticfile extends MY_Controller {
 
     function __construct() {
         parent::__construct();
@@ -75,6 +75,7 @@ class Gettaticfile extends CI_Controller {
         /* remove tabs, spaces, newlines, etc. */
         $fileText = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $fileText);
         echo $fileText;
+        exit;
     }
 
     /**
@@ -96,6 +97,7 @@ class Gettaticfile extends CI_Controller {
         //压缩开始
         //$fileText = JSMin::minify($fileText);
         echo $fileText;
+        exit;
     }
 }
 

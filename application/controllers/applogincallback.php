@@ -3,7 +3,7 @@
  * 网站第三方接口登录回调页面
  * added by xiongjiewu at 2013-06-22
  */
-class Applogincallback extends CI_Controller
+class Applogincallback extends MY_Controller
 {
     private $_webLoginInfo;
     private $_nowTime;

@@ -3,7 +3,7 @@
  * 网站第三方接口登录页面
  * added by xiongjiewu at 2013-06-22
  */
-class Weblogin extends CI_Controller
+class Weblogin extends MY_Controller
 {
     private $_webLoginInfo;
     public function __construct() {
